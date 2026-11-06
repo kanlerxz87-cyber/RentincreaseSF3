@@ -33,7 +33,7 @@ independent official source where one exists. The quoted passage for each source
 | 22 | Unit A arithmetic: 1.4% + 1.6% = 3.0%; $3,995 × 3.0% = $119.85 | Recomputed by hand and in Python; matches the Rent Board's own multi-year method | Verified |
 | 23 | Unit B arithmetic: 13.1%; $3,150 × 13.1% = $412.65 | Recomputed by hand and in Python; cross-checked against the Board's 6.7% worked example method | Verified |
 | 24 | Notice deadlines (2 Jan 2027 / 28 Dec 2026 / 30 Nov 2026 / 25 Nov 2026) | Date arithmetic in Python, applying 30/35 and 90/95 day periods | Recomputed |
-| 25 | Market rent for ZIP 94122 | HUD FMR lookup and Census API returned no usable official figure during the session | **Not verified — left blank (F9)** |
+| 25 | Market rent for the property's ZIP (withheld) | HUD FMR lookup and Census API returned no usable official figure during the session | **Not verified — left blank (F9)** |
 | 26 | Year built 1940, two units | Owner statement only | **Not verified (F6)** |
 | 27 | Prior rent history for both units | Owner statement only | **Not verified (F5)** |
 

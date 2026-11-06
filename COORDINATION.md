@@ -168,7 +168,7 @@ consistent with this edition's verification and are handled here instead:
 ### PR / deploy record — this session
 
 - PR: [#5](https://github.com/kanlerxz87-cyber/RentincreaseSF3/pull/5) — "Verified rental-increase review
-  site (Outer Sunset, ZIP 94122) with source-linked analysis", branch
+  site (San Francisco (location withheld)) with source-linked analysis", branch
   `arena/64380530-rentincreasesf3` → `main`.
 - Merge conflict: `COORDINATION.md` (add/add) and `README.md` (content) only, because `main` had advanced
   with the two earlier editions. Resolved by preserving both prior editions verbatim and appending this

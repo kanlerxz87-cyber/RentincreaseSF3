@@ -1,4 +1,4 @@
-# Executive summary — rental increases for two Outer Sunset units (ZIP 94122)
+# Executive summary — rental increases for two San Francisco units (location withheld)
 
 Verified against official sources on **6 November 2026**. Rates and pending legislation change; re-check
 before serving any notice. This is an information record, not legal advice.
