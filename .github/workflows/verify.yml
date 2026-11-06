@@ -28,18 +28,26 @@ jobs:
       - name: Rebuild the site
         run: python3 tools/build_site.py
 
+      - name: Check every internal and external link
+        if: always()
+        run: python3 tools/check_links.py --json docs/verification/link-check.json
+
       - name: Confirm the committed site matches the generator output
         # pages/audit.html embeds the commit log and file sizes, so it is
         # expected to differ from the previously committed copy. Everything
         # else must be byte-identical, which proves no figure was hand-edited.
         run: |
-          if ! git diff --exit-code -- . ':(exclude)pages/audit.html'; then
+          echo "--- generated files that differ from the commit ---"
+          git status --porcelain
+          echo "--- diffstat (audit.html excluded) ---"
+          git diff --stat -- . ':(exclude)pages/audit.html'
+          if ! git diff --quiet -- . ':(exclude)pages/audit.html'; then
+            echo "--- first 200 lines of the diff ---"
+            git diff -- . ':(exclude)pages/audit.html' | head -200
             echo "::error::Generated site is out of date. Run 'python3 tools/calc.py && python3 tools/build_site.py' and commit the result."
             exit 1
           fi
-
-      - name: Check every internal and external link
-        run: python3 tools/check_links.py --json docs/verification/link-check.json
+          echo "Committed site matches generator output."
 
       - name: Upload link report
         if: always()
