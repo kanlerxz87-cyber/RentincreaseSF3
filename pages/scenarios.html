@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Increase scenarios | SF Rent Increase Dossier</title>
+<meta name="description" content="Every lawful increase scenario for both units, computed from official rates with notice deadlines.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+<div class="shell">
+<nav class="side" aria-label="Sections">
+  <div class="brand">
+    <h1>SF Rent Increase Dossier</h1>
+    <p>Two rent-controlled units &middot; Outer Sunset, San Francisco 94122<br>
+       Analysis date November 6, 2026</p>
+  </div>
+<div class="navgroup"><div class="gt">Overview</div>
+<a class="nl" href="../index.html">Dashboard</a>
+<a class="nl" href="executive-summary.html">Executive Summary</a>
+<a class="nl" href="methodology.html">Methodology & Verification</a>
+</div>
+<div class="navgroup"><div class="gt">Governing law</div>
+<a class="nl" href="law-local.html">San Francisco (local)</a>
+<a class="nl" href="law-state.html">California (state)</a>
+<a class="nl" href="law-federal.html">Federal</a>
+</div>
+<div class="navgroup"><div class="gt">Data & findings</div>
+<a class="nl" href="rates.html">Official rates & CPI</a>
+<a class="nl" href="units.html">Unit dossiers</a>
+<a class="nl active" href="scenarios.html">Increase scenarios</a>
+</div>
+<div class="navgroup"><div class="gt">Practice & risk</div>
+<a class="nl" href="notice-guide.html">Notice procedure & reasons</a>
+<a class="nl" href="practices.html">Corporate vs individual</a>
+<a class="nl" href="fair-housing.html">One unit or both?</a>
+<a class="nl" href="red-team.html">Tenant-advocate red team</a>
+</div>
+<div class="navgroup"><div class="gt">Assurance</div>
+<a class="nl" href="sources.html">Source register</a>
+<a class="nl" href="flagged.html">Flagged for review</a>
+<a class="nl" href="audit.html">Repo audit & log</a>
+</div>
+  <div class="foot">
+    Every value traces to an official source.<br>
+    Unconfirmed values are left blank.<br>
+    <a href="flagged.html" style="color:#8fb8dd">15 items flagged for review</a>
+  </div>
+</nav>
+<div class="main">
+  <div class="topbar"><div class="wrap">
+    <div class="crumb">Data &amp; findings &rsaquo; <b>Increase scenarios</b></div>
+    <div><span class="pill priv">Privacy: all tenant names and unit designations are pseudonymised. Dates and dollar amounts are unchanged.</span> <span class="pill date">As of November 6, 2026</span></div>
+  </div></div>
+  <div class="wrap">
+
+<h2 class="pg">Increase scenarios</h2>
+<p class="lede">Every scenario below is lawful on its face &mdash; each is computed only from published Rent Board
+rates and the controlling regulation. They differ in <b>how much</b> of the entitlement is taken, <b>when</b>, and
+<b>what is forfeited</b> by moving off the anniversary date. The calculator that produced these figures is asserted
+against all four of the Rent Board&rsquo;s own published worked examples before it writes any output.</p>
+
+<div class="tw"><table>
+<caption>All scenarios at a glance</caption>
+<thead><tr>
+<th>Scenario</th>
+<th>Effective</th>
+<th class="num">Banked</th>
+<th class="num">Current AGA</th>
+<th class="num">Total</th>
+<th class="num">Increase</th>
+<th class="num">New base rent</th>
+<th>Notice</th>
+</tr></thead><tbody>
+<tr class="total">
+<td><b>Unit A &mdash; S1</b> on the anniversary <span class="b rec">RECOMMENDED</span></td>
+<td>February 1, 2027</td>
+<td class="num">1.4%</td>
+<td class="num">1.6%</td>
+<td class="num"><b>3.0%</b></td>
+<td class="num">$119.85</td>
+<td class="num"><b>$4,114.85</b></td>
+<td>30 days &mdash; serve by January 2, 2027</td>
+</tr>
+<tr>
+<td>Unit A &mdash; S2 earliest serviceable today</td>
+<td>December 6, 2026</td>
+<td class="num">0%</td>
+<td class="num">1.6%</td>
+<td class="num">1.6%</td>
+<td class="num">$63.92</td>
+<td class="num">$4,058.92</td>
+<td>30 days &mdash; serve by November 6, 2026</td>
+</tr>
+<tr>
+<td>Unit A &mdash; S3 partial (current AGA only)</td>
+<td>February 1, 2027</td>
+<td class="num">1.4% stays banked</td>
+<td class="num">1.6%</td>
+<td class="num">1.6%</td>
+<td class="num">$63.92</td>
+<td class="num">$4,058.92</td>
+<td>30 days &mdash; serve by January 2, 2027</td>
+</tr>
+<tr class="total">
+<td><b>Unit B &mdash; S1</b> on the anniversary <span class="b rec">RECOMMENDED</span></td>
+<td>June 1, 2027</td>
+<td class="num">13.1%</td>
+<td class="num"><span class="b warn">Not published</span></td>
+<td class="num"><b>13.1% + unpublished</b></td>
+<td class="num">$412.65 min</td>
+<td class="num"><b>$3,562.65</b> min</td>
+<td>90 days &mdash; serve by March 3, 2027</td>
+</tr>
+<tr>
+<td>Unit B &mdash; S2 earliest serviceable today</td>
+<td>February 4, 2027</td>
+<td class="num">11.5%</td>
+<td class="num">1.6%</td>
+<td class="num">13.1%</td>
+<td class="num">$412.65</td>
+<td class="num">$3,562.65</td>
+<td>90 days &mdash; serve by November 6, 2026</td>
+</tr>
+</tbody></table></div>
+<p class="small">All figures from <code>tools/calc.py</code> using the official document 571 rate table
+<span class="srclist">Source: <a href="https://www.sf.gov/documents/34344/571_Allowable_Annual_Increases_26-27_1.pdf" target="_blank" rel="noopener noreferrer" title="Document 571 - Allowable Annual Increases (complete history, 4/1/1982 - 2/28/2027) — SF Rent Board (sf.gov PDF)">S2</a></span> and the method in Rules &amp; Regs Sec. 4.12 <span class="srclist">Source: <a href="https://www.sf.gov/reports--december-2022--rent-board-rules-and-regulations-part-iv-rent-increases-not-requiring" target="_blank" rel="noopener noreferrer" title="Rent Board Rules and Regulations, Part IV - Rent Increases Not Requiring Approval — SF Rent Board (sf.gov) - official regulation text">S5</a></span> and the Rent Board worked examples
+<span class="srclist">Source: <a href="https://www.sf.gov/learn-about-rent-increases-san-francisco" target="_blank" rel="noopener noreferrer" title="Learn about rent increases in San Francisco — SF Rent Board (sf.gov)">S3</a> &middot; <a href="https://www.sf.gov/information--banked-rent-increases" target="_blank" rel="noopener noreferrer" title="Banked rent increases — SF Rent Board (sf.gov)">S4</a></span>. Notice periods from Civ. Code Sec. 827 <span class="srclist">Source: <a href="https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=827" target="_blank" rel="noopener noreferrer" title="Cal. Civil Code Sec. 827 - notice of change in terms of tenancy — California Legislative Information (leginfo.legislature.ca.gov)">S23</a></span>.</p>
+
+<hr class="sep">
+<h2 class="pg" style="font-size:22px">Unit A &mdash; base rent $3,995.00, anniversary February 1</h2>
+
+
+<h3>Unit A &mdash; Scenario S1: increase on the anniversary date, February 1, 2027</h3>
+<div class="tw"><table>
+<caption>Unit A &mdash; banked build-up</caption>
+<thead><tr>
+<th>Skipped anniversary</th>
+<th class="num">Rate then in effect</th>
+<th>Treatment</th>
+</tr></thead><tbody>
+<tr>
+<td>February 1, 2026</td>
+<td class="num">1.4%</td>
+<td><span class="b ok">Banked</span></td>
+</tr>
+</tbody></table></div>
+<div class="tw"><table>
+<thead><tr>
+<th>Line</th>
+<th>Value</th>
+<th>Basis</th>
+</tr></thead><tbody>
+<tr>
+<td>Base rent</td>
+<td>$3,995.00</td>
+<td>As supplied</td>
+</tr>
+<tr>
+<td>Proposed effective date</td>
+<td>February 1, 2027</td>
+<td>The existing anniversary date; no forfeiture risk</td>
+</tr>
+<tr>
+<td>Banked percentage</td>
+<td>1.4%</td>
+<td>Rules &amp; Regs Sec. 4.12(a) &mdash; added, not compounded</td>
+</tr>
+<tr>
+<td>Annual rate in effect on the effective date</td>
+<td>1.6%</td>
+<td>The rate in effect on the EFFECTIVE date governs, not the rate on the service date</td>
+</tr>
+<tr>
+<td>Total percentage</td>
+<td>3.0%</td>
+<td></td>
+</tr>
+<tr>
+<td>Dollar increase</td>
+<td>$119.85</td>
+<td>Base rent &times; total percentage, truncated to the cent</td>
+</tr>
+<tr>
+<td>New base rent</td>
+<td>$4,114.85</td>
+<td></td>
+</tr>
+<tr>
+<td>Notice period</td>
+<td>30 days</td>
+<td>30 days because the total is 10% or less</td>
+</tr>
+<tr>
+<td>Latest service date, hand-delivered</td>
+<td>January 2, 2027</td>
+<td>Civ. Code Sec. 827(b)</td>
+</tr>
+<tr>
+<td>Latest service date, mailed</td>
+<td>December 28, 2026</td>
+<td>Civ. Code Sec. 827(b) plus 5 days</td>
+</tr>
+<tr>
+<td>New anniversary date after this increase</td>
+<td>February 1</td>
+<td>Unchanged if the increase lands on the existing anniversary</td>
+</tr>
+</tbody></table></div>
+<div class="note ok"><span class="t">Assessment</span><p><b>Recommended.</b> Taking the increase on the existing anniversary date does three things at once: it lets the 1.4% that became available on February 1, 2026 complete its 12 months and therefore bank; it adds the 1.6% in effect on the effective date; and it leaves the anniversary date unchanged at February 1, so nothing is forfeited. The total of 3.0% is comfortably below the 10% threshold, so only a <b>30-day</b> notice is required. This is the same pattern as the Rent Board&rsquo;s own multi-year example. <span class="srclist">Source: <a href="https://www.sf.gov/learn-about-rent-increases-san-francisco" target="_blank" rel="noopener noreferrer" title="Learn about rent increases in San Francisco — SF Rent Board (sf.gov)">S3</a> &middot; <a href="https://www.sf.gov/reports--december-2022--rent-board-rules-and-regulations-part-iv-rent-increases-not-requiring" target="_blank" rel="noopener noreferrer" title="Rent Board Rules and Regulations, Part IV - Rent Increases Not Requiring Approval — SF Rent Board (sf.gov) - official regulation text">S5</a> &middot; <a href="https://www.sf.gov/information--banked-rent-increases" target="_blank" rel="noopener noreferrer" title="Banked rent increases — SF Rent Board (sf.gov)">S4</a></span></p></div>
+
+
+
+<h3>Unit A &mdash; Scenario S2: the earliest increase serviceable today</h3>
+<div class="tw"><table>
+<caption>Unit A &mdash; banked build-up</caption>
+<thead><tr>
+<th>Skipped anniversary</th>
+<th class="num">Rate then in effect</th>
+<th>Treatment</th>
+</tr></thead><tbody>
+<tr>
+<td>February 1, 2026</td>
+<td class="num">1.4%</td>
+<td><span class="b bad">FORFEITED</span></td>
+</tr>
+</tbody></table></div>
+<div class="tw"><table>
+<thead><tr>
+<th>Line</th>
+<th>Value</th>
+<th>Basis</th>
+</tr></thead><tbody>
+<tr>
+<td>Base rent</td>
+<td>$3,995.00</td>
+<td>As supplied</td>
+</tr>
+<tr>
+<td>Proposed effective date</td>
+<td>December 6, 2026</td>
+<td>30 days from November 6, 2026</td>
+</tr>
+<tr>
+<td>Banked percentage</td>
+<td>0%</td>
+<td>Rules &amp; Regs Sec. 4.12(a) &mdash; added, not compounded</td>
+</tr>
+<tr>
+<td>Annual rate in effect on the effective date</td>
+<td>1.6%</td>
+<td>The rate in effect on the EFFECTIVE date governs, not the rate on the service date</td>
+</tr>
+<tr>
+<td>Total percentage</td>
+<td>1.6%</td>
+<td></td>
+</tr>
+<tr>
+<td>Dollar increase</td>
+<td>$63.92</td>
+<td>Base rent &times; total percentage, truncated to the cent</td>
+</tr>
+<tr>
+<td>New base rent</td>
+<td>$4,058.92</td>
+<td></td>
+</tr>
+<tr>
+<td>Notice period</td>
+<td>30 days</td>
+<td>30 days because the total is 10% or less</td>
+</tr>
+<tr>
+<td>Latest service date, hand-delivered</td>
+<td>November 6, 2026</td>
+<td>Civ. Code Sec. 827(b)</td>
+</tr>
+<tr>
+<td>Latest service date, mailed</td>
+<td>November 1, 2026</td>
+<td>Civ. Code Sec. 827(b) plus 5 days</td>
+</tr>
+<tr>
+<td>New anniversary date after this increase</td>
+<td>December 6</td>
+<td>The effective date becomes the new anniversary date</td>
+</tr>
+</tbody></table></div>
+<div class="note warn"><span class="t">Assessment</span><p><b>Not recommended.</b> Serving today produces an effective date of December 6, 2026, which changes the anniversary date. Because the 1.4% that became available on February 1, 2026 has not yet completed 12 months, it does not bank and &mdash; in the Rent Board&rsquo;s own words &mdash; is <b>permanently lost due to the change in anniversary date</b>. The owner collects $63.92 instead of $119.85, a difference of $55.93, and resets the anniversary to December 6. Acting sooner is strictly worse here. <span class="srclist">Source: <a href="https://www.sf.gov/learn-about-rent-increases-san-francisco" target="_blank" rel="noopener noreferrer" title="Learn about rent increases in San Francisco — SF Rent Board (sf.gov)">S3</a></span></p></div>
+
+
+<h3>Unit A &mdash; Scenario S3: take only part of the entitlement</h3>
+<div class="tw"><table>
+<thead><tr>
+<th>Line</th>
+<th>Value</th>
+<th>Basis</th>
+</tr></thead><tbody>
+<tr>
+<td>Proposed effective date</td>
+<td>February 1, 2027</td>
+<td>The existing anniversary date</td>
+</tr>
+<tr>
+<td>Impose</td>
+<td>1.6% (the current annual rate only)</td>
+<td>$63.92 &rarr; new base rent $4,058.92</td>
+</tr>
+<tr>
+<td>Leave banked</td>
+<td>1.4%</td>
+<td>Banked increases do not expire during a tenancy and may be imposed after at least 12 months or on a future anniversary date</td>
+</tr>
+<tr>
+<td>Notice period</td>
+<td>30 days</td>
+<td>Total is 10% or less</td>
+</tr>
+<tr>
+<td>Serve on or before</td>
+<td>January 2, 2027 (December 28, 2026 if mailed)</td>
+<td>Civ. Code Sec. 827(b)</td>
+</tr>
+</tbody></table></div>
+<div class="note "><span class="t">Assessment</span><p>Lawful and lower-friction. The official rules are explicit: &lsquo;A landlord does not have to impose the maximum allowed increase. If only part of the allowable increase is used, the rest is banked.&rsquo; A smaller increase is also less likely to draw a petition. The trade-off is cash now versus cash later, and the 1.4% remains available indefinitely during this tenancy. <span class="srclist">Source: <a href="https://www.sf.gov/information--banked-rent-increases" target="_blank" rel="noopener noreferrer" title="Banked rent increases — SF Rent Board (sf.gov)">S4</a></span></p><p><b>One open question, flagged:</b> the official material does not state how a remainder that stays banked interacts with a base rent that has since risen. Because Rule 4.12 provides that banked increases &lsquo;shall not be compounded&rsquo;, the safest reading is that the retained percentage is applied later to base rent without compounding &mdash; but that reading is not stated in an official document, so it is <b>not</b> published as a computed figure anywhere on this site. Confirm with a Rent Board counselor before relying on a multi-year phase-in.</p></div>
+
+<hr class="sep">
+<h2 class="pg" style="font-size:22px">Unit B &mdash; base rent $3,150.00, anniversary June 1</h2>
+
+
+<h3>Unit B &mdash; Scenario S1: increase on the anniversary date, June 1, 2027</h3>
+<div class="tw"><table>
+<caption>Unit B &mdash; banked build-up</caption>
+<thead><tr>
+<th>Skipped anniversary</th>
+<th class="num">Rate then in effect</th>
+<th>Treatment</th>
+</tr></thead><tbody>
+<tr>
+<td>June 1, 2020</td>
+<td class="num">1.8%</td>
+<td><span class="b ok">Banked</span></td>
+</tr>
+<tr>
+<td>June 1, 2021</td>
+<td class="num">0.7%</td>
+<td><span class="b ok">Banked</span></td>
+</tr>
+<tr>
+<td>June 1, 2022</td>
+<td class="num">2.3%</td>
+<td><span class="b ok">Banked</span></td>
+</tr>
+<tr>
+<td>June 1, 2023</td>
+<td class="num">3.6%</td>
+<td><span class="b ok">Banked</span></td>
+</tr>
+<tr>
+<td>June 1, 2024</td>
+<td class="num">1.7%</td>
+<td><span class="b ok">Banked</span></td>
+</tr>
+<tr>
+<td>June 1, 2025</td>
+<td class="num">1.4%</td>
+<td><span class="b ok">Banked</span></td>
+</tr>
+<tr>
+<td>June 1, 2026</td>
+<td class="num">1.6%</td>
+<td><span class="b ok">Banked</span></td>
+</tr>
+</tbody></table></div>
+<div class="tw"><table>
+<thead><tr>
+<th>Line</th>
+<th>Value</th>
+<th>Basis</th>
+</tr></thead><tbody>
+<tr>
+<td>Base rent</td>
+<td>$3,150.00</td>
+<td>As supplied</td>
+</tr>
+<tr>
+<td>Proposed effective date</td>
+<td>June 1, 2027</td>
+<td>The existing anniversary date; preserves every banked rate</td>
+</tr>
+<tr>
+<td>Banked percentage</td>
+<td>13.1%</td>
+<td>Rules &amp; Regs Sec. 4.12(a) &mdash; added, not compounded</td>
+</tr>
+<tr>
+<td>Annual rate in effect on the effective date</td>
+<td><span class="empty">&mdash; blank, unverified &mdash;</span></td>
+<td>The rate in effect on the EFFECTIVE date governs, not the rate on the service date</td>
+</tr>
+<tr>
+<td>Total percentage</td>
+<td>13.1% + unpublished</td>
+<td></td>
+</tr>
+<tr>
+<td>Dollar increase</td>
+<td>$412.65 (minimum)</td>
+<td>Base rent &times; total percentage, truncated to the cent</td>
+</tr>
+<tr>
+<td>New base rent</td>
+<td>$3,562.65 (minimum)</td>
+<td></td>
+</tr>
+<tr>
+<td>Notice period</td>
+<td>90 days</td>
+<td>90 days because the total exceeds 10%</td>
+</tr>
+<tr>
+<td>Latest service date, hand-delivered</td>
+<td>March 3, 2027</td>
+<td>Civ. Code Sec. 827(b)</td>
+</tr>
+<tr>
+<td>Latest service date, mailed</td>
+<td>February 26, 2027</td>
+<td>Civ. Code Sec. 827(b) plus 5 days</td>
+</tr>
+<tr>
+<td>New anniversary date after this increase</td>
+<td>June 1</td>
+<td>Unchanged if the increase lands on the existing anniversary</td>
+</tr>
+</tbody></table></div>
+<div class="note ok"><span class="t">Assessment</span><p><b>Recommended.</b> Waiting for June 1, 2027 preserves all seven skipped rates, including the 1.6% that became available on June 1, 2026 and matures on June 1, 2027. The verified banked total is <b>13.1%</b>, worth $412.65 on the current base rent, and the annual rate in effect on June 1, 2027 is added on top of that. <b>That rate had not been published as of November 6, 2026</b> &mdash; the Rent Board publishes on or about January 1 for the period beginning March 1 &mdash; so it is left blank and is never forecast. Because the total already exceeds 10%, a <b>90-day</b> notice is required; serve on or before <b>March 3, 2027</b>, or <b>February 26, 2027</b> if the notice is mailed. <span class="srclist">Source: <a href="https://www.sf.gov/documents/34344/571_Allowable_Annual_Increases_26-27_1.pdf" target="_blank" rel="noopener noreferrer" title="Document 571 - Allowable Annual Increases (complete history, 4/1/1982 - 2/28/2027) — SF Rent Board (sf.gov PDF)">S2</a> &middot; <a href="https://www.sf.gov/reports--december-2022--rent-board-rules-and-regulations-part-iv-rent-increases-not-requiring" target="_blank" rel="noopener noreferrer" title="Rent Board Rules and Regulations, Part IV - Rent Increases Not Requiring Approval — SF Rent Board (sf.gov) - official regulation text">S5</a> &middot; <a href="https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=827" target="_blank" rel="noopener noreferrer" title="Cal. Civil Code Sec. 827 - notice of change in terms of tenancy — California Legislative Information (leginfo.legislature.ca.gov)">S23</a> &middot; <a href="https://www.sf.gov/learn-about-rent-increases-san-francisco" target="_blank" rel="noopener noreferrer" title="Learn about rent increases in San Francisco — SF Rent Board (sf.gov)">S3</a></span></p></div>
+
+
+
+<h3>Unit B &mdash; Scenario S2: the earliest increase serviceable today</h3>
+<div class="tw"><table>
+<caption>Unit B &mdash; banked build-up</caption>
+<thead><tr>
+<th>Skipped anniversary</th>
+<th class="num">Rate then in effect</th>
+<th>Treatment</th>
+</tr></thead><tbody>
+<tr>
+<td>June 1, 2020</td>
+<td class="num">1.8%</td>
+<td><span class="b ok">Banked</span></td>
+</tr>
+<tr>
+<td>June 1, 2021</td>
+<td class="num">0.7%</td>
+<td><span class="b ok">Banked</span></td>
+</tr>
+<tr>
+<td>June 1, 2022</td>
+<td class="num">2.3%</td>
+<td><span class="b ok">Banked</span></td>
+</tr>
+<tr>
+<td>June 1, 2023</td>
+<td class="num">3.6%</td>
+<td><span class="b ok">Banked</span></td>
+</tr>
+<tr>
+<td>June 1, 2024</td>
+<td class="num">1.7%</td>
+<td><span class="b ok">Banked</span></td>
+</tr>
+<tr>
+<td>June 1, 2025</td>
+<td class="num">1.4%</td>
+<td><span class="b ok">Banked</span></td>
+</tr>
+<tr>
+<td>June 1, 2026</td>
+<td class="num">1.6%</td>
+<td><span class="b bad">FORFEITED (R4)</span></td>
+</tr>
+</tbody></table></div>
+<div class="tw"><table>
+<thead><tr>
+<th>Line</th>
+<th>Value</th>
+<th>Basis</th>
+</tr></thead><tbody>
+<tr>
+<td>Base rent</td>
+<td>$3,150.00</td>
+<td>As supplied</td>
+</tr>
+<tr>
+<td>Proposed effective date</td>
+<td>February 4, 2027</td>
+<td>90 days from November 6, 2026 because the total exceeds 10%</td>
+</tr>
+<tr>
+<td>Banked percentage</td>
+<td>11.5%</td>
+<td>Rules &amp; Regs Sec. 4.12(a) &mdash; added, not compounded</td>
+</tr>
+<tr>
+<td>Annual rate in effect on the effective date</td>
+<td>1.6%</td>
+<td>The rate in effect on the EFFECTIVE date governs, not the rate on the service date</td>
+</tr>
+<tr>
+<td>Total percentage</td>
+<td>13.1%</td>
+<td></td>
+</tr>
+<tr>
+<td>Dollar increase</td>
+<td>$412.65</td>
+<td>Base rent &times; total percentage, truncated to the cent</td>
+</tr>
+<tr>
+<td>New base rent</td>
+<td>$3,562.65</td>
+<td></td>
+</tr>
+<tr>
+<td>Notice period</td>
+<td>90 days</td>
+<td>90 days because the total exceeds 10%</td>
+</tr>
+<tr>
+<td>Latest service date, hand-delivered</td>
+<td>November 6, 2026</td>
+<td>Civ. Code Sec. 827(b)</td>
+</tr>
+<tr>
+<td>Latest service date, mailed</td>
+<td>November 1, 2026</td>
+<td>Civ. Code Sec. 827(b) plus 5 days</td>
+</tr>
+<tr>
+<td>New anniversary date after this increase</td>
+<td>February 4</td>
+<td>The effective date becomes the new anniversary date</td>
+</tr>
+</tbody></table></div>
+<div class="note warn"><span class="t">Assessment</span><p><b>Not recommended, and it cannot be done for an earlier date.</b> Serving a 90-day notice today gives an effective date of February 4, 2027. That changes the anniversary date, and because the 1.6% that became available on June 1, 2026 has not yet completed 12 months, it is <b>permanently forfeited</b>. The arithmetic happens to land on the same total of 13.1% (11.5% banked plus the 1.6% now in effect) and the same $412.65, but the owner gives up the additional annual rate that Scenario S1 would add on June 1, 2027, and permanently moves the anniversary off June 1. Scenario S1 strictly dominates. <span class="srclist">Source: <a href="https://www.sf.gov/learn-about-rent-increases-san-francisco" target="_blank" rel="noopener noreferrer" title="Learn about rent increases in San Francisco — SF Rent Board (sf.gov)">S3</a> &middot; <a href="https://www.sf.gov/reports--december-2022--rent-board-rules-and-regulations-part-iv-rent-increases-not-requiring" target="_blank" rel="noopener noreferrer" title="Rent Board Rules and Regulations, Part IV - Rent Increases Not Requiring Approval — SF Rent Board (sf.gov) - official regulation text">S5</a></span></p></div>
+
+
+<h3>Unit B &mdash; the phase-in question</h3>
+<div class="note warn"><span class="t">A 13.1% increase is lawful but it is not &lsquo;normal&rsquo;</span><p>Nothing in the Ordinance caps a properly banked total: the official page states there is <b>no limit</b> on how much can be banked back to April 1, 1982, and that banked increases do not expire during a tenancy. So 13.1% plus the then-current annual rate is lawful. But it is a one-step recovery of seven years of forbearance, it requires a 90-day notice, and it is the single largest discretionary decision in this file.</p><p>The rules expressly permit taking less: &lsquo;A landlord does not have to impose the maximum allowed increase. If only part of the allowable increase is used, the rest is banked.&rsquo; A phase-in therefore has a clear official basis. What the official material does <b>not</b> state is how a retained remainder interacts with a base rent that has already risen, and Rule 4.12 forbids compounding banked increases. Because that interaction is not documented in an official source, <b>no phased dollar figures are published on this site</b>. Obtain a Rent Board counselor&rsquo;s confirmation (415-252-4600) or a written legal opinion before serving a phase-in notice. <span class="srclist">Source: <a href="https://www.sf.gov/information--banked-rent-increases" target="_blank" rel="noopener noreferrer" title="Banked rent increases — SF Rent Board (sf.gov)">S4</a> &middot; <a href="https://www.sf.gov/reports--december-2022--rent-board-rules-and-regulations-part-iv-rent-increases-not-requiring" target="_blank" rel="noopener noreferrer" title="Rent Board Rules and Regulations, Part IV - Rent Increases Not Requiring Approval — SF Rent Board (sf.gov) - official regulation text">S5</a> &middot; <a href="https://www.sf.gov/learn-about-rent-increases-san-francisco" target="_blank" rel="noopener noreferrer" title="Learn about rent increases in San Francisco — SF Rent Board (sf.gov)">S3</a></span></p></div>
+
+<h3>Decision required</h3>
+<div class="tw"><table>
+<caption>Decision required</caption>
+<thead><tr>
+<th>Unit</th>
+<th>Recommended</th>
+<th>Alternative</th>
+<th>Deadline</th>
+</tr></thead><tbody>
+<tr>
+<td>Unit A</td>
+<td><b>S1</b> &mdash; 3.0% effective February 1, 2027 &rarr; $4,114.85</td>
+<td>S3 &mdash; 1.6% only, leaving 1.4% banked</td>
+<td>Serve by <b>January 2, 2027</b> (December 28, 2026 if mailed)</td>
+</tr>
+<tr>
+<td>Unit B</td>
+<td><b>S1</b> &mdash; 13.1% plus the unpublished 2027-28 annual rate, effective June 1, 2027 &rarr; at least $3,562.65</td>
+<td>A partial increase on the same date &mdash; amounts not published, see the phase-in note above</td>
+<td>Serve by <b>March 3, 2027</b> (February 26, 2027 if mailed)</td>
+</tr>
+<tr>
+<td>Both units</td>
+<td>Clear the two hard gates first: confirm the rent increase license, and confirm the banking maturity rule with a Rent Board counselor</td>
+<td>&mdash;</td>
+<td>Before any notice is served</td>
+</tr>
+</tbody></table></div>
+
+  </div>
+</div>
+</div>
+</body>
+</html>

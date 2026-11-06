@@ -1,0 +1,50 @@
+name: verify
+
+on:
+  push:
+    branches: [main, "arena/**"]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Calculation self-tests against the four official Rent Board worked examples
+        run: python3 tools/calc.py
+
+      - name: Rebuild the site
+        run: python3 tools/build_site.py
+
+      - name: Confirm the committed site matches the generator output
+        # pages/audit.html embeds the commit log and file sizes, so it is
+        # expected to differ from the previously committed copy. Everything
+        # else must be byte-identical, which proves no figure was hand-edited.
+        run: |
+          if ! git diff --exit-code -- . ':(exclude)pages/audit.html'; then
+            echo "::error::Generated site is out of date. Run 'python3 tools/calc.py && python3 tools/build_site.py' and commit the result."
+            exit 1
+          fi
+
+      - name: Check every internal and external link
+        run: python3 tools/check_links.py --json docs/verification/link-check.json
+
+      - name: Upload link report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: link-check-report
+          path: docs/verification/link-check.json
+          if-no-files-found: ignore

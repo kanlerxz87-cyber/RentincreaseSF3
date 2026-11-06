@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tenant-advocate red team | SF Rent Increase Dossier</title>
+<meta name="description" content="Every argument a San Francisco tenant lawyer would run against these increases, and the documented answer to each.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+<div class="shell">
+<nav class="side" aria-label="Sections">
+  <div class="brand">
+    <h1>SF Rent Increase Dossier</h1>
+    <p>Two rent-controlled units &middot; Outer Sunset, San Francisco 94122<br>
+       Analysis date November 6, 2026</p>
+  </div>
+<div class="navgroup"><div class="gt">Overview</div>
+<a class="nl" href="../index.html">Dashboard</a>
+<a class="nl" href="executive-summary.html">Executive Summary</a>
+<a class="nl" href="methodology.html">Methodology & Verification</a>
+</div>
+<div class="navgroup"><div class="gt">Governing law</div>
+<a class="nl" href="law-local.html">San Francisco (local)</a>
+<a class="nl" href="law-state.html">California (state)</a>
+<a class="nl" href="law-federal.html">Federal</a>
+</div>
+<div class="navgroup"><div class="gt">Data & findings</div>
+<a class="nl" href="rates.html">Official rates & CPI</a>
+<a class="nl" href="units.html">Unit dossiers</a>
+<a class="nl" href="scenarios.html">Increase scenarios</a>
+</div>
+<div class="navgroup"><div class="gt">Practice & risk</div>
+<a class="nl" href="notice-guide.html">Notice procedure & reasons</a>
+<a class="nl" href="practices.html">Corporate vs individual</a>
+<a class="nl" href="fair-housing.html">One unit or both?</a>
+<a class="nl active" href="red-team.html">Tenant-advocate red team</a>
+</div>
+<div class="navgroup"><div class="gt">Assurance</div>
+<a class="nl" href="sources.html">Source register</a>
+<a class="nl" href="flagged.html">Flagged for review</a>
+<a class="nl" href="audit.html">Repo audit & log</a>
+</div>
+  <div class="foot">
+    Every value traces to an official source.<br>
+    Unconfirmed values are left blank.<br>
+    <a href="flagged.html" style="color:#8fb8dd">15 items flagged for review</a>
+  </div>
+</nav>
+<div class="main">
+  <div class="topbar"><div class="wrap">
+    <div class="crumb">Practice &amp; risk &rsaquo; <b>Tenant-advocate red team</b></div>
+    <div><span class="pill priv">Privacy: all tenant names and unit designations are pseudonymised. Dates and dollar amounts are unchanged.</span> <span class="pill date">As of November 6, 2026</span></div>
+  </div></div>
+  <div class="wrap">
+
+<h2 class="pg">Red team: would this survive a San Francisco tenant lawyer?</h2>
+<p class="lede">San Francisco is the most tenant-protective jurisdiction in California. A tenant here can obtain free
+legal counsel, file a free petition with the Rent Board, and have an Administrative Law Judge determine the lawful
+rent from the complete rent history. This page assumes that happens and works backwards from it.</p>
+
+<div class="note "><span class="t">The adversary</span><p>The Rent Board publishes an official referral listing of free tenant-side services, including Bay Area Legal Aid, Housing Rights Committee of San Francisco, Eviction Defense Collaborative, SF Tenants Union, Causa Justa :: Just Cause, Tenderloin Housing Clinic, Open Door Legal, Advancing Justice-Asian Law Caucus, Legal Assistance to the Elderly, Chinatown CDC and the SRO Collaboratives. The Board also states that no lawyer is needed to file a petition, and that it cannot refer to individual attorneys. Assume the tenant is represented and is competent. <span class="srclist">Source: <a href="https://www.sf.gov/information/rent-board-referral-listing" target="_blank" rel="noopener noreferrer" title="Rent Board Referral Listing (free tenant legal services) — SF Rent Board (sf.gov)">S15</a> &middot; <a href="https://www.sf.gov/information--tenant-petitions" target="_blank" rel="noopener noreferrer" title="Tenant petitions — SF Rent Board (sf.gov)">S14</a></span></p></div>
+
+<h3>Attack surface</h3>
+<div class="tw"><table>
+<caption>Fifteen attack vectors, modelled against the file as it stands</caption>
+<thead><tr>
+<th>#</th>
+<th>What the tenant&rsquo;s representative will argue</th>
+<th>Official basis for the argument</th>
+<th>Position on the facts as supplied</th>
+<th>Residual risk</th>
+<th>Mitigation</th>
+</tr></thead><tbody>
+<tr>
+<td>1</td>
+<td>&lsquo;You were not licensed when the increase took effect, so the whole increase is null and void and we want a refund.&rsquo;</td>
+<td>Sec. 37.15 and the Housing Inventory rules: a current rent increase license must be on file on the effective date or the notice is not enforceable; a tenant may search the portal and file Form 361.</td>
+<td><span class="srclist">Source: <a href="https://www.sf.gov/rent-board-housing-inventory" target="_blank" rel="noopener noreferrer" title="The Rent Board Housing Inventory (rent increase license) — SF Rent Board (sf.gov)">S8</a> &middot; <a href="https://www.sf.gov/notice-of-owner-noncompliance-with-housing-inventory" target="_blank" rel="noopener noreferrer" title="Notice of Owner Noncompliance with Housing Inventory — SF Rent Board (sf.gov)">S9</a> &middot; <a href="https://media.api.sf.gov/documents/600_Ordinance_11-24-24.pdf" target="_blank" rel="noopener noreferrer" title="Document 600 - Chapter 37, Residential Rent Stabilization and Arbitration Ordinance (compiled, amended 11/24/2024) — City & County of San Francisco (sf.gov PDF)">S6</a> &middot; <a href="https://www.sf.gov/information--tenant-petitions" target="_blank" rel="noopener noreferrer" title="Tenant petitions — SF Rent Board (sf.gov)">S14</a></span></td>
+<td><span class="b bad">HIGH &mdash; license status unknown</span></td>
+<td>Confirm and, if necessary, file at portal.sfrb.org before serving. This is the single largest exposure in the file because it is independent of the arithmetic.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>&lsquo;Your 13.1% banked total is wrong: nothing banks until 24 full months have passed.&rsquo;</td>
+<td>The sf.gov <i>Banked rent increases</i> page says exactly that &mdash; and the Rent Board&rsquo;s own Rules and Regulations Sec. 4.12(a) says a full 12 months.</td>
+<td><span class="srclist">Source: <a href="https://www.sf.gov/information--banked-rent-increases" target="_blank" rel="noopener noreferrer" title="Banked rent increases — SF Rent Board (sf.gov)">S4</a> &middot; <a href="https://www.sf.gov/reports--december-2022--rent-board-rules-and-regulations-part-iv-rent-increases-not-requiring" target="_blank" rel="noopener noreferrer" title="Rent Board Rules and Regulations, Part IV - Rent Increases Not Requiring Approval — SF Rent Board (sf.gov) - official regulation text">S5</a> &middot; <a href="https://www.sf.gov/learn-about-rent-increases-san-francisco" target="_blank" rel="noopener noreferrer" title="Learn about rent increases in San Francisco — SF Rent Board (sf.gov)">S3</a></span></td>
+<td><span class="b warn">MODERATE &mdash; two official pages conflict</span></td>
+<td>Rely on the regulation, not the summary page; confirm with a counselor on 415-252-4600 before serving; the engine reproduces all four official worked examples under the 12-month rule, which is powerful corroboration. Consider a partial increase that is defensible under either reading.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>&lsquo;The notice is defective: it does not state the dollar amount, the percentage, the effective date, or which part is banked and from what dates.&rsquo;</td>
+<td>Sec. 37.3(b) and Rules Sec. 4.10(a) and 4.12(b) require each component to be identified.</td>
+<td><span class="srclist">Source: <a href="https://media.api.sf.gov/documents/600_Ordinance_11-24-24.pdf" target="_blank" rel="noopener noreferrer" title="Document 600 - Chapter 37, Residential Rent Stabilization and Arbitration Ordinance (compiled, amended 11/24/2024) — City & County of San Francisco (sf.gov PDF)">S6</a> &middot; <a href="https://www.sf.gov/reports--december-2022--rent-board-rules-and-regulations-part-iv-rent-increases-not-requiring" target="_blank" rel="noopener noreferrer" title="Rent Board Rules and Regulations, Part IV - Rent Increases Not Requiring Approval — SF Rent Board (sf.gov) - official regulation text">S5</a> &middot; <a href="https://www.sf.gov/learn-about-rent-increases-san-francisco" target="_blank" rel="noopener noreferrer" title="Learn about rent increases in San Francisco — SF Rent Board (sf.gov)">S3</a> &middot; <a href="https://www.sf.gov/information--banked-rent-increases" target="_blank" rel="noopener noreferrer" title="Banked rent increases — SF Rent Board (sf.gov)">S4</a></span></td>
+<td><span class="b ok">LOW if the model notice is used</span></td>
+<td>Use the model notice in <a href='notice-guide.html'>Notice procedure &amp; reasons</a>; keep a copy and proof of service.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>&lsquo;You gave 30 days when 90 were required.&rsquo;</td>
+<td>Civ. Code Sec. 827(b)(3)(A): 90 days where the increase exceeds 10 percent of the rent charged at any time in the prior 12 months, alone or combined.</td>
+<td><span class="srclist">Source: <a href="https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=827" target="_blank" rel="noopener noreferrer" title="Cal. Civil Code Sec. 827 - notice of change in terms of tenancy — California Legislative Information (leginfo.legislature.ca.gov)">S23</a> &middot; <a href="https://www.sf.gov/learn-about-rent-increases-san-francisco" target="_blank" rel="noopener noreferrer" title="Learn about rent increases in San Francisco — SF Rent Board (sf.gov)">S3</a></span></td>
+<td><span class="b ok">LOW &mdash; Unit B is correctly calendared at 90 days</span></td>
+<td>Serve Unit B by March 3, 2027 (February 26, 2027 if mailed). Unit A is 3.0%, so 30 days applies.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>&lsquo;Your base rent is wrong.&rsquo;</td>
+<td>The increase must be computed on base rent, which includes housing services and excludes passthroughs; the owner bears the burden in a Form 354 determination of lawful rent.</td>
+<td><span class="srclist">Source: <a href="https://www.sf.gov/learn-about-rent-increases-san-francisco" target="_blank" rel="noopener noreferrer" title="Learn about rent increases in San Francisco — SF Rent Board (sf.gov)">S3</a> &middot; <a href="https://sf.gov/information/allowable-rent-increases" target="_blank" rel="noopener noreferrer" title="Allowable rent increases — SF Rent Board (sf.gov)">S16</a> &middot; <a href="https://www.sf.gov/information--tenant-petitions" target="_blank" rel="noopener noreferrer" title="Tenant petitions — SF Rent Board (sf.gov)">S14</a> &middot; <a href="https://sf.gov/report-unlawful-rent-increase-or-request-review-your-rent-history" target="_blank" rel="noopener noreferrer" title="Report an unlawful rent increase or request a review of your rent history — SF Rent Board (sf.gov)">S18</a></span></td>
+<td><span class="b warn">MODERATE &mdash; composition not supplied</span></td>
+<td>Assemble every lease, notice and ledger. If parking or storage is included, confirm it is part of base rent; if any passthrough is included, remove it and recompute. Flag F7.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>&lsquo;You raised the rent because a new occupant moved in.&rsquo;</td>
+<td>Sec. 37.3(a)(11)(A) prohibits it notwithstanding a contrary lease term; the Rent Board calls it an unlawful increase and says any agreement to pay it is void and unenforceable and refundable on petition.</td>
+<td><span class="srclist">Source: <a href="https://media.api.sf.gov/documents/600_Ordinance_11-24-24.pdf" target="_blank" rel="noopener noreferrer" title="Document 600 - Chapter 37, Residential Rent Stabilization and Arbitration Ordinance (compiled, amended 11/24/2024) — City & County of San Francisco (sf.gov PDF)">S6</a> &middot; <a href="https://www.sf.gov/learn-about-rent-increases-san-francisco" target="_blank" rel="noopener noreferrer" title="Learn about rent increases in San Francisco — SF Rent Board (sf.gov)">S3</a> &middot; <a href="https://www.sf.gov/information--replacement-roommates" target="_blank" rel="noopener noreferrer" title="Replacement of Roommates — SF Rent Board (sf.gov)">S11</a></span></td>
+<td><span class="b warn">MODERATE for Unit A &mdash; an occupant change did occur</span></td>
+<td>The timing is the risk, not the law: Unit A&rsquo;s occupant change was April 1, 2026 and the recommended increase is February 1, 2027. Record in the file, contemporaneously, that the increase is the statutory annual rate plus a matured banked rate and has nothing to do with occupancy. Do not increase Unit A before the 1.4% matures on February 1, 2027.</td>
+</tr>
+<tr>
+<td>7</td>
+<td>&lsquo;An original tenant never left, so you cannot reprice this unit to market.&rsquo;</td>
+<td>Civ. Code Sec. 1954.53(d)(3) excludes partial changes in occupancy where an occupant under the agreement with the owner remains in lawful possession; Sec. 1954.53(b) extends the initial rate to renewals for the entire period of occupancy; Rules 6.14 requires the <b>last</b> original occupant to vacate plus a timely written notice on each subsequent occupant; a co-tenant is never subject to it.</td>
+<td><span class="srclist">Source: <a href="https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=1954.53" target="_blank" rel="noopener noreferrer" title="Cal. Civil Code Sec. 1954.53 - Costa-Hawkins: initial rental rate on vacancy — California Legislative Information (leginfo.legislature.ca.gov)">S25</a> &middot; <a href="https://www.sf.gov/information--rent-increases-under-section-614-and-costa-hawkins/" target="_blank" rel="noopener noreferrer" title="Rent Increases Under Section 6.14 And Costa-Hawkins — SF Rent Board (sf.gov)">S12</a> &middot; <a href="https://www.sf.gov/information--replacement-roommates" target="_blank" rel="noopener noreferrer" title="Replacement of Roommates — SF Rent Board (sf.gov)">S11</a> &middot; <a href="https://media.api.sf.gov/documents/600_Ordinance_11-24-24.pdf" target="_blank" rel="noopener noreferrer" title="Document 600 - Chapter 37, Residential Rent Stabilization and Arbitration Ordinance (compiled, amended 11/24/2024) — City & County of San Francisco (sf.gov PDF)">S6</a></span></td>
+<td><span class="b ok">LOW &mdash; no market reset is claimed anywhere in this file</span></td>
+<td>Do not serve a Sec. 6.14 or Costa-Hawkins notice on these facts. Flag F6 records the unresolved co-tenant/subtenant question.</td>
+</tr>
+<tr>
+<td>8</td>
+<td>&lsquo;You used a pricing algorithm.&rsquo;</td>
+<td>Sec. 37.10C prohibits the sale or use of algorithmic devices to set rents or manage occupancy levels for residential units (Ordinance 224-24, effective October 14, 2024).</td>
+<td><span class="srclist">Source: <a href="https://media.api.sf.gov/documents/600_Ordinance_11-24-24.pdf" target="_blank" rel="noopener noreferrer" title="Document 600 - Chapter 37, Residential Rent Stabilization and Arbitration Ordinance (compiled, amended 11/24/2024) — City & County of San Francisco (sf.gov PDF)">S6</a></span></td>
+<td><span class="b ok">LOW &mdash; none is used</span></td>
+<td>Compute from document 571 and Rule 4.12 only, and keep the worksheet. The calculation in this repository is deterministic and reproducible, which is the point.</td>
+</tr>
+<tr>
+<td>9</td>
+<td>&lsquo;The increase is discriminatory.&rsquo;</td>
+<td>Fair Housing Act, 42 U.S.C. Sec. 3601 et seq., and the California Civil Rights Act; California protects a longer list than federal law, including source of income, immigration status, primary language and age. The Rent Board does not adjudicate these claims &mdash; they go to the CRD, HUD or court.</td>
+<td><span class="srclist">Source: <a href="https://www.justice.gov/crt/fair-housing-act-1" target="_blank" rel="noopener noreferrer" title="The Fair Housing Act — U.S. Department of Justice, Civil Rights Division">S34</a> &middot; <a href="https://calcivilrights.ca.gov/housing/" target="_blank" rel="noopener noreferrer" title="Housing Discrimination (Fair Employment and Housing Act / California Civil Rights Act) — California Civil Rights Department (calcivilrights.ca.gov)">S33</a> &middot; <a href="https://www.sf.gov/information--tenant-petitions" target="_blank" rel="noopener noreferrer" title="Tenant petitions — SF Rent Board (sf.gov)">S14</a></span></td>
+<td><span class="b warn">MODERATE for Unit B &mdash; occupant characteristics unknown</span></td>
+<td>Adopt one written policy for both units; document the objective basis before serving; never cite tenant conduct; see <a href='fair-housing.html'>One unit or both?</a></td>
+</tr>
+<tr>
+<td>10</td>
+<td>&lsquo;The increase is retaliatory.&rsquo;</td>
+<td>Retaliation for filing a complaint, requesting an accommodation, or otherwise protecting one&rsquo;s rights is expressly unlawful in California.</td>
+<td><span class="srclist">Source: <a href="https://calcivilrights.ca.gov/housing/" target="_blank" rel="noopener noreferrer" title="Housing Discrimination (Fair Employment and Housing Act / California Civil Rights Act) — California Civil Rights Department (calcivilrights.ca.gov)">S33</a> &middot; <a href="https://www.sf.gov/information--tenant-petitions" target="_blank" rel="noopener noreferrer" title="Tenant petitions — SF Rent Board (sf.gov)">S14</a></span></td>
+<td><span class="b ok">LOW &mdash; no complaint or accommodation request was reported</span></td>
+<td>Confirm in writing that no petition, complaint, repair demand or accommodation request preceded the decision. If one did, get legal advice before serving.</td>
+</tr>
+<tr>
+<td>11</td>
+<td>&lsquo;This is harassment &mdash; you are trying to force us out.&rsquo;</td>
+<td>Sec. 37.10B (Tenant Harassment) and Sec. 37.9F (Circumvention of Tenant Protections) are part of Chapter 37. The Rent Board cannot hear the claim, which means it proceeds elsewhere.</td>
+<td><span class="srclist">Source: <a href="https://media.api.sf.gov/documents/600_Ordinance_11-24-24.pdf" target="_blank" rel="noopener noreferrer" title="Document 600 - Chapter 37, Residential Rent Stabilization and Arbitration Ordinance (compiled, amended 11/24/2024) — City & County of San Francisco (sf.gov PDF)">S6</a> &middot; <a href="https://www.sf.gov/information--tenant-petitions" target="_blank" rel="noopener noreferrer" title="Tenant petitions — SF Rent Board (sf.gov)">S14</a></span></td>
+<td><span class="b ok">LOW if the recommended scenarios are followed</span></td>
+<td>Keep communications written, factual and free of any reference to leaving. Never tie an increase to occupancy, complaints or conduct.</td>
+</tr>
+<tr>
+<td>12</td>
+<td>&lsquo;Housing services were reduced.&rsquo;</td>
+<td>Parking, driveways, storage, laundry rooms, decks, patios and gardens may not be severed without just cause, and any severance, substantial reduction or removal must be offset by a corresponding rent reduction; a reduction in housing services without a corresponding rent reduction is itself a rent increase.</td>
+<td><span class="srclist">Source: <a href="https://media.api.sf.gov/documents/600_Ordinance_11-24-24.pdf" target="_blank" rel="noopener noreferrer" title="Document 600 - Chapter 37, Residential Rent Stabilization and Arbitration Ordinance (compiled, amended 11/24/2024) — City & County of San Francisco (sf.gov PDF)">S6</a></span></td>
+<td><span class="b ok">LOW &mdash; no reduction was reported</span></td>
+<td>Do not alter services in connection with an increase. If a service changes, reduce rent correspondingly.</td>
+</tr>
+<tr>
+<td>13</td>
+<td>&lsquo;You did not pay the Rent Board fee, or you did not pay security-deposit interest.&rsquo;</td>
+<td>$59.00 per dwelling unit by March 1, with monthly 5% penalties capped at 15%; deposit interest of 4.2% for 2026-27. The Rent Board does not adjudicate deposit disputes, so those go to court.</td>
+<td><span class="srclist">Source: <a href="https://www.sf.gov/rent-board-fee" target="_blank" rel="noopener noreferrer" title="The Rent Board Fee — SF Rent Board (sf.gov)">S10</a> &middot; <a href="https://www.sf.gov/reports--current-rates-including-rent-increase-relocation-sec-deposit" target="_blank" rel="noopener noreferrer" title="Current Rates, including Rent Increase, Relocation, Sec. Deposit — SF Rent Board (sf.gov)">S1</a> &middot; <a href="https://www.sf.gov/information--tenant-petitions" target="_blank" rel="noopener noreferrer" title="Tenant petitions — SF Rent Board (sf.gov)">S14</a></span></td>
+<td><span class="b warn">MODERATE &mdash; no records supplied</span></td>
+<td>Pay both and keep receipts. Note that 50% of the fee ($29.50) is recoverable from a tenant in occupancy as of November 1 &mdash; a small legitimate offset. Flag F8.</td>
+</tr>
+<tr>
+<td>14</td>
+<td>&lsquo;Your building is not actually rent controlled, and your rent history is wrong.&rsquo;</td>
+<td>Coverage turns on the construction date; sf.gov directs owners to the Property Information Map. Tenants may request a determination of lawful rent on Form 354 or a rent-history review.</td>
+<td><span class="srclist">Source: <a href="https://www.sf.gov/learn-about-san-francisco-rental-laws" target="_blank" rel="noopener noreferrer" title="Learn about San Francisco rental laws — SF Rent Board (sf.gov)">S7</a> &middot; <a href="https://sfplanninggis.org/PIM/" target="_blank" rel="noopener noreferrer" title="San Francisco Property Information Map (PIM) — SF Dept. of Building Inspection / Planning (sfplanninggis.org)">S21</a> &middot; <a href="https://sf.gov/report-unlawful-rent-increase-or-request-review-your-rent-history" target="_blank" rel="noopener noreferrer" title="Report an unlawful rent increase or request a review of your rent history — SF Rent Board (sf.gov)">S18</a> &middot; <a href="https://www.sf.gov/information--tenant-petitions" target="_blank" rel="noopener noreferrer" title="Tenant petitions — SF Rent Board (sf.gov)">S14</a></span></td>
+<td><span class="b warn">MODERATE &mdash; year not independently verified</span></td>
+<td>Verify the construction date and the unit type on the Property Information Map. A 1940 building is presumptively covered; confirming separately-alienable status matters more. Flag F9.</td>
+</tr>
+<tr>
+<td>15</td>
+<td>&lsquo;You compounded the banked percentages, or you rounded up.&rsquo;</td>
+<td>Rule 4.12: banked increases are added, not compounded, and not rounded up. Increases cannot be rounded up to the nearest dollar.</td>
+<td><span class="srclist">Source: <a href="https://www.sf.gov/reports--december-2022--rent-board-rules-and-regulations-part-iv-rent-increases-not-requiring" target="_blank" rel="noopener noreferrer" title="Rent Board Rules and Regulations, Part IV - Rent Increases Not Requiring Approval — SF Rent Board (sf.gov) - official regulation text">S5</a> &middot; <a href="https://www.sf.gov/learn-about-rent-increases-san-francisco" target="_blank" rel="noopener noreferrer" title="Learn about rent increases in San Francisco — SF Rent Board (sf.gov)">S3</a> &middot; <a href="https://www.sf.gov/information--annual-rent-increases" target="_blank" rel="noopener noreferrer" title="Annual rent increases — SF Rent Board (sf.gov)">S17</a></span></td>
+<td><span class="b ok">LOW &mdash; the engine is asserted against all four official worked examples</span></td>
+<td>Keep the calculation worksheet produced by <code>python3 tools/calc.py</code> in the unit file.</td>
+</tr>
+</tbody></table></div>
+
+<h3>The file a representative will ask for</h3>
+<div class="tw"><table>
+<caption>The file a representative will ask for</caption>
+<thead><tr>
+<th>Document</th>
+<th>Why they will ask</th>
+<th>Status in this file</th>
+</tr></thead><tbody>
+<tr>
+<td>The original rental agreement for each unit</td>
+<td>Establishes the base rent and the tenancy start date.</td>
+<td><span class="b warn">Owner-held &mdash; not supplied</span></td>
+</tr>
+<tr>
+<td>Every prior rent increase notice served</td>
+<td>Establishes the anniversary date and whether any increase was ever imposed. None was reported.</td>
+<td><span class="b warn">Reported as none &mdash; unverified</span></td>
+</tr>
+<tr>
+<td>The complete rent ledger</td>
+<td>Reconciles base rent against passthroughs and any Rent Board fee recovery.</td>
+<td><span class="b warn">Owner-held &mdash; not supplied</span></td>
+</tr>
+<tr>
+<td>Proof of a current rent increase license on the effective date</td>
+<td>Decides whether the increase is enforceable at all.</td>
+<td><span class="b bad">Unknown &mdash; flag F4</span></td>
+</tr>
+<tr>
+<td>Housing Inventory filing records</td>
+<td>Confirms what base rent and occupancy history is already PUBLIC.</td>
+<td><span class="b warn">Owner-held &mdash; not supplied</span></td>
+</tr>
+<tr>
+<td>Rent Board fee receipts</td>
+<td>Supports any 50% recovery and shows good faith.</td>
+<td><span class="b warn">Owner-held &mdash; not supplied</span></td>
+</tr>
+<tr>
+<td>Security-deposit interest payment records</td>
+<td>A separate, commonly raised claim that goes to court.</td>
+<td><span class="b warn">Owner-held &mdash; not supplied</span></td>
+</tr>
+<tr>
+<td>The calculation worksheet</td>
+<td>Shows the percentages came from document 571 and were added, not compounded.</td>
+<td><span class="b ok">Produced by <code>tools/calc.py</code></span></td>
+</tr>
+<tr>
+<td>Any Sec. 6.14 notice ever served on Unit A</td>
+<td>Decides whether a market-reset theory was ever preserved. It is not being relied on.</td>
+<td><span class="b warn">Unknown &mdash; flag F6</span></td>
+</tr>
+<tr>
+<td>The written rent-increase policy</td>
+<td>The best single answer to a discrimination inquiry.</td>
+<td><span class="b warn">Recommended &mdash; not yet created</span></td>
+</tr>
+</tbody></table></div>
+
+<h3>Verdict</h3>
+<div class="note ok"><span class="t">Conditional pass</span><p>On the facts as supplied, the recommended increases are <b>defensible</b>: each is the published annual allowable increase plus properly matured banked amounts, computed on base rent, added rather than compounded, truncated rather than rounded, served with the correct notice period, landing on the existing anniversary date, and untainted by any occupancy-based, algorithmic, retaliatory or discriminatory motive. The differential treatment of the two units is produced by the Ordinance itself and is fully documented.</p><p><b>Three conditions must be satisfied first.</b> They are not formalities &mdash; each can defeat an otherwise correct increase:</p><ol><li><b>Confirm a current rent increase license on the effective date for each unit.</b> Without it the entire increase is null and void regardless of the arithmetic. This is the highest-residual-risk item in the file.</li><li><b>Confirm the banking maturity rule with a Rent Board counselor</b>, because two official sf.gov pages give different answers (12 versus 24 months). If the 24-month reading were applied, part of Unit B&rsquo;s 13.1% would fall away &mdash; which is a reason to consider a partial increase that is defensible under either reading.</li><li><b>Assemble the rent history, ledger and payment records</b>, and confirm base-rent composition and the building&rsquo;s construction date and unit type.</li></ol><p>And one drafting caution: Unit B&rsquo;s total already exceeds 10%, so the 90-day clock is fixed regardless of what the unpublished 2027-28 annual rate turns out to be. Serve by March 3, 2027, or February 26, 2027 if mailing.</p></div>
+
+<h3>If a petition arrives</h3>
+<ol class="tight">
+<li>Do not ignore it. The Rent Board usually resolves matters by mediation, otherwise by arbitration before an
+Administrative Law Judge. Filing is free for the tenant. <span class="srclist">Source: <a href="https://www.sf.gov/information--tenant-petitions" target="_blank" rel="noopener noreferrer" title="Tenant petitions — SF Rent Board (sf.gov)">S14</a></span></li>
+<li>File Form 302 (Landlord's Response to Tenant Petition) within the stated time. <span class="srclist">Source: <a href="https://www.sf.gov/rent-board-forms-forms-center/" target="_blank" rel="noopener noreferrer" title="Rent Board Forms Center — SF Rent Board (sf.gov)">S19</a></span></li>
+<li>Bring the worksheet, the rent history, the notice, the proof of service and the license confirmation.</li>
+<li>Remember the jurisdictional split: the Rent Board decides the <b>amount</b> of rent. Harassment, discrimination,
+retaliation and security deposits are decided in court or another forum. <span class="srclist">Source: <a href="https://www.sf.gov/information--tenant-petitions" target="_blank" rel="noopener noreferrer" title="Tenant petitions — SF Rent Board (sf.gov)">S14</a> &middot; <a href="https://calcivilrights.ca.gov/housing/" target="_blank" rel="noopener noreferrer" title="Housing Discrimination (Fair Employment and Housing Act / California Civil Rights Act) — California Civil Rights Department (calcivilrights.ca.gov)">S33</a> &middot; <a href="https://www.justice.gov/crt/fair-housing-act-1" target="_blank" rel="noopener noreferrer" title="The Fair Housing Act — U.S. Department of Justice, Civil Rights Division">S34</a></span></li>
+<li>A good-faith overage within half of one percent of the prior base rent may be readjusted rather than voided.
+<span class="srclist">Source: <a href="https://www.sf.gov/reports--december-2022--rent-board-rules-and-regulations-part-iv-rent-increases-not-requiring" target="_blank" rel="noopener noreferrer" title="Rent Board Rules and Regulations, Part IV - Rent Increases Not Requiring Approval — SF Rent Board (sf.gov) - official regulation text">S5</a></span></li>
+<li>Free landlord counselling is available on 415-252-4600, weekdays 9am-12pm and 1pm-4pm. <span class="srclist">Source: <a href="https://www.sf.gov/learn-about-san-francisco-rental-laws" target="_blank" rel="noopener noreferrer" title="Learn about San Francisco rental laws — SF Rent Board (sf.gov)">S7</a></span></li>
+</ol>
+
+  </div>
+</div>
+</div>
+</body>
+</html>
