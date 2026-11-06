@@ -1,17 +1,19 @@
 # RentincreaseSF3
 
 **Analysis of lawful, reasonable, and normal rental increases** for a rent-controlled, two-unit
-residential building constructed in **1940** in San Francisco's Outer Sunset (ZIP 94122).
+residential building constructed in **1940** in San Francisco (specific location withheld for
+privacy — all cited rules apply citywide).
 
-## Three live editions (GitHub Pages), all anonymized
+## Four live editions (GitHub Pages), all anonymized
 
 | Edition | URL | What it is |
 |---|---|---|
 | **Core site** (merged via [PR #2](https://github.com/kanlerxz87-cyber/RentincreaseSF3/pull/2)) | <https://kanlerxz87-cyber.github.io/RentincreaseSF3/> | Landing dashboard, executive summary, units, laws & caps, process & notice, flagged-for-review |
 | **Full verification edition** (PR #3) | <https://kanlerxz87-cyber.github.io/RentincreaseSF3/docs/> | Same subject, deeper verification: cents-exact math incl. **banked increases** (Unit 2: up to 11.5%/13.1%), Housing Inventory **rent-increase license** requirement, full 1982–2027 SF rate table, FHA/FEHA/SF discrimination analysis, corporate vs. individual landlord research, sources & verification register, repo review, 17-item flagged register |
+| **Dashboard edition** (PR #9) | <https://kanlerxz87-cyber.github.io/RentincreaseSF3/dashboard/> | Dashboard-style landing + 9 categorized subpages: executive summary, anonymized unit register, full 1982–2027 rate table with worked Unit A/Unit B calculations, step-by-step notice procedure (license → content → 30/90 days), local/state/federal framework, corporate-vs-individual practices (official findings only), one-unit-vs-both analysis with tenant-lawyer checklist, 8-item flagged register, 22-source register |
 | **Third edition — audit trail** (PR #5) | <https://kanlerxz87-cyber.github.io/RentincreaseSF3/review/> | Independent rebuild with a per-anniversary ledger (cents-exact), 21-row federal/state/local rule table, notice deadline planner with a model letter, one-unit-or-both fair-housing matrix, 15-point tenant-lawyer stress test, 27-source register with quoted passages, and a 27-assertion verification log (`research/verification-log.md`). Also flags the **12-vs-24-month banking conflict** between official Rent Board pages |
 
-Both are static HTML, anonymized: occupant names/initials never appear; dates and dollar amounts are unchanged.
+All editions are static HTML, anonymized: occupant names/initials never appear; dates and dollar amounts are unchanged.
 
 - **Not legal advice.** Consult the SF Rent Board (415-252-4600) and a California attorney before acting.
 - **Watch item:** SF Legistar File #261020 (pending, **not law** as of 2026-11-06) would cap combined banked + capital-improvement increases at 10%/yr for three years — re-check before serving any banked notice.

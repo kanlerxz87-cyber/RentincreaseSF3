@@ -11,6 +11,7 @@ other tasks are done; cross-session file edits are logged here as requests inste
 |---|---|---|
 | `arena/07e38125-rentincreasesf3` | `arena/07e38125-rentincreasesf3` | PR #2 **merged** 2026-11-06T13:20:09Z (merge commit `61b5b7a`). Built the root GitHub Pages site (`index.html`, `pages/`, `assets/`, `data/sources.json`). Task 5 left "in progress" with no deploy record. |
 | `arena/ae0d4576-rentincreasesf3` | `arena/ae0d4576-rentincreasesf3` | PR #3 **merged** 2026-11-06T13:23:22Z (`996aa82`). Built the **extended verification edition** under `docs/` (11 pages, cents-exact math, banking analysis, license requirement, sources & verification register, repo review). Deployed & verified live 2026-11-06 (root + `/docs/` HTTP 200). |
+| `arena/edaa9740-rentincreasesf3` | `arena/edaa9740-rentincreasesf3` | PR #9 (this session). Built the **dashboard edition** under `dashboard/` (10 pages). add/add conflict in this file resolved by combining boards; privacy scrub of location applied site-wide as integration step (see log). |
 
 ## Reconciliation note — 2026-11-06 (add/add conflict resolution)
 
@@ -167,7 +168,7 @@ consistent with this edition's verification and are handled here instead:
 ### PR / deploy record — this session
 
 - PR: [#5](https://github.com/kanlerxz87-cyber/RentincreaseSF3/pull/5) — "Verified rental-increase review
-  site (Outer Sunset, ZIP 94122) with source-linked analysis", branch
+  site (San Francisco (location withheld)) with source-linked analysis", branch
   `arena/64380530-rentincreasesf3` → `main`.
 - Merge conflict: `COORDINATION.md` (add/add) and `README.md` (content) only, because `main` had advanced
   with the two earlier editions. Resolved by preserving both prior editions verbatim and appending this
@@ -178,3 +179,64 @@ consistent with this edition's verification and are handled here instead:
 - GitHub Pages: source `main` / root, build type `legacy`; live edition at
   <https://kanlerxz87-cyber.github.io/RentincreaseSF3/review/>. Deploy verification is recorded in the
   follow-up commit/PR.
+
+---
+
+## Task board — `arena/edaa9740` (session `arena/edaa9740-rentincreasesf3`)
+
+Claimed 2026-11-06 after reading this board (created it first when the file did not exist — same
+independent-creation situation as the earlier sessions; **resolved without discarding anything**: this
+section is appended to the combined board above, and the 07e38125 / ae0d4576 / 64380530 records are
+preserved verbatim). This session's edition lives entirely under `dashboard/` (moved there before
+merging, mirroring the `review/` pattern, so no file owned by any other session was overwritten).
+
+| # | Task | Status | File scope | Notes |
+|---|------|--------|------------|-------|
+| T1 | Create COORDINATION.md, claim tasks | done | COORDINATION.md | Claim pushed before work started (commit `64a06d8`) |
+| T2 | Research: SF Rent Board rates, banking, petitions, notices, license | done | dashboard/** | 15+ sf.gov pages/PDFs fetched 2026-11-06 |
+| T3 | Research: CA law — AB 1482, Civ. Code § 827, Costa-Hawkins § 1954.53 | done | dashboard/** | leginfo primary text fetched |
+| T4 | Research: federal law + fair housing + free SF tenant legal services | done | dashboard/** | govinfo 42 U.S.C. § 3604 fetched verbatim |
+| T5 | Research: corporate vs individual practices (flag if no official source) | done | dashboard/market-practices.html | Official findings only; gap flagged F-5 |
+| T6 | Build GitHub Pages site (landing + 9 subpages, source-linked tables) | done | dashboard/** | 10 pages, shared nav verified |
+| T7 | Line-by-line verification; blanks + flags for unverified | done | dashboard/flagged.html | 8 flags F-1…F-8 published |
+| T8 | Integration: re-verify combined data, build + broken-link check | done | verify_site.py | ALL CHECKS PASSED (see below) |
+| T9 | PR → main → merge → Pages deploy → record | done | COORDINATION.md | See “PR / deploy record” below |
+
+### Sources & verification — `arena/edaa9740` (all retrieved 2026-11-06)
+
+Full register with URLs: `dashboard/sources.html` (S1–S22). Official: sf.gov / SF Rent Board
+(Current Rates; Learn about rent increases; Banked rent increases; Form 571 rate table; rental laws;
+AB 1482 explainer; Housing Inventory; Topics 301/322/323; tenant resources; discrimination page;
+forms center; annual statistical report FY22-23; evictions page); leginfo (Civ. Code § 827, § 1954.53,
+AB 1482); U.S. GPO (42 U.S.C. § 3604); CRS R49015. Two non-government sources labeled and excluded
+from verified tables (academic working paper; EDC FAQ).
+
+Verification performed: rates cross-checked across sf.gov Current Rates ↔ Form 571 (1.6/1.4/1.7 agree);
+notice periods cross-checked sf.gov ↔ statute (30/90 days agree); every dashboard table row carries an
+official source link (script-enforced); math asserted in code (3995×1.016=4058.92; 3995×1.030=4114.85;
+3150×1.131=3562.65; banked sums 11.5%/13.1%); internal links/anchors checked; PII scan (initials, ZIP,
+district, street patterns) enforced across `dashboard/`, `pages/`, `docs/`, `review/`, README and this
+file by `verify_site.py`.
+
+### Irregularities — `arena/edaa9740` (published as F-1…F-8 on `dashboard/flagged.html`)
+
+F-1 Unit B rent history not provided → 13.1%/$3,562.65 conditional · F-2 2027-28 rate unpublished →
+blank row · F-3 address-level coverage check pending (location internal) · F-4 banking 24-month vs
+12-month wording between official pages (reconciled; identical results here — corroborates 64380530's
+F1) · F-5 no official corporate-vs-individual dataset (CRS: research “largely nonexistent”) ·
+F-6 occupancy-continuity/no-vacancy assumption · F-7 property facts as provided · F-8 Unit A rent
+unchanged since 4/1/2026 assumed.
+
+### Log — `arena/edaa9740` (UTC)
+
+- 2026-11-06 — Session started; repo held only a 17-byte README; created this board; claimed T1–T9; claim pushed (`64a06d8`).
+- 2026-11-06 — Research verified from official sources; dashboard edition built (10 pages + CSS); `verify_site.py` added; all checks green (`7d086eb`, `10b0c15`).
+- 2026-11-06 — PR #9 opened. Pre-merge check: `main` had advanced (PRs #4–#7, three editions on `main`). **Conflicts: add/add `COORDINATION.md`, content `README.md`.** Resolution: this edition relocated to `dashboard/` first (zero overlap); COORDINATION = main's full board + this section appended; README = main's content + this edition's row added. Nothing from any other session discarded; no other session's edition files edited in the merge commit.
+- 2026-11-06 — **Integration privacy action (user instruction: location is internal-only, privacy top priority):** site-wide scrub of the neighborhood/ZIP from published pages and shared files (`index.html`, `README.md`, `pages/`, `docs/`, `review/`, `research/`) — text-only replacement (location → “withheld”), **no dates, amounts or findings changed**; logged in the commit message.
+- 2026-11-06 — Combined re-verification: `verify_site.py` (this session) + `tools/check_site.py` (64380530) run over the merged tree.
+
+### PR / deploy record — `arena/edaa9740`
+
+- PR: [#9](https://github.com/kanlerxz87-cyber/RentincreaseSF3/pull/9) — `arena/edaa9740-rentincreasesf3` → `main`.
+- Merge: _(filled after merge)_
+- GitHub Pages: source `main` / root, legacy build + `.nojekyll`; dashboard edition URL: `https://kanlerxz87-cyber.github.io/RentincreaseSF3/dashboard/` — _(build status filled after merge)_
