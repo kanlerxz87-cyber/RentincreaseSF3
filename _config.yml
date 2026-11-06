@@ -1,0 +1,9 @@
+# GitHub Pages (legacy build from branch root). No Jekyll processing needed:
+# these are pre-built static files. Keeping the default theme off so nothing
+# is injected into the generated HTML.
+theme: null
+plugins: []
+exclude:
+  - build.py
+  - verify.py
+  - data
