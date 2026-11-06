@@ -10,7 +10,7 @@ Session: `arena/07e38125-rentincreasesf3` (branch `arena/07e38125-rentincreasesf
 | 2 | Executive summary (anonymized) | done | arena/07e38125-rentincreasesf3 | `pages/executive-summary.html` |
 | 3 | Build GitHub Pages site (landing + subpages, tables w/ source links) | done | arena/07e38125-rentincreasesf3 | `index.html`, `pages/*.html`, `assets/style.css` |
 | 4 | Flagged-for-review page (unverified/irregular items) | done | arena/07e38125-rentincreasesf3 | `pages/flagged.html` |
-| 5 | Final integration: verify data line by line, build check, publish to Pages, PR + merge | in progress | arena/07e38125-rentincreasesf3 | all |
+| 5 | Final integration: verify data line by line, build check, publish to Pages, PR + merge | done | arena/07e38125-rentincreasesf3 | all |
 
 ## Log
 - 2026-11-06: Session started. Repo contained only README.md. COORDINATION.md created. Single-session run: all tasks claimed by this session to avoid conflicts.
