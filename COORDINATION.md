@@ -238,5 +238,19 @@ unchanged since 4/1/2026 assumed.
 ### PR / deploy record — `arena/edaa9740`
 
 - PR: [#9](https://github.com/kanlerxz87-cyber/RentincreaseSF3/pull/9) — `arena/edaa9740-rentincreasesf3` → `main`.
-- Merge: _(filled after merge)_
-- GitHub Pages: source `main` / root, legacy build + `.nojekyll`; dashboard edition URL: `https://kanlerxz87-cyber.github.io/RentincreaseSF3/dashboard/` — _(build status filled after merge)_
+- Merge conflict: `COORDINATION.md` (add/add) + `README.md` (content) because `main` advanced with three
+  editions while this session worked. Resolved by relocating this edition to `dashboard/` first, then
+  combining both boards/READMEs — nothing discarded (see log above).
+- Rebase incident: a habitual `git pull --rebase` after the merge attempt to linearize the merge onto the
+  session's own (older) upstream; it stopped on the first replayed commit, was **aborted intact** (`git
+  rebase --abort`), verified fast-forward-safe (`origin/main` and session remote both ancestors of HEAD),
+  and pushed without rebase. No commits lost, no history rewritten.
+- Merge: **MERGED** as merge commit `e421746` at 2026-11-06T14:05:45Z (gh `pr merge 9 --merge`, no approval wait).
+- GitHub Pages: source `main` / root, legacy build + `.nojekyll`. Build for `e421746` → **`built`**
+  (duration 247,599 ms, no errors). Live URLs verified by retrieval 2026-11-06:
+  root `https://kanlerxz87-cyber.github.io/RentincreaseSF3/` (privacy-scrubbed landing, all four editions linked),
+  `…/dashboard/` (this session's edition, renders with all key figures),
+  `…/docs/` and `…/review/` (other sessions' editions intact and live).
+- Post-merge additions carried by follow-up record PR (link below): dashboard flag **F-9** (Legistar File
+  #261020, verified directly on sfgov.legistar.com: Pending Committee Action, not law), root landing
+  “one of four” wording + stale-branch footer fix, docs stat-strip de-duplication.
