@@ -71,7 +71,24 @@ Items that could not be confirmed from an official source are **blank and flagge
 
 ## PR / deploy record
 
-- PR: see below (filled in after merge).
-- Merge result: see below.
+- PR: _(filled in immediately after the pull request is opened, before merge)_
+- Merge result: _(filled in after merge)_
 - GitHub Pages: source `main` / root, build type `legacy`, URL
   https://kanlerxz87-cyber.github.io/RentincreaseSF3/
+- Pre-publish checks: `tools/check_site.py` -> 11 pages, 0 broken internal links/anchors, 0 table rows
+  without a source chip; all 13 served paths return HTTP 200 from a local static server.
+
+## Verification performed (detail)
+
+The full line-by-line record is in `research/verification-log.md` (27 numbered assertions, each with the
+official source used and the cross-check performed) and `research/source-register.md` (27 sources with the
+quoted passage each one supports). Summary:
+
+- All rates taken from the Rent Board's own table (document 571) and cross-checked against the Rent Board
+  news release, the "Current Rates" page and the Attorney General's local-cap chart.
+- All arithmetic recomputed in Python from published percentages only (simple addition, applied once to
+  base rent, cents preserved).
+- All notice deadlines recomputed from the statutory periods (30/90 days, +5 days if mailed).
+- Every rule cited to statute text (leginfo / govinfo) or to the ordinance PDF, not to commentary.
+- Anything not confirmable was left blank and published on `flagged.html` (market benchmark, property
+  record, rent history, licence status, subsidy status).
