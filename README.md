@@ -1,80 +1,42 @@
-# Rental Increase Review — Outer Sunset, San Francisco (ZIP 94122)
+# RentincreaseSF3
 
-A verified, source-linked analysis of what two rent-controlled units in a 1940 San Francisco
-building may lawfully be charged, how to notify the tenants, and how the increase would fare under
-review by a tenant-side advocate or lawyer.
+**Analysis of lawful, reasonable, and normal rental increases** for a rent-controlled, two-unit
+residential building constructed in **1940** in San Francisco's Outer Sunset (ZIP 94122).
 
-**Live site:** https://kanlerxz87-cyber.github.io/RentincreaseSF3/
+## Two live editions (GitHub Pages), both anonymized
 
----
+| Edition | URL | What it is |
+|---|---|---|
+| **Core site** (merged via [PR #2](https://github.com/kanlerxz87-cyber/RentincreaseSF3/pull/2)) | <https://kanlerxz87-cyber.github.io/RentincreaseSF3/> | Landing dashboard, executive summary, units, laws & caps, process & notice, flagged-for-review |
+| **Full verification edition** (PR #3) | <https://kanlerxz87-cyber.github.io/RentincreaseSF3/docs/> | Same subject, deeper verification: cents-exact math incl. **banked increases** (Unit 2: up to 11.5%/13.1%), Housing Inventory **rent-increase license** requirement, full 1982–2027 SF rate table, FHA/FEHA/SF discrimination analysis, corporate vs. individual landlord research, sources & verification register, repo review, 16-item flagged register |
+| **Third edition — audit trail** (PR #5) | <https://kanlerxz87-cyber.github.io/RentincreaseSF3/review/> | Independent rebuild with a per-anniversary ledger (cents-exact), 21-row federal/state/local rule table, notice deadline planner with a model letter, one-unit-or-both fair-housing matrix, 15-point tenant-lawyer stress test, 27-source register with quoted passages, and a 27-assertion verification log (`research/verification-log.md`). Also flags the **12-vs-24-month banking conflict** between official Rent Board pages |
 
-## What is here
+Both are static HTML, anonymized: occupant names/initials never appear; dates and dollar amounts are unchanged.
 
-| Path | What it is |
-|---|---|
-| `index.html` | Dashboard: key numbers, unit snapshot, action plan, findings |
-| `executive-summary.html` | One-page decision summary |
-| `units.html` | Anonymised unit record and the coverage test |
-| `requirements.html` | Federal, state and local rules, one row per rule, each with its source |
-| `calculations.html` | The arithmetic, anniversary by anniversary, plus options per unit |
-| `notices.html` | Deadlines, required notice contents, model letter, safe/unsafe reasons |
-| `fair-housing.html` | Whether to raise one unit or both, and how to document either choice |
-| `practice.html` | How institutional owners and individual owners handle increases |
-| `review.html` | 15-point tenant-lawyer / ALJ stress test and the consequence of each failure |
-| `flagged.html` | **Flagged for review:** unverified values, conflicting official guidance, pending law |
-| `sources.html` | Source register (27 official sources) with the passage each one supports |
-| `data/ledger.csv` | Machine-readable per-anniversary rent ledger |
-| `data/requirements.csv` | Machine-readable rule table |
-| `data/sources.json` | Machine-readable source register |
-| `research/source-register.md` | Offline copy of the source register, with quotes |
-| `tools/build_site.py` | Static site generator (Python 3, no dependencies) |
-| `tools/sitedata.py` | All verified data: rates, ledgers, rules, flags, sources |
-| `tools/check_site.py` | Link/anchor/source-chip checker used before publishing |
-| `COORDINATION.md` | Shared task board for multi-session work on this repo |
+- **Not legal advice.** Consult the SF Rent Board (415-252-4600) and a California attorney before acting.
+- **Source policy:** every table row cites an official source (sf.gov, leginfo.legislature.ca.gov,
+  hud.gov, calcivilrights.ca.gov) or is flagged — never guessed. See each edition's Flagged for Review page.
 
-## Privacy
+Parallel-session coordination: see `COORDINATION.md`. The full verification edition supersedes nothing;
+it complements the core site and logs cross-session findings instead of editing its files.
 
-Personal identifiers are **not** stored in this repository. Units and tenants appear only as
-placeholder labels (`Unit A`, `Unit B`, `Tenant`). The mapping from placeholders to real names is
-deliberately kept out of the repo. Dates and dollar amounts are preserved exactly, because the
-lawful increase cannot be computed or audited without them. Location is limited to the ZIP code
-(94122) and neighbourhood; no street address is published.
 
-## Verification policy
+## Third edition (PR #5) — how it differs
 
-* Every rule, rate and calculation row links to a government source: `sf.gov` (San Francisco Rent
-  Board), `sfgov.legistar.com`, `leginfo.legislature.ca.gov`, `oag.ca.gov`, `govinfo.gov`,
-  `justice.gov`, `sec.gov`.
-* Rates are taken from the Rent Board's own historical table (document 571), not from memory.
-* Arithmetic is simple addition of published percentages applied once to base rent — no compounding,
-  no rounding up — and is shown in full on the site so it can be re-checked line by line.
-* Where a value could not be confirmed from an official source it is **left blank** and recorded on
-  `flagged.html`. Nothing is inferred or filled in.
-* Verification date: **2026-11-06**. Rates and pending legislation change; re-check before serving
-  any notice.
+Lives entirely under `review/` (plus `review/data/`, `research/`, `tools/`), so it does not touch the
+root site or `docs/`.
 
-## Open items (see `flagged.html`)
+- `review/index.html` — dashboard. Subpages: executive summary, units & coverage, rules & limits,
+  calculations, notices, one-unit-or-both, owner practice, tenant-lawyer test, flagged for review, sources.
+- `review/data/ledger.csv`, `review/data/requirements.csv`, `review/data/sources.json` — machine-readable.
+- `research/verification-log.md` — 27 numbered assertions, each with the official source used and the
+  cross-check performed. `research/source-register.md` — 27 sources with the quoted passage each supports.
+- `tools/build_site.py` / `tools/sitedata.py` — static generator (Python 3, no dependencies);
+  `tools/check_site.py` — link, anchor and per-row source-chip checker run before every push.
 
-1. Two official Rent Board pages describe the banking threshold differently (12 vs 24 months).
-2. A 10% cap on combined banked + capital-improvement increases is pending (Legistar File 261020).
-3. The property record (year built, unit count, use) has not been pulled.
-4. The Housing Inventory report / rent increase licence status is unknown.
-5. No documentary rent history (leases, prior notices, proofs of service) has been supplied.
-6. Subsidy (Section 8 / HUD) status is unknown.
-7. No ZIP-level market-rent benchmark was retrievable from an official source, so none is presented.
+Headline results (unchanged in substance, independently recomputed): annual cap **1.6%** for
+3/1/2026–2/28/2027 (1.4% prior year); Unit 1 **3.0% = $119.85 → $4,114.85** on 1 Feb 2027 (1.4% banked
++ 1.6% current); Unit 2 **13.1% = $412.65 → $3,562.65** (seven banked years) with a recommended 10%
+($315.00) phased option while the 10% banked-increase cap (Legistar File 261020) is pending.
 
-## Rebuild
-
-```bash
-python3 tools/build_site.py   # regenerate HTML, data exports and the source register
-python3 tools/check_site.py   # verify internal links, anchors and per-row source chips
-```
-
-GitHub Pages serves this repository from `main` at the repository root (legacy build, no Jekyll
-processing because of `.nojekyll`). No CI is required; the checks above are run before each push.
-
-## Disclaimer
-
-This is an information and audit record, not legal advice. Rent-control coverage, prior rent
-history and licensing are not independently verified. Confirm the specific situation with the San
-Francisco Rent Board (415-252-4600) and a lawyer before serving any rent-increase notice.
+Anonymisation: no occupant names or initials, no street address. Dates and amounts preserved.
