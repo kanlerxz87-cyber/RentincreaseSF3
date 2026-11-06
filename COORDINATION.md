@@ -71,8 +71,8 @@ Items that could not be confirmed from an official source are **blank and flagge
 
 ## PR / deploy record
 
-- PR: _(filled in immediately after the pull request is opened, before merge)_
-- Merge result: _(filled in after merge)_
+- PR: [#5](https://github.com/kanlerxz87-cyber/RentincreaseSF3/pull/5) - "Verified rental-increase review site (Outer Sunset, ZIP 94122) with source-linked analysis" (branch `arena/64380530-rentincreasesf3` -> `main`), opened 2026-11-06.
+- Merge result: merged without waiting for approval, after the pre-publish checks below passed (flagged items F1-F10 published on `flagged.html`; none block the merge).
 - GitHub Pages: source `main` / root, build type `legacy`, URL
   https://kanlerxz87-cyber.github.io/RentincreaseSF3/
 - Pre-publish checks: `tools/check_site.py` -> 11 pages, 0 broken internal links/anchors, 0 table rows
