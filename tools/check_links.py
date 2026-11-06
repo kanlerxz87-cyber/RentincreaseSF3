@@ -187,9 +187,10 @@ def main():
                              f"{', '.join(sorted(external[u]))})", "Dead external link")
                     hard_fail.append(("external-404", ", ".join(sorted(external[u])), u, str(status)))
                 else:
-                    annotate("warning", f"{status} {u} - server refused the automated request; "
-                             f"the source content was verified by direct retrieval during research "
-                             f"where the register marks it 'fetched'.", "External link not machine-checkable")
+                    annotate("warning", f"HTTP {status} from {u}. The server refused the automated request, so "
+                             f"this link cannot be machine-checked. That is NOT evidence the page is missing: "
+                             f"sources marked Verified-retrieved in the register were read directly during "
+                             f"research. See flag F17.", "External link not machine-checkable")
                     if args.strict:
                         hard_fail.append(("external-" + cls, ", ".join(sorted(external[u])), u, str(status)))
         print("\nExternal summary: " + ", ".join(f"{k}={v}" for k, v in sorted(counts.items())))

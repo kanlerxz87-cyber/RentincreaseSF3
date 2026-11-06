@@ -302,12 +302,6 @@ SOURCES = [
          pub="U.S. Dept. of Housing and Urban Development",
          url="https://www.hud.gov/program_offices/fair_housing_equal_opp",
          verifies="The federal administrative route for a fair-housing complaint referenced by DOJ."),
-    dict(id="S36", juris="Federal", method="ci",
-         title="Fair Housing Act, 42 U.S.C. ch. 45 (Sec. 3601 et seq.) - statutory text",
-         pub="U.S. House of Representatives, Office of the Law Revision Counsel",
-         url="https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title42-chapter45&num=0&edition=prelim",
-         verifies="The federal statutory text. Recorded to support the negative finding that no federal statute sets "
-                  "a rent-increase ceiling for privately owned, unsubsidised residential housing."),
 
     # ---- Corporate / institutional practice ----
     dict(id="S37", juris="Practice", method="fetched",
@@ -518,7 +512,7 @@ FLAGS = [
                 "citing a document that states it.",
          action="Published as 'No federal ceiling - not applicable', with the Fair Housing Act cited for what federal "
                 "law DOES require. Recorded here so the blank cell is understood as deliberate, not as an omission.",
-         src=["S34", "S35", "S36"]),
+         src=["S34", "S35"]),
     dict(id="F14", sev="low", area="Privacy control",
          title="All personal information has been removed from the published record",
          detail="Tenant names, unit designations and any identifying detail were supplied for analysis. Publishing "
@@ -542,6 +536,30 @@ FLAGS = [
                 "may be ordered refunded or offset) with no period stated. Obtain the full Sec. 37.8 text before "
                 "quantifying look-back exposure.",
          src=["S6"]),
+    dict(id="F16", sev="resolved", area="Broken link found by the automated check",
+         title="A link to the United States Code returned HTTP 404 and was removed",
+         detail="The source register originally included the Office of the Law Revision Counsel URL for 42 U.S.C. "
+                "ch. 45 (the Fair Housing Act). The automated link check run in CI returned <b>HTTP 404</b> for "
+                "that URL, which was referenced from five pages. A 404 is treated as a dead link and fails the "
+                "build.",
+         action="The entry was <b>removed</b> and every citation that pointed at it was re-pointed to the U.S. "
+                "Department of Justice, Civil Rights Division page on the Fair Housing Act, which states the statutory "
+                "citation (42 U.S.C. Sec. 3601 et seq.) itself and returned HTTP 200. No substantive claim was lost: "
+                "the negative finding that no federal statute sets a rent ceiling for private unsubsidised housing "
+                "rests on the DOJ and HUD pages, not on the U.S. Code browse URL. The build now passes.",
+         src=["S34", "S35"]),
+    dict(id="F17", sev="low", area="Automated verification limit",
+         title="Several official hosts refuse automated requests (HTTP 403), so their links cannot be machine-checked",
+         detail="The CI link check received <b>HTTP 403</b> from leginfo.legislature.ca.gov (all seven California "
+                "code sections and the AB 1482 bill-text page) and from calcivilrights.ca.gov. These hosts block "
+                "non-browser clients; the pages are live and were retrieved and read directly during research on "
+                + AS_OF + ". A 403 is therefore recorded as a warning, not as a dead link, and never as "
+                "verification that content is present.",
+         action="The link checker classifies 404/410 as failures and 401/403/405/429/5xx as warnings, and reports "
+                "both. The affected sources are marked &lsquo;Verified &ndash; retrieved&rsquo; in the register on the "
+                "strength of direct retrieval, not of a status code. Full results are published in "
+                "<code>docs/verification/link-check.md</code>.",
+         src=["S23", "S24", "S25", "S26", "S27", "S28", "S33", "S40"]),
 ]
 
 # --------------------------------------------------------------------------

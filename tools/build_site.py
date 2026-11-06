@@ -312,7 +312,7 @@ not be confirmed against an official source it is left blank and flagged.</p>
 <h3>How this was verified</h3>
 {tbl("Verification summary", ["Check", "Result"], [
     ["Primary sources in the register", f"<b>{len(SOURCES)}</b> &mdash; sf.gov, leginfo.legislature.ca.gov, "
-     "dir.ca.gov, justice.gov, calcivilrights.ca.gov, sec.gov, lao.ca.gov, uscode.house.gov, sfplanninggis.org"],
+     "dir.ca.gov, justice.gov, calcivilrights.ca.gov, sec.gov, lao.ca.gov, sfplanninggis.org, portal.sfrb.org"],
     ["Sources retrieved and read directly", f"<b>{sum(1 for s in SOURCES if s['method']=='fetched')}</b> of {len(SOURCES)} "
      "(the remainder are official URLs HTTP-verified in CI and never used alone to support a number)"],
     ["Calculator self-tests against official worked examples", "<b>4 of 4 passed</b> &mdash; $1,047.00, $1,033.00, "
@@ -963,7 +963,7 @@ to federally assisted housing.</p>
      "housing, &lsquo;such as landlords and real estate companies&rsquo;, whose practices make housing unavailable "
      "because of race or colour, religion, sex, national origin, familial status or disability. Setting different "
      "prices on a prohibited basis falls within &lsquo;terms, conditions or privileges&rsquo; of rental.",
-     cite("S34", "S36"), OK],
+     cite("S34"), OK],
     ["Enforcement routes",
      "An individual may file a complaint with HUD or bring their own lawsuit in federal or state court. The "
      "Department of Justice brings suits on referrals from HUD and in pattern-or-practice cases, and may institute "
@@ -1931,7 +1931,7 @@ characteristic is.</p>
      "race or colour, religion, sex, national origin, familial status or disability. Applies to landlords and real "
      "estate companies.",
      "HUD complaint, private suit in federal or state court, DOJ pattern-or-practice action, DOJ criminal proceedings "
-     "where force or threat is used.", cite("S34", "S35", "S36")],
+     "where force or threat is used.", cite("S34", "S35")],
     ["Fair Employment and Housing Act / California Civil Rights Act",
      "A materially longer list: race, colour, ancestry, national origin, <b>citizenship, immigration status, primary "
      "language</b>, religion, disability, sex and gender, sexual orientation, gender identity, gender expression, "
@@ -2281,7 +2281,7 @@ one of these. Nothing was taken from a blog, an aggregator, a broker or a third-
       "appears nowhere in Civ. Code Sec. 827. The conflict is recorded as flags F2 and F3.</p>"
       "<p>The resolution rule applied throughout: where a third-party source conflicts with sf.gov, "
       "leginfo.legislature.ca.gov, dir.ca.gov, justice.gov, calcivilrights.ca.gov, sec.gov, lao.ca.gov or "
-      "uscode.house.gov, the official source controls and the conflict is flagged.</p>")}
+      "the official source controls and the conflict is flagged.</p>")}
 
 <h3>Where a value could not be confirmed</h3>
 <p>Seven values are left blank rather than estimated: the rent increase license status for both units,
@@ -2453,7 +2453,7 @@ amounts are exactly as supplied.</p>
      'with a lower cap; 1.6% is lower than 8.8%.', cite("S24", "S29")],
     ["<b>Federal</b>", BLANK,
      '<span class="b na">No federal ceiling exists</span> for privately owned, unsubsidised housing. Federal law '
-     'constrains the <i>manner</i> of setting rent (Fair Housing Act), not the amount.', cite("S34", "S36")],
+     'constrains the <i>manner</i> of setting rent (Fair Housing Act), not the amount.', cite("S34", "S35")],
 ])}
 <p><b>What is &ldquo;normal&rdquo;, measured from the official table.</b> The mean allowable annual increase since
 March 1, 2019 is <b>{float(ST['recent']['mean']):.2f}%</b> (median {ST['recent']['median']}%, n={ST['recent']['n']});
@@ -2555,8 +2555,7 @@ that basis. {cite("S14", "S4")}</li>
 <h3>What was verified, and what was not</h3>
 {tbl("Assurance", ["Measure", "Result"], [
     ["Official sources in the register", f"<b>{len(SOURCES)}</b> &mdash; sf.gov, leginfo.legislature.ca.gov, "
-     "dir.ca.gov, justice.gov, calcivilrights.ca.gov, sec.gov, lao.ca.gov, uscode.house.gov, sfplanninggis.org, "
-     "portal.sfrb.org"],
+     "dir.ca.gov, justice.gov, calcivilrights.ca.gov, sec.gov, lao.ca.gov, sfplanninggis.org, portal.sfrb.org"],
     ["Retrieved and read directly", f"<b>{sum(1 for s in SOURCES if s['method']=='fetched')}</b> of {len(SOURCES)}; "
      "the remainder are official URLs HTTP-verified in CI and never used alone to support a number"],
     ["Calculator self-tests against official worked examples",

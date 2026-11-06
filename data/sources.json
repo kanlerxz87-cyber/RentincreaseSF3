@@ -315,15 +315,6 @@
     "verifies": "The federal administrative route for a fair-housing complaint referenced by DOJ."
   },
   {
-    "id": "S36",
-    "juris": "Federal",
-    "method": "ci",
-    "title": "Fair Housing Act, 42 U.S.C. ch. 45 (Sec. 3601 et seq.) - statutory text",
-    "pub": "U.S. House of Representatives, Office of the Law Revision Counsel",
-    "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title42-chapter45&num=0&edition=prelim",
-    "verifies": "The federal statutory text. Recorded to support the negative finding that no federal statute sets a rent-increase ceiling for privately owned, unsubsidised residential housing."
-  },
-  {
     "id": "S37",
     "juris": "Practice",
     "method": "fetched",
