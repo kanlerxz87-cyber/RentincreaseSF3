@@ -251,6 +251,9 @@ unchanged since 4/1/2026 assumed.
   root `https://kanlerxz87-cyber.github.io/RentincreaseSF3/` (privacy-scrubbed landing, all four editions linked),
   `…/dashboard/` (this session's edition, renders with all key figures),
   `…/docs/` and `…/review/` (other sessions' editions intact and live).
-- Post-merge additions carried by follow-up record PR (link below): dashboard flag **F-9** (Legistar File
-  #261020, verified directly on sfgov.legistar.com: Pending Committee Action, not law), root landing
-  “one of four” wording + stale-branch footer fix, docs stat-strip de-duplication.
+- Post-merge additions carried by follow-up record PR
+  [#10](https://github.com/kanlerxz87-cyber/RentincreaseSF3/pull/10) — **MERGED** 2026-11-06T14:14:30Z as
+  `2ea0b03`; Pages build for `2ea0b03` **`built`** (200,051 ms, no errors): dashboard flag **F-9**
+  (Legistar File #261020, verified directly on sfgov.legistar.com: Pending Committee Action, not law),
+  root landing “one of four” wording + stale-branch footer fix, docs stat-strip de-duplication.
+  Live re-verified after `2ea0b03`: root, `/dashboard/` (F-9 visible), `/docs/`, `/review/`.
