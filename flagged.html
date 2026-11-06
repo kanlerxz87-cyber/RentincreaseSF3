@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Flagged for Review — Rental Increase SF</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="site">
+  <div class="brandrow">
+    <h1><a href="index.html">Rental Increase SF</a></h1>
+    <span class="tagline">San Francisco rent-control research dashboard · data verified 2026-11-06</span>
+  </div>
+  <nav class="main">
+    <a href="index.html">Dashboard</a>
+    <a href="executive-summary.html">Executive Summary</a>
+    <a href="units.html">Units</a>
+    <a href="allowable-increases.html">Allowable Increases</a>
+    <a href="procedures.html">Procedures &amp; Notices</a>
+    <a href="legal-framework.html">Legal Framework</a>
+    <a href="market-practices.html">Market Practices</a>
+    <a href="analysis.html">Analysis &amp; Findings</a>
+    <a class="active" href="flagged.html">Flagged for Review</a>
+    <a href="sources.html">Sources</a>
+  </nav>
+</header>
+
+<main>
+  <h2>Flagged for Review</h2>
+  <p class="lede">Every item that could not be fully verified from an official source, every assumption,
+  and every source discrepancy — published for your manual review. None of these block the site; each
+  states what is blank/conditional and where to check.</p>
+
+  <div class="tablewrap">
+  <table>
+    <thead><tr><th>ID</th><th>Item</th><th>What is flagged</th><th>Impact</th><th>Links for manual review</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><strong>F-1</strong></td>
+        <td>Unit B rent history since Jun 1, 2019 <span class="badge flagged">UNVERIFIED</span></td>
+        <td>Only the lease-start rent ($3,150) was provided. Whether any increase was imposed in the
+            intervening years — and the current lawful base — is unknown, so banked amounts and the
+            resulting dollar figure are conditional. The units table leaves the current-rent cell blank.</td>
+        <td>The 13.1% / $3,562.65 figure holds <em>only if</em> no increase was ever imposed and the
+            base is still $3,150. If increases occurred, recompute skipped years only.</td>
+        <td>Banking rules: <a href="https://www.sf.gov/information--banked-rent-increases">sf.gov — Banked rent increases</a><br>
+            Per-year rates: <a href="https://www.sf.gov/documents/34344/571_Allowable_Annual_Increases_26-27_1.pdf">Form 571</a><br>
+            Lawful-rent determination route: <a href="https://www.sf.gov/landlord-petitions-and-passthroughs">sf.gov — petitions</a></td>
+      </tr>
+      <tr>
+        <td><strong>F-2</strong></td>
+        <td>Allowable rate for Mar 1, 2027 – Feb 28, 2028 <span class="badge flagged">NOT YET PUBLISHED</span></td>
+        <td>The Rent Board publishes the new percentage each year (60% of Bay Area CPI-U). As of
+            2026-11-06 it is not announced; the rate table shows a blank row.</td>
+        <td>Affects only scenarios with effective dates on/after Mar 1, 2027. Recommended effective
+            dates (Unit A: Feb 1, 2027; Unit B: on/before Feb 28, 2027) avoid this gap entirely.</td>
+        <td><a href="https://www.sf.gov/reports--current-rates-including-rent-increase-relocation-sec-deposit">sf.gov — Current Rates</a>
+            (check again before any post-Feb-2027 effective date)</td>
+      </tr>
+      <tr>
+        <td><strong>F-3</strong></td>
+        <td>Coverage confirmation for the specific property <span class="badge flagged">UNVERIFIED</span></td>
+        <td>The rule “built on/before June 13, 1979 → covered” is verified, and 1940 fits it — but the
+            address was intentionally not published (privacy), so no address-level exemption check
+            (subsidy, single-family, substantial rehab, hotel, etc.) was run against city records.</td>
+        <td>If an exemption applied, the analysis would change. Confirm coverage with a Rent Board
+            counselor (415-252-4600) using the address internally.</td>
+        <td><a href="https://www.sf.gov/learn-about-san-francisco-rental-laws/">sf.gov — rental laws</a><br>
+            <a href="https://sfplanninggis.org/PIM/">SF Property Information Map</a><br>
+            <a href="https://www.sf.gov/speak-rent-board-counselor">Speak with a Rent Board counselor</a></td>
+      </tr>
+      <tr>
+        <td><strong>F-4</strong></td>
+        <td>Banking timing wording differs between two official Rent Board pages <span class="badge flagged">SOURCE DISCREPANCY</span></td>
+        <td>The sf.gov banked-increases page says a skipped increase banks only after “at least 24 full
+            months … without any rent increase,” while the Rent Board's Rules &amp; Regulations § 4.12
+            text says “A full 12 months must have elapsed from the date that an annual rent increase …
+            could have been imposed,” and the sf.gov worked examples use 12-month reasoning.</td>
+            <td>Reconciled: for anniversary-based tenancies the formulations coincide, and both give the
+            <em>same results</em> for Unit A and Unit B (Unit A banks at Feb 1, 2027 either way; Unit B's
+            2020–2025 skips are banked by 2026 under either reading). Flagged so the exact rule text can
+            be re-read before serving notice.</td>
+        <td><a href="https://www.sf.gov/information--banked-rent-increases">sf.gov — Banked rent increases</a> (“24 full months”)<br>
+            <a href="https://www.sf.gov/learn-about-rent-increases-san-francisco">sf.gov — Learn about rent increases</a> (12-month examples)</td>
+      </tr>
+      <tr>
+        <td><strong>F-5</strong></td>
+        <td>Corporate vs individual landlord practices — no official dataset <span class="badge flagged">ANALYSIS / NON-OFFICIAL</span></td>
+        <td>No government source tracks how corporate vs individual owners set increase amounts/timing in
+            SF; a federal CRS report states formal comparison research is “largely nonexistent.”
+            Academic figures (e.g., 91.45% individual landlords) come from a university working paper,
+            not an official source, and are therefore excluded from verified tables.</td>
+        <td>The Market Practices page labels these clearly; treat any practice narrative as context,
+            not verified data.</td>
+        <td><a href="https://www.congress.gov/crs-product/R49015">CRS R49015</a> (official)<br>
+            <a href="https://web.stanford.edu/~diamondr/RentControlPP.pdf">Stanford working paper</a> (academic, non-official)</td>
+      </tr>
+      <tr>
+        <td><strong>F-6</strong></td>
+        <td>Unit A tenancy continuity (no vacancy) <span class="badge flagged">ASSUMPTION</span></td>
+        <td>Occupants changed between Feb 1, 2025 and Apr 1, 2026 (initial occupants → continuing
+            occupants). The analysis assumes at least one original occupant remained continuously, i.e.,
+            the unit was never fully vacated.</td>
+        <td>If the unit was actually vacated by everyone at some point, Costa-Hawkins vacancy
+            decontrol would permit a market-rate first rent for the new tenancy instead — a different
+            (also lawful) analysis. Confirm internally.</td>
+        <td><a href="https://www.sf.gov/learn-about-rent-increases-san-francisco">sf.gov — no limit on first rent for empty units</a><br>
+            <a href="https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&amp;sectionNum=1954.53">Civ. Code § 1954.53</a></td>
+      </tr>
+      <tr>
+        <td><strong>F-7</strong></td>
+        <td>Property facts as provided <span class="badge flagged">UNVERIFIED</span></td>
+        <td>Construction year 1940, two units, and unit count (used for the 1–9 unit license timing and
+            O&amp;M rules) come from the owner's brief, not from assessor/Rent Board records (address
+            withheld for privacy).</td>
+        <td>Does not change rate math; verify unit count and year internally before filing anything
+            (e.g., O&amp;M rules differ for buildings with 6+ or 10+ units).</td>
+        <td><a href="https://www.sf.gov/rent-board-housing-inventory">sf.gov — Housing Inventory</a><br>
+            <a href="https://www.sfassessor.org/property-information/homeowners/property-search-tool">SF Assessor property search</a></td>
+      </tr>
+      <tr>
+        <td><strong>F-8</strong></td>
+        <td>Unit A status between Apr 1, 2026 and today <span class="badge flagged">ASSUMPTION</span></td>
+        <td>Provided facts end at Apr 1, 2026 ($3,995 continuing). The analysis assumes the rent is
+            still $3,995 and that no increase notice for 2026 has been served/effective since.</td>
+        <td>If an increase was already served in 2026, the 12-month clock and banked math change;
+            recompute before serving a new notice.</td>
+        <td><a href="https://www.sf.gov/learn-about-rent-increases-san-francisco">sf.gov — anniversary rules</a></td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="callout warn">
+    <strong>Policy:</strong> items marked UNVERIFIED are shown as blank or CONDITIONAL in data tables —
+    never filled with estimates. To clear a flag, confirm the fact from the linked official source or
+    the owner's records, then update the corresponding table cell and this list together.
+  </div>
+</main>
+
+<footer class="site">
+  <div class="inner">
+    Research compiled 2026-11-06 from official government sources. Personal information withheld or
+    anonymized. Not legal advice.
+  </div>
+</footer>
+</body>
