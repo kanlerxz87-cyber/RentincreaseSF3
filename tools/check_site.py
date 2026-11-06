@@ -12,7 +12,8 @@ import re
 import sys
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
-PAGES = sorted(p for p in ROOT.glob("*.html"))
+OUT = ROOT / "review"
+PAGES = sorted(p for p in OUT.glob("*.html"))
 
 errors = []
 warnings = []
@@ -35,12 +36,12 @@ for p in PAGES:
             external.add(href)
         elif href.endswith(".html") or "#" in href:
             target, _, frag = href.partition("#")
-            if target and not (ROOT / target).exists():
+            if target and not (p.parent / target).resolve().exists():
                 errors.append(f"{p.name}: broken internal link {href}")
             elif frag and target in anchors_by_file and frag not in anchors_by_file[target]:
                 errors.append(f"{p.name}: broken anchor {href}")
         elif href.endswith(".css") or href.endswith(".js"):
-            if not (ROOT / href).exists():
+            if not (p.parent / href).resolve().exists():
                 errors.append(f"{p.name}: missing asset {href}")
     for token in ("TODO", "TBD", "{{", "}}"):
         if token in text:

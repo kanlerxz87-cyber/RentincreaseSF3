@@ -14,6 +14,8 @@ import pathlib
 import sitedata as D
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
+OUT = ROOT / "review"          # this edition lives under /review/ so it never collides with
+                               # the two editions other sessions published at the repo root and in docs/.
 SITE_TITLE = "Rental Increase Review"
 SITE_SUB = "Outer Sunset, San Francisco - ZIP 94122 - two rent-controlled units"
 
@@ -29,6 +31,7 @@ NAV = [
     ("review.html", "Tenant-lawyer test"),
     ("flagged.html", "Flagged for review"),
     ("sources.html", "Sources"),
+    ("../index.html", "All editions"),
 ]
 
 
@@ -118,7 +121,8 @@ def page(filename, title, lead, body, wide=False):
 </body>
 </html>
 """
-    (ROOT / filename).write_text(doc, encoding="utf-8")
+    OUT.mkdir(exist_ok=True)
+    (OUT / filename).write_text(doc, encoding="utf-8")
     return filename
 
 
@@ -1031,8 +1035,8 @@ def build_sources():
 # data exports
 # ---------------------------------------------------------------------------
 def build_data():
-    (ROOT / "data").mkdir(exist_ok=True)
-    with (ROOT / "data" / "ledger.csv").open("w", newline="", encoding="utf-8") as fh:
+    (OUT / "data").mkdir(parents=True, exist_ok=True)
+    with (OUT / "data" / "ledger.csv").open("w", newline="", encoding="utf-8") as fh:
         w = csv.writer(fh)
         w.writerow(["unit", "anniversary_date", "rate_period", "rate_pct", "base_rent", "dollars", "status", "sources"])
         for anniv, period, pct, status, src in D.LEDGER_A:
@@ -1040,13 +1044,13 @@ def build_data():
         for anniv, period, pct, status, src in D.LEDGER_B:
             w.writerow(["B", anniv, period, pct, "3150.00", f"{3150*pct/100:.2f}", status, src])
 
-    with (ROOT / "data" / "requirements.csv").open("w", newline="", encoding="utf-8") as fh:
+    with (OUT / "data" / "requirements.csv").open("w", newline="", encoding="utf-8") as fh:
         w = csv.writer(fh)
         w.writerow(["layer", "requirement", "meaning_here", "sources"])
         for row in D.REQUIREMENTS:
             w.writerow(row)
 
-    (ROOT / "data" / "sources.json").write_text(
+    (OUT / "data" / "sources.json").write_text(
         json.dumps({"verified_on": D.VERIFIED_ON, "sources": D.SOURCES}, indent=2, ensure_ascii=False),
         encoding="utf-8")
 
