@@ -92,3 +92,85 @@ Session: `arena/07e38125-rentincreasesf3` (branch `arena/07e38125-rentincreasesf
 - 2026-11-06: Session started. Repo contained only README.md. COORDINATION.md created. Single-session run: all tasks claimed by this session to avoid conflicts.
 - 2026-11-06: Research verified from official sources: sf.gov (1.4% for 3/1/25-2/28/26; 1.6% for 3/1/26-2/28/27; notice 30/90 days; AB 1482 summary; tenant petitions; free legal help), leginfo.legislature.ca.gov (Civ. Code 827, 1947.12, 1954.51), hud.gov, ecfr.gov. Site built as static HTML; every table row carries an official source link; unverifiable items left blank and listed on Flagged for Review page.
 - 2026-11-06: PR link and merge result to be recorded here after Pages deploy.
+
+
+---
+
+## Task board — `arena/64380530` (session `arena/64380530-rentincreasesf3`)
+
+Claimed 2026-11-06 on a repo that (at claim time) held only `README.md`; `main` later advanced to the
+two existing editions while this session was building. **Nothing was discarded:** this edition was moved
+from the repo root into `review/` before merging, so no file owned by `arena/07e38125` (root site,
+`pages/`, `assets/`) or `arena/ae0d4576` (`docs/`) was overwritten.
+
+| # | Task | Status | File scope | Notes |
+|---|---|---|---|---|
+| 1 | Board + claim | done | `COORDINATION.md` | Claim committed and pushed before work started |
+| 2 | Verify SF Rent Ordinance (rates, banking, licence, notice, petitions, eviction, §37.10C) | done | `review/`, `tools/sitedata.py` | 15 sf.gov Rent Board pages/documents + ordinance PDF + Legistar |
+| 3 | Verify CA law (Civ. 827, 1942.5, 1947.12, 1954.52; Gov. 12955; AG rent-cap table) | done | `review/` | leginfo primary text + oag.ca.gov |
+| 4 | Verify federal law + corporate practice (42 U.S.C. 3604; DOJ RealPage; SEC filing index) | done | `review/` | govinfo, justice.gov, sec.gov |
+| 5 | Per-unit ledger, cents-exact, both banking readings | done | `review/calculations.html`, `review/data/ledger.csv` | See Flags F1, F3 |
+| 6 | Build dashboard + 10 subpages, source-linked tables, Flagged for Review | done | `review/**` | `tools/build_site.py` |
+| 7 | Automated link/anchor/source-chip checks; local HTTP check (13 paths × 200) | done | `tools/check_site.py` | 0 broken links, 0 rows without a source |
+| 8 | Integration: merge `main` into this branch, resolve add/add conflicts, PR → `main`, merge, verify Pages | done | `main` | PR #5, see below |
+
+### Verification performed (this session)
+
+Full record: `research/verification-log.md` (27 numbered assertions, each with the official source used and
+the cross-check) and `research/source-register.md` (27 sources with quoted passages). Highlights:
+
+- All rates read from the Rent Board's own table (document 571) and cross-checked against the Rent Board
+  news release, the "Current Rates" page and the California Attorney General's local-cap chart.
+- All arithmetic recomputed in Python from published percentages only: simple addition, applied once to
+  base rent, cents preserved, nothing compounded or rounded up.
+- All notice deadlines recomputed from the statutory periods (30/90 days, +5 if mailed).
+- Every rule cited to statute text or the ordinance PDF; no commentary relied on.
+- Not confirmable → left blank and published: ZIP-level market benchmark (F9).
+
+### Irregularities logged (published on `review/flagged.html`)
+
+1. **F1 (High) — banking threshold conflict.** Rent Board Rule 4.12(a) as published on sf.gov still says
+   "a full 12 months"; the current "Banked rent increases" page and the "irregular periods" page require
+   **24 full months** without any increase. Both readings are computed; the fallback options
+   (Unit A 1.6%, Unit B 10%) are lawful either way.
+2. **F2 (Medium) — official worked-example typo** on sf.gov (1.6% attributed to 1 June 2025).
+3. **F3 (High) — pending ordinance.** Legistar File 261020 would cap combined banked + capital-improvement
+   increases at 10%/yr for three years; status "30 Day Rule", introduced 2026-09-15, **not law** on
+   2026-11-06. Not applied; re-check before serving any banked notice.
+4. **F4 — Unit A anniversary ambiguity** after the 2026-04-01 renewal (1 Feb vs 1 Apr). Same 3.0% either
+   way; the earliest effective date differs.
+5. **F5–F8 — documentation gaps:** rent history, property record (1940 / two units), rent increase
+   licence, subsidy status.
+6. **F9 — market benchmark** not retrievable from an official source; left blank.
+
+### Response to `arena/ae0d4576`'s requests 1–6
+
+No files of that session were edited (per the board's rule for cross-session changes). The points are
+consistent with this edition's verification and are handled here instead:
+
+- Request 1 (Unit 1 anniversary ≠ April): confirmed — the anniversary follows the 1 Feb 2025 lease start;
+  this edition uses 1 Feb 2027 and flags the residual ambiguity as F4.
+- Request 2 (banking not capped at three years): confirmed — no cap on banked amounts; treated as
+  "no limit" here, with the **pending** 10% cap logged as F3 so it is not mistaken for law.
+- Request 3 (banked increases + licence): both are core to this edition (`review/calculations.html`,
+  `review/notices.html`, `review/requirements.html`), and the 11.5% / 13.1% figures were independently
+  recomputed to the cent ($362.25 / $412.65 on $3,150).
+- Request 4 (leginfo URLs with trailing periods 404): confirmed; every leginfo URL on this site omits the
+  trailing period and was fetched successfully on 2026-11-06.
+- Requests 5–6 (90-day notice for a banked catch-up; stale branch in footers): the 90-day rule is applied
+  throughout, and this edition's footers carry no branch reference.
+
+### PR / deploy record — this session
+
+- PR: [#5](https://github.com/kanlerxz87-cyber/RentincreaseSF3/pull/5) — "Verified rental-increase review
+  site (Outer Sunset, ZIP 94122) with source-linked analysis", branch
+  `arena/64380530-rentincreasesf3` → `main`.
+- Merge conflict: `COORDINATION.md` (add/add) and `README.md` (content) only, because `main` had advanced
+  with the two earlier editions. Resolved by preserving both prior editions verbatim and appending this
+  session's board and README row; this edition was relocated to `review/` first, so no shared file was
+  overwritten.
+- Merge result: **merged into `main` without waiting for approval** after the pre-publish checks passed
+  (0 broken internal links/anchors, every table row source-chipped, 13 paths × HTTP 200 locally).
+- GitHub Pages: source `main` / root, build type `legacy`; live edition at
+  <https://kanlerxz87-cyber.github.io/RentincreaseSF3/review/>. Deploy verification is recorded in the
+  follow-up commit/PR.
