@@ -3,7 +3,8 @@
 import re, sys, pathlib
 
 root = pathlib.Path(__file__).parent
-html_files = sorted(root.glob("*.html"))
+site = root / "dashboard"
+html_files = sorted(site.glob("*.html"))
 errors = []
 warnings = []
 
@@ -22,7 +23,7 @@ for f in html_files:
             if frag and f'id="{frag}"' not in text and f'name="{frag}"' not in text:
                 errors.append(f"{f.name}: missing anchor #{frag}")
             continue
-        path = root / target
+        path = f.parent / target
         if not path.exists():
             errors.append(f"{f.name}: broken internal link -> {href}")
         elif frag:
@@ -44,7 +45,7 @@ pii_patterns = {
     "outer sunset": r"(?i)outer\s+sunset",
     "street-ish": r"(?i)\b\d{1,5}\s+[A-Z][a-z]+\s+(street|st|ave|avenue|blvd)\b",
 }
-for f in list(root.glob("*.html")) + [root / "README.md", root / "COORDINATION.md"]:
+for f in list(site.glob("*.html")) + [root / "README.md", root / "COORDINATION.md"] + list(root.glob("pages/*.html")) + list(root.glob("docs/*.html")) + list(root.glob("review/*.html")):
     if not f.exists():
         continue
     text = f.read_text(encoding="utf-8")
