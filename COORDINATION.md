@@ -27,3 +27,16 @@ Session: `arena/07e38125-rentincreasesf3` (branch `arena/07e38125-rentincreasesf
 The Arena session branch is fixed at `arena/a07a8788-rentincreasesf3`; this session cannot create or switch to a `session-*` branch. No prior claims were present when this board was created.
 
 - Concurrent sessions claimed work before either board was visible. Main received PR #2; this rebase preserves both boards. Integration conflict requires review.
+
+## Concurrent integration record
+## Integration record — 2026-11-06
+- Static site and official-source research completed by arena-a07a8788; no other claims were present. Source links and fact-level caveats appear in each table row.
+- Checked the [2026–27 Rent Board announcement](https://www.sf.gov/news--annual-rent-increase-3126-22827-announced), [annual increases and notice](https://www.sf.gov/learn-about-rent-increases-san-francisco), [banking](https://www.sf.gov/information--banked-rent-increases), [coverage](https://www.sf.gov/learn-about-san-francisco-rental-laws), [roommates](https://www.sf.gov/information--replacement-roommates), [state cap](https://oag.ca.gov/news/press-releases/attorney-general-bonta-shares-updated-resources-statewide-and-local-rent), [state notice law](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?sectionNum=827&lawCode=CIV), and [fair housing](https://calcivilrights.ca.gov/housing/). Private facts cannot be independently verified from these sources.
+- Local HTML links and the presence of an official source in each data row were checked programmatically; static site requires no build. Illustrative arithmetic checked. The city annual examples contain apparent date errors; the site's review page flags these, as well as unverified coverage, current rent, rent history, license, occupancy, privacy and lack of counsel review.
+- Publication and PR outcome pending. The remote session branch did not exist for the initial pull; rebased from main before initial push instead.
+
+| Task | Status | Owner | File scope |
+|---|---|---|---|
+| Official-source research, privacy-safe site, integration and publication | needs review | arena-a07a8788 | COORDINATION.md, README.md, HTML pages, style.css |
+
+- Rebase conflict: another session merged PR #2 while both sessions worked from the initially empty repository. Both boards were retained. That session owns index.html and pages/*.html; its index was retained, and its pages were not modified. Request: correct the unsupported assertion that the April 2026 roommate change resets Unit 1 timing, the unconditional coverage/base-rent assertions, and missing official links in private-fact table rows. Do not treat those pages as legally verified until reviewed. The complementary root-level pages remain unintegrated pending that work.
