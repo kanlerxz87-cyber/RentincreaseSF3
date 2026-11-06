@@ -324,7 +324,7 @@ REQUIREMENTS = [
      "S16, S21"),
     ("State", "Civil Code 1954.52 (Costa-Hawkins): vacancy decontrol.",
      "The owner may set a new initial rent only when no tenant from the prior tenancy remains. Because an original Unit A tenant remained on 2026-04-01, that renewal was not a vacancy and did not reset the rent.",
-     "S17, S13"),
+     "S17, S16, S13"),
     ("State", "Civil Code 1942.5: no retaliatory rent increase.",
      "No increase may be imposed in retaliation for repair complaints, habitability complaints or tenant organising (180-day presumption period).",
      "S18"),

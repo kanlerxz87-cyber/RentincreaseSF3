@@ -436,8 +436,9 @@ def build_units():
     <section>
       <h2>Coverage determination</h2>
       <p>San Francisco rent control attaches to most residential units in buildings with a certificate of occupancy on
-      or before 13 June 1979, and continues for as long as a tenant from the original tenancy remains. Building age is
-      the owner's statement, so the determination below is <em>provisional</em> until the property record is pulled.
+      or before 13 June 1979, and limits increases during a continuing tenancy; the rent can be reset only once the
+      unit is vacant and no tenant from the prior tenancy remains. Building age is the owner's statement, so the
+      determination below is <em>provisional</em> until the property record is pulled.
       {src_links("S5, S13")}</p>
       {coverage}
     </section>
@@ -646,8 +647,9 @@ def build_notices():
          "Preserves the 1 February anniversary. " + src_links("S15, S2")],
         ["A - fallback", "1.6% (" + money(63.92) + ")", "30 days", "2 Jan 2027 (28 Dec 2026 if mailed)", "1 Feb 2027",
          "Only the current annual increase; lawful under every reading. " + src_links("S2")],
-        ["B", "10.0% (" + money(315.00) + ")", "30 days (10% or less)", "6 Dec 2026 or later for a same-month effective date",
-         "6 Dec 2026 or the 1st of a later month", "Leaves 3.1% banked. " + src_links("S15, S3")],
+        ["B", "10.0% (" + money(315.00) + ")", "30 days (10% or less)",
+         "At least 30 days before the effective date (service on 6 Nov 2026 supports 6 Dec 2026)",
+         "6 Dec 2026 at the earliest", "Leaves 3.1% banked. " + src_links("S15, S3")],
         ["B", "13.1% (" + money(412.65) + ")", "90 days", "30 Nov 2026 (25 Nov 2026 if mailed)", "28 Feb 2027 at the latest",
          "Only this window keeps the 1.6% as the current annual rate. " + src_links("S15, S4")],
       ])}
