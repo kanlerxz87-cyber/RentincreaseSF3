@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Verified analysis of lawful rental increases for a rent-controlled, 1940-built two-unit building in San Francisco's Outer Sunset (94122). Dates and amounts preserved; personal information anonymized.">
+<title>Repo Review · Rent Increase Analysis SF 94122</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='88'>&#127970;</text></svg>">
+<link rel="stylesheet" href="assets/style.css">
+<script src="assets/app.js" defer></script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="index.html"><svg class="brand-badge" viewBox="0 0 48 48" fill="none" aria-hidden="true"><rect width="48" height="48" rx="10" fill="#d1541f"/><path d="M12 38V20l8-6v24M22 38V10l14 9v19" stroke="#fff" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/><path d="M12 38h26" stroke="#fff" stroke-width="2.6" stroke-linecap="round"/><path d="M28 24h3M28 30h3M17 25h2M17 31h2" stroke="#ffd9c7" stroke-width="2.2" stroke-linecap="round"/></svg>
+      <span class="brand-text"><strong>Rent Increase Analysis</strong><span>SF Outer Sunset · 94122</span></span>
+    </a>
+    <nav class="nav" aria-label="Main navigation">
+      <a href="index.html">Dashboard</a>
+      <a href="executive-summary.html">Executive Summary</a>
+      <a href="unit-1.html">Unit 1</a>
+      <a href="unit-2.html">Unit 2</a>
+      <a href="legal-framework.html">Legal Framework</a>
+      <a href="market-practice.html">Landlord Practice</a>
+      <a href="notice-and-reasons.html">Notice &amp; Reasons</a>
+      <a href="tenant-review.html">Tenant Review</a>
+      <a href="flagged-for-review.html">Flagged for Review</a>
+      <a href="sources.html">Sources</a>
+      <a href="repo-review.html" class="active">Repo Review</a>
+    </nav>
+  </div>
+</header>
+<div class="pagebar">Internal landlord analysis · Public copy is fully anonymized — dates &amp; amounts preserved, personal data removed · Not legal advice · Verify before acting</div>
+<main class="container">
+<nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Dashboard</a> › <a href="repo-review.html">Repo Review</a></nav>
+
+<h1>Repository Review — line by line</h1>
+<p class="lede">Review of everything in the repository before this analysis/site was created, plus the disposition of each item. Performed 2026-11-06.</p>
+
+<h2>Initial state (as of commit dab56c9 “Initial commit” on main, branched to arena/ae0d4576-rentincreasesf3)</h2>
+<div class="table-wrap"><table class="data">
+<thead><tr><th>File / item</th><th>Lines / bytes</th><th>Contents (verbatim)</th><th>Findings / irregularities</th></tr></thead>
+<tbody>
+<tr><td>README.md</td><td>1 line / 17 bytes</td><td><code># RentincreaseSF3</code> (no trailing newline)</td><td>Only project file. Self-titled; no description, license, structure, or site. Irregularity: missing trailing newline (cosmetic); no other issues. <strong>Updated in this branch</strong> to document project, anonymization rule, and live site link — see below.</td></tr>
+<tr><td>.git/ (branch main, tag none, remotes)</td><td>—</td><td>Single commit dab56c9; origin → kanlerxz87-cyber/RentincreaseSF3; no other branches at review; no tags; no releases; no GitHub Pages config (via <code>gh api repos/…/pages</code> → 404 before this work); no secrets in history (history is exactly one commit)</td><td>No other code, data, or credentials in Git history. Nothing personal, nothing verifiable-by-hash to protect.</td></tr>
+<tr><td>Application code / data / tests / CI</td><td>0</td><td>Does not exist</td><td>Nothing to verify line by line beyond the two rows above — stated plainly rather than padded.</td></tr>
+<tr><td>Personal information in repo</td><td>—</td><td>None found (initials never committed; only this session’s anonymized docs/ exist)</td><td>Anonymization enforced at build; a name/initial sweep is re-run before merge.</td></tr>
+</tbody></table></div>
+
+<h2>Changes introduced by this branch (all in scope of claimed tasks)</h2>
+<div class="table-wrap"><table class="data">
+<thead><tr><th>Path</th><th>Change</th><th>Reason</th></tr></thead>
+<tbody>
+<tr><td>COORDINATION.md</td><td>Created; task board + log; claim protocol honored; this integration session records sources, verification, and irregularities</td><td>Required by parallel-session protocol</td></tr>
+<tr><td>README.md</td><td>Rewritten: project title, purpose, anonymization guarantee, live site link, legal disclaimer, source-policy</td><td>Repo legibility; README was 17 bytes</td></tr>
+<tr><td>docs/index.html + 10 subpages + assets/</td><td>The analysis site (this site)</td><td>Deliverable: GitHub Pages site</td></tr>
+<tr><td>.github/workflows/pages.yml?</td><td><strong>Not used</strong> — Pages serves from <code>main /docs</code> directly; no workflow file required</td><td>Simplest reliable Pages configuration</td></tr>
+</tbody></table></div>
+
+
+<h2>Parallel session discovered mid-work (transparency note)</h2>
+<p>While this session was building, a parallel session (<code>arena/07e38125-rentincreasesf3</code>) merged a complete, lighter-weight site into <code>main</code> via PR #2 (<code>61b5b7a</code>, 2026-11-06T13:20:09Z). This session discovered it on <code>git pull --rebase</code> (add/add conflict in COORDINATION.md; resolved by combining both boards — nothing discarded). Disposition:</p>
+<ul class="tight">
+<li>The PR #2 site at repo root remains live and unedited by this session (its files are the other session’s scope).</li>
+<li>This session’s <code>docs/</code> edition is the additive “full verification edition”, linked from the README.</li>
+<li>Eight irregularities found in PR #2’s content (Unit 1 anniversary misstatement; “3 years’ banking” error; silence on banking &amp; rent-increase license; trailing-dot leginfo URLs; stale branch footer; incomplete 90-day analysis; untracked deploy) are logged in COORDINATION.md as <strong>requests</strong>, not silently fixed.</li>
+</ul>
+
+<h2>Irregularities register</h2>
+<ol class="tight">
+<li>README.md missing trailing newline — fixed by rewrite; no data loss.</li>
+<li>Repo shipped with no license file — flagged for owner (FR-candidate; noted in COORDINATION.md). Adding a license is the owner’s legal choice; not chosen here.</li>
+<li>Repo shipped with no site/Pages configuration — resolved in this branch (docs/ + Pages from main /docs after merge).</li>
+<li>No git tags or releases — none required; not created.</li>
+</ol>
+<p class="small">Review depth: every byte of the initial repository was read (it is 17 bytes of README + git metadata). This page documents it so the owner can audit the claim.</p>
+
+</main>
+<footer class="footer">
+  <div>Prepared 2026-11-06 · Primary sources accessed 2026-11-06 · Every table row links to an official source or is flagged unverified · If a link rots, search the source name at <a href="https://www.sf.gov/rentboard">sf.gov/rentboard</a></div>
+  <div style="margin-top:6px">San Francisco Rent Board (counselors): <a href="tel:4152524600">415-252-4600</a> · <a href="https://www.sf.gov/departments--rent-board/">sf.gov/departments--rent-board</a> · California Civil Rights Department: <a href="https://calcivilrights.ca.gov/housing/">calcivilrights.ca.gov</a> · HUD: <a href="https://www.hud.gov/reporthousingdiscrimination">hud.gov</a></div>
+</footer>
+</body>
+</html>
