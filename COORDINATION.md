@@ -10,7 +10,7 @@ other tasks are done; cross-session file edits are logged here as requests inste
 | Session | Branch | Outcome |
 |---|---|---|
 | `arena/07e38125-rentincreasesf3` | `arena/07e38125-rentincreasesf3` | PR #2 **merged** 2026-11-06T13:20:09Z (merge commit `61b5b7a`). Built the root GitHub Pages site (`index.html`, `pages/`, `assets/`, `data/sources.json`). Task 5 left "in progress" with no deploy record. |
-| `arena/ae0d4576-rentincreasesf3` | `arena/ae0d4576-rentincreasesf3` | This session. Built the **extended verification edition** under `docs/` (11 pages, cents-exact math, banking analysis, license requirement, sources & verification register, repo review). |
+| `arena/ae0d4576-rentincreasesf3` | `arena/ae0d4576-rentincreasesf3` | PR #3 **merged** 2026-11-06T13:23:22Z (`996aa82`). Built the **extended verification edition** under `docs/` (11 pages, cents-exact math, banking analysis, license requirement, sources & verification register, repo review). Deployed & verified live 2026-11-06 (root + `/docs/` HTTP 200). |
 
 ## Reconciliation note — 2026-11-06 (add/add conflict resolution)
 
@@ -50,7 +50,7 @@ serves the root site.
 | 4 | Research: corporate vs individual landlord practice; notice mechanics; one-vs-both-units discrimination analysis | done | docs/market-practice.html, docs/notice-and-reasons.html, docs/tenant-review.html |
 | 5 | Anonymize personal data; compute Unit 1 / Unit 2 scenarios (cents-exact) | done | docs/unit-1.html, docs/unit-2.html, docs/executive-summary.html |
 | 6 | Build static site (dashboard + subpages, source-linked tables, Flagged for Review) | done | docs/** |
-| 7 | Final integration: branch conflict resolved, PR → main, Pages deploy confirmed, PR + deploy recorded | done after merge (recorded in follow-up commit) | COORDINATION.md |
+| 7 | Final integration: branch conflict resolved, PR → main, Pages deploy confirmed, PR + deploy recorded | done | COORDINATION.md |
 
 Sources (all accessed 2026-11-06): sf.gov (571 Allowable Annual Increases 26-27; 2026–27/2025–26/2023–24 announcements; Learn about rent increases; Banked rent increases; Housing Inventory; §37.3; rental laws; AB 1482 explainer; forms center; Rent Board archives 2019/2023/2024); leginfo.legislature.ca.gov (Civ. Code §827, §1954.53, AB 1482 bill, SB 567 bill); calcivilrights.ca.gov/housing; hud.gov/reporthousingdiscrimination; sfgov.org/services/discrimination-complaints; media.api.sf.gov (SF Analysis of Impediments 2020–2025); Furman Center 2025; Harvard JCHS 2023/2024. Full register with dates: `docs/sources.html`.
 
@@ -64,7 +64,11 @@ Irregularities found in this session's own work / repo: README was a 17-byte stu
 - 2026-11-06T13:10Z — Verified official sources (sf.gov, leginfo, HUD, CRD); computed scenarios; built docs/ site (11 pages); anonymization sweep passed; internal-link/tag checks passed.
 - 2026-11-06T13:19Z — Committed site (e35ef54) and pushed claim (e77b27a). `git pull --rebase`: `origin/main` advanced to `61b5b7a` (PR #2, parallel session). **add/add conflict in COORDINATION.md** — resolved by combining both boards; no side discarded; no files of the other session edited.
 - 2026-11-06T13:25Z — Irregularities in PR #2's site logged above as requests (not edited). This session's `docs/` becomes the additive "full verification edition"; README links both editions.
-- 2026-11-06 — PR to `main` opened (see follow-up commit for PR number/merge SHA and Pages deploy confirmation, recorded after merge).
+- 2026-11-06T13:19Z — PR #3 opened (`arena/ae0d4576-rentincreasesf3` → `main`): full verification edition + README + this reconciliation.
+- 2026-11-06T13:23:22Z — PR #3 **merged** as merge commit `996aa82e35b8889599f6ba632d04a35914ab103b`. Files added: `docs/**` (11 pages + assets), `README.md` rewrite. No other session's files touched.
+- 2026-11-06T13:23:24Z — GitHub Pages build `1346386076` created for `996aa82`; status `built` at 2026-11-06T13:27:03Z (duration 219,959 ms). Prior build `1346379363` for `61b5b7a` was `built` at 13:22:43Z.
+- 2026-11-06T13:30Z — Deploy verified live: root site `https://kanlerxz87-cyber.github.io/RentincreaseSF3/` (HTTP 200, PR #2 content) and full verification edition `https://kanlerxz87-cyber.github.io/RentincreaseSF3/docs/index.html` (HTTP 200 — dashboard, KPIs, cross-link banner). No broken build, no deploy failure, nothing to retry.
+- 2026-11-06 — PR merge record, Pages deploy confirmation, and both-edition status recorded via this follow-up PR.
 
 ---
 
