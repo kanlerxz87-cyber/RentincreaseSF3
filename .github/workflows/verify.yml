@@ -29,22 +29,23 @@ jobs:
         run: python3 tools/build_site.py
 
       - name: Check every internal and external link
-        if: always()
         run: python3 tools/check_links.py --json docs/verification/link-check.json
 
       - name: Confirm the committed site matches the generator output
-        # pages/audit.html embeds the commit log and file sizes, so it is
-        # expected to differ from the previously committed copy. Everything
-        # else must be byte-identical, which proves no figure was hand-edited.
+        if: always()
+        # pages/audit.html embeds the commit log and file sizes, so it is expected
+        # to differ from the previously committed copy. Everything else must be
+        # byte-identical, which proves no published figure was hand-edited.
         run: |
-          echo "--- generated files that differ from the commit ---"
+          echo "--- files that differ from the commit ---"
           git status --porcelain
-          echo "--- diffstat (audit.html excluded) ---"
-          git diff --stat -- . ':(exclude)pages/audit.html'
-          if ! git diff --quiet -- . ':(exclude)pages/audit.html'; then
-            echo "--- first 200 lines of the diff ---"
-            git diff -- . ':(exclude)pages/audit.html' | head -200
-            echo "::error::Generated site is out of date. Run 'python3 tools/calc.py && python3 tools/build_site.py' and commit the result."
+          echo "--- diffstat (audit.html and the link report excluded) ---"
+          git diff --stat -- . ':(exclude)pages/audit.html' ':(exclude)docs/verification/link-check.json'
+          if ! git diff --quiet -- . ':(exclude)pages/audit.html' ':(exclude)docs/verification/link-check.json'; then
+            CHANGED=$(git diff --name-only -- . ':(exclude)pages/audit.html' ':(exclude)docs/verification/link-check.json' | tr '\n' ' ')
+            echo "--- first 120 lines of the diff ---"
+            git diff -- . ':(exclude)pages/audit.html' ':(exclude)docs/verification/link-check.json' | head -120
+            echo "::error title=Generated site out of date::$CHANGED"
             exit 1
           fi
           echo "Committed site matches generator output."
