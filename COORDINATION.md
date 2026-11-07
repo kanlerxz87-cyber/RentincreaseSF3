@@ -336,3 +336,58 @@ All preceding claims are completed; legacy editions will be preserved as archive
 - PR [#14](https://github.com/kanlerxz87-cyber/RentincreaseSF3/pull/14) merged 2026-11-07T20:50:07Z as `1cfea10147e8053e73e7d50c3d682483588eefba`. Conflicts were resolved by retaining the concurrent integration's completed work and appending both coordination logs; the final actual change is a sourced fee/portal clarification, not a duplicate site.
 - PR Site checks run [42412921625](https://github.com/kanlerxz87-cyber/RentincreaseSF3/actions/runs/42412921625) succeeded; post-merge Site checks [42412946951](https://github.com/kanlerxz87-cyber/RentincreaseSF3/actions/runs/42412946951) succeeded. GitHub Pages [42412946400](https://github.com/kanlerxz87-cyber/RentincreaseSF3/actions/runs/42412946400) succeeded, and the Pages build API returned `built` for the exact merge commit. Live root and process page were retrieved and the fee/portal clarification was confirmed. GitHub's managed Pages workflow reported a non-failing Node runtime warning.
 - Rebase incident: after the conflict-resolution merge, `git pull --rebase origin arena/081a63a0-rentincreasesf3` attempted to replay the other integration's merged commits and conflicted. It was aborted intact; both remote branch and `origin/main` were confirmed ancestors before the fast-forward push. No other session's commits were discarded. Subsequently fast-forwarded this branch to the PR merge commit before writing this publication record.
+---
+
+## Task board — `arena/b73ba2df` (session `arena/b73ba2df-rentincreasesf3`)
+
+Claimed 2026-11-07, after reading this board top to bottom. When this session started, `main` was at `25e1e5f`
+(PR #11) and the four editions from 07e38125 / ae0d4576 / 64380530 / edaa9740 were merged. While this session
+worked, four further PRs (#12–#15, sessions 649a1fa8, 081a63a0, 487d8c3e) were merged, consolidating the root
+landing page. This session therefore **did not overwrite the root site**: its edition lives under `verified/`,
+and the root page gained one link to it (see the log).
+
+| # | Task | Status | Owner | File scope | Notes |
+|---|---|---|---|---|---|
+| V1 | Claim tasks; re-read board | done | b73ba2df | COORDINATION.md | claim `aef9b24` |
+| V2 | Re-verify every prior figure against official sources | done | b73ba2df | verified/** | 32 sources, all fetched 2026-11-07 |
+| V3 | Build single clean verified site (dashboard + category subpages) | done | b73ba2df | verified/index.html, verified/guide/** | 10 pages |
+| V4 | Executive summary with the licence question at the forefront | done | b73ba2df | verified/EXECUTIVE_SUMMARY.md, verified/guide/executive-summary.html | root `EXECUTIVE_SUMMARY.md` left to session 487d8c3e's consolidation |
+| V5 | Flagged / unverified items page | done | b73ba2df | verified/guide/flagged.html | F-1…F-12 |
+| V6 | Machine checks | done | b73ba2df | tools/verify_edition.py | links, anchors, per-row citations, privacy, no remote code |
+| V7 | Mark superseded root pages (no content deleted) | done (superseded by main's own banner) | b73ba2df | pages/*.html | main's "ARCHIVED RESEARCH" banner kept; one link to `verified/` added inside it |
+| V8 | PR → main → merge → confirm Pages deploy → record | see log | b73ba2df | COORDINATION.md | |
+
+### What this session verified (all fetched 2026-11-07)
+
+Annual allowance 1.6% for 1 Mar 2026 – 28 Feb 2027 and the full 1982–2027 table (sf.gov announcement, sf.gov
+"Learn about rent increases", Rent Board document 571); the rent increase license and Housing Inventory rules,
+including 1–9 unit buildings from 1 March 2023 and the 1 March deadline (sf.gov Housing Inventory, Admin. Code
+§ 37.3(a)(1) via codelibrary.amlegal.com); the 24-month banking rule and the absence of any cap (sf.gov banking);
+no petition for annual or banked increases (sf.gov multiple years, sf.gov banking, sf.gov landlord petitions);
+§ 37.3(b) notice contents; 30/90-day notice and the CCP § 1013 mail extension (leginfo); AB 1482 at 8.8% for
+1 Aug 2026 – 31 Jul 2027 and its § 1947.12(d)(3) local-ordinance exemption (oag.ca.gov, sf.gov, leginfo);
+Gov. Code § 12955, 42 U.S.C. § 3604, Civ. Code § 1942.5, Civ. Code § 1954.52; § 37.10C algorithmic devices;
+the subsidised-unit partial exemption; the Special Circumstances page; File 261020 status "Pending Committee
+Action" (sfgov.legistar.com); DOJ press release on algorithmic pricing (justice.gov archive); and the City's
+tenant/landlord resource page.
+
+### Irregularities this session found
+
+Published on `verified/guide/flagged.html` as F-1…F-12, with the two refutations of earlier editions' claims
+(banking "capped at 3 years"; "trailing-period leginfo URLs 404" — not reproducible) and the correction of
+File 261020's status. Two earlier-edition claims that did **not** hold up are recorded rather than repeated:
+the "12 months after 1 April 2026" anniversary error on `pages/`, and "serve by 30 November 2026" being
+presented as a general rule (true only for personal service with a 28 February 2027 effective date).
+
+### Merge resolution (2026-11-07)
+
+`main` advanced to `b64b6d7` while this session worked. Conflicts were limited to `COORDINATION.md`,
+`EXECUTIVE_SUMMARY.md`, `index.html` and `pages/*.html`. Resolution:
+
+- `index.html` — main's consolidated page kept verbatim, with one added highlighted link to `verified/index.html`.
+- `pages/*.html` — main's "ARCHIVED RESEARCH" banner kept verbatim; one link to `verified/` added inside it.
+  This session's own superseded banner (which would have duplicated main's) was dropped.
+- `EXECUTIVE_SUMMARY.md` — main's consolidated version kept at the root; this session's Markdown summary lives at
+  `verified/EXECUTIVE_SUMMARY.md`. Both agree on every headline figure.
+- `COORDINATION.md` — this section appended to main's board; no other session's section removed.
+- Nothing was deleted; `verified/**` is purely additive.
