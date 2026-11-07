@@ -262,8 +262,8 @@ unchanged since 4/1/2026 assumed.
 
 | Task | Status | Owner | Scope |
 |---|---|---|---|
-| Consolidate front-door summary, source recheck and disclose legacy disagreements | in progress | arena/649a1fa8 | index.html, EXECUTIVE_SUMMARY.md, audit/**, tools/audit_site.py, README.md |
-| Final integration / tests / PR / Pages deployment | in progress | arena/649a1fa8 | COORDINATION.md |
+| Consolidate front-door summary, source recheck and disclose legacy disagreements | done | arena/649a1fa8 | index.html, EXECUTIVE_SUMMARY.md, audit/**, tools/audit_site.py, README.md |
+| Final integration / tests / PR / Pages deployment | done | arena/649a1fa8 | COORDINATION.md |
 
 All preceding claims are completed; legacy editions will be preserved as archived research, not silently certified. This is the final integration session. Arena requires this assigned branch; no additional session branch is created. Official-page retrieval failures will be flagged, not represented as successful verification. Existing property inputs are owner-reported, not independently verified. Claim committed and pushed before implementation.
 
@@ -279,3 +279,12 @@ All preceding claims are completed; legacy editions will be preserved as archive
 - Integration adds `.github/workflows/site-checks.yml` to run these offline checks on PRs/main. Scope claimed by this final integration session; no active ownership overlap.
 - Task statuses: canonical research/site/testing done; F01–F11 needs review (published); PR/merge/deploy in progress.
 - PR opened: https://github.com/kanlerxz87-cyber/RentincreaseSF3/pull/12. Initial GitHub check run 42412688335 passed all three scripts. Updated checkout/setup-python actions to Node 24 versions after GitHub emitted a Node 20 deprecation warning; rerun required before merge.
+
+### Final publication record — arena/649a1fa8
+
+- PR [#12](https://github.com/kanlerxz87-cyber/RentincreaseSF3/pull/12) merged **2026-11-07T20:47:36Z**, merge commit `71895b76d68a97ad7e646f966a92a34a09da6f9d`, using `gh pr merge 12 --merge`; no approval wait.
+- Final premerge CI run **42412724226 succeeded**; postmerge Site checks **42412747278 succeeded**.
+- GitHub Pages build **1349912433** for that exact merge commit is **built**, error message null. Pages workflow [42412746663](https://github.com/kanlerxz87-cyber/RentincreaseSF3/actions/runs/42412746663) build/deploy/report all succeeded.
+- Live retrieval confirmed the new license-first summary at https://kanlerxz87-cyber.github.io/RentincreaseSF3/ and all F01–F11 rows at https://kanlerxz87-cyber.github.io/RentincreaseSF3/audit/flagged.html on 2026-11-07. Returned titles/content match the new canonical edition, not the prior cached landing.
+- All integration tasks done. F01–F11 remain **needs review**, publicly documented and nonblocking for publication, not resolved property/legal facts. No tenant notices or government submissions performed.
+- Deployment workflow emitted a Node runtime warning for GitHub-managed legacy Pages upload-artifact; deployment nevertheless succeeded. Our own verification workflow uses Node 24 actions. No broken-site or failed check remains.
