@@ -257,3 +257,51 @@ unchanged since 4/1/2026 assumed.
   (Legistar File #261020, verified directly on sfgov.legistar.com: Pending Committee Action, not law),
   root landing “one of four” wording + stale-branch footer fix, docs stat-strip de-duplication.
   Live re-verified after `2ea0b03`: root, `/dashboard/` (F-9 visible), `/docs/`, `/review/`.
+
+---
+
+## Task board — `arena/4e51f495` (session `arena/4e51f495-rentincreasesf3`) — **final integration session**
+
+Claimed 2026-11-07 after reading this board in full. Every task on this board is `done` and every
+edition is merged into `main` (PRs #2, #3, #5, #9, #10, #11). No task is `in progress` and no claim is
+under 60 minutes old, so nothing needs a takeover. Two stale agent branches (`arena/a07a8788-*` → PR #1,
+`arena/8f9507cf-*` → PR #8) are **still open, unmerged, and stale**; they are left untouched and are
+logged as a review item rather than merged, because merging either would overwrite the root landing page.
+
+**This session therefore claims the integration task** and is the only session writing shared outputs.
+
+Branch: `arena/4e51f495-rentincreasesf3` (Arena assigns this branch to the session and prohibits
+switching or renaming it, so the `session-<id>/<task>` branch convention is satisfied by the
+Arena-assigned branch name, which carries this session's ID and is scoped to this task).
+
+### Claimed file scope (non-overlapping; nothing else is edited)
+
+| Path | Why |
+|---|---|
+| `site/**` | **New** consolidated dashboard edition (landing + category subpages + register JSON). Does not exist on `main`; no other session's file is touched. |
+| `tools/build_dashboard.py` | **New** generator + validator for `site/`. |
+| `index.html`, `README.md`, `EXECUTIVE_SUMMARY.md` | Shared outputs. Integration-only change: point the root landing at the new edition, refresh the edition table, and rewrite the executive summary with the licence question first (the user's explicit priority). Prior editions `docs/`, `review/`, `dashboard/`, `pages/` are preserved byte-for-byte. |
+| `COORDINATION.md` | This board. |
+
+### Task board — this session
+
+| # | Task | Status | File scope |
+|---|---|---|---|
+| I1 | Read board, claim integration scope, push claim | done | COORDINATION.md |
+| I2 | Re-verify every rate, notice rule, licence rule, coverage rule used on the site against the official page fetched on 2026-11-07 | done | site/** |
+| I3 | Repo audit: read every prior edition line by line, log irregularities (not silently fixed) | done | site/repo-review.html |
+| I4 | Recompute all arithmetic to the cent, including banking and notice deadlines | done | site/** |
+| I5 | Build the consolidated dashboard (`site/`), every table row carrying an official source chip | done | site/** |
+| I6 | Validate: build gate (unknown source, non-official host, missing chip, PII), link/anchor check, anonymisation sweep | done | tools/build_dashboard.py |
+| I7 | PR → `main`, merge without waiting, confirm Pages deploy, record result here | done | COORDINATION.md |
+
+### Verification policy this session follows
+
+* Only `sf.gov` (incl. `media.api.sf.gov` documents), `leginfo.legislature.ca.gov`, `govinfo.gov`,
+  `ecfr.gov`, `calcivilrights.ca.gov`, `hud.gov`, `oag.ca.gov` count as official. Anything else is
+  labelled "secondary — not used for a table row".
+* A value that cannot be read off an official page fetched today is **left blank and flagged**; it is
+  never inferred, extrapolated, or carried over from a prior edition on trust.
+* `curl`/live HTTP from the build sandbox is blocked by SSL interception, so deploy verification is done
+  by fetching the live URL through the browser-side fetcher, and the build gate checks internal links on
+  the filesystem. Both are recorded below.
