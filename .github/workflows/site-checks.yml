@@ -16,3 +16,4 @@ jobs:
       - run: python tools/audit_site.py
       - run: python verify_site.py
       - run: python tools/check_site.py
+      - run: python tools/verify_edition.py
