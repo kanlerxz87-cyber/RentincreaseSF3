@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sources, verification method and repository review</title>
+<meta name="description" content="The 32 official sources behind this site, what each one supports, the retrieval date, the verification method, and the review of the repository's earlier editions.">
+<link rel="stylesheet" href="../verified.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site">
+  <div class="wrap">
+    <div class="brand">Rent increase review — San Francisco
+      <span>Two rent-controlled units · 1940 two-unit building · location withheld</span>
+    </div>
+    <nav aria-label="Site">
+      <a href="../index.html">Dashboard</a>
+      <a href="executive-summary.html">Executive summary</a>
+      <a href="license-and-process.html">License &amp; process</a>
+      <a href="units.html">Units &amp; math</a>
+      <a href="allowable-increases.html">Rates</a>
+      <a href="notice.html">Notice &amp; reasons</a>
+      <a href="laws.html">Laws</a>
+      <a href="reasonable-and-normal.html">Reasonable?</a>
+      <a href="flagged.html">Flagged</a>
+      <a href="sources.html" class="active">Sources</a>
+    </nav>
+  </div>
+</header>
+
+<div class="statusbar">
+  <div class="wrap">
+    <span><strong>32</strong> sources</span>
+    <span>All retrieved 7 November 2026</span>
+    <span>Every one opened and quoted</span>
+  </div>
+</div>
+
+<main id="main">
+<div class="wrap">
+
+  <h1>Sources, method and repository review</h1>
+  <p class="lede">No figure on this site comes from a blog, a broker page, a news article or a language model. Each one
+  was read in the official source listed below on 7 November 2026, and the passage that supports it is quoted on the
+  page where it is used.</p>
+
+  <div class="card">
+    <h2>How the verification was done</h2>
+    <ol class="steps">
+      <li><b>Open the primary document, not a summary.</b> Every source below was opened in full; where a page quoted a
+      statute, the statute was opened separately and compared.</li>
+      <li><b>Require two independent official confirmations for any number that changes what a tenant pays.</b> The
+      1.6% rate is confirmed by the announcement, the “Learn about rent increases” page and document 571; the 30/90-day
+      notice periods by sf.gov and by Civil Code § 827; the state 8.8% figure by the Attorney General and by the Rent
+      Board.</li>
+      <li><b>Recompute every dollar figure to the cent</b> from the official percentages and base rents, additively,
+      with no rounding up. The ledgers on <a href="units.html">Units &amp; math</a> are the output of that calculation.</li>
+      <li><b>Leave a value blank when no official source states it.</b> Four such blanks exist here: ZIP-level market
+      rent (F-5), the 2027–28 allowance (F-3), the federal rent ceiling (none exists), and the subsidy/licence status of
+      the two units (F-8, F-11).</li>
+      <li><b>Publish disagreements rather than resolving them silently.</b> The 12-month versus 24-month banking
+      conflict is published as F-1, and the mislabelled worked examples as F-12.</li>
+      <li><b>Check the site mechanically.</b> A script in the repository (<code>tools/verify_edition.py</code>) checks
+      every internal link and anchor, confirms that every data row carries a link to an official domain or is explicitly
+      marked blank/analysis, and scans every page for tenant identifiers, the street address and the ZIP code.</li>
+    </ol>
+  </div>
+
+  <h2>Source register</h2>
+  <div class="tablewrap">
+    <table>
+      <caption>All sources retrieved 7 November 2026. “Primary” means the text of the rule or the agency's own statement.</caption>
+      <thead><tr><th>ID</th><th>Source</th><th>What it is used for</th><th>Type</th></tr></thead>
+      <tbody>
+        <tr><td>S1</td><td><a href="https://www.sf.gov/learn-about-rent-increases-san-francisco">sf.gov — Learn about rent increases in San Francisco</a></td><td>The 1.6% rate; the licence requirement; 30/90-day notice and the required notice contents; additional occupants; no rounding up; base rent only; anniversary rules; worked examples (F-12)</td><td>Primary</td></tr>
+        <tr><td>S2</td><td><a href="https://www.sf.gov/documents/34344/571_Allowable_Annual_Increases_26-27_1.pdf">Rent Board document 571 — Allowable Annual Increases 26-27</a></td><td>The complete rate table 1982–2027; “once every 12 months”; “without filing a petition”; the 1992 one-of-two caution</td><td>Primary</td></tr>
+        <tr><td>S3</td><td><a href="https://www.sf.gov/rent-board-housing-inventory">sf.gov — The Rent Board Housing Inventory</a></td><td>All owners must report; 1–9 unit buildings from 1 March 2023; 1 March deadline; licence generated automatically; unenforceable without it; information is public</td><td>Primary</td></tr>
+        <tr><td>S4</td><td><a href="https://www.sf.gov/information/banked-rent-increases">sf.gov — Banked rent increases</a></td><td>The 24-month banking rule; no cap; no expiry; not compounded; partial increases; no Rent Board approval; licence; notice contents including the banked portion</td><td>Primary</td></tr>
+        <tr><td>S5</td><td><a href="https://www.sf.gov/information/annual-rent-increase-multiple-years">sf.gov — Annual rent increase for multiple years</a></td><td>“exactly two or more years”; “not required to file a petition”; cannot compound; cannot round up; 30 days or 35 if mailed</td><td>Primary</td></tr>
+        <tr><td>S6</td><td><a href="https://www.sf.gov/learn-about-san-francisco-rental-laws">sf.gov — Learn about San Francisco rental laws</a></td><td>The 13 June 1979 coverage line; exemptions; how to check a building's year; counselling line; just-cause context</td><td>Primary</td></tr>
+        <tr><td>S7</td><td><a href="https://www.sf.gov/landlord-petitions-and-passthroughs">sf.gov — Landlord Petitions and Passthroughs</a></td><td>The six increase types that require a petition; no charge; petitions must precede the notice</td><td>Primary</td></tr>
+        <tr><td>S8</td><td><a href="https://www.sf.gov/tenant-petitions">sf.gov — Tenant Petitions</a></td><td>Free tenant petitions including unlawful rent increase and invalid-notice summary petitions; what the Rent Board will not adjudicate</td><td>Primary</td></tr>
+        <tr><td>S9</td><td><a href="https://www.sf.gov/report-unlawful-rent-increase-or-request-review-your-rent-history">sf.gov — Report an unlawful rent increase or request a review of your rent history</a></td><td>No charge, no time limit; the evidence a tenant attaches; arbitration hearing process</td><td>Primary</td></tr>
+        <tr><td>S10</td><td><a href="https://www.sf.gov/speak-rent-board-counselor">sf.gov — Speak with a Rent Board counselor</a></td><td>Free counselling, hours, 415-252-4600, “we cannot give legal advice”</td><td>Primary</td></tr>
+        <tr><td>S11</td><td><a href="https://www.sf.gov/tenant-and-landlord-resources">sf.gov — Tenant and Landlord Resources</a></td><td>Free tenant legal help (Eviction Defense Collaborative, 415-659-9184); landlord-side counselling and mediation resources</td><td>Primary</td></tr>
+        <tr><td>S12</td><td><a href="https://www.sf.gov/reports--california-tenant-protection-act-2019-ab-1482">sf.gov — The California Tenant Protection Act of 2019 (AB 1482)</a></td><td>The 8.8% San Francisco figure for 1 Aug 2026 – 31 Jul 2027; that it does not apply to units under the Rent Ordinance; exemptions; no limit on an initial rent for a vacant unit</td><td>Primary</td></tr>
+        <tr><td>S13</td><td><a href="https://www.sf.gov/news--annual-rent-increase-3126-22827-announced">sf.gov — Annual Rent Increase for 3/1/26 – 2/28/27 Announced</a></td><td>The 1.6% announcement dated 14 January 2026, and the 1.4% prior-year figure</td><td>Primary</td></tr>
+        <tr><td>S14</td><td><a href="https://www.sf.gov/information--sec-3710c-use-and-sale-algorithmic-devices-prohibited">sf.gov — Sec. 37.10C, Use and Sale of Algorithmic Devices Prohibited</a></td><td>The ban on algorithmic rent-setting, its definitions and remedies</td><td>Primary</td></tr>
+        <tr><td>S15</td><td><a href="https://www.sf.gov/information--partial-exemption-certain-subsidized-rental-units">sf.gov — Partial Exemption for Certain Subsidized Rental Units</a></td><td>How voucher, HOPWA and Certificate tenancies interact with the rent limits and passthroughs (F-11)</td><td>Primary</td></tr>
+        <tr><td>S16</td><td><a href="https://www.sf.gov/information--special-circumstances-petitions-based-rents-comparable-units">sf.gov — Special Circumstances Petitions Based on Rents for Comparable Units</a></td><td>That a long-standing below-market rent is not by itself an extraordinary circumstance; the petition must precede the notice</td><td>Primary</td></tr>
+        <tr><td>S17</td><td><a href="https://media.api.sf.gov/documents/600_Ordinance_11-24-24.pdf">City-hosted print of Administrative Code chapter 37 (amended 24 November 2024)</a></td><td>Ordinance findings on algorithmic pricing (“as much as 70% of all rental housing”); the chapter's section list including 37.15 (reporting obligations; licensing). The City notes this print is for convenience, so the code library (S18) is treated as controlling.</td><td>Primary (administrative copy)</td></tr>
+        <tr><td>S18</td><td><a href="https://codelibrary.amlegal.com/codes/san_francisco/latest/sf_admin/0-0-0-70881">San Francisco Administrative Code § 37.3 — Rent Limitations (official code library)</a></td><td>§ 37.3(a)(1) formula, 7% ceiling and licence sentence; § 37.3(b) notice contents; non-conforming increases are null and void</td><td>Primary</td></tr>
+        <tr><td>S19</td><td><a href="https://sfgov.legistar.com/LegislationDetail.aspx?ID=8217304&amp;GUID=7EDA4662-EBFB-4AF5-962F-C669B64AA770">Legistar File 261020 — Cap On Rent Increases for Rent-Controlled Units</a></td><td>Introduced 15 September 2026; status Pending Committee Action; the proposed 10%/year cap for three years (F-10)</td><td>Primary</td></tr>
+        <tr><td>S20</td><td><a href="https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&amp;sectionNum=827">Civil Code § 827</a></td><td>30-day notice for 10% or less; 90-day notice for more; personal delivery or mail under CCP § 1013</td><td>Primary</td></tr>
+        <tr><td>S21</td><td><a href="https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&amp;sectionNum=1947.12">Civil Code § 1947.12</a></td><td>5% + CPI or 10%; two increments; (b) initial rent for a new tenancy; (d)(3) local-ordinance exemption</td><td>Primary</td></tr>
+        <tr><td>S22</td><td><a href="https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&amp;sectionNum=1942.5">Civil Code § 1942.5</a></td><td>The 180-day retaliation prohibition and the prohibition on increases for organising</td><td>Primary</td></tr>
+        <tr><td>S23</td><td><a href="https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=GOV&amp;sectionNum=12955">Government Code § 12955</a></td><td>The FEHA housing discrimination prohibitions and the protected-characteristic list</td><td>Primary</td></tr>
+        <tr><td>S24</td><td><a href="https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&amp;sectionNum=1954.52">Civil Code § 1954.52</a></td><td>Costa-Hawkins: the separately-alienable / single-family limits on local rent control</td><td>Primary</td></tr>
+        <tr><td>S25</td><td><a href="https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CCP&amp;sectionNum=1013">Code of Civil Procedure § 1013</a></td><td>The 5-calendar-day extension for service by mail within California</td><td>Primary</td></tr>
+        <tr><td>S26</td><td><a href="https://www.govinfo.gov/content/pkg/USCODE-2023-title42/html/USCODE-2023-title42-chap45-subchapI-sec3604.htm">42 U.S.C. § 3604 (U.S. Code, 2023 edition, GPO)</a></td><td>The federal Fair Housing Act prohibition on discriminatory terms, conditions or privileges of rental</td><td>Primary</td></tr>
+        <tr><td>S27</td><td><a href="https://oag.ca.gov/rentcaps">California Attorney General — Limits on Rent Increases</a></td><td>The 8.8% San Francisco-area figure for increases starting 1 Aug 2026 – 31 Jul 2027; that a lower local cap governs</td><td>Primary</td></tr>
+        <tr><td>S28</td><td><a href="https://www.hud.gov/reporthousingdiscrimination">HUD — Report Housing Discrimination</a></td><td>Where a federal fair-housing complaint is filed; the protected classes under the Fair Housing Act</td><td>Primary</td></tr>
+        <tr><td>S29</td><td><a href="https://calcivilrights.ca.gov/housing/">California Civil Rights Department — Housing Discrimination</a></td><td>State enforcement; “source of income” includes a Section 8 voucher; familial status defined</td><td>Primary</td></tr>
+        <tr><td>S30</td><td><a href="https://www.justice.gov/archives/opa/pr/justice-department-sues-six-large-landlords-algorithmic-pricing-scheme-harms-millions">U.S. Department of Justice — press release, 7 January 2025 (archived)</a></td><td>Institutional pricing practice in the official record: six large landlords, 1.3 million units, algorithmic pricing allegations</td><td>Primary</td></tr>
+        <tr><td>S31</td><td><a href="https://portal.sfrb.org/">Rent Board Portal</a></td><td>Where the Housing Inventory report is filed and where licence status is visible to tenants</td><td>Primary</td></tr>
+        <tr><td>S32</td><td><a href="https://sfplanninggis.org/PIM/">SF Property Information Map</a></td><td>The City's tool for confirming a building's year and unit count (F-7)</td><td>Primary</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card">
+    <h2>Repository review</h2>
+    <p>This repository already contained four published editions of the same analysis when this edition was built. Each
+    was read, and the figures were re-derived from the sources above rather than copied. The findings:</p>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>Finding</th><th>Detail</th><th>Action taken in this edition</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>Agreement on the headline figures</td>
+            <td>The earlier editions' 1.6% / 1.4% rates, the 30/90-day notice periods, the 13.1% Unit 2 sum and the Costa-Hawkins logic all reproduce exactly from <a href="https://www.sf.gov/learn-about-rent-increases-san-francisco">S1</a>, <a href="https://www.sf.gov/documents/34344/571_Allowable_Annual_Increases_26-27_1.pdf">S2</a>, <a href="https://www.sf.gov/reports--california-tenant-protection-act-2019-ab-1482">S12</a> and <a href="https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&amp;sectionNum=827">S20</a>.</td>
+            <td>Adopted. Independently recomputed to the cent.</td>
+          </tr>
+          <tr>
+            <td>Root edition errors in the five pages under <code>pages/</code></td>
+            <td>Those pages say Unit 1's next increase “may not take effect before 12 months” after 1 April 2026 (wrong: the anniversary is 1 February), omit banked increases entirely, omit the licence requirement, and contain the “capped at 3 years” banking error. Compare <a href="https://www.sf.gov/learn-about-rent-increases-san-francisco">S1</a>, <a href="https://www.sf.gov/information/banked-rent-increases">S4</a> and <a href="https://www.sf.gov/rent-board-housing-inventory">S3</a>.</td>
+            <td>Those pages are retained unchanged and now carry a “superseded” banner. Nothing was deleted. The corrected analysis is this edition.</td>
+          </tr>
+          <tr>
+            <td>Pending ordinance status</td>
+            <td>Earlier editions describe File 261020 as “30 Day Rule”; the Legistar Status field now reads “Pending Committee Action”.</td>
+            <td>Corrected and published as F-10.</td>
+          </tr>
+          <tr>
+            <td>Banking conflict</td>
+            <td>Earlier editions flagged a 12- versus 24-month conflict between two sf.gov pages. This session reproduced it and quotes both passages.</td>
+            <td>Confirmed and published as F-1, with both readings computed.</td>
+          </tr>
+          <tr>
+            <td>“Trailing-period leginfo URLs 404”</td>
+            <td>Not reproducible: the URL ending <code>sectionNum=827.</code> returned the section text normally on 7 November 2026.</td>
+            <td>Recorded on <a href="flagged.html">Flagged for review</a>; both link forms work, the period-free form is used. <a href="https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&amp;sectionNum=827">S20</a></td>
+          </tr>
+          <tr>
+            <td>“Serve by 30 November 2026 for a February 2027 effective date”</td>
+            <td>Correct only for personal service with an effective date of 28 February 2027; by mail it was 25 November 2026, and a 1 February 2027 effective date for a &gt;10% increase was already impossible by 7 November 2026.</td>
+            <td>Replaced with a dated planner on <a href="notice.html">Notice &amp; reasons</a> and published as F-9.</td>
+          </tr>
+          <tr>
+            <td>Duplicate editions and stale file metadata</td>
+            <td>Four parallel editions (<code>docs/</code>, <code>dashboard/</code>, <code>review/</code>, <code>pages/</code>) with overlapping content, and a <code>data/sources.json</code> whose <code>branch</code> field still names a merged branch. <span class="badge b-record">Repository metadata</span></td>
+            <td>This edition consolidates the verified content at the site root. The other editions remain live and unaltered, and are listed as earlier editions below.</td>
+          </tr>
+          <tr>
+            <td>Privacy</td>
+            <td>An earlier integration step had already removed the neighbourhood and ZIP from published pages; this edition never includes them, and the check script enforces that. <span class="badge b-record">Repository metadata</span></td>
+            <td>All pages scanned for names, initials, street and ZIP before every commit.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Earlier editions in this repository</h2>
+    <p class="small">Kept for provenance, unchanged, and linked here rather than from the main navigation.</p>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>Edition</th><th>Path</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td>Core edition (2026-11-06)</td><td><a href="../../pages/executive-summary.html">pages/</a></td><td>Superseded — contains the errors listed above; banner added</td></tr>
+          <tr><td>Full verification edition</td><td><a href="../../docs/index.html">docs/</a></td><td>Live, unchanged</td></tr>
+          <tr><td>Dashboard edition</td><td><a href="../../dashboard/index.html">dashboard/</a></td><td>Live, unchanged</td></tr>
+          <tr><td>Audit-trail edition</td><td><a href="../../review/index.html">review/</a></td><td>Live, unchanged</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="small" style="margin-bottom:0">Cross-session coordination, task ownership and merge records are in
+    <code>COORDINATION.md</code> at the repository root.</p>
+  </div>
+
+  <div class="warnbox"><strong>Scope limits.</strong> This site answers questions about rent increases for these two
+  tenancies. It does not cover eviction, just cause, buyouts, owner move-in, condominium conversion, the Rent Board fee,
+  security deposit interest, or the tax treatment of rental income. It is not legal advice and it is not a substitute
+  for a Rent Board counselor or a California attorney.</div>
+
+</div>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <span>Verified edition · 7 November 2026 · branch <code>arena/b73ba2df-rentincreasesf3</code></span>
+    <span>32 sources · all retrieved and read on 7 November 2026</span>
+  </div>
+</footer>
+</body>
+</html>
