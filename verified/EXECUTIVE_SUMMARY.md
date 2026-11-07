@@ -8,7 +8,6 @@ shared consolidated summary in `EXECUTIVE_SUMMARY.md`; both were reviewed agains
 
 # Executive summary — rent increases for two San Francisco units
 
-<<<<<<< HEAD
 Verified against official sources on **7 November 2026**. Rates and pending legislation change; re-check before
 serving any notice. **Not legal advice.** Names, initials, street address and ZIP are withheld; dates and amounts
 are reproduced unchanged.
@@ -149,7 +148,6 @@ comparison is left blank. The compliance mechanics are identical for both — th
 12. **F-12** — two official worked examples carry rate-year labels that conflict with document 571; 571 controls.
 
 Full detail with sources: `verified/guide/flagged.html`.
-=======
 Verified against official sources on **7 November 2026**. Rates and pending legislation change; re-check before serving any notice. This is an information record, not legal advice. Personal information is anonymized (placeholder tenant names only); dates and dollar amounts are unchanged.
 
 ## 1. THE RENT BOARD QUESTION — READ FIRST (individual / non-corporate owner)
@@ -227,4 +225,3 @@ Free tenant help: [sf.gov — Tenant Petitions](https://www.sf.gov/tenant-petiti
 - Coverage/exemptions, subsidy status, lease restrictions, actual increase history, license status and banking eligibility remain unverified.
 
 Personal information is kept internal: tenant names are placeholder labels (Tenant A–F), and the specific address/ZIP/neighborhood are withheld. Dates and dollar amounts are shown exactly as provided because they drive the legal arithmetic. Not legal advice — confirm with the San Francisco Rent Board (415-252-4600) and a California attorney before acting.
->>>>>>> origin/main
