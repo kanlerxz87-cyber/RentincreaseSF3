@@ -257,3 +257,67 @@ unchanged since 4/1/2026 assumed.
   (Legistar File #261020, verified directly on sfgov.legistar.com: Pending Committee Action, not law),
   root landing “one of four” wording + stale-branch footer fix, docs stat-strip de-duplication.
   Live re-verified after `2ea0b03`: root, `/dashboard/` (F-9 visible), `/docs/`, `/review/`.
+
+---
+
+## Task board — `arena/b4324bac` (session `arena/b4324bac-rentincreasesf3`)
+
+**Forefront integration session** — puts the Rent Board notification & license question (individual vs. corporation) at the forefront of the Executive Summary and landing page, as explicitly requested by the owner. Corrects prior-edition irregularities (Unit 1 anniversary = Feb 1, not Apr 1; banking capped-at-3-years misstatement; missing license Step 0). Preserves all prior editions (`docs/`, `dashboard/`, `review/`) untouched; only edits the shared core site (`index.html`, `pages/`, `EXECUTIVE_SUMMARY.md`, `README.md`, and this file).
+
+| # | Task | Status | File scope | Notes |
+|---|---|---|---|---|
+| B1 | Claim tasks in COORDINATION.md | done | COORDINATION.md | This row; pushed before site edits |
+| B2 | Research: Rent Board Housing Inventory & license (individual owners) — verify step-by-step with official links | done | `index.html`, `pages/executive-summary.html`, `pages/process.html`, `EXECUTIVE_SUMMARY.md` | Fetched 2026-11-07: sf.gov Housing Inventory, rent-increases, banked increases, noncompliance notice, ordinance 265-20 summary, 1.6% announcement, Form 571 PDF, Legistar #261020 |
+| B3 | Re-verify allowable increases, banking, notice, AB 1482, Costa-Hawkins, FEHA/FHA — cross-check against Form 571 + statute | done | `pages/laws.html`, `pages/units.html` | Verified 1.4% (3/1/25–2/28/26) & 1.6% (3/1/26–2/28/27) via sf.gov announcement ↔ Form 571; banking rules via sf.gov banking page |
+| B4 | Redesign core site landing (index.html) with forefront license Q&A + 7-step checklist as first card | done | `index.html` | Every table row has official source link; PII scan clean (location withheld) |
+| B5 | Rewrite executive summary (pages/executive-summary.html) — forefront first, then findings, unit math, corporate vs. individual, tenant-lawyer checklist, one-vs-both, action checklist | done | `pages/executive-summary.html` | 6 tables, all rows sourced; includes prior-edition corrections |
+| B6 | Fix Units page: anniversary Feb 1, banked math, license prerequisite, additional-occupant note | done | `pages/units.html` | Corrected PR #2 item 1 (Apr 1 → Feb 1); corrected item 2 (banking not capped at 3 yrs); added license + Legistar watch |
+| B7 | Fix Laws & Caps page: add license row, banking row, anniversary row, pending ordinance row; correct state/local interaction | done | `pages/laws.html` | Added §37.15 license row; Legistar pending row; banking 24-month rule; correct Civ. Code §1947.12 exemption language |
+| B8 | Rewrite Process & Notice page: add Step 0 (license) + full 7-step flow, reasons, corporate vs. individual, tenant scrutiny, one-vs-both | done | `pages/process.html` | Every row sourced; no unverified claims |
+| B9 | Consolidate Flagged for Review (pages/flagged.html): merge prior F-items + new license/banking/pending flags → F-1…F-10, all rows sourced/flagged | done | `pages/flagged.html` | Removed ZIP/outer-sunset literals (privacy); every row has source link; cross-links to docs/ & review/ registers |
+| B10 | Update EXECUTIVE_SUMMARY.md: forefront license table (steps 1–7) + all 8 sections, fully sourced | done | `EXECUTIVE_SUMMARY.md` | Matches site forefront; dates/amounts preserved; anonymous |
+| B11 | Update README.md: integrated forefront landing, 4-edition table, headline results, verification badges | done | `README.md` | Links to all 4 live editions; no PII |
+| B12 | Line-by-line verification: verify_site.py + tools/check_site.py + manual official-source re-fetch (2026-11-07) | done | `verify_site.py`, `tools/check_site.py` | ALL CHECKS PASSED (see below) |
+| B13 | Final integration: re-verify combined tree (all 4 editions intact), confirm no broken links | done | all | `verify_site.py` ALL CHECKS PASSED; `tools/check_site.py` No broken links; manual link audit passed |
+| B14 | PR → main → merge → Pages deploy → record | in progress | `COORDINATION.md` | See PR/deploy record below |
+
+### Sources & verification — `arena/b4324bac` (all retrieved / re-verified 2026-11-07)
+
+**Primary (official):**
+- [sf.gov — Housing Inventory](https://www.sf.gov/rent-board-housing-inventory) — establishes \"must report\", \"license automatically generated\", March 1 annual deadline, applicability to all owners, license required before increase effective date
+- [sf.gov — Learn about rent increases](https://www.sf.gov/learn-about-rent-increases-san-francisco) — \"must get a rent increase license\", \"July 1, 2022 (or March 1, 2023 for 1–9 units)\", 1.6% current rate (Mar 1, 2026–Feb 28, 2027), base-rent-only, 30/90-day notice, anniversary date, additional-occupant prohibition
+- [sf.gov — Banked rent increases](https://www.sf.gov/information/banked-rent-increases) — 24-month banking threshold, additive not compounded, unlimited, no expiry, survives sale, license prerequisite, notice contents (banked breakdown)
+- [sf.gov — Notice of Owner Noncompliance](https://www.sf.gov/notice-of-owner-noncompliance-with-housing-inventory) — null-and-void consequence, tenant petition for refund, notification to tenants
+- [sf.gov — Ordinance 265-20 summary](https://www.sf.gov/news--new-legislation-creates-housing-inventory-and-requires-owners-obtain-license-imposing) — legislative history, reporting start dates (July 1, 2022 vs. Mar 1, 2023)
+- [sf.gov — Annual Rent Increase 3/1/26–2/28/27 Announced (1.6%)](https://www.sf.gov/news--annual-rent-increase-3126-22827-announced) — 1.6% figure, $2,000 example, prior-year 1.4%
+- [sf.gov — Form 571 Allowable Annual Increases 26–27 (PDF)](https://www.sf.gov/documents/34344/571_Allowable_Annual_Increases_26-27_1.pdf) — rate history back to 1982 (1.8, 0.7, 2.3, 3.6, 1.7, 1.4, 1.6)
+- [sf.gov — SF rental laws overview](https://www.sf.gov/learn-about-san-francisco-rental-laws) — coverage (pre-June 13, 1979)
+- [sf.gov — Tenant Petitions](https://www.sf.gov/tenant-petitions) / [sf.gov — evictions (HRC referral)](https://www.sf.gov/evictions-san-francisco) / [sf.gov — AB 1482 explainer](https://www.sf.gov/reports--california-tenant-protection-act-2019-ab-1482) / [sf.gov — Landlord petitions](https://www.sf.gov/landlord-petitions-and-passthroughs) / [sf.gov — algorithmic devices ban](https://www.sf.gov/news--new-law-prohibits-algorithmic-devices-used-set-rents-san-francisco)
+- [sfgov.legistar.com — File #261020](https://sfgov.legistar.com/LegislationDetail.aspx?ID=8217304&GUID=7EDA4662-EBFB-4AF5-962F-C669B64AA770) — pending 10%/yr cap (not law)
+- [leginfo — Civ. Code §827](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=827) / [§1947.12](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=1947.12) / [§1954.53](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=1954.53) / [§1942.5](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=1942.5) ; [CCP §1013](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CCP&sectionNum=1013) ; [Gov. Code §12955](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=GOV&sectionNum=12955) ; [42 U.S.C. §3604 (govinfo)](https://www.govinfo.gov/content/pkg/USCODE-2023-title42/html/USCODE-2023-title42-chap45-subchapI-sec3604.htm) ; [eCFR 24 CFR 982](https://www.ecfr.gov/current/title-24/subtitle-B/chapter-II/subchapter-B/part-982/subpart-M) ; [portal.sfrb.org](https://portal.sfrb.org/)
+
+**Verification performed (2026-11-07):**
+- Every table row on this session's core site (`index.html`, `pages/*.html`, `EXECUTIVE_SUMMARY.md`) links to an **official source** (sf.gov / leginfo / govinfo / hud.gov / ecfr.gov / sfgov.legistar.com) or is flagged on `pages/flagged.html` with a source link — no inferred values.
+- Cents-exact math recomputed: $3,995×0.016=$63.92→$4,058.92; $3,995×0.030=$119.85→$4,114.85; $3,150×0.016=$50.40→$3,200.40; $3,150×0.014=$44.10→$3,194.10; $3,150×0.131=$412.65→$3,562.65; $3,150×0.115=$362.25→$3,512.25 — all match site; banking sum 11.5% (1.8+0.7+2.3+3.6+1.7+1.4) +1.6=13.1%.
+- `verify_site.py` **ALL CHECKS PASSED** (10 dashboard files checked; PII scan clean; math OK) on 2026-11-07.
+- `tools/check_site.py` **No broken internal links or anchors** (11 review + core-site pages checked; external link OK) on 2026-11-07.
+- Anonymization sweep: no occupant initials/names, no street address, no ZIP in published core site; dates & amounts preserved.
+
+### Irregularities — prior editions (acknowledged, not edited per coordination rule)
+
+- **PR #2 site (root/pages):** Unit 1 anniversary misstated as ~Apr 1, 2026 (should be Feb 1; corrected in this session's `pages/units.html` and forefront summary). Banking described as \"capped at 3 years' worth\" (incorrect — no cap back to Apr 1, 1982; corrected). Missing license Step 0 (added as forefront). Some leginfo URLs had trailing period (would 404; corrected here — no trailing period).
+- **Cross-edition:** No corporate-vs-individual or ZIP-benchmark dataset exists in official sources (correctly flagged, not inferred in prior editions; this session labels the same gap as F-9/F-10). No PII in prior published pages (privacy scrub verified clean in 2026-11-06 commit).
+
+### Log — `arena/b4324bac` (UTC)
+
+- 2026-11-07 — Session `arena/b4324bac-rentincreasesf3` branched from `main` (`25e1e5f`); read `COORDINATION.md`; claimed tasks B1–B14; verified official sources (Housing Inventory, rent-increases, banking, noncompliance, 1.6% announcement, Form 571).
+- 2026-11-07 — Rebuilt core site forefront: `index.html` (forefront license Q&A + 7 steps), `pages/executive-summary.html` (full forefront + 8 sections), `pages/units.html` (Feb 1 fix + license + banking), `pages/laws.html` (license/banking/pending rows), `pages/process.html` (Step 0 + 7 steps), `pages/flagged.html` (F-1…F-10), `EXECUTIVE_SUMMARY.md`, `README.md`.
+- 2026-11-07 — Ran `verify_site.py` (ALL CHECKS PASSED) and `tools/check_site.py` (No broken links); PII scan clean; math re-verified.
+- 2026-11-07 — Committed forefront integration; pushed claim/scope to `arena/b4324bac-rentincreasesf3`; preparing PR #12 → main (see record below).
+
+### PR / deploy record — `arena/b4324bac` (to be filled after merge)
+
+- Branch: `arena/b4324bac-rentincreasesf3` → `main`.
+- PR: [to be added] — \"Forefront integration: Rent Board license Q&A first (individual owners included) + verified 7-step checklist\" — `arena/b4324bac-rentincreasesf3` → `main`.
+- Merge conflict: none — only edited files owned by earlier core-site edition (`index.html`, `pages/*`, `README.md`, `EXECUTIVE_SUMMARY.md`, `COORDINATION.md`); `docs/`, `dashboard/`, `review/`, `research/`, `tools/`, `assets/` untouched.
+- PR / deploy record: update this section after `gh pr merge` and Pages `built` confirmation.
