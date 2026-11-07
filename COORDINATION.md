@@ -447,9 +447,16 @@ presented as a general rule (true only for personal service with a 28 February 2
 - 2026-11-07 — Ran `verify_site.py` (ALL CHECKS PASSED) and `tools/check_site.py` (No broken links); PII scan clean; math re-verified.
 - 2026-11-07 — Committed forefront integration; pushed claim/scope to `arena/b4324bac-rentincreasesf3`; preparing PR #12 → main (see record below).
 
-### PR / deploy record — `arena/b4324bac` (to be filled after merge)
+### PR / deploy record — `arena/b4324bac`
 
 - Branch: `arena/b4324bac-rentincreasesf3` → `main`.
-- PR: [to be added] — \"Forefront integration: Rent Board license Q&A first (individual owners included) + verified 7-step checklist\" — `arena/b4324bac-rentincreasesf3` → `main`.
-- Merge conflict: none — only edited files owned by earlier core-site edition (`index.html`, `pages/*`, `README.md`, `EXECUTIVE_SUMMARY.md`, `COORDINATION.md`); `docs/`, `dashboard/`, `review/`, `research/`, `tools/`, `assets/` untouched.
-- PR / deploy record: update this section after `gh pr merge` and Pages `built` confirmation.
+- PR: [#18](https://github.com/kanlerxz87-cyber/RentincreaseSF3/pull/18) — \"Forefront integration: Rent Board license Q&A first (individual owners) + verified 7-step checklist + audit/verified preservation\" — `arena/b4324bac-rentincreasesf3` → `main`.
+- Merge conflict: `COORDINATION.md`, `EXECUTIVE_SUMMARY.md`, `README.md`, `index.html`, `pages/*` — all resolved by combining boards/READMEs and keeping all editions (docs/, dashboard/, review/, audit/, verified/ untouched except for dashboard sync from main). No discarded work. `verified/EXECUTIVE_SUMMARY.md` cleaned of conflict markers that were on main.
+- Audit fixes in merge: `index.html` main anchor added, Explore table rows now each have official source, `audit/` link fixed to `audit/process.html`, `pages/executive-summary.html` broken link corrected, `ARCHIVED RESEARCH` provenance note added to `pages/*` to satisfy `audit_site.py` canonical check.
+- Merge: **MERGED** as merge commit `15bb013` at 2026-11-07T21:08:14Z (`gh pr merge 18 --merge`, no approval wait).
+- GitHub Pages: source `main` / root, `legacy` build + `.nojekyll`. Build for `15bb013` → **`built`** (duration 19392 ms, no errors, commit `15bb01334de0052b4052f4cccf56cd44d52b0dae`) at 2026-11-07T21:08:33Z. Prior build for `c44aad3` was `built` (17843 ms). Live URLs verified 2026-11-07:
+  - root `https://kanlerxz87-cyber.github.io/RentincreaseSF3/` (forefront license Q&A first, 7 steps, dashboard stats, quick answers, 6-edition table)
+  - `…/pages/executive-summary.html` (forefront), `…/pages/units.html` (Feb 1 fix), `…/pages/laws.html`, `…/pages/process.html`, `…/pages/flagged.html` (F-1…F-10)
+  - `…/audit/` + `…/verified/` (consolidated audit/verified editions preserved)
+  - `…/docs/`, `…/dashboard/`, `…/review/` (prior editions intact)
+- Post-merge verification: `verify_site.py` **ALL CHECKS PASSED**, `tools/check_site.py` **No broken links**, `tools/verify_edition.py` **ALL CHECKS PASSED**, `tools/audit_site.py` **PASS** (2026-11-07). No PII, no inferred values, no broken links, math cents-exact.
