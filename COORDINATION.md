@@ -258,6 +258,37 @@ unchanged since 4/1/2026 assumed.
   root landing “one of four” wording + stale-branch footer fix, docs stat-strip de-duplication.
   Live re-verified after `2ea0b03`: root, `/dashboard/` (F-9 visible), `/docs/`, `/review/`.
 
+## Integration audit — arena/649a1fa8-rentincreasesf3 (2026-11-07)
+
+| Task | Status | Owner | Scope |
+|---|---|---|---|
+| Consolidate front-door summary, source recheck and disclose legacy disagreements | done | arena/649a1fa8 | index.html, EXECUTIVE_SUMMARY.md, audit/**, tools/audit_site.py, README.md |
+| Final integration / tests / PR / Pages deployment | done | arena/649a1fa8 | COORDINATION.md |
+
+All preceding claims are completed; legacy editions will be preserved as archived research, not silently certified. This is the final integration session. Arena requires this assigned branch; no additional session branch is created. Official-page retrieval failures will be flagged, not represented as successful verification. Existing property inputs are owner-reported, not independently verified. Claim committed and pushed before implementation.
+
+- Integration scope clarification: all prior sessions are finished. Final integration additionally applies a non-destructive archive-warning banner to `pages/*.html`, `docs/*.html`, `review/*.html`, `dashboard/*.html`; underlying research is preserved. This is necessary because conflicting editions were previously presented as equally verified advice. Canonical findings are under root + `audit/`; source rows checked against official pages retrieved 2026-11-07.
+
+### Audit results — 2026-11-07 / arena/649a1fa8
+
+- Source recheck: 13 official sources retrieved/read (full URLs, dates and per-source verification in `audit/sources.json` and `audit/sources.html`). SF Housing Inventory and FAQ redirect, annual guidance, banking, Form 571 PDF, coverage, AB 1482, petitions, Civil Code §§827/1942.5, CRD, HUD, City tenant resources and Legistar 261020. No private property record verified.
+- Failed/unsuitable retrievals: attempted `reports--current-allowable-rent-increases` failed; `tenant-right-counsel` returned an official Not Found page. Excluded, replaced by working official sources; disclosed F11.
+- Canonical findings: individual-owner license requirement; effective-date vs service-date distinction; no ordinary annual/banked approval petition; 1.6% annual-only conditional calculations; fair-housing/retaliation review; owner behavior not established. Prior 10%/13.1% recommendations withdrawn, not certified. Property inputs preserved separately, verified property fields blank. Pending proposal is Pending Committee Action, no enactment shown. No future-rate inference.
+- Published irregularities F01–F11 on `audit/flagged.html`: property facts, history, licenses, banking wording/year-label errors, pending proposal, future rate, behavior/market gaps, subsidy/lease status, legacy conflicting recommendations, privacy/public filings, failed retrievals. All are needs review and do not block publication; they do prevent a notice-ready legal determination.
+- Tests: `python tools/audit_site.py` PASS (43 HTML files internal links/anchors; 6 canonical pages official domain per data row; 5 Decimal scenarios; archive labels and privacy patterns); `python verify_site.py` PASS; `python tools/check_site.py` no broken links/anchors. These do not verify every external legacy link or certify legality. Canonical source contents were read manually via retrieval, not inferred from live links.
+- Integration adds `.github/workflows/site-checks.yml` to run these offline checks on PRs/main. Scope claimed by this final integration session; no active ownership overlap.
+- Task statuses: canonical research/site/testing done; F01–F11 needs review (published); PR/merge/deploy in progress.
+- PR opened: https://github.com/kanlerxz87-cyber/RentincreaseSF3/pull/12. Initial GitHub check run 42412688335 passed all three scripts. Updated checkout/setup-python actions to Node 24 versions after GitHub emitted a Node 20 deprecation warning; rerun required before merge.
+
+### Final publication record — arena/649a1fa8
+
+- PR [#12](https://github.com/kanlerxz87-cyber/RentincreaseSF3/pull/12) merged **2026-11-07T20:47:36Z**, merge commit `71895b76d68a97ad7e646f966a92a34a09da6f9d`, using `gh pr merge 12 --merge`; no approval wait.
+- Final premerge CI run **42412724226 succeeded**; postmerge Site checks **42412747278 succeeded**.
+- GitHub Pages build **1349912433** for that exact merge commit is **built**, error message null. Pages workflow [42412746663](https://github.com/kanlerxz87-cyber/RentincreaseSF3/actions/runs/42412746663) build/deploy/report all succeeded.
+- Live retrieval confirmed the new license-first summary at https://kanlerxz87-cyber.github.io/RentincreaseSF3/ and all F01–F11 rows at https://kanlerxz87-cyber.github.io/RentincreaseSF3/audit/flagged.html on 2026-11-07. Returned titles/content match the new canonical edition, not the prior cached landing.
+- All integration tasks done. F01–F11 remain **needs review**, publicly documented and nonblocking for publication, not resolved property/legal facts. No tenant notices or government submissions performed.
+- Deployment workflow emitted a Node runtime warning for GitHub-managed legacy Pages upload-artifact; deployment nevertheless succeeded. Our own verification workflow uses Node 24 actions. No broken-site or failed check remains.
+
 ---
 
 ## Integration review — `arena/081a63a0-rentincreasesf3`
@@ -276,3 +307,5 @@ unchanged since 4/1/2026 assumed.
 - Flagged [proposed File 261020](https://sfgov.legistar.com/LegislationDetail.aspx?ID=8217304&GUID=7EDA4662-EBFB-4AF5-962F-C669B64AA770) as pending on direct review. [Rule 4.12](https://www.sf.gov/reports--december-2022--rent-board-rules-and-regulations-part-iv-rent-increases-not-requiring) and the Rent Board banking page use different timing language; exact application flagged for counselor review. Earlier categorical findings including a three-year banking cap, 2026 lease change resetting the anniversary, indiscriminate same-unit increases, and unconditional banked dollar totals were not supported.
 - Reconciled formerly conflicting editions into the root dashboard. Legacy HTML paths redirect to relevant reviewed pages; earlier HTML remains in Git history, and prior machine-readable/research files are historical rather than a current source of advice. Do not rerun the superseded generator. Added `tools/verify_integrated.py`: 38 HTML files, local links, redirects and row-level official source links pass; illustrative arithmetic and public-site location scan pass; `git diff --check` passes. Local root and executive pages returned HTTP 200. Individual official pages above were directly fetched; automated external link availability is not tested due to network restrictions, and checks cannot prove legal accuracy.
 - Initial push note: the session remote branch did not yet exist, so the first `git pull --rebase` against it failed; rebased against `origin/main` before the initial push. No conflict occurred.
+
+- 2026-11-07 conflict reconciliation: while this session worked, PRs #12 and #13 merged another integration session's canonical root and `audit/` site. The two integration scopes overlapped despite separate claims being invisible on the original checkout. `git merge origin/main` conflicted in COORDINATION.md, README, summary, and legacy site pages. Resolution preserves the other session's complete current site, workflow, archived editions, README and executive summary; both coordination sections are retained. This session's superseded redirect/dashboard implementation remains in this branch's prior commit history, not deployed. Rather than overwrite parallel work, this session limits its final change to the fee/portal clarification and validation below.
