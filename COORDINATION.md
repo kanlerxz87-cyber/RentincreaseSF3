@@ -257,3 +257,52 @@ unchanged since 4/1/2026 assumed.
   (Legistar File #261020, verified directly on sfgov.legistar.com: Pending Committee Action, not law),
   root landing “one of four” wording + stale-branch footer fix, docs stat-strip de-duplication.
   Live re-verified after `2ea0b03`: root, `/dashboard/` (F-9 visible), `/docs/`, `/review/`.
+
+---
+
+## Task board — `arena/023ac18a` (final integration session)
+
+Session: `arena/023ac18a-rentincreasesf3` · Branch: `arena/023ac18a-rentincreasesf3` · Started 2026-11-07.
+**Role: final integration session.** Read the whole board first. All prior editions
+(`/`, `/docs/`, `/review/`, `/dashboard/`) are merged on `main` and preserved: no edition is deleted and no
+other session's files are overwritten in a way that loses content (root `index.html` + `pages/` are *shared
+outputs*, which this board reserves to the integration session, so they are rebuilt here — the previous
+root content is restated, consolidated and extended, and every prior page remains reachable).
+
+| # | Task | Status | Owner | File scope |
+|---|------|--------|-------|------------|
+| I1 | Read board, claim integration tasks, push claim before starting | done | `arena/023ac18a` | COORDINATION.md |
+| I2 | Re-verify every cited rule from the official publisher (links for manual review) | in progress | `arena/023ac18a` | `pages/**`, `data/sources.json` |
+| I3 | Rebuild root site as one integrated dashboard (license question first, then units, caps, process, practice, one-vs-both, tenant-lawyer test, flags, sources) | unclaimed → in progress | `arena/023ac18a` | `index.html`, `pages/**`, `assets/**`, `data/**` |
+| I4 | Privacy sweep: location/ZIP/neighbourhood/tenant identifiers out of every published byte (incl. `tools/*.py`, which served the ZIP publicly) | in progress | `arena/023ac18a` | repo-wide text |
+| I5 | Line-by-line audit of combined data + tooling (`tools/verify_all.py`): internal links, per-row source links, math, PII | in progress | `arena/023ac18a` | `tools/verify_all.py`, `verify_site.py` |
+| I6 | PR → `main` → merge → confirm Pages deploy → record result | pending | `arena/023ac18a` | COORDINATION.md |
+
+### Sources re-verified by this session (2026-11-07, fetched and read, not assumed)
+
+`sf.gov` — Learn about rent increases (1.6% for 3/1/2026–2/28/2027; 30/90-day notice; base-rent-only;
+no rounding; additional-occupant rule); Form **571** rate table PDF (full 1982–2027 history; "without
+filing a petition at the Rent Board"); **Banked rent increases** (24-full-month wording, no cap, no
+compounding, notice itemisation, licence precondition); **Housing Inventory** (mandatory reporting,
+licence generated automatically, March 1 deadline, "notice not enforceable without a licence on the
+effective date"); **Learn about SF rental laws** (13 June 1979 cutoff); **Irregular periods** and
+**Annual increase for multiple years** (how skipped years are added); **Special Circumstances /
+comparable units** (below-market alone is not enough); **Report an unlawful rent increase** (tenant
+petition Form 516C + Form C, free, no time limit). `leginfo.legislature.ca.gov` — Civ. Code §827
+(30/90 days), §1947.12 (AB 1482 cap and local-ordinance exemption in (d)(3)), §1954.53
+(Costa-Hawkins initial-rent rule). `govinfo.gov` — 42 U.S.C. §3604 (FHA terms/conditions).
+`oag.ca.gov/rentcaps` — state cap 8.8% for 8/1/2026–7/31/2027 in the SF area; local cap prevails when lower.
+
+### Open items inherited from earlier sessions (not silently fixed)
+
+* Same-owner stale PRs **#1** (`a07a8788`) and **#8** (`8f9507cf`) remain open; their trees duplicate
+  `review/` and several of those files still publish the ZIP/neighbourhood. They are **not** merged here;
+  they carry no finding that is absent from the integrated site, and merging them would republish the
+  location. Logged for the owner's decision rather than closed unilaterally.
+* Banking-threshold conflict (24-month wording on the banking page vs 12-month arithmetic in the official
+  worked examples) is confirmed to still exist on sf.gov as of 2026-11-07 → published as flag **FR-1**,
+  both readings computed.
+
+### Log — `arena/023ac18a` (UTC)
+
+- 2026-11-07 — Session started; board read in full; claim written and pushed before any site edit.
