@@ -257,3 +257,15 @@ unchanged since 4/1/2026 assumed.
   (Legistar File #261020, verified directly on sfgov.legistar.com: Pending Committee Action, not law),
   root landing “one of four” wording + stale-branch footer fix, docs stat-strip de-duplication.
   Live re-verified after `2ea0b03`: root, `/dashboard/` (F-9 visible), `/docs/`, `/review/`.
+
+---
+
+## Task board — `arena/5392ad77-rentincreasesf3` (active session)
+
+| # | Task | Status | File scope |
+|---|------|--------|------------|
+| T1 | Final integration audit: re-check the user-facing analysis against current official sources, resolve inconsistencies, protect privacy, run site/build/link/source checks, and prepare the primary GitHub Pages site | in progress | `index.html`, `pages/**`, `EXECUTIVE_SUMMARY.md`, `README.md`, `data/**`, `tools/**`, `research/**`, `COORDINATION.md`; existing `docs/**`, `review/**`, `dashboard/**` only if required to remove conflicting public guidance |
+
+### Claim log — `arena/5392ad77-rentincreasesf3` (UTC)
+
+- 2026-11-07 — Read the full existing coordination board before starting. All prior edition tasks are recorded as done; no active task by another session was listed. Claimed final integration and current-source re-verification on the Arena-fixed branch `arena/5392ad77-rentincreasesf3` (this task board file is in scope). This is the final integration scope; no other branch/worktree will be used.
