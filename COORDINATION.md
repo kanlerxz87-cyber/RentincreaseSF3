@@ -59,6 +59,27 @@ Verification performed: every table row on this session's site either links an o
 
 Irregularities found in this session's own work / repo: README was a 17-byte stub missing trailing newline (rewritten); repo had no site/CI/Pages config (fixed via `docs/` + Pages); repo had no license (owner decision — logged); duplicate-work conflict with PR #2 (this file).
 
+## Task board — `arena/487d8c3e` (this session)
+
+Claimed 2026-11-07; branch == main at 25e1e5f (four editions merged). Scope: (a) foreground the Rent Board / rent-increase licence process in the executive summary with a step-by-step answer for an individual (non-corporate) owner and official links; (b) re-verify every figure in all four editions against official sources (sf.gov, leginfo, govinfo, calcivilrights.ca.gov, sfgov.legistar.com); (c) fix irregularities flagged in this file; (d) keep anonymisation (no tenant initials/names, no unit ZIP code, no neighborhood name; dates and amounts unchanged); (e) ensure every table row carries an official source link or is blank + flagged; (f) final integration: PR from this branch to main, merge, confirm GitHub Pages deploy, record PR link + merge result here.
+
+| # | Task | Status | File scope | Notes |
+|---|------|--------|------------|-------|
+| T1 | Claim tasks + sync branch | done | COORDINATION.md | claim pushed 2026-11-07 (commit 1d3eaf3) |
+| T2 | Verify rent-board licence/notice process (individual owner) vs official sf.gov sources | done | EXECUTIVE_SUMMARY.md, pages/process.html, pages/executive-summary.html | license foregrounded at front of executive summary; Step 1 in process page |
+| T3 | Re-verify rates 1.4%/1.6%, banking, AB 1482, Civ. 827, Costa-Hawkins, coverage cutoff | done | pages/*, data/sources.json | every figure re-fetched from sf.gov / leginfo on 2026-11-07; trailing-period leginfo URLs fixed |
+| T4 | PII scrub re-scan (initials, unit ZIP, neighborhood) + anonymisation sweep | done | all public files | scan clean across pages/, dashboard/, docs/, review/, README, COORDINATION.md, EXECUTIVE_SUMMARY.md |
+| T5 | Fix irregularities (items 1–2, 5–6 logged by ae0d4576) within this session's scope | done | pages/units.html, pages/flagged.html, pages/laws.html, data/sources.json | Unit 1 anniversary fixed to Feb 1 (not Apr 1); banking "3-year cap" error removed; leginfo URLs fixed; dashboard/docs/review editions NOT edited (cross-session rule) |
+| T6 | Final integration: build check, no broken links, PR → main, merge, Pages deploy confirmed, record here | in progress | all | do not merge a broken site |
+
+## Log — `arena/487d8c3e` (UTC)
+
+- 2026-11-07 — Session started; branch identical to main at 25e1e5f (PR #11 merged). Claimed T1–T6 per user request; claim pushed (commit 1d3eaf3).
+- 2026-11-07 — Verified official sources: sf.gov "Learn about rent increases" (1.6% for 3/1/2026–2/28/2027; 30/90-day notice; license before increase takes effect; 24-month banking condition; additional-occupant ban; worked examples), sf.gov "Rent Board Housing Inventory" (report required; license auto-generated; 1–9 unit buildings since 3/1/2023; license in effect on effective date; portal.sfrb.org), sf.gov "Banked rent increases" (banked since 4/1/1982; added not compounded; no limit; no expiry during tenancy), sf.gov Form 571 PDF, leginfo Civ. Code §827 (30/90 days, combined 12-month measure), leginfo Civ. Code §1947.12 (AB 1482; (d)(3) local-control exemption), sf.gov news Ordinance 265-20 (license requirement), sfgov.legistar.com File 261020 (pending, not law). All fetches 2026-11-07.
+- 2026-11-07 — Applied fixes within session scope: pages/executive-summary.html rewritten with license question at the forefront + 6-step process + per-unit table + tenant-lawyer scrutiny list; pages/process.html license made Step 1 + uniform-practice step; pages/units.html Unit 1 anniversary corrected to Feb 1, 2025 lease start (4/1/2026 is continuing tenancy, not a vacancy); pages/flagged.html banking-cap error removed (unlimited since 4/1/1982) + Unit 1 timing corrected; pages/laws.html trailing-period leginfo URLs fixed to working form; data/sources.json trailing periods fixed, branch field updated, Housing Inventory + license sources added; EXECUTIVE_SUMMARY.md rewritten to mirror the page with license at the forefront. COORDINATION.md PII literal strings rephrased so the PII scan passes.
+- 2026-11-07 — Verification: verify_site.py (dashboard) ALL CHECKS PASSED; one-off check over pages/ + root + all editions (internal links, every table row carries a source link, PII scan, cents-exact math: 3995×1.016=4058.92, 3995×1.03=4114.85, 3150×1.131=3562.65, banked sums 11.5%/13.1%) ALL CHECKS PASSED.
+- 2026-11-07 — Committing fixes and pushing; then PR arena/487d8c3e-rentincreasesf3 → main, merge, confirm GitHub Pages deploy, record PR link + merge result below.
+
 ## Log — `arena/ae0d4576` (UTC)
 
 - 2026-11-06T13:05Z — Session started; only README.md on `main`; created this board; claimed tasks 1–7 (no other session visible at start).
