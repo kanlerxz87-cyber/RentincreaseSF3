@@ -1,25 +1,35 @@
 {
   "project": "Rental Increase SF - San Francisco (anonymized)",
-  "branch": "arena/07e38125-rentincreasesf3",
+  "branch": "arena/487d8c3e-rentincreasesf3",
   "verified_sources": [
     {"topic": "SF allowable annual increase 1.4% (3/1/2025-2/28/2026), 60% of Bay Area CPI, once per 12 months, base rent only, 30/90-day notice", "url": "https://www.sf.gov/learn-about-rent-increases-san-francisco", "official": true},
     {"topic": "SF allowable increase 1.6% for 3/1/2026-2/28/2027", "url": "https://www.sf.gov/news--annual-rent-increase-3126-22827-announced", "official": true},
-    {"topic": "Current rates table incl. 1.4% / 1.7% history", "url": "https://www.sf.gov/reports--january-2025--current-rates-including-rent-increase-relocation-sec-deposit", "official": true},
-    {"topic": "SF Rent Ordinance coverage / rental laws", "url": "https://www.sf.gov/learn-about-san-francisco-rental-laws", "official": true},
-    {"topic": "AB 1482 (Civ. Code 1947.12): 5% + CPI max 10%, exempts units under stricter local rent control; SF CPI 3.8% (8/1/2026-7/31/2027) => 8.8%", "url": "https://www.sf.gov/reports--california-tenant-protection-act-2019-ab-1482", "official": true},
-    {"topic": "Civ. Code 1947.12 statute text", "url": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=1947.12.", "official": true},
-    {"topic": "Civ. Code 827: 30-day notice <=10%, 90-day >10%", "url": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=827.", "official": true},
-    {"topic": "Costa-Hawkins (Civ. Code 1954.51) exemptions", "url": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=1954.51.", "official": true},
+    {"topic": "Current rates table incl. 1.4% / 1.6% / 1.7% history", "url": "https://www.sf.gov/reports--current-rates-including-rent-increase-relocation-sec-deposit", "official": true},
+    {"topic": "Rent Board Form 571 allowable annual increases (1982-2027 table)", "url": "https://www.sf.gov/documents/34344/571_Allowable_Annual_Increases_26-27_1.pdf", "official": true},
+    {"topic": "SF Rent Ordinance coverage / rental laws (pre-6/13/1979 buildings)", "url": "https://www.sf.gov/learn-about-san-francisco-rental-laws", "official": true},
+    {"topic": "Rent Board Housing Inventory + rent increase license (required before any annual/banked increase; 1-9 unit buildings since 3/1/2023; license in effect on effective date)", "url": "https://www.sf.gov/rent-board-housing-inventory", "official": true},
+    {"topic": "Rent Board Portal (portal.sfrb.org) — file Housing Inventory, check license", "url": "https://portal.sfrb.org/", "official": true},
+    {"topic": "Ordinance 265-20 — housing inventory reporting + license to impose annual/banked rent increases", "url": "https://www.sf.gov/news--new-legislation-creates-housing-inventory-and-requires-owners-obtain-license-imposing", "official": true},
+    {"topic": "Banked rent increases (24-month condition, no cap, added not compounded, since 4/1/1982)", "url": "https://www.sf.gov/information--banked-rent-increases", "official": true},
+    {"topic": "AB 1482 (Civ. Code 1947.12): 5% + CPI max 10%, exempts units under stricter local rent control; SF-region cap 8.8% (8/1/2026-7/31/2027)", "url": "https://www.sf.gov/reports--california-tenant-protection-act-2019-ab-1482", "official": true},
+    {"topic": "Civ. Code 1947.12 statute text", "url": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=1947.12", "official": true},
+    {"topic": "Civ. Code 827: 30-day notice <=10%, 90-day >10%", "url": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=827", "official": true},
+    {"topic": "Costa-Hawkins (Civ. Code 1954.50–1954.53) exemptions", "url": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=1954.53", "official": true},
     {"topic": "Free tenant legal help: Eviction Defense Collaborative 415-659-9184; Rent Board 415-252-4600; discrimination -> SF Human Rights Commission", "url": "https://www.sf.gov/evictions-san-francisco", "official": true},
     {"topic": "Tenant petitions (free; incl. invalid notice of rent increase)", "url": "https://www.sf.gov/tenant-petitions", "official": true},
     {"topic": "Rent Board contact / counseling", "url": "https://sf.gov/departments/rent-board/about", "official": true},
-    {"topic": "Federal fair housing", "url": "https://www.hud.gov/program_offices/fair_housing_equal_opp", "official": true},
-    {"topic": "Section 8 rent reasonableness (24 CFR 982) - only if voucher tenants", "url": "https://www.ecfr.gov/current/title-24/subtitle-B/chapter-II/subchapter-B/part-982/subpart-M", "official": true}
+    {"topic": "Federal fair housing (42 U.S.C. 3604)", "url": "https://www.hud.gov/program_offices/fair_housing_equal_opp", "official": true},
+    {"topic": "42 U.S.C. 3604 text (govinfo)", "url": "https://www.govinfo.gov/content/pkg/USCODE-2023-title42/html/USCODE-2023-title42-chap45-subchapI-sec3604.htm", "official": true},
+    {"topic": "Section 8 rent reasonableness (24 CFR 982) - only if voucher tenants", "url": "https://www.ecfr.gov/current/title-24/subtitle-B/chapter-II/subchapter-B/part-982/subpart-M", "official": true},
+    {"topic": "SF Legistar File 261020 — pending (not law) 10%/yr cap on banked + capital-improvement increases", "url": "https://sfgov.legistar.com/LegislationDetail.aspx?ID=8217304&GUID=7EDA4662-EBFB-4AF5-962F-C669B64AA770", "official": true},
+    {"topic": "SF Admin. Code 37.10C — ban on algorithmic rent-setting devices (eff. 10/14/2024)", "url": "https://www.sf.gov/news--new-law-prohibits-algorithmic-devices-used-set-rents-san-francisco", "official": true}
   ],
   "flagged_unverified": [
     "Section 8 voucher status of tenants",
     "Official certificate-of-occupancy date (assumed pre-6/13/1979 from stated 1940 build)",
-    "Banked allowable increases",
-    "Unit 1 exact increase anniversary date"
+    "Whether prior annual increases were banked (Unit 2 rent history not provided)",
+    "Unit 1 exact increase anniversary date (confirm with a Rent Board counselor)",
+    "Current rent increase license / Housing Inventory status for both units",
+    "Status of pending ordinance Legistar File 261020 (re-check before serving any banked catch-up)"
   ]
 }
