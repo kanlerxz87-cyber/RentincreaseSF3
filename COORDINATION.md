@@ -257,3 +257,11 @@ unchanged since 4/1/2026 assumed.
   (Legistar File #261020, verified directly on sfgov.legistar.com: Pending Committee Action, not law),
   root landing “one of four” wording + stale-branch footer fix, docs stat-strip de-duplication.
   Live re-verified after `2ea0b03`: root, `/dashboard/` (F-9 visible), `/docs/`, `/review/`.
+
+## Task board — `arena/1f0d9b06-rentincreasesf3`
+
+| Task | Status | Owner | File scope |
+|---|---|---|---|
+| Audit current integrated site, official-source support, privacy and deploy; correct material integration defects | in progress | arena/1f0d9b06-rentincreasesf3 | COORDINATION.md, shared site files and verification tooling as needed |
+
+2026-11-07 — Claiming final-integration audit. Prior integration claims are historical, completed or stale; open PRs #1 and #8 will be inspected for overlap. Branch name is fixed by the session environment.
