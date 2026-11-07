@@ -1,0 +1,80 @@
+{
+  "inventory": {
+    "title": "Housing Inventory / license",
+    "url": "https://www.sf.gov/rent-board-housing-inventory",
+    "checked": "2026-11-07",
+    "status": "retrieved; relevant text read"
+  },
+  "increases": {
+    "title": "Rent Board annual increases / notice",
+    "url": "https://www.sf.gov/learn-about-rent-increases-san-francisco",
+    "checked": "2026-11-07",
+    "status": "retrieved; relevant text read"
+  },
+  "banking": {
+    "title": "Rent Board banking",
+    "url": "https://www.sf.gov/information/banked-rent-increases",
+    "checked": "2026-11-07",
+    "status": "retrieved; relevant text read"
+  },
+  "rates": {
+    "title": "Official Form 571",
+    "url": "https://www.sf.gov/documents/34344/571_Allowable_Annual_Increases_26-27_1.pdf",
+    "checked": "2026-11-07",
+    "status": "retrieved; relevant text read"
+  },
+  "coverage": {
+    "title": "SF rental-law coverage",
+    "url": "https://www.sf.gov/learn-about-san-francisco-rental-laws/",
+    "checked": "2026-11-07",
+    "status": "retrieved; relevant text read"
+  },
+  "state": {
+    "title": "SF explanation of AB 1482",
+    "url": "https://www.sf.gov/reports--california-tenant-protection-act-2019-ab-1482",
+    "checked": "2026-11-07",
+    "status": "retrieved; relevant text read"
+  },
+  "notice": {
+    "title": "Civil Code \u00a7827",
+    "url": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=827",
+    "checked": "2026-11-07",
+    "status": "retrieved; relevant text read"
+  },
+  "crd": {
+    "title": "California Civil Rights Department",
+    "url": "https://calcivilrights.ca.gov/housing/",
+    "checked": "2026-11-07",
+    "status": "retrieved; relevant text read"
+  },
+  "hud": {
+    "title": "HUD Fair Housing Act overview",
+    "url": "https://www.hud.gov/helping-americans/fair-housing-act-overview",
+    "checked": "2026-11-07",
+    "status": "retrieved; relevant text read"
+  },
+  "retaliation": {
+    "title": "Civil Code \u00a71942.5",
+    "url": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=1942.5",
+    "checked": "2026-11-07",
+    "status": "retrieved; relevant text read"
+  },
+  "petitions": {
+    "title": "SF landlord petitions",
+    "url": "https://www.sf.gov/landlord-petitions-and-passthroughs",
+    "checked": "2026-11-07",
+    "status": "retrieved; relevant text read"
+  },
+  "help": {
+    "title": "SF tenant and landlord resources",
+    "url": "https://www.sf.gov/tenant-and-landlord-resources",
+    "checked": "2026-11-07",
+    "status": "retrieved; relevant text read"
+  },
+  "proposal": {
+    "title": "Official legislative File 261020",
+    "url": "https://sfgov.legistar.com/LegislationDetail.aspx?ID=8217304&GUID=7EDA4662-EBFB-4AF5-962F-C669B64AA770",
+    "checked": "2026-11-07",
+    "status": "retrieved; relevant text read"
+  }
+}

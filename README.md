@@ -1,3 +1,21 @@
+# Current consolidated site — November 7, 2026
+
+**Start here:** https://kanlerxz87-cyber.github.io/RentincreaseSF3/
+
+The landing page is now the canonical executive summary, with categorized subpages under `audit/`.
+Read `EXECUTIVE_SUMMARY.md` for the text version. Individual-owner license requirements come first.
+All property facts are owner-reported, not government-certified. Missing verified values are blank;
+conditional calculations are not lawful-rent determinations. See `audit/flagged.html`.
+
+Earlier editions below are **archived research** and may disagree. Historical verification claims
+and source logs below describe prior sessions, not a fresh certification. Unsupported catch-up
+recommendations in the former standalone summary are withdrawn. Automated checks:
+`python tools/audit_site.py`, `python verify_site.py`, `python tools/check_site.py`.
+
+---
+
+## Historical README (preserved)
+
 # RentincreaseSF3
 
 **Analysis of lawful, reasonable, and normal rental increases** for a rent-controlled, two-unit
