@@ -355,7 +355,7 @@ and the root page gained one link to it (see the log).
 | V5 | Flagged / unverified items page | done | b73ba2df | verified/guide/flagged.html | F-1…F-12 |
 | V6 | Machine checks | done | b73ba2df | tools/verify_edition.py | links, anchors, per-row citations, privacy, no remote code |
 | V7 | Mark superseded root pages (no content deleted) | done (superseded by main's own banner) | b73ba2df | pages/*.html | main's "ARCHIVED RESEARCH" banner kept; one link to `verified/` added inside it |
-| V8 | PR → main → merge → confirm Pages deploy → record | see log | b73ba2df | COORDINATION.md | |
+| V8 | PR → main → merge → confirm Pages deploy → record | done | b73ba2df | COORDINATION.md | PR #17 merged `c44aad3`; Pages build `built`; live pages retrieved |
 
 ### What this session verified (all fetched 2026-11-07)
 
@@ -391,3 +391,38 @@ presented as a general rule (true only for personal service with a 28 February 2
   `verified/EXECUTIVE_SUMMARY.md`. Both agree on every headline figure.
 - `COORDINATION.md` — this section appended to main's board; no other session's section removed.
 - Nothing was deleted; `verified/**` is purely additive.
+
+### Log — `arena/b73ba2df` (UTC, 2026-11-07)
+
+- Session started at `25e1e5f` (PR #11). Read this board in full, claimed V1–V8, pushed the claim (`aef9b24`).
+- Re-verified 32 official sources by retrieving each one on 2026-11-07 and quoting the passage used; recomputed all
+  figures to the cent (`3995 × .030 = 119.85`; `3150 × .131 = 412.65`; per-year Unit 2 amounts sum to 412.65;
+  compounding would have given 4,115.74 and 3,585.74 respectively and is not permitted).
+- Built the verified edition (10 pages + CSS + checker). `tools/verify_edition.py`: 10 pages, 331 data rows, 0 errors;
+  every row carries an official link or an explicit blank/flag marker; privacy sweep clean.
+- **`main` advanced twice while this session worked** (PR #12 → #16). To avoid overwriting published work the edition
+  was relocated to `verified/` and the conflicts were resolved by keeping the concurrent integration's files verbatim
+  and adding a single link to the new edition. Nothing was deleted, nothing was rebased away, no force-push.
+- PR [#17](https://github.com/kanlerxz87-cyber/RentincreaseSF3/pull/17) opened; **Site checks run
+  [42413340744](https://github.com/kanlerxz87-cyber/RentincreaseSF3/actions/runs/42413340744) passed**, including the
+  new `tools/verify_edition.py` step added to `.github/workflows/site-checks.yml`.
+- **MERGED** 2026-11-07 as merge commit `c44aad3582881c3439fa38b28978d2af6a11abd4` (`gh pr merge 17 --merge`, no
+  approval wait). Post-merge Site checks run `42413380614` succeeded; Pages build `pages-build-deployment`
+  `42413380293` succeeded and the Pages build API returned `built` for `c44aad3`.
+- Live verification by retrieval after the deploy:
+  root <https://kanlerxz87-cyber.github.io/RentincreaseSF3/> (consolidated summary **plus** the highlighted link into
+  the verified edition — confirmed in the served HTML),
+  <https://kanlerxz87-cyber.github.io/RentincreaseSF3/verified/> (dashboard, licence answer first, 32 sources),
+  <https://kanlerxz87-cyber.github.io/RentincreaseSF3/verified/guide/executive-summary.html>,
+  <https://kanlerxz87-cyber.github.io/RentincreaseSF3/verified/guide/flagged.html> (F-9 … F-12 rendered).
+  `/audit/`, `/docs/`, `/dashboard/`, `/review/` untouched.
+
+### PR / deploy record — `arena/b73ba2df`
+
+- PR: [#17](https://github.com/kanlerxz87-cyber/RentincreaseSF3/pull/17) — `arena/b73ba2df-rentincreasesf3` → `main`.
+- Merge conflicts: `COORDINATION.md` (twice), `EXECUTIVE_SUMMARY.md`, `index.html`, `pages/*.html`, all caused by
+  concurrent integration sessions merging first. Resolution: keep the other sessions' files verbatim where they had
+  already consolidated, keep both boards, relocate this edition to `verified/` so no shared path was replaced.
+- Merge: **MERGED** as `c44aad3`. Pages: **built**. Checks: **passed** (pre-merge and post-merge).
+- Flagged items F-1…F-12 published on <https://kanlerxz87-cyber.github.io/RentincreaseSF3/verified/guide/flagged.html>
+  and do not block the merge.
