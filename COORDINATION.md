@@ -257,3 +257,12 @@ unchanged since 4/1/2026 assumed.
   (Legistar File #261020, verified directly on sfgov.legistar.com: Pending Committee Action, not law),
   root landing “one of four” wording + stale-branch footer fix, docs stat-strip de-duplication.
   Live re-verified after `2ea0b03`: root, `/dashboard/` (F-9 visible), `/docs/`, `/review/`.
+
+## Integration audit — arena/649a1fa8-rentincreasesf3 (2026-11-07)
+
+| Task | Status | Owner | Scope |
+|---|---|---|---|
+| Consolidate front-door summary, source recheck and disclose legacy disagreements | in progress | arena/649a1fa8 | index.html, EXECUTIVE_SUMMARY.md, audit/**, tools/audit_site.py, README.md |
+| Final integration / tests / PR / Pages deployment | in progress | arena/649a1fa8 | COORDINATION.md |
+
+All preceding claims are completed; legacy editions will be preserved as archived research, not silently certified. This is the final integration session. Arena requires this assigned branch; no additional session branch is created. Official-page retrieval failures will be flagged, not represented as successful verification. Existing property inputs are owner-reported, not independently verified. Claim committed and pushed before implementation.
