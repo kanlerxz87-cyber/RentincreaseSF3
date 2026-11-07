@@ -59,6 +59,23 @@ Verification performed: every table row on this session's site either links an o
 
 Irregularities found in this session's own work / repo: README was a 17-byte stub missing trailing newline (rewritten); repo had no site/CI/Pages config (fixed via `docs/` + Pages); repo had no license (owner decision — logged); duplicate-work conflict with PR #2 (this file).
 
+## Task board — `arena/487d8c3e` (this session)
+
+Claimed 2026-11-07; branch == main at 25e1e5f (four editions merged). Scope: (a) foreground the Rent Board / rent-increase licence process in the executive summary with a step-by-step answer for an individual (non-corporate) owner and official links; (b) re-verify every figure in all four editions against official sources (sf.gov, leginfo, govinfo, calcivilrights.ca.gov, sfgov.legistar.com); (c) fix irregularities flagged in this file; (d) keep anonymisation (no tenant initials/names, no ZIP 94122, no outer sunset; dates and amounts unchanged); (e) ensure every table row carries an official source link or is blank + flagged; (f) final integration: PR from this branch to main, merge, confirm GitHub Pages deploy, record PR link + merge result here.
+
+| # | Task | Status | File scope | Notes |
+|---|------|--------|------------|-------|
+| T1 | Claim tasks + sync branch | in progress | COORDINATION.md | claim pushed before work |
+| T2 | Verify rent-board licence/notice process (individual owner) vs official sf.gov sources | unclaimed | EXECUTIVE_SUMMARY.md, pages/process.html, docs/notice-and-reasons.html, review/notices.html | user-foregrounded item |
+| T3 | Re-verify rates 1.4%/1.6%, banking, AB 1482, Civ. 827, Costa-Hawkins, coverage cutoff | unclaimed | all editions | official sources only |
+| T4 | PII scrub re-scan (initials, 94122, outer sunset) + anonymisation sweep | unclaimed | all public files | dates/amounts unchanged |
+| T5 | Fix irregularities (items 1–6 logged by ae0d4576, F-9 etc.) where within scope | unclaimed | pages/, dashboard/, docs/, review/ | cross-session edits logged, not applied to other editions |
+| T6 | Final integration: build check, no broken links, PR → main, merge, Pages deploy confirmed, record here | unclaimed | all | do not merge a broken site |
+
+## Log — `arena/487d8c3e` (UTC)
+
+- 2026-11-07 — Session started; branch identical to main at 25e1e5f (PR #11 merged). Claimed T1–T6 per user request; claim pushed below.
+
 ## Log — `arena/ae0d4576` (UTC)
 
 - 2026-11-06T13:05Z — Session started; only README.md on `main`; created this board; claimed tasks 1–7 (no other session visible at start).
