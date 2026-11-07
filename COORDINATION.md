@@ -331,6 +331,11 @@ All preceding claims are completed; legacy editions will be preserved as archive
 
 - 2026-11-07 conflict reconciliation: while this session worked, PRs #12 and #13 merged another integration session's canonical root and `audit/` site. The two integration scopes overlapped despite separate claims being invisible on the original checkout. `git merge origin/main` conflicted in COORDINATION.md, README, summary, and legacy site pages. Resolution preserves the other session's complete current site, workflow, archived editions, README and executive summary; both coordination sections are retained. This session's superseded redirect/dashboard implementation remains in this branch's prior commit history, not deployed. Rather than overwrite parallel work, this session limits its final change to the fee/portal clarification and validation below.
 
+### PR / deploy record — arena/081a63a0
+
+- PR [#14](https://github.com/kanlerxz87-cyber/RentincreaseSF3/pull/14) merged 2026-11-07T20:50:07Z as `1cfea10147e8053e73e7d50c3d682483588eefba`. Conflicts were resolved by retaining the concurrent integration's completed work and appending both coordination logs; the final actual change is a sourced fee/portal clarification, not a duplicate site.
+- PR Site checks run [42412921625](https://github.com/kanlerxz87-cyber/RentincreaseSF3/actions/runs/42412921625) succeeded; post-merge Site checks [42412946951](https://github.com/kanlerxz87-cyber/RentincreaseSF3/actions/runs/42412946951) succeeded. GitHub Pages [42412946400](https://github.com/kanlerxz87-cyber/RentincreaseSF3/actions/runs/42412946400) succeeded, and the Pages build API returned `built` for the exact merge commit. Live root and process page were retrieved and the fee/portal clarification was confirmed. GitHub's managed Pages workflow reported a non-failing Node runtime warning.
+- Rebase incident: after the conflict-resolution merge, `git pull --rebase origin arena/081a63a0-rentincreasesf3` attempted to replay the other integration's merged commits and conflicted. It was aborted intact; both remote branch and `origin/main` were confirmed ancestors before the fast-forward push. No other session's commits were discarded. Subsequently fast-forwarded this branch to the PR merge commit before writing this publication record.
 ---
 
 ## Task board — `arena/b73ba2df` (session `arena/b73ba2df-rentincreasesf3`)
@@ -386,4 +391,3 @@ presented as a general rule (true only for personal service with a 28 February 2
   `verified/EXECUTIVE_SUMMARY.md`. Both agree on every headline figure.
 - `COORDINATION.md` — this section appended to main's board; no other session's section removed.
 - Nothing was deleted; `verified/**` is purely additive.
-
