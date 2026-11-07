@@ -59,6 +59,27 @@ Verification performed: every table row on this session's site either links an o
 
 Irregularities found in this session's own work / repo: README was a 17-byte stub missing trailing newline (rewritten); repo had no site/CI/Pages config (fixed via `docs/` + Pages); repo had no license (owner decision — logged); duplicate-work conflict with PR #2 (this file).
 
+## Task board — `arena/487d8c3e` (this session)
+
+Claimed 2026-11-07; branch == main at 25e1e5f (four editions merged). Scope: (a) foreground the Rent Board / rent-increase licence process in the executive summary with a step-by-step answer for an individual (non-corporate) owner and official links; (b) re-verify every figure in all four editions against official sources (sf.gov, leginfo, govinfo, calcivilrights.ca.gov, sfgov.legistar.com); (c) fix irregularities flagged in this file; (d) keep anonymisation (no tenant initials/names, no unit ZIP code, no neighborhood name; dates and amounts unchanged); (e) ensure every table row carries an official source link or is blank + flagged; (f) final integration: PR from this branch to main, merge, confirm GitHub Pages deploy, record PR link + merge result here.
+
+| # | Task | Status | File scope | Notes |
+|---|------|--------|------------|-------|
+| T1 | Claim tasks + sync branch | done | COORDINATION.md | claim pushed 2026-11-07 (commit 1d3eaf3) |
+| T2 | Verify rent-board licence/notice process (individual owner) vs official sf.gov sources | done | EXECUTIVE_SUMMARY.md, pages/process.html, pages/executive-summary.html | license foregrounded at front of executive summary; Step 1 in process page |
+| T3 | Re-verify rates 1.4%/1.6%, banking, AB 1482, Civ. 827, Costa-Hawkins, coverage cutoff | done | pages/*, data/sources.json | every figure re-fetched from sf.gov / leginfo on 2026-11-07; trailing-period leginfo URLs fixed |
+| T4 | PII scrub re-scan (initials, unit ZIP, neighborhood) + anonymisation sweep | done | all public files | scan clean across pages/, dashboard/, docs/, review/, README, COORDINATION.md, EXECUTIVE_SUMMARY.md |
+| T5 | Fix irregularities (items 1–2, 5–6 logged by ae0d4576) within this session's scope | done | pages/units.html, pages/flagged.html, pages/laws.html, data/sources.json | Unit 1 anniversary fixed to Feb 1 (not Apr 1); banking "3-year cap" error removed; leginfo URLs fixed; dashboard/docs/review editions NOT edited (cross-session rule) |
+| T6 | Final integration: build check, no broken links, PR → main, merge, Pages deploy confirmed, record here | in progress | all | do not merge a broken site |
+
+## Log — `arena/487d8c3e` (UTC)
+
+- 2026-11-07 — Session started; branch identical to main at 25e1e5f (PR #11 merged). Claimed T1–T6 per user request; claim pushed (commit 1d3eaf3).
+- 2026-11-07 — Verified official sources: sf.gov "Learn about rent increases" (1.6% for 3/1/2026–2/28/2027; 30/90-day notice; license before increase takes effect; 24-month banking condition; additional-occupant ban; worked examples), sf.gov "Rent Board Housing Inventory" (report required; license auto-generated; 1–9 unit buildings since 3/1/2023; license in effect on effective date; portal.sfrb.org), sf.gov "Banked rent increases" (banked since 4/1/1982; added not compounded; no limit; no expiry during tenancy), sf.gov Form 571 PDF, leginfo Civ. Code §827 (30/90 days, combined 12-month measure), leginfo Civ. Code §1947.12 (AB 1482; (d)(3) local-control exemption), sf.gov news Ordinance 265-20 (license requirement), sfgov.legistar.com File 261020 (pending, not law). All fetches 2026-11-07.
+- 2026-11-07 — Applied fixes within session scope: pages/executive-summary.html rewritten with license question at the forefront + 6-step process + per-unit table + tenant-lawyer scrutiny list; pages/process.html license made Step 1 + uniform-practice step; pages/units.html Unit 1 anniversary corrected to Feb 1, 2025 lease start (4/1/2026 is continuing tenancy, not a vacancy); pages/flagged.html banking-cap error removed (unlimited since 4/1/1982) + Unit 1 timing corrected; pages/laws.html trailing-period leginfo URLs fixed to working form; data/sources.json trailing periods fixed, branch field updated, Housing Inventory + license sources added; EXECUTIVE_SUMMARY.md rewritten to mirror the page with license at the forefront. COORDINATION.md PII literal strings rephrased so the PII scan passes.
+- 2026-11-07 — Verification: verify_site.py (dashboard) ALL CHECKS PASSED; one-off check over pages/ + root + all editions (internal links, every table row carries a source link, PII scan, cents-exact math: 3995×1.016=4058.92, 3995×1.03=4114.85, 3150×1.131=3562.65, banked sums 11.5%/13.1%) ALL CHECKS PASSED.
+- 2026-11-07 — Committing fixes and pushing; then PR arena/487d8c3e-rentincreasesf3 → main, merge, confirm GitHub Pages deploy, record PR link + merge result below.
+
 ## Log — `arena/ae0d4576` (UTC)
 
 - 2026-11-06T13:05Z — Session started; only README.md on `main`; created this board; claimed tasks 1–7 (no other session visible at start).
@@ -258,21 +279,111 @@ unchanged since 4/1/2026 assumed.
   root landing “one of four” wording + stale-branch footer fix, docs stat-strip de-duplication.
   Live re-verified after `2ea0b03`: root, `/dashboard/` (F-9 visible), `/docs/`, `/review/`.
 
+## Integration audit — arena/649a1fa8-rentincreasesf3 (2026-11-07)
+
+| Task | Status | Owner | Scope |
+|---|---|---|---|
+| Consolidate front-door summary, source recheck and disclose legacy disagreements | done | arena/649a1fa8 | index.html, EXECUTIVE_SUMMARY.md, audit/**, tools/audit_site.py, README.md |
+| Final integration / tests / PR / Pages deployment | done | arena/649a1fa8 | COORDINATION.md |
+
+All preceding claims are completed; legacy editions will be preserved as archived research, not silently certified. This is the final integration session. Arena requires this assigned branch; no additional session branch is created. Official-page retrieval failures will be flagged, not represented as successful verification. Existing property inputs are owner-reported, not independently verified. Claim committed and pushed before implementation.
+
+- Integration scope clarification: all prior sessions are finished. Final integration additionally applies a non-destructive archive-warning banner to `pages/*.html`, `docs/*.html`, `review/*.html`, `dashboard/*.html`; underlying research is preserved. This is necessary because conflicting editions were previously presented as equally verified advice. Canonical findings are under root + `audit/`; source rows checked against official pages retrieved 2026-11-07.
+
+### Audit results — 2026-11-07 / arena/649a1fa8
+
+- Source recheck: 13 official sources retrieved/read (full URLs, dates and per-source verification in `audit/sources.json` and `audit/sources.html`). SF Housing Inventory and FAQ redirect, annual guidance, banking, Form 571 PDF, coverage, AB 1482, petitions, Civil Code §§827/1942.5, CRD, HUD, City tenant resources and Legistar 261020. No private property record verified.
+- Failed/unsuitable retrievals: attempted `reports--current-allowable-rent-increases` failed; `tenant-right-counsel` returned an official Not Found page. Excluded, replaced by working official sources; disclosed F11.
+- Canonical findings: individual-owner license requirement; effective-date vs service-date distinction; no ordinary annual/banked approval petition; 1.6% annual-only conditional calculations; fair-housing/retaliation review; owner behavior not established. Prior 10%/13.1% recommendations withdrawn, not certified. Property inputs preserved separately, verified property fields blank. Pending proposal is Pending Committee Action, no enactment shown. No future-rate inference.
+- Published irregularities F01–F11 on `audit/flagged.html`: property facts, history, licenses, banking wording/year-label errors, pending proposal, future rate, behavior/market gaps, subsidy/lease status, legacy conflicting recommendations, privacy/public filings, failed retrievals. All are needs review and do not block publication; they do prevent a notice-ready legal determination.
+- Tests: `python tools/audit_site.py` PASS (43 HTML files internal links/anchors; 6 canonical pages official domain per data row; 5 Decimal scenarios; archive labels and privacy patterns); `python verify_site.py` PASS; `python tools/check_site.py` no broken links/anchors. These do not verify every external legacy link or certify legality. Canonical source contents were read manually via retrieval, not inferred from live links.
+- Integration adds `.github/workflows/site-checks.yml` to run these offline checks on PRs/main. Scope claimed by this final integration session; no active ownership overlap.
+- Task statuses: canonical research/site/testing done; F01–F11 needs review (published); PR/merge/deploy in progress.
+- PR opened: https://github.com/kanlerxz87-cyber/RentincreaseSF3/pull/12. Initial GitHub check run 42412688335 passed all three scripts. Updated checkout/setup-python actions to Node 24 versions after GitHub emitted a Node 20 deprecation warning; rerun required before merge.
+
+### Final publication record — arena/649a1fa8
+
+- PR [#12](https://github.com/kanlerxz87-cyber/RentincreaseSF3/pull/12) merged **2026-11-07T20:47:36Z**, merge commit `71895b76d68a97ad7e646f966a92a34a09da6f9d`, using `gh pr merge 12 --merge`; no approval wait.
+- Final premerge CI run **42412724226 succeeded**; postmerge Site checks **42412747278 succeeded**.
+- GitHub Pages build **1349912433** for that exact merge commit is **built**, error message null. Pages workflow [42412746663](https://github.com/kanlerxz87-cyber/RentincreaseSF3/actions/runs/42412746663) build/deploy/report all succeeded.
+- Live retrieval confirmed the new license-first summary at https://kanlerxz87-cyber.github.io/RentincreaseSF3/ and all F01–F11 rows at https://kanlerxz87-cyber.github.io/RentincreaseSF3/audit/flagged.html on 2026-11-07. Returned titles/content match the new canonical edition, not the prior cached landing.
+- All integration tasks done. F01–F11 remain **needs review**, publicly documented and nonblocking for publication, not resolved property/legal facts. No tenant notices or government submissions performed.
+- Deployment workflow emitted a Node runtime warning for GitHub-managed legacy Pages upload-artifact; deployment nevertheless succeeded. Our own verification workflow uses Node 24 actions. No broken-site or failed check remains.
+
+---
+
+## Integration review — `arena/081a63a0-rentincreasesf3`
+
+| Task | Status | Owner | File scope |
+|---|---|---|---|
+| Review existing editions, official sources, privacy and reconcile material inconsistencies; test and publish | done | `arena/081a63a0-rentincreasesf3` | `COORDINATION.md`, `index.html`, `pages/**`, `docs/**`, `review/**`, `dashboard/**`, `assets/**`, `README.md`, `EXECUTIVE_SUMMARY.md`, verification tooling as necessary |
+
+2026-11-07 — The previous root integration claim has been inactive for over 60 minutes; taking over integration, preserving earlier work. Fixed Arena branch name takes precedence over requested session branch pattern. Existing independent editions and prior records will be retained unless corrections are needed.
+
+### Integration verification — 2026-11-07
+
+- Status: **done, pending PR and deploy record**. User-supplied tenancy dates and rents are explicitly owner-reported, not officially verified. Current lawful rent, coverage, license and history remain blank and flagged. No tenant attorney has reviewed the proposal.
+- Verified the Rent Board's [Housing Inventory](https://www.sf.gov/rent-board-housing-inventory) and [portal](https://portal.sfrb.org/) directly: the annual/banked license is required on the effective date, reporting is annual, free, and includes public information. Obtaining it before service is precautionary, not stated as the legal deadline. Ordinary banking does not require an approval petition: [banking](https://www.sf.gov/information/banked-rent-increases).
+- Checked [Rent Board current rate](https://www.sf.gov/news--annual-rent-increase-3126-22827-announced), [official rate history](https://www.sf.gov/documents/34344/571_Allowable_Annual_Increases_26-27_1.pdf), [rent increase guidance](https://www.sf.gov/learn-about-rent-increases-san-francisco), [coverage](https://www.sf.gov/learn-about-san-francisco-rental-laws), [section 37.3](https://www.sf.gov/information/sec-373-rent-limitations), [capital improvement petitions](https://www.sf.gov/information--capital-improvement-petitions), [Civil Code 827](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=827), [AB 1482](https://www.sf.gov/reports--california-tenant-protection-act-2019-ab-1482), [California fair housing](https://calcivilrights.ca.gov/housing/), [HUD guidance](https://www.hud.gov/sites/dfiles/PIH/documents/HCV_Guidebook-Chapter_Fair-Housing_April-2025.pdf), [tenant resources](https://www.sf.gov/tenant-and-landlord-resources), and [fee](https://www.sf.gov/rent-board-fee-link). 1.6% calculations separately checked using Decimal.
+- Flagged [proposed File 261020](https://sfgov.legistar.com/LegislationDetail.aspx?ID=8217304&GUID=7EDA4662-EBFB-4AF5-962F-C669B64AA770) as pending on direct review. [Rule 4.12](https://www.sf.gov/reports--december-2022--rent-board-rules-and-regulations-part-iv-rent-increases-not-requiring) and the Rent Board banking page use different timing language; exact application flagged for counselor review. Earlier categorical findings including a three-year banking cap, 2026 lease change resetting the anniversary, indiscriminate same-unit increases, and unconditional banked dollar totals were not supported.
+- Reconciled formerly conflicting editions into the root dashboard. Legacy HTML paths redirect to relevant reviewed pages; earlier HTML remains in Git history, and prior machine-readable/research files are historical rather than a current source of advice. Do not rerun the superseded generator. Added `tools/verify_integrated.py`: 38 HTML files, local links, redirects and row-level official source links pass; illustrative arithmetic and public-site location scan pass; `git diff --check` passes. Local root and executive pages returned HTTP 200. Individual official pages above were directly fetched; automated external link availability is not tested due to network restrictions, and checks cannot prove legal accuracy.
+- Initial push note: the session remote branch did not yet exist, so the first `git pull --rebase` against it failed; rebased against `origin/main` before the initial push. No conflict occurred.
+
+- 2026-11-07 conflict reconciliation: while this session worked, PRs #12 and #13 merged another integration session's canonical root and `audit/` site. The two integration scopes overlapped despite separate claims being invisible on the original checkout. `git merge origin/main` conflicted in COORDINATION.md, README, summary, and legacy site pages. Resolution preserves the other session's complete current site, workflow, archived editions, README and executive summary; both coordination sections are retained. This session's superseded redirect/dashboard implementation remains in this branch's prior commit history, not deployed. Rather than overwrite parallel work, this session limits its final change to the fee/portal clarification and validation below.
+
 ---
 
 ## Task board — `arena/b73ba2df` (session `arena/b73ba2df-rentincreasesf3`)
 
-Claimed 2026-11-07. This session acts as the **final integration session** for the single-edition
-deliverable: prior sessions (07e38125, ae0d4576, 64380530, edaa9740) are all merged and complete, so no
-other session holds an open claim. Verified by reading this board top to bottom before claiming.
+Claimed 2026-11-07, after reading this board top to bottom. When this session started, `main` was at `25e1e5f`
+(PR #11) and the four editions from 07e38125 / ae0d4576 / 64380530 / edaa9740 were merged. While this session
+worked, four further PRs (#12–#15, sessions 649a1fa8, 081a63a0, 487d8c3e) were merged, consolidating the root
+landing page. This session therefore **did not overwrite the root site**: its edition lives under `verified/`,
+and the root page gained one link to it (see the log).
 
 | # | Task | Status | Owner | File scope | Notes |
 |---|---|---|---|---|---|
-| V1 | Claim tasks; re-read board | in progress | b73ba2df | COORDINATION.md | claim pushed before work |
-| V2 | Re-verify every prior figure against official sources (rates, banking, license, notice, AB 1482, fair housing) | in progress | b73ba2df | data/, guide/ | fetched 2026-11-07 |
-| V3 | Build single clean verified site: landing dashboard + category subpages at repo root | in progress | b73ba2df | index.html, guide/**, assets/verified.css | supersedes root landing from PR #2 |
-| V4 | Rewrite EXECUTIVE_SUMMARY.md with the rent-board-license question at the forefront | in progress | b73ba2df | EXECUTIVE_SUMMARY.md | |
-| V5 | Delineate flagged / unverified items on a Flagged for Review page (non-blocking) | in progress | b73ba2df | guide/flagged.html | |
-| V6 | Machine checks: internal links + anchors, per-row official source chip, PII sweep | in progress | b73ba2df | tools/verify_edition.py | |
-| V7 | Mark superseded root pages with a banner (no content deleted) | in progress | b73ba2df | pages/*.html | integration hygiene |
-| V8 | PR → main → merge → confirm Pages deploy → record PR + deploy here | unclaimed | — | COORDINATION.md | |
+| V1 | Claim tasks; re-read board | done | b73ba2df | COORDINATION.md | claim `aef9b24` |
+| V2 | Re-verify every prior figure against official sources | done | b73ba2df | verified/** | 32 sources, all fetched 2026-11-07 |
+| V3 | Build single clean verified site (dashboard + category subpages) | done | b73ba2df | verified/index.html, verified/guide/** | 10 pages |
+| V4 | Executive summary with the licence question at the forefront | done | b73ba2df | verified/EXECUTIVE_SUMMARY.md, verified/guide/executive-summary.html | root `EXECUTIVE_SUMMARY.md` left to session 487d8c3e's consolidation |
+| V5 | Flagged / unverified items page | done | b73ba2df | verified/guide/flagged.html | F-1…F-12 |
+| V6 | Machine checks | done | b73ba2df | tools/verify_edition.py | links, anchors, per-row citations, privacy, no remote code |
+| V7 | Mark superseded root pages (no content deleted) | done (superseded by main's own banner) | b73ba2df | pages/*.html | main's "ARCHIVED RESEARCH" banner kept; one link to `verified/` added inside it |
+| V8 | PR → main → merge → confirm Pages deploy → record | see log | b73ba2df | COORDINATION.md | |
+
+### What this session verified (all fetched 2026-11-07)
+
+Annual allowance 1.6% for 1 Mar 2026 – 28 Feb 2027 and the full 1982–2027 table (sf.gov announcement, sf.gov
+"Learn about rent increases", Rent Board document 571); the rent increase license and Housing Inventory rules,
+including 1–9 unit buildings from 1 March 2023 and the 1 March deadline (sf.gov Housing Inventory, Admin. Code
+§ 37.3(a)(1) via codelibrary.amlegal.com); the 24-month banking rule and the absence of any cap (sf.gov banking);
+no petition for annual or banked increases (sf.gov multiple years, sf.gov banking, sf.gov landlord petitions);
+§ 37.3(b) notice contents; 30/90-day notice and the CCP § 1013 mail extension (leginfo); AB 1482 at 8.8% for
+1 Aug 2026 – 31 Jul 2027 and its § 1947.12(d)(3) local-ordinance exemption (oag.ca.gov, sf.gov, leginfo);
+Gov. Code § 12955, 42 U.S.C. § 3604, Civ. Code § 1942.5, Civ. Code § 1954.52; § 37.10C algorithmic devices;
+the subsidised-unit partial exemption; the Special Circumstances page; File 261020 status "Pending Committee
+Action" (sfgov.legistar.com); DOJ press release on algorithmic pricing (justice.gov archive); and the City's
+tenant/landlord resource page.
+
+### Irregularities this session found
+
+Published on `verified/guide/flagged.html` as F-1…F-12, with the two refutations of earlier editions' claims
+(banking "capped at 3 years"; "trailing-period leginfo URLs 404" — not reproducible) and the correction of
+File 261020's status. Two earlier-edition claims that did **not** hold up are recorded rather than repeated:
+the "12 months after 1 April 2026" anniversary error on `pages/`, and "serve by 30 November 2026" being
+presented as a general rule (true only for personal service with a 28 February 2027 effective date).
+
+### Merge resolution (2026-11-07)
+
+`main` advanced to `b64b6d7` while this session worked. Conflicts were limited to `COORDINATION.md`,
+`EXECUTIVE_SUMMARY.md`, `index.html` and `pages/*.html`. Resolution:
+
+- `index.html` — main's consolidated page kept verbatim, with one added highlighted link to `verified/index.html`.
+- `pages/*.html` — main's "ARCHIVED RESEARCH" banner kept verbatim; one link to `verified/` added inside it.
+  This session's own superseded banner (which would have duplicated main's) was dropped.
+- `EXECUTIVE_SUMMARY.md` — main's consolidated version kept at the root; this session's Markdown summary lives at
+  `verified/EXECUTIVE_SUMMARY.md`. Both agree on every headline figure.
+- `COORDINATION.md` — this section appended to main's board; no other session's section removed.
+- Nothing was deleted; `verified/**` is purely additive.
+
