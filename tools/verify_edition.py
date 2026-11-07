@@ -27,16 +27,16 @@ ROOT = Path(__file__).resolve().parent.parent
 # Pages produced by this edition. Other editions in the repository are checked for
 # link integrity only, not for citations (they are marked superseded or are historical).
 EDITION = [
-    "index.html",
-    "guide/executive-summary.html",
-    "guide/license-and-process.html",
-    "guide/units.html",
-    "guide/allowable-increases.html",
-    "guide/notice.html",
-    "guide/laws.html",
-    "guide/reasonable-and-normal.html",
-    "guide/flagged.html",
-    "guide/sources.html",
+    "verified/index.html",
+    "verified/guide/executive-summary.html",
+    "verified/guide/license-and-process.html",
+    "verified/guide/units.html",
+    "verified/guide/allowable-increases.html",
+    "verified/guide/notice.html",
+    "verified/guide/laws.html",
+    "verified/guide/reasonable-and-normal.html",
+    "verified/guide/flagged.html",
+    "verified/guide/sources.html",
 ]
 
 OFFICIAL_HOSTS = {
