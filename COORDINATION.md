@@ -257,3 +257,13 @@ unchanged since 4/1/2026 assumed.
   (Legistar File #261020, verified directly on sfgov.legistar.com: Pending Committee Action, not law),
   root landing “one of four” wording + stale-branch footer fix, docs stat-strip de-duplication.
   Live re-verified after `2ea0b03`: root, `/dashboard/` (F-9 visible), `/docs/`, `/review/`.
+
+---
+
+## Integration review — `arena/081a63a0-rentincreasesf3`
+
+| Task | Status | Owner | File scope |
+|---|---|---|---|
+| Review existing editions, official sources, privacy and reconcile material inconsistencies; test and publish | in progress | `arena/081a63a0-rentincreasesf3` | `COORDINATION.md`, `index.html`, `pages/**`, `docs/**`, `review/**`, `dashboard/**`, `assets/**`, `README.md`, `EXECUTIVE_SUMMARY.md`, verification tooling as necessary |
+
+2026-11-07 — The previous root integration claim has been inactive for over 60 minutes; taking over integration, preserving earlier work. Fixed Arena branch name takes precedence over requested session branch pattern. Existing independent editions and prior records will be retained unless corrections are needed.
