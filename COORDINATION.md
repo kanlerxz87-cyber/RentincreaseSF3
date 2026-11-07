@@ -257,3 +257,22 @@ unchanged since 4/1/2026 assumed.
   (Legistar File #261020, verified directly on sfgov.legistar.com: Pending Committee Action, not law),
   root landing “one of four” wording + stale-branch footer fix, docs stat-strip de-duplication.
   Live re-verified after `2ea0b03`: root, `/dashboard/` (F-9 visible), `/docs/`, `/review/`.
+
+---
+
+## Task board — `arena/b73ba2df` (session `arena/b73ba2df-rentincreasesf3`)
+
+Claimed 2026-11-07. This session acts as the **final integration session** for the single-edition
+deliverable: prior sessions (07e38125, ae0d4576, 64380530, edaa9740) are all merged and complete, so no
+other session holds an open claim. Verified by reading this board top to bottom before claiming.
+
+| # | Task | Status | Owner | File scope | Notes |
+|---|---|---|---|---|---|
+| V1 | Claim tasks; re-read board | in progress | b73ba2df | COORDINATION.md | claim pushed before work |
+| V2 | Re-verify every prior figure against official sources (rates, banking, license, notice, AB 1482, fair housing) | in progress | b73ba2df | data/, guide/ | fetched 2026-11-07 |
+| V3 | Build single clean verified site: landing dashboard + category subpages at repo root | in progress | b73ba2df | index.html, guide/**, assets/verified.css | supersedes root landing from PR #2 |
+| V4 | Rewrite EXECUTIVE_SUMMARY.md with the rent-board-license question at the forefront | in progress | b73ba2df | EXECUTIVE_SUMMARY.md | |
+| V5 | Delineate flagged / unverified items on a Flagged for Review page (non-blocking) | in progress | b73ba2df | guide/flagged.html | |
+| V6 | Machine checks: internal links + anchors, per-row official source chip, PII sweep | in progress | b73ba2df | tools/verify_edition.py | |
+| V7 | Mark superseded root pages with a banner (no content deleted) | in progress | b73ba2df | pages/*.html | integration hygiene |
+| V8 | PR → main → merge → confirm Pages deploy → record PR + deploy here | unclaimed | — | COORDINATION.md | |
