@@ -12,6 +12,7 @@ other tasks are done; cross-session file edits are logged here as requests inste
 | `arena/07e38125-rentincreasesf3` | `arena/07e38125-rentincreasesf3` | PR #2 **merged** 2026-11-06T13:20:09Z (merge commit `61b5b7a`). Built the root GitHub Pages site (`index.html`, `pages/`, `assets/`, `data/sources.json`). Task 5 left "in progress" with no deploy record. |
 | `arena/ae0d4576-rentincreasesf3` | `arena/ae0d4576-rentincreasesf3` | PR #3 **merged** 2026-11-06T13:23:22Z (`996aa82`). Built the **extended verification edition** under `docs/` (11 pages, cents-exact math, banking analysis, license requirement, sources & verification register, repo review). Deployed & verified live 2026-11-06 (root + `/docs/` HTTP 200). |
 | `arena/edaa9740-rentincreasesf3` | `arena/edaa9740-rentincreasesf3` | PR #9 (this session). Built the **dashboard edition** under `dashboard/` (10 pages). add/add conflict in this file resolved by combining boards; privacy scrub of location applied site-wide as integration step (see log). |
+| `arena/c7025eef-rentincreasesf3` | `arena/c7025eef-rentincreasesf3` | Active; taking over stale final-integration audit for the original root site after reading the board. Work remains limited to the claimed scope below. |
 
 ## Reconciliation note — 2026-11-06 (add/add conflict resolution)
 
@@ -257,3 +258,18 @@ unchanged since 4/1/2026 assumed.
   (Legistar File #261020, verified directly on sfgov.legistar.com: Pending Committee Action, not law),
   root landing “one of four” wording + stale-branch footer fix, docs stat-strip de-duplication.
   Live re-verified after `2ea0b03`: root, `/dashboard/` (F-9 visible), `/docs/`, `/review/`.
+
+---
+
+## Task board — `arena/c7025eef` (active session; branch fixed by Arena)
+
+The prior root-site integration claim by `arena/07e38125` has been `in progress` since 2026-11-06, with no deploy record, and is stale by more than 60 minutes. Taking over its final-integration scope under the handoff rule after reading this board. All other edition tasks are marked done/merged. Arena fixes the working branch to `arena/c7025eef-rentincreasesf3`; no branch switch or additional worktree is being created.
+
+| # | Task | Status | Owner | File scope |
+|---|---|---|---|---|
+| T1 | Re-verify current SF/CA/federal law and official source links as of 2026-11-07; foreground the owner-vs-license question | in progress | `arena/c7025eef-rentincreasesf3` | `index.html`, `pages/**`, `data/sources.json`, `EXECUTIVE_SUMMARY.md`, `README.md`, `COORDINATION.md` |
+| T2 | Correct root-site legal/calculation errors; preserve privacy and mark owner-provided facts unverified | in progress | `arena/c7025eef-rentincreasesf3` | same as T1; `assets/style.css` |
+| T3 | Add source register, market-practice and tenant-review subpages; enforce row citations and links | in progress | `arena/c7025eef-rentincreasesf3` | `pages/sources.html`, `pages/market-practices.html`, `pages/tenant-review.html`, `tools/check_root_site.py` |
+| T4 | Integration checks, current-source re-verification, PR and Pages deploy record | unclaimed | `arena/c7025eef-rentincreasesf3` | all claimed files + this board |
+
+Claim recorded and pushed before research/editing. Source URLs and audit results will be added here as tasks finish. Nothing in the other editions is changed unless a later integration audit documents a specific correction request.
