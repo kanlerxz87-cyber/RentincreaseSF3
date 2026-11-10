@@ -23,7 +23,7 @@ Every table row links an official source. Where an official value does not exist
 | [`pages/review.html`](pages/review.html) | 16-point tenant-lawyer stress test |
 | [`pages/discrimination.html`](pages/discrimination.html) | One unit or both units? Fair-housing analysis |
 | [`pages/requirements.html`](pages/requirements.html) | Every requirement in the brief, its status and its evidence |
-| [`pages/sources.html`](pages/sources.html) | 25-source register with what each supports |
+| [`pages/sources.html`](pages/sources.html) | 28-source register with what each supports |
 | [`pages/flagged.html`](pages/flagged.html) | 16 flagged items: unverified, blank, inconsistent or corrected |
 
 Markdown summary: [`EXECUTIVE_SUMMARY.md`](EXECUTIVE_SUMMARY.md).
@@ -36,7 +36,7 @@ Markdown summary: [`EXECUTIVE_SUMMARY.md`](EXECUTIVE_SUMMARY.md).
 | Per-increase application or notice filing | **Not required** for annual or banked increases | [Form 571](https://www.sf.gov/documents/34344/571_Allowable_Annual_Increases_26-27_1.pdf) · [sf.gov — banking](https://www.sf.gov/information--banked-rent-increases) |
 | Annual allowance 1 Mar 2026 – 28 Feb 2027 | **1.6%** (1.4% prior year) | [sf.gov](https://www.sf.gov/learn-about-rent-increases-san-francisco) · [Form 571](https://www.sf.gov/documents/34344/571_Allowable_Annual_Increases_26-27_1.pdf) |
 | Unit A, 1 Feb 2027 | **3.0% = $119.85 → $4,114.85** (1.6% annual + 1.4% banked), 30 days' notice; 1.6% = $63.92 is the fallback | [Form 571](https://www.sf.gov/documents/34344/571_Allowable_Annual_Increases_26-27_1.pdf) · [banking](https://www.sf.gov/information--banked-rent-increases) |
-| Unit B (conditional on no increase since 2019) | **10.0% = $315.00 → $3,465.00** recommended; **13.1% = $412.65 → $3,562.65** is the maximum, 90 days' notice | [banking](https://www.sf.gov/information--banked-rent-increases) · [Form 571](https://www.sf.gov/documents/34344/571_Allowable_Annual_Increases_26-27_1.pdf) |
+| Unit B (conditional on no increase since 2019) | **10.0% = $315.00 → $3,465.00** recommended; **13.1% = $412.65 → $3,562.65** is the conditional Feb 2027 maximum (and 7-year banked floor to June 2026; 1 June 2027 adds the unannounced 2027–28 rate), 90 days' notice | [banking](https://www.sf.gov/information--banked-rent-increases) · [Form 571](https://www.sf.gov/documents/34344/571_Allowable_Annual_Increases_26-27_1.pdf) |
 | Notice | 30 days if ≤10%, 90 days if >10%; +5 days by mail in California | [Civ. Code § 827](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=827) · [CCP § 1013](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CCP&sectionNum=1013) |
 | State cap | 8.8% for the San Francisco area from 1 Aug 2026; **not governing** because the local cap is lower | [oag.ca.gov](https://oag.ca.gov/rentcaps) · [Civ. Code § 1947.12](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=1947.12) |
 | Federal | No rent ceiling; fair housing governs the reasons | [42 U.S.C. § 3604](https://www.govinfo.gov/content/pkg/USCODE-2023-title42/html/USCODE-2023-title42-chap45-subchapI-sec3604.htm) |
@@ -44,7 +44,7 @@ Markdown summary: [`EXECUTIVE_SUMMARY.md`](EXECUTIVE_SUMMARY.md).
 
 ## Privacy
 
-Tenant and owner names are replaced with **Tenant A–D**. Dates and dollar amounts are unchanged. The ZIP code, neighbourhood and street address are **not published** — unit-level facts plus a location would identify the tenants, and the rules cited apply citywide with no ZIP-level variant. Source registers and the internal working files are not linked from the site.
+Tenant and owner names are replaced with **Tenant A–F**. Dates and dollar amounts are unchanged. The ZIP code, neighbourhood and street address are **not published** — unit-level facts plus a location would identify the tenants, and the rules cited apply citywide with no ZIP-level variant. Source registers and the internal working files are not linked from the site.
 
 ## Build and verification
 

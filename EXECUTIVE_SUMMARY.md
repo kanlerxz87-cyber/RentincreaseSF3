@@ -3,13 +3,13 @@
 **Prepared 10 November 2026 · research pass re-verified against official sources on that date · not legal advice**
 Live dashboard: <https://kanlerxz87-cyber.github.io/RentincreaseSF3/>
 
-**Privacy.** Tenants and owners are shown as **Tenant A–D**. Dates and dollar amounts are unchanged, as requested. The ZIP code, neighbourhood and street address are **not published**: unit-level facts (a two-unit building, two specific rents, two lease dates) combined with a location would identify the tenants, and the rules cited apply citywide with no ZIP-level variant. The location is recorded in this file only as "San Francisco".
+**Privacy.** Tenants and owners are shown as **Tenant A–F**. Dates and dollar amounts are unchanged, as requested. The ZIP code, neighbourhood and street address are **not published**: unit-level facts (a two-unit building, two specific rents, two lease dates) combined with a location would identify the tenants, and the rules cited apply citywide with no ZIP-level variant. The location is recorded in this file only as "San Francisco".
 
 **Property (owner-reported, not a government record).** Two-unit residential building, built 1940, San Francisco.
 
 | Unit | Lease start | Base rent | Tenants | Rent history |
 |---|---|---|---|---|
-| Unit A | 1 February 2025 | $3,995.00 | Tenant A (original) and Tenant B (joined the continuing tenancy 1 April 2026 at the same rent) | No increase since 1 Feb 2025 |
+| Unit A | 1 February 2025 | $3,995.00 | Initial lease: Tenant A, Tenant E, Tenant F · Continuing 1 April 2026 at $3,995: Tenant A (original) and Tenant B | No increase since 1 Feb 2025 |
 | Unit B | 1 June 2019 | $3,150.00 | Tenant C, Tenant D | No complete increase history supplied — **unverified** |
 
 ---
@@ -26,8 +26,9 @@ San Francisco requires **all owners of residential property** — individuals ex
 | Do I need a licence as an individual, not a corporation? | **Yes.** The rules distinguish by *building size* (10+ units vs. condominiums and 1–9 unit buildings), not by the owner's legal form. For this 2-unit building the requirement applies from **1 March 2023**. | [sf.gov — Housing Inventory](https://www.sf.gov/rent-board-housing-inventory) · [sf.gov — Learn about rent increases](https://www.sf.gov/learn-about-rent-increases-san-francisco) |
 | Is there a separate application or fee? | **No.** "Once you have reported into the Housing Inventory, a rent increase license will be automatically generated for non-owner occupied units." The licence "does not need to be included with your rent increase notice". | [sf.gov — Housing Inventory](https://www.sf.gov/rent-board-housing-inventory) |
 | Must I file the increase notice with the Rent Board? | **No.** The annual increase may be imposed "without filing a petition at the Rent Board"; banked increases "do not have to be approved by the Rent Board, but must be calculated correctly". | [Form 571 (PDF)](https://www.sf.gov/documents/34344/571_Allowable_Annual_Increases_26-27_1.pdf) · [sf.gov — Banked rent increases](https://www.sf.gov/information--banked-rent-increases) |
-| What if I serve notice without a current licence? | The increase is **not enforceable**: "your rent increase notice will not be enforceable without having a rent increase license on the effective date of the notice". The Rent Board may notify tenants of noncompliance. | [sf.gov — Housing Inventory](https://www.sf.gov/rent-board-housing-inventory) |
+| What if I serve notice without a current licence? | The increase is **not enforceable** ("will not be enforceable without having a rent increase license on the effective date of the notice"), **may be null and void** (potentially for multiple years), and the tenant **may be entitled to a rent refund** via Form 516C or a pre-effective-date Tenant Summary Petition (Form 518). | [sf.gov — Housing Inventory](https://www.sf.gov/rent-board-housing-inventory) · [sf.gov — Notice of Owner Noncompliance](https://www.sf.gov/notice-of-owner-noncompliance-with-housing-inventory) · [Admin. Code § 37.3](https://codelibrary.amlegal.com/codes/san_francisco/latest/sf_admin/0-0-0-70881) |
 | Notice date or effective date? | **Effective date.** Late filing is allowed, but the licence must exist when the increase takes effect. | [sf.gov — Housing Inventory](https://www.sf.gov/rent-board-housing-inventory) |
+| Is the Housing Inventory report the same as the Rent Board Fee? | **No — separate obligations.** Reporting into the Housing Inventory is free; the **Rent Board Fee** is **$59.00 per dwelling unit** for 2026–27 (due 1 March; 50% = $29.50 recoverable from qualifying tenants; 2027 exemption window closes 14 December 2026). | [sf.gov — Rent Board Fee](https://www.sf.gov/rent-board-fee) · [sf.gov — Housing Inventory](https://www.sf.gov/rent-board-housing-inventory) |
 
 ### Step by step (full version with dates on the site: `pages/process.html`)
 
@@ -54,8 +55,9 @@ Percentages are official; dollar amounts are the official percentage multiplied 
 | Unit A — 1 Apr 2027 (if the 2026 lease restarts the anniversary) | **blank** | — | — | 30 days if ≤10% | [sf.gov — rent increases](https://www.sf.gov/learn-about-rent-increases-san-francisco) |
 | Unit B — annual only | 1.6% | $50.40 | $3,200.40 | 30 days | [Form 571](https://www.sf.gov/documents/34344/571_Allowable_Annual_Increases_26-27_1.pdf) |
 | Unit B — **phased 10.0%** | 10.0% | $315.00 | **$3,465.00** | 30 days | [banking](https://www.sf.gov/information--banked-rent-increases) · [File #261020](https://sfgov.legistar.com/LegislationDetail.aspx?ID=8217304&GUID=7EDA4662-EBFB-4AF5-962F-C669B64AA770) |
-| Unit B — banked only | 11.5% | $362.25 | $3,512.25 | 90 days | [banking](https://www.sf.gov/information--banked-rent-increases) |
-| Unit B — maximum catch-up | **13.1%** | $412.65 | **$3,562.65** | 90 days | [banking](https://www.sf.gov/information--banked-rent-increases) · [Form 571](https://www.sf.gov/documents/34344/571_Allowable_Annual_Increases_26-27_1.pdf) |
+| Unit B — banked only (2020–2025) | 11.5% | $362.25 | $3,512.25 | 90 days | [banking](https://www.sf.gov/information--banked-rent-increases) |
+| Unit B — conditional maximum catch-up in Feb 2027 | **13.1%** | $412.65 | **$3,562.65** | 90 days | [banking](https://www.sf.gov/information--banked-rent-increases) · [Form 571](https://www.sf.gov/documents/34344/571_Allowable_Annual_Increases_26-27_1.pdf) |
+| Unit B — on 1 June 2027 anniversary | **blank** (13.1% banked floor + unannounced 2027–28 rate) | — | — | 90 days if >10% | [banking](https://www.sf.gov/information--banked-rent-increases) · [sf.gov — rent increases](https://www.sf.gov/learn-about-rent-increases-san-francisco) |
 | Unit B — if any increase occurred since 2019 | **blank** | — | — | — | [banking](https://www.sf.gov/information--banked-rent-increases) |
 
 Unit B's banked total: 1.8% (2020) + 0.7% (2021) + 2.3% (2022) + 3.6% (2023) + 1.7% (2024) + 1.4% (2025) = **11.5%**, plus the 1.6% annual in force on the effective date = **13.1%**. The percentages come from [Form 571](https://www.sf.gov/documents/34344/571_Allowable_Annual_Increases_26-27_1.pdf).
@@ -143,7 +145,7 @@ Sources: [Gov. Code § 12955](https://leginfo.legislature.ca.gov/faces/codes_dis
 | FR-04 | Rent-increase licence status | **Unverified** — check the Portal |
 | FR-05 | 2027–28 allowable percentage | **Blank** — not announced |
 | FR-06 | File #261020 (proposed 10%/yr cap) | **Pending — not law** |
-| FR-07 | Ordinance § 37.3 not quoted paragraph by paragraph | **Scope limit** |
+| FR-07 | Ordinance § 37.3 subsections verified (§ 37.3(a)(1)–(2), (a)(8), (a)(10)–(11), (b)(1)&(5), (d)(2)(B)) | **Corrected** |
 | FR-08 | No official "normal"/average increase figure | **No official source** |
 | FR-09 | No official corporate-vs-individual statistics | **No official source** |
 | FR-10 | No official ZIP-level benchmark | **No official source** |
@@ -152,7 +154,7 @@ Sources: [Gov. Code § 12955](https://leginfo.legislature.ca.gov/faces/codes_dis
 | FR-13 | Voucher / subsidy status | **Unverified** |
 | FR-14 | Building record (1940, two legal units) | **Unverified** |
 | FR-15 | Corrections applied to earlier statements on this site | **Corrected** |
-| FR-16 | Noncompliance page not re-retrieved in this pass | **Scope limit** |
+| FR-16 | Noncompliance page retrieved (null and void / refund / Form 518) | **Corrected** |
 
 Full detail with source links: `pages/flagged.html` on the live site.
 

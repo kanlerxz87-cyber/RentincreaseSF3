@@ -47,6 +47,12 @@ SRC = {
                 "https://www.sf.gov/news--new-law-prohibits-algorithmic-devices-used-set-rents-san-francisco"),
     "SF_COUNSEL": ("sf.gov — Rent Board counselling line 415-252-4600",
                    "https://www.sf.gov/learn-about-san-francisco-rental-laws"),
+    "SF_NONCOMP": ("sf.gov — Notice of Owner Noncompliance with Housing Inventory",
+                   "https://www.sf.gov/notice-of-owner-noncompliance-with-housing-inventory"),
+    "SF_FEE": ("sf.gov — The Rent Board Fee",
+               "https://www.sf.gov/rent-board-fee"),
+    "SF_614": ("sf.gov — Rent increases under Section 6.14 and Costa-Hawkins",
+               "https://www.sf.gov/information--rent-increases-under-section-614-and-costa-hawkins"),
     "SF_PORTAL": ("Rent Board Portal (Housing Inventory / licence look-up)",
                   "https://portal.sfrb.org/"),
     "ADMIN_373": ("SF Administrative Code § 37.3 — Rent Limitations (American Legal)",
@@ -245,7 +251,7 @@ def page(filename, title, body, desc="", active=None):
 </main>
 <footer>
   <div class="allpages"><b>All pages:</b><br>{allp}</div>
-  <p><b>Privacy:</b> all tenant and owner identifying details are replaced with placeholder labels (Tenant A–D). Dates and dollar amounts are unchanged. The specific ZIP code, neighbourhood and street address are withheld, because unit-level facts plus a location would identify the tenants; the rules cited apply citywide and do not vary by ZIP. Source registers are internal only.</p>
+  <p><b>Privacy:</b> all tenant and owner identifying details are replaced with placeholder labels (Tenant A–F). Dates and dollar amounts are unchanged. The specific ZIP code, neighbourhood and street address are withheld, because unit-level facts plus a location would identify the tenants; the rules cited apply citywide and do not vary by ZIP. Source registers are internal only.</p>
   <p><b>Not legal advice.</b> Every figure here is either quoted from an official source (linked in the row) or calculated from an official percentage and an owner-reported base rent; where a value could not be confirmed it is left blank and listed on the <a href="{up}pages/flagged.html">Flagged for review</a> page. Confirm anything you intend to rely on with the SF Rent Board counselling line (415-252-4600) and a California lawyer.</p>
   <p>Research pass and source retrieval: <b>10 November 2026</b>. Content verified line by line against the linked official pages on that date.</p>
 </footer>
