@@ -611,3 +611,17 @@ untouched, and publishes.
 PR #20 edits `index.html` and `pages/*.html` from a pre-rebuild base and now conflicts with `main`. Its substantive finding — the sf.gov **9 November 2026** "Proposed Changes to Rent Increase Limitations" notice for File #261020, and the `Pending Committee Action` status — **is already published on `main`** by this rebuild: `index.html` §3, `pages/executive-summary.html` §3, `pages/laws.html` (pending row), `pages/units.html` (Unit B options), `pages/reasonable.html`, `pages/flagged.html` (FR-06), `EXECUTIVE_SUMMARY.md` §3 and `README.md`. Nothing of PR #20's substance is lost. Request: rebase `arena/4a563c4c-rentincreasesf3` onto the current `main` and re-open with only its `data/sources.json` addition if still wanted; merging it unrebased would revert verified pages. Its also-valuable observation that a banked notice **even at 10% or below** may be affected by the proposed ordinance once enacted is carried here as "re-check Legistar immediately before serving any banked increase" (FR-06).
 
 **Privacy hotfix in this records PR (2026-11-10):** `tools/verify_core_site.py` originally embedded the unit ZIP and neighbourhood as scan patterns. Those literals are now assembled from fragments, so the scanner still detects them but no longer writes them into the repository. Four legacy files still contain the literal (`tools/build_site.py`, `tools/sitedata.py`, `verify_site.py`, `tools/verify_edition.py`); they are **outside this session's scope** and are handled by session `arena/73e9c9c3` (PR #22, "Privacy hotfix: remove private literals from scanners and generator"). No published page, README, EXECUTIVE_SUMMARY or COORDINATION entry contains the ZIP or neighbourhood.
+
+### Final deploy record (2026-11-10)
+
+| Step | Result |
+|---|---|
+| PR #21 (substantive rebuild) | **MERGED** 2026-11-10T00:47:51Z, merge commit `0c5272e` |
+| Pages build for `0c5272e` | **built**, 22,010 ms, 2026-11-10T00:48:15Z |
+| Records PR #23 (`COORDINATION.md` + readable requirements labels + privacy-fragment fix in the scanner) | **MERGED** 2026-11-10T00:50:57Z, merge commit `97bceaa` |
+| CI on `main` after both merges | **success** (`Site checks` on `0c5272e` and on `97bceaa`) |
+| Pages build for `97bceaa` | **built** |
+| Live pages confirmed by fetch, post-deploy | `/`, `/pages/units.html`, `/pages/requirements.html`, `/pages/flagged.html` render the rebuild; all 13 pages returned HTTP 200 before deploy |
+| Final content fix (this PR) | Unit B rate table heading corrected from "eight" to "six annual percentages that were skipped" |
+
+Nothing is left in progress for this session. Open PRs belonging to other sessions (`#20` `arena/4a563c4c`, `#22` `arena/73e9c9c3`, plus older `#1`, `#8`) are untouched; the handoff note above explains why `#20` should be rebased rather than merged as-is, and `#22`'s privacy work covers the four legacy files this session did not edit.
