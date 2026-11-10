@@ -10,7 +10,7 @@ Live dashboard: <https://kanlerxz87-cyber.github.io/RentincreaseSF3/>
 | Unit | Lease start | Base rent | Tenants | Rent history |
 |---|---|---|---|---|
 | Unit A | 1 February 2025 | $3,995.00 | Tenant A (original) and Tenant B (joined the continuing tenancy 1 April 2026 at the same rent) | No increase since 1 Feb 2025 |
-| Unit B | 1 June 2019 | $3,150.00 | Tenant C, Tenant D | Owner states no increase since 2019 — **unverified** |
+| Unit B | 1 June 2019 | $3,150.00 | Tenant C, Tenant D | No complete increase history supplied — **unverified** |
 
 ---
 
@@ -117,7 +117,7 @@ No official dataset compares how often or by how much corporations versus indivi
 
 A San Francisco tenant can file a free Tenant Petition (Form 516C, box C) for an unlawful rent increase or a determination of the lawful rent, with **no filing deadline**, heard by a Rent Board Administrative Law Judge; the process is designed so nobody needs a lawyer. The site sets out a **16-point test** covering coverage, percentage version, base-rent basis, rounding, banking, the 12-month interval, anniversary effects, licence on the effective date, Housing Inventory currency, 30/90-day period, proof of service, notice contents, retaliation, protected characteristics and the explainability of any difference between units.
 
-On the documented facts, Unit A at 3.0% and Unit B at 10.0% pass those checks; the open items are the two facts only the owner can confirm (Unit B's rent history and the licence status), plus the Unit A anniversary question.
+Unit A at 3.0% and Unit B at 10.0% satisfy the arithmetic and notice-method checks **only conditionally**. They are not clearance to serve notice: the owner must first confirm Unit B's complete rent history, the licence status, and Unit A's anniversary date, then re-check the pending legislation and retaliation facts.
 
 Sources: [sf.gov — unlawful rent increase](https://www.sf.gov/report-unlawful-rent-increase-or-request-review-your-rent-history) · [sf.gov — tenant petitions](https://www.sf.gov/tenant-petitions) · [CRD — housing](https://calcivilrights.ca.gov/housing/)
 

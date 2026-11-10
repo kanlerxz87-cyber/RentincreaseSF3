@@ -162,7 +162,7 @@ def reasonable():
     <thead><tr><th>Unit</th><th>Defensible “normal” figure</th><th>Reason it is defensible</th><th style="width:18%">Source</th></tr></thead>
     <tbody>
       <tr><td>Unit A</td><td><b>3.0% ($119.85)</b>, or 1.6% ($63.92) if you prefer the strict reading</td><td>The annual allowance in effect on the effective date plus one properly banked year; 30 days' notice; well below the 10% state-notice threshold.</td>{cell("SF_571", "SF_BANK")}</tr>
-      <tr><td>Unit B</td><td><b>10.0% ($315.00)</b> as a first step; 13.1% ($412.65) is the legal maximum on the reported facts</td><td>Six skipped years add to 11.5%, plus 1.6% annual; 10% keeps the increase inside both current law and the proposed 10%/yr cap, and the unused balance remains bankable.</td>{cell("SF_BANK", "LEGISTAR_261020")}</tr>
+      <tr><td>Unit B</td><td><b>10.0% ($315.00)</b> as a first step; 13.1% ($412.65) is the conditional calculated ceiling if no increase was ever imposed</td><td>If the complete ledger confirms six skipped years, they add to 11.5%, plus 1.6% annual; 10% keeps the increase inside both current law and the proposed 10%/yr cap, and the unused balance remains bankable.</td>{cell("SF_BANK", "LEGISTAR_261020")}</tr>
       <tr><td>Unit B at market rent</td><td><b>Blank</b></td><td>Market rent cannot be reached by an annual increase; the Rent Board states that a long-standing below-market rent is not itself an extraordinary circumstance, and vacancy resetting is only available in a genuinely new tenancy.</td>{cell("SF_SPECIAL", "SF_LI")}</tr>
     </tbody>
   </table>

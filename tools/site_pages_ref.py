@@ -179,7 +179,7 @@ def requirements():
 # ------------------------------------------------------------------ flagged
 FLAGS = [
     ("FR-01", "Unit B rent history 2019–2026", "Unverified",
-     "The owner reports $3,150 with no increase since 1 June 2019. The 11.5% banked / 13.1% total figures are <b>conditional</b> on that: any increase in any year removes that year's percentage from the banked total and changes the anniversary date.",
+     "The owner supplied a 1 June 2019 lease start and $3,150 rent but no complete increase ledger. The 11.5% banked / 13.1% total figures are therefore <b>conditional</b> on no increase ever having been imposed: any increase in any year removes that year's percentage from the banked total and changes the anniversary date.",
      "Leases, notices, proofs of service and a rent ledger 2019–2026.", "SF_BANK"),
     ("FR-02", "Unit A anniversary date: 1 February or 1 April?", "Open",
      "The tenancy began 1 February 2025 and continued when a new co-tenant joined on 1 April 2026 at the same rent. The Rent Board's rule starts the clock 12 months after the lease began, but its pages do not address a mid-tenancy lease renewal with a new occupant. Both outcomes are computed: 1 Feb 2027 (3.0%) and 1 Apr 2027 (percentage not yet announced).",
