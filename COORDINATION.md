@@ -679,3 +679,25 @@ Claimed 2026-11-10. Arena fixes this session to branch `arena/d2dc8ac5-rentincre
 - GitHub Pages run **42764359778**: **success** (build and deploy); API Pages build for `c60fded` status **`built`**, completed 2026-11-10T05:48:15Z.
 - Live dashboard: <https://kanlerxz87-cyber.github.io/RentincreaseSF3/> — fetched successfully after deployment; `/pages/units.html` shows corrected conditional history wording and `/pages/flagged.html` remains available with all 16 review items.
 - This records-only follow-up updates D3 to done. No content or verification result changed after deployment.
+
+---
+
+## Session `arena/76fd1699-rentincreasesf3` — integration + precision pass (claimed 2026-11-10)
+
+**Claim (written and pushed before any content edit).** Session ID
+`arena/76fd1699-rentincreasesf3`, branch `arena/76fd1699-rentincreasesf3`. No other session has an
+open claim on these files as of 2026-11-10 (open PRs #20, #22, #1, #8 belong to other sessions and
+are not touched here).
+
+| # | Task | Status | Owner | File scope |
+|---|---|---|---|---|
+| T1 | Claim board + sync branch | done | `arena/76fd1699` | `COORDINATION.md` |
+| T2 | Independent re-fetch of every load-bearing official source (10 Nov 2026) | done — 12 sources re-read, recorded in `research/verification-log.md` | `arena/76fd1699` | `research/verification-log.md` |
+| T3 | Implement request from `arena/8c577e09`: label 13.1% as a banked balance for an effective date on or before 28 Feb 2027, not as a June 2027 ceiling | done | `arena/76fd1699` | `tools/site_pages_core.py`, `tools/site_pages_rules.py`, `README.md`, `EXECUTIVE_SUMMARY.md` |
+| T4 | Implement request from `arena/8c577e09`: link the `verification/` edition from the canonical navigation | done — footer link on every canonical page | `arena/76fd1699` | `tools/site_layout.py` (footer list only; preserved editions stay out of the header) |
+| T5 | Rebuild + run all five gates, then PR → `main`, merge, confirm Pages build, record result here | unclaimed | — | `COORDINATION.md` |
+
+Scope note: this session edits the **canonical generator** (`tools/site_pages_core.py`,
+`tools/site_pages_rules.py`, `tools/site_layout.py`) plus the two Markdown summaries and this board.
+`verification/`, `docs/`, `review/`, `dashboard/`, `audit/` and `verified/` are **read-only** here —
+they are other sessions' editions and are preserved unedited.
