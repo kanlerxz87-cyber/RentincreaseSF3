@@ -12,7 +12,7 @@ other tasks are done; cross-session file edits are logged here as requests inste
 | `arena/07e38125-rentincreasesf3` | `arena/07e38125-rentincreasesf3` | PR #2 **merged** 2026-11-06T13:20:09Z (merge commit `61b5b7a`). Built the root GitHub Pages site (`index.html`, `pages/`, `assets/`, `data/sources.json`). Task 5 left "in progress" with no deploy record. |
 | `arena/ae0d4576-rentincreasesf3` | `arena/ae0d4576-rentincreasesf3` | PR #3 **merged** 2026-11-06T13:23:22Z (`996aa82`). Built the **extended verification edition** under `docs/` (11 pages, cents-exact math, banking analysis, license requirement, sources & verification register, repo review). Deployed & verified live 2026-11-06 (root + `/docs/` HTTP 200). |
 | `arena/edaa9740-rentincreasesf3` | `arena/edaa9740-rentincreasesf3` | PR #9 (this session). Built the **dashboard edition** under `dashboard/` (10 pages). add/add conflict in this file resolved by combining boards; privacy scrub of location applied site-wide as integration step (see log). |
-| `arena/1e699ad0-rentincreasesf3` | `arena/1e699ad0-rentincreasesf3` | **In progress — final verification & integration (2026-11-10)** — re-verifying all editions line by line, confirming forefront license Q&A, live Pages site, and merging to main. |
+| `arena/1e699ad0-rentincreasesf3` | `arena/1e699ad0-rentincreasesf3` | PR #19 **merged** 2026-11-10T00:40:16Z (merge commit `dedd934`). Re-verified forefront site line by line 2026-11-10, updated verification dates, all checks PASS, Pages built. |
 
 ## Reconciliation note — 2026-11-06 (add/add conflict resolution)
 
@@ -477,7 +477,7 @@ presented as a general rule (true only for personal service with a 28 February 2
 | V5 | Verify correct notice & reasons, discrimination safeguards, one-vs-both analysis | done | pages/process.html, docs/notice-and-reasons.html, review/fair-housing.html | 30/90+5 day per Civ §827/CCP 1013, base rent only, no rounding, anniversary respect, no additional-occupant charge (SF unlawful), retaliation 180d, FEHA/FHA uniform policy, both-units lowest risk |
 | V6 | Site creation — confirm GitHub Pages live site, clean dashboard, subpages, tables with analysis | done | index.html, pages/, audit/, verified/, docs/, dashboard/, review/ | Landing dashboard forefront license Q&A + 7-step checklist + stats + quick answers; 5 canonical subpages (executive-summary, units, laws, process, flagged); audit 6 pages; verified 10 pages; docs/dashboard/review preserved; .nojekyll present |
 | V7 | Line-by-line verification — every table row has official source link or blank+flagged | done | all HTML editions | All 53 HTML files checked: every data row has official source link (sf.gov, leginfo, govinfo, hud.gov, ecfr.gov, sfgov.legistar.com) or is flagged blank; PII scan clean (no initials/ZIP/address); math rechecked; no inferred values |
-| V8 | Final integration — PR → main → merge → confirm Pages deploy → record | in progress | COORDINATION.md, .github/workflows/ | No manual approval wait; do not merge broken site — all 4 checks PASS 2026-11-10 |
+| V8 | Final integration — PR → main → merge → confirm Pages deploy → record | done | COORDINATION.md, .github/workflows/ | No manual approval wait; do not merge broken site — all 4 checks PASS 2026-11-10; merged via `gh pr merge 19 --merge` |
 
 ### Scope notes — 2026-11-10
 
@@ -502,11 +502,26 @@ presented as a general rule (true only for personal service with a 28 February 2
 - **Privacy & flagged:** no tenant names/initials, no street address, no ZIP/location detail in any public page; placeholder labels only; dates/amounts unchanged; 10 flagged items remain with source links (rent history, property record, license status, subsidy/lease, pending 261020 not law, 2027-28 rate not yet announced, corporate dataset gap, ZIP benchmark gap, banking wording nuance, occupancy continuity).
 - **Automated checks 2026-11-10:** `verify_site.py` PASS (10 dashboard files), `tools/check_site.py` PASS (11 pages, 0 broken), `tools/verify_edition.py` PASS (10 pages, 25 warnings = flagged blank/internal only), `tools/audit_site.py` PASS (53 HTML files, 6 canonical pages all rows have official source, 5 Decimal math scenarios, archive labels, privacy patterns). No PII, no inferred values, no broken links, no remote code.
 
+
+### PR / deploy record — `arena/1e699ad0`
+
+- **Branch:** `arena/1e699ad0-rentincreasesf3` → `main`
+- **PR:** [#19](https://github.com/kanlerxz87-cyber/RentincreaseSF3/pull/19) — “Final verification 2026-11-10 — re-verified line by line, forefront license Q&A, all checks pass” — `arena/1e699ad0-rentincreasesf3` → `main`
+- **Checks:** Pre-merge Site checks run [#42729725642](https://github.com/kanlerxz87-cyber/RentincreaseSF3/actions/runs/42729725642) initially **failed** due to a `verify_site.py` PII scan (location literal in COORDINATION.md V4 — flagged by privacy rule). Fixed by rephrasing to “ZIP-level” (commit `e5d66db`), re-pushed; re-run [#42729929430](https://github.com/kanlerxz87-cyber/RentincreaseSF3/actions/runs/42729929430) **succeeded** (all 4 checks PASS).
+- **Merge:** **MERGED** as merge commit `dedd934027624dd9c16f11c1db3ef12c34e0e082` at **2026-11-10T00:40:16Z** (`gh pr merge 19 --merge`, no approval wait). No conflicts — fast-forward style merge (4 files changed).
+- **GitHub Pages:** source `main` / root, `legacy` build + `.nojekyll`. Build for `dedd934` → **`built`** (duration 20,456 ms, no errors) at 2026-11-10T00:40:??Z (retrieved via `gh api repos/.../pages/builds`). Post-merge Site checks [#42730066909](https://github.com/kanlerxz87-cyber/RentincreaseSF3/actions/runs/42730066909) **succeeded**. Live site verified serving updated 2026-11-10 footer + README at https://kanlerxz87-cyber.github.io/RentincreaseSF3/
+- **Live URLs (2026-11-10):**
+  - root https://kanlerxz87-cyber.github.io/RentincreaseSF3/ (forefront license Q&A first, 7 steps, dashboard stats, quick answers)
+  - pages: `pages/executive-summary.html`, `pages/units.html` (Feb 1 fix), `pages/laws.html`, `pages/process.html`, `pages/flagged.html`
+  - audit: `audit/process.html`, `audit/units.html`, `audit/review.html`, `audit/flagged.html`, `audit/sources.html`
+  - preserved editions: `verified/guide/`, `docs/`, `dashboard/`, `review/` (archived with provenance banners)
+- **Final state:** All V1–V8 done. No tenant notices served, no Housing Inventory filings submitted, no private property records pulled — all flagged as unverified per sourcing rule. Not legal advice — confirm with Rent Board counselors 415-252-4600 before any notice.
+
 ---
 
 ## Task board — session `73e9c9c3` (branch `arena/73e9c9c3-rentincreasesf3`)
 
-Claimed **2026-11-10 00:50 UTC**, after reading this board top to bottom **and** inspecting every remote
+Claimed **2026-11-10 00:44 UTC**, after reading this board top to bottom **and** inspecting every remote
 branch. `main` was at `dedd934` (PR #19 merged) at claim time. Arena fixes this session's branch name, so the
 `session-<id>/<task>` naming pattern cannot be used; all work is on `arena/73e9c9c3-rentincreasesf3`.
 
@@ -551,8 +566,8 @@ a commit), and takes a scope none of them claimed:
 
 - 2026-11-10 00:38 — Session started on `0ac8be2`; fetched all remote branches; found three live sessions
   (table above). `main` advanced to `dedd934` at 00:40 (PR #19); fast-forwarded.
-- 2026-11-10 00:50 — Claim written and pushed. No root-site file touched.
-- 2026-11-10 01:00 — **P2 privacy hotfix done.** Private literals removed from `verify_site.py`,
+- 2026-11-10 00:44 — Claim written and pushed (`202a858`). No root-site file touched.
+- 2026-11-10 00:47 — **P2 privacy hotfix done** (`30b76b0`). Private literals removed from `verify_site.py`,
   `tools/audit_site.py`, `tools/verify_edition.py` (scanners), `tools/build_site.py` and `tools/sitedata.py`
   (generator text now matches the already-scrubbed published `review/` pages), and one token of row B9 on
   this board. New `tools/privacy_scan.py` holds generic detectors only (any San Francisco postal code, a
@@ -563,3 +578,6 @@ a commit), and takes a scope none of them claimed:
   the fixed tree they pass. All five checks pass locally. No finding, figure or page content changed.
   **Not fixed by this (owner decision, see observation 3):** Git history, other session branches and one
   old commit message still contain the withheld location; some branch tips contain the initials.
+- 2026-11-10 00:48 — `main` had advanced to `439e42b` (two direct commits by `1e699ad0` recording PR #19).
+  **Merge conflict in this file** (both sides appended at the end). Resolved by keeping both: the
+  `1e699ad0` deploy record first, this section after it. Nothing discarded; no other file conflicted.
