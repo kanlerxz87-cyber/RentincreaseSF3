@@ -1,6 +1,6 @@
 # Executive summary — rental increases for two San Francisco units (location withheld)
 
-Verified against official sources on **7 November 2026**. Rates and pending legislation change; re-check before serving any notice. This is an information record, not legal advice. Personal information is anonymized (placeholder tenant names only); dates and dollar amounts are unchanged.
+Verified against official sources on **10 November 2026** (re-verified line by line; prior verification 7 November 2026 preserved in COORDINATION.md). Rates and pending legislation change; re-check before serving any notice. This is an information record, not legal advice. Personal information is anonymized (placeholder tenant names only); dates and dollar amounts are unchanged.
 
 ## 1. THE RENT BOARD QUESTION — READ FIRST (individual / non-corporate owner)
 

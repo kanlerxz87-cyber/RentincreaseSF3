@@ -1,8 +1,8 @@
-# Current consolidated site — November 7, 2026
+# Current consolidated site — November 10, 2026 (re-verified)
 
 **Start here:** https://kanlerxz87-cyber.github.io/RentincreaseSF3/
 
-The landing page is now the canonical **forefront executive summary** (Rent Board license question first, 7-step checklist, cents-exact figures) with categorized subpages under `pages/` (corrected forefront integration) and the consolidated audit under `audit/`. Read `EXECUTIVE_SUMMARY.md` for the markdown version. Individual-owner license requirements come first. All property facts are owner-reported, not government-certified. Missing verified values are blank; conditional calculations are not lawful-rent determinations. See `pages/flagged.html` and `audit/flagged.html`.
+The landing page is now the canonical **forefront executive summary** (Rent Board license question first, 7-step checklist, cents-exact figures) with categorized subpages under `pages/` (corrected forefront integration) and the consolidated audit under `audit/`. Read `EXECUTIVE_SUMMARY.md` for the markdown version. Individual-owner license requirements come first. All property facts are owner-reported, not government-certified. Missing verified values are blank; conditional calculations are not lawful-rent determinations. See `pages/flagged.html` and `audit/flagged.html`. **Re-verified line by line 10 Nov 2026 — all checks pass; no manual input required.**
 
 > **Forefront answer preserved:** Yes — individual owners need the rent-increase license too (no exemption). See the forefront card on the landing page and `EXECUTIVE_SUMMARY.md` §1.
 
@@ -15,16 +15,16 @@ The landing page is now the canonical **forefront executive summary** (Rent Boar
 
 | Path | What it is | Status |
 |---|---|---|
-| `index.html` + `pages/` | **Canonical forefront edition** — landing dashboard with forefront license Q&A (7 steps), stats, quick answers; 5 subpages (executive summary, units, laws & caps, process & notice, flagged). Corrected in this PR (forefront integration): anniversary Feb 1 fix, banking not capped at 3 yrs, license Step 0, source links per row. | Verified 2026-11-07 |
-| `audit/` | **Consolidated audit edition** (Nov 7) — 6 pages: process & notice, units & calculations, tenant-lawyer review, flagged for review (12 items), sources & audit with per-row citations & privacy sweep | Verified 2026-11-07 |
-| `verified/` | **Verified guide (10 pages)** — full 1982–2027 rate table, cents-exact ledgers (Unit 1 3.0% = $119.85; Unit 2 up to 13.1% = $412.65), notice planner + model letter, tenant-lawyer test, 32-source register | Verified 2026-11-07 |
+| `index.html` + `pages/` | **Canonical forefront edition** — landing dashboard with forefront license Q&A (7 steps), stats, quick answers; 5 subpages (executive summary, units, laws & caps, process & notice, flagged). Corrected in this PR (forefront integration): anniversary Feb 1 fix, banking not capped at 3 yrs, license Step 0, source links per row. | Verified 2026-11-10 (re-verified) |
+| `audit/` | **Consolidated audit edition** (Nov 7) — 6 pages: process & notice, units & calculations, tenant-lawyer review, flagged for review (12 items), sources & audit with per-row citations & privacy sweep | Verified 2026-11-07 (preserved) |
+| `verified/` | **Verified guide (10 pages)** — full 1982–2027 rate table, cents-exact ledgers (Unit 1 3.0% = $119.85; Unit 2 up to 13.1% = $412.65), notice planner + model letter, tenant-lawyer test, 32-source register | Verified 2026-11-07 (preserved) |
 | `docs/` | Full verification edition — deeper banking, FHA/FEHA, 17-item flagged, 27-source register | Verified prior, preserved |
 | `dashboard/` | Dashboard edition — 10 pages, 1982–2027 table, worked calculations, legal framework, 22 sources | Verified prior, preserved |
 | `review/` | Audit-trail edition — per-anniversary ledger, 21-row rule table, 15-point test, 27-assertion log | Verified prior, preserved |
-| `EXECUTIVE_SUMMARY.md` | Executive summary in Markdown (forefront license Q&A first) | Verified 2026-11-07 |
-| `tools/verify_edition.py` + `verify_site.py` + `tools/check_site.py` | Pre-publish checks: internal links/anchors, per-row citations, privacy sweep, math, no remote code | Checks pass |
+| `EXECUTIVE_SUMMARY.md` | Executive summary in Markdown (forefront license Q&A first) | Verified 2026-11-10 |
+| `tools/verify_edition.py` + `verify_site.py` + `tools/check_site.py` | Pre-publish checks: internal links/anchors, per-row citations, privacy sweep, math, no remote code | Checks pass (2026-11-10) |
 
-## Headline findings (verified 7 November 2026)
+## Headline findings (verified 10 November 2026 — re-verified; prior 7 Nov preserved)
 
 | Item | Result | Source |
 |---|---|---|
@@ -46,7 +46,7 @@ python3 tools/verify_edition.py # audit/verified: links, citations, privacy, no 
 python3 tools/audit_site.py     # consolidated audit sweep
 ```
 
-All four checks **pass** on 2026-11-07. The site is plain HTML + CSS, no JS build step, `.nojekyll` present, builds on GitHub Pages.
+All four checks **pass** on 2026-11-10 (re-verified). The site is plain HTML + CSS, no JS build step, `.nojekyll` present, builds on GitHub Pages. Prior 2026-11-07 verification preserved in COORDINATION.md.
 
 ## Historical note (preserved)
 
