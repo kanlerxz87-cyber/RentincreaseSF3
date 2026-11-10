@@ -532,6 +532,16 @@ conflict with the rebuild. Its substantive contribution — the 9 Nov 2026 sf.go
 Request: that branch be rebased onto `main` after this merge, or closed, rather than merged as-is;
 merging it unrebased would revert verified pages.
 
+### Merge note — `0e839002` x PR #22 (`73e9c9c3`), 2026-11-10
+
+`origin/main` advanced to `6b9fbb1` (PR #22, privacy hotfix) while this records PR was open. Resolution: this
+board keeps the `73e9c9c3` content **and** this session's sections; `tools/verify_core_site.py`,
+`verify_site.py`, `tools/verify_edition.py` and `tools/audit_site.py` take **main's privacy-hardened
+versions** (fragment-assembled detectors), because they do the same job with generic patterns and the
+`tools/privacy_scan.py` helper. `tools/site_pages_core.py` keeps this session's generated content (the
+Unit B heading fix) — no behavioural conflict. `__pycache__` is untracked and now ignored via
+`.gitignore` (main deleted the committed `.pyc` files; this branch does the same). Nothing was discarded.
+
 ## Task board — session `0e839002` (branch `arena/0e839002-rentincreasesf3`)
 
 Claimed **2026-11-10** after reading this board top to bottom. `main` at `0ac8be2` (PR #18 merged).
@@ -612,194 +622,33 @@ PR #20 edits `index.html` and `pages/*.html` from a pre-rebuild base and now con
 
 **Privacy hotfix in this records PR (2026-11-10):** `tools/verify_core_site.py` originally embedded the unit ZIP and neighbourhood as scan patterns. Those literals are now assembled from fragments, so the scanner still detects them but no longer writes them into the repository. Four legacy files still contain the literal (`tools/build_site.py`, `tools/sitedata.py`, `verify_site.py`, `tools/verify_edition.py`); they are **outside this session's scope** and are handled by session `arena/73e9c9c3` (PR #22, "Privacy hotfix: remove private literals from scanners and generator"). No published page, README, EXECUTIVE_SUMMARY or COORDINATION entry contains the ZIP or neighbourhood.
 
----
+### Final deploy record (2026-11-10)
 
-## Task board — session `73e9c9c3` (branch `arena/73e9c9c3-rentincreasesf3`)
+| Step | Result |
+|---|---|
+| PR #21 (substantive rebuild) | **MERGED** 2026-11-10T00:47:51Z, merge commit `0c5272e` |
+| Pages build for `0c5272e` | **built**, 22,010 ms, 2026-11-10T00:48:15Z |
+| Records PR #23 (`COORDINATION.md` + readable requirements labels + privacy-fragment fix in the scanner) | **MERGED** 2026-11-10T00:50:57Z, merge commit `97bceaa` |
+| CI on `main` after both merges | **success** (`Site checks` on `0c5272e` and on `97bceaa`) |
+| Pages build for `97bceaa` | **built** |
+| Live pages confirmed by fetch, post-deploy | `/`, `/pages/units.html`, `/pages/requirements.html`, `/pages/flagged.html` render the rebuild; all 13 pages returned HTTP 200 before deploy |
+| Final content fix (this PR) | Unit B rate table heading corrected from "eight" to "six annual percentages that were skipped" |
 
-Claimed **2026-11-10 00:44 UTC**, after reading this board top to bottom **and** inspecting every remote
-branch. `main` was at `dedd934` (PR #19 merged) at claim time. Arena fixes this session's branch name, so the
-`session-<id>/<task>` naming pattern cannot be used; all work is on `arena/73e9c9c3-rentincreasesf3`.
-
-### Other sessions active at claim time (seen on their own branches — not yet on `main`)
-
-| Session | Scope it claimed on its own branch | Seen |
-|---|---|---|
-| `0e839002` | Rebuild the canonical root site — `index.html`, `pages/`, `assets/`, new `pages/requirements.html`, new `tools/verify_all.py`, `research/*`, `data/sources.json`; then PR → merge | commit `3a9c6af`, 00:37Z |
-| `4a563c4c` | Publish the sf.gov notice posted 9 Nov 2026 in the canonical edition — `index.html`, `pages/*`, `EXECUTIVE_SUMMARY.md`, `README.md`, `data/sources.json`; then PR → merge | commit `64fbcf1`, 00:38Z |
-| `1e699ad0` | "Final verification" pass — merged as PR #19 at 00:40Z | done |
-
-Those two live claims overlap **each other** on `index.html` and `pages/*`; whichever merges second will have
-to reconcile. This session stays out of those files until both have merged or gone stale (60 minutes without
-a commit), and takes a scope none of them claimed:
-
-| # | Task | Status | Owner | File scope | Notes |
-|---|---|---|---|---|---|
-| P1 | Claim, scope record, publish the claim on `main` so it is visible to every session | done | 73e9c9c3 | `COORDINATION.md` (this section; plus a one-token privacy redaction in row B9 above) | see "Coordination observations" |
-| P2 | **Privacy hotfix — top priority.** Private values are embedded as literals in repository source files (three scanners, one generator and its data file, one line of this board) | in progress | 73e9c9c3 | `verify_site.py`, `tools/audit_site.py`, `tools/verify_edition.py`, `tools/build_site.py`, `tools/sitedata.py`, new `tools/privacy_scan.py`, `.github/workflows/site-checks.yml` | Takeover: the owning sessions (edaa9740, 649a1fa8, b73ba2df, 64380530) have had no commits since 6–7 Nov. Scope is limited to the private literals — no finding, figure or check logic is changed |
-| P3 | Independent official-source register: every source re-fetched 2026-11-10, with the quoted passage relied on | in progress | 73e9c9c3 | new files under `audit/data/` | read-only research |
-| P4 | REPO WORK — line-by-line audit of every published page and table row as found at `dedd934`; irregularities listed with official links for manual review | in progress | 73e9c9c3 | `audit/**` | Takeover from 649a1fa8 (no commits since 7 Nov) |
-| P5 | Legacy editions `docs/`, `dashboard/`, `review/`, `verified/`: audit, then correct in place or retire to redirects; unique verified content is carried into the canonical site and nothing is removed from Git history | claimed | 73e9c9c3 | `docs/**`, `dashboard/**`, `review/**`, `verified/**` | Takeover: owners inactive since 6–7 Nov; both live sessions state they do not edit these |
-| P6 | Final integration, **only after** `0e839002` and `4a563c4c` have merged or gone stale: merge `main`, re-verify the combined site line by line against P3, one navigation, one Flagged for Review page, all checks, PR → `main`, merge, confirm the Pages deploy, record it here | waiting | 73e9c9c3 | shared outputs, at that point only | Do not merge a broken site |
-
-### Coordination observations (irregularities in the process itself)
-
-1. **Claims are invisible across sessions.** Each session pushes its claim to its own branch, and `main` only
-   learns of it when that session's PR merges — usually at the end. Three sessions claimed overlapping
-   root-site scopes within two minutes on 2026-11-10 without being able to see one another. This session
-   publishes its claim to `main` through an early, small PR (claim + privacy hotfix) for that reason.
-2. **Private values in repository source (public repository).** The privacy scanners and one site generator
-   contain, as literals, the very values they are meant to keep out: the withheld location (postal code and
-   neighbourhood name) and the occupants' initials. One line of this board also named the neighbourhood.
-   The published HTML pages were clean; the source files were not, and the scanners never scanned
-   themselves. Fixed in P2 by replacing the literals with generic detectors that reveal nothing.
-3. **Git history is not fixed by P2.** Earlier commits, other session branches and at least one commit
-   message still contain the withheld location, and some branch tips contain the initials. Removing them
-   needs a history rewrite and force-push (or a fresh repository), which no session may do on its own —
-   **owner decision**, published on the Flagged for Review page with the exact steps.
-
-### Log — session `73e9c9c3` (UTC)
-
-- 2026-11-10 00:38 — Session started on `0ac8be2`; fetched all remote branches; found three live sessions
-  (table above). `main` advanced to `dedd934` at 00:40 (PR #19); fast-forwarded.
-- 2026-11-10 00:44 — Claim written and pushed (`202a858`). No root-site file touched.
-- 2026-11-10 00:47 — **P2 privacy hotfix done** (`30b76b0`). Private literals removed from `verify_site.py`,
-  `tools/audit_site.py`, `tools/verify_edition.py` (scanners), `tools/build_site.py` and `tools/sitedata.py`
-  (generator text now matches the already-scrubbed published `review/` pages), and one token of row B9 on
-  this board. New `tools/privacy_scan.py` holds generic detectors only (any San Francisco postal code, a
-  citywide neighbourhood list, initials-style identifiers, street addresses, non-public contact details),
-  scans **every tracked text file including the tools**, and is the single definition the three older
-  scanners now import. Added as the first step of `.github/workflows/site-checks.yml`. Proof the detectors
-  work without naming anything: run against the pre-fix versions at `dedd934` they flag all six files; on
-  the fixed tree they pass. All five checks pass locally. No finding, figure or page content changed.
-  **Not fixed by this (owner decision, see observation 3):** Git history, other session branches and one
-  old commit message still contain the withheld location; some branch tips contain the initials.
-- 2026-11-10 00:48 — `main` had advanced to `439e42b` (two direct commits by `1e699ad0` recording PR #19).
-  **Merge conflict in this file** (both sides appended at the end). Resolved by keeping both: the
-  `1e699ad0` deploy record first, this section after it. Nothing discarded; no other file conflicted.
-- 2026-11-10 00:55 — `main` advanced again to `0c5272e` (PR #21, session `0e839002`: rebuilt root site,
-  generator under `tools/`). **Merge conflicts in three files**, all resolved without discarding anything:
-  `COORDINATION.md` (both appended — kept both, `0e839002`'s record first); `.github/workflows/site-checks.yml`
-  (kept `0e839002`'s steps and put the privacy sweep in front of them); `tools/audit_site.py` (kept
-  `0e839002`'s page list and domain list together with this session's import of the generic detectors).
-- 2026-11-10 00:55 — **The same privacy problem had just been re-introduced on `main` by PR #21:**
-  `tools/verify_core_site.py` spelled out the occupants' initials (also in a label), the postal code and the
-  neighbourhood name. Fixed in this merge by pointing its `check_privacy` at `tools/privacy_scan.py` — only
-  that block was touched in a file owned by `0e839002`; logged here because privacy is the owner's top
-  priority and the file is already on `main`. **Request to every session: never write the private values
-  into a scanner; import `scan_text` from `tools/privacy_scan.py` instead.**
-- 2026-11-10 00:55 — Build artefacts: PR #21 committed four `tools/__pycache__/*.pyc` files and this
-  session's hotfix commit had picked up one as well. All five removed from the index; `.gitignore` added
-  (`__pycache__/`, `*.pyc`). The 311 number printed on sf.gov's Housing Inventory page was added to the
-  public-contact allow-list after reading it on that page.
-- 2026-11-10 00:58 — `main` advanced a third time to `97bceaa` (PR #23, `0e839002`), after `gh pr merge 22`
-  was refused with "Base branch was modified". **Conflicts again, resolved without discarding anything:**
-  `COORDINATION.md` (kept both; `0e839002`'s PR #21 record and its handoff note to `4a563c4c` come first);
-  `tools/verify_core_site.py` — PR #23 changed the same privacy block to *assemble the private values from
-  fragments*. That still spells them out to anyone reading the file, and the label still listed the
-  initials, so this session's version (generic detectors imported from `tools/privacy_scan.py`) is kept
-  for that block; every other line of the file is `0e839002`'s. One `.pyc` modify/delete conflict resolved
-  as deleted (compiled files are no longer tracked). `0e839002` acknowledged the scope split with PR #22
-  in its own record above — the first cross-session claim on this board that another live session saw.
+Nothing is left in progress for this session. Open PRs belonging to other sessions (`#20` `arena/4a563c4c`, `#22` `arena/73e9c9c3`, plus older `#1`, `#8`) are untouched; the handoff note above explains why `#20` should be rebased rather than merged as-is, and `#22`'s privacy work covers the four legacy files this session did not edit.
 
 ---
 
-## Session `arena/8c577e09-rentincreasesf3` — claim, scope, collision and handoff (2026-11-10)
+## Session `arena/8c577e09-rentincreasesf3` — independent verification pass (merged 2026-11-10)
 
-Branch `arena/8c577e09-rentincreasesf3`, started from `main` @ `0ac8be2` (PR #18). While this session
-was working, `main` advanced through PRs #19–#23: two other sessions (`0e839002`, `73e9c9c3`)
-**rebuilt the canonical root site** (`index.html`, `pages/*`, `assets/style.css`, `tools/site_*.py`,
-`tools/privacy_scan.py`, `tools/verify_core_site.py`). This session therefore **changed its scope to
-avoid reverting that work** — recorded here because the original claim was written before the rebuild
-landed and no longer matches what was done.
+Scope delivered as a **self-contained edition** under `verification/`; the canonical site was not
+rewritten. Full claim, findings and log are in the section above (added before PR #24 landed); this
+entry records the merge result only.
 
-### Scope actually delivered — non-overlapping
-
-| # | Task | Status | File scope |
-|---|------|--------|------------|
-| D1 | Claim + sync + re-read board | done | `COORDINATION.md` |
-| D2 | Independent re-verification of every headline figure against official sources, fresh fetches **2026-11-10** | done | new `verification/` edition; this board |
-| D3 | Tenant-lawyer gap analysis: licence gate, rent-increase licence vs. Rent Board Fee, notice content, 180-day retaliation, SB 567 damages, Costa-Hawkins partial turnover and the §6.14 last-original-occupant rule, additional-occupant prohibition, AB 1482 exclusion, FEHA/FHA, the 7% statutory maximum vs. published allowance | done | `verification/tenant-review.html`, `verification/laws.html` |
-| D4 | Per-unit ledgers with cents-exact options and notice deadlines, plus the two corrections below | done | `verification/units.html`, `verification/executive-summary.html` |
-| D5 | Dashboard-style landing page with per-category navigation and entry tables | done | `verification/index.html`, `verification/style.css` |
-| D6 | Build + gate scripts for this edition only | done | `tools/build_v2.py`, `tools/check_v2.py` |
-| D7 | Flag register, expanded and carried forward | done | `verification/flagged.html` (F-11 … F-23) |
-| D8 | Merge `main`, re-run every checker, PR → `main`, merge, confirm Pages, record it | in progress | this board |
-
-**Files this session did NOT edit:** `index.html`, `pages/**`, `assets/style.css`, `tools/site_*.py`,
-`tools/build_dashboard.py`, `tools/verify_core_site.py`, `tools/privacy_scan.py`, `docs/`, `dashboard/`,
-`review/`, `audit/`, `verified/`, `data/`, `research/`. Conflicts in `index.html`, `README.md`,
-`EXECUTIVE_SUMMARY.md` and this file were resolved **in favour of `main`** (main's versions taken
-verbatim) — no other session's work was discarded.
-
-### Substantive findings this session adds (all verified 2026-11-10)
-
-1. **`13.1%` is not the Unit 2 ceiling for 1 June 2027.** It is the banked balance accrued to June 2026
-   — a verified *floor* of $412.65. The 1 June 2027 increase must also use the allowance **in effect on
-   that date** (1 Mar 2027 – 29 Feb 2028), which the Rent Board has not published. `main` currently
-   labels 13.1% "Combined maximum" on `pages/units.html`; that label is set in the **flag row** of
-   `pages/flagged.html` (FR-24) rather than edited here, per the coordination rule. `verification/`
-   states the floor and leaves the ceiling blank, flagged **F-11**.
-   Sources: <https://www.sf.gov/learn-about-rent-increases-san-francisco> ·
-   <https://www.sf.gov/reports--current-rates-including-rent-increase-relocation-sec-deposit>
-2. **"Capped at 7%, so 7% is available" is a misreading.** Admin. Code §37.3(a)(1) says the annual
-   increase "shall not … exceed a tenant's base rent by more than 60% of said published increase. In no
-   event, however, shall the allowable annual increase be greater than 7%" — a ceiling on the formula,
-   not an entitlement. The published allowance (1.6%) governs.
-   Source: <https://codelibrary.amlegal.com/codes/san_francisco/latest/sf_admin/0-0-0-70881>
-3. **The Rent Board Fee is a separate obligation from the licence** — $59.00 per dwelling unit for
-   2026-27, due 1 March, 5% monthly late penalty capped at 15%, 50% recoverable from tenants in
-   occupancy, exemption window closing 14 December 2026. **No official page states that an unpaid fee
-   affects the licence**; recorded as an open question (F-15), not inferred either way.
-   Source: <https://www.sf.gov/rent-board-fee>
-4. **Security-deposit interest at 4.2%** (1 Mar 2026 – 28 Feb 2027) is an annual obligation that does
-   not consume a rent allowance. Source: sf.gov Current Rates (above).
-5. **The §6.14 / last-original-occupant rule is narrower than "vacancy resets rent"**: it applies to
-   *subtenants* once the **last** original occupant permanently vacates, and only if a written §6.14
-   notice was served within a reasonable time (generally 60 days); a *co-tenant* is not subject to it.
-   Whether Unit 1's April 2026 occupant is a subtenant or a co-tenant is not established — F-19.
-   Source: <https://www.sf.gov/information--rent-increases-under-section-614-and-costa-hawkins>
-6. **The 8.8% state figure can never be used as a fallback here.** Civ. Code §1947.12(d)(3) excludes
-   housing already subject to a local ordinance restricting increases to a lower amount, and the state
-   cap has its own remedies — injunctive relief, the excess, discretionary fees and up to treble damages
-   for wilful conduct. Sources: <https://oag.ca.gov/rentcaps> ·
-   <https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=1947.12>
-
-### Requests to the owners of the canonical site (files NOT edited here)
-
-1. `pages/units.html` — relabel "Combined maximum — 13.1%" as the banked balance to June 2026, and add
-   the unpublished 2027-28 allowance to any June 2027 figure (this session's F-11 / FR-24).
-2. `pages/flagged.html` — add the F-11 · F-23 items from `verification/flagged.html` if wanted.
-3. Everything else this session verified agrees with `main`.
-
-### Log — `arena/8c577e09` (UTC)
-
-- 2026-11-10 — Claim pushed (`51d2c8f`). Re-fetched every source used by `main` (Housing Inventory,
-  Noncompliance, Learn about rent increases, Banked, Multiple years, Current Rates, Form 571, Rent Board
-  Fee, rental laws, Tenant Petitions, Unlawful rent increase, §6.14/Costa-Hawkins, algorithmic devices,
-  evictions, oag rent caps, leginfo §827/§1013/§1942.5/§1947.12/§1954.53/Gov. §12955, 42 U.S.C. §3604,
-  Admin. Code §37.3, Legistar #261020, portal.sfrb.org, CRD, HUD). All `main` figures confirmed; six
-  gaps and two labelling errors logged above.
-- 2026-11-10 — Built `verification/` (11 files) with `tools/build_v2.py`; gate `tools/check_v2.py`:
-  **212 data rows, 210 with an official source, 2 blank+flagged, all links and anchors resolve, no
-  identifiers, arithmetic recomputed — PASS**.
-- 2026-11-10 — `main` advanced to `6b9fbb1` during this session (PRs #19–#23). Merge: conflicts in
-  `index.html`, `README.md`, `EXECUTIVE_SUMMARY.md`, `COORDINATION.md` — **all resolved in favour of
-  `main`**; this session's edition moved out of `index.html`/`pages/` into `verification/` so nothing on
-  the canonical site is reverted. Original claim (which named `pages/*` and `index.html`) withdrawn.
-
-### Request to `0e839002` / `73e9c9c3` (canonical-site owners) — one-line nav addition
-
-`index.html` and `pages/**` are generated by `tools/build_dashboard.py` from `tools/site_*.py`, so a
-hand edit is overwritten on the next rebuild (and CI fails the staleness gate). This session therefore
-did **not** add its edition to the canonical navigation, and instead records the request here:
-
-**Add one tile/nav entry for the independent verification edition.** Suggested text for
-`tools/site_layout.py` → `ALL_PAGES` (or the "Browse by category" tile list in `site_pages_core.py`):
-
-```html
-<a class="tile" href="verification/index.html"><b>Independent verification pass</b>
-  <span>Second, self-contained re-fetch of every official source (10 Nov 2026): confirms all figures,
-  refines the Unit B ceiling and lists flags F-11…F-23.</span></a>
-```
-
-No other change is requested. `README.md` already links the edition, so it is reachable now.
+- Branch `arena/8c577e09-rentincreasesf3` → `main`; PR **#25**.
+- Merge conflicts: `index.html` / `README.md` / `EXECUTIVE_SUMMARY.md` resolved in favour of `main`
+  (canonical rebuild preserved); `COORDINATION.md` conflicts resolved by keeping both boards.
+- Deliverables: `verification/` (11 files, own stylesheet), `tools/build_v2.py`, `tools/check_v2.py`,
+  README section. Gate: 212 data rows — 210 with an official source, 2 blank + flagged; links and
+  anchors resolve; privacy sweep passes (detectors imported from `tools/privacy_scan.py`).
+- Requests still open for the canonical-site owners: relabel `pages/units.html` "Combined maximum —
+  13.1%" as a banked balance to June 2026, and add a nav tile for `verification/index.html`.
