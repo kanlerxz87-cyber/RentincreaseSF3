@@ -407,7 +407,7 @@ presented as a general rule (true only for personal service with a 28 February 2
 | B6 | Fix Units page: anniversary Feb 1, banked math, license prerequisite, additional-occupant note | done | `pages/units.html` | Corrected PR #2 item 1 (Apr 1 → Feb 1); corrected item 2 (banking not capped at 3 yrs); added license + Legistar watch |
 | B7 | Fix Laws & Caps page: add license row, banking row, anniversary row, pending ordinance row; correct state/local interaction | done | `pages/laws.html` | Added §37.15 license row; Legistar pending row; banking 24-month rule; correct Civ. Code §1947.12 exemption language |
 | B8 | Rewrite Process & Notice page: add Step 0 (license) + full 7-step flow, reasons, corporate vs. individual, tenant scrutiny, one-vs-both | done | `pages/process.html` | Every row sourced; no unverified claims |
-| B9 | Consolidate Flagged for Review (pages/flagged.html): merge prior F-items + new license/banking/pending flags → F-1…F-10, all rows sourced/flagged | done | `pages/flagged.html` | Removed ZIP/outer-sunset literals (privacy); every row has source link; cross-links to docs/ & review/ registers |
+| B9 | Consolidate Flagged for Review (pages/flagged.html): merge prior F-items + new license/banking/pending flags → F-1…F-10, all rows sourced/flagged | done | `pages/flagged.html` | Removed ZIP/neighbourhood literals (privacy); every row has source link; cross-links to docs/ & review/ registers |
 | B10 | Update EXECUTIVE_SUMMARY.md: forefront license table (steps 1–7) + all 8 sections, fully sourced | done | `EXECUTIVE_SUMMARY.md` | Matches site forefront; dates/amounts preserved; anonymous |
 | B11 | Update README.md: integrated forefront landing, 4-edition table, headline results, verification badges | done | `README.md` | Links to all 4 live editions; no PII |
 | B12 | Line-by-line verification: verify_site.py + tools/check_site.py + manual official-source re-fetch (2026-11-07) | done | `verify_site.py`, `tools/check_site.py` | ALL CHECKS PASSED (see below) |
@@ -531,6 +531,16 @@ conflict with the rebuild. Its substantive contribution — the 9 Nov 2026 sf.go
 (`index.html` §3, `pages/laws.html`, `pages/flagged.html` FR-06, `pages/units.html`, `pages/reasonable.html`).
 Request: that branch be rebased onto `main` after this merge, or closed, rather than merged as-is;
 merging it unrebased would revert verified pages.
+
+### Merge note — `0e839002` x PR #22 (`73e9c9c3`), 2026-11-10
+
+`origin/main` advanced to `6b9fbb1` (PR #22, privacy hotfix) while this records PR was open. Resolution: this
+board keeps the `73e9c9c3` content **and** this session's sections; `tools/verify_core_site.py`,
+`verify_site.py`, `tools/verify_edition.py` and `tools/audit_site.py` take **main's privacy-hardened
+versions** (fragment-assembled detectors), because they do the same job with generic patterns and the
+`tools/privacy_scan.py` helper. `tools/site_pages_core.py` keeps this session's generated content (the
+Unit B heading fix) — no behavioural conflict. `__pycache__` is untracked and now ignored via
+`.gitignore` (main deleted the committed `.pyc` files; this branch does the same). Nothing was discarded.
 
 ## Task board — session `0e839002` (branch `arena/0e839002-rentincreasesf3`)
 

@@ -96,24 +96,17 @@ def check_tables(path):
                               % (path.name, t_i, r_i, snippet))
 
 
-# Privacy patterns are assembled from fragments so that the sensitive literals are
-# never themselves written into this file (or into anything the site publishes).
-_ZIP3, _ZIP2 = "94" + "1", "2" + "2"
-_NEAR = "sun" + "set"
-PII = {
-    "tenant initial pair (Lo/Vn/Jp/Mt/Er/Is)": r"\b(?:L\s*\.?\s*O|V\s*\.?\s*N|J\s*\.?\s*P|M\s*\.?\s*T|E\s*\.?\s*R|I\s*\.?\s*S)\b",
-    "unit ZIP": _ZIP3 + _ZIP2,
-    "any 941xx ZIP": r"\b" + _ZIP3 + r"\d\d\b",
-    "neighbourhood": r"(?i)(outer\s+" + _NEAR + r"|inner\s+" + _NEAR + r"|" + _NEAR + r"\s+district)",
-    "street address": r"(?i)\b\d{1,5}\s+[A-Z][a-z]{2,}\s+(street|st|avenue|ave|boulevard|blvd|way|drive|dr|road|rd|court|ct|place|pl)\b",
-}
+# The private values themselves are deliberately NOT written in this file: the repository is public,
+# so a scanner must not spell out what it protects. tools/privacy_scan.py holds generic detectors
+# (any San Francisco postal code, a citywide neighbourhood list, initials-style identifiers, street
+# addresses, non-public contact details) and is the single definition every checker imports.
+from privacy_scan import scan_text  # noqa: E402
 
 
 def check_privacy(path):
     text = path.read_text(encoding="utf-8")
-    for label, pat in PII.items():
-        for m in re.finditer(pat, text):
-            ERRORS.append("%s: privacy risk [%s]: %r" % (path.name, label, m.group(0)))
+    for label, hit in scan_text(text, path):
+        ERRORS.append("%s: privacy risk [%s]: %r" % (path.name, label, hit))
 
 
 def check_scripts(path):
