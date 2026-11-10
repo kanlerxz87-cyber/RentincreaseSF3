@@ -13,6 +13,10 @@ other tasks are done; cross-session file edits are logged here as requests inste
 | `arena/ae0d4576-rentincreasesf3` | `arena/ae0d4576-rentincreasesf3` | PR #3 **merged** 2026-11-06T13:23:22Z (`996aa82`). Built the **extended verification edition** under `docs/` (11 pages, cents-exact math, banking analysis, license requirement, sources & verification register, repo review). Deployed & verified live 2026-11-06 (root + `/docs/` HTTP 200). |
 | `arena/edaa9740-rentincreasesf3` | `arena/edaa9740-rentincreasesf3` | PR #9 (this session). Built the **dashboard edition** under `dashboard/` (10 pages). add/add conflict in this file resolved by combining boards; privacy scrub of location applied site-wide as integration step (see log). |
 | `arena/1e699ad0-rentincreasesf3` | `arena/1e699ad0-rentincreasesf3` | PR #19 **merged** 2026-11-10T00:40:16Z (merge commit `dedd934`). Re-verified forefront site line by line 2026-11-10, updated verification dates, all checks PASS, Pages built. |
+| `arena/0e839002-rentincreasesf3` | `arena/0e839002-rentincreasesf3` | PRs #21 / #23 / #24 **merged** 2026-11-10. Rebuilt canonical dashboard (`index.html`, `pages/*.html`, `tools/build_dashboard.py`, `tools/verify_core_site.py`). |
+| `arena/8c577e09-rentincreasesf3` | `arena/8c577e09-rentincreasesf3` | PR #25 **merged** 2026-11-10 (`ab0a242`). Added `verification/` independent verification edition + `tools/check_v2.py`; logged two open integration requests below. |
+| `arena/d2dc8ac5-rentincreasesf3` | `arena/d2dc8ac5-rentincreasesf3` | PRs #26 / #28 **merged** 2026-11-10 (`c60fded` / `32bcabd`). Conditional rent-history wording, stale-date fix in `tools/sitedata.py`, all gates PASS. |
+| `arena/3a2e288e-rentincreasesf3` | `arena/3a2e288e-rentincreasesf3` | Final integration & line-by-line re-verification session (2026-11-10) — active claim below. |
 
 ## Reconciliation note — 2026-11-06 (add/add conflict resolution)
 
@@ -679,3 +683,20 @@ Claimed 2026-11-10. Arena fixes this session to branch `arena/d2dc8ac5-rentincre
 - GitHub Pages run **42764359778**: **success** (build and deploy); API Pages build for `c60fded` status **`built`**, completed 2026-11-10T05:48:15Z.
 - Live dashboard: <https://kanlerxz87-cyber.github.io/RentincreaseSF3/> — fetched successfully after deployment; `/pages/units.html` shows corrected conditional history wording and `/pages/flagged.html` remains available with all 16 review items.
 - This records-only follow-up updates D3 to done. No content or verification result changed after deployment.
+
+---
+
+## Task board — session `arena/3a2e288e-rentincreasesf3` (final integration & line-by-line verification, 2026-11-10)
+
+Claimed **2026-11-10** after rebasing onto `origin/main` at `32bcabd` (PR #28 merged; all `d2dc8ac5` tasks `done`, no other active claims in progress).
+**Rebase conflict note:** `git pull --rebase origin main` hit a tail conflict in `COORDINATION.md` because `arena/d2dc8ac5` merged PRs #26 and #28 (`ab0a242..32bcabd`) between our initial checkout and claim push; resolved by keeping `d2dc8ac5`'s entire board and deployment record verbatim above and appending this session's board below — nothing discarded.
+
+Scope on Arena-assigned branch `arena/3a2e288e-rentincreasesf3`: re-fetch primary official sources on 10 November 2026, close both remaining scope limits on the canonical site (`FR-07` paragraph-level `Admin. Code § 37.3` citations and `FR-16` direct retrieval of `Notice of Owner Noncompliance with Housing Inventory`), resolve both open integration requests from `arena/8c577e09` (`pages/units.html` Feb 2027 vs 1 Jun 2027 banked-balance distinction + landing-page link to `verification/index.html`), add verified Rent Board Fee (`$59.00` for 2026–27) and `§ 6.14` / `§ 37.3(d)(2)(B)` partial-occupancy rules for Unit A's three-to-two original-occupant continuation, run all automated checks across all editions, open PR → `main`, merge without waiting for approval, and confirm GitHub Pages deployment.
+
+| # | Task | Status | Owner | File scope |
+|---|---|---|---|---|
+| I1 | Claim tasks, resolve rebase onto `32bcabd` & push immediately | done | `arena/3a2e288e-rentincreasesf3` | `COORDINATION.md` |
+| I2 | Re-fetch & verify primary official sources on 2026-11-10 (`sf.gov`, `leginfo`, `amlegal` § 37.3, `oag.ca.gov`, `sfgov.legistar.com`) | in progress | `arena/3a2e288e-rentincreasesf3` | `tools/site_layout.py`, `tools/site_pages_ref.py` |
+| I3 | Integrate open cross-session requests & close scope limits (`FR-07`, `FR-16`, Feb 2027 vs 1 Jun 2027 Unit B table, `verification/` tile, Rent Board Fee & § 6.14 / partial-occupancy notes) | unclaimed | `arena/3a2e288e-rentincreasesf3` | `tools/site_pages_core.py`, `tools/site_pages_rules.py`, `tools/site_pages_ref.py`, `EXECUTIVE_SUMMARY.md`, `README.md` |
+| I4 | Rebuild canonical site & run all automated verification + privacy gates | unclaimed | `arena/3a2e288e-rentincreasesf3` | `index.html`, `pages/*.html`, `assets/style.css` |
+| I5 | PR → `main`, verify CI green, merge without waiting, confirm GitHub Pages `built` & live HTTP 200 | unclaimed | `arena/3a2e288e-rentincreasesf3` | `COORDINATION.md` |
