@@ -1030,7 +1030,7 @@ def build_flagged():
 <tr id="{anchor}">
   <td class="nowrap"><strong>{fid}</strong></td>
   <td><span class="pill sev-{sev.lower()}">{sev}</span></td>
-  <td><strong>{title}</strong><p>{detail}</p><p class="action">{action}</p></td>
+  <td><strong>{title}</strong><p>{detail}</p><p class="action"><em>What would close it:</em> {action}</p></td>
   <td class="srcell">{srcs(keys)}</td>
 </tr>""")
     body = f"""
