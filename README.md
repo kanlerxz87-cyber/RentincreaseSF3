@@ -65,7 +65,11 @@ CI runs the same commands on every push and pull request (`.github/workflows/sit
 
 ## Preservation of earlier editions
 
-Earlier editions remain online unchanged for audit: `docs/` (verification edition), `dashboard/` (dashboard edition), `review/` (audit-trail edition), `audit/` (consolidated audit), `verified/` (verified guide). They are **not** the canonical pages and are not linked from the main navigation. Where they disagree with the current pages, the corrections are listed on `pages/flagged.html` (FR-15).
+Earlier editions remain online unchanged for audit and are linked from the footer of every canonical
+page: `verification/` (independent verification edition, 10 November 2026), `docs/` (verification
+edition), `dashboard/` (dashboard edition), `review/` (audit-trail edition), `audit/` (consolidated
+audit), `verified/` (verified guide). They are **not** the canonical pages. Where they disagree with
+the current pages, the corrections are listed on `pages/flagged.html` (FR-15).
 
 ## Coordination
 

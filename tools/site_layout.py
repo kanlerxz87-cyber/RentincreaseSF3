@@ -198,6 +198,15 @@ NAV = [
     ("pages/flagged.html", "Flagged"),
 ]
 
+EDITIONS = [
+    ("verification/index.html", "Independent verification edition"),
+    ("docs/index.html", "Verification edition (docs)"),
+    ("dashboard/index.html", "Dashboard edition"),
+    ("review/index.html", "Review edition"),
+    ("audit/process.html", "Audit edition"),
+    ("verified/index.html", "Verified edition"),
+]
+
 ALL_PAGES = [
     ("index.html", "Dashboard"),
     ("pages/executive-summary.html", "Executive summary"),
@@ -227,6 +236,7 @@ def page(filename, title, body, desc="", active=None):
         for href, label in NAV
     )
     allp = "".join('<a href="%s%s">%s</a>' % (up, href, label) for href, label in ALL_PAGES)
+    edp = "".join('<a href="%s%s">%s</a>' % (up, href, label) for href, label in EDITIONS)
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>

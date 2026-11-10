@@ -174,7 +174,8 @@ def executive_summary():
     <tbody>
       <tr><td>Banked rent increases page</td><td>“A skipped increase is only banked if at least <b>24 full months</b> pass without any rent increase. If less than 24 months pass, the skipped increase is lost…”</td><td>On 1 Feb 2027 exactly 24 months have passed since the 1 Feb 2025 rent — so the 1.4% is banked on this reading.</td>{cell("SF_BANK")}</tr>
       <tr><td>“Learn about rent increases” worked example</td><td>Applies a <b>12-month</b> test to each skipped increase (“a full 12 months has not elapsed between the date it first became available … and the date of the rent increase” ⇒ lost).</td><td>1.4% became available 1 Feb 2026; the 1 Feb 2027 increase is 12 months later — banked on this reading too.</td>{cell("SF_LI")}</tr>
-      <tr><td>Consequence</td><td>The two page texts use different wording but both permit Unit A's 1.4% at 1 Feb 2027. The gap between them is published on the <a href="flagged.html">Flagged</a> page (FR-03) and should be confirmed with a Rent Board counsellor before the notice is served.</td><td><b>3.0% is supportable; 1.6% is the fallback that is lawful under either reading.</b></td>{cell("SF_COUNSEL")}</tr>
+      <tr><td>Consequence for Unit A</td><td>The two page texts use different wording but both permit Unit A’s 1.4% at 1 Feb 2027 — on the 24-month reading because 24 months have elapsed since the rent was last set, on the 12-month reading because 12 months have elapsed since the 1.4% became available. Measured instead from when the 1.4% became available <i>and</i> held to 24 months, it would only bank on 1 Feb 2028. The gap is published as FR-03 and <b>FR-17</b> and should be confirmed with a Rent Board counsellor before the notice is served.</td><td><b>3.0% is supportable; 1.6% is the fallback that is lawful under either reading.</b></td>{cell("SF_COUNSEL", "SF_BANK")}</tr>
+      <tr><td>Consequence for Unit B</td><td>The same difference decides 13.1% against 11.7%. On the 24-month reading measured from the last rent charged (1 June 2019) every skipped year has long since banked, so 11.5% + 1.6% = 13.1% is supportable; measured from the date each skipped increase became available, the 1.4% for 1 June 2025 is excluded for any effective date before 1 June 2027, giving 10.1% + 1.6% = 11.7%.</td><td><b>10.0% phased is the figure that is supportable on every reading.</b></td>{cell("SF_BANK", "SF_LI")}</tr>
     </tbody>
   </table>
 </div>
@@ -309,6 +310,7 @@ def units():
       <tr><td>Annual 1.6% + banked 1.4% (the 1.4% applied 1 Mar 2025 – 28 Feb 2026, skipped on 1 Feb 2026)</td><td>3.0%</td><td>$119.85</td><td><b>$4,114.85</b></td><td>30 days</td>{cell("SF_571", "SF_BANK")}</tr>
       <tr><td>If the 1.4% is treated as lost (stricter reading of the banking rule)</td><td>1.6%</td><td>$63.92</td><td><b>$4,058.92</b></td><td>30 days</td>{cell("SF_BANK")}</tr>
       <tr><td>1 April 2027 (if the 1 April 2026 lease restarts the anniversary)</td><td colspan="2"><b>Blank — the percentage for 1 Mar 2027 – 29 Feb 2028 has not been announced</b></td><td>—</td><td>30 days if ≤10%</td>{cell("SF_LI")}</tr>
+<tr><td>1 February 2028 — if the 24-month test is measured from when the 1.4% became available (1 Feb 2026), that is the earliest date it banks</td><td colspan="2"><b>Blank — the percentage for 1 Mar 2027 – 29 Feb 2028 has not been announced</b></td><td>—</td><td>30 days if ≤10%</td>{cell("SF_BANK", "SF_LI")}</tr>
     </tbody>
   </table>
   <p class="small"><b>Rate to use:</b> the percentage in effect on the <i>effective date</i> — 1.6% for any date up to 28 February 2027. No rounding up. Base rent only.</p>
@@ -337,8 +339,9 @@ def units():
       <tr><td>1 June 2022</td><td>3/1/22 – 2/28/23</td><td>2.3%</td><td>Skipped — banked</td>{cell("SF_571")}</tr>
       <tr><td>1 June 2023</td><td>3/1/23 – 2/29/24</td><td>3.6%</td><td>Skipped — banked</td>{cell("SF_571")}</tr>
       <tr><td>1 June 2024</td><td>3/1/24 – 2/28/25</td><td>1.7%</td><td>Skipped — banked</td>{cell("SF_571")}</tr>
-      <tr><td>1 June 2025</td><td>3/1/25 – 2/28/26</td><td>1.4%</td><td>Skipped — banked (12 months elapsed by Feb 2027)</td>{cell("SF_571", "SF_BANK")}</tr>
-      <tr><td>Total banked</td><td>—</td><td><b>11.5%</b></td><td>Added, not compounded</td>{cell("SF_BANK")}</tr>
+      <tr><td>1 June 2025</td><td>3/1/25 – 2/28/26</td><td>1.4%</td><td>Skipped — banked on the <b>12-month</b> test; on the <b>24-month</b> test it banks only from 1 June 2027</td>{cell("SF_571", "SF_BANK")}</tr>
+      <tr><td><b>Banked balance to June 2025</b> — 12-month test (and 24-month test measured from the last rent charged)</td><td>—</td><td><b>11.5%</b></td><td>Added, not compounded</td>{cell("SF_BANK", "SF_LI")}</tr>
+      <tr><td>Banked balance to June 2024 — 24-month test measured from when each skipped increase became available</td><td>—</td><td><b>10.1%</b></td><td>Excludes the 1.4% for any effective date before 1 June 2027</td>{cell("SF_BANK")}</tr>
       <tr><td>Annual on the effective date (Feb 2027)</td><td>3/1/26 – 2/28/27</td><td>1.6%</td><td>Added to the banked total</td>{cell("SF_571")}</tr>
       <tr><td><b>Combined for an effective date on or before 28 Feb 2027</b></td><td>—</td><td><b>13.1%</b></td><td>Requires 90 days' notice</td>{cell("SF_BANK", "SF_571")}</tr>
       <tr><td>Annual percentage for a later effective date (e.g. 1 June 2027)</td><td>3/1/27 – 2/29/28</td><td><b>Blank — not yet published</b></td><td>13.1% is not a ceiling for that date; the banked 11.5% carries forward and the annual component is whatever the Rent Board publishes for then</td>{cell("SF_LI")}</tr>
@@ -346,6 +349,7 @@ def units():
     </tbody>
   </table>
 </div>
+  <p class="small"><b>Why there are two figures.</b> The Rent Board’s banking page says “a skipped increase is only banked if at least 24 full months pass without any rent increase”; the worked example on the rent-increases page applies a <b>12-month</b> test to each skipped increase, measured from the date it first became available. Both texts are official. They differ only in <i>when the clock starts</i>, and that decides whether the most recent skipped year (1.4%) belongs in the total. The difference is published as <b>FR-17</b> on the <a href="flagged.html">Flagged</a> page rather than resolved by inference.</p>
 
 <div class="card">
   <h2>Unit B — lawful options (calculated on $3,150)</h2>
@@ -370,6 +374,7 @@ def units():
       <tr><td>Unit A</td><td>$3,995.00</td><td>1.6%</td><td>$4,058.92</td><td>$63.92</td><td>$767.04</td>{cell("SF_571")}</tr>
       <tr><td>Unit B</td><td>$3,150.00</td><td>10.0%</td><td>$3,465.00</td><td>$315.00</td><td>$3,780.00</td>{cell("SF_BANK")}</tr>
       <tr><td>Unit B</td><td>$3,150.00</td><td>13.1%</td><td>$3,562.65</td><td>$412.65</td><td>$4,951.80</td>{cell("SF_BANK")}</tr>
+      <tr><td>Unit B</td><td>$3,150.00</td><td>11.7%</td><td>$3,518.55</td><td>$368.55</td><td>$4,422.60</td>{cell("SF_BANK", "SF_571")}</tr>
     </tbody>
   </table>
   <p class="small">Annual figures are 12 × the monthly increase — arithmetic only, before any vacancy, non-payment or passthrough effects.</p>

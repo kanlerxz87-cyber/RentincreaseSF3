@@ -139,6 +139,8 @@ def check_math():
         ("Unit B 10.0%", 3150 * 0.100, 315.00, 3465.00),
         ("Unit B 11.5%", 3150 * 0.115, 362.25, 3512.25),
         ("Unit B 13.1%", 3150 * 0.131, 412.65, 3562.65),
+        ("Unit B 10.1%", 3150 * 0.101, 318.15, 3468.15),
+        ("Unit B 11.7%", 3150 * 0.117, 368.55, 3518.55),
     ]
     for label, raw, inc, new in cases:
         if abs(round(raw, 2) - inc) > 0.005:
@@ -151,6 +153,13 @@ def check_math():
         ERRORS.append("math: banked total = %.2f, published 11.5" % banked)
     if round(banked + 1.6, 2) != 13.1:
         ERRORS.append("math: banked + annual = %.2f, published 13.1" % (banked + 1.6))
+    strict = 1.8 + 0.7 + 2.3 + 3.6 + 1.7
+    if round(strict, 2) != 10.1:
+        ERRORS.append("math: 24-month banked total = %.2f, published 10.1" % strict)
+    if round(strict + 1.6, 2) != 11.7:
+        ERRORS.append("math: 24-month banked + annual = %.2f, published 11.7" % (strict + 1.6))
+    if round(368.55 * 12, 2) != 4422.60:
+        ERRORS.append("math: annual effect of Unit B 11.7% wrong")
     # annualised effects
     if round(119.85 * 12, 2) != 1438.20:
         ERRORS.append("math: annual effect of Unit A 3.0% wrong")
