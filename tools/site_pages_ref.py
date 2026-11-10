@@ -8,6 +8,7 @@ USED_FOR = {
     "SF_LI": "Current allowable percentage (1.6%), base-rent rule, no-rounding rule, anniversary rules, 30/90-day notice elements, additional-occupant prohibition, vacancy pricing, the 9 Nov 2026 notice on File #261020",
     "SF_BANK": "24-month banking condition, additive-not-compounded rule, no cap back to 1 Apr 1982, no expiry, prior-owner transfer, banked notice elements, licence precondition",
     "SF_HI": "All-owner reporting duty, automatic licence, 1 Mar deadline, 1–9 unit start date of 1 Mar 2023, licence on effective date, no monetary penalty, what is reported",
+    "SF_NONCOMP": "Consequence of an unlicensed increase: the notice “may be null and void (this may apply for multiple years)” and the tenant “may be entitled to a rent refund”; Tenant Summary Petition route while a notice has not yet taken effect; how to check licence status in the Portal",
     "SF_LAWS": "Coverage of pre-13 June 1979 buildings, excluded/partially exempt categories, counsellor line",
     "SF_571": "The official allowable-increase table 1982–2027 (all percentages used on this site)",
     "SF_MULTI": "Multi-year methodology, additive rule, no petition required, no rounding, base rent only",
@@ -147,7 +148,7 @@ def requirements():
     <div class="stat"><div class="num">23</div><div class="lbl">requirements tracked</div></div>
     <div class="stat"><div class="num">20</div><div class="lbl">answered from official sources</div></div>
     <div class="stat"><div class="num">3</div><div class="lbl">answered only conditionally (rent history, government building record, official statistics)</div></div>
-    <div class="stat"><div class="num">16</div><div class="lbl">items flagged for review, all published</div></div>
+    <div class="stat"><div class="num">{len(FLAGS)}</div><div class="lbl">items flagged for review, all published</div></div>
   </div>
 </div>
 
@@ -223,9 +224,12 @@ FLAGS = [
     ("FR-15", "Earlier editions of this site contained claims now corrected", "Corrected",
      "Corrections applied: the Unit A anniversary was once shown as 1 April; banking was once described as “capped at three years”; a Unit B figure of 11.5% was once presented without the annual component that makes the total 13.1%; the pre-9-November-2026 status of File #261020 was stated without the Rent Board's new notice. Prior editions remain online for audit but are no longer the canonical pages.",
      "This page and the corrected pages are the canonical record.", "SF_LI"),
-    ("FR-16", "Non-compliance consequence wording", "Scope limit",
-     "This pass quotes the Housing Inventory page (“will not be enforceable without having a rent increase license on the effective date”). The separate Notice of Owner Noncompliance page was not re-retrieved in this pass, so its stronger wording is not used.",
-     "Retrieve the noncompliance page before relying on any stronger description.", "SF_HI"),
+    ("FR-16", "Non-compliance consequence wording", "Verified — closed 10 Nov 2026",
+     "The Notice of Owner Noncompliance page was re-retrieved on 10 November 2026 and is now quoted directly: a notice that goes into effect while the unit is unlicensed “may be null and void (this may apply for multiple years)”, and the tenant “may be entitled to a rent refund”. It also confirms the 1 July 2022 / 1 March 2023 start dates and the Tenant Summary Petition route while an increase has not yet taken effect.",
+     "Closed — the stronger official wording is now published on the dashboard, executive summary and process pages.", "SF_NONCOMP"),
+    ("FR-17", "“13.1%” was labelled a maximum catch-up / June 2027 ceiling", "Corrected 10 Nov 2026",
+     "13.1% is the banked 11.5% plus the 1.6% annual allowance in force through 28 February 2027. It is therefore the maximum only for an effective date <b>on or before 28 February 2027</b>; for a later date (for example 1 June 2027) the banked 11.5% still carries forward but the annual component is whatever the Rent Board publishes for that period, which is not yet announced. The label has been rewritten on the dashboard, executive summary, units and rules pages, and a blank row now records that the 2027–28 percentage is unpublished.",
+     "Re-check the Rent Board's published percentage before any effective date on or after 1 March 2027.", "SF_571"),
 ]
 
 
@@ -236,6 +240,8 @@ def flagged():
                  "Blank": "warn", "Pending — not law": "danger", "No official source": "warn",
                  "Corrected": "ok", "Scope limit": "warn",
                  "Absence of authority": "warn"}.get(status, "warn")
+        if status.startswith("Corrected") or status.startswith("Verified"):
+            badge = "ok"
         rows += ('<tr><td class="nowrap"><b>%s</b></td><td>%s</td>'
                  '<td><span class="badge %s">%s</span></td><td>%s</td><td>%s</td>%s</tr>'
                  % (fid, item, badge, status, detail, closes, cell(key)))

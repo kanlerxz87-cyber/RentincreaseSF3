@@ -20,7 +20,7 @@ def index():
       <tr><td>Do I need a licence even though I am a person, not a corporation?</td><td><b>Yes.</b> The rules distinguish by <i>building size</i> (10+ units vs. condominiums and 1–9 unit buildings), not by the owner's legal form. “Property owners who have tenants will receive a rent increase license after the submission.” This is a 2-unit building, so the requirement has applied since <b>1 March 2023</b>.</td>{cell("SF_HI", "SF_LI")}</tr>
       <tr><td>Is there a separate application or fee for the licence?</td><td><b>No separate application.</b> “Once you have reported into the Housing Inventory, a rent increase license will be automatically generated for non-owner occupied units.” Reporting is free and the licence “does not need to be included with your rent increase notice”.</td>{cell("SF_HI")}</tr>
       <tr><td>Do I have to file the rent-increase notice with the Rent Board?</td><td><b>No.</b> The annual allowable increase may be imposed “without filing a petition at the Rent Board”. Banked increases “do not have to be approved by the Rent Board, but must be calculated correctly”.</td>{cell("SF_571", "SF_BANK")}</tr>
-      <tr><td>What happens if I serve the notice without a current licence?</td><td>The increase is <b>not enforceable</b>: “your rent increase notice will not be enforceable without having a rent increase license on the effective date of the notice”. The Rent Board may also notify tenants that an owner is not in compliance.</td>{cell("SF_HI")}</tr>
+      <tr><td>What happens if I serve the notice without a current licence?</td><td>Two official consequences. The Housing Inventory page: “your rent increase notice will not be enforceable without having a rent increase license on the effective date of the notice”. The noncompliance page: a notice that takes effect while the unit is unlicensed “may be null and void (this may apply for multiple years)”, the tenant “may be entitled to a rent refund”, and the tenant can challenge it by Tenant Petition or — if the increase has not yet taken effect — by Tenant Summary Petition.</td>{cell("SF_HI", "SF_NONCOMP")}</tr>
       <tr><td>Is the licence checked on the notice date or the effective date?</td><td><b>The effective date.</b> Reporting after the deadline is allowed, but the licence must exist <i>on the effective date of the notice</i>.</td>{cell("SF_HI")}</tr>
       <tr><td>Does a correct 1.6% calculation cure a missing licence?</td><td><b>No.</b> The licence is a separate pre-condition; the licensing page states the licence must be on file “before any annual or banked rent increase can go into effect”.</td>{cell("SF_HI", "SF_BANK")}</tr>
     </tbody>
@@ -34,7 +34,7 @@ def index():
     <div class="stat"><div class="num">1.6%</div><div class="lbl">Allowable annual increase 1 Mar 2026 – 28 Feb 2027 (60% of Bay Area CPI). Source: {src("SF_LI", "sf.gov")}</div></div>
     <div class="stat"><div class="num">1.4%</div><div class="lbl">Prior year, 1 Mar 2025 – 28 Feb 2026 — the amount at stake for Unit A as a banked increase. Source: {src("SF_571", "Form 571")}</div></div>
     <div class="stat"><div class="num">Unit A: $119.85</div><div class="lbl">3.0% = 1.6% current + 1.4% banked → $3,995 → $4,114.85 on 1 Feb 2027 (calculated; see units page)</div></div>
-    <div class="stat"><div class="num">Unit B: $412.65</div><div class="lbl">13.1% = 11.5% banked + 1.6% annual → $3,150 → $3,562.65 — <b>conditional</b> on no increase since 2019</div></div>
+    <div class="stat"><div class="num">Unit B: $412.65</div><div class="lbl">13.1% = 11.5% banked + 1.6% annual → $3,150 → $3,562.65 — only for an effective date <b>on or before 28 Feb 2027</b>, and <b>conditional</b> on no increase since 2019</div></div>
     <div class="stat"><div class="num">30 / 90 days</div><div class="lbl">Written notice: 30 days if the increase is 10% or less, 90 days if more; +5 days if mailed. Source: {src("LEG_827", "Civ. Code §827")} · {src("LEG_1013", "CCP §1013")}</div></div>
     <div class="stat"><div class="num">Pending: 10%/yr cap</div><div class="lbl">File #261020 (status <b>Pending Committee Action</b>) would cap banked + capital-improvement increases. Source: {src("LEGISTAR_261020", "Legistar")}</div></div>
   </div>
@@ -114,7 +114,7 @@ def executive_summary():
       <tr><td>Start date for a 2-unit building</td><td>Reporting requirements began <b>1 March 2023</b> for condominiums and buildings with fewer than 10 units.</td>{cell("SF_HI", "SF_LI")}</tr>
       <tr><td>Annual deadline</td><td><b>1 March every year</b>. There is no monetary penalty for filing late, but a late licence does not save an increase that took effect earlier.</td>{cell("SF_HI")}</tr>
       <tr><td>Per-increase approval</td><td><b>None needed</b> for annual or banked increases; no petition is filed for them.</td>{cell("SF_571", "SF_BANK")}</tr>
-      <tr><td>Consequence of no licence</td><td>The notice “will not be enforceable without having a rent increase license on the effective date”.</td>{cell("SF_HI")}</tr>
+      <tr><td>Consequence of no licence</td><td>The notice “will not be enforceable without having a rent increase license on the effective date”. The Rent Board's noncompliance page is stronger still: a notice that takes effect while the unit is unlicensed “may be null and void (this may apply for multiple years)”, and the tenant “may be entitled to a rent refund”.</td>{cell("SF_HI", "SF_NONCOMP")}</tr>
     </tbody>
   </table>
   <p class="small" style="margin-top:8px">Practical sequence: report → confirm licence → calculate → serve notice. Full walk-through with dates: <a href="process.html">Licence &amp; process</a>.</p>
@@ -142,7 +142,7 @@ def executive_summary():
       <tr><td>Unit A — conservative alternative</td><td>1.6% annual only = 1.6%</td><td>$63.92 → <b>$4,058.92</b></td><td>30 days (35 if mailed)</td>{cell("SF_571")}</tr>
       <tr><td>Unit B — 10% phased</td><td><b>10.0%</b> (inside both current law and the proposed cap)</td><td>$315.00 → <b>$3,465.00</b></td><td>30 days (35 if mailed)</td>{cell("SF_BANK", "LEGISTAR_261020")}</tr>
       <tr><td>Unit B — banked only</td><td>11.5% banked</td><td>$362.25 → <b>$3,512.25</b></td><td><b>90 days</b> (95 if mailed)</td>{cell("SF_BANK", "SF_571")}</tr>
-      <tr><td>Unit B — conditional maximum catch-up</td><td>11.5% banked + 1.6% annual = <b>13.1%</b></td><td>$412.65 → <b>$3,562.65</b></td><td>90 days (95 if mailed)</td>{cell("SF_BANK", "SF_571")}</tr>
+      <tr><td>Unit B — conditional maximum for an effective date on or before 28 Feb 2027</td><td>11.5% banked + 1.6% annual in force = <b>13.1%</b></td><td>$412.65 → <b>$3,562.65</b></td><td>90 days (95 if mailed)</td>{cell("SF_BANK", "SF_571")}</tr>
       <tr><td>Unit B — if an increase was taken at any time since 2019</td><td colspan="3"><b>Blank — must be recalculated from the actual rent history.</b> The banked total depends on which years were skipped.</td>{cell("SF_BANK")}</tr>
     </tbody>
   </table>
@@ -213,8 +213,8 @@ def process():
       <div class="small">Source: {srcs("SF_LAWS", "SF_COUNSEL")}</div></li>
     <li><b>Report into the Housing Inventory — every year, by 1 March.</b> Use the Rent Board Portal, create an account, and report each unit: owner/manager business contact, business registration if any, approximate square footage in 250 sq ft increments, bedrooms, bathrooms, occupancy start date and base rent in $250 increments (plus whether utilities are included). Submissions are made under penalty of perjury. Reporting is free. There is no monetary penalty for filing after the deadline.
       <div class="small">Source: {srcs("SF_HI", "SF_PORTAL")}</div></li>
-    <li><b>Confirm the licence — on the effective date, not the notice date.</b> A licence is generated automatically for non-owner-occupied units after the report. Check it in the Portal. The Rent Board's exact test is that the licence be held “on the effective date of the notice”; without it the notice “will not be enforceable”. The licence does not have to be sent with the notice.
-      <div class="small">Source: {srcs("SF_HI", "SF_BANK")}</div></li>
+    <li><b>Confirm the licence — on the effective date, not the notice date.</b> A licence is generated automatically for non-owner-occupied units after the report. Check it in the Portal. The Rent Board's exact test is that the licence be held “on the effective date of the notice”; without it the notice “will not be enforceable”. The licence does not have to be sent with the notice. The Rent Board's noncompliance page states the practical stakes: a notice that takes effect while the unit is unlicensed “may be null and void (this may apply for multiple years)” and the tenant “may be entitled to a rent refund”.
+      <div class="small">Source: {srcs("SF_HI", "SF_BANK", "SF_NONCOMP")}</div></li>
     <li><b>Calculate on base rent only, using the percentage in effect on the effective date.</b> Base rent includes housing services such as parking or storage and excludes temporary passthroughs and fluctuating charges. Do not round up. Use the percentage that will be in effect on the date of the increase, not the date the notice is served. For an increase effective on or before 28 February 2027 that is <b>1.6%</b>.
       <div class="small">Source: {srcs("SF_LI", "SF_571")}</div></li>
     <li><b>Add any banked amounts — additively, never compounded.</b> A skipped increase is banked when the Rent Board's conditions are met; banked percentages are added together and then multiplied by the current base rent. There is no cap on banked amounts back to 1 April 1982, they do not expire during the tenancy, and they cannot be carried to a new tenant.
@@ -339,7 +339,8 @@ def units():
       <tr><td>1 June 2025</td><td>3/1/25 – 2/28/26</td><td>1.4%</td><td>Skipped — banked (12 months elapsed by Feb 2027)</td>{cell("SF_571", "SF_BANK")}</tr>
       <tr><td>Total banked</td><td>—</td><td><b>11.5%</b></td><td>Added, not compounded</td>{cell("SF_BANK")}</tr>
       <tr><td>Annual on the effective date (Feb 2027)</td><td>3/1/26 – 2/28/27</td><td>1.6%</td><td>Added to the banked total</td>{cell("SF_571")}</tr>
-      <tr><td><b>Combined maximum</b></td><td>—</td><td><b>13.1%</b></td><td>Requires 90 days' notice</td>{cell("SF_BANK", "SF_571")}</tr>
+      <tr><td><b>Combined for an effective date on or before 28 Feb 2027</b></td><td>—</td><td><b>13.1%</b></td><td>Requires 90 days' notice</td>{cell("SF_BANK", "SF_571")}</tr>
+      <tr><td>Annual percentage for a later effective date (e.g. 1 June 2027)</td><td>3/1/27 – 2/29/28</td><td><b>Blank — not yet published</b></td><td>13.1% is not a ceiling for that date; the banked 11.5% carries forward and the annual component is whatever the Rent Board publishes for then</td>{cell("SF_LI")}</tr>
     </tbody>
   </table>
 </div>
@@ -352,7 +353,7 @@ def units():
       <tr><td>Annual only</td><td>1.6%</td><td>$50.40</td><td><b>$3,200.40</b></td><td>30 days</td><td>Smallest lawful step; resets anniversary to the effective date.</td>{cell("SF_571")}</tr>
       <tr><td><b>Phased 10.0%</b></td><td>10.0%</td><td>$315.00</td><td><b>$3,465.00</b></td><td>30 days</td><td>Inside the current cap and inside the proposed 10%/yr cap in File #261020. The unused balance stays banked.</td>{cell("SF_BANK", "LEGISTAR_261020")}</tr>
       <tr><td>Banked only</td><td>11.5%</td><td>$362.25</td><td><b>$3,512.25</b></td><td>90 days</td><td>Leaves the 1.6% annual for the next anniversary.</td>{cell("SF_BANK")}</tr>
-      <tr><td>Maximum catch-up</td><td>13.1%</td><td>$412.65</td><td><b>$3,562.65</b></td><td>90 days</td><td>Exceeds the pending 10%/yr proposal if enacted as drafted.</td>{cell("SF_BANK", "SF_571", "LEGISTAR_261020")}</tr>
+      <tr><td>Maximum for an effective date on or before 28 Feb 2027</td><td>13.1%</td><td>$412.65</td><td><b>$3,562.65</b></td><td>90 days</td><td>11.5% banked + the 1.6% annual in force on that date. A later date uses the annual percentage then in force and is not capped at 13.1%. Exceeds the pending 10%/yr proposal if enacted as drafted.</td>{cell("SF_BANK", "SF_571", "LEGISTAR_261020")}</tr>
       <tr><td>Comparable-rent (special circumstances) petition</td><td colspan="3"><b>Blank — no percentage can be stated until the Rent Board decides a petition.</b></td><td>After petition filed</td><td>The Rent Board states that a long-standing tenant paying less than market is <i>not</i> by itself an extraordinary circumstance.</td>{cell("SF_SPECIAL")}</tr>
     </tbody>
   </table>
@@ -378,7 +379,7 @@ def units():
     <thead><tr><th style="width:34%">Item</th><th>Why it changes the answer</th><th style="width:20%">Source</th></tr></thead>
     <tbody>
       <tr><td>Unit B rent history 2019–2026</td><td>Every skipped year that was actually taken disappears from the 11.5% banked total.</td>{cell("SF_BANK")}</tr>
-      <tr><td>Licence in force on the effective date</td><td>Without it the notice is not enforceable, whatever the percentage.</td>{cell("SF_HI")}</tr>
+      <tr><td>Licence in force on the effective date</td><td>Without it the notice is not enforceable, whatever the percentage; the Board's noncompliance page says such a notice may be “null and void” and the tenant may be owed a refund.</td>{cell("SF_HI", "SF_NONCOMP")}</tr>
       <tr><td>Unit A anniversary: 1 Feb or 1 Apr</td><td>Moves the earliest lawful date and the banked amount.</td>{cell("SF_LI")}</tr>
       <tr><td>2027–28 percentage</td><td>Not announced; cannot be used for an effective date on or after 1 March 2027.</td>{cell("SF_LI", "SF_571")}</tr>
       <tr><td>Voucher / subsidy status of either unit</td><td>Subsidised units are partially exempt from the Rent Ordinance; a housing authority may also review reasonableness.</td>{cell("SF_LAWS")}</tr>
