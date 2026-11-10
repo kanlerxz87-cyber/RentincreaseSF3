@@ -57,17 +57,10 @@ OFFICIAL_HOSTS = {
     "dir.ca.gov",
 }
 
-PRIVATE_PATTERNS = [
-    (r"\b94122\b", "ZIP code"),
-    (r"(?i)outer\s+sunset", "neighbourhood"),
-    (r"(?i)\bsunset\s+district\b", "neighbourhood"),
-    (r"\bL\.?\s?O\b(?!\w)", "possible tenant initials"),
-    (r"\bV\.?\s?N\b(?!\w)", "possible tenant initials"),
-    (r"\bJ\.?\s?P\b(?!\w)", "possible tenant initials"),
-    (r"\bE\.?\s?R\b(?!\w)", "possible tenant initials"),
-    (r"\bI\.?\s?S\b(?!\w)", "possible tenant initials"),
-    (r"\bM\.?\s?T\b(?!\w)", "possible tenant initials"),
-]
+# The private values themselves are deliberately not written here: this repository is public, so
+# a scanner must not spell out what it protects. Generic detectors live in tools/privacy_scan.py.
+sys.path.insert(0, str(ROOT / "tools"))
+from privacy_scan import scan_text  # noqa: E402
 
 
 class Doc(HTMLParser):
@@ -195,10 +188,8 @@ def main() -> int:
         if not path.exists():
             continue
         text = path.read_text(encoding="utf-8")
-        for pattern, label in PRIVATE_PATTERNS:
-            for m in re.finditer(pattern, text):
-                snippet = text[max(0, m.start() - 40) : m.end() + 40].replace("\n", " ")
-                errors.append(f"{rel}: {label} matched ({m.group(0)!r}): …{snippet}…")
+        for label, hit in scan_text(text, path):
+            errors.append(f"{rel}: {label} matched ({hit!r})")
 
     # 6 no remote code
     for rel in EDITION:

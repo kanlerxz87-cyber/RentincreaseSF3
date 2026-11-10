@@ -552,3 +552,14 @@ a commit), and takes a scope none of them claimed:
 - 2026-11-10 00:38 — Session started on `0ac8be2`; fetched all remote branches; found three live sessions
   (table above). `main` advanced to `dedd934` at 00:40 (PR #19); fast-forwarded.
 - 2026-11-10 00:50 — Claim written and pushed. No root-site file touched.
+- 2026-11-10 01:00 — **P2 privacy hotfix done.** Private literals removed from `verify_site.py`,
+  `tools/audit_site.py`, `tools/verify_edition.py` (scanners), `tools/build_site.py` and `tools/sitedata.py`
+  (generator text now matches the already-scrubbed published `review/` pages), and one token of row B9 on
+  this board. New `tools/privacy_scan.py` holds generic detectors only (any San Francisco postal code, a
+  citywide neighbourhood list, initials-style identifiers, street addresses, non-public contact details),
+  scans **every tracked text file including the tools**, and is the single definition the three older
+  scanners now import. Added as the first step of `.github/workflows/site-checks.yml`. Proof the detectors
+  work without naming anything: run against the pre-fix versions at `dedd934` they flag all six files; on
+  the fixed tree they pass. All five checks pass locally. No finding, figure or page content changed.
+  **Not fixed by this (owner decision, see observation 3):** Git history, other session branches and one
+  old commit message still contain the withheld location; some branch tips contain the initials.

@@ -39,19 +39,18 @@ for f in html_files:
                 errors.append(f"{f.name}: table row without any source link: {row[:80].strip()}...")
 
 # 2) PII scan across all repo text files
-pii_patterns = {
-    "tenant initials": r"\b[LMVJEI]\s+[ONPTSR]\b",
-    "zip 94122": r"94122",
-    "outer sunset": r"(?i)outer\s+sunset",
-    "street-ish": r"(?i)\b\d{1,5}\s+[A-Z][a-z]+\s+(street|st|ave|avenue|blvd)\b",
-}
+# The private values themselves are deliberately NOT written here: this repository is public, so a
+# scanner must not spell out what it protects. tools/privacy_scan.py holds generic detectors (any
+# San Francisco postal code, any neighbourhood name, initials-style identifiers, street addresses).
+sys.path.insert(0, str(root / "tools"))
+from privacy_scan import scan_text  # noqa: E402
+
 for f in list(site.glob("*.html")) + [root / "README.md", root / "COORDINATION.md"] + list(root.glob("pages/*.html")) + list(root.glob("docs/*.html")) + list(root.glob("review/*.html")):
     if not f.exists():
         continue
     text = f.read_text(encoding="utf-8")
-    for label, pat in pii_patterns.items():
-        for m in re.finditer(pat, text):
-            errors.append(f"{f.name}: PII risk [{label}]: {m.group(0)!r}")
+    for label, hit in scan_text(text, f):
+        errors.append(f"{f.name}: PII risk [{label}]: {hit!r}")
 
 # 3) Math sanity checks
 checks = [

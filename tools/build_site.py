@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Static site generator for the Rental Increase Review (Outer Sunset, ZIP 94122).
+"""Static site generator for the Rental Increase Review (San Francisco, location withheld).
 
 Run:  python3 tools/build_site.py
 Outputs: index.html, *.html, data/*.csv|json, research/source-register.md
@@ -17,7 +17,7 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 OUT = ROOT / "review"          # this edition lives under /review/ so it never collides with
                                # the two editions other sessions published at the repo root and in docs/.
 SITE_TITLE = "Rental Increase Review"
-SITE_SUB = "Outer Sunset, San Francisco - ZIP 94122 - two rent-controlled units"
+SITE_SUB = "San Francisco (location withheld) - two rent-controlled units"
 
 NAV = [
     ("index.html", "Dashboard"),
@@ -80,7 +80,7 @@ def page(filename, title, lead, body, wide=False):
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{esc(title)} - {SITE_TITLE}</title>
-<meta name="description" content="Verified rent-increase analysis for two rent-controlled units in San Francisco's Outer Sunset (ZIP 94122), built only from official sources.">
+<meta name="description" content="Verified rent-increase analysis for two rent-controlled units in San Francisco (location withheld), built only from official sources.">
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
@@ -211,7 +211,7 @@ def build_index():
       <div class="panel">
         <h2>What this site answers</h2>
         <ul class="tight">
-          <li>What counts as a reasonable, lawful increase in ZIP 94122 under federal, state and local law.</li>
+          <li>What counts as a reasonable, lawful increase in San Francisco under federal, state and local law.</li>
           <li>How the annual and banked increases actually calculate, to the cent, for each unit.</li>
           <li>How to notify tenants, and what may and may not be said as a reason.</li>
           <li>Whether to raise one unit or both, tested against fair-housing and retaliation law.</li>
@@ -301,7 +301,7 @@ def build_index():
         "lawful-under-every-reading fallback.",
     ) + cards + snapshot + must_do_block() + findings_block()
     return page("index.html", "Rental increase review dashboard",
-                "A single-page view of what two rent-controlled Outer Sunset units may lawfully be charged, "
+                "A single-page view of what two rent-controlled San Francisco units may lawfully be charged, "
                 "what notice is required, and what still needs verifying.", body)
 
 
@@ -328,7 +328,7 @@ def build_exec():
     body = f"""
     <section class="exec">
       <h2>Purpose</h2>
-      <p>The owner of two flats in a 1940 building in San Francisco's Outer Sunset (ZIP 94122) asked what a reasonable
+      <p>The owner of two flats in a 1940 building in San Francisco (location withheld) asked what a reasonable
       and normal rent increase looks like, whether it would survive review by a tenant-side advocate or lawyer, and
       whether to raise one unit or both. This site records the official-source answer, the arithmetic, the notice
       procedure, and the open items.</p>
@@ -664,7 +664,7 @@ def build_notices():
       <div class="letter">
         <p class="letter-meta">[Date] &middot; Served on [tenant label] by [personal delivery / first-class mail]</p>
         <p><strong>NOTICE OF RENT INCREASE</strong></p>
-        <p>To: [Tenant label], [Unit label], San Francisco, CA 94122</p>
+        <p>To: [Tenant label], [Unit label], San Francisco, CA</p>
         <p>Under the San Francisco Residential Rent Stabilization and Arbitration Ordinance (Administrative Code
         Chapter 37) and California Civil Code section 827, your base rent will change as follows.</p>
         <table class="mini">
