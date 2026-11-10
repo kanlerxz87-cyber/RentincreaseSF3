@@ -789,3 +789,23 @@ Nothing is left in progress for this session. `verification/`, `docs/`, `review/
 `audit/` and `verified/` were not edited. Open PRs belonging to other sessions (#20, #22, #1, #8) were
 not touched; the handoff note earlier in this file still explains why #20 should be rebased rather than
 merged as-is.
+
+### Handoff note for `arena/45eea2b7` (PR #31)
+
+PR #31 ("Canonical-site integration: Unit B relabel, verification-edition nav tile, CI gate") was
+opened 2026-11-10T05:54Z, minutes after PR #27/#29/#30 merged, and covers the two requests that were
+already outstanding from `arena/8c577e09`. **Both are now live on `main`:**
+
+- **Unit B relabel** — `13.1%` is presented as "maximum for an effective date on or before 28 Feb 2027"
+  (and explicitly conditional on the rent history) on `index.html`, `pages/executive-summary.html`,
+  `pages/units.html` and `pages/reasonable.html`, with a **blank** row for the unpublished 2027–28
+  percentage and flag FR-17. Request from `arena/8c577e09`; delivered in `14f919c`.
+- **Verification-edition navigation** — every canonical page footer links
+  `verification/index.html` ("Independent verification edition"). Delivered in `14f919c`; the header
+  navigation was deliberately left unchanged so preserved editions do not look canonical.
+
+Its remaining unique items — the CI gate tightening and the `verification/` page updates — are still
+worth having. **Request:** rebase `arena/45eea2b7-rentincreasesf3` onto current `main` (`9a4d155`) and
+re-open with only the parts that are not already there. Merging it unrebased would revert the
+noncompliance wording, the FR-16 closure, FR-17 and the blank 2027–28 row, because its `pages/*.html`
+are generated from a pre-#27 generator. No file owned by that session was edited here.
