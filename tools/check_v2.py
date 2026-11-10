@@ -35,20 +35,15 @@ OFFICIAL_HOSTS = {
     "www.govinfo.gov",
 }
 
-# Anything that would identify the tenants or the property.
+# Structural identifiers only. The personal-data detectors (postal codes, neighbourhood names,
+# initials, street addresses, contact details) live in tools/privacy_scan.py and are imported so that
+# this repository never spells out the values it is protecting — see that file's docstring.
+sys.path.insert(0, str(ROOT / "tools"))
+from privacy_scan import scan_text  # noqa: E402
+
 BANNED = [
-    (r"\b94122\b", "ZIP code"),
-    (r"(?i)outer\s+sunset", "neighbourhood name"),
-    (r"(?i)\bsunset\s+district\b", "neighbourhood name"),
     (r"(?i)\b(?:apt|apartment|suite|ste)\.?\s*#?\s?[0-9]{1,4}\b", "unit number"),
     (r"\bunit\s+#?\s?[0-9]{1,3}\b", "unit number"),
-    (r"\bL\.?\s?O\b(?!\w)", "possible tenant initials"),
-    (r"\bV\.?\s?N\b(?!\w)", "possible tenant initials"),
-    (r"\bJ\.?\s?P\b(?!\w)", "possible tenant initials"),
-    (r"\bE\.?\s?R\b(?!\w)", "possible tenant initials"),
-    (r"\bI\.?\s?S\b(?!\w)", "possible tenant initials"),
-    (r"\bM\.?\s?T\b(?!\w)", "possible tenant initials"),
-    (r"(?i)\b\d{1,5}\s+[A-Z][a-z]{2,}\s+(street|st|avenue|ave|boulevard|blvd|way|drive|dr)\b", "street address"),
 ]
 
 PLACEHOLDERS = ["TODO", "TBD", "{{", "}}", "lorem ipsum"]
@@ -157,12 +152,15 @@ def main() -> int:
             else:
                 errors.append(f"{rel}: row {i} has neither an official source nor a flag marker -> {text[:70]}")
 
-    # 4: identifiers
+    # 4: identifiers — structural patterns here, personal data via the shared sweep
     for rel, d in docs.items():
-        text = (ROOT / rel).read_text(encoding="utf-8")
+        path = ROOT / rel
+        text = path.read_text(encoding="utf-8")
         for pattern, label in BANNED:
             for m in re.finditer(pattern, text):
                 errors.append(f"{rel}: banned {label}: {m.group(0)!r}")
+        for label, found in scan_text(text, path):
+            errors.append(f"{rel}: privacy sweep flagged {label}: {found!r}")
 
     # 5: recomputed figures must appear exactly as computed
     def money(x: D) -> str:
