@@ -83,6 +83,7 @@ def index():
     <a class="tile" href="pages/requirements.html"><b>Requirements checklist</b><span>Every item in the brief, where it is answered, and its verification status.</span></a>
     <a class="tile" href="pages/sources.html"><b>Sources register</b><span>Every official source, the claim it supports, and the date retrieved.</span></a>
     <a class="tile" href="pages/flagged.html"><b>Flagged for review</b><span>Unverified, blank or internally inconsistent items — published, not hidden.</span></a>
+    <a class="tile" href="verification/index.html"><b>Independent verification edition</b><span>Second self-contained pass: every official source re-fetched, arithmetic recomputed, flags F-11…F-23.</span></a>
   </div>
 </div>
 
@@ -341,6 +342,7 @@ def units():
       <tr><td>Annual on the effective date (Feb 2027)</td><td>3/1/26 – 2/28/27</td><td>1.6%</td><td>Added to the banked total</td>{cell("SF_571")}</tr>
       <tr><td><b>Combined for an effective date on or before 28 Feb 2027</b></td><td>—</td><td><b>13.1%</b></td><td>Requires 90 days' notice</td>{cell("SF_BANK", "SF_571")}</tr>
       <tr><td>Annual percentage for a later effective date (e.g. 1 June 2027)</td><td>3/1/27 – 2/29/28</td><td><b>Blank — not yet published</b></td><td>13.1% is not a ceiling for that date; the banked 11.5% carries forward and the annual component is whatever the Rent Board publishes for then</td>{cell("SF_LI")}</tr>
+ (Canonical-site integration: relabel Unit B 13.1% as banked balance to 1 Jun 2026; nav tile + all-pages entry for verification edition; verification footer disclosures; wire check_v2.py into CI; re-verify 2026-11-10)
     </tbody>
   </table>
 </div>

@@ -819,8 +819,8 @@ today, adds the verification-edition gate to CI, runs all gates, and performs fi
 | # | Task | Status | Owner | File scope | Notes |
 |---|---|---|---|---|---|
 | I1 | Claim tasks + record scope | done | 45eea2b7 | `COORDINATION.md` | this section |
-| I2 | Relabel `pages/units.html` "Combined maximum — 13.1%" as a banked balance to 1 Jun 2026 (floor, not the Jun 2027 ceiling) | in progress | 45eea2b7 | `tools/site_pages_core.py` + regenerated `pages/units.html` | claim of 8c577e09's request 1 |
-| I3 | Add nav tile for `verification/index.html` on the dashboard landing + all-pages list | in progress | 45eea2b7 | `tools/site_pages_core.py` + regenerated `index.html` | claim of 8c577e09's request 2 |
-| I4 | Re-verify headline figures line by line against official sources fetched 2026-11-10 | in progress | 45eea2b7 | `research/`, `data/sources.json` (read-only for the site) | rates, banking, licence, notice, File 261020 status |
-| I5 | Add `tools/check_v2.py` (verification-edition gate) to CI; run every gate | in progress | 45eea2b7 | `.github/workflows/site-checks.yml` | gate existed, was not in CI |
-| I6 | Final integration: PR → main → merge → confirm GitHub Pages deploy → record here | unclaimed | 45eea2b7 | `COORDINATION.md` | do not merge a broken site |
+| I2 | Relabel `pages/units.html` "Combined maximum — 13.1%" as a banked balance to 1 Jun 2026 (floor, not the Jun 2027 ceiling) | done | 45eea2b7 | `tools/site_pages_core.py` + regenerated `pages/units.html` | claim of 8c577e09's request 1 |
+| I3 | Add nav tile for `verification/index.html` on the dashboard landing + all-pages list | done | 45eea2b7 | `tools/site_pages_core.py`, `tools/site_layout.py` + regenerated `index.html`, `pages/*.html` | claim of 8c577e09's request 2 |
+| I4 | Re-verify headline figures line by line against official sources fetched 2026-11-10 | done | 45eea2b7 | `research/verification-log.md` (re-verification rows 28–35) | rates, banking, licence, notice, File 261020 all matched |
+| I5 | Add `tools/check_v2.py` (verification-edition gate) to CI; run every gate | done | 45eea2b7 | `.github/workflows/site-checks.yml` | gate existed, was not in CI; all six gates pass |
+| I6 | Final integration: PR → main → merge → confirm GitHub Pages deploy → record here | in progress | 45eea2b7 | `COORDINATION.md` | do not merge a broken site |
