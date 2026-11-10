@@ -12,6 +12,7 @@ other tasks are done; cross-session file edits are logged here as requests inste
 | `arena/07e38125-rentincreasesf3` | `arena/07e38125-rentincreasesf3` | PR #2 **merged** 2026-11-06T13:20:09Z (merge commit `61b5b7a`). Built the root GitHub Pages site (`index.html`, `pages/`, `assets/`, `data/sources.json`). Task 5 left "in progress" with no deploy record. |
 | `arena/ae0d4576-rentincreasesf3` | `arena/ae0d4576-rentincreasesf3` | PR #3 **merged** 2026-11-06T13:23:22Z (`996aa82`). Built the **extended verification edition** under `docs/` (11 pages, cents-exact math, banking analysis, license requirement, sources & verification register, repo review). Deployed & verified live 2026-11-06 (root + `/docs/` HTTP 200). |
 | `arena/edaa9740-rentincreasesf3` | `arena/edaa9740-rentincreasesf3` | PR #9 (this session). Built the **dashboard edition** under `dashboard/` (10 pages). add/add conflict in this file resolved by combining boards; privacy scrub of location applied site-wide as integration step (see log). |
+| `arena/1e699ad0-rentincreasesf3` | `arena/1e699ad0-rentincreasesf3` | PR #19 **merged** 2026-11-10T00:40:16Z (merge commit `dedd934`). Re-verified forefront site line by line 2026-11-10, updated verification dates, all checks PASS, Pages built. |
 
 ## Reconciliation note — 2026-11-06 (add/add conflict resolution)
 
@@ -462,6 +463,74 @@ presented as a general rule (true only for personal service with a 28 February 2
 - Post-merge verification: `verify_site.py` **ALL CHECKS PASSED**, `tools/check_site.py` **No broken links**, `tools/verify_edition.py` **ALL CHECKS PASSED**, `tools/audit_site.py` **PASS** (2026-11-07). No PII, no inferred values, no broken links, math cents-exact.
 
 ---
+
+## Task board — `arena/1e699ad0` (session `arena/1e699ad0-rentincreasesf3`)
+
+**Final verification & integration — 2026-11-10** — This session started from `main` at `0ac8be2` (forefront integration merged, Pages live). Scope: re-verify every table row against official sources, confirm forefront Rent Board license Q&A, validate anonymization, run all automated checks, and publish final integration to GitHub Pages without manual input. Shared outputs (index, navigation, EXECUTIVE_SUMMARY.md) may be edited only by this final session.
+
+| # | Task | Status | File scope | Notes |
+|---|---|---|---|---|
+| V1 | Claim tasks + sync branch, verify no active parallel claims | done | COORDINATION.md | Claim pushed 2026-11-10 before site edits; prior boards preserved verbatim |
+| V2 | Re-verify Rent Board license & Housing Inventory process (individual owner, not corp) — step-by-step with official links | done | index.html, pages/executive-summary.html, pages/process.html, EXECUTIVE_SUMMARY.md | Forefront Q&A verified: individual=corp, Housing Inventory via portal.sfrb.org, Mar 1 deadline, license before effective date, null & void if missing — sf.gov Housing Inventory, 265-20, Noncompliance, rent-increases, banking |
+| V3 | Re-verify allowable increases, banking, AB 1482, notice, Costa-Hawkins, coverage — cents-exact | done | pages/units.html, pages/laws.html, docs/, dashboard/, review/, verified/, audit/ | 1.4% (3/1/25-2/28/26) & 1.6% (3/1/26-2/28/27) via Form 571 + 1.6% announcement; state 8.8% displaced per Civ §1947.12(d)(3); banking additive 24-mo, no cap, no expiry; math $3,995×0.016=$63.92, 3.0%=$119.85, $3,150×0.131=$412.65 |
+| V4 | Verify reasonable & normal benchmark and corporate vs individual handling | done | pages/executive-summary.html, docs/market-practice.html, dashboard/market-practices.html | 1.4-1.6% ceiling = normal for rent-controlled; 8-yr avg 1.96%; no official ZIP-level market benchmark — flagged blank; §37.10C algorithmic ban; no corp-vs-individual rate dataset per CRS |
+| V5 | Verify correct notice & reasons, discrimination safeguards, one-vs-both analysis | done | pages/process.html, docs/notice-and-reasons.html, review/fair-housing.html | 30/90+5 day per Civ §827/CCP 1013, base rent only, no rounding, anniversary respect, no additional-occupant charge (SF unlawful), retaliation 180d, FEHA/FHA uniform policy, both-units lowest risk |
+| V6 | Site creation — confirm GitHub Pages live site, clean dashboard, subpages, tables with analysis | done | index.html, pages/, audit/, verified/, docs/, dashboard/, review/ | Landing dashboard forefront license Q&A + 7-step checklist + stats + quick answers; 5 canonical subpages (executive-summary, units, laws, process, flagged); audit 6 pages; verified 10 pages; docs/dashboard/review preserved; .nojekyll present |
+| V7 | Line-by-line verification — every table row has official source link or blank+flagged | done | all HTML editions | All 53 HTML files checked: every data row has official source link (sf.gov, leginfo, govinfo, hud.gov, ecfr.gov, sfgov.legistar.com) or is flagged blank; PII scan clean (no initials/ZIP/address); math rechecked; no inferred values |
+| V8 | Final integration — PR → main → merge → confirm Pages deploy → record | done | COORDINATION.md, .github/workflows/ | No manual approval wait; do not merge broken site — all 4 checks PASS 2026-11-10; merged via `gh pr merge 19 --merge` |
+
+### Scope notes — 2026-11-10
+
+- This branch is `arena/1e699ad0-rentincreasesf3` as assigned by Arena (not `session/<id>/<task>` pattern — Arena's branch name takes precedence).
+- All prior editions preserved as archived research with provenance banners; canonical findings remain root `index.html` + `pages/` + `audit/` + `verified/guide/`.
+- Personal information (tenant names/initials, street address, location detail) is anonymized with placeholder labels; dates and dollar amounts unchanged per privacy instruction.
+- No manual input required — this session works autonomously line by line with official source links for manual review.
+
+
+### Verification — `arena/1e699ad0` (2026-11-10)
+
+**Re-verified line by line on 2026-11-10** — all official sources re-checked (no inference, no hallucinations). Every table row either links an official source (sf.gov, leginfo.legislature.ca.gov, govinfo.gov, hud.gov, ecfr.gov, sfgov.legistar.com, calcivilrights.ca.gov, oag.ca.gov, portal.sfrb.org, codelibrary.amlegal.com) or is flagged blank on the Flagged for Review page.
+
+- **License & process (forefront):** sf.gov Housing Inventory page still states “All owners of residential property are required to report” and “A landlord must have a current rent increase license on file with the Rent Board before any annual or banked rent increase can go into effect.” Ordinance 265-20 summary confirms July 1, 2022 (10+ units) and March 1, 2023 (1–9 units/condos). Portal.sfrb.org is the filing portal. Noncompliance page confirms null-and-void + tenant petition + Board notification. Learned via direct re-read 2026-11-10; no manual input.
+- **Rates:** 1.4% for 3/1/2025–2/28/2026 and 1.6% for 3/1/2026–2/28/2027 verified via Form 571 PDF and sf.gov “Annual Rent Increase 3/1/26–2/28/27 Announced” news release; history back to 1982 via Form 571; cross-checked against Current Rates page. Banking: current sf.gov Banked page requires 24 full months, additive not compounded, no cap back to Apr 1, 1982, survives sale, no expiry during tenancy — consistent with ordinance §37.3(a)(2). State AB 1482: 5%+CPI max 10%; SF region 8.8% for Aug 1, 2026–Jul 31, 2027 via oag.ca.gov rentcaps + sf.gov AB 1482 explainer; displaced by local stricter cap per Civ. Code §1947.12(d)(3) — verified via leginfo text.
+- **Calculations (cents-exact):** $3,995×0.016=$63.92→$4,058.92; $3,995×0.030=$119.85→$4,114.85 (1.4% banked + 1.6%); $3,150×0.016=$50.40→$3,200.40; $3,150×0.014=$44.10→$3,194.10; $3,150×0.115=$362.25→$3,512.25 (2020-2025 banked); $3,150×0.131=$412.65→$3,562.65 (max with current year); sums 11.5% (1.8+0.7+2.3+3.6+1.7+1.4) +1.6=13.1% — all recomputed in Python Decimal; no rounding up; anniversary dates Feb 1 and Jun 1 preserved.
+- **Reasonable & normal:** local 1.4%/1.6% is the legal ceiling and market notion of normal for rent-controlled units; 8-yr average 1.96% from Form 571; no official ZIP-level (location withheld) market rent dataset exists — flagged as blank per sourcing rule; SF Admin §37.10C algorithmic device ban verified via sf.gov news (effective Oct 14, 2024).
+- **Corporate vs individual:** same ceiling, same license, same notice — no corporate exemption; corporate practice: portfolio calendar, bulk filing, software tracking; individual pitfalls: informal banking loss, missed Mar 1, base-rent vs passthrough errors, unlawful additional-occupant charges — all cited to sf.gov pages; no government comparative rate dataset — flagged F-9.
+- **Notice & reasons:** 30 days if ≤10%, 90 if >10% (including combined 12-mo) +5 if mailed (Civ §827 + CCP §1013); written notice must state dollar, percent, effective date, banked years/dates; base rent only; additional-occupant charges unlawful even if lease allows (sf.gov + Civ §1954.53); no reason required for annual/banked beyond ordinance formula; capital-improvement/OM/etc. require landlord petition (Forms 540-600).
+- **Tenant-lawyer scrutiny:** license, amount, timing, notice, base-rent calc, uniform policy — all must pass; free tenant help: Rent Board 415-252-4600, EDC 415-659-9184, Tenant Petitions free (sf.gov), HRC referral, HUD fair housing — verified via sf.gov evictions + tenant-petitions + hud.gov.
+- **One vs both:** both units same lawful formula = lowest risk / normal business practice; one-unit-only not per se unlawful but higher scrutiny, needs documented objective non-protected-class reason, otherwise retaliation/discrimination inquiry (Civ §1942.5, Gov §12955, 42 U.S.C. §3604) — verified.
+- **Privacy & flagged:** no tenant names/initials, no street address, no ZIP/location detail in any public page; placeholder labels only; dates/amounts unchanged; 10 flagged items remain with source links (rent history, property record, license status, subsidy/lease, pending 261020 not law, 2027-28 rate not yet announced, corporate dataset gap, ZIP benchmark gap, banking wording nuance, occupancy continuity).
+- **Automated checks 2026-11-10:** `verify_site.py` PASS (10 dashboard files), `tools/check_site.py` PASS (11 pages, 0 broken), `tools/verify_edition.py` PASS (10 pages, 25 warnings = flagged blank/internal only), `tools/audit_site.py` PASS (53 HTML files, 6 canonical pages all rows have official source, 5 Decimal math scenarios, archive labels, privacy patterns). No PII, no inferred values, no broken links, no remote code.
+
+
+### PR / deploy record — `arena/1e699ad0`
+
+- **Branch:** `arena/1e699ad0-rentincreasesf3` → `main`
+- **PR:** [#19](https://github.com/kanlerxz87-cyber/RentincreaseSF3/pull/19) — “Final verification 2026-11-10 — re-verified line by line, forefront license Q&A, all checks pass” — `arena/1e699ad0-rentincreasesf3` → `main`
+- **Checks:** Pre-merge Site checks run [#42729725642](https://github.com/kanlerxz87-cyber/RentincreaseSF3/actions/runs/42729725642) initially **failed** due to a `verify_site.py` PII scan (location literal in COORDINATION.md V4 — flagged by privacy rule). Fixed by rephrasing to “ZIP-level” (commit `e5d66db`), re-pushed; re-run [#42729929430](https://github.com/kanlerxz87-cyber/RentincreaseSF3/actions/runs/42729929430) **succeeded** (all 4 checks PASS).
+- **Merge:** **MERGED** as merge commit `dedd934027624dd9c16f11c1db3ef12c34e0e082` at **2026-11-10T00:40:16Z** (`gh pr merge 19 --merge`, no approval wait). No conflicts — fast-forward style merge (4 files changed).
+- **GitHub Pages:** source `main` / root, `legacy` build + `.nojekyll`. Build for `dedd934` → **`built`** (duration 20,456 ms, no errors) at 2026-11-10T00:40:??Z (retrieved via `gh api repos/.../pages/builds`). Post-merge Site checks [#42730066909](https://github.com/kanlerxz87-cyber/RentincreaseSF3/actions/runs/42730066909) **succeeded**. Live site verified serving updated 2026-11-10 footer + README at https://kanlerxz87-cyber.github.io/RentincreaseSF3/
+- **Live URLs (2026-11-10):**
+  - root https://kanlerxz87-cyber.github.io/RentincreaseSF3/ (forefront license Q&A first, 7 steps, dashboard stats, quick answers)
+  - pages: `pages/executive-summary.html`, `pages/units.html` (Feb 1 fix), `pages/laws.html`, `pages/process.html`, `pages/flagged.html`
+  - audit: `audit/process.html`, `audit/units.html`, `audit/review.html`, `audit/flagged.html`, `audit/sources.html`
+  - preserved editions: `verified/guide/`, `docs/`, `dashboard/`, `review/` (archived with provenance banners)
+- **Final state:** All V1–V8 done. No tenant notices served, no Housing Inventory filings submitted, no private property records pulled — all flagged as unverified per sourcing rule. Not legal advice — confirm with Rent Board counselors 415-252-4600 before any notice.
+
+### Merge note — `0e839002` x `origin/main` (2026-11-10)
+
+`origin/main` advanced to `439e42b` (PR #19 merge + its deploy/PII-fix records) while this session's
+rebuild was in flight. Resolution: `COORDINATION.md` keeps **both** records (main's board and records
+followed by this session's section, nothing removed); `EXECUTIVE_SUMMARY.md`, `README.md` and
+`index.html` take this session's rebuild, which already carries the same 9 November 2026 sf.gov notice
+and the same Legistar status that PR #19/#20 add. `data/sources.json` from `main` is kept unchanged.
+
+Open PR #20 (`arena/4a563c4c`) edits `index.html` and `pages/*.html` from an older base and will now
+conflict with the rebuild. Its substantive contribution — the 9 Nov 2026 sf.gov notice and the
+`Pending Committee Action` status of File #261020 — **is already published** in the rebuild
+(`index.html` §3, `pages/laws.html`, `pages/flagged.html` FR-06, `pages/units.html`, `pages/reasonable.html`).
+Request: that branch be rebased onto `main` after this merge, or closed, rather than merged as-is;
+merging it unrebased would revert verified pages.
 
 ## Task board — session `0e839002` (branch `arena/0e839002-rentincreasesf3`)
 
