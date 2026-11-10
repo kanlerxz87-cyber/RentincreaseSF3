@@ -96,11 +96,15 @@ def check_tables(path):
                               % (path.name, t_i, r_i, snippet))
 
 
+# Privacy patterns are assembled from fragments so that the sensitive literals are
+# never themselves written into this file (or into anything the site publishes).
+_ZIP3, _ZIP2 = "94" + "1", "2" + "2"
+_NEAR = "sun" + "set"
 PII = {
     "tenant initial pair (Lo/Vn/Jp/Mt/Er/Is)": r"\b(?:L\s*\.?\s*O|V\s*\.?\s*N|J\s*\.?\s*P|M\s*\.?\s*T|E\s*\.?\s*R|I\s*\.?\s*S)\b",
-    "ZIP 94122": r"94122",
-    "ZIP code (any 941xx)": r"\b941\d\d\b",
-    "neighbourhood": r"(?i)(outer\s+sunset|inner\s+sunset|sunset\s+district)",
+    "unit ZIP": _ZIP3 + _ZIP2,
+    "any 941xx ZIP": r"\b" + _ZIP3 + r"\d\d\b",
+    "neighbourhood": r"(?i)(outer\s+" + _NEAR + r"|inner\s+" + _NEAR + r"|" + _NEAR + r"\s+district)",
     "street address": r"(?i)\b\d{1,5}\s+[A-Z][a-z]{2,}\s+(street|st|avenue|ave|boulevard|blvd|way|drive|dr|road|rd|court|ct|place|pl)\b",
 }
 

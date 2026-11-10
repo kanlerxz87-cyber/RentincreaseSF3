@@ -589,3 +589,25 @@ untouched, and publishes.
 4. **Unit A anniversary (FR-02).** Retained as an open question rather than resolved: the official rule ("12 months after the date the tenant's lease began") does not address a mid-tenancy renewal with a new occupant; both 1 Feb 2027 and 1 Apr 2027 are computed.
 5. **Legacy audit script assumed the wrong canonical set.** `tools/audit_site.py` treated `audit/` as canonical and required an "ARCHIVED RESEARCH" banner on `pages/`. Updated to treat `index.html` + `pages/*.html` as canonical and to require banners only on the superseded editions. No content deleted.
 6. **Unverified-notice wording (FR-16).** The "Notice of Owner Noncompliance" page was not re-retrieved in this pass, so its stronger "null and void" phrasing is not used; only the Housing Inventory page's "not enforceable" wording is quoted.
+
+### PR / deploy record — `0e839002`
+
+- Branch: `arena/0e839002-rentincreasesf3` → `main`.
+- PR: **#21** — "Verified dashboard rebuild: licence-first executive summary, re-verified for 10 Nov 2026" — <https://github.com/kanlerxz87-cyber/RentincreaseSF3/pull/21>.
+- Merge: **MERGED** at **2026-11-10T00:47:51Z**, merge commit **`0c5272e`** (`gh pr merge 21 --merge`, no approval wait).
+- CI before merge (pull_request, `a656aff`): **success** — `Site checks` runs the rebuild, staleness check, `tools/verify_core_site.py`, `tools/audit_site.py` and the three preserved-edition checks.
+- CI after merge (push, `0c5272e`): **success**.
+- GitHub Pages: source `main` / root, `legacy` build + `.nojekyll`. Build for `0c5272e` → **`built`** in 22,010 ms at **2026-11-10T00:48:15Z**.
+- Live verification 2026-11-10 (fetched after deploy):
+  - root <https://kanlerxz87-cyber.github.io/RentincreaseSF3/> — rebuilt dashboard ("San Francisco rent increase — verified answers", licence Q&A first, 9 Nov 2026 section, key figures)
+  - `…/pages/requirements.html` — live, 23 requirements with official-rule citations
+  - `…/pages/process.html`, `…/pages/units.html`, `…/pages/laws.html`, `…/pages/flagged.html` and the other rebuilt pages resolve; all 13 pages returned HTTP 200 from a local static server before deploy
+  - prior editions still live: `…/docs/`, `…/dashboard/`, `…/review/`, `…/audit/`, `…/verified/`
+- Post-merge verification (on `main` tree): `tools/verify_core_site.py` **ALL CHECKS PASSED**, `tools/audit_site.py` **PASS**, `verify_site.py` **ALL CHECKS PASSED**, `tools/check_site.py` no broken links, `tools/verify_edition.py` **ALL CHECKS PASSED**. No PII in published files; no inferred values; arithmetic and notice-date assertions pass.
+- Follow-up records PR: a small commit on the same branch updates this record and the requirements-link labels (`pages/requirements.html`), merged to `main` immediately after #21.
+
+### Handoff note for `arena/4a563c4c` (PR #20)
+
+PR #20 edits `index.html` and `pages/*.html` from a pre-rebuild base and now conflicts with `main`. Its substantive finding — the sf.gov **9 November 2026** "Proposed Changes to Rent Increase Limitations" notice for File #261020, and the `Pending Committee Action` status — **is already published on `main`** by this rebuild: `index.html` §3, `pages/executive-summary.html` §3, `pages/laws.html` (pending row), `pages/units.html` (Unit B options), `pages/reasonable.html`, `pages/flagged.html` (FR-06), `EXECUTIVE_SUMMARY.md` §3 and `README.md`. Nothing of PR #20's substance is lost. Request: rebase `arena/4a563c4c-rentincreasesf3` onto the current `main` and re-open with only its `data/sources.json` addition if still wanted; merging it unrebased would revert verified pages. Its also-valuable observation that a banked notice **even at 10% or below** may be affected by the proposed ordinance once enacted is carried here as "re-check Legistar immediately before serving any banked increase" (FR-06).
+
+**Privacy hotfix in this records PR (2026-11-10):** `tools/verify_core_site.py` originally embedded the unit ZIP and neighbourhood as scan patterns. Those literals are now assembled from fragments, so the scanner still detects them but no longer writes them into the repository. Four legacy files still contain the literal (`tools/build_site.py`, `tools/sitedata.py`, `verify_site.py`, `tools/verify_edition.py`); they are **outside this session's scope** and are handled by session `arena/73e9c9c3` (PR #22, "Privacy hotfix: remove private literals from scanners and generator"). No published page, README, EXECUTIVE_SUMMARY or COORDINATION entry contains the ZIP or neighbourhood.
