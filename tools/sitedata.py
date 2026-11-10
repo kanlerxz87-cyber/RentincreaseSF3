@@ -262,7 +262,7 @@ LEDGER_B = [
     ("2023-06-01", "3/1/2023 - 2/29/2024", 3.6, "skipped -> banked", "S3, S4"),
     ("2024-06-01", "3/1/2024 - 2/28/2025", 1.7, "skipped -> banked", "S3, S4"),
     ("2025-06-01", "3/1/2025 - 2/28/2026", 1.4, "skipped -> banked", "S3, S4"),
-    ("2026-06-01", "3/1/2026 - 2/28/2027", 1.6, "skipped -> banked", "S3, S4"),
+    ("2026-06-01", "3/1/2026 - 2/28/2027", 1.6, "current annual; bankable later if skipped", "S3, S4"),
 ]
 
 # ---------------------------------------------------------------------------
@@ -294,8 +294,8 @@ SCENARIOS_B = [
      "src": "S15, S22, S3"},
     {"name": "B3 - Full banked + current (13.1%)",
      "pct": 13.1, "dollars": 412.65, "new_rent": 3562.65,
-     "notice": "90 days (increase exceeds 10%)", "effective": "2027-02-04 earliest if served 2026-11-06",
-     "note": "Lawful today on the official guidance, but exposed to the pending 10% cap and is the type of increase most likely to draw a tenant petition.",
+     "notice": "90 days (increase exceeds 10%)", "effective": "2027-02-08 earliest if personally served 2026-11-10",
+     "note": "Conditional on a complete no-prior-increase history and current law remaining unchanged; exposed to the pending 10% cap and likely to receive close tenant review.",
      "src": "S3, S8, S9, S15, S22"},
 ]
 

@@ -652,3 +652,22 @@ entry records the merge result only.
   anchors resolve; privacy sweep passes (detectors imported from `tools/privacy_scan.py`).
 - Requests still open for the canonical-site owners: relabel `pages/units.html` "Combined maximum —
   13.1%" as a banked balance to June 2026, and add a nav tile for `verification/index.html`.
+
+---
+
+## Session `arena/d2dc8ac5-rentincreasesf3` — final integration and current-law verification
+
+Claimed 2026-11-10. Arena fixes this session to branch `arena/d2dc8ac5-rentincreasesf3`; no other branch may be created or used. Scope: `COORDINATION.md`, canonical generated site (`index.html`, `pages/`, `assets/`) and its generator/validators (`tools/build_dashboard.py`, `tools/site_*.py`, `tools/sitedata.py`, `tools/verify_core_site.py`, `tools/audit_site.py`), plus `EXECUTIVE_SUMMARY.md` and `README.md`. Prior editions will be audited but not redesigned.
+
+| # | Task | Status | File scope |
+|---|---|---|---|
+| D1 | Re-read board, check active claims/PRs, independently verify current Rent Board licensing and rates | done | COORDINATION.md |
+| D2 | Audit every canonical table row, arithmetic, internal links and privacy; correct irregularities | done | canonical generator and outputs; EXECUTIVE_SUMMARY.md |
+| D3 | Build/test, create and merge PR, confirm Pages and live site, record result | in progress | COORDINATION.md; workflow if required |
+
+### Verification log — `arena/d2dc8ac5`
+
+- Independently retrieved 2026-11-10: SF.gov **Learn about rent increases** (1.6%, 1 Mar 2026–28 Feb 2027; licence; 30/90 days; anniversary and multi-year examples); **Housing Inventory** (all owners, annual 1 March report, automatic licence, licence on effective date, no notice filing requirement); **Banked rent increases** (additive, no compounding/cap, notice contents, 24-month wording); **Form 571** (2020–2026 rates: 1.8/0.7/2.3/3.6/1.7/1.4/1.6); **multiple years** (official four-year additive example); **rental laws** (coverage and counsellor hours); **Legistar File #261020** (`Pending Committee Action`, no final action); **California AG rent caps** (8.8% statewide-area figure and lower-local-cap explanation).
+- Arithmetic recomputed: Unit A 3.0% × $3,995 = $119.85 → $4,114.85; Unit B six skipped years = 11.5%, plus current 1.6% = 13.1%; 13.1% × $3,150 = $412.65 → $3,562.65; 10% × $3,150 = $315 → $3,465. Unit B scenarios remain conditional on a complete rent ledger.
+- Irregularities corrected: stale Unit B 90-day scenario date (4 Feb → 8 Feb 2027 for personal service 10 Nov 2026); 2026 annual row mislabeled already banked; owner had not affirmatively supplied a no-increase history, so catch-up wording is now explicitly conditional; tenant-review conclusion no longer implies clearance while licence/anniversary/history are unresolved.
+- Gates after rebuild: `tools/verify_core_site.py` PASS (13 canonical pages, 39 tables, 314 rows, 824 links), `tools/audit_site.py` PASS (70 HTML files), `tools/privacy_scan.py` PASS (107 tracked text files). Pending proposal and all unknown facts remain published on `pages/flagged.html`; they do not block integration.

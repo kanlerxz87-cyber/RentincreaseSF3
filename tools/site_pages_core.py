@@ -127,7 +127,7 @@ def executive_summary():
     <div><span>Unit A — base rent</span><br><b>$3,995 / month</b> (unchanged)</div>
     <div><span>Unit A — tenants</span><br><b>Tenant A</b> (original), <b>Tenant B</b> (joined a continuing tenancy 1 April 2026 at the same rent)</div>
     <div><span>Unit B — lease start</span><br><b>1 June 2019</b></div>
-    <div><span>Unit B — base rent</span><br><b>$3,150 / month</b> (owner states no increase since 2019)</div>
+    <div><span>Unit B — base rent</span><br><b>$3,150 / month</b> (no increase history supplied; full catch-up is unverified)</div>
     <div><span>Unit B — tenants</span><br><b>Tenant C</b>, <b>Tenant D</b></div>
   </div>
   <p class="small">These are owner statements, not government records. The rent history and licence status are the two facts that most change the answer — both are on the <a href="flagged.html">Flagged for review</a> page.</p>
@@ -138,11 +138,11 @@ def executive_summary():
   <table>
     <thead><tr><th>Unit</th><th>Lawful ceiling</th><th>Dollar amount (calculated)</th><th>Notice period</th><th style="width:22%">Source for the percentage</th></tr></thead>
     <tbody>
-      <tr><td>Unit A — first increase on 1 Feb 2027</td><td>1.6% annual + 1.4% banked = <b>3.0%</b></td><td>$119.85 → <b>$4,114.85</b></td><td><b>30 days</b> (35 if mailed)</td>{cell("SF_571", "SF_BANK")}</tr>
+      <tr><td>Unit A — conditional first increase on 1 Feb 2027</td><td>1.6% annual + 1.4% banked = <b>3.0%</b></td><td>$119.85 → <b>$4,114.85</b></td><td><b>30 days</b> (35 if mailed)</td>{cell("SF_571", "SF_BANK")}</tr>
       <tr><td>Unit A — conservative alternative</td><td>1.6% annual only = 1.6%</td><td>$63.92 → <b>$4,058.92</b></td><td>30 days (35 if mailed)</td>{cell("SF_571")}</tr>
       <tr><td>Unit B — 10% phased</td><td><b>10.0%</b> (inside both current law and the proposed cap)</td><td>$315.00 → <b>$3,465.00</b></td><td>30 days (35 if mailed)</td>{cell("SF_BANK", "LEGISTAR_261020")}</tr>
       <tr><td>Unit B — banked only</td><td>11.5% banked</td><td>$362.25 → <b>$3,512.25</b></td><td><b>90 days</b> (95 if mailed)</td>{cell("SF_BANK", "SF_571")}</tr>
-      <tr><td>Unit B — maximum catch-up</td><td>11.5% banked + 1.6% annual = <b>13.1%</b></td><td>$412.65 → <b>$3,562.65</b></td><td>90 days (95 if mailed)</td>{cell("SF_BANK", "SF_571")}</tr>
+      <tr><td>Unit B — conditional maximum catch-up</td><td>11.5% banked + 1.6% annual = <b>13.1%</b></td><td>$412.65 → <b>$3,562.65</b></td><td>90 days (95 if mailed)</td>{cell("SF_BANK", "SF_571")}</tr>
       <tr><td>Unit B — if an increase was taken at any time since 2019</td><td colspan="3"><b>Blank — must be recalculated from the actual rent history.</b> The banked total depends on which years were skipped.</td>{cell("SF_BANK")}</tr>
     </tbody>
   </table>
@@ -183,7 +183,7 @@ def executive_summary():
   <ol class="steps">
     <li><b>Confirm the licence.</b> Log into the Rent Board Portal, check the Housing Inventory entry for both units, and confirm a licence is current for the planned effective date. Source: {src("SF_HI", "sf.gov — Housing Inventory")} · {src("SF_PORTAL", "portal.sfrb.org")}</li>
     <li><b>Confirm Unit B's rent history.</b> Leases, notices and rent ledger 2019–2026. Without it the 13.1% figure stays conditional. Source: {src("SF_BANK", "sf.gov — banked increases")}</li>
-    <li><b>Choose the amount.</b> Unit A: 3.0% (or 1.6% if you prefer the conservative reading). Unit B: 10.0% now, or 13.1% if you accept the pending-ordinance risk. Source: {src("SF_LI", "sf.gov — rent increases")} · {src("LEGISTAR_261020", "File #261020")}</li>
+    <li><b>Choose the amount.</b> Unit A: 3.0% (or 1.6% if you prefer the conservative reading). Unit B: 10.0% now, or a conditional 13.1% only after verifying the full rent history and current legislation. Source: {src("SF_LI", "sf.gov — rent increases")} · {src("LEGISTAR_261020", "File #261020")}</li>
     <li><b>Serve notice in time.</b> 30 days for ≤10%, 90 days for &gt;10%, +5 if mailed. Worked dates: <a href="process.html">Licence &amp; process</a>. Source: {src("LEG_827", "Civ. Code §827")} · {src("LEG_1013", "CCP §1013")}</li>
     <li><b>Keep the file.</b> Notice, proof of service, licence screenshot, calculation sheet, and the reason each unit's amount differs.</li>
   </ol>
@@ -318,7 +318,7 @@ def units():
   <div class="facts">
     <div><span>Lease start</span><br><b>1 June 2019</b></div>
     <div><span>Base rent</span><br><b>$3,150.00 / month</b></div>
-    <div><span>Current rent</span><br><b>$3,150.00</b> — owner states no increase since 2019</div>
+    <div><span>Current rent</span><br><b>$3,150.00</b> — no increase history supplied; full catch-up is unverified</div>
     <div><span>Tenants</span><br><b>Tenant C</b> and <b>Tenant D</b></div>
     <div><span>First increase available</span><br><b>1 June 2020</b> — not taken</div>
     <div><span>Anniversary today</span><br><b>1 June</b> (no increase has reset it)</div>
