@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Units &amp; math — Rental Increase SF</title>
 <meta name="description" content="Source-linked review of lawful rent increases for two rent-controlled San Francisco flats in a 1940 two-unit building. Anonymised; not legal advice.">
-<link rel="stylesheet" href="../../assets/v2.css">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 <header class="top">
@@ -14,7 +14,7 @@
     <span>Two rent-controlled flats · 1940 two-unit building · location withheld</span>
   </div>
   <nav class="main" aria-label="Sections">
-      <a href="../../index.html">Dashboard</a>
+      <a href="index.html">Overview</a>
       <a href="executive-summary.html">Executive summary</a>
       <a href="license.html">Licence &amp; process</a>
       <a href="laws.html">Laws &amp; caps</a>
@@ -158,12 +158,17 @@
   <p><strong>Internal working document.</strong> Prepared for the property owner. Tenant and occupant details are replaced with
   placeholder labels; the street address, unit numbers and ZIP code are withheld. Dates and dollar amounts supplied by the
   owner are reproduced unchanged. Every table row links an official source or is blank and listed on the
-  <a href="../../pages/v2/flagged.html">Flagged</a> register — no value is inferred.</p>
+  <a href="flagged.html">Flagged</a> register — no value is inferred.</p>
   <p>Not legal advice. Confirm any figure on the effective date, and confirm the process with a Rent Board counsellor
   (415-252-4600) and a California attorney before serving a notice. Official sources accessed 2026-11-10.</p>
-  <p>Verification: <span class="mono">python3 tools/check_v2.py</span> · prior editions remain online under
-  <span class="mono">pages/</span>, <span class="mono">audit/</span>, <span class="mono">verified/</span>,
-  <span class="mono">docs/</span>, <span class="mono">dashboard/</span>, <span class="mono">review/</span>.</p>
+  <p><strong>This edition:</strong> a self-contained verification pass. The canonical dashboard is
+  <a href="../index.html">the repository landing page</a>; other preserved editions are
+  <a href="../audit/process.html">audit/</a>, <a href="../verified/index.html">verified/</a>,
+  <a href="../docs/index.html">docs/</a>, <a href="../dashboard/index.html">dashboard/</a> and
+  <a href="../review/index.html">review/</a>.</p>
+  <p>Verification: <span class="mono">python3 tools/check_v2.py</span> (links, anchors, per-row sourcing,
+  anonymisation, arithmetic) and the repository-wide privacy sweep
+  <span class="mono">python3 tools/privacy_scan.py</span>.</p>
 </footer>
 </body>
 </html>

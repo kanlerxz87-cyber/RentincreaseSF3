@@ -24,8 +24,8 @@ from urllib.parse import unquote, urlsplit
 
 ROOT = Path(__file__).resolve().parent.parent
 
-NEW_PAGES = ["index.html"] + [
-    f"pages/v2/{n}" for n in sorted(p.name for p in (ROOT / "pages" / "v2").glob("*.html"))
+NEW_PAGES = [
+    f"verification/{n}" for n in sorted(p.name for p in (ROOT / "verification").glob("*.html"))
 ]
 
 OFFICIAL_HOSTS = {
@@ -170,9 +170,9 @@ def main() -> int:
 
     u1, u2 = D("3995.00"), D("3150.00")
     expect = {
-        "index.html": [money((u1 * D("0.030")).quantize(D("0.01"))), money(u1 + (u1 * D("0.030")).quantize(D("0.01")))],
-        "pages/v2/units.html": [money((u2 * D("0.131")).quantize(D("0.01"))), money(u2 + (u2 * D("0.131")).quantize(D("0.01")))],
-        "pages/v2/executive-summary.html": [money((u2 * D("0.100")).quantize(D("0.01"))), money((u1 * D("0.016")).quantize(D("0.01")))],
+        "verification/index.html": [money((u1 * D("0.030")).quantize(D("0.01"))), money(u1 + (u1 * D("0.030")).quantize(D("0.01")))],
+        "verification/units.html": [money((u2 * D("0.131")).quantize(D("0.01"))), money(u2 + (u2 * D("0.131")).quantize(D("0.01")))],
+        "verification/executive-summary.html": [money((u2 * D("0.100")).quantize(D("0.01"))), money((u1 * D("0.016")).quantize(D("0.01")))],
     }
     for rel, values in expect.items():
         text = (ROOT / rel).read_text(encoding="utf-8")

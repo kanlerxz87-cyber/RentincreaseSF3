@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """Build the 2026-11-10 dashboard edition.
 
-Outputs:
-  index.html            (landing dashboard = executive summary at a glance)
-  pages/v2/*.html       (category subpages)
-  assets/v2.css
+Outputs (a self-contained edition; it edits no file owned by another session):
+  verification/index.html        (edition landing = dashboard + executive summary)
+  verification/*.html            (nine category subpages)
+  verification/style.css
 
 Design rules enforced by construction:
   * every data row carries >=1 link to an official source, or an explicit
@@ -22,7 +22,7 @@ from decimal import Decimal as D
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-OUT = ROOT / "pages" / "v2"
+OUT = ROOT / "verification"
 ACCESSED = "2026-11-10"
 
 # --------------------------------------------------------------------------
@@ -159,7 +159,7 @@ def BLANK(fid: str) -> str:
 
 
 NAV = [
-    ("index.html", "Dashboard"),
+    ("index.html", "Overview"),
     ("executive-summary.html", "Executive summary"),
     ("license.html", "Licence &amp; process"),
     ("laws.html", "Laws &amp; caps"),
@@ -250,13 +250,12 @@ footer p{margin:.35em 0}
 """
 
 
-def page(title: str, h1: str, lead: str, body: str, prefix: str, active: str,
+def page(title: str, h1: str, lead: str, body: str, prefix: str = "", active: str = "",
          nav_prefix: str | None = None) -> str:
-    nav_prefix = prefix if nav_prefix is None else nav_prefix
+    """All pages live in one directory, so navigation is always sibling-relative."""
     nav = "\n".join(
         '      <a href="%s"%s>%s</a>'
-        % (prefix + href if href == "index.html" else nav_prefix + href,
-           ' class="active"' if href == active else "", label)
+        % (href, ' class="active"' if href == active else "", label)
         for href, label in NAV
     )
     return f"""<!DOCTYPE html>
@@ -266,7 +265,7 @@ def page(title: str, h1: str, lead: str, body: str, prefix: str, active: str,
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{title} — Rental Increase SF</title>
 <meta name="description" content="Source-linked review of lawful rent increases for two rent-controlled San Francisco flats in a 1940 two-unit building. Anonymised; not legal advice.">
-<link rel="stylesheet" href="{prefix}assets/v2.css">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 <header class="top">
@@ -293,12 +292,17 @@ def page(title: str, h1: str, lead: str, body: str, prefix: str, active: str,
   <p><strong>Internal working document.</strong> Prepared for the property owner. Tenant and occupant details are replaced with
   placeholder labels; the street address, unit numbers and ZIP code are withheld. Dates and dollar amounts supplied by the
   owner are reproduced unchanged. Every table row links an official source or is blank and listed on the
-  <a href="{prefix}pages/v2/flagged.html">Flagged</a> register — no value is inferred.</p>
+  <a href="flagged.html">Flagged</a> register — no value is inferred.</p>
   <p>Not legal advice. Confirm any figure on the effective date, and confirm the process with a Rent Board counsellor
   (415-252-4600) and a California attorney before serving a notice. Official sources accessed {ACCESSED}.</p>
-  <p>Verification: <span class="mono">python3 tools/check_v2.py</span> · prior editions remain online under
-  <span class="mono">pages/</span>, <span class="mono">audit/</span>, <span class="mono">verified/</span>,
-  <span class="mono">docs/</span>, <span class="mono">dashboard/</span>, <span class="mono">review/</span>.</p>
+  <p><strong>This edition:</strong> a self-contained verification pass. The canonical dashboard is
+  <a href="../index.html">the repository landing page</a>; other preserved editions are
+  <a href="../audit/process.html">audit/</a>, <a href="../verified/index.html">verified/</a>,
+  <a href="../docs/index.html">docs/</a>, <a href="../dashboard/index.html">dashboard/</a> and
+  <a href="../review/index.html">review/</a>.</p>
+  <p>Verification: <span class="mono">python3 tools/check_v2.py</span> (links, anchors, per-row sourcing,
+  anonymisation, arithmetic) and the repository-wide privacy sweep
+  <span class="mono">python3 tools/privacy_scan.py</span>.</p>
 </footer>
 </body>
 </html>
@@ -362,7 +366,7 @@ def fmt(d: dt.date) -> str:
 # Page: dashboard / executive summary at a glance
 # --------------------------------------------------------------------------
 def build_index() -> str:
-    p = "pages/v2/"
+    p = ""
     kpis = [
         ("1.6%", "Allowable annual increase, 1 Mar 2026 – 28 Feb 2027", S("learn")),
         ("1.4%", "Allowable annual increase, 1 Mar 2025 – 28 Feb 2026", S("f571")),
@@ -466,7 +470,7 @@ def build_index() -> str:
       <div class="kpi"><div class="v">4 · Then notice</div><div class="l">Written notice, 30 or 90 days, served before the increase</div></div>
     </div>
     <p class="small" style="margin-top:10px">Sources: {S("inv", "noncomp", "banked")}</p>
-    <p><a href="{p}license.html"><strong>Read the step-by-step licence and filing walkthrough →</strong></a></p>
+    <p><a href="license.html"><strong>Read the step-by-step licence and filing walkthrough →</strong></a></p>
   </div>
 
   <div class="card">
@@ -479,7 +483,7 @@ def build_index() -> str:
   <div class="card">
     <h2>Executive summary — findings and answers</h2>
     <p class="lead">Each row is a question from the brief and its verified answer. Anything that could not be confirmed from an
-    official source is blank and listed on the <a href="{p}flagged.html">Flagged</a> page instead.</p>
+    official source is blank and listed on the <a href="flagged.html">Flagged</a> page instead.</p>
     <table>
       <caption>Question · verified answer · official source (accessed {ACCESSED})</caption>
       <thead><tr><th style="width:26%">Question</th><th>Verified answer</th><th style="width:22%">Official source</th></tr></thead>
@@ -503,10 +507,10 @@ def build_index() -> str:
       from 1 June 2020 to 1 June 2026, which is a verified <em>floor</em> of {money(U2_TOTAL)} ({money(U2 + U2_TOTAL)}). The
       increase on 1 June 2027 also includes the allowance in effect on that date (the 1 Mar 2027 – 29 Feb 2028 rate), which the
       Rent Board has not yet published, so the full June 2027 figure cannot be stated.
-      {FLAG("F-11")} <a href="{p}units.html">Details</a> · {S("f571", "banked")}</li>
+      {FLAG("F-11")} <a href="units.html">Details</a> · {S("f571", "banked")}</li>
       <li><strong>Repeating a rate year in a later notice overstates the ceiling.</strong> The increase takes the allowance
       in effect on its effective date — plus unused earlier years — so a notice served today for an effective date after
-      28 February 2027 must use the 2027-28 rate, not 1.6%. {FLAG("F-12")} <a href="{p}units.html">Details</a> · {S("learn")}</li>
+      28 February 2027 must use the 2027-28 rate, not 1.6%. {FLAG("F-12")} <a href="units.html">Details</a> · {S("learn")}</li>
     </ol>
   </div>
 
@@ -532,12 +536,12 @@ def build_index() -> str:
     <p class="small">Earlier sessions produced several editions of the same analysis. They are left in place for provenance; this
     edition supersedes them where they disagree (see the corrections above).</p>
     <ul class="small">
-      <li><a href="pages/executive-summary.html">pages/executive-summary.html</a> — licence-first summary (7 Nov 2026)</li>
-      <li><a href="pages/laws.html">pages/laws.html</a> · <a href="pages/units.html">pages/units.html</a> ·
-          <a href="pages/process.html">pages/process.html</a> · <a href="pages/flagged.html">pages/flagged.html</a></li>
-      <li><a href="audit/process.html">audit/</a> — consolidated audit edition ·
-          <a href="verified/index.html">verified/</a> — ten-page verified guide</li>
-      <li><a href="docs/index.html">docs/</a> · <a href="dashboard/index.html">dashboard/</a> · <a href="review/index.html">review/</a></li>
+      <li><a href="../pages/executive-summary.html">pages/executive-summary.html</a> — licence-first summary (7 Nov 2026)</li>
+      <li><a href="../pages/laws.html">pages/laws.html</a> · <a href="../pages/units.html">pages/units.html</a> ·
+          <a href="../pages/process.html">pages/process.html</a> · <a href="../pages/flagged.html">pages/flagged.html</a></li>
+      <li><a href="../audit/process.html">audit/</a> — consolidated audit edition ·
+          <a href="../verified/index.html">verified/</a> — ten-page verified guide</li>
+      <li><a href="../docs/index.html">docs/</a> · <a href="../dashboard/index.html">dashboard/</a> · <a href="../review/index.html">review/</a></li>
     </ul>
   </div>
 """
@@ -545,7 +549,7 @@ def build_index() -> str:
                 "Two rent-controlled flats in a 1940 two-unit San Francisco building. Two questions drive everything else: "
                 "does an individual owner need the Rent Board's rent-increase licence (yes — see below), and what amount is lawful "
                 "for each unit. Answers are verified line by line against official sources and linked in every row.",
-                body, prefix="", active="index.html", nav_prefix="pages/v2/")
+                body, active="index.html")
 
 
 # --------------------------------------------------------------------------
@@ -728,7 +732,7 @@ def build_exec_summary() -> str:
     return page("Executive summary", "Executive summary",
                 "The rent-increase licence question first — because a correct percentage is worthless without it — then the "
                 "lawful amount for each unit, the notice that carries it, and the checks a tenant's lawyer would run.",
-                body, prefix="../../", nav_prefix="", active="executive-summary.html")
+                body, active="executive-summary.html")
 
 
 # --------------------------------------------------------------------------
@@ -819,7 +823,7 @@ def build_license() -> str:
     return page("Licence &amp; process", "Licence and process",
                 "The obligation that comes before any number: report into the Housing Inventory, obtain the rent-increase licence, "
                 "and make sure it is in force on the date the increase takes effect.",
-                body, prefix="../../", nav_prefix="", active="license.html")
+                body, active="license.html")
 
 
 # --------------------------------------------------------------------------
@@ -871,7 +875,7 @@ def build_laws() -> str:
     return page("Laws &amp; caps", "Laws and caps",
                 "Three layers of law touch a rent increase, and only one of them sets the amount. This page says which, and what the "
                 "other two still require.",
-                body, prefix="../../", nav_prefix="", active="laws.html")
+                body, active="laws.html")
 
 
 # --------------------------------------------------------------------------
@@ -957,7 +961,7 @@ def build_units() -> str:
     return page("Units &amp; math", "Units and arithmetic",
                 "Each tenancy has its own ceiling, built from the allowances that accrued on its own anniversary and were not used. "
                 "Nothing here is a market rent: a rent-controlled tenancy's lawful rent is a sum of published percentages.",
-                body, prefix="../../", nav_prefix="", active="units.html")
+                body, active="units.html")
 
 
 # --------------------------------------------------------------------------
@@ -1053,7 +1057,7 @@ Property: [street address]
     return page("Notice &amp; reasons", "Notice, deadlines and reasons",
                 "The notice is the only part of the process a tenant sees first. Its required contents are few, so most failures are "
                 "omissions — or a reason that should never have been written down.",
-                body, prefix="../../", nav_prefix="", active="notice.html")
+                body, active="notice.html")
 
 
 # --------------------------------------------------------------------------
@@ -1139,7 +1143,7 @@ def build_tenant_review() -> str:
     return page("Tenant-lawyer test", "Would this survive a tenant's lawyer?",
                 "A stress test, not a prediction. Each check below is pass/fail against a published rule, and the open items are the "
                 "only places where the answer could change.",
-                body, prefix="../../", nav_prefix="", active="tenant-review.html")
+                body, active="tenant-review.html")
 
 
 # --------------------------------------------------------------------------
@@ -1197,7 +1201,7 @@ def build_practice() -> str:
     return page("Owner practice", "Corporate and individual practice",
                 "The same law applies to every owner. What differs is whether the filing, the calendar and the records exist — which is "
                 "what a reviewer actually inspects.",
-                body, prefix="../../", nav_prefix="", active="practice.html")
+                body, active="practice.html")
 
 
 # --------------------------------------------------------------------------
@@ -1288,7 +1292,7 @@ def build_sources() -> str:
 """
     return page("Sources", "Sources and verification",
                 "Twenty-eight official sources, what each one establishes, and the nine questions they cannot answer.",
-                body, prefix="../../", nav_prefix="", active="sources.html")
+                body, active="sources.html")
 
 
 # --------------------------------------------------------------------------
@@ -1393,18 +1397,18 @@ def build_flagged() -> str:
   <div class="card">
     <h2>Prior registers kept online</h2>
     <ul class="small">
-      <li><a href="../flagged.html">pages/flagged.html</a> — F-1 to F-10 (7 November 2026)</li>
-      <li><a href="../../docs/flagged-for-review.html">docs/flagged-for-review.html</a> — FR-01 to FR-17</li>
-      <li><a href="../../audit/flagged.html">audit/flagged.html</a> — consolidated audit flags</li>
-      <li><a href="../../verified/guide/flagged.html">verified/guide/flagged.html</a> — verified-edition flags</li>
-      <li><a href="../../review/flagged.html">review/flagged.html</a> — audit-trail flags, including the 12-versus-24-month conflict</li>
+      <li><a href="../pages/flagged.html">pages/flagged.html</a> — F-1 to F-10 (7 November 2026)</li>
+      <li><a href="../docs/flagged-for-review.html">docs/flagged-for-review.html</a> — FR-01 to FR-17</li>
+      <li><a href="../audit/flagged.html">audit/flagged.html</a> — consolidated audit flags</li>
+      <li><a href="../verified/guide/flagged.html">verified/guide/flagged.html</a> — verified-edition flags</li>
+      <li><a href="../review/flagged.html">review/flagged.html</a> — audit-trail flags, including the 12-versus-24-month conflict</li>
     </ul>
   </div>
 """
     return page("Flagged for review", "Flagged for review",
                 "Every unresolved value, stated as unresolved. Each item names what would close it and the official reference it "
                 "was tested against.",
-                body, prefix="../../", nav_prefix="", active="flagged.html")
+                body, active="flagged.html")
 
 
 # --------------------------------------------------------------------------
@@ -1412,8 +1416,7 @@ def build_flagged() -> str:
 # --------------------------------------------------------------------------
 def main() -> None:
     OUT.mkdir(parents=True, exist_ok=True)
-    (ROOT / "assets").mkdir(exist_ok=True)
-    (ROOT / "assets" / "v2.css").write_text(CSS, encoding="utf-8")
+    (OUT / "style.css").write_text(CSS, encoding="utf-8")
 
     pages = {
         "executive-summary.html": build_exec_summary(),
@@ -1428,8 +1431,8 @@ def main() -> None:
     }
     for name, html in pages.items():
         (OUT / name).write_text(html, encoding="utf-8")
-    (ROOT / "index.html").write_text(build_index(), encoding="utf-8")
-    print(f"wrote index.html + {len(pages)} pages under pages/v2/ + assets/v2.css")
+    (OUT / "index.html").write_text(build_index(), encoding="utf-8")
+    print("wrote verification/index.html + %d pages + verification/style.css" % len(pages))
 
 
 if __name__ == "__main__":
