@@ -663,7 +663,7 @@ Claimed 2026-11-10. Arena fixes this session to branch `arena/d2dc8ac5-rentincre
 |---|---|---|---|
 | D1 | Re-read board, check active claims/PRs, independently verify current Rent Board licensing and rates | done | COORDINATION.md |
 | D2 | Audit every canonical table row, arithmetic, internal links and privacy; correct irregularities | done | canonical generator and outputs; EXECUTIVE_SUMMARY.md |
-| D3 | Build/test, create and merge PR, confirm Pages and live site, record result | in progress | COORDINATION.md; workflow if required |
+| D3 | Build/test, create and merge PR, confirm Pages and live site, record result | done | COORDINATION.md; workflow if required |
 
 ### Verification log — `arena/d2dc8ac5`
 
@@ -671,3 +671,11 @@ Claimed 2026-11-10. Arena fixes this session to branch `arena/d2dc8ac5-rentincre
 - Arithmetic recomputed: Unit A 3.0% × $3,995 = $119.85 → $4,114.85; Unit B six skipped years = 11.5%, plus current 1.6% = 13.1%; 13.1% × $3,150 = $412.65 → $3,562.65; 10% × $3,150 = $315 → $3,465. Unit B scenarios remain conditional on a complete rent ledger.
 - Irregularities corrected: stale Unit B 90-day scenario date (4 Feb → 8 Feb 2027 for personal service 10 Nov 2026); 2026 annual row mislabeled already banked; owner had not affirmatively supplied a no-increase history, so catch-up wording is now explicitly conditional; tenant-review conclusion no longer implies clearance while licence/anniversary/history are unresolved.
 - Gates after rebuild: `tools/verify_core_site.py` PASS (13 canonical pages, 39 tables, 314 rows, 824 links), `tools/audit_site.py` PASS (70 HTML files), `tools/privacy_scan.py` PASS (107 tracked text files). Pending proposal and all unknown facts remain published on `pages/flagged.html`; they do not block integration.
+
+### PR and deployment record — `arena/d2dc8ac5`
+
+- PR **#26**: <https://github.com/kanlerxz87-cyber/RentincreaseSF3/pull/26> — **MERGED** 2026-11-10T05:47:54Z, merge commit **`c60fded5d4aa9e910454781187624b4716c8009b`**.
+- PR check `Site checks` run **42764327016**: **success** before merge; main `Site checks` run **42764360140**: **success**.
+- GitHub Pages run **42764359778**: **success** (build and deploy); API Pages build for `c60fded` status **`built`**, completed 2026-11-10T05:48:15Z.
+- Live dashboard: <https://kanlerxz87-cyber.github.io/RentincreaseSF3/> — fetched successfully after deployment; `/pages/units.html` shows corrected conditional history wording and `/pages/flagged.html` remains available with all 16 review items.
+- This records-only follow-up updates D3 to done. No content or verification result changed after deployment.
