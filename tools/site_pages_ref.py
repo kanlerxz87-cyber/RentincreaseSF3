@@ -248,7 +248,7 @@ def flagged():
     body = f"""
 <div class="card alert">
   <h1>Flagged for review</h1>
-  <p class="lede">Sixteen items that are unverified, blank, internally inconsistent or corrected. They are published here deliberately — nothing on this list was filled in with a guess — and none of them blocks publication of the site.</p>
+  <p class="lede">{len(FLAGS)} items that are unverified, blank, internally inconsistent or corrected. They are published here deliberately — nothing on this list was filled in with a guess — and none of them blocks publication of the site.</p>
 </div>
 
 <div class="card">
@@ -267,7 +267,7 @@ def flagged():
 </div>
 
 <div class="card">
-  <h2>The sixteen flags</h2>
+  <h2>The {len(FLAGS)} flags</h2>
   <table>
     <thead><tr><th style="width:7%">ID</th><th style="width:17%">Item</th><th style="width:8%">Status</th><th>Detail</th><th style="width:17%">What closes it</th><th style="width:17%">Official source</th></tr></thead>
     <tbody>{rows}</tbody>

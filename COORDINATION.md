@@ -695,9 +695,70 @@ are not touched here).
 | T2 | Independent re-fetch of every load-bearing official source (10 Nov 2026) | done — 12 sources re-read, recorded in `research/verification-log.md` | `arena/76fd1699` | `research/verification-log.md` |
 | T3 | Implement request from `arena/8c577e09`: label 13.1% as a banked balance for an effective date on or before 28 Feb 2027, not as a June 2027 ceiling | done | `arena/76fd1699` | `tools/site_pages_core.py`, `tools/site_pages_rules.py`, `README.md`, `EXECUTIVE_SUMMARY.md` |
 | T4 | Implement request from `arena/8c577e09`: link the `verification/` edition from the canonical navigation | done — footer link on every canonical page | `arena/76fd1699` | `tools/site_layout.py` (footer list only; preserved editions stay out of the header) |
-| T5 | Rebuild + run all five gates, then PR → `main`, merge, confirm Pages build, record result here | unclaimed | — | `COORDINATION.md` |
+| T5 | Rebuild + run all five gates, then PR → `main`, merge, confirm Pages build, record result here | done | `arena/76fd1699` | `COORDINATION.md` |
 
 Scope note: this session edits the **canonical generator** (`tools/site_pages_core.py`,
 `tools/site_pages_rules.py`, `tools/site_layout.py`) plus the two Markdown summaries and this board.
 `verification/`, `docs/`, `review/`, `dashboard/`, `audit/` and `verified/` are **read-only** here —
 they are other sessions' editions and are preserved unedited.
+
+### Sources re-fetched in this pass (all read on 2026-11-10)
+
+sf.gov: [Housing Inventory](https://www.sf.gov/rent-board-housing-inventory) ·
+[Notice of Owner Noncompliance with Housing Inventory](https://www.sf.gov/notice-of-owner-noncompliance-with-housing-inventory) ·
+[Learn about rent increases](https://www.sf.gov/learn-about-rent-increases-san-francisco) ·
+[Banked rent increases](https://www.sf.gov/information--banked-rent-increases) ·
+[Annual rent increase for multiple years](https://www.sf.gov/information--annual-rent-increase-multiple-years) ·
+[Form 571 PDF](https://www.sf.gov/documents/34344/571_Allowable_Annual_Increases_26-27_1.pdf) ·
+[Learn about SF rental laws](https://www.sf.gov/learn-about-san-francisco-rental-laws) ·
+[Tenant petitions](https://www.sf.gov/tenant-petitions). City: [Legistar File #261020](https://sfgov.legistar.com/LegislationDetail.aspx?ID=8217304&GUID=7EDA4662-EBFB-4AF5-962F-C669B64AA770).
+State: [Civ. Code § 827](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=827) ·
+[Civ. Code § 1947.12](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=1947.12) ·
+[Attorney General rent caps](https://oag.ca.gov/rentcaps). Per-source wording captured in
+`research/verification-log.md`.
+
+### Verification performed by `arena/76fd1699`
+
+- `tools/verify_core_site.py` → **ALL CHECKS PASSED** — 13 pages, 39 tables, 318 rows, 845 links; every
+  data row cites an official domain; internal links and anchors resolve; privacy scan clean; arithmetic
+  assertions 3,995×3.0% = 119.85 → 4,114.85 and 3,150×13.1% = 412.65 → 3,562.65 recomputed from the
+  official percentages; banked sum 1.8+0.7+2.3+3.6+1.7+1.4 = 11.5, +1.6 = 13.1.
+- `tools/audit_site.py` → **PASS** (70 HTML files, archive labels, canonical row sources).
+- `tools/privacy_scan.py` → **PASS** (107 tracked text files; no postal code, neighbourhood, initials,
+  street address or private contact detail).
+- Preserved editions unchanged and passing: `verify_site.py`, `tools/check_site.py`,
+  `tools/verify_edition.py`, `tools/check_v2.py`.
+
+### Irregularities found or corrected by `arena/76fd1699`
+
+1. **FR-16 closed.** The Notice of Owner Noncompliance page *was* retrievable on 10 Nov 2026, so the
+   stronger official wording is now quoted on the dashboard, executive summary and process pages:
+   an unlicensed increase "may be null and void (this may apply for multiple years)" and the tenant
+   "may be entitled to a rent refund". The earlier scope limit is no longer needed.
+2. **FR-17 corrected.** "13.1%" had been presented as a "maximum catch-up". 13.1% is 11.5% banked plus
+   the 1.6% annual allowance that is in force only to 28 February 2027; for a later effective date the
+   annual component is whatever the Rent Board then publishes. Relabelled on the dashboard, executive
+   summary, units, reasonable and rules pages, and a blank row now records that the 2027–28 percentage
+   is unpublished. (Open request from `arena/8c577e09`.)
+3. **Verification edition linked** from every canonical page footer (second open request from
+   `arena/8c577e09`). Preserved editions remain out of the header navigation.
+4. **Tenant Summary Petition added** to the tenant-lawyer test with the official source, because the
+   Rent Board lists a summary petition specifically for an invalid notice of rent increase.
+5. **Flag counter made dynamic.** After FR-17 the page prose still said "sixteen"; the lede, heading and
+   counter now derive from the flag list so they cannot drift again.
+6. **Merge conflicts (two rounds).** `main` advanced twice during this pass (PR #26 and then PR #28, both
+   `arena/d2dc8ac5`). Conflicts were in `COORDINATION.md` plus three canonical pages and two generators.
+   Resolution kept **both** sessions' work: PR #26's "conditional" qualifier and PR #28's records are
+   retained, with this pass's precision wording applied on top. Nothing was discarded and no other
+   session's edition was edited.
+
+### PR / deploy record — `arena/76fd1699`
+
+- Branch `arena/76fd1699-rentincreasesf3` → `main`.
+- PR **#27** — "Integration pass: quote the noncompliance consequence, scope Unit B's 13.1% to dates
+  on/before 28 Feb 2027" — <https://github.com/kanlerxz87-cyber/RentincreaseSF3/pull/27>.
+- CI before merge (`pull_request`, `verify`): **pass** (runs 42764455499 and 42764588767).
+- Merge: **MERGED** (`gh pr merge 27 --merge`), merge commit **`14f919c`**.
+- GitHub Pages build for `14f919c`: **built** at 2026-11-10T05:51:07Z.
+- Live verification: see the records entry below (this branch's follow-up PR) for what was fetched
+  after the deploy, including the stale-cache observation.
