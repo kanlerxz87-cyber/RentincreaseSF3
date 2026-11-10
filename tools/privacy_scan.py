@@ -108,6 +108,7 @@ PUBLIC_PHONES = {
     "8008841684",  # California Civil Rights Department
     "8003473739",  # HUD housing-discrimination line
     "4154896524",  # public-agency number already published on the site
+    "4157012311",  # San Francisco 311 from outside the city (printed on sf.gov's Housing Inventory page)
 }
 
 TEXT_SUFFIXES = {

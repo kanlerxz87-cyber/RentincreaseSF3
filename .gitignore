@@ -1,0 +1,4 @@
+# Python build artefacts - never commit compiled files
+__pycache__/
+*.pyc
+*.pyo

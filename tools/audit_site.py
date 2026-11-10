@@ -10,8 +10,8 @@ import sys
 ROOT=Path(__file__).resolve().parent.parent
 sys.path.insert(0,str(ROOT/'tools'))
 from privacy_scan import scan_text
-CANON=[ROOT/'index.html', *sorted((ROOT/'audit').glob('*.html'))]
-DOMAINS={'www.sf.gov','sf.gov','leginfo.legislature.ca.gov','calcivilrights.ca.gov','www.hud.gov','sfgov.legistar.com'}
+CANON=[ROOT/'index.html', *sorted((ROOT/'pages').glob('*.html'))]
+DOMAINS={'www.sf.gov','sf.gov','portal.sfrb.org','leginfo.legislature.ca.gov','calcivilrights.ca.gov','www.hud.gov','sfgov.legistar.com','codelibrary.amlegal.com','oag.ca.gov','www.govinfo.gov','justice.gov','www.justice.gov','www.ecfr.gov'}
 errors=[]
 class Scan(HTMLParser):
  def __init__(self):
@@ -48,7 +48,7 @@ for f in CANON:
  # Private values are deliberately not written in this public file; generic detectors live in tools/privacy_scan.py.
  for label,hit in scan_text(text,f):errors.append(f'{f.name}: private {label}')
 for f in scans:
- if f.parent.name in {'pages','docs','review','dashboard'} and 'ARCHIVED RESEARCH' not in f.read_text():errors.append(f'{f}: no archive warning')
+ if f.parent.name in {'docs','review','dashboard'} and 'ARCHIVED RESEARCH' not in f.read_text():errors.append(f'{f}: no archive warning')
 for base,pct,inc,total in [('3995','.016','63.92','4058.92'),('3150','.016','50.40','3200.40'),('3995','.030','119.85','4114.85'),('3150','.115','362.25','3512.25'),('3150','.131','412.65','3562.65')]:
  assert Decimal(base)*Decimal(pct)==Decimal(inc)
  assert Decimal(base)+Decimal(inc)==Decimal(total)
