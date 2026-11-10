@@ -460,3 +460,34 @@ presented as a general rule (true only for personal service with a 28 February 2
   - `…/audit/` + `…/verified/` (consolidated audit/verified editions preserved)
   - `…/docs/`, `…/dashboard/`, `…/review/` (prior editions intact)
 - Post-merge verification: `verify_site.py` **ALL CHECKS PASSED**, `tools/check_site.py` **No broken links**, `tools/verify_edition.py` **ALL CHECKS PASSED**, `tools/audit_site.py` **PASS** (2026-11-07). No PII, no inferred values, no broken links, math cents-exact.
+
+---
+
+## Task board — session `0e839002` (branch `arena/0e839002-rentincreasesf3`)
+
+Claimed **2026-11-10** after reading this board top to bottom. `main` at `0ac8be2` (PR #18 merged).
+This session is both a **verification pass** and the **final integration session** for the current request:
+it re-verifies every published figure against official sources fetched on 2026-11-10, rebuilds the
+canonical root site as one clean dashboard with categorized subpages, preserves every prior edition
+untouched, and publishes.
+
+| # | Task | Status | Owner | File scope | Notes |
+|---|---|---|---|---|---|
+| C1 | Claim tasks + record scope | done | 0e839002 | `COORDINATION.md` | this section |
+| C2 | Re-fetch and re-verify official sources (rates, licence, banking, notice, AB 1482, FHA/FEHA, File 261020 status) | in progress | 0e839002 | `research/*`, `data/sources.json` | 2026-11-10 fetch log |
+| C3 | Resolve/re-flag the 24-month banking conflict between two official sf.gov pages | in progress | 0e839002 | `pages/`, `research/` | two official pages appear to disagree — publish both + flag |
+| C4 | Rebuild canonical root site: landing dashboard + categorized subpages (summary, process/licence, units, reasonable-and-normal, market practice, notice & reasons, tenant-lawyer test, one-vs-both, sources, flagged) | in progress | 0e839002 | `index.html`, `pages/`, `assets/` | sole editor of root site for this session |
+| C5 | Full requirements checklist page (user requirements → status → evidence link) | in progress | 0e839002 | `pages/requirements.html` | new file, no other session owns it |
+| C6 | Machine verification: links, per-row citation, PII, math, no remote code | in progress | 0e839002 | `tools/verify_all.py` (new) | must pass before merge |
+| C7 | PR → main → merge → confirm GitHub Pages deploy → record here | unclaimed | 0e839002 | `COORDINATION.md` | do not merge a broken site |
+
+**Irregularities found so far in this verification pass (details at the bottom of this section):**
+1. sf.gov "Banked rent increases" states a **24-month** condition for banking; sf.gov "Learn about rent
+   increases in San Francisco" worked example applies a **12-month** test. Both are official. This is now
+   flagged, not silently resolved — it changes Unit 1 (3.0% vs 1.6%) and Unit 2 (13.1% vs lower) results.
+2. sf.gov posted a **new notice on 9 November 2026** about pending File 261020 (10%/yr cap on banked +
+   capital-improvement increases). No prior edition on this site mentions the 9 Nov 2026 notice or its
+   stated 15 September 2026 application date.
+3. Prior editions state the Unit 2 banked figure as "11.5% → $3,512.25" while also stating "13.1% →
+   $3,562.65"; the 11.5% figure omits the annual increase in effect on the effective date. Recomputed here.
+
