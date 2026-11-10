@@ -18,7 +18,7 @@ other tasks are done; cross-session file edits are logged here as requests inste
 | `arena/d2dc8ac5-rentincreasesf3` | `arena/d2dc8ac5-rentincreasesf3` | PRs #26 / #28 **merged** 2026-11-10 (`c60fded` / `32bcabd`). Conditional rent-history wording, stale-date fix in `tools/sitedata.py`, all gates PASS. |
 | `arena/76fd1699-rentincreasesf3` | `arena/76fd1699-rentincreasesf3` | PRs #27 / #29 / #30 / #32 **merged** 2026-11-10 (`14f919c`..`c43e175`). Noncompliance quotes, FR-17 + dynamic flag counter, footer `verification/` link, `research/verification-log.md`. |
 | `arena/45eea2b7-rentincreasesf3` | `arena/45eea2b7-rentincreasesf3` | PR #31 **merged** 2026-11-10 (`5b003fc`). Wired `tools/check_v2.py` into CI, `ALL_PAGES` + nav tile for `verification/index.html`, `research/verification-log.md` rows 28–35. |
-| `arena/3a2e288e-rentincreasesf3` | `arena/3a2e288e-rentincreasesf3` | Final integration & line-by-line re-verification session (2026-11-10) — PR #34 active below. |
+| `arena/3a2e288e-rentincreasesf3` | `arena/3a2e288e-rentincreasesf3` | PR **#34** **merged** 2026-11-10T06:08:23Z (`a99fe1f`). Closed `FR-07` (§ 37.3 subsections), cleaned stray PR #31 rebase text in `units()`, refined `FR-17` 7-year bank on 1 Jun 2027, added `$59.00` Rent Board Fee & `Tenant A–F` / § 6.14 analysis; Pages `built` (`1356403015`). |
 
 ## Reconciliation note — 2026-11-06 (add/add conflict resolution)
 
@@ -847,7 +847,7 @@ Claimed **2026-11-10** after rebasing onto `origin/main` at `32bcabd` (commit `9
 | I2 | Re-fetch & verify primary official sources on 2026-11-10 (`sf.gov`, `leginfo`, `amlegal` § 37.3, `oag.ca.gov`, `sfgov.legistar.com`) | done | `arena/3a2e288e-rentincreasesf3` | `tools/site_layout.py`, `tools/site_pages_ref.py` |
 | I3 | Close `FR-07` (§ 37.3 subsections), refine `FR-17` (7th banked year on 1 Jun 2027), remove stray PR #31 rebase text in `units()`, add Rent Board Fee (`$59.00`) & § 6.14 / partial-occupancy notes + `Tenant A–F` chain | done | `arena/3a2e288e-rentincreasesf3` | `tools/site_pages_core.py`, `tools/site_pages_rules.py`, `tools/site_pages_ref.py`, `EXECUTIVE_SUMMARY.md`, `README.md` |
 | I4 | Rebuild canonical site & run all 7 automated verification + privacy gates | done | `arena/3a2e288e-rentincreasesf3` | `index.html`, `pages/*.html`, `assets/style.css` |
-| I5 | PR #34 → `main`, verify CI green, merge without waiting, confirm GitHub Pages `built` & live HTTP 200 | in progress | `arena/3a2e288e-rentincreasesf3` | `COORDINATION.md` |
+| I5 | PR #34 → `main`, verify CI green, merge without waiting, confirm GitHub Pages `built` & live HTTP 200 | done | `arena/3a2e288e-rentincreasesf3` | `COORDINATION.md` |
 
 ### Verification log — `arena/3a2e288e` (2026-11-10)
 
@@ -864,3 +864,16 @@ Claimed **2026-11-10** after rebasing onto `origin/main` at `32bcabd` (commit `9
   3. **Refined `FR-17` banking precision for 1 June 2027:** for off-anniversary dates 1 Mar – 31 May 2027 only 11.5% (2020–2025) is banked plus the unannounced 2027–28 rate, whereas on Unit B's **1 June 2027** anniversary 12 full months have elapsed since 1 June 2026 (1.6%), so all seven skipped anniversaries 2020–2026 (**13.1%**) are banked plus the unannounced 2027–28 annual rate.
   4. **Added separate Rent Board Fee (`SF_FEE`) and Unit A 6-person anonymised occupancy map (`Tenant A–F` + `SF_614` / `§ 37.3(d)(2)(B)`)** so first-time individual owners do not confuse the free Housing Inventory report with the $59.00/unit fee or treat a continuing roommate replacement as a market turnover.
 - **All 7 automated gates PASS** (verified post-merge rebuild).
+
+### PR / deploy record — `arena/3a2e288e`
+
+- **Branch:** `arena/3a2e288e-rentincreasesf3` → `main`
+- **PR:** [#34](https://github.com/kanlerxz87-cyber/RentincreaseSF3/pull/34) — "Final verification & integration: §37.3 subsections (FR-07), Rent Board Fee, §6.14 partial occupancy & June 2027 7-year bank"
+- **CI checks:** Pre-merge `Site checks` run `42766428768` **success**; post-merge `main` `Site checks` run `42766501693` **success** (all 7 gates: `privacy_scan.py`, `build_dashboard.py` freshness, `verify_core_site.py` across 14 pages / 41 tables / 341 rows / 976 links, `audit_site.py`, `verify_site.py`, `check_site.py`, `verify_edition.py`, `check_v2.py`).
+- **Merge:** **MERGED** at **2026-11-10T06:08:23Z**, merge commit **`a99fe1f8276484b136442e2b0d2718da5454cd1d`** (`gh pr merge 34 --merge`, no manual approval wait).
+- **GitHub Pages deployment:** `pages-build-deployment` run `42766500638` **success**; Pages API build `1356403015` for `a99fe1f` → status **`built`**, `error: null`, duration 20,372 ms, completed `2026-11-10T06:08:45Z`.
+- **Live URL verification (fetched post-deploy on 2026-11-10):**
+  - <https://kanlerxz87-cyber.github.io/RentincreaseSF3/> — forefront individual-owner licence Q&A, `Tenant A–F`, `Form 516C` / `Form 518`, separate `$59.00` Rent Board Fee row, 9 Nov 2026 File #261020 notice, 13 category tiles including `verification/index.html`
+  - <https://kanlerxz87-cyber.github.io/RentincreaseSF3/pages/units.html> — full 6-person `Tenant A–F` chain, `§ 37.3(d)(2)(B)` & `Rule § 6.14` note, clean Unit B table (stray PR #31 rebase text removed), 7-year `13.1%` banked balance on `1 June 2027` + blank 2027–28 rate
+  - <https://kanlerxz87-cyber.github.io/RentincreaseSF3/pages/flagged.html> — all 17 flags live (`FR-07`, `FR-15`, `FR-16`, `FR-17` closed/corrected; all open owner-record and official-gap flags published with source links)
+- Nothing remains in progress for `arena/3a2e288e-rentincreasesf3`. Open PRs belonging to other sessions remain untouched.
