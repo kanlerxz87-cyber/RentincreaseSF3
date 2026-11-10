@@ -83,3 +83,28 @@ Arithmetic re-run in this pass (cents): 3,995 × 1.6% = 63.92 → 4,058.92; 3,99
 Two corrections resulted: FR-16 (the stronger noncompliance wording is now quoted, closing the scope
 limit) and FR-17 (13.1% is the maximum only for an effective date on or before 28 February 2027, and
 a blank row now records that the 2027–28 percentage is unpublished).
+# Re-verification pass — 2026-11-10
+
+Session `arena/45eea2b7-rentincreasesf3`. The canonical site (index.html + pages/) and the
+verification edition were re-read line by line against official sources fetched again today. Every
+headline figure below was fetched from the linked source on 2026-11-10 and matched the published text.
+
+| # | Assertion on the site | Source fetched 2026-11-10 | Result |
+|---|---|---|---|
+| 28 | Annual allowable increase 1.6% for 3/1/2026–2/28/2027 | sf.gov — Learn about rent increases; Form 571 PDF | Match |
+| 29 | Prior-year rates 1.4% (25–26), 1.7% (24–25), 3.6% (23–24), 2.3% (22–23), 0.7% (21–22), 1.8% (20–21) | Form 571 PDF rate table | Match (Unit B banked arithmetic 1.8+0.7+2.3+3.6+1.7+1.4+1.6 = 13.1%) |
+| 30 | Banking: additive not compounded, no cap back to 1 Apr 1982, no expiry during tenancy, no carry-over to a new tenant, notice must state the banked part | sf.gov — Banked rent increases | Match |
+| 31 | Rent-increase licence: report into the Housing Inventory; licence auto-generated for non-owner-occupied units; must be in effect on the effective date or the increase is not enforceable; 1 March deadline; no monetary penalty for late filing; requirement applies to 1–9 unit buildings from 1 March 2023 | sf.gov — Housing Inventory | Match |
+| 32 | Notice: 30 days ≤10%, 90 days >10%, +5 if mailed; percentage in effect on the effective date | Civ. Code § 827 (leginfo) | Match |
+| 33 | File #261020: caps banked + capital-improvement increases at 10%/yr for three years; status "Pending Committee Action"; introduced 9/15/2026; Land Use and Transportation Committee | sfgov.legistar.com | Match; sf.gov 9 Nov 2026 notice confirms it is not enacted and would apply to banked increases noticed on or after 15 Sep 2026 |
+| 34 | Unit B 13.1% = banked balance to 1 Jun 2026; floor, not the June 2027 ceiling (2027–28 allowance unpublished) | Form 571 PDF + sf.gov — rent increases | Match; canonical pages/units.html row relabelled by PR #27 as "Combined for an effective date on or before 28 Feb 2027" + blank 2027–28 row (adopted on rebase; the same correction) |
+| 35 | Unit A 1.4% bankable on either official reading of the banking rule (24-month page rule vs 12-month worked example); 3.0% = 1.6% + 1.4% supportable | Form 571 PDF; sf.gov — Banked rent increases | Match; conflict already published as FR-03 |
+
+Gates re-run 2026-11-10 after the edits: `tools/verify_core_site.py` (14 pages, 41 tables, 329 rows,
+920 links) ALL CHECKS PASSED; `tools/check_v2.py` (verification edition, 212 rows) ALL CHECKS PASSED;
+`verify_site.py`, `tools/check_site.py`, `tools/verify_edition.py`, `tools/audit_site.py`,
+`tools/privacy_scan.py` all pass. Both builders are idempotent (fresh rebuild produces no further
+changes). `tools/check_v2.py` was added to the CI workflow (it existed but was not wired in).
+
+Irregularities found in this pass: none new. Prior flags (FR-01..FR-16, F-1..F-23) remain open and
+published on the flagged pages; they do not block the merge.

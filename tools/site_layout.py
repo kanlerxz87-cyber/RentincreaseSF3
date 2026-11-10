@@ -216,6 +216,7 @@ ALL_PAGES = [
     ("pages/requirements.html", "Requirements checklist"),
     ("pages/sources.html", "Sources &amp; verification register"),
     ("pages/flagged.html", "Flagged for review"),
+    ("verification/index.html", "Independent verification edition"),
 ]
 
 

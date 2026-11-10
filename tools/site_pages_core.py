@@ -84,7 +84,7 @@ def index():
     <a class="tile" href="pages/requirements.html"><b>Requirements checklist</b><span>Every item in the brief, where it is answered, and its verification status.</span></a>
     <a class="tile" href="pages/sources.html"><b>Sources register</b><span>Every official source, the claim it supports, and the date retrieved.</span></a>
     <a class="tile" href="pages/flagged.html"><b>Flagged for review</b><span>Unverified, blank or internally inconsistent items — published, not hidden.</span></a>
-    <a class="tile" href="verification/index.html"><b>Independent verification pass</b><span>Self-contained second audit of every rate, calculation, fee and flag.</span></a>
+    <a class="tile" href="verification/index.html"><b>Independent verification edition</b><span>Second self-contained pass: every official source re-fetched, arithmetic recomputed, flags F-11…F-23.</span></a>
   </div>
 </div>
 
