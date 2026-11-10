@@ -13,7 +13,20 @@ jobs:
       - uses: actions/setup-python@v6
         with:
           python-version: '3.12'
-      - run: python tools/audit_site.py
-      - run: python verify_site.py
-      - run: python tools/check_site.py
-      - run: python tools/verify_edition.py
+      - name: Rebuild the generated site
+        run: python tools/build_dashboard.py
+      - name: Fail if the committed HTML is stale
+        run: |
+          if ! git diff --exit-code -- index.html pages assets/style.css; then
+            echo "Generated site is stale. Run tools/build_dashboard.py and commit the result."
+            exit 1
+          fi
+      - name: Canonical site gate
+        run: python tools/verify_core_site.py
+      - name: Whole-repo audit
+        run: python tools/audit_site.py
+      - name: Preserved editions
+        run: |
+          python verify_site.py
+          python tools/check_site.py
+          python tools/verify_edition.py
