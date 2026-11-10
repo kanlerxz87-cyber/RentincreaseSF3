@@ -407,7 +407,7 @@ presented as a general rule (true only for personal service with a 28 February 2
 | B6 | Fix Units page: anniversary Feb 1, banked math, license prerequisite, additional-occupant note | done | `pages/units.html` | Corrected PR #2 item 1 (Apr 1 → Feb 1); corrected item 2 (banking not capped at 3 yrs); added license + Legistar watch |
 | B7 | Fix Laws & Caps page: add license row, banking row, anniversary row, pending ordinance row; correct state/local interaction | done | `pages/laws.html` | Added §37.15 license row; Legistar pending row; banking 24-month rule; correct Civ. Code §1947.12 exemption language |
 | B8 | Rewrite Process & Notice page: add Step 0 (license) + full 7-step flow, reasons, corporate vs. individual, tenant scrutiny, one-vs-both | done | `pages/process.html` | Every row sourced; no unverified claims |
-| B9 | Consolidate Flagged for Review (pages/flagged.html): merge prior F-items + new license/banking/pending flags → F-1…F-10, all rows sourced/flagged | done | `pages/flagged.html` | Removed ZIP/outer-sunset literals (privacy); every row has source link; cross-links to docs/ & review/ registers |
+| B9 | Consolidate Flagged for Review (pages/flagged.html): merge prior F-items + new license/banking/pending flags → F-1…F-10, all rows sourced/flagged | done | `pages/flagged.html` | Removed ZIP/neighbourhood literals (privacy); every row has source link; cross-links to docs/ & review/ registers |
 | B10 | Update EXECUTIVE_SUMMARY.md: forefront license table (steps 1–7) + all 8 sections, fully sourced | done | `EXECUTIVE_SUMMARY.md` | Matches site forefront; dates/amounts preserved; anonymous |
 | B11 | Update README.md: integrated forefront landing, 4-edition table, headline results, verification badges | done | `README.md` | Links to all 4 live editions; no PII |
 | B12 | Line-by-line verification: verify_site.py + tools/check_site.py + manual official-source re-fetch (2026-11-07) | done | `verify_site.py`, `tools/check_site.py` | ALL CHECKS PASSED (see below) |
@@ -502,3 +502,53 @@ presented as a general rule (true only for personal service with a 28 February 2
 - **Privacy & flagged:** no tenant names/initials, no street address, no ZIP/location detail in any public page; placeholder labels only; dates/amounts unchanged; 10 flagged items remain with source links (rent history, property record, license status, subsidy/lease, pending 261020 not law, 2027-28 rate not yet announced, corporate dataset gap, ZIP benchmark gap, banking wording nuance, occupancy continuity).
 - **Automated checks 2026-11-10:** `verify_site.py` PASS (10 dashboard files), `tools/check_site.py` PASS (11 pages, 0 broken), `tools/verify_edition.py` PASS (10 pages, 25 warnings = flagged blank/internal only), `tools/audit_site.py` PASS (53 HTML files, 6 canonical pages all rows have official source, 5 Decimal math scenarios, archive labels, privacy patterns). No PII, no inferred values, no broken links, no remote code.
 
+---
+
+## Task board — session `73e9c9c3` (branch `arena/73e9c9c3-rentincreasesf3`)
+
+Claimed **2026-11-10 00:50 UTC**, after reading this board top to bottom **and** inspecting every remote
+branch. `main` was at `dedd934` (PR #19 merged) at claim time. Arena fixes this session's branch name, so the
+`session-<id>/<task>` naming pattern cannot be used; all work is on `arena/73e9c9c3-rentincreasesf3`.
+
+### Other sessions active at claim time (seen on their own branches — not yet on `main`)
+
+| Session | Scope it claimed on its own branch | Seen |
+|---|---|---|
+| `0e839002` | Rebuild the canonical root site — `index.html`, `pages/`, `assets/`, new `pages/requirements.html`, new `tools/verify_all.py`, `research/*`, `data/sources.json`; then PR → merge | commit `3a9c6af`, 00:37Z |
+| `4a563c4c` | Publish the sf.gov notice posted 9 Nov 2026 in the canonical edition — `index.html`, `pages/*`, `EXECUTIVE_SUMMARY.md`, `README.md`, `data/sources.json`; then PR → merge | commit `64fbcf1`, 00:38Z |
+| `1e699ad0` | "Final verification" pass — merged as PR #19 at 00:40Z | done |
+
+Those two live claims overlap **each other** on `index.html` and `pages/*`; whichever merges second will have
+to reconcile. This session stays out of those files until both have merged or gone stale (60 minutes without
+a commit), and takes a scope none of them claimed:
+
+| # | Task | Status | Owner | File scope | Notes |
+|---|---|---|---|---|---|
+| P1 | Claim, scope record, publish the claim on `main` so it is visible to every session | done | 73e9c9c3 | `COORDINATION.md` (this section; plus a one-token privacy redaction in row B9 above) | see "Coordination observations" |
+| P2 | **Privacy hotfix — top priority.** Private values are embedded as literals in repository source files (three scanners, one generator and its data file, one line of this board) | in progress | 73e9c9c3 | `verify_site.py`, `tools/audit_site.py`, `tools/verify_edition.py`, `tools/build_site.py`, `tools/sitedata.py`, new `tools/privacy_scan.py`, `.github/workflows/site-checks.yml` | Takeover: the owning sessions (edaa9740, 649a1fa8, b73ba2df, 64380530) have had no commits since 6–7 Nov. Scope is limited to the private literals — no finding, figure or check logic is changed |
+| P3 | Independent official-source register: every source re-fetched 2026-11-10, with the quoted passage relied on | in progress | 73e9c9c3 | new files under `audit/data/` | read-only research |
+| P4 | REPO WORK — line-by-line audit of every published page and table row as found at `dedd934`; irregularities listed with official links for manual review | in progress | 73e9c9c3 | `audit/**` | Takeover from 649a1fa8 (no commits since 7 Nov) |
+| P5 | Legacy editions `docs/`, `dashboard/`, `review/`, `verified/`: audit, then correct in place or retire to redirects; unique verified content is carried into the canonical site and nothing is removed from Git history | claimed | 73e9c9c3 | `docs/**`, `dashboard/**`, `review/**`, `verified/**` | Takeover: owners inactive since 6–7 Nov; both live sessions state they do not edit these |
+| P6 | Final integration, **only after** `0e839002` and `4a563c4c` have merged or gone stale: merge `main`, re-verify the combined site line by line against P3, one navigation, one Flagged for Review page, all checks, PR → `main`, merge, confirm the Pages deploy, record it here | waiting | 73e9c9c3 | shared outputs, at that point only | Do not merge a broken site |
+
+### Coordination observations (irregularities in the process itself)
+
+1. **Claims are invisible across sessions.** Each session pushes its claim to its own branch, and `main` only
+   learns of it when that session's PR merges — usually at the end. Three sessions claimed overlapping
+   root-site scopes within two minutes on 2026-11-10 without being able to see one another. This session
+   publishes its claim to `main` through an early, small PR (claim + privacy hotfix) for that reason.
+2. **Private values in repository source (public repository).** The privacy scanners and one site generator
+   contain, as literals, the very values they are meant to keep out: the withheld location (postal code and
+   neighbourhood name) and the occupants' initials. One line of this board also named the neighbourhood.
+   The published HTML pages were clean; the source files were not, and the scanners never scanned
+   themselves. Fixed in P2 by replacing the literals with generic detectors that reveal nothing.
+3. **Git history is not fixed by P2.** Earlier commits, other session branches and at least one commit
+   message still contain the withheld location, and some branch tips contain the initials. Removing them
+   needs a history rewrite and force-push (or a fresh repository), which no session may do on its own —
+   **owner decision**, published on the Flagged for Review page with the exact steps.
+
+### Log — session `73e9c9c3` (UTC)
+
+- 2026-11-10 00:38 — Session started on `0ac8be2`; fetched all remote branches; found three live sessions
+  (table above). `main` advanced to `dedd934` at 00:40 (PR #19); fast-forwarded.
+- 2026-11-10 00:50 — Claim written and pushed. No root-site file touched.
