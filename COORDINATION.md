@@ -652,3 +652,15 @@ entry records the merge result only.
   anchors resolve; privacy sweep passes (detectors imported from `tools/privacy_scan.py`).
 - Requests still open for the canonical-site owners: relabel `pages/units.html` "Combined maximum —
   13.1%" as a banked balance to June 2026, and add a nav tile for `verification/index.html`.
+
+---
+
+## Session `arena/d2dc8ac5-rentincreasesf3` — final integration and current-law verification
+
+Claimed 2026-11-10. Arena fixes this session to branch `arena/d2dc8ac5-rentincreasesf3`; no other branch may be created or used. Scope: `COORDINATION.md`, canonical generated site (`index.html`, `pages/`, `assets/`) and its generator/validators (`tools/build_dashboard.py`, `tools/site_*.py`, `tools/sitedata.py`, `tools/verify_core_site.py`, `tools/audit_site.py`), plus `EXECUTIVE_SUMMARY.md` and `README.md`. Prior editions will be audited but not redesigned.
+
+| # | Task | Status | File scope |
+|---|---|---|---|
+| D1 | Re-read board, check active claims/PRs, independently verify current Rent Board licensing and rates | in progress | COORDINATION.md |
+| D2 | Audit every canonical table row, arithmetic, internal links and privacy; correct irregularities | unclaimed | canonical generator and outputs; EXECUTIVE_SUMMARY.md |
+| D3 | Build/test, create and merge PR, confirm Pages and live site, record result | unclaimed | COORDINATION.md; workflow if required |
