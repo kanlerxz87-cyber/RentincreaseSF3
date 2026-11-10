@@ -460,3 +460,32 @@ presented as a general rule (true only for personal service with a 28 February 2
   - `…/audit/` + `…/verified/` (consolidated audit/verified editions preserved)
   - `…/docs/`, `…/dashboard/`, `…/review/` (prior editions intact)
 - Post-merge verification: `verify_site.py` **ALL CHECKS PASSED**, `tools/check_site.py` **No broken links**, `tools/verify_edition.py` **ALL CHECKS PASSED**, `tools/audit_site.py` **PASS** (2026-11-07). No PII, no inferred values, no broken links, math cents-exact.
+
+---
+
+## Session `arena/8c577e09-rentincreasesf3` — claim (2026-11-10)
+
+Branch: `arena/8c577e09-rentincreasesf3`, branched from `main` @ `0ac8be2` (PR #18 merged).
+No other session has an active claim; all prior boards are `done`/merged. This session claims a
+**new, non-overlapping scope** and will not edit any file owned by a prior edition.
+
+**Scope (file scope is exclusive to this session):**
+
+| # | Task | Status | File scope |
+|---|------|--------|------------|
+| C1 | Claim + sync; read board | done | COORDINATION.md |
+| C2 | Re-verify every existing headline figure against official sources (fresh fetches 2026-11-10) | in progress | `pages/audit-2026-11-10.html`, COORDINATION.md |
+| C3 | Gap analysis vs. a SF tenant-lawyer review: licence, notice, Rent Board Fee, displacement/habitability bar, SB 567 damages, retaliation/180-day, fixed-term leases, Costa-Hawkins partial turnover, eviction/owner-move-in fallacies, AB 1482, fair housing | in progress | `pages/legal-review.html` |
+| C4 | Corrected Unit 1 & Unit 2 scenario tables (incl. the 2027-28 rate-projection trap) + comparison HTML (no names/initials/ZIP) | in progress | `pages/unit-analysis-2026-11-10.html` |
+| C5 | Rebuild landing page as a clean dashboard with per-category navigation and entry tables | in progress | `index.html`, `assets/style.css` (new file `assets/dashboard.css`) |
+| C6 | Verification script + no-broken-link gate for the new pages; run all existing checkers | in progress | `tools/check_2026_11_10.py` |
+| C7 | Flag register update (new + carried-forward items) | in progress | `pages/flagged.html` |
+| C8 | Integration: PR → `main`, merge, confirm Pages `built`, record here | unclaimed until C2–C7 done | COORDINATION.md |
+
+**Not touched by this session:** `docs/`, `dashboard/`, `review/`, `audit/`, `verified/`,
+`pages/executive-summary.html`, `pages/laws.html`, `pages/process.html`, `pages/units.html`,
+`data/`, `research/`. Those are preserved as prior editions.
+
+### Log — `arena/8c577e09` (UTC)
+
+- 2026-11-10 — Claim written and pushed before any edit, per board rules.
