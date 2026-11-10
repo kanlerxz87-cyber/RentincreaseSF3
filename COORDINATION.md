@@ -809,3 +809,18 @@ worth having. **Request:** rebase `arena/45eea2b7-rentincreasesf3` onto current 
 re-open with only the parts that are not already there. Merging it unrebased would revert the
 noncompliance wording, the FR-16 closure, FR-17 and the blank 2027–28 row, because its `pages/*.html`
 are generated from a pre-#27 generator. No file owned by that session was edited here.
+## Session `arena/45eea2b7-rentincreasesf3` — canonical-site integration pass (claimed 2026-11-10)
+
+`main` at `ab0a242` (PR #25 merged). This session claims the two open requests of session
+`8c577e09` for the canonical site, re-verifies every headline figure against official sources fetched
+today, adds the verification-edition gate to CI, runs all gates, and performs final integration
+(PR → merge → Pages deploy → record). No other session is mid-work on these files.
+
+| # | Task | Status | Owner | File scope | Notes |
+|---|---|---|---|---|---|
+| I1 | Claim tasks + record scope | done | 45eea2b7 | `COORDINATION.md` | this section |
+| I2 | Relabel `pages/units.html` "Combined maximum — 13.1%" as a banked balance to 1 Jun 2026 (floor, not the Jun 2027 ceiling) | done | 45eea2b7 | `tools/site_pages_core.py` + regenerated `pages/units.html` | claim of 8c577e09's request 1; **reconciled on rebase**: main already carried the same fix from PR #27 ("Combined for an effective date on or before 28 Feb 2027" + blank 2027–28 row), which was adopted; my wording dropped in favour of the merged one |
+| I3 | Add nav tile for `verification/index.html` on the dashboard landing + all-pages list | done | 45eea2b7 | `tools/site_pages_core.py`, `tools/site_layout.py` + regenerated `index.html`, `pages/*.html` | claim of 8c577e09's request 2 |
+| I4 | Re-verify headline figures line by line against official sources fetched 2026-11-10 | done | 45eea2b7 | `research/verification-log.md` (re-verification rows 28–35) | rates, banking, licence, notice, File 261020 all matched |
+| I5 | Add `tools/check_v2.py` (verification-edition gate) to CI; run every gate | done | 45eea2b7 | `.github/workflows/site-checks.yml` | gate existed, was not in CI; all six gates pass |
+| I6 | Final integration: PR → main → merge → confirm GitHub Pages deploy → record here | in progress | 45eea2b7 | `COORDINATION.md` | do not merge a broken site |

@@ -289,12 +289,13 @@ def page(title: str, h1: str, lead: str, body: str, prefix: str = "", active: st
 {body}
 </main>
 <footer>
-  <p><strong>Internal working document.</strong> Prepared for the property owner. Tenant and occupant details are replaced with
+  <p><strong>Privacy:</strong> prepared for the property owner. Tenant and occupant details are replaced with
   placeholder labels; the street address, unit numbers and ZIP code are withheld. Dates and dollar amounts supplied by the
   owner are reproduced unchanged. Every table row links an official source or is blank and listed on the
   <a href="flagged.html">Flagged</a> register — no value is inferred.</p>
   <p>Not legal advice. Confirm any figure on the effective date, and confirm the process with a Rent Board counsellor
-  (415-252-4600) and a California attorney before serving a notice. Official sources accessed {ACCESSED}.</p>
+  (415-252-4600) and a California attorney before serving a notice. Official sources accessed {ACCESSED}
+  (10 November 2026).</p>
   <p><strong>This edition:</strong> a self-contained verification pass. The canonical dashboard is
   <a href="../index.html">the repository landing page</a>; other preserved editions are
   <a href="../audit/process.html">audit/</a>, <a href="../verified/index.html">verified/</a>,
