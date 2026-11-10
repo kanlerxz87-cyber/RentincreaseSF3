@@ -762,3 +762,30 @@ State: [Civ. Code § 827](https://leginfo.legislature.ca.gov/faces/codes_display
 - GitHub Pages build for `14f919c`: **built** at 2026-11-10T05:51:07Z.
 - Live verification: see the records entry below (this branch's follow-up PR) for what was fetched
   after the deploy, including the stale-cache observation.
+
+### Final deploy record — `arena/76fd1699` (2026-11-10)
+
+| Step | Result |
+|---|---|
+| PR #27 (substantive precision pass) | **MERGED**, merge commit `14f919c` |
+| CI on the PR (`verify`) | **pass** (runs 42764455499, 42764588767) |
+| Pages build for `14f919c` | **built** 2026-11-10T05:51:07Z |
+| PR #29 (this records PR + dynamic flag counter) | **MERGED**, merge commit `16d2086` |
+| CI on PR #29 | **pass** (run 42764775490) |
+| Pages build for `16d2086` | **built** 2026-11-10T05:53:09Z |
+| Live check `…/pages/flagged.html` | 17 flags; **FR-16 marked "Verified — closed 10 Nov 2026"** with the null-and-void / refund quotes; **FR-17 present** |
+| Live check `…/index.html` (forefront Q&A) | noncompliance consequence row live, quoting "may be null and void (this may apply for multiple years)" and "may be entitled to a rent refund"; Unit B stat reads "only for an effective date **on or before 28 Feb 2027**, and conditional" |
+| Live check `…/pages/units.html` | "Combined for an effective date on or before 28 Feb 2027" row, the new **blank** 2027–28 row, and the conditional maximum row |
+| Footer | every canonical page now links the independent verification edition (`verification/index.html`) |
+
+**Cache observation (not a build failure).** The first fetch of the live site immediately after the
+`14f919c` build returned the *previous* HTML (still "Sixteen items", FR-16 as a scope limit). The build
+log and the repository both carried the new content, so this was CDN propagation, not a stale
+deployment. Re-fetching with a cache-busting query string after the `16d2086` build returned the new
+content on every page checked. Anyone auditing the live site should add a query string when checking a
+build that is only seconds old.
+
+Nothing is left in progress for this session. `verification/`, `docs/`, `review/`, `dashboard/`,
+`audit/` and `verified/` were not edited. Open PRs belonging to other sessions (#20, #22, #1, #8) were
+not touched; the handoff note earlier in this file still explains why #20 should be rebased rather than
+merged as-is.
