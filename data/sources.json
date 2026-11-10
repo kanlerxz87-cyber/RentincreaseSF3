@@ -1,6 +1,6 @@
 {
   "project": "Rental Increase SF - San Francisco (anonymized)",
-  "branch": "arena/487d8c3e-rentincreasesf3",
+  "branch": "arena/4a563c4c-rentincreasesf3",
   "verified_sources": [
     {"topic": "SF allowable annual increase 1.4% (3/1/2025-2/28/2026), 60% of Bay Area CPI, once per 12 months, base rent only, 30/90-day notice", "url": "https://www.sf.gov/learn-about-rent-increases-san-francisco", "official": true},
     {"topic": "SF allowable increase 1.6% for 3/1/2026-2/28/2027", "url": "https://www.sf.gov/news--annual-rent-increase-3126-22827-announced", "official": true},
@@ -22,7 +22,8 @@
     {"topic": "42 U.S.C. 3604 text (govinfo)", "url": "https://www.govinfo.gov/content/pkg/USCODE-2023-title42/html/USCODE-2023-title42-chap45-subchapI-sec3604.htm", "official": true},
     {"topic": "Section 8 rent reasonableness (24 CFR 982) - only if voucher tenants", "url": "https://www.ecfr.gov/current/title-24/subtitle-B/chapter-II/subchapter-B/part-982/subpart-M", "official": true},
     {"topic": "SF Legistar File 261020 — pending (not law) 10%/yr cap on banked + capital-improvement increases", "url": "https://sfgov.legistar.com/LegislationDetail.aspx?ID=8217304&GUID=7EDA4662-EBFB-4AF5-962F-C669B64AA770", "official": true},
-    {"topic": "SF Admin. Code 37.10C — ban on algorithmic rent-setting devices (eff. 10/14/2024)", "url": "https://www.sf.gov/news--new-law-prohibits-algorithmic-devices-used-set-rents-san-francisco", "official": true}
+    {"topic": "SF Admin. Code 37.10C — ban on algorithmic rent-setting devices (eff. 10/14/2024)", "url": "https://www.sf.gov/news--new-law-prohibits-algorithmic-devices-used-set-rents-san-francisco", "official": true},
+    {"topic": "sf.gov — Notice: Proposed Changes to Rent Increase Limitations (posted 2026-11-09) — Board of Supervisors File No. 261020; 10%/yr cap on combined banked + capital-improvement increases; would apply to banked increases noticed on or after 2026-09-15 if enacted; NOT ENACTED as of 2026-11-10", "url": "https://www.sf.gov/learn-about-rent-increases-san-francisco", "official": true}
   ],
   "flagged_unverified": [
     "Section 8 voucher status of tenants",
@@ -30,6 +31,6 @@
     "Whether prior annual increases were banked (Unit 2 rent history not provided)",
     "Unit 1 exact increase anniversary date (confirm with a Rent Board counselor)",
     "Current rent increase license / Housing Inventory status for both units",
-    "Status of pending ordinance Legistar File 261020 (re-check before serving any banked catch-up)"
+    "Status of pending ordinance Legistar File 261020 (re-check before serving any banked increase): still Pending Committee Action as of 2026-11-10; sf.gov notice posted 2026-11-09 says the proposed 10%/yr cap would apply to banked increases noticed on/after 2026-09-15 if enacted"
   ]
 }
