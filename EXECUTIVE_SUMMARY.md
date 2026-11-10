@@ -72,7 +72,7 @@ Free tenant help: [sf.gov — Tenant Petitions](https://www.sf.gov/tenant-petiti
 - Certificate-of-occupancy date of the specific building not independently verified (coverage argued from the stated 1940 build).
 - Current rent increase license / Housing Inventory status unknown — verify before serving any notice.
 - Section 8 / voucher status of tenants unknown (if applicable, federal rent-reasonableness rules and housing-authority approval apply).
-- Pending ordinance Legistar File 261020 (10%/yr cap on combined banked + capital-improvement increases) is **not law** — re-check before serving any banked catch-up.
+- Pending ordinance Legistar File 261020 (10%/yr cap on combined banked + capital-improvement increases) is **not law** as of 2026-11-10 — still “Pending Committee Action” (Land Use and Transportation Committee; last action 10/7/2026). New: sf.gov posted “Notice: Proposed Changes to Rent Increase Limitations” on **Nov 9, 2026** (rent-increases and banking pages) stating that, if enacted as proposed, the cap would apply to banked rent increases **noticed on or after September 15, 2026**. Re-check [sf.gov — rent increases](https://www.sf.gov/learn-about-rent-increases-san-francisco) and [sfgov.legistar.com — File #261020](https://sfgov.legistar.com/LegislationDetail.aspx?ID=8217304&GUID=7EDA4662-EBFB-4AF5-962F-C669B64AA770) immediately before serving any banked increase.
 - Rent Board Rule 4.12(a) still says a full 12 months for banking; current sf.gov guidance requires 24 full months. For Unit 1 both readings point to Feb 1, 2027, so the recommended figure is unchanged.
 - Coverage/exemptions, subsidy status, lease restrictions, actual increase history, license status and banking eligibility remain unverified.
 

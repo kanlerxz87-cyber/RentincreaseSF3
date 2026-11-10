@@ -407,7 +407,7 @@ presented as a general rule (true only for personal service with a 28 February 2
 | B6 | Fix Units page: anniversary Feb 1, banked math, license prerequisite, additional-occupant note | done | `pages/units.html` | Corrected PR #2 item 1 (Apr 1 → Feb 1); corrected item 2 (banking not capped at 3 yrs); added license + Legistar watch |
 | B7 | Fix Laws & Caps page: add license row, banking row, anniversary row, pending ordinance row; correct state/local interaction | done | `pages/laws.html` | Added §37.15 license row; Legistar pending row; banking 24-month rule; correct Civ. Code §1947.12 exemption language |
 | B8 | Rewrite Process & Notice page: add Step 0 (license) + full 7-step flow, reasons, corporate vs. individual, tenant scrutiny, one-vs-both | done | `pages/process.html` | Every row sourced; no unverified claims |
-| B9 | Consolidate Flagged for Review (pages/flagged.html): merge prior F-items + new license/banking/pending flags → F-1…F-10, all rows sourced/flagged | done | `pages/flagged.html` | Removed ZIP/outer-sunset literals (privacy); every row has source link; cross-links to docs/ & review/ registers |
+| B9 | Consolidate Flagged for Review (pages/flagged.html): merge prior F-items + new license/banking/pending flags → F-1…F-10, all rows sourced/flagged | done | `pages/flagged.html` | Removed ZIP/neighborhood literals (privacy); every row has source link; cross-links to docs/ & review/ registers |
 | B10 | Update EXECUTIVE_SUMMARY.md: forefront license table (steps 1–7) + all 8 sections, fully sourced | done | `EXECUTIVE_SUMMARY.md` | Matches site forefront; dates/amounts preserved; anonymous |
 | B11 | Update README.md: integrated forefront landing, 4-edition table, headline results, verification badges | done | `README.md` | Links to all 4 live editions; no PII |
 | B12 | Line-by-line verification: verify_site.py + tools/check_site.py + manual official-source re-fetch (2026-11-07) | done | `verify_site.py`, `tools/check_site.py` | ALL CHECKS PASSED (see below) |
@@ -502,7 +502,6 @@ presented as a general rule (true only for personal service with a 28 February 2
 - **Privacy & flagged:** no tenant names/initials, no street address, no ZIP/location detail in any public page; placeholder labels only; dates/amounts unchanged; 10 flagged items remain with source links (rent history, property record, license status, subsidy/lease, pending 261020 not law, 2027-28 rate not yet announced, corporate dataset gap, ZIP benchmark gap, banking wording nuance, occupancy continuity).
 - **Automated checks 2026-11-10:** `verify_site.py` PASS (10 dashboard files), `tools/check_site.py` PASS (11 pages, 0 broken), `tools/verify_edition.py` PASS (10 pages, 25 warnings = flagged blank/internal only), `tools/audit_site.py` PASS (53 HTML files, 6 canonical pages all rows have official source, 5 Decimal math scenarios, archive labels, privacy patterns). No PII, no inferred values, no broken links, no remote code.
 
-
 ### PR / deploy record — `arena/1e699ad0`
 
 - **Branch:** `arena/1e699ad0-rentincreasesf3` → `main`
@@ -517,3 +516,37 @@ presented as a general rule (true only for personal service with a 28 February 2
   - preserved editions: `verified/guide/`, `docs/`, `dashboard/`, `review/` (archived with provenance banners)
 - **Final state:** All V1–V8 done. No tenant notices served, no Housing Inventory filings submitted, no private property records pulled — all flagged as unverified per sourcing rule. Not legal advice — confirm with Rent Board counselors 415-252-4600 before any notice.
 
+---
+
+## Task board — `arena/4a563c4c` (session `arena/4a563c4c-rentincreasesf3`)
+
+Claimed 2026-11-10; branch == main at `0ac8be2` (PR #18 merged). Scope:
+(i) independent re-verification pass against official sources as of 2026-11-10
+(sf.gov announcements, rent-increases, banking, Housing Inventory, Form 571; sfgov.legistar.com File #261020);
+(ii) publish the **new official sf.gov notice "Proposed Changes to Rent Increase Limitations" (posted November 9, 2026)** — Board of Supervisors File No. 261020, not enacted — in the canonical edition (`index.html`, `pages/*`, `EXECUTIVE_SUMMARY.md`, `README.md`, `data/sources.json`), including its stated application to banked increases noticed on or after Sep 15, 2026;
+(iii) anonymization re-scan (no names/initials, no street/ZIP/neighborhood — dates and amounts unchanged);
+(iv) final integration: run all four check suites, open PR from this branch → main, merge, confirm GitHub Pages build + live site, record PR link and merge result here.
+Prior editions (`docs/`, `dashboard/`, `review/`, `audit/`, `verified/`) are NOT edited (other sessions' scopes); the new notice is logged here as a request for those editions.
+
+| # | Task | Status | File scope | Notes |
+|---|------|--------|------------|-------|
+| C1 | Claim tasks + sync branch | done | COORDINATION.md | claim pushed 2026-11-10 (commit 64fbcf1); branch identical to main at `0ac8be2` |
+| C2 | Re-verify official sources (2026-11-10) | done | none (read-only) | Legistar #261020 still **Pending Committee Action** (Land Use and Transportation Committee; introduced 2026-09-15; last action 10/7/2026 Youth Commission response). New: sf.gov notice posted 2026-11-09 on both rent-increases and banking pages |
+| C3 | Publish Nov 9, 2026 sf.gov notice in canonical edition | done | index.html, pages/laws.html, pages/flagged.html (F-7), pages/units.html, pages/executive-summary.html, EXECUTIVE_SUMMARY.md, README.md, data/sources.json | notice + Legistar cross-links added; no computed figure changes (not law) |
+| C4 | Re-scan for PII; run verify_site.py / check_site.py / verify_edition.py / audit_site.py | done | read-only | ALL CHECKS PASSED ×4 (2026-11-10); only prior-edition notes remain (marked `~`), exit 0 |
+| C5 | PR → main → merge → Pages deploy → record here | in progress | COORDINATION.md | PR [#20](https://github.com/kanlerxz87-cyber/RentincreaseSF3/pull/20) created 2026-11-10; merge pending checks |
+
+**Request to prior editions (files NOT edited — other sessions' scopes):** publish the Nov 9, 2026 sf.gov "Notice: Proposed Changes to Rent Increase Limitations" (File No. 261020; proposes 10%/yr cap on combined banked + capital-improvement increases; would apply to banked increases noticed on or after 2026-09-15 if enacted; NOT enacted as of 2026-11-10) in `docs/flagged-for-review.html`, `docs/legal-framework.html`, `docs/executive-summary.html`, `docs/unit-2.html`, `dashboard/*` (analysis, executive-summary, flagged), `review/*` (flagged, index, calculations, requirements, sources, executive-summary), `audit/*` (flagged, sources, units, sources.json), `verified/guide/*` (flagged, laws, units, executive-summary, license-and-process, allowable-increases, sources) and `verified/EXECUTIVE_SUMMARY.md` — all of which currently describe File #261020 without the Nov 9, 2026 notice. Also note: COORDINATION.md line formerly containing a neighborhood literal was rephrased to "ZIP/neighborhood" (privacy) in this session.
+
+### Verification log — `arena/4a563c4c` (2026-11-10, UTC)
+
+- sf.gov "Annual Rent Increase for 3/1/26 - 2/28/27 Announced" (dated Jan 14, 2026) — 1.6% for 3/1/2026–2/28/2027; prior year 1.4% — re-confirmed 2026-11-10.
+- sf.gov "Learn about rent increases" — banner: **"Notice: Proposed Changes to Rent Increase Limitations — Posted November 9, 2026 ... File No. 261020 ... would temporarily limit the combined amount of banked rent increases and capital improvement rent increases ... to 10% per year ... banked rent increases noticed on or after September 15, 2026 ... This legislation has not been enacted and is subject to change."** — re-confirmed 2026-11-10. Also re-confirms 1.6% rate, base-rent-only, 30/90-day notice (+5 if mailed), anniversary rule, additional-occupant prohibition, license prerequisite since Jul 1, 2022 (Mar 1, 2023 for 1–9 unit condos/buildings).
+- sf.gov "Banked rent increases" — same Nov 9, 2026 banner; 24-full-months threshold; unlimited/no expiry since Apr 1, 1982; additive not compounded; 30/90-day notice; license prerequisite — re-confirmed 2026-11-10.
+- sf.gov "The Rent Board Housing Inventory" — all owners must report; license auto-generated for tenant-occupied units; March 1 annual deadline; 10+ units from Jul 1, 2022, condos/1–9 units from Mar 1, 2023; increase not enforceable without license on effective date — re-confirmed 2026-11-10.
+- sfgov.legistar.com File #261020 (fetched 2026-11-10) — Type: Ordinance; **Status: Pending Committee Action**; In control: Land Use and Transportation Committee; Introduced 9/15/2026 (sponsors Sauter, Chan, Mahmood); 30-Day Rule assigned 9/15/2026; referred 9/18/2026 & 9/30/2026; Youth Commission response 10/7/2026; no final action; not law.
+- Changes applied: `index.html` (Explore→Flagged row now cites the Nov 9, 2026 notice), `pages/laws.html` (pending row: notice + 2026-11-10 status), `pages/flagged.html` (F-7 rewritten: notice, 90→30-day exposure wording, re-check action), `pages/units.html` (watch item + banked catch-up row: noticed on/after 2026-09-15 exposure), `pages/executive-summary.html` (watch item dated 2026-11-10, F-7 pointer), `EXECUTIVE_SUMMARY.md` (header re-verified 2026-11-10; pending bullet now carries the notice), `README.md` (headline date 2026-11-10; pending row carries notice; checks pass date 2026-11-10), `data/sources.json` (branch → arena/4a563c4c-rentincreasesf3; Nov 9, 2026 notice added as official source; 261020 flagged item updated). No computed figure changed — File #261020 is not law.
+- PII re-scan 2026-11-10: no occupant initials/names, no street address, no ZIP/neighborhood literal in any published file (one neighborhood literal in this board rephrased); dates and dollar amounts unchanged everywhere.
+- Checks 2026-11-10: verify_site.py ALL CHECKS PASSED; tools/check_site.py No broken internal links or anchors; tools/verify_edition.py ALL CHECKS PASSED; tools/audit_site.py PASS (6 canonical pages, 5 decimal scenarios, 53 HTML files).
+- Note: sandbox network cannot reach github.io directly; live deploy verified via fetch_page of the public site instead of curl.
+- Rebase log 2026-11-10 (second): `origin/main` advanced twice while this branch was in flight (PR #19 merge `dedd934` at 00:40:16Z; then `4f6d0be` deploy record + `439e42b` PII fix). Conflicts in `COORDINATION.md` (tail add/add) and `EXECUTIVE_SUMMARY.md`/`README.md` (verification-date lines) resolved by keeping BOTH sessions' content (PR #19's re-verified text retained verbatim; this session's Nov 9, 2026 notice updates layered on top). No work discarded; markers removed; tree re-verified (all 4 checks PASS) and branch force-pushed.
