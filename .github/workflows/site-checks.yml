@@ -13,7 +13,20 @@ jobs:
       - uses: actions/setup-python@v6
         with:
           python-version: '3.12'
-      - run: python tools/audit_site.py
-      - run: python verify_site.py
-      - run: python tools/check_site.py
-      - run: python tools/verify_edition.py
+
+      # Fail if the generated site does not match the source of truth.
+      - name: Rebuild consolidated edition and check it is reproducible
+        run: |
+          python3 tools/build_consolidated.py
+          git diff --exit-code -- site index.html assets || {
+            echo "::error::Generated site is out of date. Run: python3 tools/build_consolidated.py"; exit 1; }
+
+      # The consolidated edition: links, anchors, per-row OFFICIAL citation, privacy, maths.
+      - name: Verify consolidated edition
+        run: python3 tools/verify_consolidated.py
+
+      # Repository-wide checks for the earlier editions kept for provenance.
+      - run: python3 tools/audit_site.py
+      - run: python3 verify_site.py
+      - run: python3 tools/check_site.py
+      - run: python3 tools/verify_edition.py
