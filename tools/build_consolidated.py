@@ -1187,6 +1187,11 @@ def main():
     (OUT / "assets").mkdir(exist_ok=True)
     (OUT / "assets" / "style.css").write_text(CSS, encoding="utf-8")
 
+    # This edition is ADDITIVE. The canonical root site (index.html + pages/ + assets/style.css) is
+    # owned by another session and is left untouched: overwriting it would discard that session's
+    # published work, which the coordination rules forbid. Everything this builder writes lives
+    # under site/, and the only change it makes outside site/ is a single link in the root
+    # index.html pointing here (see tools/link_consolidated.py).
     built = [
         build_index(),
         build_exec(),
@@ -1199,15 +1204,7 @@ def main():
         build_sources(),
         build_flagged(),
     ]
-
-    # GitHub Pages serves this repository from the root, and the Pages source path cannot be
-    # changed with the available credentials (the API returns 403). So the dashboard is also
-    # published as the root index.html, generated from the same function as site/index.html so
-    # that the two cannot drift apart. Only the link prefix and the stylesheet path differ.
-    (ROOT / "assets").mkdir(exist_ok=True)
-    (ROOT / "assets" / "style.css").write_text(CSS, encoding="utf-8")
-    root = build_index(dest=ROOT / "index.html", prefix="site/", active="")
-    print(f"built {len(built)} pages in {OUT.relative_to(ROOT)}/ and {root}")
+    print(f"built {len(built)} pages in {OUT.relative_to(ROOT)}/ (root site untouched)")
 
 
 if __name__ == "__main__":

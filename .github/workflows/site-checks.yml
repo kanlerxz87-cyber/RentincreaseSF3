@@ -14,19 +14,42 @@ jobs:
         with:
           python-version: '3.12'
 
-      # Fail if the generated site does not match the source of truth.
-      - name: Rebuild consolidated edition and check it is reproducible
+      # --- canonical root site (index.html, pages/, assets/style.css) -------------------
+      - name: Rebuild the canonical root site
+        run: python tools/build_dashboard.py
+      - name: Fail if the canonical HTML is stale
         run: |
-          python3 tools/build_consolidated.py
-          git diff --exit-code -- site index.html assets || {
-            echo "::error::Generated site is out of date. Run: python3 tools/build_consolidated.py"; exit 1; }
+          if ! git diff --exit-code -- index.html pages assets/style.css; then
+            echo "Generated site is stale. Run tools/build_dashboard.py and commit the result."
+            exit 1
+          fi
+      - name: Canonical site gate
+        run: python tools/verify_core_site.py
 
-      # The consolidated edition: links, anchors, per-row OFFICIAL citation, privacy, maths.
-      - name: Verify consolidated edition
-        run: python3 tools/verify_consolidated.py
+      # --- consolidated edition (site/) -------------------------------------------------
+      - name: Rebuild the consolidated edition
+        run: python tools/build_consolidated.py
+      - name: Fail if the consolidated edition is stale
+        run: |
+          if ! git diff --exit-code -- site; then
+            echo "Generated edition is stale. Run tools/build_consolidated.py and commit the result."
+            exit 1
+          fi
+      - name: Consolidated edition gate
+        run: python tools/verify_consolidated.py
+      - name: Consolidated link banner on the root page
+        run: |
+          python tools/link_consolidated.py
+          if ! git diff --exit-code -- index.html; then
+            echo "Root page is missing the consolidated-edition banner. Run tools/link_consolidated.py."
+            exit 1
+          fi
 
-      # Repository-wide checks for the earlier editions kept for provenance.
-      - run: python3 tools/audit_site.py
-      - run: python3 verify_site.py
-      - run: python3 tools/check_site.py
-      - run: python3 tools/verify_edition.py
+      # --- repository-wide -----------------------------------------------------------------
+      - name: Whole-repo audit
+        run: python tools/audit_site.py
+      - name: Preserved editions
+        run: |
+          python verify_site.py
+          python tools/check_site.py
+          python tools/verify_edition.py

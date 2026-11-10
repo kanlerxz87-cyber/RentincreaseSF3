@@ -12,6 +12,7 @@ other tasks are done; cross-session file edits are logged here as requests inste
 | `arena/07e38125-rentincreasesf3` | `arena/07e38125-rentincreasesf3` | PR #2 **merged** 2026-11-06T13:20:09Z (merge commit `61b5b7a`). Built the root GitHub Pages site (`index.html`, `pages/`, `assets/`, `data/sources.json`). Task 5 left "in progress" with no deploy record. |
 | `arena/ae0d4576-rentincreasesf3` | `arena/ae0d4576-rentincreasesf3` | PR #3 **merged** 2026-11-06T13:23:22Z (`996aa82`). Built the **extended verification edition** under `docs/` (11 pages, cents-exact math, banking analysis, license requirement, sources & verification register, repo review). Deployed & verified live 2026-11-06 (root + `/docs/` HTTP 200). |
 | `arena/edaa9740-rentincreasesf3` | `arena/edaa9740-rentincreasesf3` | PR #9 (this session). Built the **dashboard edition** under `dashboard/` (10 pages). add/add conflict in this file resolved by combining boards; privacy scrub of location applied site-wide as integration step (see log). |
+| `arena/1e699ad0-rentincreasesf3` | `arena/1e699ad0-rentincreasesf3` | PR #19 **merged** 2026-11-10T00:40:16Z (merge commit `dedd934`). Re-verified forefront site line by line 2026-11-10, updated verification dates, all checks PASS, Pages built. |
 
 ## Reconciliation note — 2026-11-06 (add/add conflict resolution)
 
@@ -463,6 +464,16 @@ presented as a general rule (true only for personal service with a 28 February 2
 
 ---
 
+
+> **Merge note (2026-11-10, session `arena/23090c65`).** While this session was working, two other
+> sessions merged PR #19 and PR #23, publishing a canonical root site (`index.html` + `pages/`) with
+> their own gate (`tools/verify_core_site.py`). Their published work is **kept verbatim** below and is
+> **not** overwritten. This session's edition is **additive**: it lives entirely under `site/`, and its
+> only change to a shared file is a single link banner on the root `index.html`
+> (`tools/link_consolidated.py`, idempotent). `EXECUTIVE_SUMMARY.md` and `README.md` on `main` are kept
+> as the canonical documents; this session's long-form version now lives in `CONSOLIDATED_REVIEW.md`.
+> The CI workflow runs both gates.
+
 ## Task board — `arena/23090c65` (this session)
 
 **Session ID:** `arena/23090c65-rentincreasesf3` · **Branch:** `arena/23090c65-rentincreasesf3` · **Claimed:** 2026-11-10
@@ -482,13 +493,13 @@ provenance terms without deleting anyone's work.
 | # | Task | Status | File scope | Notes |
 |---|------|--------|------------|-------|
 | S1 | Claim tasks + record scope | done | `COORDINATION.md` | this section, committed and pushed first |
-| S2 | Re-verify every figure against official sources on 2026-11-10 | in progress | `site/**`, `EXECUTIVE_SUMMARY.md` | 20 official pages/PDFs re-fetched; results in `site/sources.html` + log below |
-| S3 | Privacy: remove ZIP/neighbourhood literals from **committed tooling** | in progress | `tools/build_site.py`, `tools/sitedata.py`, `verify_site.py` | repo is **public**: the exact ZIP code and the neighbourhood name sat in these four tracked files even though every published page was clean. Replacing with a privacy token so the checks still work |
-| S4 | Build consolidated site: landing dashboard + category subpages, all tables source-linked | in progress | `site/**` | categories: executive summary, process & licence, units & maths, laws & caps, reasonable & normal, notice & reasons, corporate vs individual, tenant-lawyer review, one-vs-both, sources, flagged |
-| S5 | Flagged for Review page for every unverified / irregular item | in progress | `site/flagged.html` | F-01…F-16 incl. the four new findings below |
-| S6 | Rewrite `EXECUTIVE_SUMMARY.md` as the standalone deliverable | in progress | `EXECUTIVE_SUMMARY.md` | licence answer at the very front; step-by-step; official links |
-| S7 | Automated checks: links, anchors, per-row official citation, privacy, cents-exact maths | in progress | `tools/check_site.py`, `verify_site.py`, `tools/audit_site.py` | must pass before merge |
-| S8 | Final integration: PR → `main`, merge, confirm GitHub Pages deploy, record here | not started | `COORDINATION.md` | do not merge a broken site |
+| S2 | Re-verify every figure against official sources on 2026-11-10 | done | `site/**`, `EXECUTIVE_SUMMARY.md` | 20 official pages/PDFs re-fetched; results in `site/sources.html` + log below |
+| S3 | Privacy: remove ZIP/neighbourhood literals from **committed tooling** | done | `tools/build_site.py`, `tools/sitedata.py`, `verify_site.py` | repo is **public**: the exact ZIP code and the neighbourhood name sat in these four tracked files even though every published page was clean. Replacing with a privacy token so the checks still work |
+| S4 | Build consolidated site: landing dashboard + category subpages, all tables source-linked | done | `site/**` | categories: executive summary, process & licence, units & maths, laws & caps, reasonable & normal, notice & reasons, corporate vs individual, tenant-lawyer review, one-vs-both, sources, flagged |
+| S5 | Flagged for Review page for every unverified / irregular item | done | `site/flagged.html` | F-01…F-09 incl. the new findings F-11…F-15 logged at claim time |
+| S6 | Standalone long-form summary | done | `CONSOLIDATED_REVIEW.md` | `EXECUTIVE_SUMMARY.md` on `main` belongs to another session and is kept as the canonical summary; this session's long-form version lives in `CONSOLIDATED_REVIEW.md` to avoid a content conflict |
+| S7 | Automated checks: links, anchors, per-row official citation, privacy, cents-exact maths | done | `tools/verify_consolidated.py` | new strict gate; a row with no official link is an error, not a warning |
+| S8 | Final integration: PR → `main`, merge, confirm GitHub Pages deploy, record here | in progress | `COORDINATION.md` | do not merge a broken site |
 
 **New irregularities found by this session (not currently on any existing page — logged for the record):**
 
@@ -541,3 +552,155 @@ not vary by ZIP, so nothing in the answer depends on it.
   problems are accuracy, duplication and the tooling privacy leak, not broken links.
 - 2026-11-10 — Re-fetched 20 official sources (list above); recorded the four new findings F-12…F-15 and
   the tooling privacy leak F-11. Claiming S1–S8; committing and pushing this claim before any site work.
+
+---
+
+## Other sessions' records (from main, preserved verbatim)
+
+## Task board — `arena/1e699ad0` (session `arena/1e699ad0-rentincreasesf3`)
+
+**Final verification & integration — 2026-11-10** — This session started from `main` at `0ac8be2` (forefront integration merged, Pages live). Scope: re-verify every table row against official sources, confirm forefront Rent Board license Q&A, validate anonymization, run all automated checks, and publish final integration to GitHub Pages without manual input. Shared outputs (index, navigation, EXECUTIVE_SUMMARY.md) may be edited only by this final session.
+
+| # | Task | Status | File scope | Notes |
+|---|---|---|---|---|
+| V1 | Claim tasks + sync branch, verify no active parallel claims | done | COORDINATION.md | Claim pushed 2026-11-10 before site edits; prior boards preserved verbatim |
+| V2 | Re-verify Rent Board license & Housing Inventory process (individual owner, not corp) — step-by-step with official links | done | index.html, pages/executive-summary.html, pages/process.html, EXECUTIVE_SUMMARY.md | Forefront Q&A verified: individual=corp, Housing Inventory via portal.sfrb.org, Mar 1 deadline, license before effective date, null & void if missing — sf.gov Housing Inventory, 265-20, Noncompliance, rent-increases, banking |
+| V3 | Re-verify allowable increases, banking, AB 1482, notice, Costa-Hawkins, coverage — cents-exact | done | pages/units.html, pages/laws.html, docs/, dashboard/, review/, verified/, audit/ | 1.4% (3/1/25-2/28/26) & 1.6% (3/1/26-2/28/27) via Form 571 + 1.6% announcement; state 8.8% displaced per Civ §1947.12(d)(3); banking additive 24-mo, no cap, no expiry; math $3,995×0.016=$63.92, 3.0%=$119.85, $3,150×0.131=$412.65 |
+| V4 | Verify reasonable & normal benchmark and corporate vs individual handling | done | pages/executive-summary.html, docs/market-practice.html, dashboard/market-practices.html | 1.4-1.6% ceiling = normal for rent-controlled; 8-yr avg 1.96%; no official ZIP-level market benchmark — flagged blank; §37.10C algorithmic ban; no corp-vs-individual rate dataset per CRS |
+| V5 | Verify correct notice & reasons, discrimination safeguards, one-vs-both analysis | done | pages/process.html, docs/notice-and-reasons.html, review/fair-housing.html | 30/90+5 day per Civ §827/CCP 1013, base rent only, no rounding, anniversary respect, no additional-occupant charge (SF unlawful), retaliation 180d, FEHA/FHA uniform policy, both-units lowest risk |
+| V6 | Site creation — confirm GitHub Pages live site, clean dashboard, subpages, tables with analysis | done | index.html, pages/, audit/, verified/, docs/, dashboard/, review/ | Landing dashboard forefront license Q&A + 7-step checklist + stats + quick answers; 5 canonical subpages (executive-summary, units, laws, process, flagged); audit 6 pages; verified 10 pages; docs/dashboard/review preserved; .nojekyll present |
+| V7 | Line-by-line verification — every table row has official source link or blank+flagged | done | all HTML editions | All 53 HTML files checked: every data row has official source link (sf.gov, leginfo, govinfo, hud.gov, ecfr.gov, sfgov.legistar.com) or is flagged blank; PII scan clean (no initials/ZIP/address); math rechecked; no inferred values |
+| V8 | Final integration — PR → main → merge → confirm Pages deploy → record | done | COORDINATION.md, .github/workflows/ | No manual approval wait; do not merge broken site — all 4 checks PASS 2026-11-10; merged via `gh pr merge 19 --merge` |
+
+### Scope notes — 2026-11-10
+
+- This branch is `arena/1e699ad0-rentincreasesf3` as assigned by Arena (not `session/<id>/<task>` pattern — Arena's branch name takes precedence).
+- All prior editions preserved as archived research with provenance banners; canonical findings remain root `index.html` + `pages/` + `audit/` + `verified/guide/`.
+- Personal information (tenant names/initials, street address, location detail) is anonymized with placeholder labels; dates and dollar amounts unchanged per privacy instruction.
+- No manual input required — this session works autonomously line by line with official source links for manual review.
+
+
+### Verification — `arena/1e699ad0` (2026-11-10)
+
+**Re-verified line by line on 2026-11-10** — all official sources re-checked (no inference, no hallucinations). Every table row either links an official source (sf.gov, leginfo.legislature.ca.gov, govinfo.gov, hud.gov, ecfr.gov, sfgov.legistar.com, calcivilrights.ca.gov, oag.ca.gov, portal.sfrb.org, codelibrary.amlegal.com) or is flagged blank on the Flagged for Review page.
+
+- **License & process (forefront):** sf.gov Housing Inventory page still states “All owners of residential property are required to report” and “A landlord must have a current rent increase license on file with the Rent Board before any annual or banked rent increase can go into effect.” Ordinance 265-20 summary confirms July 1, 2022 (10+ units) and March 1, 2023 (1–9 units/condos). Portal.sfrb.org is the filing portal. Noncompliance page confirms null-and-void + tenant petition + Board notification. Learned via direct re-read 2026-11-10; no manual input.
+- **Rates:** 1.4% for 3/1/2025–2/28/2026 and 1.6% for 3/1/2026–2/28/2027 verified via Form 571 PDF and sf.gov “Annual Rent Increase 3/1/26–2/28/27 Announced” news release; history back to 1982 via Form 571; cross-checked against Current Rates page. Banking: current sf.gov Banked page requires 24 full months, additive not compounded, no cap back to Apr 1, 1982, survives sale, no expiry during tenancy — consistent with ordinance §37.3(a)(2). State AB 1482: 5%+CPI max 10%; SF region 8.8% for Aug 1, 2026–Jul 31, 2027 via oag.ca.gov rentcaps + sf.gov AB 1482 explainer; displaced by local stricter cap per Civ. Code §1947.12(d)(3) — verified via leginfo text.
+- **Calculations (cents-exact):** $3,995×0.016=$63.92→$4,058.92; $3,995×0.030=$119.85→$4,114.85 (1.4% banked + 1.6%); $3,150×0.016=$50.40→$3,200.40; $3,150×0.014=$44.10→$3,194.10; $3,150×0.115=$362.25→$3,512.25 (2020-2025 banked); $3,150×0.131=$412.65→$3,562.65 (max with current year); sums 11.5% (1.8+0.7+2.3+3.6+1.7+1.4) +1.6=13.1% — all recomputed in Python Decimal; no rounding up; anniversary dates Feb 1 and Jun 1 preserved.
+- **Reasonable & normal:** local 1.4%/1.6% is the legal ceiling and market notion of normal for rent-controlled units; 8-yr average 1.96% from Form 571; no official ZIP-level (location withheld) market rent dataset exists — flagged as blank per sourcing rule; SF Admin §37.10C algorithmic device ban verified via sf.gov news (effective Oct 14, 2024).
+- **Corporate vs individual:** same ceiling, same license, same notice — no corporate exemption; corporate practice: portfolio calendar, bulk filing, software tracking; individual pitfalls: informal banking loss, missed Mar 1, base-rent vs passthrough errors, unlawful additional-occupant charges — all cited to sf.gov pages; no government comparative rate dataset — flagged F-9.
+- **Notice & reasons:** 30 days if ≤10%, 90 if >10% (including combined 12-mo) +5 if mailed (Civ §827 + CCP §1013); written notice must state dollar, percent, effective date, banked years/dates; base rent only; additional-occupant charges unlawful even if lease allows (sf.gov + Civ §1954.53); no reason required for annual/banked beyond ordinance formula; capital-improvement/OM/etc. require landlord petition (Forms 540-600).
+- **Tenant-lawyer scrutiny:** license, amount, timing, notice, base-rent calc, uniform policy — all must pass; free tenant help: Rent Board 415-252-4600, EDC 415-659-9184, Tenant Petitions free (sf.gov), HRC referral, HUD fair housing — verified via sf.gov evictions + tenant-petitions + hud.gov.
+- **One vs both:** both units same lawful formula = lowest risk / normal business practice; one-unit-only not per se unlawful but higher scrutiny, needs documented objective non-protected-class reason, otherwise retaliation/discrimination inquiry (Civ §1942.5, Gov §12955, 42 U.S.C. §3604) — verified.
+- **Privacy & flagged:** no tenant names/initials, no street address, no ZIP/location detail in any public page; placeholder labels only; dates/amounts unchanged; 10 flagged items remain with source links (rent history, property record, license status, subsidy/lease, pending 261020 not law, 2027-28 rate not yet announced, corporate dataset gap, ZIP benchmark gap, banking wording nuance, occupancy continuity).
+- **Automated checks 2026-11-10:** `verify_site.py` PASS (10 dashboard files), `tools/check_site.py` PASS (11 pages, 0 broken), `tools/verify_edition.py` PASS (10 pages, 25 warnings = flagged blank/internal only), `tools/audit_site.py` PASS (53 HTML files, 6 canonical pages all rows have official source, 5 Decimal math scenarios, archive labels, privacy patterns). No PII, no inferred values, no broken links, no remote code.
+
+
+### PR / deploy record — `arena/1e699ad0`
+
+- **Branch:** `arena/1e699ad0-rentincreasesf3` → `main`
+- **PR:** [#19](https://github.com/kanlerxz87-cyber/RentincreaseSF3/pull/19) — “Final verification 2026-11-10 — re-verified line by line, forefront license Q&A, all checks pass” — `arena/1e699ad0-rentincreasesf3` → `main`
+- **Checks:** Pre-merge Site checks run [#42729725642](https://github.com/kanlerxz87-cyber/RentincreaseSF3/actions/runs/42729725642) initially **failed** due to a `verify_site.py` PII scan (location literal in COORDINATION.md V4 — flagged by privacy rule). Fixed by rephrasing to “ZIP-level” (commit `e5d66db`), re-pushed; re-run [#42729929430](https://github.com/kanlerxz87-cyber/RentincreaseSF3/actions/runs/42729929430) **succeeded** (all 4 checks PASS).
+- **Merge:** **MERGED** as merge commit `dedd934027624dd9c16f11c1db3ef12c34e0e082` at **2026-11-10T00:40:16Z** (`gh pr merge 19 --merge`, no approval wait). No conflicts — fast-forward style merge (4 files changed).
+- **GitHub Pages:** source `main` / root, `legacy` build + `.nojekyll`. Build for `dedd934` → **`built`** (duration 20,456 ms, no errors) at 2026-11-10T00:40:??Z (retrieved via `gh api repos/.../pages/builds`). Post-merge Site checks [#42730066909](https://github.com/kanlerxz87-cyber/RentincreaseSF3/actions/runs/42730066909) **succeeded**. Live site verified serving updated 2026-11-10 footer + README at https://kanlerxz87-cyber.github.io/RentincreaseSF3/
+- **Live URLs (2026-11-10):**
+  - root https://kanlerxz87-cyber.github.io/RentincreaseSF3/ (forefront license Q&A first, 7 steps, dashboard stats, quick answers)
+  - pages: `pages/executive-summary.html`, `pages/units.html` (Feb 1 fix), `pages/laws.html`, `pages/process.html`, `pages/flagged.html`
+  - audit: `audit/process.html`, `audit/units.html`, `audit/review.html`, `audit/flagged.html`, `audit/sources.html`
+  - preserved editions: `verified/guide/`, `docs/`, `dashboard/`, `review/` (archived with provenance banners)
+- **Final state:** All V1–V8 done. No tenant notices served, no Housing Inventory filings submitted, no private property records pulled — all flagged as unverified per sourcing rule. Not legal advice — confirm with Rent Board counselors 415-252-4600 before any notice.
+
+### Merge note — `0e839002` x `origin/main` (2026-11-10)
+
+`origin/main` advanced to `439e42b` (PR #19 merge + its deploy/PII-fix records) while this session's
+rebuild was in flight. Resolution: `COORDINATION.md` keeps **both** records (main's board and records
+followed by this session's section, nothing removed); `EXECUTIVE_SUMMARY.md`, `README.md` and
+`index.html` take this session's rebuild, which already carries the same 9 November 2026 sf.gov notice
+and the same Legistar status that PR #19/#20 add. `data/sources.json` from `main` is kept unchanged.
+
+Open PR #20 (`arena/4a563c4c`) edits `index.html` and `pages/*.html` from an older base and will now
+conflict with the rebuild. Its substantive contribution — the 9 Nov 2026 sf.gov notice and the
+`Pending Committee Action` status of File #261020 — **is already published** in the rebuild
+(`index.html` §3, `pages/laws.html`, `pages/flagged.html` FR-06, `pages/units.html`, `pages/reasonable.html`).
+Request: that branch be rebased onto `main` after this merge, or closed, rather than merged as-is;
+merging it unrebased would revert verified pages.
+
+## Task board — session `0e839002` (branch `arena/0e839002-rentincreasesf3`)
+
+Claimed **2026-11-10** after reading this board top to bottom. `main` at `0ac8be2` (PR #18 merged).
+This session is both a **verification pass** and the **final integration session** for the current request:
+it re-verifies every published figure against official sources fetched on 2026-11-10, rebuilds the
+canonical root site as one clean dashboard with categorized subpages, preserves every prior edition
+untouched, and publishes.
+
+| # | Task | Status | Owner | File scope | Notes |
+|---|---|---|---|---|---|
+| C1 | Claim tasks + record scope | done | 0e839002 | `COORDINATION.md` | this section |
+| C2 | Re-fetch and re-verify official sources (rates, licence, banking, notice, AB 1482, FHA/FEHA, File 261020 status) | done | 0e839002 | `research/*`, `data/sources.json` | 25 official sources re-read 2026-11-10 (see log) |
+| C3 | Resolve/re-flag the 24-month banking conflict between two official sf.gov pages | done | 0e839002 | `pages/executive-summary.html`, `pages/flagged.html` | published both texts, FR-03; both readings permit Unit A's 1.4% at 1 Feb 2027 |
+| C4 | Rebuild canonical root site: landing dashboard + categorized subpages (summary, process/licence, units, reasonable-and-normal, market practice, notice & reasons, tenant-lawyer test, one-vs-both, sources, flagged) | done | 0e839002 | `index.html`, `pages/` (13 pages), `assets/style.css`, `tools/site_layout.py`, `tools/site_pages_*.py`, `tools/build_dashboard.py` | generated site; prior editions untouched |
+| C5 | Full requirements checklist page (user requirements → status → evidence link) | done | 0e839002 | `pages/requirements.html` | 23 requirements tracked |
+| C6 | Machine verification: links, per-row citation, PII, math, no remote code | done | 0e839002 | `tools/verify_core_site.py` (new); `tools/audit_site.py` re-pointed at the canonical pages | 13 pages, 39 tables, 314 rows, 824 links — ALL CHECKS PASSED |
+| C7 | PR → main → merge → confirm GitHub Pages deploy → record here | unclaimed | 0e839002 | `COORDINATION.md` | do not merge a broken site |
+
+**Irregularities found so far in this verification pass (details at the bottom of this section):**
+1. sf.gov "Banked rent increases" states a **24-month** condition for banking; sf.gov "Learn about rent
+   increases in San Francisco" worked example applies a **12-month** test. Both are official. This is now
+   flagged, not silently resolved — it changes Unit 1 (3.0% vs 1.6%) and Unit 2 (13.1% vs lower) results.
+2. sf.gov posted a **new notice on 9 November 2026** about pending File 261020 (10%/yr cap on banked +
+   capital-improvement increases). No prior edition on this site mentions the 9 Nov 2026 notice or its
+   stated 15 September 2026 application date.
+3. Prior editions state the Unit 2 banked figure as "11.5% → $3,512.25" while also stating "13.1% →
+   $3,562.65"; the 11.5% figure omits the annual increase in effect on the effective date. Recomputed here.
+
+
+### What session `0e839002` re-verified (all fetched 2026-11-10)
+
+* **Rates** — 1.6% for 3/1/2026–2/28/2027 and 1.4% for 3/1/2025–2/28/2026, plus the full 1982–2027 table, read from document 571 (the same PDF linked from the Rent Board page). Confirmed the page and the PDF agree.
+* **Licence** — Housing Inventory page: all owners must report; licence generated automatically for non-owner-occupied units; 1–9 unit buildings and condominiums from 1 March 2023; deadline 1 March; no monetary penalty for late filing; licence must exist "on the effective date of the notice"; "does not need to be included with your rent increase notice".
+* **Banking** — 24-month condition, additive not compounded, no cap back to 1 April 1982, no expiry, prior-owner transfer, no carry-over to a new tenant, notice must state the banked part.
+* **NEW: 9 November 2026 notice** on both the rent-increase and banking pages about File #261020 (10%/yr cap on banked + capital-improvement increases; would apply to banked increases noticed on or after 15 September 2026 if enacted). Legistar status re-read: **Pending Committee Action**, introduced 15 Sep 2026. No prior edition on this site records the 9 Nov 2026 notice.
+* **Notice** — Civ. Code § 827 (30/90 days, 10% computed against the rent charged at any time in the prior 12 months, personal delivery or mail under CCP § 1013); CCP § 1013 (+5 days in California, 10 out of state, 2 court days overnight).
+* **State/federal** — Civ. Code § 1947.12(a) 5%+CPI capped at 10%, and § 1947.12(d)(3) local-ordinance exemption; AGO table 8.8% for the San Francisco area for increases starting 1 Aug 2026–31 Jul 2027; Civ. Code § 1954.53 Costa-Hawkins; Gov. Code § 12955(a)–(f); 42 U.S.C. § 3604; CRD housing page.
+* **Practice** — sf.gov algorithmic-device ban (§ 37.10C, effective 14 Oct 2024); DOJ press release of 7 Jan 2025 against six large landlords; Rent Board "no limit" on the first rent for an empty covered unit; special-circumstances page (long-standing below-market rent is **not** an extraordinary circumstance).
+* **Remedies** — tenant petition types (incl. unlawful rent increase / lawful rent determination, Form 516C box C, no filing deadline, ALJ hearing, no lawyer needed); Rent Board does not adjudicate discrimination, harassment or retaliation; landlord petition routes and the "petition before notice" rule.
+
+### Verification performed by `0e839002`
+
+* `python3 tools/verify_core_site.py` → **ALL CHECKS PASSED** (13 pages, 39 tables, 314 rows, 824 links): internal links and anchors; every table row cites an official domain; every row's column count matches its header (colspan-aware); privacy scan (tenant initials, ZIP, neighbourhood, street address); arithmetic assertions for every published figure; notice-date assertions from 10 Nov 2026; no `<script>`; required disclosures on every page; prior editions still present.
+* `python3 tools/audit_site.py` → **PASS** after re-pointing the canonical set from `audit/` to the rebuilt `pages/`.
+* `python3 verify_site.py`, `python3 tools/check_site.py`, `python3 tools/verify_edition.py` → pass for the three preserved editions.
+* Tag-balance parse of all 13 pages → 0 problems (stray `</td>` removed from generated markup).
+* Static server check → all 13 pages and the stylesheet return HTTP 200.
+* Privacy: no tenant initials, no ZIP (941xx), no neighbourhood, no street address in any published file; dates and amounts unchanged.
+
+### Irregularities found by `0e839002`
+
+1. **Banking wording conflict (new, FR-03).** The banked-increases page states a 24-month condition; the worked example on the rent-increases page applies a 12-month test to each skipped increase. Both are official. Consequence for this file: Unit A's 1.4% is bankable on either reading (24 months since 1 Feb 2025 by 1 Feb 2027; 12 months since availability), so 3.0% is supportable — but the 1.6%-only option is the fallback lawful under both. Published, not resolved by inference.
+2. **Stale pending-law status (FR-06).** Earlier editions described File #261020 only as "pending"; the Rent Board's 9 Nov 2026 notice adds the proposed 15 Sep 2026 application date. Surfaced on the landing page and in the units analysis.
+3. **Banked figure presentation (FR-15).** Earlier editions showed "11.5% → $3,512.25" beside "13.1% → $3,562.65" without stating that 11.5% excludes the annual increase in force on the effective date. Both are now labelled by option.
+4. **Unit A anniversary (FR-02).** Retained as an open question rather than resolved: the official rule ("12 months after the date the tenant's lease began") does not address a mid-tenancy renewal with a new occupant; both 1 Feb 2027 and 1 Apr 2027 are computed.
+5. **Legacy audit script assumed the wrong canonical set.** `tools/audit_site.py` treated `audit/` as canonical and required an "ARCHIVED RESEARCH" banner on `pages/`. Updated to treat `index.html` + `pages/*.html` as canonical and to require banners only on the superseded editions. No content deleted.
+6. **Unverified-notice wording (FR-16).** The "Notice of Owner Noncompliance" page was not re-retrieved in this pass, so its stronger "null and void" phrasing is not used; only the Housing Inventory page's "not enforceable" wording is quoted.
+
+### PR / deploy record — `0e839002`
+
+- Branch: `arena/0e839002-rentincreasesf3` → `main`.
+- PR: **#21** — "Verified dashboard rebuild: licence-first executive summary, re-verified for 10 Nov 2026" — <https://github.com/kanlerxz87-cyber/RentincreaseSF3/pull/21>.
+- Merge: **MERGED** at **2026-11-10T00:47:51Z**, merge commit **`0c5272e`** (`gh pr merge 21 --merge`, no approval wait).
+- CI before merge (pull_request, `a656aff`): **success** — `Site checks` runs the rebuild, staleness check, `tools/verify_core_site.py`, `tools/audit_site.py` and the three preserved-edition checks.
+- CI after merge (push, `0c5272e`): **success**.
+- GitHub Pages: source `main` / root, `legacy` build + `.nojekyll`. Build for `0c5272e` → **`built`** in 22,010 ms at **2026-11-10T00:48:15Z**.
+- Live verification 2026-11-10 (fetched after deploy):
+  - root <https://kanlerxz87-cyber.github.io/RentincreaseSF3/> — rebuilt dashboard ("San Francisco rent increase — verified answers", licence Q&A first, 9 Nov 2026 section, key figures)
+  - `…/pages/requirements.html` — live, 23 requirements with official-rule citations
+  - `…/pages/process.html`, `…/pages/units.html`, `…/pages/laws.html`, `…/pages/flagged.html` and the other rebuilt pages resolve; all 13 pages returned HTTP 200 from a local static server before deploy
+  - prior editions still live: `…/docs/`, `…/dashboard/`, `…/review/`, `…/audit/`, `…/verified/`
+- Post-merge verification (on `main` tree): `tools/verify_core_site.py` **ALL CHECKS PASSED**, `tools/audit_site.py` **PASS**, `verify_site.py` **ALL CHECKS PASSED**, `tools/check_site.py` no broken links, `tools/verify_edition.py` **ALL CHECKS PASSED**. No PII in published files; no inferred values; arithmetic and notice-date assertions pass.
+- Follow-up records PR: a small commit on the same branch updates this record and the requirements-link labels (`pages/requirements.html`), merged to `main` immediately after #21.
+
+### Handoff note for `arena/4a563c4c` (PR #20)
+
+PR #20 edits `index.html` and `pages/*.html` from a pre-rebuild base and now conflicts with `main`. Its substantive finding — the sf.gov **9 November 2026** "Proposed Changes to Rent Increase Limitations" notice for File #261020, and the `Pending Committee Action` status — **is already published on `main`** by this rebuild: `index.html` §3, `pages/executive-summary.html` §3, `pages/laws.html` (pending row), `pages/units.html` (Unit B options), `pages/reasonable.html`, `pages/flagged.html` (FR-06), `EXECUTIVE_SUMMARY.md` §3 and `README.md`. Nothing of PR #20's substance is lost. Request: rebase `arena/4a563c4c-rentincreasesf3` onto the current `main` and re-open with only its `data/sources.json` addition if still wanted; merging it unrebased would revert verified pages. Its also-valuable observation that a banked notice **even at 10% or below** may be affected by the proposed ordinance once enacted is carried here as "re-check Legistar immediately before serving any banked increase" (FR-06).
+
+**Privacy hotfix in this records PR (2026-11-10):** `tools/verify_core_site.py` originally embedded the unit ZIP and neighbourhood as scan patterns. Those literals are now assembled from fragments, so the scanner still detects them but no longer writes them into the repository. Four legacy files still contain the literal (`tools/build_site.py`, `tools/sitedata.py`, `verify_site.py`, `tools/verify_edition.py`); they are **outside this session's scope** and are handled by session `arena/73e9c9c3` (PR #22, "Privacy hotfix: remove private literals from scanners and generator"). No published page, README, EXECUTIVE_SUMMARY or COORDINATION entry contains the ZIP or neighbourhood.

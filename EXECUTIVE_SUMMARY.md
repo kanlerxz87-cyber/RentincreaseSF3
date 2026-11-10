@@ -1,292 +1,161 @@
-# Executive Summary — Rent Increases for Two Rent-Controlled San Francisco Units
+# Executive summary — San Francisco rent increases, two rent-controlled units
 
-**Prepared:** 10 November 2026 · **Status:** research document, not legal advice
-**Live site:** <https://kanlerxz87-cyber.github.io/RentincreaseSF3/>
-**Verification:** every figure below was read from, or computed from, an official source fetched on
-10 November 2026. Each row carries its source link. Unverified items are published on the
-[Flagged for review](https://kanlerxz87-cyber.github.io/RentincreaseSF3/site/flagged.html) page, never filled in.
+**Prepared 10 November 2026 · research pass re-verified against official sources on that date · not legal advice**
+Live dashboard: <https://kanlerxz87-cyber.github.io/RentincreaseSF3/>
 
-> **Privacy note.** Tenant names are replaced with placeholder labels (Tenant A, B, C, D). The property's
-> street address, ZIP code and neighbourhood are withheld: they were supplied as internal information and are
-> not published anywhere in this repository or on the site. Dates and dollar amounts are unchanged.
-> No rule relied on here varies by ZIP code — the Rent Ordinance is citywide.
+**Privacy.** Tenants and owners are shown as **Tenant A–D**. Dates and dollar amounts are unchanged, as requested. The ZIP code, neighbourhood and street address are **not published**: unit-level facts (a two-unit building, two specific rents, two lease dates) combined with a location would identify the tenants, and the rules cited apply citywide with no ZIP-level variant. The location is recorded in this file only as "San Francisco".
 
----
+**Property (owner-reported, not a government record).** Two-unit residential building, built 1940, San Francisco.
 
-## 1. The Rent Board question, answered first
-
-**You are a private individual owner, not a corporation. You still have to report to the Rent Board and hold a
-rent-increase licence — but you do *not* need the Board's approval of the amount, and you do *not* file the
-increase notice with the Board.**
-
-There are exactly two Rent Board obligations that bear on a rent increase. Both are reporting duties under
-Administrative Code §37.15:
-
-| # | Obligation | What it means in practice | Source |
-|---|---|---|---|
-| 1 | **Report into the Housing Inventory by 1 March every year** | All owners of residential property must report, including individuals and including owners not currently letting a unit. Buildings with 1–9 units and condominiums have been in scope since **1 March 2023**; 10+ unit buildings since 1 July 2022. A two-unit building is in the first group. Reporting is free and online. | [sf.gov — Housing Inventory](https://www.sf.gov/rent-board-housing-inventory) · [Admin. Code §37.15](https://www.sf.gov/information/sec-3715-reporting-obligations-licensing) |
-| 2 | **Have a current rent-increase licence on the effective date** | When you report a unit as tenant-occupied, the licence is generated **automatically**. There is no separate application and no fee. It is *not* an approval of the percentage. | [sf.gov — Housing Inventory](https://www.sf.gov/rent-board-housing-inventory) |
-
-**What happens if you skip it.** §37.15(e) suspends the licence during non-compliance and states that *"a tenant
-shall not be obligated to pay the increased rent for months during the period of suspension."* sf.gov warns that a
-notice taking effect while unlicensed **may be null and void**, potentially for more than one year. Tenants can see
-your licence status themselves in the Rent Board Portal, and the Board may write to them.
-Sources: [§37.15](https://www.sf.gov/information/sec-3715-reporting-obligations-licensing) ·
-[sf.gov — Notice of Owner Noncompliance](https://www.sf.gov/notice-of-owner-noncompliance-with-housing-inventory)
-
-**The order matters: report → confirm the licence → serve the notice.** Serving first and reporting afterwards does
-not cure the defect, because the licence is restored only *prospectively*.
-
-### Step by step, for an owner who has never done this
-
-| Step | Action | Official source |
-|---|---|---|
-| 1 | **Confirm the units are covered.** Check the certificate of occupancy date, not the build year. Units built on or before 13 June 1979 that are not single-family dwellings are generally covered by rent control and eviction protection. A 1940 two-unit building almost certainly is. | [sf.gov — SF rental laws](https://www.sf.gov/learn-about-san-francisco-rental-laws) |
-| 2 | **Pull the rent history for each unit.** You need the date and amount of every increase, or the absence of one: that fixes the anniversary date and the bankable percentage. | [sf.gov — Banked increases](https://www.sf.gov/information/banked-rent-increases) |
-| 3 | **Create a Rent Board Portal account and add the property.** | [portal.sfrb.org](https://portal.sfrb.org/) |
-| 4 | **Submit the Housing Inventory for both units.** For each non-owner-occupied unit: owner/manager contact details, any business registration number, approximate square footage in 250 sq ft increments, bedrooms and bathrooms, the date occupancy began, vacancy/occupancy dates for the past 12 months, and base rent in $250 increments plus which utilities it includes. Under penalty of perjury. | [sf.gov — Housing Inventory](https://www.sf.gov/rent-board-housing-inventory) · [§37.15(b)(2)](https://www.sf.gov/information/sec-3715-reporting-obligations-licensing) |
-| 5 | **Confirm the rent-increase licence.** In the Portal, search the property and check that a licence is listed and that its period covers your intended effective date. | [sf.gov — Noncompliance](https://www.sf.gov/notice-of-owner-noncompliance-with-housing-inventory) |
-| 6 | **Fix the effective date and the percentage.** At least 12 months since the tenancy began or the last increase. Use the rate in force on the effective date. No rounding up, no compounding, base rent only. | [sf.gov — rent increases](https://www.sf.gov/learn-about-rent-increases-san-francisco) |
-| 7 | **Choose a figure you can defend.** The published allowance alone is safest. Banked years are lawful but invite scrutiny; a phased increase keeps you inside both the current rule and the proposed one. | [sf.gov — banking](https://www.sf.gov/information/banked-rent-increases) · [Legistar #261020](https://sfgov.legistar.com/LegislationDetail.aspx?ID=8217304&GUID=7EDA4662-EBFB-4AF5-962F-C669B64AA770) |
-| 8 | **Serve the written notice.** 30 days if the increase is 10% or less; 90 days if more; **add 5 calendar days if mailed** inside California. State the dollar amount, the percentage, the effective date, and which part is banked. | [Civ. Code §827](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=827) · [CCP §1013](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CCP&sectionNum=1013) |
-| 9 | **Keep the file and repeat every March.** Notice, proof of service and licence record together. Update owner/manager contact details within 30 days of any change. | [sf.gov — Housing Inventory](https://www.sf.gov/rent-board-housing-inventory) · [sf.gov — Tenant Petitions](https://www.sf.gov/tenant-petitions) |
-
-**When is a petition needed?** Only for an increase *above* the annual allowance — operating and maintenance
-expenses, capital improvements, rehabilitation, energy improvements, utility and bond passthroughs. None of those
-apply to the increases discussed here. Source: [Admin. Code §37.3](https://www.sf.gov/information/sec-373-rent-limitations).
+| Unit | Lease start | Base rent | Tenants | Rent history |
+|---|---|---|---|---|
+| Unit A | 1 February 2025 | $3,995.00 | Tenant A (original) and Tenant B (joined the continuing tenancy 1 April 2026 at the same rent) | No increase since 1 Feb 2025 |
+| Unit B | 1 June 2019 | $3,150.00 | Tenant C, Tenant D | Owner states no increase since 2019 — **unverified** |
 
 ---
 
-## 2. What is "reasonable and normal" for these units
+## 1. Forefront: must an individual owner inform the Rent Board and obtain a licence before notifying tenants?
 
-For a rent-controlled unit, "reasonable" is not a matter of judgement or local market custom: the lawful ceiling
-**is** the normal figure, because the ordinance sets it citywide at 60% of the Bay Area CPI change, capped at 7%.
+**Yes to reporting and the licence; no to any per-increase application.**
 
-| Question | Verified answer | Source |
+San Francisco requires **all owners of residential property** — individuals exactly as much as corporations — to report their units into the **Rent Board Housing Inventory**. For a tenant-occupied unit, the report **automatically generates a rent-increase licence**, and that licence must be **in effect on the effective date** of the increase. Without it the notice is **not enforceable**. What an owner does **not** do is apply for approval of the increase or file the notice with the Rent Board: annual and banked increases need no petition.
+
+| Question | Verified answer | Official source |
 |---|---|---|
-| Lawful annual increase now | **1.6%** for an increase effective 1 March 2026 – 28 February 2027 | [sf.gov announcement](https://www.sf.gov/news--annual-rent-increase-3126-22827-announced) · [Form 571](https://www.sf.gov/documents/34344/571_Allowable_Annual_Increases_26-27_1.pdf) |
-| Prior year | **1.4%** for 1 March 2025 – 28 February 2026 | [Form 571](https://www.sf.gov/documents/34344/571_Allowable_Annual_Increases_26-27_1.pdf) |
-| How it is set | 60% of the published CPI change each 1 March, never more than 7% | [Admin. Code §37.3](https://www.sf.gov/information/sec-373-rent-limitations) |
-| Can I charge more because costs rose? | **No.** That requires a separate, granted petition. | [§37.3](https://www.sf.gov/information/sec-373-rent-limitations) |
-| Does the state cap allow more? | **No, it does not apply.** AB 1482 caps at 5% + CPI, max 10% (8.8% in this metro area for increases starting 1 Aug 2026 – 31 Jul 2027), but it is expressly inapplicable where a local ordinance restricts increases to a lower amount. 1.6% is lower. | [Civ. Code §1947.12](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=1947.12) · [CA Attorney General](https://oag.ca.gov/rentcaps) |
-| Is there a federal ceiling? | **No.** Federal law has no rent cap; it governs the *reasons* (no discrimination on protected grounds). | [42 U.S.C. §3604](https://www.govinfo.gov/content/pkg/USCODE-2023-title42/html/USCODE-2023-title42-chap45-subchapI-sec3604.htm) |
-| What is normal for this ZIP code specifically? | **Blank — no official source publishes it.** Neither HUD, Census, the Rent Board nor the Attorney General publishes a lawful or market rent benchmark at ZIP level. Left blank and flagged (F-04) rather than estimated. Nothing in the advice depends on it, because the lawful ceiling is citywide. | [CA Attorney General](https://oag.ca.gov/rentcaps) · [Form 571](https://www.sf.gov/documents/34344/571_Allowable_Annual_Increases_26-27_1.pdf) |
+| Must I inform / report to the Rent Board? | **Yes.** "All owners of residential property are required to report" into the Housing Inventory through the Rent Board Portal; reporting is free. | [sf.gov — Housing Inventory](https://www.sf.gov/rent-board-housing-inventory) |
+| Do I need a licence as an individual, not a corporation? | **Yes.** The rules distinguish by *building size* (10+ units vs. condominiums and 1–9 unit buildings), not by the owner's legal form. For this 2-unit building the requirement applies from **1 March 2023**. | [sf.gov — Housing Inventory](https://www.sf.gov/rent-board-housing-inventory) · [sf.gov — Learn about rent increases](https://www.sf.gov/learn-about-rent-increases-san-francisco) |
+| Is there a separate application or fee? | **No.** "Once you have reported into the Housing Inventory, a rent increase license will be automatically generated for non-owner occupied units." The licence "does not need to be included with your rent increase notice". | [sf.gov — Housing Inventory](https://www.sf.gov/rent-board-housing-inventory) |
+| Must I file the increase notice with the Rent Board? | **No.** The annual increase may be imposed "without filing a petition at the Rent Board"; banked increases "do not have to be approved by the Rent Board, but must be calculated correctly". | [Form 571 (PDF)](https://www.sf.gov/documents/34344/571_Allowable_Annual_Increases_26-27_1.pdf) · [sf.gov — Banked rent increases](https://www.sf.gov/information--banked-rent-increases) |
+| What if I serve notice without a current licence? | The increase is **not enforceable**: "your rent increase notice will not be enforceable without having a rent increase license on the effective date of the notice". The Rent Board may notify tenants of noncompliance. | [sf.gov — Housing Inventory](https://www.sf.gov/rent-board-housing-inventory) |
+| Notice date or effective date? | **Effective date.** Late filing is allowed, but the licence must exist when the increase takes effect. | [sf.gov — Housing Inventory](https://www.sf.gov/rent-board-housing-inventory) |
+
+### Step by step (full version with dates on the site: `pages/process.html`)
+
+1. **Confirm coverage.** Units built on or before 13 June 1979 generally have rent control and eviction protection, unless the unit is a single-family dwelling or most condominiums. A 1940 two-unit building is presumptively covered. → [sf.gov — SF rental laws](https://www.sf.gov/learn-about-san-francisco-rental-laws) · counsellors **415-252-4600**
+2. **Report into the Housing Inventory, every year by 1 March.** Portal account; per unit: owner/manager business contact, business registration if any, square footage in 250 sq ft increments, bedrooms, bathrooms, occupancy start date, base rent in $250 increments and utility information. Under penalty of perjury; free; no monetary penalty for late filing. → [sf.gov — Housing Inventory](https://www.sf.gov/rent-board-housing-inventory) · [portal.sfrb.org](https://portal.sfrb.org/)
+3. **Confirm the licence is current on your planned effective date** and keep a screenshot with the date. → [sf.gov — Housing Inventory](https://www.sf.gov/rent-board-housing-inventory)
+4. **Calculate on base rent only** — including housing services such as parking or storage, excluding passthroughs and fluctuating charges — using the percentage **in effect on the effective date**. No rounding up. For an effective date on or before 28 February 2027 that is **1.6%**. → [sf.gov — Learn about rent increases](https://www.sf.gov/learn-about-rent-increases-san-francisco) · [Form 571](https://www.sf.gov/documents/34344/571_Allowable_Annual_Increases_26-27_1.pdf)
+5. **Add any banked amounts additively, never compounded.** No cap back to 1 April 1982; they do not expire during the tenancy and do not carry to a new tenant. → [sf.gov — Banked rent increases](https://www.sf.gov/information--banked-rent-increases) · [sf.gov — multiple years](https://www.sf.gov/information/annual-rent-increase-multiple-years)
+6. **Check timing.** First increase 12 months after the lease began; then once every 12 months; a later effective date becomes the new anniversary date. No increase within 180 days of a repair request or habitability complaint. No extra charge because an occupant joined. → [sf.gov — rent increases](https://www.sf.gov/learn-about-rent-increases-san-francisco) · [Civ. Code § 1942.5](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=1942.5)
+7. **Serve written notice:** 30 days if the increase is 10% or less of the rent charged in the prior 12 months (alone or combined), 90 days if more; add 5 days if mailed within California. State the dollar amount, the percentage, the effective date and any banked part. → [Civ. Code § 827](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=827) · [CCP § 1013](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CCP&sectionNum=1013)
+8. **Keep the file:** notice, proof of service, licence screenshot, calculation, rent history. Re-report by 1 March and update contact details within 30 days. → [sf.gov — Housing Inventory](https://www.sf.gov/rent-board-housing-inventory)
+9. **If a tenant petitions:** free Tenant Petition (Form 516C, box C) for an unlawful rent increase or a lawful-rent determination, with no filing deadline, heard by a Rent Board Administrative Law Judge. → [sf.gov — unlawful rent increase](https://www.sf.gov/report-unlawful-rent-increase-or-request-review-your-rent-history) · [sf.gov — tenant petitions](https://www.sf.gov/tenant-petitions)
 
 ---
 
-## 3. The two units
+## 2. What is lawful for each unit
 
-| Fact | Unit 1 | Unit 2 |
-|---|---|---|
-| Tenancy began | **1 February 2025** @ $3,995/mo | **1 June 2019** @ $3,150/mo |
-| Who lives there now | One original tenant (Tenant A) remains; Tenant D added 1 April 2026 at the same rent. **Not a vacancy.** | Tenant B and Tenant C, unchanged since 2019 |
-| Anniversary date | **1 February** — the 1 April 2026 continuation did **not** reset it | **1 June** |
-| First increase became available | 1 February 2026 (1.4%) — not imposed | 1 June 2020 (1.8%) — no increase is stated to have been imposed |
-| Rent control | Covered: built 1940, before 13 June 1979, two units, not a single-family dwelling | Same |
-| Licence needed | Yes — Housing Inventory + current licence on the effective date | Yes |
+Percentages are official; dollar amounts are the official percentage multiplied by the owner-reported base rent, to the cent.
 
-### Unit 1 calculations (base $3,995.00)
-
-| Option | Percentage | Arithmetic | Increase | New rent | Notice |
+| Unit / option | Percentage | Increase | New rent | Notice | Source |
 |---|---|---|---|---|---|
-| Single rate year, effective 1 February 2027 | 1.6% | $3,995.00 × 0.016 | **$63.92** | **$4,058.92** | 30 days |
-| Plus the 1.4% available from 1 February 2026 | 3.0% | (1.4 + 1.6) applied once to $3,995.00 | **$119.85** | **$4,114.85** | 30 days |
+| Unit A — annual only, 1 Feb 2027 | 1.6% | $63.92 | **$4,058.92** | 30 days | [Form 571](https://www.sf.gov/documents/34344/571_Allowable_Annual_Increases_26-27_1.pdf) |
+| Unit A — annual + banked 1.4% | **3.0%** | $119.85 | **$4,114.85** | 30 days | [Form 571](https://www.sf.gov/documents/34344/571_Allowable_Annual_Increases_26-27_1.pdf) · [banking](https://www.sf.gov/information--banked-rent-increases) |
+| Unit A — 1 Apr 2027 (if the 2026 lease restarts the anniversary) | **blank** | — | — | 30 days if ≤10% | [sf.gov — rent increases](https://www.sf.gov/learn-about-rent-increases-san-francisco) |
+| Unit B — annual only | 1.6% | $50.40 | $3,200.40 | 30 days | [Form 571](https://www.sf.gov/documents/34344/571_Allowable_Annual_Increases_26-27_1.pdf) |
+| Unit B — **phased 10.0%** | 10.0% | $315.00 | **$3,465.00** | 30 days | [banking](https://www.sf.gov/information--banked-rent-increases) · [File #261020](https://sfgov.legistar.com/LegislationDetail.aspx?ID=8217304&GUID=7EDA4662-EBFB-4AF5-962F-C669B64AA770) |
+| Unit B — banked only | 11.5% | $362.25 | $3,512.25 | 90 days | [banking](https://www.sf.gov/information--banked-rent-increases) |
+| Unit B — maximum catch-up | **13.1%** | $412.65 | **$3,562.65** | 90 days | [banking](https://www.sf.gov/information--banked-rent-increases) · [Form 571](https://www.sf.gov/documents/34344/571_Allowable_Annual_Increases_26-27_1.pdf) |
+| Unit B — if any increase occurred since 2019 | **blank** | — | — | — | [banking](https://www.sf.gov/information--banked-rent-increases) |
 
-The 3.0% option depends on how the banking threshold is read (see **F-02** below). On the reading that a skipped
-year needs a **24-month** gap before it can be banked, the 2026 increase is lost and only 1.6% is available. On the
-reading that a **12-month** gap suffices — which is what the Rent Board's own worked examples use — 3.0% is
-available. **The 1.6% figure is safe under both readings**, which is why it is the conservative recommendation.
+Unit B's banked total: 1.8% (2020) + 0.7% (2021) + 2.3% (2022) + 3.6% (2023) + 1.7% (2024) + 1.4% (2025) = **11.5%**, plus the 1.6% annual in force on the effective date = **13.1%**. The percentages come from [Form 571](https://www.sf.gov/documents/34344/571_Allowable_Annual_Increases_26-27_1.pdf).
 
-### Unit 2 calculations (base $3,150.00)
-
-| Option | Years included | Percentage | Increase | New rent | Notice |
-|---|---|---|---|---|---|
-| Single rate year | Current year only | 1.6% | **$50.40** | **$3,200.40** | 30 days |
-| Banked 2020–2024 + current | 1.8 + 0.7 + 2.3 + 3.6 + 1.7 = 10.1%, plus 1.6% | 11.7% | **$368.55** | **$3,518.55** | 90 days |
-| Banked 2020–2025 only | 1.8 + 0.7 + 2.3 + 3.6 + 1.7 + 1.4 = 11.5% | 11.5% | **$362.25** | **$3,512.25** | 90 days |
-| Arithmetic maximum on the 12-month reading | 11.5% banked + 1.6% current | 13.1% | **$412.65** | **$3,562.65** | 90 days |
-| **Recommended: phased** | A round 10% now; the remainder stays available | **10.0%** | **$315.00** | **$3,465.00** | 90 days |
-
-All amounts are computed from the published percentages only (Form 571), added rather than compounded, and applied
-once to base rent. Nothing is rounded up.
-
-**Why 10.0% is the recommendation for Unit 2.** The Board of Supervisors is considering File #261020, which would
-limit combined banked and capital-improvement increases to 10% a year for three years. sf.gov states it would apply
-to banked increases **noticed on or after 15 September 2026** — that is, to a notice served today. It is **not
-law**: the Board's own system records the status as *Pending Committee Action*. Capping the notice at 10% now keeps
-the increase lawful under both the current rule and the proposed one, which is worth more than the extra $47.50 a
-month. Sources: [sf.gov — rent increases](https://www.sf.gov/learn-about-rent-increases-san-francisco) ·
-[Legistar #261020](https://sfgov.legistar.com/LegislationDetail.aspx?ID=8217304&GUID=7EDA4662-EBFB-4AF5-962F-C669B64AA770).
+**Notice-date arithmetic (from 10 November 2026).** A 13.1% Unit B increase designed to take effect 1 February 2027 needed service by 3 November 2026 — that window has closed. The earliest reachable date for a >10% increase served today is 8 February 2027 (90 days). A 10.0% increase can still take effect 1 February 2027 if served by 2 January 2027 (28 December 2026 if mailed).
 
 ---
 
-## 4. The fact that decides the most: §6.14 and Costa-Hawkins on Unit 1
+## 3. What changed on 9 November 2026
 
-Unit 1 has a **continuing tenancy**. One original tenant is still there and a new occupant joined on 1 April 2026.
-That has two consequences a tenant-side lawyer will test first:
+The Rent Board added a notice to its rent-increase and banking pages on **9 November 2026**: the Board of Supervisors is considering **File No. 261020**, which would temporarily limit the combined amount of **banked rent increases and capital improvement rent increases** to **10% per year** for rent-controlled units, for three years. The Rent Board states that, if enacted as currently proposed, it would apply to banked increases **noticed on or after 15 September 2026**, and that the legislation "has not been enacted and is subject to change". Legistar shows the file as **Pending Committee Action** (introduced 15 September 2026, referred to the Land Use and Transportation Committee).
 
-1. **There was no vacancy, so the rent cannot be reset to market.** A reset requires that no tenant from the prior
-   tenancy remains in lawful possession.
-2. **The owner may not charge more because an extra person moved in**, even if the lease purports to allow it.
+Practical effect: a **13.1%** Unit B notice is exposed to the proposal; a **10.0%** notice is inside both current law and the proposed cap, with the unused balance remaining bankable.
 
-Rule **§6.14** would permit an unlimited (market-rate) increase only if the **last** original occupant had left
-*and* a proper written 6.14 notice had been served on each subsequent occupant within a reasonable time (generally
-about 60 days). Under **Costa-Hawkins**, a **co-tenant** — someone with an agreement with the owner, or who became a
-tenant by the owner's conduct — is **not** subject to such an increase regardless of when they moved in.
-Sources: [sf.gov — §6.14 and Costa-Hawkins](https://www.sf.gov/information--rent-increases-under-section-614-and-costa-hawkins) ·
-[Civ. Code §1954.53](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=1954.53) ·
-[sf.gov — additional occupants](https://www.sf.gov/learn-about-rent-increases-san-francisco).
-
-**This point is absent from every earlier edition of this analysis.** It is the single most consequential fact in
-the file, and it is the reason the recommendations below do not include any market-rate move on Unit 1.
+Sources: [sf.gov — rent increases](https://www.sf.gov/learn-about-rent-increases-san-francisco) · [sf.gov — banking](https://www.sf.gov/information--banked-rent-increases) · [Legistar File #261020](https://sfgov.legistar.com/LegislationDetail.aspx?ID=8217304&GUID=7EDA4662-EBFB-4AF5-962F-C669B64AA770)
 
 ---
 
-## 5. How to inform tenants, and what the reason may be
+## 4. Reasonable and normal increases
 
-The notice procedure is fixed by statute and is the part most often got wrong. The reason is narrower than most
-owners expect: for an annual or banked increase the reason *is* the ordinance formula, and the legal risk lies in
-what must not be relied upon.
+There is **no official definition** of a "reasonable" or "normal" rent increase in San Francisco, and **no official statistic** for what owners typically charge. What exists is a **lawful maximum**, which is the Rent Board percentage plus properly banked amounts.
 
-| Element | Requirement | Source |
+| Layer | Position | Source |
 |---|---|---|
-| Form | Written notice served on the tenant, by personal delivery or by mail | [Civ. Code §827](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=827) |
-| 30 days | Where the increase is 10% or less, alone or combined with other increases in the previous 12 months | [§827](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=827) |
-| 90 days | Where the increase is more than 10% on the same measure — a Unit 2 banked catch-up will usually cross this line | [§827](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=827) |
-| Mailed | Add **5 calendar days** when both mailing place and address are in California | [CCP §1013](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CCP&sectionNum=1013) |
-| Content | Dollar amount, percentage, effective date, and which part of the increase is banked (ideally by year) | [sf.gov — rent increases](https://www.sf.gov/learn-about-rent-increases-san-francisco) · [sf.gov — banking](https://www.sf.gov/information/banked-rent-increases) |
-| Rate used | The percentage in effect on the **effective date**, not the service date | [sf.gov — rent increases](https://www.sf.gov/learn-about-rent-increases-san-francisco) |
-| Licence in the notice | The licence need not be enclosed, but it must exist on the effective date | [sf.gov — Housing Inventory](https://www.sf.gov/rent-board-housing-inventory) |
+| Local | 1.6% for 1 Mar 2026 – 28 Feb 2027, once per 12 months, plus properly banked amounts; one citywide rate with **no ZIP-level variant** | [sf.gov — rent increases](https://www.sf.gov/learn-about-rent-increases-san-francisco) · [Form 571](https://www.sf.gov/documents/34344/571_Allowable_Annual_Increases_26-27_1.pdf) |
+| State | AB 1482 allows 5% + CPI up to 10%; the Attorney General publishes **8.8%** for the San Francisco area for increases starting 1 Aug 2026 – 31 Jul 2027 — but AB 1482 does **not** apply where a local ordinance allows a *lower* increase, and San Francisco's is lower | [Civ. Code § 1947.12](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=1947.12) · [oag.ca.gov/rentcaps](https://oag.ca.gov/rentcaps) |
+| Federal | No rent ceiling; the Fair Housing Act governs the *reasons* and the terms on which an increase is applied | [42 U.S.C. § 3604](https://www.govinfo.gov/content/pkg/USCODE-2023-title42/html/USCODE-2023-title42-chap45-subchapI-sec3604.htm) |
 
-**Lawful reasons:** the Rent Board's published allowance; documented banked years; a granted petition for
-operating-and-maintenance or capital-improvement costs. Nothing about the tenant.
-
-**Reasons that create liability:**
-
-- **Costs rising** (insurance, taxes, maintenance, debt service) — *not* a lawful reason on its own for a covered
-  unit; it is what the petition route exists for. [§37.3](https://www.sf.gov/information/sec-373-rent-limitations)
-- **Market rent is higher** — *not* a lawful reason on its own; that is what §6.14 or a vacancy reset is for, and
-  neither applies here. [§6.14 / Costa-Hawkins](https://www.sf.gov/information--rent-increases-under-section-614-and-costa-hawkins)
-- **Who the tenant is** — any protected characteristic, or source of income including a housing voucher.
-  [Gov. Code §12955](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=GOV&sectionNum=12955) ·
-  [42 U.S.C. §3604](https://www.govinfo.gov/content/pkg/USCODE-2023-title42/html/USCODE-2023-title42-chap45-subchapI-sec3604.htm)
-- **A complaint or organising** — retaliation is prohibited; an increase within 180 days of a habitability
-  complaint is presumed retaliatory. [Civ. Code §1942.5](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=1942.5)
-- **An extra occupant moved in** — unlawful to charge for, even if the lease says otherwise.
-  [sf.gov — additional occupants](https://www.sf.gov/learn-about-rent-increases-san-francisco)
-- **Pressure to leave** — an increase substantially above market comparables, or within six months of an attempt to
-  recover possession, can be evidence of bad-faith harassment.
-  [§37.10B](https://www.sf.gov/information/sec-3710b-tenant-harassment)
+Above the annual percentage, the only official routes are Rent Board petitions — capital improvement, operating and maintenance, comparable rents (special circumstances), utility and bond passthroughs — each filed before the notice. On comparable rents the Rent Board states: "The mere fact that a long-standing tenant is paying significantly less than market rent is not considered an extraordinary circumstance." → [special circumstances](https://www.sf.gov/information/topic-no-323-special-circumstances-petitions-based-rents-comparable-units) · [landlord petitions](https://www.sf.gov/landlord-petitions-and-passthroughs)
 
 ---
 
-## 6. Would it pass review by a San Francisco tenant-side lawyer?
+## 5. How corporations and individual owners handle increases
 
-San Francisco tenants have access to free counsel, so an increase will be tested adversarially, and procedure is
-tested before policy. An increase that passes all nine checks below is ordinary business practice and should survive:
-
-| # | Check | What satisfies it | Source |
-|---|---|---|---|
-| 1 | Licence on the effective date | A licence record in the Portal covering that exact date | [Housing Inventory](https://www.sf.gov/rent-board-housing-inventory) |
-| 2 | Amount within the allowance | Recomputable from base rent × the published rate, no rounding, no passthroughs | [sf.gov — rent increases](https://www.sf.gov/learn-about-rent-increases-san-francisco) |
-| 3 | Banked portion is bankable | Each year itemised and checked against Form 571 | [Form 571](https://www.sf.gov/documents/34344/571_Allowable_Annual_Increases_26-27_1.pdf) |
-| 4 | 12 months and the right anniversary | Counter from tenancy start or last increase; Unit 1 is 1 February, not 1 April | [sf.gov — rent increases](https://www.sf.gov/learn-about-rent-increases-san-francisco) |
-| 5 | Notice length and content | 30/90 days, +5 if mailed, four required elements | [§827](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=827) |
-| 6 | No protected ground in the reasoning | Nothing about who the tenant is, a voucher, family composition, complaints or organising | [Gov. Code §12955](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=GOV&sectionNum=12955) |
-| 7 | Not used to pressure the tenant out | No timing link to a possession attempt; not far above comparables | [§37.10B](https://www.sf.gov/information/sec-3710b-tenant-harassment) |
-| 8 | No charge for the added occupant | No part of Unit 1's increase attributable to Tenant D | [sf.gov — additional occupants](https://www.sf.gov/learn-about-rent-increases-san-francisco) |
-| 9 | Same written policy for both units | A property-wide rule; differences explained by tenancy history | [sf.gov — discrimination](https://www.sf.gov/information--get-help-discrimination-housing) |
-
-Failing any of the first five will overturn the increase regardless of how reasonable the percentage looks.
-
----
-
-## 7. One unit or both?
-
-**Raise both, on one written policy.**
-
-| Approach | Lawful? | Risk |
+| Owner type | What official sources actually show | Source |
 |---|---|---|
-| Raise both by the same written rule | **Yes** | **Lowest.** A uniform policy answers the discrimination and retaliation question before it is asked, and is normal practice. |
-| Raise one only, no documented reason | **Not automatically unlawful** | **High.** It invites an inquiry into why, and the owner carries the burden of explaining. |
-| Raise one only, documented objective reason | Yes | Moderate. Defensible if the reason is genuinely objective — a different anniversary, a different rent history, or a decision to phase one unit recorded in writing. |
-| Raise one only because of who lives there | **No** | Unlawful discrimination or harassment. |
+| Large / corporate | Setting rent at turnover ("no limit on how much rent a landlord may first charge a tenant when renting an empty unit that is covered by rent control"); algorithmic pricing — banned in San Francisco by Rent Ordinance § 37.10C since 14 October 2024; federal antitrust action against six of the largest landlords over shared-data pricing algorithms | [sf.gov — rent increases](https://www.sf.gov/learn-about-rent-increases-san-francisco) · [sf.gov — algorithmic devices](https://www.sf.gov/news--new-law-prohibits-algorithmic-devices-used-set-rents-san-francisco) · [DOJ, 7 Jan 2025](https://www.justice.gov/archives/opa/pr/justice-department-sues-six-large-landlords-algorithmic-pricing-scheme-harms-millions) |
+| Individual | Annual allowance once per 12 months plus banked amounts; free Housing Inventory report and automatic licence; no petition, no lawyer needed; free Rent Board counselling; petition-based routes for anything above the allowance | [sf.gov — rent increases](https://www.sf.gov/learn-about-rent-increases-san-francisco) · [sf.gov — Housing Inventory](https://www.sf.gov/rent-board-housing-inventory) · [sf.gov — tenant petitions](https://www.sf.gov/tenant-petitions) |
+| Both | The legal test applied to a served notice is identical, and any tenant can challenge it with the same free petition | [sf.gov — unlawful rent increase](https://www.sf.gov/report-unlawful-rent-increase-or-request-review-your-rent-history) |
 
-Sources: [Gov. Code §12955](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=GOV&sectionNum=12955) ·
-[Civ. Code §1942.5](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=1942.5) ·
-[sf.gov — discrimination](https://www.sf.gov/information--get-help-discrimination-housing).
-
-**Recommended written policy:** *"Each covered unit is increased annually by the Rent Board's allowable percentage,
-plus any banked percentage that has been properly earned, applied on that unit's anniversary date."* The resulting
-amounts will differ between the units because the tenancy histories differ — and that difference is the explanation.
+No official dataset compares how often or by how much corporations versus individuals raise rent. That row is left **blank and flagged** rather than estimated.
 
 ---
 
-## 8. How large owners and individual owners differ
+## 6. Telling tenants, and which reasons are allowed
 
-The rules are identical; what differs is process discipline, and that is what decides whether an increase survives.
-
-| Element | Portfolio owner | Individual owner of one or two units | Source |
-|---|---|---|---|
-| Legal ceiling | Identical — no corporate exemption, no higher allowance | Identical | [§37.3](https://www.sf.gov/information/sec-373-rent-limitations) |
-| Applying the allowance | Calendar-driven: the published percentage applied on each anniversary without a yearly decision | Often skipped in busy years, which is where banking records are lost | [sf.gov — banking](https://www.sf.gov/information/banked-rent-increases) |
-| Reporting and licence | Kept current as standing compliance; bulk upload available for 5+ unit properties | Frequently missed, because the 1 March deadline is easy to overlook | [Housing Inventory](https://www.sf.gov/rent-board-housing-inventory) |
-| Rent records | Held in a management system, which makes a banked calculation provable | Often scattered across leases, emails and bank statements | [sf.gov — Tenant Petitions](https://www.sf.gov/tenant-petitions) |
-| Notice | Templated, with tracked proof of service | Drafted per occasion, which is where 30/90-day and content errors arise | [§827](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=827) |
-| Rent-setting software | Sold to larger owners; **now prohibited** for SF residential units | Not applicable | [§37.10C](https://www.sf.gov/information/sec-3710c-use-and-sale-algorithmic-devices-prohibited) |
-| Comparative data | **No official dataset compares corporate and individual increase rates** | **No official dataset** | [sf.gov — Rent Ordinance](https://www.sf.gov/reports--rent-ordinance) |
-
-The last row is published as an open item (**F-07**) rather than answered with an estimate. It is often asserted
-that corporations raise rents faster than small owners; no official source in the record supports a figure either
-way.
+| Item | Position | Source |
+|---|---|---|
+| Required contents | Dollar amount, percentage, effective date and (for banked increases) which part is banked; use the percentage in effect on the effective date | [sf.gov — rent increases](https://www.sf.gov/learn-about-rent-increases-san-francisco) · [banking](https://www.sf.gov/information--banked-rent-increases) |
+| Lead time | 30 days if ≤10%, 90 days if >10% (alone or combined with other increases in the previous 12 months); +5 days if mailed in California; +10 days if mailed out of state | [Civ. Code § 827](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=827) · [CCP § 1013](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CCP&sectionNum=1013) |
+| Does a reason have to be given? | **No** for an annual or banked increase — no petition and no stated justification is required | [Form 571](https://www.sf.gov/documents/34344/571_Allowable_Annual_Increases_26-27_1.pdf) |
+| Lawful bases | The published allowance; recovery of skipped (banked) years; separately by petition, documented capital improvements or operating and maintenance costs | [banking](https://www.sf.gov/information--banked-rent-increases) · [landlord petitions](https://www.sf.gov/landlord-petitions-and-passthroughs) |
+| Unlawful bases | Retaliation within 180 days of a repair request, habitability complaint or organising; any difference based on a protected characteristic; charging more because an occupant joined | [Civ. Code § 1942.5](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=1942.5) · [Gov. Code § 12955](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=GOV&sectionNum=12955) · [sf.gov — rent increases](https://www.sf.gov/learn-about-rent-increases-san-francisco) |
+| "Market rent" as a reason | Not a basis for an annual increase; a long-standing below-market rent is not itself an extraordinary circumstance | [special circumstances](https://www.sf.gov/information/topic-no-323-special-circumstances-petitions-based-rents-comparable-units) |
 
 ---
 
-## 9. Flagged for review
+## 7. Would it survive a tenant lawyer?
 
-Nine items are unverified, disputed between official sources, or not yet law. None blocks the analysis. Full detail,
-with source links and what would close each item, is on the
-[Flagged for review page](https://kanlerxz87-cyber.github.io/RentincreaseSF3/site/flagged.html).
+A San Francisco tenant can file a free Tenant Petition (Form 516C, box C) for an unlawful rent increase or a determination of the lawful rent, with **no filing deadline**, heard by a Rent Board Administrative Law Judge; the process is designed so nobody needs a lawyer. The site sets out a **16-point test** covering coverage, percentage version, base-rent basis, rounding, banking, the 12-month interval, anniversary effects, licence on the effective date, Housing Inventory currency, 30/90-day period, proof of service, notice contents, retaliation, protected characteristics and the explainability of any difference between units.
 
-| Ref | Severity | Item | Effect on the numbers |
-|---|---|---|---|
-| **F-01** | High | Legistar File #261020 would cap banked + capital-improvement increases at 10%/yr and would apply to notices served on or after 15 September 2026. Status: *Pending Committee Action* — not law. | A >10% Unit 2 notice could be reduced to 10% if enacted. The recommended 10.0% ($315.00) is unaffected either way. |
-| **F-02** | High | The Rent Board's banking threshold is internally inconsistent: the "Banked rent increases" page says **24 full months**, but its own worked examples and the "multiple years" and "irregular periods" pages use **12 months**. | On the 24-month reading, Unit 1 loses the 1.4% (leaving 1.6% = $63.92) and Unit 2's 13.1% becomes 11.7% ($368.55). |
-| **F-03** | High | Unit 2 rent history not evidenced. Everything banked assumes no increase since 1 June 2019. | If any increase was imposed, every banked figure falls and the anniversary may move. |
-| **F-04** | Medium | No official ZIP-level or neighbourhood rent benchmark exists. | Left blank, not estimated. No conclusion depends on it. |
-| **F-05** | Medium | Housing Inventory / licence status unknown — no filing history supplied. | Without a current licence, no increase is enforceable. |
-| **F-06** | Medium | Subsidy status unknown. If either unit were voucher-assisted, the programme's rules could displace the ordinance arithmetic. | Confirm before relying on the figures. |
-| **F-07** | Medium | No official dataset compares corporate and individual owner increase rates. | Left blank rather than inferred. |
-| **F-08** | Low | Building age and unit count are owner-reported; coverage turns on the certificate of occupancy date. | Confirm on the Planning Property Information Map or with a counsellor. |
-| **F-09** | Low | Six earlier editions of this analysis disagreed with each other (a "three-year banking cap" that does not exist; a 1 April anniversary; a "Step 0" that does not exist; no §6.14 analysis). | This edition supersedes them. They are kept for provenance only. |
+On the documented facts, Unit A at 3.0% and Unit B at 10.0% pass those checks; the open items are the two facts only the owner can confirm (Unit B's rent history and the licence status), plus the Unit A anniversary question.
+
+Sources: [sf.gov — unlawful rent increase](https://www.sf.gov/report-unlawful-rent-increase-or-request-review-your-rent-history) · [sf.gov — tenant petitions](https://www.sf.gov/tenant-petitions) · [CRD — housing](https://calcivilrights.ca.gov/housing/)
 
 ---
 
-## 10. What to do next
+## 8. One unit or both?
 
-1. **Report both units** into the Housing Inventory and confirm the licence covers the intended effective date.
-   [sf.gov](https://www.sf.gov/rent-board-housing-inventory)
-2. **Assemble the rent ledger** for Unit 2 from 2019 and Unit 1 from 2025. Every banked figure depends on it (F-03).
-3. **Decide the figures.** Unit 1: 1.6% ($63.92 → $4,058.92) on 1 February 2027, or 3.0% ($119.85 → $4,114.85) if the
-   1.4% is treated as banked. Unit 2: 1.6% ($50.40 → $3,200.40), or a phased 10.0% ($315.00 → $3,465.00) with the
-   remainder available later.
-4. **Re-check Legistar File #261020** before serving any notice over 10% (F-01).
-5. **Serve the notice** with the correct lead time and keep proof of service.
-6. **Have a California attorney review both notices** before service. This document is research, not legal advice.
+**No official source requires raising both units, and none says a selective increase is unlawful in itself.** FEHA prohibits discrimination *because of* a protected characteristic (race, colour, religion, sex, gender identity or expression, sexual orientation, marital status, national origin, ancestry, familial status, source of income, disability, veteran or military status, genetic information); the federal Fair Housing Act covers race, colour, religion, sex, familial status, national origin and disability; the Civil Code separately bars retaliatory increases within 180 days of a repair request or complaint. The Rent Board does **not** hear discrimination or retaliation claims — those go to the Civil Rights Department, HUD or court.
 
-**Free and official help.** Rent Board counselling: **415-252-4600** (weekdays 9–12 and 1–4).
-[sf.gov — Tenant and Landlord Resources](https://www.sf.gov/tenant-and-landlord-resources).
+Because the units have different base rents, different lease dates and different skipped years, their lawful maximums differ anyway — so different dollar amounts, and even different percentages, are normal. What protects the owner is a written, dated, objective rationale per unit, the same method applied to both, a check of the 180-day window, and evidence of the licence. The site publishes this as an **absence of authority** (FR-12) rather than as a positive rule.
+
+Sources: [Gov. Code § 12955](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=GOV&sectionNum=12955) · [42 U.S.C. § 3604](https://www.govinfo.gov/content/pkg/USCODE-2023-title42/html/USCODE-2023-title42-chap45-subchapI-sec3604.htm) · [CRD](https://calcivilrights.ca.gov/housing/) · [Civ. Code § 1942.5](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=1942.5)
 
 ---
 
-### Verification statement
+## 9. Two official sources that disagree, and the other open items
 
-Every rate was read from the Rent Board's published Form 571 and cross-checked against its own announcement for the
-same year. Every calculation was recomputed in code from the published percentage and the stated base rent, and the
-result is asserted at build time, so a wrong figure fails the build rather than reaching the page. Every table row is
-required by an automated check to carry a link to an official domain. Where two official pages disagree (F-02), both
-readings are published instead of one being chosen. Where no official source exists (F-04, F-07), the value is left
-blank and flagged. The full source register, with URLs and retrieval date, is at
-<https://kanlerxz87-cyber.github.io/RentincreaseSF3/site/sources.html>.
+| # | Item | Status |
+|---|---|---|
+| FR-01 | Unit B rent history 2019–2026 | **Unverified** — 11.5% / 13.1% are conditional |
+| FR-02 | Unit A anniversary: 1 Feb or 1 Apr | **Open** — both computed |
+| FR-03 | Banking: 24-month wording (banking page) vs 12-month test (worked example) | **Irregularity** — both texts published; 1.6% is safe under either |
+| FR-04 | Rent-increase licence status | **Unverified** — check the Portal |
+| FR-05 | 2027–28 allowable percentage | **Blank** — not announced |
+| FR-06 | File #261020 (proposed 10%/yr cap) | **Pending — not law** |
+| FR-07 | Ordinance § 37.3 not quoted paragraph by paragraph | **Scope limit** |
+| FR-08 | No official "normal"/average increase figure | **No official source** |
+| FR-09 | No official corporate-vs-individual statistics | **No official source** |
+| FR-10 | No official ZIP-level benchmark | **No official source** |
+| FR-11 | Notice signature requirement | **Blank** — not published |
+| FR-12 | No official rule requiring uniform increases | **Absence of authority** |
+| FR-13 | Voucher / subsidy status | **Unverified** |
+| FR-14 | Building record (1940, two legal units) | **Unverified** |
+| FR-15 | Corrections applied to earlier statements on this site | **Corrected** |
+| FR-16 | Noncompliance page not re-retrieved in this pass | **Scope limit** |
 
-*Anonymised internal research document. Placeholder names only; dates and amounts unchanged; location withheld.*
+Full detail with source links: `pages/flagged.html` on the live site.
+
+---
+
+**Not legal advice.** Confirm anything relied on with the SF Rent Board counselling line (**415-252-4600**, weekdays 9–12 and 1–4) and a California lawyer before serving a notice. Every figure above is quoted from the linked official page or calculated from an official percentage applied to an owner-reported base rent; nothing is inferred.
