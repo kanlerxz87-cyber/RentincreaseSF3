@@ -406,7 +406,7 @@ FLAGS = [
      "Confirm with the tenants' assistance programme before assuming the 1.6% / banked calculation applies.",
      "S13"),
     ("F9", "Low", "Market-rent benchmark not verified.",
-     "No official market-rent figure for ZIP 94122 is published at a ZIP level by HUD or Census in a form that could be retrieved here (HUD's FMR lookup and the Census API were not accessible during this session), so no comparison to market rent is presented.",
+     "No official market-rent figure is published at a ZIP code level by HUD or Census in a form that could be retrieved here (HUD's FMR lookup and the Census API were not accessible during this session), so no comparison to market rent is presented.",
      "Left blank rather than estimated. If a market benchmark is wanted, pull the HUD FY2027 Fair Market Rent for the San Francisco HUD Metro FMR Area directly from huduser.gov and record it with its retrieval date.",
      "S21"),
     ("F10", "Low", "PR/pages record and cross-session coordination.",

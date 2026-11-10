@@ -483,7 +483,7 @@ provenance terms without deleting anyone's work.
 |---|------|--------|------------|-------|
 | S1 | Claim tasks + record scope | done | `COORDINATION.md` | this section, committed and pushed first |
 | S2 | Re-verify every figure against official sources on 2026-11-10 | in progress | `site/**`, `EXECUTIVE_SUMMARY.md` | 20 official pages/PDFs re-fetched; results in `site/sources.html` + log below |
-| S3 | Privacy: remove ZIP/neighbourhood literals from **committed tooling** | in progress | `tools/build_site.py`, `tools/sitedata.py`, `verify_site.py` | repo is **public**: ZIP `94122` and the neighbourhood name sat in these four tracked files even though every published page was clean. Replacing with a privacy token so the checks still work |
+| S3 | Privacy: remove ZIP/neighbourhood literals from **committed tooling** | in progress | `tools/build_site.py`, `tools/sitedata.py`, `verify_site.py` | repo is **public**: the exact ZIP code and the neighbourhood name sat in these four tracked files even though every published page was clean. Replacing with a privacy token so the checks still work |
 | S4 | Build consolidated site: landing dashboard + category subpages, all tables source-linked | in progress | `site/**` | categories: executive summary, process & licence, units & maths, laws & caps, reasonable & normal, notice & reasons, corporate vs individual, tenant-lawyer review, one-vs-both, sources, flagged |
 | S5 | Flagged for Review page for every unverified / irregular item | in progress | `site/flagged.html` | F-01…F-16 incl. the four new findings below |
 | S6 | Rewrite `EXECUTIVE_SUMMARY.md` as the standalone deliverable | in progress | `EXECUTIVE_SUMMARY.md` | licence answer at the very front; step-by-step; official links |
@@ -527,7 +527,7 @@ address, no ZIP code, no neighbourhood name — in published pages **and** in tr
 dollar amounts are unchanged, as instructed. Location is recorded only as "San Francisco (location
 withheld)" because the ordinance is citywide and no cited rule turns on the ZIP.
 
-**Note on the ZIP-level question.** The user asked what is "reasonable and normal" for ZIP 94122
+**Note on the ZIP-level question.** The user asked what is "reasonable and normal" for their specific ZIP code
 specifically. No official source publishes a ZIP-level lawful or market rent benchmark, so the ZIP-specific
 number is left **blank and flagged (F-04)** rather than estimated. The lawful ceiling is citywide and does
 not vary by ZIP, so nothing in the answer depends on it.

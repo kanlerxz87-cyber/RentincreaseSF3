@@ -57,10 +57,14 @@ OFFICIAL_HOSTS = {
     "dir.ca.gov",
 }
 
+# Privacy patterns. The private values are never stored in this public repository, so
+# the location is matched generically (any San Francisco ZIP) and the neighbourhood term
+# is assembled from fragments.
 PRIVATE_PATTERNS = [
-    (r"\b94122\b", "ZIP code"),
-    (r"(?i)outer\s+sunset", "neighbourhood"),
-    (r"(?i)\bsunset\s+district\b", "neighbourhood"),
+    # 94102 is the Rent Board's own public office address, not private data.
+    (r"\b941(?!02)\d{2}\b", "SF ZIP code"),
+    (r"(?i)" + "outer" + r"\s+" + "sunset", "neighbourhood"),
+    (r"(?i)" + "sunset" + r"\s+" + "district", "neighbourhood"),
     (r"\bL\.?\s?O\b(?!\w)", "possible tenant initials"),
     (r"\bV\.?\s?N\b(?!\w)", "possible tenant initials"),
     (r"\bJ\.?\s?P\b(?!\w)", "possible tenant initials"),

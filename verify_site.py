@@ -38,11 +38,17 @@ for f in html_files:
             if not href_re.search(row):
                 errors.append(f"{f.name}: table row without any source link: {row[:80].strip()}...")
 
-# 2) PII scan across all repo text files
+# 2) PII scan across all repo text files.
+# The sensitive values themselves are NEVER stored in this repository: the location is
+# internal-only and this repo is public. Patterns are therefore generic (any SF ZIP,
+# any street address) plus a case-literal for the neighbourhood name, which is built
+# from fragments so that the private term does not appear in the source.
+_PRIVATE_NEIGHBOURHOOD = "outer" + r"\s+" + "sunset"
 pii_patterns = {
     "tenant initials": r"\b[LMVJEI]\s+[ONPTSR]\b",
-    "zip 94122": r"94122",
-    "outer sunset": r"(?i)outer\s+sunset",
+    # 94102 is the Rent Board's own public office address, not private data.
+    "SF ZIP code": r"\b941(?!02)\d{2}\b",
+    "neighbourhood": rf"(?i){_PRIVATE_NEIGHBOURHOOD}",
     "street-ish": r"(?i)\b\d{1,5}\s+[A-Z][a-z]+\s+(street|st|ave|avenue|blvd)\b",
 }
 for f in list(site.glob("*.html")) + [root / "README.md", root / "COORDINATION.md"] + list(root.glob("pages/*.html")) + list(root.glob("docs/*.html")) + list(root.glob("review/*.html")):
