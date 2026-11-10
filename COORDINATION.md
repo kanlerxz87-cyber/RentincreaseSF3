@@ -502,7 +502,6 @@ presented as a general rule (true only for personal service with a 28 February 2
 - **Privacy & flagged:** no tenant names/initials, no street address, no ZIP/location detail in any public page; placeholder labels only; dates/amounts unchanged; 10 flagged items remain with source links (rent history, property record, license status, subsidy/lease, pending 261020 not law, 2027-28 rate not yet announced, corporate dataset gap, ZIP benchmark gap, banking wording nuance, occupancy continuity).
 - **Automated checks 2026-11-10:** `verify_site.py` PASS (10 dashboard files), `tools/check_site.py` PASS (11 pages, 0 broken), `tools/verify_edition.py` PASS (10 pages, 25 warnings = flagged blank/internal only), `tools/audit_site.py` PASS (53 HTML files, 6 canonical pages all rows have official source, 5 Decimal math scenarios, archive labels, privacy patterns). No PII, no inferred values, no broken links, no remote code.
 
-
 ### PR / deploy record — `arena/1e699ad0`
 
 - **Branch:** `arena/1e699ad0-rentincreasesf3` → `main`
@@ -589,3 +588,30 @@ untouched, and publishes.
 4. **Unit A anniversary (FR-02).** Retained as an open question rather than resolved: the official rule ("12 months after the date the tenant's lease began") does not address a mid-tenancy renewal with a new occupant; both 1 Feb 2027 and 1 Apr 2027 are computed.
 5. **Legacy audit script assumed the wrong canonical set.** `tools/audit_site.py` treated `audit/` as canonical and required an "ARCHIVED RESEARCH" banner on `pages/`. Updated to treat `index.html` + `pages/*.html` as canonical and to require banners only on the superseded editions. No content deleted.
 6. **Unverified-notice wording (FR-16).** The "Notice of Owner Noncompliance" page was not re-retrieved in this pass, so its stronger "null and void" phrasing is not used; only the Housing Inventory page's "not enforceable" wording is quoted.
+---
+
+## Task board — `arena/4a563c4c` (session `arena/4a563c4c-rentincreasesf3`)
+
+Claimed 2026-11-10; branch == main at `0ac8be2` (PR #18 merged). Scope:
+(i) independent re-verification pass against official sources as of 2026-11-10
+(sf.gov announcements, rent-increases, banking, Housing Inventory, Form 571; sfgov.legistar.com File #261020);
+(ii) publish the **new official sf.gov notice "Proposed Changes to Rent Increase Limitations" (posted November 9, 2026)** — Board of Supervisors File No. 261020, not enacted — in the canonical edition (`index.html`, `pages/*`, `EXECUTIVE_SUMMARY.md`, `README.md`, `data/sources.json`), including its stated application to banked increases noticed on or after Sep 15, 2026;
+(iii) anonymization re-scan (no names/initials, no street/ZIP/neighborhood — dates and amounts unchanged);
+(iv) final integration: run all four check suites, open PR from this branch → main, merge, confirm GitHub Pages build + live site, record PR link and merge result here.
+Prior editions (`docs/`, `dashboard/`, `review/`, `audit/`, `verified/`) are NOT edited (other sessions' scopes); the new notice is logged here as a request for those editions.
+
+| # | Task | Status | File scope | Notes |
+|---|------|--------|------------|-------|
+| C1 | Claim tasks + sync branch | in progress | COORDINATION.md | branch identical to main at `0ac8be2` |
+| C2 | Re-verify official sources (2026-11-10) | in progress | none (read-only) | Legistar #261020 still **Pending Committee Action** (Land Use and Transportation Committee; introduced 2026-09-15; last action 10/7/2026 YC response). New: sf.gov notice posted 2026-11-09 on both rent-increases and banking pages |
+| C3 | Publish Nov 9, 2026 sf.gov notice in canonical edition | pending | index.html, pages/*, EXECUTIVE_SUMMARY.md, README.md, data/sources.json | notice + Legistar cross-links; Units 1/2 impact note; no computed figure changes (not law) |
+| C4 | Re-scan for PII; run verify_site.py / check_site.py / verify_edition.py / audit_site.py | pending | read-only | all four must pass |
+| C5 | PR → main → merge → Pages deploy → record here | pending | COORDINATION.md | record PR link + merge result + deploy status |
+
+### Verification log — `arena/4a563c4c` (2026-11-10, UTC)
+
+- sf.gov "Annual Rent Increase for 3/1/26 - 2/28/27 Announced" (dated Jan 14, 2026) — 1.6% for 3/1/2026–2/28/2027; prior year 1.4% — re-confirmed 2026-11-10.
+- sf.gov "Learn about rent increases" — banner: **"Notice: Proposed Changes to Rent Increase Limitations — Posted November 9, 2026 ... File No. 261020 ... would temporarily limit the combined amount of banked rent increases and capital improvement rent increases ... to 10% per year ... banked rent increases noticed on or after September 15, 2026 ... This legislation has not been enacted and is subject to change."** — re-confirmed 2026-11-10. Also re-confirms 1.6% rate, base-rent-only, 30/90-day notice (+5 if mailed), anniversary rule, additional-occupant prohibition, license prerequisite since Jul 1, 2022 (Mar 1, 2023 for 1–9 unit condos/buildings).
+- sf.gov "Banked rent increases" — same Nov 9, 2026 banner; 24-full-months threshold; unlimited/no expiry since Apr 1, 1982; additive not compounded; 30/90-day notice; license prerequisite — re-confirmed 2026-11-10.
+- sf.gov "The Rent Board Housing Inventory" — all owners must report; license auto-generated for tenant-occupied units; March 1 annual deadline; 10+ units from Jul 1, 2022, condos/1–9 units from Mar 1, 2023; increase not enforceable without license on effective date — re-confirmed 2026-11-10.
+- sfgov.legistar.com File #261020 (fetched 2026-11-10) — Type: Ordinance; **Status: Pending Committee Action**; In control: Land Use and Transportation Committee; Introduced 9/15/2026 (sponsors Sauter, Chan, Mahmood); 30-Day Rule assigned 9/15/2026; referred 9/18/2026 & 9/30/2026; Youth Commission response 10/7/2026; no final action; not law.
