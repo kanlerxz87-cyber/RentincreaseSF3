@@ -635,3 +635,20 @@ PR #20 edits `index.html` and `pages/*.html` from a pre-rebuild base and now con
 | Final content fix (this PR) | Unit B rate table heading corrected from "eight" to "six annual percentages that were skipped" |
 
 Nothing is left in progress for this session. Open PRs belonging to other sessions (`#20` `arena/4a563c4c`, `#22` `arena/73e9c9c3`, plus older `#1`, `#8`) are untouched; the handoff note above explains why `#20` should be rebased rather than merged as-is, and `#22`'s privacy work covers the four legacy files this session did not edit.
+
+---
+
+## Session `arena/8c577e09-rentincreasesf3` — independent verification pass (merged 2026-11-10)
+
+Scope delivered as a **self-contained edition** under `verification/`; the canonical site was not
+rewritten. Full claim, findings and log are in the section above (added before PR #24 landed); this
+entry records the merge result only.
+
+- Branch `arena/8c577e09-rentincreasesf3` → `main`; PR **#25**.
+- Merge conflicts: `index.html` / `README.md` / `EXECUTIVE_SUMMARY.md` resolved in favour of `main`
+  (canonical rebuild preserved); `COORDINATION.md` conflicts resolved by keeping both boards.
+- Deliverables: `verification/` (11 files, own stylesheet), `tools/build_v2.py`, `tools/check_v2.py`,
+  README section. Gate: 212 data rows — 210 with an official source, 2 blank + flagged; links and
+  anchors resolve; privacy sweep passes (detectors imported from `tools/privacy_scan.py`).
+- Requests still open for the canonical-site owners: relabel `pages/units.html` "Combined maximum —
+  13.1%" as a banked balance to June 2026, and add a nav tile for `verification/index.html`.

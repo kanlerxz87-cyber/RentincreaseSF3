@@ -72,3 +72,40 @@ Earlier editions remain online unchanged for audit: `docs/` (verification editio
 Parallel-session task board, claims, merge and deploy records: [`COORDINATION.md`](COORDINATION.md).
 
 **Not legal advice.** Confirm with the SF Rent Board counselling line (415-252-4600) and a California lawyer before serving any notice.
+
+## Independent verification edition — `verification/` (10 November 2026)
+
+A second, self-contained pass re-fetched **every** official source cited on this site and re-ran the
+arithmetic from the published percentages. It confirms every headline figure here. It is published as
+its own edition so that the canonical pages above were not rewritten:
+
+**Start at [`verification/index.html`](verification/index.html)** — overview · [executive summary](verification/executive-summary.html) ·
+[licence and process](verification/license.html) · [laws and caps](verification/laws.html) ·
+[units and arithmetic](verification/units.html) · [notice and reasons](verification/notice.html) ·
+[tenant-lawyer test](verification/tenant-review.html) · [owner practice](verification/practice.html) ·
+[flags F-11…F-23](verification/flagged.html) · [28-source register](verification/sources.html)
+
+What it adds:
+
+- **The `13.1%` Unit B figure is a floor, not the June 2027 ceiling.** It is the balance banked to
+  June 2026. An increase effective 1 June 2027 must also use the allowance in effect on that date
+  (1 Mar 2027 – 29 Feb 2028), which the Rent Board has not published — so no June 2027 maximum can be
+  stated yet. ([sf.gov — rent increases](https://www.sf.gov/learn-about-rent-increases-san-francisco))
+- **The 7% in Admin. Code §37.3 is a ceiling on the formula, not an available increase.** The published
+  allowance (1.6%) governs. ([§37.3](https://codelibrary.amlegal.com/codes/san_francisco/latest/sf_admin/0-0-0-70881))
+- **The Rent Board Fee is a separate obligation from the rent-increase licence** — $59.00 per dwelling
+  unit for 2026-27, due 1 March, 5% monthly penalty capped at 15%, 50% recoverable from tenants,
+  exemption window closing 14 December 2026. No official page links the fee to the licence either way,
+  so that question is published as open (F-15), not inferred.
+  ([sf.gov — Rent Board Fee](https://www.sf.gov/rent-board-fee))
+- **Security-deposit interest of 4.2%** (1 Mar 2026 – 28 Feb 2027) is a separate annual duty that does
+  not consume a rent allowance.
+- **The §6.14 / last-original-occupant rule is narrower than "vacancy resets rent"** — it reaches
+  *subtenants* only after the **last** original occupant permanently vacates, and depends on a written
+  §6.14 notice served in time; a co-tenant is not subject to it.
+  ([sf.gov — §6.14 and Costa-Hawkins](https://www.sf.gov/information--rent-increases-under-section-614-and-costa-hawkins))
+
+Gate: `python3 tools/check_v2.py` — 212 data rows (210 with an official source, 2 blank and flagged),
+every internal link and anchor resolving, anonymisation, and the arithmetic recomputed from the
+published percentages. The personal-data detectors are imported from `tools/privacy_scan.py`, so no
+script in this repository spells out the values it protects.
