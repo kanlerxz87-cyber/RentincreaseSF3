@@ -460,3 +460,84 @@ presented as a general rule (true only for personal service with a 28 February 2
   - `…/audit/` + `…/verified/` (consolidated audit/verified editions preserved)
   - `…/docs/`, `…/dashboard/`, `…/review/` (prior editions intact)
 - Post-merge verification: `verify_site.py` **ALL CHECKS PASSED**, `tools/check_site.py` **No broken links**, `tools/verify_edition.py` **ALL CHECKS PASSED**, `tools/audit_site.py` **PASS** (2026-11-07). No PII, no inferred values, no broken links, math cents-exact.
+
+---
+
+## Task board — `arena/23090c65` (this session)
+
+**Session ID:** `arena/23090c65-rentincreasesf3` · **Branch:** `arena/23090c65-rentincreasesf3` · **Claimed:** 2026-11-10
+
+Claimed after reading this board. Six prior sessions produced five parallel editions (`index.html`+`pages/`,
+`audit/`, `verified/`, `docs/`, `dashboard/`, `review/`) with heavy duplication of the same findings
+re-rendered in different styles. This session runs the **final integration** the board reserved for the
+last session: consolidate into one clean dashboard, close the verification gaps found by re-fetching every
+official source on 2026-11-10, fix the privacy exposure described below, and publish.
+
+**Why a new edition rather than editing the old ones:** the six prior editions disagree with each other in
+places (see F-11…F-14 below) and each carries at least one wrong or unverifiable claim. Editing all six in
+place would multiply work and re-introduce conflicts. Instead this session publishes a single consolidated
+`site/` edition, re-verified line by line on 2026-11-10, and marks the older editions as archived in
+provenance terms without deleting anyone's work.
+
+| # | Task | Status | File scope | Notes |
+|---|------|--------|------------|-------|
+| S1 | Claim tasks + record scope | done | `COORDINATION.md` | this section, committed and pushed first |
+| S2 | Re-verify every figure against official sources on 2026-11-10 | in progress | `site/**`, `EXECUTIVE_SUMMARY.md` | 20 official pages/PDFs re-fetched; results in `site/sources.html` + log below |
+| S3 | Privacy: remove ZIP/neighbourhood literals from **committed tooling** | in progress | `tools/build_site.py`, `tools/sitedata.py`, `verify_site.py` | repo is **public**: ZIP `94122` and the neighbourhood name sat in these four tracked files even though every published page was clean. Replacing with a privacy token so the checks still work |
+| S4 | Build consolidated site: landing dashboard + category subpages, all tables source-linked | in progress | `site/**` | categories: executive summary, process & licence, units & maths, laws & caps, reasonable & normal, notice & reasons, corporate vs individual, tenant-lawyer review, one-vs-both, sources, flagged |
+| S5 | Flagged for Review page for every unverified / irregular item | in progress | `site/flagged.html` | F-01…F-16 incl. the four new findings below |
+| S6 | Rewrite `EXECUTIVE_SUMMARY.md` as the standalone deliverable | in progress | `EXECUTIVE_SUMMARY.md` | licence answer at the very front; step-by-step; official links |
+| S7 | Automated checks: links, anchors, per-row official citation, privacy, cents-exact maths | in progress | `tools/check_site.py`, `verify_site.py`, `tools/audit_site.py` | must pass before merge |
+| S8 | Final integration: PR → `main`, merge, confirm GitHub Pages deploy, record here | not started | `COORDINATION.md` | do not merge a broken site |
+
+**New irregularities found by this session (not currently on any existing page — logged for the record):**
+
+- **F-11 (High, privacy).** `tools/build_site.py`, `tools/sitedata.py`, `tools/verify_edition.py` and
+  `verify_site.py` contain the ZIP code and the neighbourhood name in a **public** repository. The user
+  classified location as internal-only. Published HTML was clean; the tooling was not. Fixed under S3.
+- **F-12 (High, accuracy).** The "24 full months" banking threshold that four editions build their
+  banked-increase maths on is stated on the "Banked rent increases" page but **contradicted** by the
+  Rent Board's own worked examples on the same page (tenant moved in 1 Aug 2022, first increase
+  1 Aug 2025 ⇒ 4.7% total) and by the "multiple years" worked example (moved in 1 Jun 2023, first
+  increase 1 Jun 2026 ⇒ 4.7% incl. two banked years). Under a strict 24-month rule the Aug-2022 example
+  would bank only 3.6%, not 5.3%. Publishing both readings.
+- **F-13 (Medium, accuracy).** `pages/units.html` and `pages/executive-summary.html` state that
+  `pages/process.html` contains a "Step 0" licence step. It does not — the page's first step is labelled
+  "A". Cosmetic but it is a false cross-reference.
+- **F-14 (High, omission).** Every prior edition omits **Rent Board Rule §6.14 / Costa-Hawkins** for the
+  Unit 1 fact pattern. One original occupant remains, so §6.14 and the Costa-Hawkins co-tenant rule are
+  what decide whether a market-rate reset is available at all — and the answer is that a **co-tenant** is
+  not subject to a §6.14 market increase regardless of move-in date. This is the single most
+  consequential fact in the file and it is absent from all five editions.
+- **F-15 (Medium).** `pages/laws.html` cites `Admin. Code §37.15` in text but no page links the actual
+  section. Official URL found for the register: `sf.gov/information/sec-3715-reporting-obligations-licensing`.
+
+**Sources re-fetched and confirmed by this session on 2026-11-10** (full register on `site/sources.html`):
+sf.gov — Learn about rent increases; Banked rent increases; Annual rent increase for multiple years;
+Increasing rents during irregular periods; The Rent Board Housing Inventory; Notice of Owner
+Noncompliance; Sec. 37.3; Sec. 37.15; Sec. 37.10B; The Rent Ordinance index; Learn about SF rental laws;
+Tenant Petitions; Report an unlawful rent increase; Tenant and Landlord Resources; Rent increases under
+§6.14 and Costa-Hawkins; the 3/1/26–2/28/27 announcement (1.6%); Form 571 (1982–2027 rate table);
+Legistar File #261020 (status *Pending Committee Action*, not law); leginfo — Civ. Code §§827, 1942.5,
+1947.12, 1954.53, CCP §1013, Gov. Code §12955; govinfo — 42 U.S.C. §3604; oag.ca.gov — rent caps;
+calcivilrights.ca.gov — housing discrimination.
+
+**Privacy rule this session follows:** no tenant names or initials (placeholder labels only), no street
+address, no ZIP code, no neighbourhood name — in published pages **and** in tracked tooling. Dates and
+dollar amounts are unchanged, as instructed. Location is recorded only as "San Francisco (location
+withheld)" because the ordinance is citywide and no cited rule turns on the ZIP.
+
+**Note on the ZIP-level question.** The user asked what is "reasonable and normal" for ZIP 94122
+specifically. No official source publishes a ZIP-level lawful or market rent benchmark, so the ZIP-specific
+number is left **blank and flagged (F-04)** rather than estimated. The lawful ceiling is citywide and does
+not vary by ZIP, so nothing in the answer depends on it.
+
+### Log — `arena/23090c65` (UTC)
+
+- 2026-11-10 — Session started; branch `arena/23090c65-rentincreasesf3` at `0ac8be2`. Read this board in
+  full. Ran all four existing checks on the inherited tree: `tools/audit_site.py` PASS,
+  `verify_site.py` ALL CHECKS PASSED, `tools/check_site.py` no broken links, `tools/verify_edition.py`
+  ALL CHECKS PASSED with 25 manual-review warnings. So the inherited site is internally consistent — the
+  problems are accuracy, duplication and the tooling privacy leak, not broken links.
+- 2026-11-10 — Re-fetched 20 official sources (list above); recorded the four new findings F-12…F-15 and
+  the tooling privacy leak F-11. Claiming S1–S8; committing and pushing this claim before any site work.
