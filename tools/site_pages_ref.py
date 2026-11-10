@@ -108,7 +108,7 @@ REQS = [
     ("R-18", "Anonymise all personal information, keep dates and amounts", "Answered — placeholders, no ZIP or neighbourhood published", "pages/flagged.html", "SF_HI"),
     ("R-19", "Every table row must link an official source; unverifiable values blank and flagged", "Answered — enforced by the build check", "pages/sources.html", "SF_571"),
     ("R-20", "Clean GitHub Pages site, dashboard landing, subpages by category", "Answered", "index.html", "SF_LI"),
-    ("R-21", "Flag irregularities for manual review", "Answered — 17 flags published", "pages/flagged.html", "SF_BANK"),
+    ("R-21", "Flag irregularities for manual review", "Answered — 18 flags published", "pages/flagged.html", "SF_BANK"),
     ("R-22", "Coordinate with parallel sessions via COORDINATION.md", "Answered — claim, scope and record logged", "index.html", "SF_HI"),
     ("R-23", "Open a pull request, merge it and confirm the Pages deployment", "Answered — recorded in COORDINATION.md", "index.html", "SF_HI"),
 ]
@@ -186,7 +186,7 @@ FLAGS = [
      "The tenancy began 1 February 2025 and continued when a new co-tenant joined on 1 April 2026 at the same rent. The Rent Board's rule starts the clock 12 months after the lease began, but its pages do not address a mid-tenancy lease renewal with a new occupant. Both outcomes are computed: 1 Feb 2027 (3.0%) and 1 Apr 2027 (percentage not yet announced).",
      "Written confirmation from a Rent Board counsellor; keep the original lease and the 2026 renewal together.", "SF_LI"),
     ("FR-03", "Two official pages describe banking differently", "Irregularity",
-     "The banked-increases page says a skipped increase “is only banked if at least 24 full months pass without any rent increase”; the worked example on the rent-increases page applies a 12-month test to each skipped increase. Both are official Rent Board text and are quoted on the executive summary page. The same difference can change <b>Unit B's</b> total — see <b>FR-17</b>. For Unit A the 1.6%-only option is lawful under either reading; measured from the date the 1.4% became available and held to 24 months, Unit A's 1.4% would bank only on 1 February 2028.",
+     "The banked-increases page says a skipped increase “is only banked if at least 24 full months pass without any rent increase”; the worked example on the rent-increases page applies a 12-month test to each skipped increase. Both are official Rent Board text and are quoted on the executive summary page. The same difference can change <b>Unit B's</b> total — see <b>FR-18</b>. For Unit A the 1.6%-only option is lawful under either reading; measured from the date the 1.4% became available and held to 24 months, Unit A's 1.4% would bank only on 1 February 2028.",
      "Rent Board counsellor confirmation, or a written determination; publish both texts until then.", "SF_BANK"),
     ("FR-04", "Rent-increase licence status unknown", "Unverified",
      "No Housing Inventory filing history was provided. Without a licence in effect on the effective date the notice is not enforceable, whatever the percentage.",
@@ -230,6 +230,9 @@ FLAGS = [
     ("FR-17", "“13.1%” was labelled a maximum catch-up / June 2027 ceiling", "Corrected 10 Nov 2026",
      "13.1% is the banked 11.5% plus the 1.6% annual allowance in force through 28 February 2027. It is therefore the maximum only for an effective date <b>on or before 28 February 2027</b>; for a later date (for example 1 June 2027) the banked 11.5% still carries forward but the annual component is whatever the Rent Board publishes for that period, which is not yet announced. The label has been rewritten on the dashboard, executive summary, units and rules pages, and a blank row now records that the 2027–28 percentage is unpublished.",
      "Re-check the Rent Board's published percentage before any effective date on or after 1 March 2027.", "SF_571"),
+    ("FR-18", "Unit B’s banked total depends on which official banking test is applied <i>and</i> on the effective date", "Irregularity",
+     "The <b>12-month</b> test in the Rent Board’s worked example gives 11.5% banked and <b>13.1%</b> in total. The <b>24-month</b> wording on the banking page, measured from the date each skipped increase first became available, excludes the 1.4% that became available on 1 June 2025 for any effective date before 1 June 2027, giving 10.1% banked and <b>11.7%</b> in total. On 1 June 2027 the full 11.5% banks on either reading, but the annual percentage for 1 March 2027 – 29 February 2028 has not been announced, so no total can be stated. All three outcomes are published on the units page; a phased <b>10.0%</b> increase is supportable on every reading.",
+     "Rent Board counsellor confirmation of which test the Board applies — ideally before serving anything above 10%.", "SF_BANK"),
 ]
 
 

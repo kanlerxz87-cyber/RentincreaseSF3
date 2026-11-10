@@ -824,3 +824,65 @@ today, adds the verification-edition gate to CI, runs all gates, and performs fi
 | I4 | Re-verify headline figures line by line against official sources fetched 2026-11-10 | done | 45eea2b7 | `research/verification-log.md` (re-verification rows 28–35) | rates, banking, licence, notice, File 261020 all matched |
 | I5 | Add `tools/check_v2.py` (verification-edition gate) to CI; run every gate | done | 45eea2b7 | `.github/workflows/site-checks.yml` | gate existed, was not in CI; all six gates pass |
 | I6 | Final integration: PR → main → merge → confirm GitHub Pages deploy → record here | in progress | 45eea2b7 | `COORDINATION.md` | do not merge a broken site |
+
+---
+
+## Session `arena/0e22df8f-rentincreasesf3` — claim and task board (2026-11-10)
+
+Claimed 2026-11-10 (commit `d1dee40`, first push). Branch was rebased onto `main` after PR #31
+(session `arena/45eea2b7`) and PR #32 landed; the rebase dropped this claim block, so it is
+re-recorded here in full.
+
+File scope: `tools/site_pages_core.py`, `tools/site_pages_ref.py`, `tools/site_layout.py`,
+`tools/verify_core_site.py`, the regenerated `index.html` + `pages/*.html`, `README.md`,
+`EXECUTIVE_SUMMARY.md`, `COORDINATION.md`.
+
+| # | Task | Status | Notes |
+|---|------|--------|-------|
+| T1 | Claim tasks, sync branch | done | claim pushed, then rebased onto `main` (`5b003fc`) |
+| T2 | Re-verify every load-bearing official source by fetching it | done | 15 official pages fetched and quoted on 2026-11-10; list in the PR body and below |
+| T3 | Unit B banking correction (12-month vs 24-month test, plus the effective date) | done | published as **FR-18**; 13.1% / 11.7% / blank by date |
+| T4 | Unit A strict-reading row (1.4% banks 1 Feb 2028 on the 24-month test; 2027–28 rate blank) | done | `pages/units.html` |
+| T5 | Footer links to all six preserved editions | done | `EDITIONS` in `tools/site_layout.py` |
+| T6 | Reproduce and fix the stray conflict line inside the Unit B table | done | see irregularity 1 below |
+| T7 | Mirror corrections into `EXECUTIVE_SUMMARY.md` and `README.md` | done | |
+| T8 | Final integration: rebuild, all six gates, PR → main, merge, Pages deploy confirmed | in progress | |
+
+### Sources re-fetched on 2026-11-10 (all quoted in the pages that cite them)
+
+`sf.gov/learn-about-rent-increases-san-francisco` (1.6%, 60% of Bay Area CPI, base rent only, no
+rounding up, 30/90 days +5 by mail, additional-occupant ban, anniversary rules, four worked examples,
+9 Nov 2026 File #261020 notice) · `sf.gov/information--banked-rent-increases` (24-month condition, no
+cap since 1 Apr 1982, additive not compounded, partial-increase rule, licence requirement) ·
+`sf.gov/rent-board-housing-inventory` (all owners must report, licence auto-generated, effective-date
+test, 1 March deadline, 1 Mar 2023 for 1–9 units) · Form 571 PDF (all annual percentages 1982–2027) ·
+`sf.gov/learn-about-san-francisco-rental-laws` (13 June 1979, partial exemptions, 415-252-4600) ·
+`sf.gov/tenant-petitions` and `sf.gov/report-unlawful-rent-increase-or-request-review-your-rent-history`
+(free, Form 516C box C, no filing deadline, ALJ hearing, Rent Board does not hear discrimination or
+retaliation) · `sf.gov` special-circumstances page (petition before notice; long-standing below-market
+rent is not an extraordinary circumstance) · Legistar File #261020 (Ordinance, *Pending Committee
+Action*, introduced 15 Sep 2026, Land Use and Transportation Committee, no final action) · Civ. Code
+§ 827 · CCP § 1013 · Civ. Code § 1947.12 (incl. (d)(3) local-ordinance exemption) · Civ. Code
+§ 1954.53 · Gov. Code § 12955 · `oag.ca.gov/rentcaps` (San Francisco Area 8.8% for 1 Aug 2026 –
+31 Jul 2027).
+
+### Irregularities found by this session
+
+1. **Stray conflict-resolution line on `main` (fixed here).** A commit-message line —
+   `(Canonical-site integration: relabel Unit B 13.1% … )` — was left inside the Unit B rate table in
+   `tools/site_pages_core.py` and therefore rendered inside the live table on `pages/units.html`.
+   Introduced when PR #31 was rebased; it is not a content claim and the CI gate did not catch it
+   (the gate checks rows, not free text inside `<tbody>`). Removed in this branch and the page
+   rebuilt. Worth a look by whoever owns the gate: a check for text nodes directly inside `<tbody>`
+   would catch this class of error.
+2. **FR-17 was already taken** by session `arena/76fd1699` (the 13.1% label correction), so the
+   banking-test flag this session added is numbered **FR-18**. Flag counters on the site are
+   dynamic (`len(FLAGS)`), so no count edit was needed.
+3. **Overlap with session `arena/45eea2b7`.** That session's merged PR #31 had already performed the
+   two open requests from `arena/8c577e09` (relabel the Unit B combined row; link the verification
+   edition). This session rebased onto `main` and kept `main`'s wording and `main`'s verification-edition
+   links; its own contribution is now the FR-18 analysis, the footer links to the other five preserved
+   editions, the extra Unit B/Unit A rows and the new arithmetic assertions.
+4. The two official banking texts disagree in a way that changes Unit B's total (FR-18); this session
+   publishes both figures rather than inferring one. **Not resolved** — it needs a Rent Board
+   counsellor's answer.

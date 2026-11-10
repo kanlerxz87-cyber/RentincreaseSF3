@@ -60,7 +60,7 @@ Percentages are official; dollar amounts are the official percentage multiplied 
 
 Unit B's banked total: 1.8% (2020) + 0.7% (2021) + 2.3% (2022) + 3.6% (2023) + 1.7% (2024) + 1.4% (2025) = **11.5%**, plus the 1.6% annual in force on the effective date = **13.1%**, which is therefore the maximum only for an effective date on or before 28 February 2027: for a later date (for example 1 June 2027) the 11.5% still carries forward but the annual component is whatever the Rent Board then publishes — not yet announced, so it is left blank (FR-05, FR-17). The percentages come from [Form 571](https://www.sf.gov/documents/34344/571_Allowable_Annual_Increases_26-27_1.pdf).
 
-**Two official texts disagree about when a skipped increase banks, and it changes the Unit B total (FR-17).** The [banking page](https://www.sf.gov/information--banked-rent-increases) says “a skipped increase is only banked if at least 24 full months pass without any rent increase”; the [worked example](https://www.sf.gov/learn-about-rent-increases-san-francisco) on the rent-increases page applies a 12-month test to each skipped increase, measured from the date it first became available. Read the 24-month wording as running from the last rent charged (1 June 2019) and everything has long since banked — 11.5% + 1.6% = 13.1%. Read it as running from the date each skipped increase became available and the 1.4% for 1 June 2025 is excluded for any effective date before 1 June 2027 — 10.1% + 1.6% = **11.7%**. On 1 June 2027 the full 11.5% banks on either reading, but the annual percentage for 1 March 2027 – 29 February 2028 has not been announced, so no total can be stated for that date. Both figures are published rather than a single one inferred; a **phased 10.0%** increase is supportable on every reading.
+**Two official texts disagree about when a skipped increase banks, and it changes the Unit B total (FR-18).** The [banking page](https://www.sf.gov/information--banked-rent-increases) says “a skipped increase is only banked if at least 24 full months pass without any rent increase”; the [worked example](https://www.sf.gov/learn-about-rent-increases-san-francisco) on the rent-increases page applies a 12-month test to each skipped increase, measured from the date it first became available. Read the 24-month wording as running from the last rent charged (1 June 2019) and everything has long since banked — 11.5% + 1.6% = 13.1%. Read it as running from the date each skipped increase became available and the 1.4% for 1 June 2025 is excluded for any effective date before 1 June 2027 — 10.1% + 1.6% = **11.7%**. On 1 June 2027 the full 11.5% banks on either reading, but the annual percentage for 1 March 2027 – 29 February 2028 has not been announced, so no total can be stated for that date. Both figures are published rather than a single one inferred; a **phased 10.0%** increase is supportable on every reading.
 
 **Notice-date arithmetic (from 10 November 2026).** A 13.1% Unit B increase designed to take effect 1 February 2027 needed service by 3 November 2026 — that window has closed. The earliest reachable date for a >10% increase served today is 8 February 2027 (90 days). A 10.0% increase can still take effect 1 February 2027 if served by 2 January 2027 (28 December 2026 if mailed).
 
@@ -141,7 +141,7 @@ Sources: [Gov. Code § 12955](https://leginfo.legislature.ca.gov/faces/codes_dis
 |---|---|---|
 | FR-01 | Unit B rent history 2019–2026 | **Unverified** — 11.5% / 13.1% are conditional |
 | FR-02 | Unit A anniversary: 1 Feb or 1 Apr | **Open** — both computed |
-| FR-03 | Banking: 24-month wording (banking page) vs 12-month test (worked example) | **Irregularity** — both texts published; for Unit A 1.6% is safe under either (Unit B: see FR-17) |
+| FR-03 | Banking: 24-month wording (banking page) vs 12-month test (worked example) | **Irregularity** — both texts published; for Unit A 1.6% is safe under either (Unit B: see FR-18) |
 | FR-04 | Rent-increase licence status | **Unverified** — check the Portal |
 | FR-05 | 2027–28 allowable percentage | **Blank** — not announced |
 | FR-06 | File #261020 (proposed 10%/yr cap) | **Pending — not law** |
@@ -156,6 +156,7 @@ Sources: [Gov. Code § 12955](https://leginfo.legislature.ca.gov/faces/codes_dis
 | FR-15 | Corrections applied to earlier statements on this site | **Corrected** |
 | FR-16 | Noncompliance consequence wording | **Verified and closed 10 Nov 2026** — the page now states an unlicensed notice "may be null and void (this may apply for multiple years)" and the tenant "may be entitled to a rent refund" |
 | FR-17 | "13.1%" labelled a June 2027 ceiling | **Corrected 10 Nov 2026** — it is the maximum only for an effective date on or before 28 Feb 2027 |
+| FR-18 | Unit B's banked total depends on which banking test applies *and* on the effective date: 13.1% (12-month test) vs 11.7% (24-month test, effective date before 1 June 2027); on 1 June 2027 the 11.5% banks but the 2027–28 annual rate is unannounced | **Irregularity** — both figures published; 10.0% phased is safe under either |
 
 Full detail with source links: `pages/flagged.html` on the live site.
 
