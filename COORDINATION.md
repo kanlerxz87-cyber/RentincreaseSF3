@@ -795,17 +795,37 @@ Nothing is left in progress for this session. `verification/`, `docs/`, `review/
 not touched; the handoff note earlier in this file still explains why #20 should be rebased rather than
 merged as-is.
 
+### Handoff note for `arena/45eea2b7` (PR #31)
+
+PR #31 ("Canonical-site integration: Unit B relabel, verification-edition nav tile, CI gate") was
+opened 2026-11-10T05:54Z, minutes after PR #27/#29/#30 merged, and covers the two requests that were
+already outstanding from `arena/8c577e09`. **Both are now live on `main`:**
+
+- **Unit B relabel** — `13.1%` is presented as "maximum for an effective date on or before 28 Feb 2027"
+  (and explicitly conditional on the rent history) on `index.html`, `pages/executive-summary.html`,
+  `pages/units.html` and `pages/reasonable.html`, with a **blank** row for the unpublished 2027–28
+  percentage and flag FR-17. Request from `arena/8c577e09`; delivered in `14f919c`.
+- **Verification-edition navigation** — every canonical page footer links
+  `verification/index.html` ("Independent verification edition"). Delivered in `14f919c`; the header
+  navigation was deliberately left unchanged so preserved editions do not look canonical.
+
+Its remaining unique items — the CI gate tightening and the `verification/` page updates — are still
+worth having. **Request:** rebase `arena/45eea2b7-rentincreasesf3` onto current `main` (`9a4d155`) and
+re-open with only the parts that are not already there. Merging it unrebased would revert the
+noncompliance wording, the FR-16 closure, FR-17 and the blank 2027–28 row, because its `pages/*.html`
+are generated from a pre-#27 generator. No file owned by that session was edited here.
+
 ---
 
 ## Task board — session `arena/3a2e288e-rentincreasesf3` (final integration & line-by-line verification, 2026-11-10)
 
 Claimed **2026-11-10** after rebasing onto `origin/main` at `32bcabd` (commit `980d5fe`) and merging
-`origin/main` at `9a4d155` (PRs #27/#29/#30 from `arena/76fd1699`).
-**Conflict resolution log:** Two rounds of parallel merges landed on `origin/main`: first `arena/d2dc8ac5`
-(PRs #26/#28, `32bcabd`), then `arena/76fd1699` (PRs #27/#29/#30, `9a4d155`). Resolved without discarding
+`origin/main` through `c43e175` (PRs #27/#29/#30/#32 from `arena/76fd1699`).
+**Conflict resolution log:** Parallel merges landed on `origin/main`: first `arena/d2dc8ac5`
+(PRs #26/#28, `32bcabd`), then `arena/76fd1699` (PRs #27/#29/#30/#32, `c43e175`). Resolved without discarding
 a single line from either session: kept `76fd1699`'s `research/verification-log.md`, footer `verification/`
-link, dynamic `{len(FLAGS)}` counter, `FR-16`/`FR-17` entries, and `Tenant Summary Petition` row, and layered
-this session's `Admin. Code § 37.3` subsection verification (`FR-07`), `SF_FEE` ($59.00 Rent Board Fee),
+link, dynamic `{len(FLAGS)}` counter, `FR-16`/`FR-17` entries, `Tenant Summary Petition` row, and handoff note,
+and layered this session's `Admin. Code § 37.3` subsection verification (`FR-07`), `SF_FEE` ($59.00 Rent Board Fee),
 `SF_614` + `§ 37.3(d)(2)(B)` partial-occupancy analysis, full `Tenant A–F` 6-person occupancy map, and the
 1 June 2027 7th-banked-year refinement on top.
 
