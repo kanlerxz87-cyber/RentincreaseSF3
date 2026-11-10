@@ -114,10 +114,25 @@ REQS = [
 
 
 def requirements():
+    labels = {
+        "index.html": "Dashboard",
+        "pages/executive-summary.html": "Executive summary",
+        "pages/process.html": "Licence &amp; process",
+        "pages/units.html": "Units &amp; maths",
+        "pages/laws.html": "Rules &amp; caps",
+        "pages/reasonable.html": "Reasonable &amp; normal",
+        "pages/practice.html": "Market practice",
+        "pages/notice.html": "Notice &amp; reasons",
+        "pages/review.html": "Tenant-lawyer test",
+        "pages/discrimination.html": "One unit or both?",
+        "pages/requirements.html": "Requirements checklist",
+        "pages/sources.html": "Sources register",
+        "pages/flagged.html": "Flagged for review",
+    }
     rows = "".join(
-        '<tr><td class="nowrap"><b>%s</b></td><td>%s</td><td>%s</td><td><a href="%s">%s</a></td>%s</tr>'
-        % (rid, text, status, "../" + dest,
-           dest, cell(k))
+        '<tr><td class="nowrap"><b>%s</b></td><td>%s</td><td>%s</td>'
+        '<td><a href="../%s">%s</a></td>%s</tr>'
+        % (rid, text, status, dest, labels.get(dest, dest), cell(k))
         for rid, text, status, dest, k in REQS
     )
     body = f"""
