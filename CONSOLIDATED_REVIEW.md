@@ -2,6 +2,7 @@
 
 **Prepared:** 10 November 2026 · **Status:** research document, not legal advice
 **Live site:** <https://kanlerxz87-cyber.github.io/RentincreaseSF3/site/index.html>
+**Also served:** <https://kanlerxz87-cyber.github.io/RentincreaseSF3/> (canonical dashboard, owned by another session)
 **Companion document:** [`EXECUTIVE_SUMMARY.md`](EXECUTIVE_SUMMARY.md) (the canonical executive summary)
 **Verification:** every figure below was read from, or computed from, an official source fetched on
 10 November 2026. Each row carries its source link. Unverified items are published on the
