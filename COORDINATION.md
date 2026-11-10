@@ -12,6 +12,7 @@ other tasks are done; cross-session file edits are logged here as requests inste
 | `arena/07e38125-rentincreasesf3` | `arena/07e38125-rentincreasesf3` | PR #2 **merged** 2026-11-06T13:20:09Z (merge commit `61b5b7a`). Built the root GitHub Pages site (`index.html`, `pages/`, `assets/`, `data/sources.json`). Task 5 left "in progress" with no deploy record. |
 | `arena/ae0d4576-rentincreasesf3` | `arena/ae0d4576-rentincreasesf3` | PR #3 **merged** 2026-11-06T13:23:22Z (`996aa82`). Built the **extended verification edition** under `docs/` (11 pages, cents-exact math, banking analysis, license requirement, sources & verification register, repo review). Deployed & verified live 2026-11-06 (root + `/docs/` HTTP 200). |
 | `arena/edaa9740-rentincreasesf3` | `arena/edaa9740-rentincreasesf3` | PR #9 (this session). Built the **dashboard edition** under `dashboard/` (10 pages). add/add conflict in this file resolved by combining boards; privacy scrub of location applied site-wide as integration step (see log). |
+| `arena/1e699ad0-rentincreasesf3` | `arena/1e699ad0-rentincreasesf3` | **In progress — final verification & integration (2026-11-10)** — re-verifying all editions line by line, confirming forefront license Q&A, live Pages site, and merging to main. |
 
 ## Reconciliation note — 2026-11-06 (add/add conflict resolution)
 
@@ -460,3 +461,28 @@ presented as a general rule (true only for personal service with a 28 February 2
   - `…/audit/` + `…/verified/` (consolidated audit/verified editions preserved)
   - `…/docs/`, `…/dashboard/`, `…/review/` (prior editions intact)
 - Post-merge verification: `verify_site.py` **ALL CHECKS PASSED**, `tools/check_site.py` **No broken links**, `tools/verify_edition.py` **ALL CHECKS PASSED**, `tools/audit_site.py` **PASS** (2026-11-07). No PII, no inferred values, no broken links, math cents-exact.
+
+---
+
+## Task board — `arena/1e699ad0` (session `arena/1e699ad0-rentincreasesf3`)
+
+**Final verification & integration — 2026-11-10** — This session started from `main` at `0ac8be2` (forefront integration merged, Pages live). Scope: re-verify every table row against official sources, confirm forefront Rent Board license Q&A, validate anonymization, run all automated checks, and publish final integration to GitHub Pages without manual input. Shared outputs (index, navigation, EXECUTIVE_SUMMARY.md) may be edited only by this final session.
+
+| # | Task | Status | File scope | Notes |
+|---|---|---|---|---|
+| V1 | Claim tasks + sync branch, verify no active parallel claims | done | COORDINATION.md | Claim pushed 2026-11-10 before site edits; prior boards preserved verbatim |
+| V2 | Re-verify Rent Board license & Housing Inventory process (individual owner, not corp) — step-by-step with official links | in progress | index.html, pages/executive-summary.html, pages/process.html, EXECUTIVE_SUMMARY.md | Forefront Q&A, 7-step checklist, portal.sfrb.org, Ordinance 265-20 |
+| V3 | Re-verify allowable increases, banking, AB 1482, notice, Costa-Hawkins, coverage — cents-exact | in progress | pages/units.html, pages/laws.html, docs/, dashboard/, review/, verified/, audit/ | 1.4% (2025-26) & 1.6% (2026-27) via Form 571; state 8.8% displaced; banking additive |
+| V4 | Verify reasonable & normal benchmark and corporate vs individual handling | pending | pages/executive-summary.html, docs/market-practice.html, dashboard/market-practices.html | 1.4-1.6% ceiling = normal; no ZIP market source per official — flagged |
+| V5 | Verify correct notice & reasons, discrimination safeguards, one-vs-both analysis | pending | pages/process.html, docs/notice-and-reasons.html, review/fair-housing.html | 30/90+5 day, same-policy rule, tenant-lawyer test |
+| V6 | Site creation — confirm GitHub Pages live site, clean dashboard, subpages, tables with analysis | pending | index.html, pages/, audit/, verified/, docs/, dashboard/, review/ | Landing + 5 canonical subpages + 6 audit pages + preserved editions |
+| V7 | Line-by-line verification — every table row has official source link or blank+flagged | pending | all HTML editions | No inferred values; PII scan; math recheck |
+| V8 | Final integration — PR → main → merge → confirm Pages deploy → record | pending | COORDINATION.md, .github/workflows/ | No manual approval wait; do not merge broken site |
+
+### Scope notes — 2026-11-10
+
+- This branch is `arena/1e699ad0-rentincreasesf3` as assigned by Arena (not `session/<id>/<task>` pattern — Arena's branch name takes precedence).
+- All prior editions preserved as archived research with provenance banners; canonical findings remain root `index.html` + `pages/` + `audit/` + `verified/guide/`.
+- Personal information (tenant names/initials, street address, location detail) is anonymized with placeholder labels; dates and dollar amounts unchanged per privacy instruction.
+- No manual input required — this session works autonomously line by line with official source links for manual review.
+
