@@ -51,3 +51,35 @@ independent official source where one exists. The quoted passage for each source
 https, that each data-table row carries at least one source chip, and that no placeholder text remains.
 Output at publish time: 11 pages, 1 external link (SEC EDGAR, provided for manual review only), 0 broken
 internal links or anchors, 0 rows without a source chip.
+
+---
+
+# Session `arena/76fd1699` — re-fetch pass, 2026-11-10
+
+Method: every load-bearing source was fetched again on 10 November 2026 and the quoted wording was
+compared with what the published pages say. Only sources actually re-read in this pass are listed;
+nothing was carried over from memory or from an earlier session's notes.
+
+| # | Source re-fetched (10 Nov 2026) | Wording confirmed in this pass | Affects |
+|---|---|---|---|
+| 1 | [Housing Inventory](https://www.sf.gov/rent-board-housing-inventory) | "All owners of residential property are required to report"; licence generated automatically; deadline 1 March; "will not be enforceable without having a rent increase license on the effective date of the notice"; 1 March 2023 start for 1–9 unit buildings | Dashboard Q&A, process step 2–3, exec summary §1 |
+| 2 | [Notice of Owner Noncompliance](https://www.sf.gov/notice-of-owner-noncompliance-with-housing-inventory) | "may be null and void (this may apply for multiple years)"; tenant "may be entitled to a rent refund"; Tenant Summary Petition while the increase has not taken effect; licence look-up in the Portal | **New** — closes FR-16; strengthens dashboard, exec summary, process page |
+| 3 | [Learn about rent increases](https://www.sf.gov/learn-about-rent-increases-san-francisco) | 1.6% for 1 Mar 2026 – 28 Feb 2027; 9 Nov 2026 notice on File #261020; 30/90-day notice; use the percentage in effect on the effective date; no rounding; additional-occupant prohibition; "no limit on how much rent a landlord may first charge" | Whole site; pending-law section |
+| 4 | [Banked rent increases](https://www.sf.gov/information--banked-rent-increases) | 24-full-month condition; no cap since 1 Apr 1982; no expiry; added, not compounded; notice must say "which part of the increase is banked" | Units page, FR-03 |
+| 5 | [Annual rent increase for multiple years](https://www.sf.gov/information--annual-rent-increase-multiple-years) | Additive method; no petition; no rounding; base rent only; "35-days if sent by mail" (= 30 + 5) | Units page, notice page |
+| 6 | [Form 571 (PDF)](https://www.sf.gov/documents/34344/571_Allowable_Annual_Increases_26-27_1.pdf) | Full table 4/1/82–2/28/27: 2020 1.8, 2021 0.7, 2022 2.3, 2023 3.6, 2024 1.7, 2025 1.4, 2026 1.6 | Every percentage on the site |
+| 7 | [Learn about SF rental laws](https://www.sf.gov/learn-about-san-francisco-rental-laws) | 13 June 1979 coverage line; single-family/condo partial exemption; counsellor 415-252-4600 | Coverage row, footer |
+| 8 | [Tenant Petitions](https://www.sf.gov/tenant-petitions) | Free filing; unlawful-rent-increase petition; **Tenant Summary Petition based on receipt of an invalid notice**; Board does not adjudicate harassment, discrimination or retaliation | Review page (new row), discrimination page |
+| 9 | [Civ. Code § 827](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=827) | 30 days if ≤10% of "the rental amount charged … at any time during the 12 months before the effective date"; 90 days if more; §1013 applies to mailed service | Notice page, planner |
+| 10 | [Civ. Code § 1947.12](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=1947.12) | (d)(3) exempts housing under local rent control that "restricts annual increases … to an amount less than" the state formula | State-law layer |
+| 11 | [Attorney General — rent caps](https://oag.ca.gov/rentcaps) | San Francisco area 8.8% for increases starting 8/1/26–7/31/27; local cap governs where lower | State-law layer |
+| 12 | [Legistar File #261020](https://sfgov.legistar.com/LegislationDetail.aspx?ID=8217304&GUID=7EDA4662-EBFB-4AF5-962F-C669B64AA770) | Status **Pending Committee Action**; introduced 9/15/2026; history shows referral and Youth Commission response only, no final action | Pending-law section, FR-06 |
+
+Arithmetic re-run in this pass (cents): 3,995 × 1.6% = 63.92 → 4,058.92; 3,995 × 3.0% = 119.85 →
+4,114.85; 3,150 × 1.6% = 50.40 → 3,200.40; 3,150 × 11.5% = 362.25 → 3,512.25; 3,150 × 13.1% =
+412.65 → 3,562.65. Banked sums re-added from the official table: 1.8+0.7+2.3+3.6+1.7+1.4 = 11.5;
+11.5 + 1.6 = 13.1.
+
+Two corrections resulted: FR-16 (the stronger noncompliance wording is now quoted, closing the scope
+limit) and FR-17 (13.1% is the maximum only for an effective date on or before 28 February 2027, and
+a blank row now records that the 2027–28 percentage is unpublished).

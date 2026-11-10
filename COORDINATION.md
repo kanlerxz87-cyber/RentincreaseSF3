@@ -16,6 +16,7 @@ other tasks are done; cross-session file edits are logged here as requests inste
 | `arena/0e839002-rentincreasesf3` | `arena/0e839002-rentincreasesf3` | PRs #21 / #23 / #24 **merged** 2026-11-10. Rebuilt canonical dashboard (`index.html`, `pages/*.html`, `tools/build_dashboard.py`, `tools/verify_core_site.py`). |
 | `arena/8c577e09-rentincreasesf3` | `arena/8c577e09-rentincreasesf3` | PR #25 **merged** 2026-11-10 (`ab0a242`). Added `verification/` independent verification edition + `tools/check_v2.py`; logged two open integration requests below. |
 | `arena/d2dc8ac5-rentincreasesf3` | `arena/d2dc8ac5-rentincreasesf3` | PRs #26 / #28 **merged** 2026-11-10 (`c60fded` / `32bcabd`). Conditional rent-history wording, stale-date fix in `tools/sitedata.py`, all gates PASS. |
+| `arena/76fd1699-rentincreasesf3` | `arena/76fd1699-rentincreasesf3` | PRs #27 / #29 / #30 **merged** 2026-11-10 (`14f919c` / `16d2086` / `9a4d155`). Noncompliance quotes, FR-17 + dynamic flag counter, footer `verification/` link, `research/verification-log.md`. |
 | `arena/3a2e288e-rentincreasesf3` | `arena/3a2e288e-rentincreasesf3` | Final integration & line-by-line re-verification session (2026-11-10) — active claim below. |
 
 ## Reconciliation note — 2026-11-06 (add/add conflict resolution)
@@ -686,36 +687,147 @@ Claimed 2026-11-10. Arena fixes this session to branch `arena/d2dc8ac5-rentincre
 
 ---
 
-## Task board — session `arena/3a2e288e-rentincreasesf3` (final integration & line-by-line verification, 2026-11-10)
+## Session `arena/76fd1699-rentincreasesf3` — integration + precision pass (claimed 2026-11-10)
 
-Claimed **2026-11-10** after rebasing onto `origin/main` at `32bcabd` (PR #28 merged; all `d2dc8ac5` tasks `done`, no other active claims in progress).
-**Rebase conflict note:** `git pull --rebase origin main` hit a tail conflict in `COORDINATION.md` because `arena/d2dc8ac5` merged PRs #26 and #28 (`ab0a242..32bcabd`) between our initial checkout and claim push; resolved by keeping `d2dc8ac5`'s entire board and deployment record verbatim above and appending this session's board below — nothing discarded.
-
-Scope on Arena-assigned branch `arena/3a2e288e-rentincreasesf3`: re-fetch primary official sources on 10 November 2026, close both remaining scope limits on the canonical site (`FR-07` paragraph-level `Admin. Code § 37.3` citations and `FR-16` direct retrieval of `Notice of Owner Noncompliance with Housing Inventory`), resolve both open integration requests from `arena/8c577e09` (`pages/units.html` Feb 2027 vs 1 Jun 2027 banked-balance distinction + landing-page link to `verification/index.html`), add verified Rent Board Fee (`$59.00` for 2026–27) and `§ 6.14` / `§ 37.3(d)(2)(B)` partial-occupancy rules for Unit A's three-to-two original-occupant continuation, run all automated checks across all editions, open PR → `main`, merge without waiting for approval, and confirm GitHub Pages deployment.
+**Claim (written and pushed before any content edit).** Session ID
+`arena/76fd1699-rentincreasesf3`, branch `arena/76fd1699-rentincreasesf3`. No other session has an
+open claim on these files as of 2026-11-10 (open PRs #20, #22, #1, #8 belong to other sessions and
+are not touched here).
 
 | # | Task | Status | Owner | File scope |
 |---|---|---|---|---|
-| I1 | Claim tasks, resolve rebase onto `32bcabd` & push immediately | done | `arena/3a2e288e-rentincreasesf3` | `COORDINATION.md` |
+| T1 | Claim board + sync branch | done | `arena/76fd1699` | `COORDINATION.md` |
+| T2 | Independent re-fetch of every load-bearing official source (10 Nov 2026) | done — 12 sources re-read, recorded in `research/verification-log.md` | `arena/76fd1699` | `research/verification-log.md` |
+| T3 | Implement request from `arena/8c577e09`: label 13.1% as a banked balance for an effective date on or before 28 Feb 2027, not as a June 2027 ceiling | done | `arena/76fd1699` | `tools/site_pages_core.py`, `tools/site_pages_rules.py`, `README.md`, `EXECUTIVE_SUMMARY.md` |
+| T4 | Implement request from `arena/8c577e09`: link the `verification/` edition from the canonical navigation | done — footer link on every canonical page | `arena/76fd1699` | `tools/site_layout.py` (footer list only; preserved editions stay out of the header) |
+| T5 | Rebuild + run all five gates, then PR → `main`, merge, confirm Pages build, record result here | done | `arena/76fd1699` | `COORDINATION.md` |
+
+Scope note: this session edits the **canonical generator** (`tools/site_pages_core.py`,
+`tools/site_pages_rules.py`, `tools/site_layout.py`) plus the two Markdown summaries and this board.
+`verification/`, `docs/`, `review/`, `dashboard/`, `audit/` and `verified/` are **read-only** here —
+they are other sessions' editions and are preserved unedited.
+
+### Sources re-fetched in this pass (all read on 2026-11-10)
+
+sf.gov: [Housing Inventory](https://www.sf.gov/rent-board-housing-inventory) ·
+[Notice of Owner Noncompliance with Housing Inventory](https://www.sf.gov/notice-of-owner-noncompliance-with-housing-inventory) ·
+[Learn about rent increases](https://www.sf.gov/learn-about-rent-increases-san-francisco) ·
+[Banked rent increases](https://www.sf.gov/information--banked-rent-increases) ·
+[Annual rent increase for multiple years](https://www.sf.gov/information--annual-rent-increase-multiple-years) ·
+[Form 571 PDF](https://www.sf.gov/documents/34344/571_Allowable_Annual_Increases_26-27_1.pdf) ·
+[Learn about SF rental laws](https://www.sf.gov/learn-about-san-francisco-rental-laws) ·
+[Tenant petitions](https://www.sf.gov/tenant-petitions). City: [Legistar File #261020](https://sfgov.legistar.com/LegislationDetail.aspx?ID=8217304&GUID=7EDA4662-EBFB-4AF5-962F-C669B64AA770).
+State: [Civ. Code § 827](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=827) ·
+[Civ. Code § 1947.12](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=1947.12) ·
+[Attorney General rent caps](https://oag.ca.gov/rentcaps). Per-source wording captured in
+`research/verification-log.md`.
+
+### Verification performed by `arena/76fd1699`
+
+- `tools/verify_core_site.py` → **ALL CHECKS PASSED** — 13 pages, 39 tables, 318 rows, 845 links; every
+  data row cites an official domain; internal links and anchors resolve; privacy scan clean; arithmetic
+  assertions 3,995×3.0% = 119.85 → 4,114.85 and 3,150×13.1% = 412.65 → 3,562.65 recomputed from the
+  official percentages; banked sum 1.8+0.7+2.3+3.6+1.7+1.4 = 11.5, +1.6 = 13.1.
+- `tools/audit_site.py` → **PASS** (70 HTML files, archive labels, canonical row sources).
+- `tools/privacy_scan.py` → **PASS** (107 tracked text files; no postal code, neighbourhood, initials,
+  street address or private contact detail).
+- Preserved editions unchanged and passing: `verify_site.py`, `tools/check_site.py`,
+  `tools/verify_edition.py`, `tools/check_v2.py`.
+
+### Irregularities found or corrected by `arena/76fd1699`
+
+1. **FR-16 closed.** The Notice of Owner Noncompliance page *was* retrievable on 10 Nov 2026, so the
+   stronger official wording is now quoted on the dashboard, executive summary and process pages:
+   an unlicensed increase "may be null and void (this may apply for multiple years)" and the tenant
+   "may be entitled to a rent refund". The earlier scope limit is no longer needed.
+2. **FR-17 corrected.** "13.1%" had been presented as a "maximum catch-up". 13.1% is 11.5% banked plus
+   the 1.6% annual allowance that is in force only to 28 February 2027; for a later effective date the
+   annual component is whatever the Rent Board then publishes. Relabelled on the dashboard, executive
+   summary, units, reasonable and rules pages, and a blank row now records that the 2027–28 percentage
+   is unpublished. (Open request from `arena/8c577e09`.)
+3. **Verification edition linked** from every canonical page footer (second open request from
+   `arena/8c577e09`). Preserved editions remain out of the header navigation.
+4. **Tenant Summary Petition added** to the tenant-lawyer test with the official source, because the
+   Rent Board lists a summary petition specifically for an invalid notice of rent increase.
+5. **Flag counter made dynamic.** After FR-17 the page prose still said "sixteen"; the lede, heading and
+   counter now derive from the flag list so they cannot drift again.
+6. **Merge conflicts (two rounds).** `main` advanced twice during this pass (PR #26 and then PR #28, both
+   `arena/d2dc8ac5`). Conflicts were in `COORDINATION.md` plus three canonical pages and two generators.
+   Resolution kept **both** sessions' work: PR #26's "conditional" qualifier and PR #28's records are
+   retained, with this pass's precision wording applied on top. Nothing was discarded and no other
+   session's edition was edited.
+
+### PR / deploy record — `arena/76fd1699`
+
+- Branch `arena/76fd1699-rentincreasesf3` → `main`.
+- PR **#27** — "Integration pass: quote the noncompliance consequence, scope Unit B's 13.1% to dates
+  on/before 28 Feb 2027" — <https://github.com/kanlerxz87-cyber/RentincreaseSF3/pull/27>.
+- CI before merge (`pull_request`, `verify`): **pass** (runs 42764455499 and 42764588767).
+- Merge: **MERGED** (`gh pr merge 27 --merge`), merge commit **`14f919c`**.
+- GitHub Pages build for `14f919c`: **built** at 2026-11-10T05:51:07Z.
+- Live verification: see the records entry below (this branch's follow-up PR) for what was fetched
+  after the deploy, including the stale-cache observation.
+
+### Final deploy record — `arena/76fd1699` (2026-11-10)
+
+| Step | Result |
+|---|---|
+| PR #27 (substantive precision pass) | **MERGED**, merge commit `14f919c` |
+| CI on the PR (`verify`) | **pass** (runs 42764455499, 42764588767) |
+| Pages build for `14f919c` | **built** 2026-11-10T05:51:07Z |
+| PR #29 (this records PR + dynamic flag counter) | **MERGED**, merge commit `16d2086` |
+| CI on PR #29 | **pass** (run 42764775490) |
+| Pages build for `16d2086` | **built** 2026-11-10T05:53:09Z |
+| Live check `…/pages/flagged.html` | 17 flags; **FR-16 marked "Verified — closed 10 Nov 2026"** with the null-and-void / refund quotes; **FR-17 present** |
+| Live check `…/index.html` (forefront Q&A) | noncompliance consequence row live, quoting "may be null and void (this may apply for multiple years)" and "may be entitled to a rent refund"; Unit B stat reads "only for an effective date **on or before 28 Feb 2027**, and conditional" |
+| Live check `…/pages/units.html` | "Combined for an effective date on or before 28 Feb 2027" row, the new **blank** 2027–28 row, and the conditional maximum row |
+| Footer | every canonical page now links the independent verification edition (`verification/index.html`) |
+
+**Cache observation (not a build failure).** The first fetch of the live site immediately after the
+`14f919c` build returned the *previous* HTML (still "Sixteen items", FR-16 as a scope limit). The build
+log and the repository both carried the new content, so this was CDN propagation, not a stale
+deployment. Re-fetching with a cache-busting query string after the `16d2086` build returned the new
+content on every page checked. Anyone auditing the live site should add a query string when checking a
+build that is only seconds old.
+
+Nothing is left in progress for this session. `verification/`, `docs/`, `review/`, `dashboard/`,
+`audit/` and `verified/` were not edited. Open PRs belonging to other sessions (#20, #22, #1, #8) were
+not touched; the handoff note earlier in this file still explains why #20 should be rebased rather than
+merged as-is.
+
+---
+
+## Task board — session `arena/3a2e288e-rentincreasesf3` (final integration & line-by-line verification, 2026-11-10)
+
+Claimed **2026-11-10** after rebasing onto `origin/main` at `32bcabd` (commit `980d5fe`) and merging
+`origin/main` at `9a4d155` (PRs #27/#29/#30 from `arena/76fd1699`).
+**Conflict resolution log:** Two rounds of parallel merges landed on `origin/main`: first `arena/d2dc8ac5`
+(PRs #26/#28, `32bcabd`), then `arena/76fd1699` (PRs #27/#29/#30, `9a4d155`). Resolved without discarding
+a single line from either session: kept `76fd1699`'s `research/verification-log.md`, footer `verification/`
+link, dynamic `{len(FLAGS)}` counter, `FR-16`/`FR-17` entries, and `Tenant Summary Petition` row, and layered
+this session's `Admin. Code § 37.3` subsection verification (`FR-07`), `SF_FEE` ($59.00 Rent Board Fee),
+`SF_614` + `§ 37.3(d)(2)(B)` partial-occupancy analysis, full `Tenant A–F` 6-person occupancy map, and the
+1 June 2027 7th-banked-year refinement on top.
+
+| # | Task | Status | Owner | File scope |
+|---|---|---|---|---|
+| I1 | Claim tasks, resolve conflicts with `d2dc8ac5` & `76fd1699`, preserve all work | done | `arena/3a2e288e-rentincreasesf3` | `COORDINATION.md` |
 | I2 | Re-fetch & verify primary official sources on 2026-11-10 (`sf.gov`, `leginfo`, `amlegal` § 37.3, `oag.ca.gov`, `sfgov.legistar.com`) | done | `arena/3a2e288e-rentincreasesf3` | `tools/site_layout.py`, `tools/site_pages_ref.py` |
-| I3 | Integrate open cross-session requests & close scope limits (`FR-07`, `FR-16`, Feb 2027 vs 1 Jun 2027 Unit B table, `verification/` tile, Rent Board Fee & § 6.14 / partial-occupancy notes) | done | `arena/3a2e288e-rentincreasesf3` | `tools/site_pages_core.py`, `tools/site_pages_rules.py`, `tools/site_pages_ref.py`, `EXECUTIVE_SUMMARY.md`, `README.md` |
-| I4 | Rebuild canonical site & run all automated verification + privacy gates | done | `arena/3a2e288e-rentincreasesf3` | `index.html`, `pages/*.html`, `assets/style.css` |
+| I3 | Close `FR-07` (§ 37.3 subsections), refine `FR-17` (7th banked year on 1 Jun 2027), add Rent Board Fee (`$59.00`) & § 6.14 / partial-occupancy notes + `Tenant A–F` chain | done | `arena/3a2e288e-rentincreasesf3` | `tools/site_pages_core.py`, `tools/site_pages_rules.py`, `tools/site_pages_ref.py`, `EXECUTIVE_SUMMARY.md`, `README.md` |
+| I4 | Rebuild canonical site & run all 7 automated verification + privacy gates | done | `arena/3a2e288e-rentincreasesf3` | `index.html`, `pages/*.html`, `assets/style.css` |
 | I5 | PR → `main`, verify CI green, merge without waiting, confirm GitHub Pages `built` & live HTTP 200 | in progress | `arena/3a2e288e-rentincreasesf3` | `COORDINATION.md` |
 
 ### Verification log — `arena/3a2e288e` (2026-11-10)
 
 - **Official sources directly re-fetched and verified on 2026-11-10 (28 registered sources):**
-  - [sf.gov — The Rent Board Housing Inventory](https://www.sf.gov/rent-board-housing-inventory) (all owners must report; 1–9 unit buildings since 1 Mar 2023; 1 Mar annual deadline; automatic licence; must exist on effective date; free)
-  - [sf.gov — Notice of Owner Noncompliance with Housing Inventory](https://www.sf.gov/notice-of-owner-noncompliance-with-housing-inventory) (`SF_NONCOMP` added: unlicensed increase may be null and void across multiple years; tenant refund claim via Form 516C; pre-effective-date Tenant Summary Petition Form 518; paper filing fallback via `rentboard.inventory@sfgov.org` or office drop-off)
+  - [sf.gov — The Rent Board Housing Inventory](https://www.sf.gov/rent-board-housing-inventory) and [sf.gov — Notice of Owner Noncompliance with Housing Inventory](https://www.sf.gov/notice-of-owner-noncompliance-with-housing-inventory) (all owners must report; 1–9 unit buildings since 1 Mar 2023; 1 Mar annual deadline; automatic licence; must exist on effective date; unlicensed increase may be null and void across multiple years with refund exposure via Form 516C or pre-effective-date Form 518; paper filing fallback via `rentboard.inventory@sfgov.org` or office drop-off)
   - [sf.gov — The Rent Board Fee](https://www.sf.gov/rent-board-fee) (`SF_FEE` added: separate $59.00/dwelling unit fee for 2026–27, due 1 Mar, 5%/mo penalty up to 15%, 50% = $29.50 recoverable from qualifying tenants, 2027 exemption window closes 14 Dec 2026; neither satisfies the other)
-  - [sf.gov — Learn about rent increases in San Francisco](https://www.sf.gov/learn-about-rent-increases-san-francisco) (1.6% for 1 Mar 2026 – 28 Feb 2027; 9 Nov 2026 File #261020 notice; 30/90-day + 5-day mail rule; worked off-anniversary banking example)
-  - [sf.gov — Banked rent increases](https://www.sf.gov/information--banked-rent-increases), [sf.gov — Annual rent increase for multiple years](https://www.sf.gov/information/annual-rent-increase-multiple-years), and [Form 571 PDF](https://www.sf.gov/documents/34344/571_Allowable_Annual_Increases_26-27_1.pdf) (1982–2027 rate table)
+  - [sf.gov — Learn about rent increases in San Francisco](https://www.sf.gov/learn-about-rent-increases-san-francisco), [sf.gov — Banked rent increases](https://www.sf.gov/information--banked-rent-increases), [sf.gov — Annual rent increase for multiple years](https://www.sf.gov/information/annual-rent-increase-multiple-years), and [Form 571 PDF](https://www.sf.gov/documents/34344/571_Allowable_Annual_Increases_26-27_1.pdf) (1.6% for 1 Mar 2026 – 28 Feb 2027; 9 Nov 2026 File #261020 notice; 1982–2027 rate table; off-anniversary worked example)
   - [sf.gov — Rent increases under Section 6.14 and Costa-Hawkins](https://www.sf.gov/information--rent-increases-under-section-614-and-costa-hawkins) (`SF_614` added: unlimited increase applies only after the *last* original occupant vacates and never against a co-tenant with a landlord agreement)
-  - [SF Administrative Code § 37.3 (American Legal)](https://codelibrary.amlegal.com/codes/san_francisco/latest/sf_admin/0-0-0-70881) (subsections § 37.3(a)(1)–(2), (a)(8), (a)(10)–(11), (b)(1)&(5), and (d)(2)(B) verified directly)
-  - [SF Legistar File #261020](https://sfgov.legistar.com/LegislationDetail.aspx?ID=8217304&GUID=7EDA4662-EBFB-4AF5-962F-C669B64AA770) (status `Pending Committee Action`, introduced 15 Sep 2026, not enacted)
-  - [Cal. Civ. Code § 827](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=827) and [California AG rent caps](https://oag.ca.gov/rentcaps) (8.8% SF-area AB 1482 cap for 1 Aug 2026 – 31 Jul 2027, displaced by stricter SF cap under Civ. Code § 1947.12(d)(3))
-- **Cross-session requests & scope limits closed:**
-  1. Closed `FR-07` (`Admin. Code § 37.3` subsections verified directly and cited across Rules, Units and Notice pages).
-  2. Closed `FR-16` (`Notice of Owner Noncompliance` retrieved directly; null-and-void / refund / Form 518 / paper fallback integrated).
-  3. Resolved both open requests from `arena/8c577e09`: `pages/units.html` and `pages/executive-summary.html` now distinguish Unit B's conditional 13.1% ($412.65 → $3,562.65) maximum for a Feb 2027 effective date from the 1 June 2027 anniversary ceiling (13.1% 7-year banked floor + blank unannounced 2027–28 rate), and `index.html` now includes a category tile for `verification/index.html`.
-  4. Anonymised full 6-person occupancy map (`Tenant A–F`) documented for Unit A's three initial 1 Feb 2025 co-tenants (`Tenant A`, `Tenant E`, `Tenant F`) continuing 1 Apr 2026 with `Tenant A` + `Tenant B` at $3,995.00, tied to `§ 37.3(a)(11)(A)`, `§ 37.3(d)(2)(B)` and `Rule § 6.14`.
-- **All 7 automated gates PASS:** `tools/privacy_scan.py` (107 files, 0 issues), `tools/verify_core_site.py` (13 pages, 39 tables, 324 rows, 865 links — ALL CHECKS PASSED), `tools/audit_site.py` (70 HTML files — PASS), `verify_site.py` (PASS), `tools/check_site.py` (0 broken links), `tools/verify_edition.py` (PASS), `tools/check_v2.py` (212 rows — PASS).
+  - [SF Administrative Code § 37.3 (American Legal)](https://codelibrary.amlegal.com/codes/san_francisco/latest/sf_admin/0-0-0-70881) (subsections § 37.3(a)(1)–(2), (a)(8), (a)(10)–(11), (b)(1)&(5), and (d)(2)(B) verified directly — closes `FR-07`)
+  - [SF Legistar File #261020](https://sfgov.legistar.com/LegislationDetail.aspx?ID=8217304&GUID=7EDA4662-EBFB-4AF5-962F-C669B64AA770), [Cal. Civ. Code § 827](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=827), and [California AG rent caps](https://oag.ca.gov/rentcaps)
+- **Irregularities & scope limits resolved in this pass:**
+  1. **Closed `FR-07`** by verifying `Admin. Code § 37.3` subsections directly in the Municipal Code (`§ 37.3(a)(1)–(2), (a)(8), (a)(10)–(11), (b)(1)&(5), (d)(2)(B)`).
+  2. **Refined `FR-17` banking precision for 1 June 2027:** for off-anniversary dates 1 Mar – 31 May 2027 only 11.5% (2020–2025) is banked plus the unannounced 2027–28 rate, whereas on Unit B's **1 June 2027** anniversary 12 full months have elapsed since 1 June 2026 (1.6%), so all seven skipped anniversaries 2020–2026 (**13.1%**) are banked plus the unannounced 2027–28 annual rate.
+  3. **Added separate Rent Board Fee (`SF_FEE`) and Unit A 6-person anonymised occupancy map (`Tenant A–F` + `SF_614` / `§ 37.3(d)(2)(B)`)** so first-time individual owners do not confuse the free Housing Inventory report with the $59.00/unit fee or treat a continuing roommate replacement as a market turnover.
+- **All 7 automated gates PASS** (verified post-merge rebuild).

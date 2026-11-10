@@ -163,7 +163,7 @@ def reasonable():
     <thead><tr><th>Unit</th><th>Defensible “normal” figure</th><th>Reason it is defensible</th><th style="width:18%">Source</th></tr></thead>
     <tbody>
       <tr><td>Unit A</td><td><b>3.0% ($119.85)</b>, or 1.6% ($63.92) if you prefer the strict reading</td><td>The annual allowance in effect on the effective date plus one properly banked year; 30 days' notice; well below the 10% state-notice threshold.</td>{cell("SF_571", "SF_BANK")}</tr>
-      <tr><td>Unit B</td><td><b>10.0% ($315.00)</b> as a first step; 13.1% ($412.65) is the conditional calculated ceiling if no increase was ever imposed</td><td>If the complete ledger confirms six skipped years, they add to 11.5%, plus 1.6% annual; 10% keeps the increase inside both current law and the proposed 10%/yr cap, and the unused balance remains bankable.</td>{cell("SF_BANK", "LEGISTAR_261020")}</tr>
+      <tr><td>Unit B</td><td><b>10.0% ($315.00)</b> as a first step; 13.1% ($412.65) is the conditional maximum for an effective date on or before 28 Feb 2027 on the reported facts</td><td>If the complete ledger confirms six skipped years, they add to 11.5%, plus the 1.6% annual in force to 28 Feb 2027; 10% keeps the increase inside both current law and the proposed 10%/yr cap, and the unused balance remains bankable.</td>{cell("SF_BANK", "LEGISTAR_261020")}</tr>
       <tr><td>Unit B at market rent</td><td><b>Blank</b></td><td>Market rent cannot be reached by an annual increase; the Rent Board states that a long-standing below-market rent is not itself an extraordinary circumstance, and vacancy resetting is only available in a genuinely new tenancy.</td>{cell("SF_SPECIAL", "SF_LI")}</tr>
     </tbody>
   </table>
@@ -368,6 +368,7 @@ def review():
       <tr><td>Increase within 180 days of a repair request or complaint</td><td>Retaliation; separately actionable under the Civil Code.</td>{cell("LEG_1942")}</tr>
       <tr><td>Increase that varies by protected characteristic</td><td>Fair-housing complaint at the Civil Rights Department, HUD or court.</td>{cell("LEG_12955", "CRD")}</tr>
       <tr><td>Extra charge because an occupant joined</td><td>Unlawful rent increase.</td>{cell("SF_LI")}</tr>
+      <tr><td>Notice that is defective on its face (wrong amount, percentage, date or notice period)</td><td>The Rent Board lists a <b>Tenant Summary Petition based on receipt of an invalid notice of rent increase</b> among the claims a tenant can file, in addition to the standard unlawful-rent-increase petition. Both are free.</td>{cell("SF_TENPET")}</tr>
     </tbody>
   </table>
 </div>

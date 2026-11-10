@@ -8,6 +8,7 @@ USED_FOR = {
     "SF_LI": "Current allowable percentage (1.6%), base-rent rule, no-rounding rule, anniversary rules, 30/90-day notice elements, additional-occupant prohibition, vacancy pricing, the 9 Nov 2026 notice on File #261020",
     "SF_BANK": "24-month banking condition, additive-not-compounded rule, no cap back to 1 Apr 1982, no expiry, prior-owner transfer, banked notice elements, licence precondition",
     "SF_HI": "All-owner reporting duty, automatic licence, 1 Mar deadline, 1–9 unit start date of 1 Mar 2023, licence on effective date, no monetary penalty, what is reported",
+    "SF_NONCOMP": "Consequence of an unlicensed increase: the notice “may be null and void (this may apply for multiple years)” and the tenant “may be entitled to a rent refund”; Tenant Summary Petition route while a notice has not yet taken effect; how to check licence status in the Portal",
     "SF_LAWS": "Coverage of pre-13 June 1979 buildings, excluded/partially exempt categories, counsellor line",
     "SF_571": "The official allowable-increase table 1982–2027 (all percentages used on this site)",
     "SF_MULTI": "Multi-year methodology, additive rule, no petition required, no rounding, base rent only",
@@ -17,7 +18,6 @@ USED_FOR = {
     "SF_SPECIAL": "Comparable-rent petition conditions; long-standing below-market rent is not an extraordinary circumstance; petition before notice",
     "SF_ALGO": "Rent Ordinance § 37.10C — algorithmic pricing devices banned, effective 14 Oct 2024",
     "SF_COUNSEL": "Rent Board counselling hours and telephone number",
-    "SF_NONCOMP": "Unlicensed rent increase may be null and void (potentially multiple years), tenant refund exposure, Form 516C / pre-effective-date Form 518 Tenant Summary Petition, paper filing fallback",
     "SF_FEE": "Separate annual Rent Board Fee ($59.00 per dwelling unit for 2026–27, due 1 Mar, 5%/mo penalty up to 15%, 50% tenant recovery, 14 Dec 2026 exemption deadline)",
     "SF_614": "Rent Board Rule § 6.14 and Costa-Hawkins roommate/subtenant rules: unlimited increase only after last original occupant vacates and never against a co-tenant",
     "SF_PORTAL": "Rent Board Portal — reporting and licence look-up",
@@ -150,7 +150,7 @@ def requirements():
     <div class="stat"><div class="num">23</div><div class="lbl">requirements tracked</div></div>
     <div class="stat"><div class="num">20</div><div class="lbl">answered from official sources</div></div>
     <div class="stat"><div class="num">3</div><div class="lbl">answered only conditionally (rent history, government building record, official statistics)</div></div>
-    <div class="stat"><div class="num">16</div><div class="lbl">items flagged for review, all published</div></div>
+    <div class="stat"><div class="num">{len(FLAGS)}</div><div class="lbl">items flagged for review, all published</div></div>
   </div>
 </div>
 
@@ -226,9 +226,12 @@ FLAGS = [
     ("FR-15", "Earlier editions of this site contained claims now corrected", "Corrected",
      "Corrections applied: the Unit A anniversary was once shown as 1 April; banking was once described as “capped at three years”; a Unit B figure of 11.5% was once presented without the annual component that makes the total 13.1%; the pre-9-November-2026 status of File #261020 was stated without the Rent Board's new notice. Prior editions remain online for audit but are no longer the canonical pages.",
      "This page and the corrected pages are the canonical record.", "SF_LI"),
-    ("FR-16", "Non-compliance consequence wording retrieved", "Corrected",
-     "Retrieved the separate Notice of Owner Noncompliance page on 10 Nov 2026: an increase taking effect while a unit is unlicensed “may be null and void (this may apply for multiple years)”, tenants may be entitled to a rent refund via Form 516C or file a pre-effective-date Tenant Summary Petition (Form 518), and Admin. Code § 37.3(b)(5) renders nonconforming increases null and void.",
-     "Closed — cited across Dashboard, Summary, Process, Rules and Review pages.", "SF_NONCOMP"),
+    ("FR-16", "Non-compliance consequence wording", "Verified — closed 10 Nov 2026",
+     "The Notice of Owner Noncompliance page was re-retrieved on 10 November 2026 and is now quoted directly: a notice that goes into effect while the unit is unlicensed “may be null and void (this may apply for multiple years)”, and the tenant “may be entitled to a rent refund”. It also confirms the 1 July 2022 / 1 March 2023 start dates, paper filing fallback, and the Tenant Summary Petition (Form 518) route while an increase has not yet taken effect, alongside Admin. Code § 37.3(b)(5).",
+     "Closed — cited across the Dashboard, Summary, Process, Rules and Review pages.", "SF_NONCOMP"),
+    ("FR-17", "“13.1%” was labelled a maximum catch-up / June 2027 ceiling", "Corrected 10 Nov 2026",
+     "13.1% is 11.5% banked (2020–2025) plus the 1.6% annual allowance in force through 28 February 2027. It is therefore the conditional maximum only for an effective date <b>on or before 28 February 2027</b>. For 1 Mar – 31 May 2027 (off-anniversary before 1 June 2027) only 11.5% is banked plus the unannounced 2027–28 rate; on <b>1 June 2027</b> (once 12 full months have elapsed since 1 June 2026) all seven skipped years 2020–2026 (<b>13.1%</b>) are banked plus whatever 2027–28 rate the Rent Board publishes.",
+     "Re-check the Rent Board's published percentage before any effective date on or after 1 March 2027.", "SF_571"),
 ]
 
 
@@ -239,13 +242,15 @@ def flagged():
                  "Blank": "warn", "Pending — not law": "danger", "No official source": "warn",
                  "Corrected": "ok", "Scope limit": "warn",
                  "Absence of authority": "warn"}.get(status, "warn")
+        if status.startswith("Corrected") or status.startswith("Verified"):
+            badge = "ok"
         rows += ('<tr><td class="nowrap"><b>%s</b></td><td>%s</td>'
                  '<td><span class="badge %s">%s</span></td><td>%s</td><td>%s</td>%s</tr>'
                  % (fid, item, badge, status, detail, closes, cell(key)))
     body = f"""
 <div class="card alert">
   <h1>Flagged for review</h1>
-  <p class="lede">Sixteen items that are unverified, blank, internally inconsistent or corrected. They are published here deliberately — nothing on this list was filled in with a guess — and none of them blocks publication of the site.</p>
+  <p class="lede">{len(FLAGS)} items that are unverified, blank, internally inconsistent or corrected. They are published here deliberately — nothing on this list was filled in with a guess — and none of them blocks publication of the site.</p>
 </div>
 
 <div class="card">
@@ -264,7 +269,7 @@ def flagged():
 </div>
 
 <div class="card">
-  <h2>The sixteen flags</h2>
+  <h2>The {len(FLAGS)} flags</h2>
   <table>
     <thead><tr><th style="width:7%">ID</th><th style="width:17%">Item</th><th style="width:8%">Status</th><th>Detail</th><th style="width:17%">What closes it</th><th style="width:17%">Official source</th></tr></thead>
     <tbody>{rows}</tbody>
