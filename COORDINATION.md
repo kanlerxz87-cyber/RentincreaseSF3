@@ -5,6 +5,69 @@ is published on the site's Flagged for Review page and does not block anything. 
 (table data, site index/navigation) may only be changed by the final integration session once all
 other tasks are done; cross-session file edits are logged here as requests instead.
 
+## Active round — 2026-11-11 (eight concurrent sessions; read this first)
+
+Recorded by session `arena/0bf38c3e-rentincreasesf3`. This block sits at the top of the file on purpose:
+every other session appends at the bottom, so writing here avoids a guaranteed merge conflict with
+them, and it is the first thing the next reader sees. Nothing below this block was edited.
+
+**Irregularity (coordination, flagged for the owner).** A claim is committed to the claiming session's
+own branch, so it is **not visible on `main`** until that session merges. Reading this file on `main`
+therefore shows no active claim even while several sessions are working. At 2026-11-11T02:11Z this
+session listed the remote branches (`git ls-remote --heads origin`) and read each branch's copy of
+this file. Seven other sessions had pushed a claim in the preceding three minutes, and **all seven
+claim the same canonical files**:
+
+| Session branch | Claim commit | Claim time (UTC) | Scope stated in that claim |
+|---|---|---|---|
+| `arena/db0bd0a6-rentincreasesf3` | `4272a10` | 02:08:07 | audit + final integration: `research/`, `tools/`, `index.html`, `pages/`, `assets/style.css`, `EXECUTIVE_SUMMARY.md`, `.github/workflows/` |
+| `arena/3cb4d5e1-rentincreasesf3` | `af9338d` | 02:08:30 | final integration + re-verification: `research/*.md`, `tools/site_*.py`, `tools/sitedata.py`, `index.html`, `pages/*.html`, `EXECUTIVE_SUMMARY.md`, `README.md` |
+| `arena/1a404b71-rentincreasesf3` | `1dee66c` | 02:08:35 | accuracy + privacy audit of the canonical site: `tools/site_*.py`, `tools/verify_core_site.py`, `index.html`, `pages/*.html`, `assets/style.css`, `README.md`, `EXECUTIVE_SUMMARY.md` |
+| `arena/c541e9f4-rentincreasesf3` | `4079932` | 02:08:40 | integration review: `tools/site_*.py`, `tools/sitedata.py`, `tools/*verify*.py`, `tools/audit_site.py`, `index.html`, `pages/`, `assets/`, `research/verification-log.md`, `EXECUTIVE_SUMMARY.md`, `README.md` |
+| `arena/d99de6b0-rentincreasesf3` | `29d92bb` | 02:09:00 | final integration + source refresh: canonical site, generators and checks, `README.md`, `EXECUTIVE_SUMMARY.md`, `research/verification-log.md` (archived editions declared read-only) |
+| `arena/e00aaa27-rentincreasesf3` | `ffc7f6b` | 02:09:43 | re-verification + notice-date planner roll-forward: `tools/site_layout.py`, `tools/site_pages_core.py`, `tools/site_pages_ref.py`, `tools/verify_core_site.py`, `index.html`, `pages/*.html`, `EXECUTIVE_SUMMARY.md`, `README.md` |
+| `arena/884be5f9-rentincreasesf3` | `d460cb4` | 02:09:46 | Housing Inventory public-record warning + planner refresh: `tools/site_pages_core.py`, `tools/site_pages_ref.py`, `index.html`, `pages/*.html`, `research/verification-log.md` |
+| `arena/0bf38c3e-rentincreasesf3` (this session) | this commit | 02:12 | **only what nobody above claimed** — see the table below |
+
+Under the board's own rule ("never start a task another session has claimed"), the canonical site,
+its generators, the two Markdown summaries, the README, `research/` and the CI workflow are all taken,
+the earliest claim being `arena/db0bd0a6` at 02:08:07Z. This session therefore **does not edit any of
+them** and does not act as an integration session for them. Anything it finds in those files is logged
+under "Requests" in this block instead of being fixed in place.
+
+### Task board — session `arena/0bf38c3e-rentincreasesf3` (claimed 2026-11-11T02:12Z)
+
+Arena fixes this session to the branch `arena/0bf38c3e-rentincreasesf3`; a `session-<id>/<task>`
+branch cannot be created, so the session ID is carried by the branch name instead.
+
+| # | Task | Status | Owner | File scope (exclusive) |
+|---|---|---|---|---|
+| R1 | Claim, and publish the list of sessions active on 2026-11-11 | done | `arena/0bf38c3e` | `COORDINATION.md` — this top block only |
+| R2 | Independent official-source verification of the load-bearing rules (licence, rates, banking, notice, state cap, fair housing, pending File 261020); read-only against the canonical site | in progress | `arena/0bf38c3e` | `reports/2026-11-11/**` (new files) |
+| R3 | Archived-edition audit: `docs/`, `dashboard/`, `review/`, `audit/`, `verified/`, `verification/` — compare each headline figure and rule with the official sources and with the canonical site; publish every contradiction; no page deleted | unclaimed | `arena/0bf38c3e` | those six directories (HTML only), which every session above left unclaimed or declared read-only |
+| R4 | Repository hygiene and privacy audit outside the canonical generator: commit history, branch tips, pull-request text, data files — read-only | unclaimed | `arena/0bf38c3e` | none (read-only); findings go to R5 |
+| R5 | Publish the results as one dated report with its own source-linked tables, its own Flagged for Review page and its own check script | unclaimed | `arena/0bf38c3e` | `reports/2026-11-11/**` (new files) |
+| R6 | Additive pull request to `main`, merge only after every existing gate passes, confirm the Pages build, record the result here | unclaimed | `arena/0bf38c3e` | `COORDINATION.md` — this top block only |
+
+**Not in this session's scope (owned by the sessions listed above):** `index.html`, `pages/**`,
+`assets/**`, `tools/**`, `research/**`, `data/**`, `EXECUTIVE_SUMMARY.md`, `README.md`,
+`.github/workflows/**`, `verify_site.py`.
+
+### Requests to the canonical-site owners (logged here, files not edited)
+
+_None yet — filled in as the audit proceeds._
+
+### Log — `arena/0bf38c3e` (UTC)
+
+- 2026-11-11T02:08Z — Session started on `main` at `5c976c4` (PR #36). Read this file top to bottom.
+  All seven existing gates pass on that baseline (`tools/privacy_scan.py`, `tools/build_dashboard.py`
+  freshness, `tools/verify_core_site.py`, `tools/audit_site.py`, `verify_site.py`, `tools/check_site.py`,
+  `tools/verify_edition.py`, `tools/check_v2.py`).
+- 2026-11-11T02:11Z — Found seven concurrent claims on other branches (table above). Chose a scope
+  that overlaps none of them. Claim committed and pushed before any other work.
+
+---
+
 ## Session registry
 
 | Session | Branch | Outcome |
