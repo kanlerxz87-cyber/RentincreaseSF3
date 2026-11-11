@@ -1294,7 +1294,7 @@ Scope of files this session may edit (everything else is only read, or changed v
 | K4 | Re-run all gates; confirm build idempotence and no broken links across every edition | **done** — 8/8 PASS, build byte-identical on re-run | read-only |
 | K5 | Confirm the Rent Board licence / Housing Inventory answer is at the forefront and answers the individual-owner question | **done** — index card 1 and exec summary §1 both lead with it; "individual, not corporation" is answered by building size, not owner form (row 60) | read-only |
 | K6 | Confirm anonymisation (placeholders, no ZIP/neighbourhood/address, dates and amounts unchanged) | **done** — privacy sweep PASS on 108 files; Tenant A–F; amounts $3,995 / $3,150 and dates unchanged | read-only |
-| K7 | Log irregularities / open items; PR → `main`, merge, confirm Pages deploy, record | in progress | `COORDINATION.md` |
+| K7 | Log irregularities / open items; PR → `main`, merge, confirm Pages deploy, record | **done** — PR #53 merged, Pages `built`, live content verified | `COORDINATION.md` |
 
 ### Conflict-resolution log — `arena/6d04c026` (2026-11-11)
 
@@ -1336,6 +1336,42 @@ and log rows 96–119. Nothing was discarded:
 Verified present after the merge: `96aa0f4f`'s FR-27 and OPM source, this pass's FR-28…FR-31, both
 sessions' verification-log sections, 31 flags, 32 sources. Build idempotent; 8/8 gates pass.
 
+
+### PR / deploy record — session `arena/6d04c026-rentincreasesf3`
+
+- **Branch:** `arena/6d04c026-rentincreasesf3` → `main`
+- **PR:** [#53](https://github.com/kanlerxz87-cyber/RentincreaseSF3/pull/53) — "Verification pass 2026-11-11: all 36 official sources fetched directly, 1 broken link fixed, 4 flags added"
+- **Merge:** **MERGED** at **2026-11-11T04:42:33Z**, merge commit **`74761e2dbfe18b0425781e5575bd21d78e432c40`** (`gh pr merge 53 --merge`, no approval wait)
+- **CI:** PR head `Site checks` run **42960903499** → success; main `Site checks` run **42960986247** → success
+- **GitHub Pages:** `pages build and deployment` run **42960985656** → success; Pages API latest build → status **`built`**, sha `74761e2`, duration 25,590 ms, updated 2026-11-11T04:43:00Z, error null. Live URL: <https://kanlerxz87-cyber.github.io/RentincreaseSF3/>
+- **Live verification:** fetched post-deploy with a cache-busting query. <https://kanlerxz87-cyber.github.io/RentincreaseSF3/pages/flagged.html> renders **31 items / "The 31 flags"**, FR-03 as "Three official texts describe banking differently" quoting Rules & Regulations § 4.12(a), and FR-28…FR-31. Note for future sessions: github.io serves a cached copy for a short window after deploy — always re-fetch with a cache-busting query before concluding the deploy is stale.
+- **Rebases:** three in total (onto `69d2bde`, then `8298832`). Every conflict was resolved with both sessions' content retained; see the two conflict-resolution logs above.
+
+### Verification performed (K3) — direct fetches, 2026-11-11
+
+This session's `fetch_page` tool reaches the official domains directly, so **all 36 distinct external URLs** cited by the canonical site and `data/sources.json` were retrieved and read against the claim each supports:
+
+`sf.gov` (Housing Inventory, Learn about rent increases, Banked rent increases, Notice of Owner Noncompliance, Rent Board Fee, SF rental laws, Form 571, current rates, annual-increase announcement, Ordinance 265-20, § 6.14 / Costa-Hawkins, landlord petitions, tenant petitions, unlawful rent increase, multiple years, Topic 323, Rules Part IV, algorithmic devices, evictions, About Rent Board) · `leginfo.legislature.ca.gov` (Civ. Code §§ 827, 1942.5, 1947.12, 1954.53; CCP § 1013; Gov. Code § 12955) · `codelibrary.amlegal.com` (§ 37.3) · `oag.ca.gov/rentcaps` · `sfgov.legistar.com` (File #261020) · `govinfo.gov` (42 U.S.C. § 3604) · `justice.gov` (DOJ algorithmic-pricing action) · `hud.gov` · `calcivilrights.ca.gov` · `ecfr.gov` · `portal.sfrb.org`
+
+**Result: 35 confirmed the claim; 1 returned HTTP 404 and was corrected (FR-28).** Full row-by-row record: `research/verification-log.md` rows **110–133**.
+
+### Irregularities found in this pass
+
+| # | Finding | Disposition |
+|---|---|---|
+| 1 | eCFR voucher-reasonableness URL 404 (`chapter-II/subchapter-B/part-982/subpart-M`) | **Fixed** — corrected to 24 CFR § 982.507 (Chapter IX, Subpart K). Published as FR-28; cited on the units page |
+| 2 | Rule § 4.12(a) is a third, and the most authoritative, official text on the banking timing test — it uses the **12-month** test | **Published** — FR-03 updated; the strict-24-month alternative is now quantified (Unit B 10.1% + 1.6% = 11.7%) instead of being asserted away |
+| 3 | Rule § 4.12(a): "This banked amount may only be given at the time of an annual increase" vs the banking page's "or at another time when they are allowed to raise the rent" | **Flagged** as FR-29; caveat added to Unit B's banked-only row |
+| 4 | Rule § 4.12(b) safe harbour ("failure to include such information shall not render the increase null and void") and § 4.10(b) null-and-void rule were absent from the site | **Published** as FR-30 |
+| 5 | Licence **suspension** for non-compliance (Ordinance 265-20) and the original-occupant licence carve-out were absent | **Published** as FR-31; README headline row updated |
+| 6 | CCP § 1013 also provides **20 days** for service outside the United States; the executive summary stated only the 10-day out-of-state figure | Noted in verification-log row 112. No site change — the units involved are in California and the published notice planner is mail-within-California only |
+| 7 | All sf.gov pages read on 11 Nov 2026 carried a Veterans Day City-closure banner; the Rent Board counselling line is closed that day | Recorded as an operational note in the verification log, **not** published as a dated site fact. Independently flagged by session `arena/96aa0f4f` as FR-27 (postal service on the research-pass date) — that flag stands |
+| 8 | `hud.gov/program_offices/fair_housing_equal_opp` now redirects to HUD's "Contact FHEO" page | Resolves and is official; internal register only, no figure depends on it. No change |
+
+### Nothing remains in progress for `arena/6d04c026-rentincreasesf3`
+
+K1–K7 all **done**. Open pull requests belonging to other sessions were left untouched.
+
 ---
 
 ## Task board — session `arena/10fc30b0-rentincreasesf3` (preserved-edition audit, privacy-surface audit, deferred integration — 2026-11-11)
@@ -1343,7 +1379,8 @@ sessions' verification-log sections, 31 flags, 32 sources. Build idempotent; 8/8
 Claimed **2026-11-11T04:24Z**, after reading this board top to bottom and inspecting every remote
 branch. Branch `arena/10fc30b0-rentincreasesf3` (Arena fixes the branch name, so the
 `session-<id>/<task>` pattern cannot be used), first based on `main` at `0a25f12` (PR #48). Rebased three times as `main` moved (`69d2bde` PR #50, `8298832` PR #52);
-each add/add conflict in this file was resolved by keeping every session's section — nothing discarded.
+then merged with `5fbd65e` (PR #54). Each add/add conflict in this file was resolved by taking `main`'s copy
+whole and re-appending this section — every session's section kept, nothing discarded.
 
 **Live claims found at claim time (pushed to their own branches at about 04:19Z, not yet on `main`):**
 
