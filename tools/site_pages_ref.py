@@ -46,7 +46,7 @@ def sources():
     body = f"""
 <div class="card">
   <h1>Sources &amp; verification register</h1>
-  <p class="lede">Every official source used on this site, the claim it supports, and the date it was retrieved. All were fetched and read on 10 November 2026.</p>
+  <p class="lede">Every official source used on this site, the claim it supports, and its full-review retrieval date. The full source register was read on 10 November 2026; four time-sensitive City/Legistar pages were refreshed on 11 November 2026, as recorded in the verification log.</p>
 </div>
 
 <div class="card">
@@ -61,6 +61,7 @@ def sources():
       <tr><td>Ownership facts separated</td><td>Owner-reported facts (rents, dates, tenants) are labelled as such and are never presented as government records.</td>{cell("SF_HI")}</tr>
       <tr><td>Pending law labelled</td><td>File #261020 is described as pending, with its Legistar status, never as law.</td>{cell("LEGISTAR_261020")}</tr>
       <tr><td>Conflicting official texts published</td><td>Where two official pages differ, both are quoted and the difference is flagged (FR-03).</td>{cell("SF_BANK", "SF_LI")}</tr>
+      <tr><td>11 Nov 2026 current-source refresh</td><td>Rent increase guidance, banked increase rules, Housing Inventory disclosure/licence requirements and File #261020 status were re-fetched on 11 Nov 2026; only these time-sensitive pages are represented as refreshed on that date.</td>{cell("SF_LI", "SF_BANK", "SF_HI", "LEGISTAR_261020")}</tr>
     </tbody>
   </table>
 </div>
@@ -68,7 +69,7 @@ def sources():
 <div class="card">
   <h2>Register ({len(SRC)} sources)</h2>
   <table>
-    <thead><tr><th style="width:9%">Key</th><th style="width:26%">Source</th><th>Claim it supports</th><th style="width:24%">URL (retrieved {RETRIEVED})</th></tr></thead>
+    <thead><tr><th style="width:9%">Key</th><th style="width:26%">Source</th><th>Claim it supports</th><th style="width:24%">URL (full-review retrieval {RETRIEVED})</th></tr></thead>
     <tbody>{rows}</tbody>
   </table>
 </div>
@@ -232,6 +233,9 @@ FLAGS = [
     ("FR-17", "“13.1%” was labelled a maximum catch-up / June 2027 ceiling", "Corrected 10 Nov 2026",
      "13.1% is 11.5% banked (2020–2025) plus the 1.6% annual allowance in force through 28 February 2027. It is therefore the conditional maximum only for an effective date <b>on or before 28 February 2027</b>. For 1 Mar – 31 May 2027 (off-anniversary before 1 June 2027) only 11.5% is banked plus the unannounced 2027–28 rate; on <b>1 June 2027</b> (once 12 full months have elapsed since 1 June 2026) all seven skipped years 2020–2026 (<b>13.1%</b>) are banked plus whatever 2027–28 rate the Rent Board publishes.",
      "Re-check the Rent Board's published percentage before any effective date on or after 1 March 2027.", "SF_571"),
+    ("FR-18", "Housing Inventory information is public — privacy-sensitive filing", "Verified — privacy action",
+     "On 11 November 2026 the City page expressly stated: “The information entered in the housing inventory submission is public.” Its examples include owner name/business contact, approximate unit details and occupancy history. This project site does not publish owner or tenant identifiers. Before filing, review the City page; it allows the designated property manager's business contact where applicable. Do not provide inaccurate information.",
+     "Owner reviews current City disclosure terms and chooses an appropriate truthful business contact before submission; do not post personal identifiers to this project website.", "SF_HI"),
 ]
 
 
@@ -250,7 +254,7 @@ def flagged():
     body = f"""
 <div class="card alert">
   <h1>Flagged for review</h1>
-  <p class="lede">{len(FLAGS)} items that are unverified, blank, internally inconsistent or corrected. They are published here deliberately — nothing on this list was filled in with a guess — and none of them blocks publication of the site.</p>
+  <p class="lede">{len(FLAGS)} items that are unverified, blank, internally inconsistent, corrected or privacy-relevant. They are published here deliberately — nothing on this list was filled in with a guess — and none of them blocks publication of the site.</p>
 </div>
 
 <div class="card">
@@ -264,6 +268,7 @@ def flagged():
       <tr><td><span class="badge danger">Irregularity</span></td><td>Two official sources do not say the same thing.</td>{cell("SF_BANK", "SF_LI")}</tr>
       <tr><td><span class="badge danger">Pending — not law</span></td><td>Proposed legislation that would change the outcome if enacted.</td>{cell("LEGISTAR_261020")}</tr>
       <tr><td><span class="badge ok">Corrected</span></td><td>An earlier statement on this site was wrong and has been replaced.</td>{cell("SF_LI")}</tr>
+      <tr><td><span class="badge ok">Verified — privacy action</span></td><td>The official rule is confirmed, but the owner must review the disclosure implications before submitting information. Identifiers are not republished here.</td>{cell("SF_HI")}</tr>
     </tbody>
   </table>
 </div>

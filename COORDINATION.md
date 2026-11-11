@@ -887,9 +887,18 @@ The canonical site already existed; this task does not duplicate or replace anot
 
 | # | Task | Status | Owner | File scope |
 |---|---|---|---|---|
-| N1 | Claim this pass and verify current authoritative licensing/rent pages | in progress | `arena/884be5f9` | `COORDINATION.md`, `research/verification-log.md` |
-| N2 | Add verified public-record disclosure warning for Housing Inventory and protect personal details on site | in progress | `arena/884be5f9` | `tools/site_pages_core.py`, `tools/site_pages_ref.py`, generated canonical `index.html`, `pages/*.html` |
-| N3 | Refresh stale notice-date planner for 11 Nov 2026 and run all verification/privacy/build gates | in progress | `arena/884be5f9` | `tools/site_pages_core.py`, generated `pages/process.html`, verification logs |
+| N1 | Claim this pass and verify current authoritative licensing/rent pages | done — four current official sources fetched 11 Nov | `arena/884be5f9` | `COORDINATION.md`, `research/verification-log.md` |
+| N2 | Add verified public-record disclosure warning for Housing Inventory and protect personal details on site | done — added to dashboard, executive summary, process, sources and FR-18; identifiers remain absent | `arena/884be5f9` | `tools/site_pages_core.py`, `tools/site_pages_ref.py`, generated canonical `index.html`, `pages/*.html` |
+| N3 | Refresh stale notice-date planner for 11 Nov 2026 and run all verification/privacy/build gates | done — every canonical gate passed | `arena/884be5f9` | `tools/site_pages_core.py`, generated `pages/process.html`, verification logs |
 | N4 | Final integration and live status check | in progress | `arena/884be5f9` | `COORDINATION.md` |
 
 Claim-date source check: 11 November 2026. Re-fetched [sf.gov rent increase guidance](https://www.sf.gov/learn-about-rent-increases-san-francisco), [sf.gov Housing Inventory](https://www.sf.gov/rent-board-housing-inventory), [sf.gov banked rent increases](https://www.sf.gov/information--banked-rent-increases), and [Legistar File #261020](https://sfgov.legistar.com/LegislationDetail.aspx?ID=8217304&GUID=7EDA4662-EBFB-4AF5-962F-C669B64AA770). These confirm 1.6% for 1 Mar 2026–28 Feb 2027; the Housing Inventory requirement and automatic licence for tenant-occupied property; the 24-full-month condition on banked increases; and File #261020 remains Pending Committee Action. The Housing Inventory page explicitly states submitted information is public and may include owner name/business contact and unit details. Do not publish owner or tenant identifiers on this project site; use a designated business contact where appropriate and review the City's disclosure details before filing.
+
+### Verification record — `arena/884be5f9` (11 Nov 2026)
+
+- Refetched the current Rent Board annual-increase page, Housing Inventory page, banked-increase page, and Legistar File #261020; direct quoted findings and scope are in `research/verification-log.md`.
+- Added a prominent official-source warning that Housing Inventory submissions are public, including examples of owner contact and unit-level information. Site content still uses Tenant A–F and withholds all personal names, contact data, ZIP code and neighbourhood. Added `FR-18` for this privacy-sensitive filing step.
+- Updated the notice planner from 10 Nov to 11 Nov; 8 Feb is marked past and 9 Feb / 14 Feb are calendar arithmetic only with statutory links and a caution to confirm service before relying on it.
+- Tests on the working tree: `privacy_scan.py` PASS (107 tracked text files); `verify_core_site.py` PASS (14 pages, 41 tables, 347 rows, 999 links); `audit_site.py` PASS (70 HTML files, canonical official-row-source checks, arithmetic and privacy); `verify_site.py` PASS; `check_site.py` PASS; `verify_edition.py` PASS; `check_v2.py` PASS (210 sourced rows, 2 blank+flagged rows). Generated build is fresh; `git diff --check` PASS.
+- `check_v2.py` reports 25 non-blocking manual-review warnings in the preserved `verified/` edition: 18 blank/flagged rows and 7 cross-reference-only rows. They are in an older preserved edition, not the regenerated canonical pages; the checker passes and the warnings are retained for audit rather than rewritten in this scoped pass.
+- No owner or tenant identifiers were added. The official City disclosure itself is a privacy-sensitive caveat, not data to copy onto this website.

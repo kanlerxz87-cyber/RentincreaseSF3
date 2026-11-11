@@ -6,7 +6,7 @@ def index():
     body = f"""
 <div class="card hero">
   <h1>San Francisco rent increase — verified answers</h1>
-  <p class="lede">Two rent-controlled units in a two-unit San Francisco building (built 1940). This dashboard answers the owner's questions in the order asked, with an official source link on every row. Research pass: 10 November 2026.</p>
+  <p class="lede">Two rent-controlled units in a two-unit San Francisco building (built 1940). This dashboard answers the owner's questions in the order asked, with an official source link on every row. Core source refresh: 11 November 2026; full source review: 10 November 2026.</p>
   <div class="quote"><b>Privacy:</b> tenants are shown as <b>Tenant A–F</b>; the ZIP code, neighbourhood and street address are withheld (unit-level facts plus a location could identify the tenants). <b>Dates and dollar amounts are unchanged.</b> Not legal advice.</div>
 </div>
 
@@ -24,6 +24,7 @@ def index():
       <tr><td>Is the licence checked on the notice date or the effective date?</td><td><b>The effective date.</b> Reporting after the deadline is allowed, but the licence must exist <i>on the effective date of the notice</i>.</td>{cell("SF_HI", "SF_NONCOMP")}</tr>
       <tr><td>Does a correct 1.6% calculation cure a missing licence?</td><td><b>No.</b> The licence is a separate pre-condition; the licensing page states the licence must be on file “before any annual or banked rent increase can go into effect”.</td>{cell("SF_HI", "SF_BANK")}</tr>
       <tr><td>Is the Housing Inventory report the same as the annual Rent Board Fee?</td><td><b>No — separate obligations.</b> Reporting into the Housing Inventory is free and generates the licence; the <b>Rent Board Fee</b> is a separate annual bill (<b>$59.00 per dwelling unit</b> for 2026–27, due 1 March; 50% = $29.50 recoverable from qualifying tenants; 2027 exemption window closes 14 December 2026). Neither satisfies the other.</td>{cell("SF_HI", "SF_FEE")}</tr>
+      <tr><td>Is the Housing Inventory private?</td><td><b>No. The City says submitted information is public.</b> It may include owner name/business contact, approximate unit details and occupancy history. This project site omits identifying details; review the City's disclosure page and consider a designated business contact/property manager where applicable before filing.</td>{cell("SF_HI")}</tr>
     </tbody>
   </table>
   <p style="margin-top:10px"><b>Bottom line:</b> file the Housing Inventory → confirm the licence is current on the effective date → then calculate, then serve notice. Full sequence: <a href="pages/process.html"><b>Licence &amp; process →</b></a></p>
@@ -45,7 +46,7 @@ def index():
   <h2>3. What changed on 9 November 2026 — read before serving any notice</h2>
   <p>The Rent Board added a notice to its rent-increase and banking pages on <b>9 November 2026</b>: the Board of Supervisors is considering legislation (<b>File No. 261020</b>) that would <b>temporarily limit the combined amount of banked rent increases and capital improvement rent increases to 10% per year</b>, for the next three years. The Rent Board states that, if enacted as currently proposed, it would apply to <b>banked rent increases noticed on or after 15 September 2026</b> — and that “<b>this legislation has not been enacted and is subject to change</b>”.</p>
   <table>
-    <thead><tr><th>Fact</th><th>Status on 10 Nov 2026</th><th>Official source</th></tr></thead>
+    <thead><tr><th>Fact</th><th>Status on 11 Nov 2026</th><th>Official source</th></tr></thead>
     <tbody>
       <tr><td>Ordinance title and effect</td><td>Would cap banked + capital-improvement increases at a total of <b>10% per year</b> for rent-controlled units, for three years.</td>{cell("LEGISTAR_261020")}</tr>
       <tr><td>Legislative status</td><td><b>Pending Committee Action</b> — introduced 15 Sep 2026, referred to the Land Use and Transportation Committee; no final action recorded. Not law.</td>{cell("LEGISTAR_261020")}</tr>
@@ -118,6 +119,7 @@ def executive_summary():
       <tr><td>Per-increase approval</td><td><b>None needed</b> for annual or banked increases; no petition is filed for them.</td>{cell("SF_571", "SF_BANK")}</tr>
       <tr><td>Consequence of no licence</td><td>The notice “will not be enforceable without having a rent increase license on the effective date”. The Rent Board's noncompliance page is stronger still: a notice that takes effect while the unit is unlicensed “may be null and void (this may apply for multiple years)”, and the tenant “may be entitled to a rent refund” (Form 516C, or Form 518 before the effective date).</td>{cell("SF_HI", "SF_NONCOMP", "ADMIN_373")}</tr>
       <tr><td>Separate Rent Board Fee</td><td>Distinct from the free Housing Inventory report: <b>$59.00 per dwelling unit</b> for 2026–27 (due 1 March; 50% recoverable from qualifying tenants; 2027 exemption deadline 14 December 2026).</td>{cell("SF_FEE", "SF_HI")}</tr>
+      <tr><td>Privacy warning — Housing Inventory</td><td>The City's page states submitted information is <b>public</b> and may include the owner's name and business contact plus unit details. Do not put private owner or tenant identifiers on this website. Review the disclosure before filing; the City allows designated property-manager contact details where applicable.</td>{cell("SF_HI")}</tr>
     </tbody>
   </table>
   <p class="small" style="margin-top:8px">Practical sequence: report → confirm licence → calculate → serve notice. Full walk-through with dates: <a href="process.html">Licence &amp; process</a>.</p>
@@ -215,7 +217,7 @@ def process():
   <ol class="steps">
     <li><b>Check that the units are covered.</b> Units built on or before 13 June 1979 generally have rent control and eviction protection, unless the unit is a single-family dwelling or most condominiums. This building is a 1940 two-unit property, so it is presumptively covered; confirm with the City's property record and, if in doubt, with a Rent Board counsellor.
       <div class="small">Source: {srcs("SF_LAWS", "SF_COUNSEL")}</div></li>
-    <li><b>Report into the Housing Inventory — every year, by 1 March.</b> Use the Rent Board Portal, create an account, and report each unit: owner/manager business contact, business registration if any, approximate square footage in 250 sq ft increments, bedrooms, bathrooms, occupancy start date and base rent in $250 increments (plus whether utilities are included). Submissions are made under penalty of perjury. Reporting is free and there is no monetary penalty for filing after the deadline; owners who cannot access the online Portal may submit paper filings by email (<code>rentboard.inventory@sfgov.org</code>) or at the Rent Board office, though paper processing is slower. (Note: the annual <b>Rent Board Fee</b> — $59.00 per dwelling unit for 2026–27, due 1 March — is a separate obligation from the free Housing Inventory report.)
+    <li><b>Report into the Housing Inventory — every year, by 1 March.</b> Use the Rent Board Portal, create an account, and report each unit: owner/manager business contact, business registration if any, approximate square footage in 250 sq ft increments, bedrooms, bathrooms, occupancy start date and base rent in $250 increments (plus whether utilities are included). Submissions are made under penalty of perjury, and the City states that submitted information is public (including owner name/business contact and unit details). Use a designated property-manager/business contact where appropriate, and review the City's public disclosure terms before filing; do not enter false information. Reporting is free and there is no monetary penalty for filing after the deadline; owners who cannot access the online Portal may submit paper filings by email (<code>rentboard.inventory@sfgov.org</code>) or at the Rent Board office, though paper processing is slower. (Note: the annual <b>Rent Board Fee</b> — $59.00 per dwelling unit for 2026–27, due 1 March — is a separate obligation from the free Housing Inventory report.)
       <div class="small">Source: {srcs("SF_HI", "SF_NONCOMP", "SF_FEE", "SF_PORTAL")}</div></li>
     <li><b>Confirm the licence — on the effective date, not the notice date.</b> A licence is generated automatically for non-owner-occupied units after the report. Check it in the Portal. The Rent Board's exact test is that the licence be held “on the effective date of the notice”; without it the notice “will not be enforceable”. The licence does not have to be sent with the notice. The Rent Board's noncompliance page states the practical stakes: a notice that takes effect while the unit is unlicensed “may be null and void (this may apply for multiple years)” and the tenant “may be entitled to a rent refund”.
       <div class="small">Source: {srcs("SF_HI", "SF_BANK", "SF_NONCOMP")}</div></li>
@@ -251,7 +253,7 @@ def process():
 </div>
 
 <div class="card">
-  <h2>Notice-date planner (calculated for this file, 10 November 2026)</h2>
+  <h2>Notice-date planner (calculated for this file, 11 November 2026)</h2>
   <p class="small">Arithmetic from the statutory lead times: 30 or 90 days before the effective date; +5 calendar days when served by mail within California. Verify against the statutes before serving.</p>
   <table>
     <thead><tr><th>Target effective date</th><th>Increase size</th><th>Serve in person by</th><th>Mail by</th><th style="width:20%">Rule</th></tr></thead>
@@ -259,12 +261,13 @@ def process():
       <tr><td>1 Feb 2027 — Unit A (3.0% or 1.6%)</td><td>≤10%</td><td><b>2 Jan 2027</b></td><td>28 Dec 2026</td>{cell("LEG_827", "LEG_1013")}</tr>
       <tr><td>1 Feb 2027 — Unit B at 10.0%</td><td>10% (not more than 10%)</td><td><b>2 Jan 2027</b></td><td>28 Dec 2026</td>{cell("LEG_827", "LEG_1013")}</tr>
       <tr><td>1 Feb 2027 — Unit B at 13.1%</td><td>&gt;10%</td><td><span class="badge danger">3 Nov 2026 — passed</span></td><td>29 Oct 2026 — passed</td>{cell("LEG_827")}</tr>
-      <tr><td>8 Feb 2027 — Unit B at 13.1% (first date reachable from today)</td><td>&gt;10%</td><td><b>10 Nov 2026 (last day)</b></td><td><span class="badge danger">5 Nov 2026 — passed</span></td>{cell("LEG_827", "LEG_1013")}</tr>
-      <tr><td>14 Feb 2027 — Unit B at 13.1%</td><td>&gt;10%</td><td>16 Nov 2026</td><td>11 Nov 2026</td>{cell("LEG_827", "LEG_1013")}</tr>
+      <tr><td>8 Feb 2027 — Unit B at 13.1% (earlier deadline has passed)</td><td>&gt;10%</td><td><span class="badge danger">10 Nov 2026 — passed</span></td><td><span class="badge danger">5 Nov 2026 — passed</span></td>{cell("LEG_827", "LEG_1013")}</tr>
+      <tr><td>9 Feb 2027 — Unit B at 13.1% (90 days after personal service today)</td><td>&gt;10%</td><td><b>11 Nov 2026</b></td><td><span class="badge danger">6 Nov 2026 — passed</span></td>{cell("LEG_827", "LEG_1013")}</tr>
+      <tr><td>14 Feb 2027 — Unit B at 13.1% (90 days plus 5-day mail extension)</td><td>&gt;10%</td><td>16 Nov 2026</td><td><b>11 Nov 2026</b></td>{cell("LEG_827", "LEG_1013")}</tr>
       <tr><td>Any date from 1 March 2027 onward</td><td>Any</td><td colspan="2"><b>Blank — the allowable percentage for 1 Mar 2027 – 29 Feb 2028 has not been announced.</b> Use the percentage in effect on the effective date.</td>{cell("SF_LI")}</tr>
     </tbody>
   </table>
-  <p class="small">Because the 90-day window for a 1 February 2027 date has closed, a &gt;10% Unit B increase served now cannot take effect before 8 February 2027. A 10.0% increase can still be effective 1 February 2027 if served by 2 January 2027.</p>
+  <p class="small">As of 11 November 2026, the 90-day deadline for a 1 February 2027 increase above 10% has passed. Calendar arithmetic gives 9 February 2027 as 90 days after personal service on 11 November, or 14 February with the five-day California mail extension. This is a planning aid, not a service determination: verify the exact method, notice contents and counting rules before serving. A 10.0% increase can still be effective 1 February 2027 if served by 2 January 2027.</p>
 </div>
 
 <div class="card">

@@ -108,3 +108,20 @@ changes). `tools/check_v2.py` was added to the CI workflow (it existed but was n
 
 Irregularities found in this pass: none new. Prior flags (FR-01..FR-16, F-1..F-23) remain open and
 published on the flagged pages; they do not block the merge.
+
+---
+
+# Targeted current-source refresh — 2026-11-11
+
+This was a targeted refresh, not a claim that every source in the full register was re-read today. Four primary sources were fetched on 11 November 2026 and compared with the canonical wording:
+
+| Claim | Official source fetched 11 Nov 2026 | Result |
+|---|---|---|
+| Current annual allowance | [SF Rent Board — Learn about rent increases](https://www.sf.gov/learn-about-rent-increases-san-francisco) | The page states 1.6% effective 1 Mar 2026 through 28 Feb 2027; individual owners must report through Housing Inventory and hold a licence before the increase goes into effect; the notice is not filed with the Board. Matched. |
+| Housing Inventory and owner privacy | [SF Rent Board — The Rent Board Housing Inventory](https://www.sf.gov/rent-board-housing-inventory) | Page states all residential owners must report; tenant-occupied property receives an automatically generated licence; annual deadline is 1 March; licence must exist on the rent-increase effective date; reporting is free and separate from the fee. Crucially, the page states submitted information is public and may include owner name/business contact, unit details and occupancy history. Added prominent privacy notice and FR-18; website continues to omit real names, contact details, neighbourhood and ZIP. |
+| Banking condition | [SF Rent Board — Banked rent increases](https://www.sf.gov/information--banked-rent-increases) | Page says a skipped increase is only banked if at least 24 full months pass without any rent increase; no cap back to 1 Apr 1982; additive and non-expiring. Match; the discrepancy with the worked example remains disclosed under FR-03. |
+| Proposed-law status | [San Francisco Legistar — File #261020](https://sfgov.legistar.com/LegislationDetail.aspx?ID=8217304&GUID=7EDA4662-EBFB-4AF5-962F-C669B64AA770) | Status remains **Pending Committee Action**, introduced 15 Sep 2026; no final action listed. Match; this is not represented as enacted law. |
+
+The notice planner was refreshed to 11 Nov 2026. Calendar arithmetic (not legal interpretation): 90 days after 11 Nov 2026 is 9 Feb 2027; adding the California 5-day mail extension gives 14 Feb 2027. The prior 8 Feb row is now explicitly marked passed. Statutory sources remain [Cal. Civ. Code § 827](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=827) and [Cal. Code Civ. Proc. § 1013](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CCP&sectionNum=1013). This planner is only a calendar aid; verify service rules and notice content before use.
+
+Arithmetic/privacy/build verification for this refresh: `tools/privacy_scan.py`, `tools/build_dashboard.py` freshness, `tools/verify_core_site.py`, `tools/audit_site.py`, `verify_site.py`, `tools/check_site.py`, `tools/verify_edition.py`, and `tools/check_v2.py` run after changes; results recorded in the session task record in `COORDINATION.md`.
