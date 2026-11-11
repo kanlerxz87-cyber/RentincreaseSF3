@@ -2,7 +2,7 @@
 
 **Live site:** <https://kanlerxz87-cyber.github.io/RentincreaseSF3/>
 
-A static GitHub Pages dashboard answering one owner's questions about raising rent on two owner-reported rent-controlled units in San Francisco (owner-reported construction year 1940; total building unit count unverified). The Rent Board notification/licence question comes first, because it decides whether any increase is enforceable at all.
+A static GitHub Pages dashboard answering one owner's questions about raising rent on two units reported as rent-controlled in a San Francisco building reported as built in 1940 (total building size and coverage unverified). The Rent Board notification/licence question comes first, because it decides whether any increase is enforceable at all.
 
 Canonical dashboard table rows link official sources for the governing rule; owner-supplied facts are not thereby verified. Unconfirmed values and limitations are listed on **Flagged for review**. Archived editions have row-source exceptions (FR-24) and should not be relied on as current advice.
 
@@ -23,7 +23,7 @@ Canonical dashboard table rows link official sources for the governing rule; own
 | [`pages/review.html`](pages/review.html) | 16-point tenant-lawyer stress test |
 | [`pages/discrimination.html`](pages/discrimination.html) | One unit or both units? Fair-housing analysis |
 | [`pages/requirements.html`](pages/requirements.html) | Every requirement in the brief, its status and its evidence |
-| [`pages/sources.html`](pages/sources.html) | 28-source register with what each supports |
+| [`pages/sources.html`](pages/sources.html) | source register with what each supports |
 | [`pages/flagged.html`](pages/flagged.html) | 25 flagged items: unverified, blank, inconsistent or corrected |
 
 Markdown summary: [`EXECUTIVE_SUMMARY.md`](EXECUTIVE_SUMMARY.md).
@@ -39,7 +39,7 @@ Markdown summary: [`EXECUTIVE_SUMMARY.md`](EXECUTIVE_SUMMARY.md).
 | Unit B (conditional on no increase since 2019) | **10.0% = $315.00 → $3,465.00** illustrative, not an established normal rate; **13.1% = $412.65 → $3,562.65** is the conditional maximum **for an effective date on or before 28 February 2027** (and 7-year banked floor on 1 June 2027 before the unannounced 2027–28 rate), 90 days' notice | [banking](https://www.sf.gov/information--banked-rent-increases) · [Form 571](https://www.sf.gov/documents/34344/571_Allowable_Annual_Increases_26-27_1.pdf) |
 | Notice | 30 days if ≤10%, 90 days if >10%; +5 days by mail in California | [Civ. Code § 827](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=827) · [CCP § 1013](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CCP&sectionNum=1013) |
 | State cap | 8.8% for the San Francisco area from 1 Aug 2026; **not governing** because the local cap is lower | [oag.ca.gov](https://oag.ca.gov/rentcaps) · [Civ. Code § 1947.12](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=1947.12) |
-| Federal | No rent ceiling; fair housing governs the reasons | [42 U.S.C. § 3604](https://www.govinfo.gov/content/pkg/USCODE-2023-title42/html/USCODE-2023-title42-chap45-subchapI-sec3604.htm) |
+| Federal | Fair housing prohibits discriminatory rental terms; federal program rules may also apply | [42 U.S.C. § 3604](https://www.govinfo.gov/content/pkg/USCODE-2023-title42/html/USCODE-2023-title42-chap45-subchapI-sec3604.htm) |
 | Pending | File #261020 would cap banked + capital-improvement increases at 10%/yr; **Pending Committee Action**; Rent Board posted a 9 Nov 2026 notice | [Legistar](https://sfgov.legistar.com/LegislationDetail.aspx?ID=8217304&GUID=7EDA4662-EBFB-4AF5-962F-C669B64AA770) |
 
 ## Privacy
@@ -83,7 +83,7 @@ its own edition so that the canonical pages above were not rewritten:
 [licence and process](verification/license.html) · [laws and caps](verification/laws.html) ·
 [units and arithmetic](verification/units.html) · [notice and reasons](verification/notice.html) ·
 [tenant-lawyer test](verification/tenant-review.html) · [owner practice](verification/practice.html) ·
-[flags F-11…F-23](verification/flagged.html) · [28-source register](verification/sources.html)
+[flags F-11…F-23](verification/flagged.html) · [source register](verification/sources.html)
 
 What it adds:
 

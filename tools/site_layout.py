@@ -25,6 +25,8 @@ SRC = {
     # --- San Francisco Rent Board / City and County of San Francisco
     "SF_LI": ("sf.gov — Learn about rent increases in San Francisco",
               "https://www.sf.gov/learn-about-rent-increases-san-francisco"),
+    "SF_RULE4": ("sf.gov — Rent Board Rules and Regulations, Part IV §§ 4.10 and 4.12",
+                 "https://www.sf.gov/reports--december-2022--rent-board-rules-and-regulations-part-iv-rent-increases-not-requiring"),
     "SF_BANK": ("sf.gov — Banked rent increases",
                 "https://www.sf.gov/information--banked-rent-increases"),
     "SF_HI": ("sf.gov — The Rent Board Housing Inventory",

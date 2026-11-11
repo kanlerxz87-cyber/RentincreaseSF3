@@ -12,7 +12,7 @@ def index():
 
 <div class="card alert">
   <h2>1. First question: do I have to inform the Rent Board and get a licence — as an individual owner, not a corporation?</h2>
-  <p><b>Yes — the same rule applies to an individual owner.</b> San Francisco requires <b>all owners of residential property</b> to report their units into the <b>Rent Board Housing Inventory</b>; for a tenant-occupied unit the report generates a <b>rent-increase licence</b>, and the licence must be in effect on the <b>effective date</b> of the increase. Ordinary annual and banked increases do <b>not</b> require a petition for approval; give proper written notice to tenants. Other types of increases have different procedures.</p>
+  <p><b>Yes — the same rule applies to an individual owner.</b> San Francisco requires <b>all owners of residential property</b> to report their units into the <b>Rent Board Housing Inventory</b>; for a tenant-occupied unit the report generates a <b>rent-increase licence</b>, and the licence must be in effect on the <b>effective date</b> of the increase. Annual and banked increases do not require a petition for approval; whether any separate notice-copy filing applies is not established by those sources (FR-20).</p>
   <table>
     <thead><tr><th style="width:27%">Your question</th><th>Verified answer</th><th style="width:22%">Official source</th></tr></thead>
     <tbody>
@@ -60,8 +60,8 @@ def index():
   <table>
     <thead><tr><th style="width:31%">Question</th><th>Answer in one line</th><th style="width:22%">Detail + source</th></tr></thead>
     <tbody>
-      <tr><td>What is a reasonable / normal increase under local, state and federal law?</td><td>The annual allowance is not a measure of what is typical or fair. The ceiling is generally the Rent Board percentage (1.6% for 1 Mar 2026 – 28 Feb 2027) plus any properly banked amounts. State law (AB 1482, 8.8% in this region) does not govern because the local cap is lower; federal law sets no ceiling.</td>{cell("SF_LI", "LEG_1947", "USC_3604")}</tr>
-      <tr><td>How do large corporations handle increases; how do individual owners?</td><td>Official records show large operators have relied on shared pricing algorithms and renewal pricing (now banned in San Francisco and the subject of a federal antitrust suit) and on resetting rent at a new tenancy. Individual owners use the Rent Board's annual + banked mechanism, with no petition needed.</td>{cell("SF_ALGO", "DOJ_ALGO", "SF_LI")}</tr>
+      <tr><td>What is a reasonable / normal increase under local, state and federal law?</td><td>The annual allowance is not a measure of what is typical or fair. The ceiling is generally the Rent Board percentage (1.6% for 1 Mar 2026 – 28 Feb 2027) plus any properly banked amounts. State law (AB 1482, 8.8% in this region) does not govern because the local cap is lower; the Fair Housing Act prohibits discriminatory terms; federal program rules may also apply.</td>{cell("SF_LI", "LEG_1947", "USC_3604")}</tr>
+      <tr><td>How do large corporations handle increases; how do individual owners?</td><td>Official records document allegations involving some large operators and algorithmic pricing; San Francisco prohibits specified algorithmic pricing devices. New-tenancy pricing is subject to exceptions. Individual owners use the Rent Board's annual + banked mechanism, with no petition needed.</td>{cell("SF_ALGO", "DOJ_ALGO", "SF_LI")}</tr>
       <tr><td>How should tenants be told, and what reasons are acceptable?</td><td>Written notice stating the dollar amount, the percentage, the effective date and (if any) the banked part, served 30 or 90 days ahead (+5 if mailed). No reason is required for an annual or banked increase, but the increase must not be retaliatory or based on a protected characteristic or on a new occupant.</td>{cell("SF_LI", "LEG_827", "LEG_1942")}</tr>
       <tr><td>Would a tenant lawyer accept it?</td><td>No result is guaranteed. The 16-point checklist covers lawful percentage, base rent, licence, service, retaliation and discrimination, but it is not a substitute for an independent legal review.</td>{cell("SF_UNLAWFUL", "SF_TENPET", "LEG_12955")}</tr>
       <tr><td>Raise one unit or both?</td><td>No official source requires both units to be raised. Discrimination law prohibits different treatment <i>because of</i> a protected characteristic, so the risk is about the reason and the record, not the number of units. The Rent Board does not hear discrimination claims — those go to the Civil Rights Department or HUD.</td>{cell("LEG_12955", "USC_3604", "SF_TENPET")}</tr>
@@ -106,7 +106,7 @@ def executive_summary():
 
 <div class="card alert">
   <h2>Forefront finding — the Rent Board notification and licence question</h2>
-  <p><b>Ordinary annual or banked increases do not require a Rent Board approval petition. You do have to report the units into the Housing Inventory and hold a current rent-increase licence on the effective date — and that obligation applies to you as an individual owner exactly as it would to a corporation.</b></p>
+  <p><b>Annual and banked increases do not require a Rent Board approval petition. Any separate notice-copy filing requirement remains unverified (FR-20). You do have to report the units into the Housing Inventory and hold a current rent-increase licence on the effective date — and that obligation applies to you as an individual owner exactly as it would to a corporation.</b></p>
   <table>
     <thead><tr><th style="width:30%">Point</th><th>Verified position</th><th style="width:22%">Official source</th></tr></thead>
     <tbody>
@@ -130,7 +130,7 @@ def executive_summary():
     <div><span>Unit A — base rent</span><br><b>$3,995 / month</b> (unchanged)</div>
     <div><span>Unit A — tenants</span><br>Initial lease: <b>Tenant A</b>, <b>Tenant E</b>, <b>Tenant F</b> · Continuing 1 April 2026 at $3,995: <b>Tenant A</b> (original) and <b>Tenant B</b></div>
     <div><span>Unit B — lease start</span><br><b>1 June 2019</b></div>
-    <div><span>Unit B — base rent</span><br><b>$3,150 / month</b> (no increase history supplied; full catch-up is unverified)</div>
+    <div><span>Unit B — 2019 starting rent</span><br><b>$3,150 / month</b> (current rent and increase history unverified)</div>
     <div><span>Unit B — tenants</span><br><b>Tenant C</b>, <b>Tenant D</b></div>
   </div>
   <p class="small">These are owner statements, not government records. The rent history and licence status are the two facts that most change the answer — both are on the <a href="flagged.html">Flagged for review</a> page.</p>
@@ -158,11 +158,11 @@ def executive_summary():
   <table>
     <thead><tr><th style="width:26%">Question asked</th><th>Finding</th><th style="width:20%">Where + source</th></tr></thead>
     <tbody>
-      <tr><td>Reasonable and normal increases under local, state and federal law (ZIP-level)</td><td><b>Local:</b> 1.6% annual plus properly banked amounts; the Rent Board sets one citywide percentage — it publishes no ZIP-level or neighbourhood rate. <b>State:</b> AB 1482 would allow 8.8% for increases starting 1 Aug 2026 – 31 Jul 2027, but it does not apply where a local ordinance allows a <i>lower</i> increase, and San Francisco's is lower. <b>Federal:</b> no rent ceiling; federal law governs the <i>reasons</i> (fair housing).</td>{cell("SF_LI", "OAG", "LEG_1947", "USC_3604")}</tr>
+      <tr><td>Reasonable and normal increases under local, state and federal law (ZIP-level)</td><td><b>Local:</b> 1.6% annual plus properly banked amounts; the Rent Board sets one citywide percentage — it publishes no ZIP-level or neighbourhood rate. <b>State:</b> AB 1482 would allow 8.8% for increases starting 1 Aug 2026 – 31 Jul 2027, but it does not apply where a local ordinance allows a <i>lower</i> increase, and San Francisco's is lower. <b>Federal:</b> fair-housing law prohibits discriminatory rental terms; subsidy or program rules may impose other restrictions.</td>{cell("SF_LI", "OAG", "LEG_1947", "USC_3604")}</tr>
       <tr><td>Are these 1940-built units rent-controlled?</td><td>Units built on or before <b>13 June 1979</b> are generally covered by rent control and eviction protection, except single-family dwellings and most condominiums. Coverage is owner-reported, not verified. Confirm the building record, unit type, and any exemptions before relying on the calculations.</td>{cell("SF_LAWS")}</tr>
       <tr><td>How do big corporations handle increases?</td><td>Documented official evidence is about <b>vacancy/turnover pricing</b> and <b>algorithmic pricing</b>: San Francisco bans selling or using algorithmic devices to set rents (Rent Ordinance § 37.10C), and the U.S. Department of Justice sued six of the largest landlords over shared-data rent algorithms. The Rent Board confirms there is no limit on the first rent charged for an empty covered unit.</td>{cell("SF_ALGO", "DOJ_ALGO", "SF_LI")}</tr>
       <tr><td>How do individual owners handle increases?</td><td>By the annual allowable increase once every 12 months, plus banked amounts, with a rent-increase licence — no petition and no lawyer required, with free counselling from the Rent Board.</td>{cell("SF_LI", "SF_BANK", "SF_COUNSEL")}</tr>
-      <tr><td>Correct way to inform tenants / acceptable reasons</td><td>Written notice with the dollar amount, percentage, effective date and banked breakdown; 30 or 90 days; +5 days if mailed. No reason has to be given for an annual or banked increase, but the increase may not be retaliatory, may not rest on a protected characteristic, and may not charge extra merely because an occupant joined.</td>{cell("SF_LI", "SF_BANK", "LEG_827", "LEG_1942")}</tr>
+      <tr><td>Correct way to inform tenants / acceptable reasons</td><td>Written notice with the dollar amount, percentage, effective date, banked breakdown and dates used for banking; 30 or 90 days; +5 days if mailed. No reason has to be given for an annual or banked increase, but the increase may not be retaliatory, may not rest on a protected characteristic, and may not charge extra merely because an occupant joined.</td>{cell("SF_LI", "SF_BANK", "LEG_827", "LEG_1942")}</tr>
       <tr><td>Would a tenant lawyer accept it?</td><td>No one can guarantee a tenant lawyer will approve an increase or that it cannot be challenged. The checklist helps identify issues; obtain independent legal advice and confirm the records. Tenants may file an unlawful-rent-increase petition.</td>{cell("SF_UNLAWFUL", "SF_TENPET")}</tr>
       <tr><td>One tenant's unit or both?</td><td>Nothing in the ordinance or in fair-housing law requires uniform increases. The risk to manage is <i>differential treatment for a prohibited reason</i>. A written, dated rationale per unit (rent history, anniversary date, lawful ceiling) is the practical control. Discrimination claims are heard by the Civil Rights Department or HUD, not the Rent Board.</td>{cell("LEG_12955", "USC_3604", "SF_TENPET")}</tr>
     </tbody>
@@ -225,8 +225,8 @@ def process():
       <div class="small">Source: {srcs("SF_BANK", "SF_MULTI")}</div></li>
     <li><b>Check the timing conditions before you commit.</b> The first annual increase can be imposed 12 months after the lease began; after that, no more than once every 12 months on the tenant's anniversary date; if you increase later than the anniversary, the effective date becomes the new anniversary date and a later annual increase may be lost. Avoid retaliatory increases. A recent habitability complaint or repair request calls for particular caution; protections can extend beyond 180 days. Consult counsel. Do not charge extra because a new occupant moved in.
       <div class="small">Source: {srcs("SF_LI", "LEG_1942")}</div></li>
-    <li><b>Serve the written notice in time.</b> 30 days' written notice if the increase is 10% or less of the rent charged at any time in the previous 12 months (alone or combined with other increases); 90 days if more than 10%. Personal delivery, or mail under Code of Civil Procedure § 1013 — if mailed, add 5 calendar days. State the dollar amount, the percentage, the effective date and, for a banked increase, which part is banked.
-      <div class="small">Source: {srcs("LEG_827", "LEG_1013", "SF_BANK")}</div></li>
+    <li><b>Serve the written notice in time.</b> 30 days' written notice if the increase is 10% or less of the rent charged at any time in the previous 12 months (alone or combined with other increases); 90 days if more than 10%. Personal delivery, or mail under Code of Civil Procedure § 1013 — if mailed, add 5 calendar days. State the dollar amount, the percentage, the effective date and, for a banked increase, which part is banked and the dates underlying it.
+      <div class="small">Source: {srcs("LEG_827", "LEG_1013", "SF_BANK", "SF_RULE4")}</div></li>
     <li><b>Keep the file and diarise next year.</b> Keep the notice, proof of service, a screenshot of the current licence, the calculation and the rent history. Update owner/manager contact details within 30 days of any change and re-report by 1 March. The date of the increase becomes the new anniversary date.
       <div class="small">Source: {srcs("SF_HI", "SF_LI")}</div></li>
     <li><b>If a tenant petitions, respond with the file.</b> Before an increase takes effect, a tenant who sees no licence in the Portal may file a <b>Tenant Summary Petition (Form 518)</b>; after an increase takes effect, a tenant may file a <b>Tenant Petition (Form 516C, box C)</b> for an unlawful rent increase or a determination of lawful rent — free, with no filing deadline — heard by a Rent Board Administrative Law Judge without needing a lawyer.
@@ -296,9 +296,9 @@ def units():
   <div class="facts">
     <div><span>Lease start</span><br><b>1 February 2025</b></div>
     <div><span>Base rent</span><br><b>$3,995.00 / month</b></div>
-    <div><span>Current rent</span><br><b>$3,995.00</b> — unchanged since 1 Feb 2025</div>
+    <div><span>Reported rent on 1 April 2026</span><br><b>$3,995.00</b> — later history unverified</div>
     <div><span>Tenancy</span><br>Initial lease: <b>Tenant A</b>, <b>Tenant E</b> and <b>Tenant F</b> · Continuing <b>1 April 2026</b> at $3,995: <b>Tenant A</b> (original) and <b>Tenant B</b></div>
-    <div><span>First increase available</span><br><b>1 February 2026</b> (12 months after the lease began) — not taken</div>
+    <div><span>First increase available</span><br><b>1 February 2026</b> (12 months after the lease began) — assuming no increase</div>
     <div><span>Next date reachable</span><br><b>1 February 2027</b> — 24 months after the lease began</div>
   </div>
   <p class="small">Why this is a controlled continuation and not a market reset: under Administrative Code § 37.3(d)(2)(B) and Rent Board Rule § 6.14, Costa-Hawkins / § 6.14 unlimited increases do <i>not</i> apply to partial changes in occupancy while an original occupant (<b>Tenant A</b>) remains in lawful possession, and under § 37.3(a)(11)(A) adding an occupant (<b>Tenant B</b>) never authorises an extra rent charge. If instead the 1 April 2026 lease is treated as restarting the 12-month anniversary clock, the first increase would fall on 1 April 2027 — both dates are on the <a href="flagged.html">Flagged</a> page (FR-02). Sources: {srcs("ADMIN_373", "SF_614", "SF_LI")}</p>
@@ -323,16 +323,16 @@ def units():
   <div class="facts">
     <div><span>Lease start</span><br><b>1 June 2019</b></div>
     <div><span>Base rent</span><br><b>$3,150.00 / month</b></div>
-    <div><span>Current rent</span><br><b>$3,150.00</b> — no increase history supplied; full catch-up is unverified</div>
+    <div><span>Starting rent, 2019</span><br><b>$3,150.00</b> — current rent and increase history unverified</div>
     <div><span>Tenants</span><br><b>Tenant C</b> and <b>Tenant D</b></div>
-    <div><span>First increase available</span><br><b>1 June 2020</b> — not taken</div>
-    <div><span>Anniversary today</span><br><b>1 June</b> (no increase has reset it)</div>
+    <div><span>First increase available</span><br><b>1 June 2020</b> — assuming no increase</div>
+    <div><span>Assumed anniversary</span><br><b>1 June</b> (only if no increase has reset it)</div>
   </div>
   <p class="small"><b>The critical unknown:</b> if any increase was imposed at any point since 1 June 2019, the banked total below is wrong. Confirm from leases, notices and the rent ledger before serving anything (FR-01).</p>
 </div>
 
 <div class="card">
-  <h2>Unit B — the six annual percentages that were skipped</h2>
+  <h2>Unit B — six annual percentages, assuming all were skipped</h2>
   <table>
     <thead><tr><th>Increase year (anniversary)</th><th>Allowable percentage</th><th>Percentage in effect</th><th>Status</th><th style="width:20%">Official source</th></tr></thead>
     <tbody>
@@ -368,7 +368,7 @@ def units():
 <div class="card">
   <h2>Side-by-side effect (calculated)</h2>
   <table>
-    <thead><tr><th>Unit</th><th>Current rent</th><th>Option</th><th>New rent</th><th>Extra per month</th><th>Extra per year</th><th style="width:18%">Basis</th></tr></thead>
+    <thead><tr><th>Unit</th><th>Assumed base rent</th><th>Option</th><th>New rent</th><th>Extra per month</th><th>Extra per year</th><th style="width:18%">Basis</th></tr></thead>
     <tbody>
       <tr><td>Unit A</td><td>$3,995.00</td><td>3.0%</td><td>$4,114.85</td><td>$119.85</td><td>$1,438.20</td>{cell("SF_571")}</tr>
       <tr><td>Unit A</td><td>$3,995.00</td><td>1.6%</td><td>$4,058.92</td><td>$63.92</td><td>$767.04</td>{cell("SF_571")}</tr>
@@ -384,7 +384,7 @@ def units():
   <table>
     <thead><tr><th style="width:34%">Item</th><th>Why it changes the answer</th><th style="width:20%">Source</th></tr></thead>
     <tbody>
-      <tr><td>Unit B rent history 2019–2026</td><td>Every skipped year that was actually taken disappears from the 11.5% banked total.</td>{cell("SF_BANK")}</tr>
+      <tr><td>Unit B rent history 2019–2026</td><td>A prior increase requires recalculation; partial unused increases may be bankable.</td>{cell("SF_BANK")}</tr>
       <tr><td>Licence in force on the effective date</td><td>Without it the notice is not enforceable, whatever the percentage; the Board's noncompliance page says such a notice may be “null and void” and the tenant may be owed a refund.</td>{cell("SF_HI", "SF_NONCOMP")}</tr>
       <tr><td>Unit A anniversary: 1 Feb or 1 Apr</td><td>Moves the earliest lawful date and the banked amount.</td>{cell("SF_LI")}</tr>
       <tr><td>2027–28 percentage</td><td>Not announced; cannot be used for an effective date on or after 1 March 2027.</td>{cell("SF_LI", "SF_571")}</tr>
