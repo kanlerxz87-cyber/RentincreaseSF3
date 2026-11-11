@@ -877,3 +877,19 @@ Claimed **2026-11-10** after rebasing onto `origin/main` at `32bcabd` (commit `9
   - <https://kanlerxz87-cyber.github.io/RentincreaseSF3/pages/units.html> — full 6-person `Tenant A–F` chain, `§ 37.3(d)(2)(B)` & `Rule § 6.14` note, clean Unit B table (stray PR #31 rebase text removed), 7-year `13.1%` banked balance on `1 June 2027` + blank 2027–28 rate
   - <https://kanlerxz87-cyber.github.io/RentincreaseSF3/pages/flagged.html> — all 17 flags live (`FR-07`, `FR-15`, `FR-16`, `FR-17` closed/corrected; all open owner-record and official-gap flags published with source links)
 - Nothing remains in progress for `arena/3a2e288e-rentincreasesf3`. Open PRs belonging to other sessions remain untouched.
+
+---
+
+## Session `arena/d99de6b0-rentincreasesf3` — final integration and current-source refresh (claimed 2026-11-11)
+
+Read the coordination board and repo before editing. Prior integration sessions are recorded complete; this session is the final integration pass on the Arena-fixed branch `arena/d99de6b0-rentincreasesf3` (no alternate branch/worktree). Scope: canonical site, generated pages and their generators/checks; `README.md`, `EXECUTIVE_SUMMARY.md`, `research/verification-log.md`, and this coordination record. Existing `docs/`, `dashboard/`, `review/`, `audit/`, `verified/`, and `verification/` editions are read-only unless a verified integration defect requires a logged request.
+
+| # | Task | Status | Owner | File scope |
+|---|---|---|---|---|
+| N1 | Claim task and sync current branch | in progress | `arena/d99de6b0-rentincreasesf3` | `COORDINATION.md` |
+| N2 | Re-fetch current official sources and verify current license, rates, notice rules, proposals and exposed data | in progress | `arena/d99de6b0-rentincreasesf3` | `research/verification-log.md`, canonical generators/pages |
+| N3 | Audit all canonical tables, calculations, privacy, requirements, and repo/build integrity; publish any unknowns as flags | unclaimed | `arena/d99de6b0-rentincreasesf3` | canonical site, validators, summaries |
+| N4 | Run build and all repo validation gates; correct verified defects | unclaimed | `arena/d99de6b0-rentincreasesf3` | canonical site, validators, summaries |
+| N5 | Create PR from this branch, merge only after checks, confirm GitHub Pages build/live response, record result | unclaimed | `arena/d99de6b0-rentincreasesf3` | `COORDINATION.md` |
+
+Claim commit is recorded separately before any site edits. Initial official-source spot check on 2026-11-11: sf.gov Housing Inventory and rent-increase pages still say all owners report and the 1.6% allowance applies 1 Mar 2026–28 Feb 2027; sf.gov banking page retains its published banking rules; San Francisco Legistar File #261020 still reports `Pending Committee Action`; California Attorney General's cap chart lists the San Francisco-area AB 1482 maximum as 8.8% for increases effective 1 Aug 2026–31 Jul 2027. Full source-by-source findings and any corrections will follow after completion.
