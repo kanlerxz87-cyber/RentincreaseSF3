@@ -1066,3 +1066,16 @@ Claimed **2026-11-11**. This branch (`arena/0dea38fc-rentincreasesf3`) is based 
 | W3 | Headline facts corroborated 2026-11-11 (1.6%, license incl. individuals, 30/90-day, 8.8% state cap); log rows 59-61 | done | `research/verification-log.md` |
 | W4 | Pages status `built` via API (egress blocks direct fetch) | done | read-only |
 | W5 | PR → merge → Pages (record below) | in progress | `COORDINATION.md` |
+
+## Task board — session `arena/beba4d31-rentincreasesf3` (independent re-verification + integration, 2026-11-11)
+
+Claimed **2026-11-11T04:20Z**. Branch `arena/beba4d31-rentincreasesf3`, branched from `main` at `a12419d` (PR #47 merged). The canonical site (`index.html`, `pages/`), `EXECUTIVE_SUMMARY.md`, the five archived editions and the seven gate scripts already exist and are merged. This session is a **verification + integration pass**: it re-fetches official sources directly (this sandbox has live egress to sf.gov, leginfo.legislature.ca.gov, oag.ca.gov, govinfo.gov, leginfo and api.github.com), checks each published figure and citation line by line, fixes only what is demonstrably wrong against an official source, logs everything it finds in `research/verification-log.md`, and then runs the full gate suite, opens a PR and records the merge + Pages deploy.
+
+| # | Task | Status | File scope | Notes |
+|---|---|---|---|---|
+| B1 | Claim tasks, record scope, push claim | done | `COORDINATION.md` | this section |
+| B2 | Re-fetch and re-verify every official source cited on the canonical pages | done — 16 source groups read in full; log rows 59–74 | read-only for pages; findings → `research/verification-log.md` | direct fetch, not web-search paraphrase |
+| B3 | Line-by-line arithmetic + notice-date re-check of Unit A / Unit B figures | done — all amounts and notice dates recomputed, unchanged | `research/verification-log.md` | recompute from published percentages |
+| B4 | Run all gates (`verify_core_site.py`, `audit_site.py`, `verify_site.py`, `check_site.py`, `verify_edition.py`, `check_v2.py`, `verify_review_regressions.py`, `privacy_scan.py`) | done — 8 gates PASS, build idempotent | read-only | must be green before PR |
+| B5 | Fix only verified errors; flag everything unverifiable on `pages/flagged.html` | done — rate table corrected (FR-26), new gate added | `tools/`, `pages/`, `COORDINATION.md` | no inference, blanks where unconfirmed |
+| B6 | PR → `main`, merge, confirm GitHub Pages deploy, record PR + deploy here | unclaimed | `COORDINATION.md` | no approval wait |
