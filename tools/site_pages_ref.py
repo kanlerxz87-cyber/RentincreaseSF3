@@ -1,7 +1,7 @@
 """Reference pages: sources register, requirements checklist, flagged for review."""
 from site_layout import SRC, src, srcs, cell, page
 
-RETRIEVED = "10 Nov 2026"
+RETRIEVED = "11 Nov 2026"
 
 # key, what it supports
 USED_FOR = {
@@ -47,7 +47,7 @@ def sources():
     body = f"""
 <div class="card">
   <h1>Sources &amp; verification register</h1>
-  <p class="lede">Every official source used on this site, the claim it supports, and the date it was retrieved. The existing register was reviewed on 10 November 2026; Part IV was added and read on 11 November 2026. Availability can change.</p>
+  <p class="lede">Every official source used on this site, the claim it supports, and the date it was retrieved. The register was reviewed on 10 November 2026 and all registered sources were re-fetched and read on 11 November 2026; Part IV was added and read on 11 November 2026. Availability can change.</p>
 </div>
 
 <div class="card">
