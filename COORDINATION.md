@@ -1079,3 +1079,14 @@ Claimed **2026-11-11T04:20Z**. Branch `arena/beba4d31-rentincreasesf3`, branched
 | B4 | Run all gates (`verify_core_site.py`, `audit_site.py`, `verify_site.py`, `check_site.py`, `verify_edition.py`, `check_v2.py`, `verify_review_regressions.py`, `privacy_scan.py`) | done — 8 gates PASS, build idempotent | read-only | must be green before PR |
 | B5 | Fix only verified errors; flag everything unverifiable on `pages/flagged.html` | done — rate table corrected (FR-26), new gate added | `tools/`, `pages/`, `COORDINATION.md` | no inference, blanks where unconfirmed |
 | B6 | PR → `main`, merge, confirm GitHub Pages deploy, record PR + deploy here | unclaimed | `COORDINATION.md` | no approval wait |
+
+### PR / deploy record — session `arena/beba4d31-rentincreasesf3` (2026-11-11)
+
+- **Branch:** `arena/beba4d31-rentincreasesf3` → `main`. **PR:** [#49](https://github.com/kanlerxz87-cyber/RentincreaseSF3/pull/49) — "Re-verification 2026-11-11: rate table corrected against Form 571 (FR-26) + new build gate".
+- **Merge:** **MERGED** 2026-11-11T04:26:07Z, merge commit `b645d824b2471a3091023d64787330347b0cbc95` (`gh pr merge 49 --merge`, no approval wait). Main had advanced once during this session (PR #48, session `arena/0dea38fc-rentincreasesf3`); this branch was rebased onto it and both `COORDINATION.md` and `research/verification-log.md` add/add conflicts were resolved by keeping **all** sessions' entries — that session's task board kept verbatim, and its log rows 59–61 kept while this pass's rows were renumbered 62–77, so nothing was discarded and no row number is duplicated.
+- **CI:** `Site checks` run `42959117054` on the PR head **success** (all gates incl. the new rate-table gate); `Site checks` on the `main` push (`b645d82`) **success**.
+- **GitHub Pages:** `pages-build-deployment` run `42959215449` **success**; Pages API latest build → status **`built`** for `b645d82`, error null.
+- **Live verification (fetched post-deploy 2026-11-11):** <https://kanlerxz87-cyber.github.io/RentincreaseSF3/pages/laws.html> serves the corrected 1982–2027 table — 46 rows including `12/8/92 – 2/28/93 1.6%`, and the corrected end dates (`3/1/12 – 2/28/13`, `3/1/04 – 2/28/05`, `3/1/00 – 2/28/01`, `3/1/96 – 2/28/97`, `3/1/95 – 2/29/96`). Flagged page serves 26 flags.
+- **What changed on the live site:** the rate table (FR-26), a new build gate that prevents the same drift, a dynamic flag count, and research log rows 62–77. No percentage, dollar amount, notice date or legal quotation on any canonical page was changed — all were re-confirmed against the official source.
+- **Still open (non-blocking, published on Flagged for review):** FR-01 … FR-25 as listed above. FR-26 is closed.
+- Nothing remains in progress for `arena/beba4d31-rentincreasesf3`. Open PRs belonging to other sessions (#1, #8, #20, #33, #35, #45) were **not** touched.
