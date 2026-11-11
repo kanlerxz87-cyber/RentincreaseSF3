@@ -1061,8 +1061,8 @@ Claimed **2026-11-11**. This branch (`arena/0dea38fc-rentincreasesf3`) is based 
 
 | # | Task | Status | File scope |
 |---|---|---|---|
-| W1 | Claim tasks, record scope, push claim | in progress | `COORDINATION.md` |
-| W2 | Run all 7 gates on merged tree (privacy, core, audit, editions) | unclaimed | read-only |
-| W3 | Independently corroborate headline facts against official sources (sf.gov, leginfo, Legistar) | unclaimed | `research/verification-log.md` |
-| W4 | Verify live site + Pages status via GitHub API | unclaimed | read-only |
-| W5 | PR → `main`, CI green, merge, confirm Pages build, record result | unclaimed | `COORDINATION.md` |
+| W1 | Claim tasks, record scope, push claim | done | `COORDINATION.md` |
+| W2 | All 7 gates PASS (privacy; core 14p/41t/350r/988 links; audit 70 files; editions) | done | read-only |
+| W3 | Headline facts corroborated 2026-11-11 (1.6%, license incl. individuals, 30/90-day, 8.8% state cap); log rows 59-61 | done | `research/verification-log.md` |
+| W4 | Pages status `built` via API (egress blocks direct fetch) | done | read-only |
+| W5 | PR → merge → Pages (record below) | in progress | `COORDINATION.md` |

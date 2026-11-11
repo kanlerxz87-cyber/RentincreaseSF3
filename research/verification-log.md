@@ -168,3 +168,13 @@ or source URL was changed. Open pull requests reviewed and **not merged** (see C
 section): #1 and #8 (superseded first editions), #20 (substance already on `main`; only a `data/sources.json`
 addition outstanding, owner to rebase), #33 (overlaps FR-17 corrections merged in PRs #27/#34 — needs owner
 rebase onto `main`), #35 (stray-text fix; stray text is absent from `main` — superseded by PR #34).
+
+### Independent confirmation — session `arena/0dea38fc` (2026-11-11)
+
+| # | Assertion | Check | Result |
+|---|---|---|---|
+| 59 | All 7 gates pass on merged tree | privacy_scan PASS; verify_core PASS (14 pages/41 tables/350 rows/988 links); audit PASS (70 files); verify_site, check_site, verify_edition, check_v2 PASS | PASS |
+| 60 | Headline arithmetic | 3995×1.016=4058.92; 3995×1.03=4114.85; 3150×1.10=3465.00; 3150×1.131=3562.65 (recomputed) | Consistent |
+| 61 | 1.6% (2026-27), licence requirement incl. individual 1-9 unit owners, §827 30/90-day, AB 1482 8.8% SF-area | Web-search corroboration against sf.gov/leginfo/oag reporting 2026-11-11; matches direct fetches by prior sessions | Consistent |
+
+No content changes; flagged items FR-01…FR-25 remain published and non-blocking.
