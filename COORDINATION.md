@@ -1238,3 +1238,28 @@ reported 1 failure when `README.md` was temporarily set back to "25 flagged item
 | W3 | Direct-fetch every official source; re-check each published figure | done |
 | W4 | Repo review, irregularities flagged/corrected, gates extended | done |
 | W5 | PR → merge → confirm Pages deploy → record | in progress |
+
+### Conflict log and one further irregularity — `arena/96aa0f4f` (2026-11-11)
+
+While this branch was open, `main` advanced to `00eedf7` (PRs #49 / #51, session
+`arena/beba4d31-rentincreasesf3`) and to rows 59–61 of `research/verification-log.md` (session
+`arena/0dea38fc`). `git pull --rebase` produced conflicts in `COORDINATION.md`,
+`tools/verify_core_site.py`, `tools/site_pages_ref.py`, `research/verification-log.md` and
+`pages/flagged.html`. **Resolution discarded nothing:**
+
+| Conflict | Resolution |
+|---|---|
+| `COORDINATION.md` | Both sessions' sections kept |
+| `tools/verify_core_site.py` | Both sides of both hunks kept — `beba4d31`'s `OFFICIAL_RATES` + `check_rate_table()` and this session's planner-staleness and flag-count rules |
+| `tools/site_pages_ref.py` | Kept `beba4d31`'s dynamic `{nflags}` R-21 row (better than this session's literal); this session's new flag renumbered **FR-26 → FR-27** because `beba4d31`'s FR-26 (rate table) landed first |
+| `research/verification-log.md` | All three sessions' rows kept; this session's rows renumbered **78–91** (59–61 = `arena/0dea38fc`, 62–77 = `arena/beba4d31`) so the log has no duplicate numbers |
+| `pages/flagged.html` | Regenerated from the generators rather than hand-merged |
+
+**Irregularity 9 (found by reading the official PDF against the site's table).** The 1982–2027 rate table
+carried **"3/1/84 – 2/29/85"**. Document 571, fetched directly on 2026-11-11, reads
+**"3/1/84 – 2/28/85"** — 1985 was not a leap year, so 29 February 1985 does not exist. This survived
+PR #49's rate-table cleanup (which corrected five other end-dates) because the new
+`OFFICIAL_RATES` constant was transcribed from the same table it was meant to check. Corrected in both
+`tools/site_pages_rules.py` and `tools/verify_core_site.py`; `check_rate_table()` now passes against the
+PDF's 46 rows. **Note for future passes: a transcription constant copied from the site cannot verify the
+site — it must be re-typed from the PDF.**
