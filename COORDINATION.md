@@ -907,7 +907,7 @@ Integration audit on the fixed Arena session branch; earlier completed editions 
 | Task | Status | Owner | File scope |
 |---|---|---|---|
 | Current official-source and privacy audit; fix any material canonical-site inaccuracies; run integration checks | done | `arena/1a404b71-rentincreasesf3` | `COORDINATION.md`, `tools/site_layout.py`, `tools/site_pages_core.py`, `tools/site_pages_rules.py`, `tools/site_pages_ref.py`, `tools/verify_core_site.py`, `index.html`, `pages/*.html`, `assets/style.css`, `README.md`, `EXECUTIVE_SUMMARY.md` |
-| PR, merge, Pages deploy confirmation and record | in progress | `arena/1a404b71-rentincreasesf3` | `COORDINATION.md` |
+| PR, merge, Pages deploy confirmation and record | done | `arena/1a404b71-rentincreasesf3` | `COORDINATION.md` |
 
 **Rebase conflict log (11 November 2026):** PR #37 merged after this claim was pushed. The COORDINATION.md add/add conflict was resolved by preserving both session records; overlapping completed changes will be reconciled without discarding #37.
 
@@ -946,3 +946,12 @@ Corrections: owner described two units, not total building unit count; unknown c
 |---|---|---|---|
 | Independent audit and targeted corrections | needs review | `arena/db0bd0a6-rentincreasesf3` | scope above; flags FR-18–20 published |
 | Final integration | in progress | `arena/db0bd0a6-rentincreasesf3` | `COORDINATION.md` |
+
+
+### PR #38 and Pages deployment — session `arena/1a404b71-rentincreasesf3`
+
+- [PR #38](https://github.com/kanlerxz87-cyber/RentincreaseSF3/pull/38) merged on 2026-11-11 at 02:13:48 UTC, merge commit `40811473fa193b1fc13a2b4d51be233e39571c2c`. Concurrent PRs #37 and #42 were integrated on rebase; conflicts were resolved while preserving their board entries and site corrections. This session's flags were renumbered FR-21–FR-25.
+- PR checks: `Site checks` run `42944506070` passed. Main checks run `42944558950` passed. GitHub Pages `pages-build-deployment` run `42944558137` succeeded; Pages API reported `built` for the merge commit. Live flagged page was fetched with a cache-busting query and showed 25 flags; the live review page showed the corrected calculation-only table. GitHub Actions reported a non-failing Node.js 20 deprecation notice in the Pages workflow.
+- The 25 archived row-source warnings, owner-record uncertainties, lack of tenant-lawyer review, fixed-term lease issue and unknown notice-copy filing rule remain published as flagged limitations. External links and every archived row were not independently verified by the automated checks.
+
+**Third rebase conflict:** PR #41 merged while PR #43 checks ran. Both session log entries were retained.
