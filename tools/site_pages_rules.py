@@ -73,7 +73,7 @@ def laws():
       <tr><td>Costa-Hawkins</td><td>An owner may establish the initial rental rate for a dwelling, subject to listed exceptions (including subsidised tenancies and terminations aimed at evading rent control).</td>{cell("LEG_1954")}</tr>
       <tr><td>Notice to change terms</td><td>30 days if the increase is 10% or less of the rent charged at any time in the prior 12 months (alone or combined); 90 days if more; delivery in person or by mail under CCP § 1013.</td>{cell("LEG_827")}</tr>
       <tr><td>Service by mail</td><td>Any statutory notice period is extended by <b>5 calendar days</b> when both mailing and address are in California; 10 days if either is outside California.</td>{cell("LEG_1013")}</tr>
-      <tr><td>Retaliation</td><td>Retaliatory increases are prohibited. Civil Code § 1942.5 contains a 180-day provision subject to specified conditions; it also addresses retaliation for exercising tenant rights. A complaint alone does not establish every statutory element.</td>{cell("LEG_1942")}</tr>
+      <tr><td>Retaliation</td><td>Retaliation after a qualifying habitability complaint is prohibited subject to statutory conditions; § 1942.5(a) addresses a 180-day period. The separate tenant-rights and organising protection in § 1942.5(d) is not limited to that window.</td>{cell("LEG_1942")}</tr>
     </tbody>
   </table>
 </div>
@@ -122,7 +122,7 @@ def reasonable():
       <tr><td>Is there an official definition of a “reasonable” increase?</td><td><b>No.</b> The Rent Board publishes a maximum allowable percentage and the rules for using it; it does not publish a reasonableness standard for annual increases.</td>{cell("SF_LI", "ADMIN_373")}</tr>
       <tr><td>Is there an official “normal” or average increase?</td><td><b>No published figure.</b> Left blank rather than estimated (FR-08).</td>{cell("SF_LI")}</tr>
       <tr><td>Is there a different rate for a particular ZIP code?</td><td><b>No.</b> The allowable percentage is set once per year and applies citywide; there is no ZIP-level or neighbourhood variant.</td>{cell("SF_LI", "SF_571")}</tr>
-      <tr><td>What is the practical benchmark then?</td><td>The lawful ceiling itself: <b>1.6%</b> for dates through 28 February 2027, plus banked amounts. Staying at or below it is the only standard an official reviewer can test.</td>{cell("SF_571", "SF_BANK")}</tr>
+      <tr><td>What is the practical benchmark then?</td><td>The lawful ceiling itself: <b>1.6%</b> for dates through 28 February 2027, plus banked amounts. It is a ceiling, not proof an increase is typical, fair, or lawful in a particular case; notice, licence, retaliation and other rules also apply.</td>{cell("SF_571", "SF_BANK")}</tr>
     </tbody>
   </table>
 </div>
@@ -142,12 +142,12 @@ def reasonable():
 </div>
 
 <div class="card">
-  <h2>How to make a 1.6% / 3.0% / 10.0% increase look normal in a review</h2>
+  <h2>How to document a proposed increase for review</h2>
   <p class="small">These are documentation practices, not legal requirements. Each rests on a rule in the table beside it.</p>
   <table>
     <thead><tr><th style="width:30%">Practice</th><th>Why it helps</th><th style="width:20%">Rule it rests on</th></tr></thead>
     <tbody>
-      <tr><td>Use the exact published percentage, with the calculation shown to the cent</td><td>Removes the most common finding in an unlawful-rent-increase petition: arithmetic above the allowance.</td>{cell("SF_571", "SF_UNLAWFUL")}</tr>
+      <tr><td>Use the exact published percentage, with the calculation shown to the cent</td><td>Helps reviewers check the calculation against the allowance; it does not establish overall compliance.</td>{cell("SF_571", "SF_UNLAWFUL")}</tr>
       <tr><td>Take the annual increase every year rather than accumulating</td><td>Each skipped year adds a banking question; the 24-month / 12-month wording is not uniform across pages (FR-03).</td>{cell("SF_BANK", "SF_LI")}</tr>
       <tr><td>Serve the notice with the licence already in force</td><td>The licence is a precondition on the effective date, not the notice date.</td>{cell("SF_HI")}</tr>
       <tr><td>Apply the same method to both units, and record why the amounts differ</td><td>Differences then rest on objective facts (base rent, lease date, skipped years) rather than on the tenant.</td>{cell("LEG_12955", "USC_3604")}</tr>
@@ -160,10 +160,10 @@ def reasonable():
 <div class="card">
   <h2>What this means for the two units</h2>
   <table>
-    <thead><tr><th>Unit</th><th>Defensible “normal” figure</th><th>Reason it is defensible</th><th style="width:18%">Source</th></tr></thead>
+    <thead><tr><th>Unit</th><th>Illustrative amount, not a typical rate</th><th>Conditions and limitations</th><th style="width:18%">Source</th></tr></thead>
     <tbody>
       <tr><td>Unit A</td><td><b>3.0% ($119.85)</b>, or 1.6% ($63.92) if you prefer the strict reading</td><td>The annual allowance in effect on the effective date plus one properly banked year; 30 days' notice; well below the 10% state-notice threshold.</td>{cell("SF_571", "SF_BANK")}</tr>
-      <tr><td>Unit B</td><td><b>10.0% ($315.00)</b> as a first step; 13.1% ($412.65) is the conditional maximum for an effective date on or before 28 Feb 2027 on the reported facts</td><td>If the complete ledger confirms six skipped years, they add to 11.5%, plus the 1.6% annual in force to 28 Feb 2027; 10% keeps the increase inside both current law and the proposed 10%/yr cap, and the unused balance remains bankable.</td>{cell("SF_BANK", "LEGISTAR_261020")}</tr>
+      <tr><td>Unit B</td><td><b>10.0% ($315.00)</b> as a first step; 13.1% ($412.65) is the conditional maximum for an effective date on or before 28 Feb 2027 on the reported facts</td><td>If the complete ledger confirms six skipped years, they add to 11.5%, plus the 1.6% annual in force to 28 Feb 2027; 10% is an illustrative total, not an officially established normal rate. Confirm all past increases, capital-improvement amounts and the final legislation; properly banked unused amounts may remain available.</td>{cell("SF_BANK", "LEGISTAR_261020")}</tr>
       <tr><td>Unit B at market rent</td><td><b>Blank</b></td><td>Market rent cannot be reached by an annual increase; the Rent Board states that a long-standing below-market rent is not itself an extraordinary circumstance, and vacancy resetting is only available in a genuinely new tenancy.</td>{cell("SF_SPECIAL", "SF_LI")}</tr>
     </tbody>
   </table>
@@ -286,7 +286,7 @@ def notice():
     <tbody>
       <tr><td>Do I have to give a reason for an annual increase?</td><td><b>No.</b> The annual and banked increases may be imposed without a petition and without any stated justification; the notice elements are amount, percentage, date and banked part.</td>{cell("SF_LI", "SF_571")}</tr>
       <tr><td>Reasons that are lawful</td><td>The lawful allowance published by the Rent Board; recovery of previously skipped (banked) annual increases; and, separately by petition, documented capital improvements, operating and maintenance costs, or comparable-rent circumstances.</td>{cell("SF_BANK", "SF_LANDPET")}</tr>
-      <tr><td>Reasons that are unlawful</td><td>Retaliation for a repair request, habitability complaint or tenant organising (180-day bar); any difference based on a protected characteristic; charging more because an additional occupant moved in.</td>{cell("LEG_1942", "LEG_12955", "SF_LI")}</tr>
+      <tr><td>Reasons that are unlawful</td><td>Retaliation for a repair request, habitability complaint or tenant organising (with distinct statutory conditions and time rules); any difference based on a protected characteristic; charging more because an additional occupant moved in.</td>{cell("LEG_1942", "LEG_12955", "SF_LI")}</tr>
       <tr><td>“Market rent” as a reason</td><td>Not a basis for an annual increase. The Rent Board states a long-standing tenant paying less than market is not, by itself, an extraordinary circumstance justifying a comparable-rent increase.</td>{cell("SF_SPECIAL")}</tr>
       <tr><td>“My costs went up” as a reason</td><td>Only through an operating-and-maintenance petition with documentation — not as an add-on to the annual notice.</td>{cell("SF_LANDPET")}</tr>
       <tr><td>“I want both units to be the same”</td><td>Not a lawful basis in itself; equalising rents is achieved only through each unit's own lawful allowance and banking.</td>{cell("ADMIN_373", "SF_LI")}</tr>
@@ -313,7 +313,7 @@ CHECKS = [
     ("11", "Is the notice period correct (30 or 90 days)?", "10% or less ⇒ 30 days; more than 10% ⇒ 90 days; +5 if mailed within California.", "LEG_827"),
     ("12", "Was service documented?", "Personal delivery receipt, or a mailed copy with the date and place of mailing / certificate of mailing.", "LEG_1013"),
     ("13", "Does the notice state amount, percentage, date and banked part?", "All four elements present.", "SF_BANK"),
-    ("14", "Is there any retaliation issue?", "Review complaints, repairs and tenant activity for potential retaliation; the statutory 180-day provision has specific conditions.", "LEG_1942"),
+    ("14", "Is there any retaliation issue?", "Review all complaints, organising and other protected activity and the owner’s motives; protection is not limited to 180 days.", "LEG_1942"),
     ("15", "Is there any protected-characteristic issue?", "The amount must not vary because of race, colour, religion, sex, familial status, national origin, disability, source of income or the other FEHA grounds.", "LEG_12955"),
     ("16", "Is the differential between the two units explainable from the file?", "Different base rents and different lease dates explain the different dollar amounts; the method is identical.", "USC_3604"),
 ]
@@ -327,11 +327,11 @@ def review():
     body = f"""
 <div class="card">
   <h1>The tenant-lawyer stress test</h1>
-  <p class="lede">Sixteen checks a tenant-side reviewer would run against a served notice. This checklist is not a legal opinion or a guarantee: a tenant can still challenge an increase, and additional facts and rules may matter.</p>
+  <p class="lede">Sixteen checks to help prepare for tenant-side review. They are not exhaustive, and documentation cannot guarantee that a lawyer, Rent Board or court will approve an increase.</p>
 </div>
 
 <div class="card">
-  <h2>Why this test is the right standard</h2>
+  <h2>How a tenant can challenge an increase</h2>
   <p>A San Francisco tenant can challenge any increase by filing a Tenant Petition (Form 516C, box C) asking the Rent Board to find the increase unlawful or to determine the lawful rent. Filing is free, there is no filing deadline, and the matter can proceed to an arbitration hearing before a Rent Board Administrative Law Judge; the process is designed so that no one needs an attorney. Separately, discrimination and retaliation claims go to the Civil Rights Department, HUD or court rather than the Rent Board.</p>
   <p class="small">Sources: {srcs("SF_UNLAWFUL", "SF_TENPET", "CRD")}</p>
 </div>
@@ -345,16 +345,16 @@ def review():
 </div>
 
 <div class="card ok">
-  <h2>Result on the current facts</h2>
+  <h2>Illustrative calculations — not a compliance determination</h2>
   <table>
-    <thead><tr><th>Unit and option</th><th>Checks that pass on documents</th><th>Checks that depend on facts still to be confirmed</th><th style="width:18%">Source</th></tr></thead>
+    <thead><tr><th>Unit and option</th><th>Calculation only</th><th>Key checks still to be confirmed</th><th style="width:18%">Source</th></tr></thead>
     <tbody>
-      <tr><td>Unit A, 3.0% on 1 Feb 2027</td><td>1–7, 9–16 (method, percentage, notice, service, motive)</td><td>8 (new anniversary), plus the licence status and the 1 Feb vs 1 Apr anniversary question</td>{cell("SF_HI", "SF_LI")}</tr>
-      <tr><td>Unit B, 10.0%</td><td>1–7, 9–16</td><td>Unit B's rent history (check 6) and the licence status (check 9)</td>{cell("SF_BANK", "SF_HI")}</tr>
-      <tr><td>Unit B, 13.1%</td><td>1–7, 9–16</td><td>The same two, plus File #261020 if enacted as proposed; the Rent Board says it could apply to banked increases noticed on or after 15 September 2026.</td>{cell("SF_BANK", "LEGISTAR_261020")}</tr>
+      <tr><td>Unit A, 3.0% on 1 Feb 2027</td><td>3.0% of $3,995 = $119.85</td><td>Actual rent history, anniversary, coverage, licence, service, any complaints, and motive</td>{cell("SF_HI", "SF_LI")}</tr>
+      <tr><td>Unit B, 10.0%</td><td>10% of $3,150 = $315.00</td><td>Actual rent history, coverage, licence, service, any complaints, motive and legislation</td>{cell("SF_BANK", "SF_HI")}</tr>
+      <tr><td>Unit B, 13.1%</td><td>13.1% of $3,150 = $412.65</td><td>All checks above, and the pending File #261020 proposal; its proposed application depends on the notice date</td>{cell("SF_BANK", "LEGISTAR_261020")}</tr>
     </tbody>
   </table>
-  <p class="small">“Passes on documents” means the rule is satisfied by the arithmetic and the notice; it does not certify the two open factual questions, which are on the <a href="flagged.html">Flagged</a> page.</p>
+  <p class="small">Arithmetic alone does not verify the lease, notice, service, motive or other facts. Open questions are on the <a href="flagged.html">Flagged</a> page.</p>
 </div>
 
 <div class="card">
@@ -365,7 +365,7 @@ def review():
       <tr><td>No licence on the effective date</td><td>The notice is not enforceable, may be null and void (potentially across multiple years), and exposes the owner to a Tenant Summary Petition (Form 518) before the effective date or an Unlawful Rent Increase Petition / refund claim (Form 516C) after.</td>{cell("SF_HI", "SF_NONCOMP", "ADMIN_373")}</tr>
       <tr><td>Percentage above the allowance (or banked amount wrongly computed)</td><td>Unlawful rent increase; the lawful rent can be determined and overpayments addressed in the petition process.</td>{cell("SF_UNLAWFUL")}</tr>
       <tr><td>Too little notice</td><td>The increase cannot take effect on the stated date; the notice is defective for that date.</td>{cell("LEG_827")}</tr>
-      <tr><td>Increase within 180 days of a repair request or complaint</td><td>Potential retaliation; assess the statutory conditions and circumstances, including the 180-day provision.</td>{cell("LEG_1942")}</tr>
+      <tr><td>Retaliatory increase following a repair request or complaint</td><td>California law prohibits retaliation subject to statutory conditions; timing alone does not establish motive, and protection can extend beyond 180 days. Seek legal advice.</td>{cell("LEG_1942")}</tr>
       <tr><td>Increase that varies by protected characteristic</td><td>Fair-housing complaint at the Civil Rights Department, HUD or court.</td>{cell("LEG_12955", "CRD")}</tr>
       <tr><td>Extra charge because an occupant joined</td><td>Unlawful rent increase.</td>{cell("SF_LI")}</tr>
       <tr><td>Notice that is defective on its face (wrong amount, percentage, date or notice period)</td><td>The Rent Board lists a <b>Tenant Summary Petition based on receipt of an invalid notice of rent increase</b> among the claims a tenant can file, in addition to the standard unlawful-rent-increase petition. Both are free.</td>{cell("SF_TENPET")}</tr>
@@ -387,7 +387,7 @@ def discrimination():
 
 <div class="card hero">
   <h2>Answer</h2>
-  <p><b>There is no legal requirement to raise rent on both units, and no official guidance says a selective increase is unlawful in itself.</b> What the law prohibits is treating a tenant differently <i>because of</i> a protected characteristic, or increasing rent as retaliation. Because the two units have different base rents, different lease dates and different rent histories, their lawful maximums differ anyway — so “the same percentage” and “the same dollars” are both normal outcomes. The control that matters is a written, dated, objective rationale per unit, applied consistently.</p>
+  <p><b>There is no legal requirement to raise rent on both units, and no official guidance says a selective increase is unlawful in itself.</b> What the law prohibits is treating a tenant differently <i>because of</i> a protected characteristic, or increasing rent as retaliation. Because the two units have different base rents, different lease dates and different rent histories, their lawful maximums differ anyway — so the same percentage or the same dollar increase is not automatically required. The control that matters is a written, dated, objective rationale per unit, applied consistently.</p>
 </div>
 
 <div class="card">
@@ -398,7 +398,7 @@ def discrimination():
       <tr><td>FEHA — Gov. Code § 12955(a)</td><td>Unlawful for an owner to discriminate against or harass a person because of race, colour, religion, sex, gender, gender identity or expression, sexual orientation, marital status, national origin, ancestry, familial status, <b>source of income</b>, disability, veteran or military status, or genetic information.</td>{cell("LEG_12955")}</tr>
       <tr><td>Federal Fair Housing Act — 42 U.S.C. § 3604(b)</td><td>Unlawful to discriminate “in the terms, conditions, or privileges of sale or rental of a dwelling” because of race, colour, religion, sex, familial status, national origin or disability.</td>{cell("USC_3604")}</tr>
       <tr><td>FEHA coverage and remedies</td><td>Applies to landlords, management companies and screening firms; covers refusal to rent, discriminatory terms, and retaliation; complaints go to the Civil Rights Department.</td>{cell("CRD")}</tr>
-      <tr><td>Retaliation — Civ. Code § 1942.5</td><td>Prohibits retaliatory conduct, including increases, subject to the statutory conditions; a 180-day provision applies in specified circumstances. Also protects exercise of tenant rights.</td>{cell("LEG_1942")}</tr>
+      <tr><td>Retaliation — Civ. Code § 1942.5</td><td>Prohibits retaliatory increases in specified circumstances, including certain habitability complaints in the 180-day provision; the separate organising and tenant-rights provision is not limited to that period.</td>{cell("LEG_1942")}</tr>
       <tr><td>Rent Board jurisdiction</td><td>The Rent Board decides rent-amount issues; it states that it does <b>not</b> adjudicate harassment, discrimination or retaliation.</td>{cell("SF_TENPET")}</tr>
       <tr><td>Is a uniform increase required?</td><td><b>No official source imposes one.</b> Nothing in the ordinance or the fair-housing statutes requires identical treatment of different tenancies, and nothing forbids different lawful maximums. Flagged as an absence of authority rather than a rule (FR-12).</td>{cell("ADMIN_373", "LEG_12955")}</tr>
     </tbody>
@@ -413,7 +413,7 @@ def discrimination():
       <tr><td>Raise both units at their own lawful maximum</td><td><b>Lowest.</b> Both increases rest on the same public method and the same licence.</td><td>Only whether each calculation and notice is correct.</td>{cell("SF_LI", "SF_BANK")}</tr>
       <tr><td>Raise only Unit A or only Unit B</td><td><b>Low, if documented.</b> Selective timing is lawful where the reason is objective (lease anniversary, skipped years, licence timing).</td><td>Whether the excluded tenant shares a protected characteristic with the included one, or had recently complained about conditions.</td>{cell("LEG_12955", "LEG_1942")}</tr>
       <tr><td>Raise one unit above its lawful maximum to “catch up”</td><td><b>High.</b> That is an unlawful increase regardless of the other unit.</td><td>Whether the percentage exceeds the published allowance or a banking condition fails.</td>{cell("SF_UNLAWFUL")}</tr>
-      <tr><td>Raise rent after a repair request or habitability complaint</td><td><b>High.</b> Statutory retaliation, with a 180-day window.</td><td>The dates of any repair request, complaint or inspection relative to the increase.</td>{cell("LEG_1942")}</tr>
+      <tr><td>Raise rent after a repair request or habitability complaint</td><td><b>Potentially high.</b> Timing warrants scrutiny; retaliatory purpose and statutory conditions matter, including outside 180 days.</td><td>The dates of any repair request, complaint or inspection relative to the increase.</td>{cell("LEG_1942")}</tr>
       <tr><td>Explain a difference by “market rent”</td><td><b>Not a defence.</b> The Rent Board expressly treats a long-standing below-market rent as insufficient for a comparable-rent increase.</td><td>Whether the file relies on market comparisons instead of the published allowance.</td>{cell("SF_SPECIAL")}</tr>
     </tbody>
   </table>

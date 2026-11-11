@@ -4,7 +4,7 @@
 
 A static GitHub Pages dashboard answering one owner's questions about raising rent on two owner-reported rent-controlled units in San Francisco (owner-reported construction year 1940; total building unit count unverified). The Rent Board notification/licence question comes first, because it decides whether any increase is enforceable at all.
 
-Every table row links an official source. Where an official value does not exist, the cell is left blank and the item is published on the **Flagged for review** page rather than guessed.
+Canonical dashboard table rows link official sources for the governing rule; owner-supplied facts are not thereby verified. Unconfirmed values and limitations are listed on **Flagged for review**. Archived editions have row-source exceptions (FR-24) and should not be relied on as current advice.
 
 ---
 
@@ -24,7 +24,7 @@ Every table row links an official source. Where an official value does not exist
 | [`pages/discrimination.html`](pages/discrimination.html) | One unit or both units? Fair-housing analysis |
 | [`pages/requirements.html`](pages/requirements.html) | Every requirement in the brief, its status and its evidence |
 | [`pages/sources.html`](pages/sources.html) | 28-source register with what each supports |
-| [`pages/flagged.html`](pages/flagged.html) | 17 flagged items: unverified, blank, inconsistent or corrected |
+| [`pages/flagged.html`](pages/flagged.html) | 25 flagged items: unverified, blank, inconsistent or corrected |
 
 Markdown summary: [`EXECUTIVE_SUMMARY.md`](EXECUTIVE_SUMMARY.md).
 
@@ -33,10 +33,10 @@ Markdown summary: [`EXECUTIVE_SUMMARY.md`](EXECUTIVE_SUMMARY.md).
 | Item | Result | Official source |
 |---|---|---|
 | Rent-increase licence for an individual owner of a 1–9 unit building | **Required** — automatic once the Housing Inventory report is filed; must be in effect on the **effective date**; requirement applies from 1 March 2023; 1 March annual deadline; no monetary penalty for late filing | [sf.gov — Housing Inventory](https://www.sf.gov/rent-board-housing-inventory) |
-| Per-increase application or notice filing | **Not required** for annual or banked increases | [Form 571](https://www.sf.gov/documents/34344/571_Allowable_Annual_Increases_26-27_1.pdf) · [sf.gov — banking](https://www.sf.gov/information--banked-rent-increases) |
+| Per-increase approval petition | **Not required** for ordinary annual or banked increases; separate notice-copy filing not established (FR-20) | [Form 571](https://www.sf.gov/documents/34344/571_Allowable_Annual_Increases_26-27_1.pdf) · [sf.gov — banking](https://www.sf.gov/information--banked-rent-increases) |
 | Annual allowance 1 Mar 2026 – 28 Feb 2027 | **1.6%** (1.4% prior year) | [sf.gov](https://www.sf.gov/learn-about-rent-increases-san-francisco) · [Form 571](https://www.sf.gov/documents/34344/571_Allowable_Annual_Increases_26-27_1.pdf) |
 | Unit A, 1 Feb 2027 | **3.0% = $119.85 → $4,114.85** (1.6% annual + 1.4% banked), 30 days' notice; 1.6% = $63.92 is the fallback | [Form 571](https://www.sf.gov/documents/34344/571_Allowable_Annual_Increases_26-27_1.pdf) · [banking](https://www.sf.gov/information--banked-rent-increases) |
-| Unit B (conditional on no increase since 2019) | **10.0% = $315.00 → $3,465.00** recommended; **13.1% = $412.65 → $3,562.65** is the conditional maximum **for an effective date on or before 28 February 2027** (and 7-year banked floor on 1 June 2027 before the unannounced 2027–28 rate), 90 days' notice | [banking](https://www.sf.gov/information--banked-rent-increases) · [Form 571](https://www.sf.gov/documents/34344/571_Allowable_Annual_Increases_26-27_1.pdf) |
+| Unit B (conditional on no increase since 2019) | **10.0% = $315.00 → $3,465.00** illustrative, not an established normal rate; **13.1% = $412.65 → $3,562.65** is the conditional maximum **for an effective date on or before 28 February 2027** (and 7-year banked floor on 1 June 2027 before the unannounced 2027–28 rate), 90 days' notice | [banking](https://www.sf.gov/information--banked-rent-increases) · [Form 571](https://www.sf.gov/documents/34344/571_Allowable_Annual_Increases_26-27_1.pdf) |
 | Notice | 30 days if ≤10%, 90 days if >10%; +5 days by mail in California | [Civ. Code § 827](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=827) · [CCP § 1013](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CCP&sectionNum=1013) |
 | State cap | 8.8% for the San Francisco area from 1 Aug 2026; **not governing** because the local cap is lower | [oag.ca.gov](https://oag.ca.gov/rentcaps) · [Civ. Code § 1947.12](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=1947.12) |
 | Federal | No rent ceiling; fair housing governs the reasons | [42 U.S.C. § 3604](https://www.govinfo.gov/content/pkg/USCODE-2023-title42/html/USCODE-2023-title42-chap45-subchapI-sec3604.htm) |
@@ -102,7 +102,7 @@ What it adds:
   not consume a rent allowance.
 - **The §6.14 / last-original-occupant rule is narrower than "vacancy resets rent"** — it reaches
   *subtenants* only after the **last** original occupant permanently vacates, and depends on a written
-  §6.14 notice served in time; a co-tenant is not subject to it.
+  §6.14 notice served in time. The Rent Board says §6.14 notices can apply to subsequent co-tenants; its Costa-Hawkins discussion distinguishes co-tenants from subtenants. Obtain legal advice.
   ([sf.gov — §6.14 and Costa-Hawkins](https://www.sf.gov/information--rent-increases-under-section-614-and-costa-hawkins))
 
 Gate: `python3 tools/check_v2.py` — 212 data rows (210 with an official source, 2 blank and flagged),
