@@ -108,3 +108,61 @@ changes). `tools/check_v2.py` was added to the CI workflow (it existed but was n
 
 Irregularities found in this pass: none new. Prior flags (FR-01..FR-16, F-1..F-23) remain open and
 published on the flagged pages; they do not block the merge.
+
+# Re-verification pass — 2026-11-11
+
+Session `arena/3cb4d5e1-rentincreasesf3` (final integration). All 28 sources in the
+canonical register (`tools/site_layout.py` `SRC`) were fetched again and read on 2026-11-11,
+and every headline figure on the canonical site was compared against the fetched text.
+All matched; no content correction was required beyond moving the research-pass date and
+recomputing the today-relative notice planner. Arithmetic was recomputed independently
+(Decimal, cents-exact): $3,995×1.6%=$63.92→$4,058.92; $3,995×3.0%=$119.85→$4,114.85;
+$3,150×1.6%=$50.40→$3,200.40; $3,150×10%=$315.00→$3,465.00;
+$3,150×11.5%=$362.25→$3,512.25; $3,150×13.1%=$412.65→$3,562.65;
+1.8+0.7+2.3+3.6+1.7+1.4=11.5; 11.5+1.6=13.1; $59.00/2=$29.50.
+
+| # | Assertion on the site | Source fetched 2026-11-11 | Result |
+|---|---|---|---|
+| 36 | 1.6% for 3/1/2026–2/28/27; 60% of Bay Area CPI; base-rent-only; no rounding; 12-month/anniversary timing; 30/90-day notice elements; additional-occupant ban; 9 Nov 2026 File #261020 notice (not enacted, applies to banked increases noticed on/after 15 Sep 2026) | sf.gov — Learn about rent increases | Match |
+| 37 | All owners must report into the Housing Inventory (free, under penalty of perjury); licence auto-generated for non-owner-occupied units; must be in effect on the effective date or the increase is not enforceable; 1 Mar deadline; no monetary penalty; 1–9 unit buildings since 1 Mar 2023; Portal reporting fields | sf.gov — Housing Inventory | Match |
+| 38 | Banking: additive, never compounded/prorated; no cap back to 1 Apr 1982; no expiry during tenancy; no carry-over to new tenant; no Rent Board approval; notice states the banked part; 24-month banking condition; File #261020 notice | sf.gov — Banked rent increases | Match |
+| 39 | Full 1982–2027 rate table; 2020–2026 rates 1.8/0.7/2.3/3.6/1.7/1.4/1.6; no petition required for the annual increase | Form 571 PDF | Match (banked sums 11.5% and 13.1% recomputed) |
+| 40 | Unlicensed increase "may be null and void (this may apply for multiple years)"; tenant "may be entitled to a rent refund"; Form 516C / Form 518 routes; paper filing via rentboard.inventory@sfgov.org; counselling 415-252-4600 M–F 9–12/1–4 | sf.gov — Noncompliance | Match, quoted verbatim |
+| 41 | $59.00/dwelling unit for 2026–27; 50% ($29.50) recoverable from tenants in occupancy as of 1 Nov; due 1 Mar; 5%/mo penalty to 15%; 2027 exemption window closes 14 Dec 2026; separate from the Inventory report | sf.gov — Rent Board Fee | Match |
+| 42 | §6.14: unlimited increase only when the last original occupant vacates (with timely 6.14 notice); Costa-Hawkins: never against a co-tenant; no petition required | sf.gov — §6.14 / Costa-Hawkins | Match |
+| 43 | Pre-14 Jun 1979 coverage; exemption categories; AB 1482 backstop; counsellor line | sf.gov — Rental laws (also serves SF_COUNSEL) | Match |
+| 44 | Multi-year additive methodology; no petition; no rounding; base rent incl. parking/storage; 30 days (35 if mailed) | sf.gov — Multiple years | Match |
+| 45 | Tenant petitions free; claim types incl. unlawful increase / lawful rent; Board has no jurisdiction over harassment/discrimination/retaliation/security deposits | sf.gov — Tenant petitions | Match |
+| 46 | Form 516C box C; no charge; no filing deadline; ALJ hearing; no lawyer needed | sf.gov — Unlawful rent increase | Match |
+| 47 | Six landlord-petition increases; petition before notice; free filing; lawful-rent determination available | sf.gov — Landlord petitions | Match |
+| 48 | Below-market rent alone is not an extraordinary circumstance; petition before notice (notice first is void) | sf.gov — Special circumstances | Match |
+| 49 | §37.10C algorithmic-device ban effective 14 Oct 2024 | sf.gov — Algorithmic devices news | Match |
+| 50 | §37.3(a)(1) 60% CPI / 7% cap / §37.15 licence; (a)(2) banking since 1 Apr 1982; (a)(8) arbitration petition; (a)(10) voucher rules; (a)(11)(A) occupant ban; (b)(1) written breakdown; (b)(5) null-and-void; (d)(2)(B) partial occupancy | amlegal — §37.3 (2nd subsection re-read) | Match (FR-07 re-confirmed) |
+| 51 | File #261020: 10%/yr cap for three years; Pending Committee Action; introduced 9/15/2026; Land Use and Transportation Committee | Legistar | Match |
+| 52 | 30 days ≤10%, 90 days >10% (incl. combined 12-month increases); personal or CCP-1013 mail service | leginfo — Civ. Code §827 | Match |
+| 53 | 5%+CPI max 10%; new-tenancy initial rent; exemption where a local ordinance restricts to less | leginfo — Civ. Code §1947.12 | Match |
+| 54 | Owner may set initial rent for a new tenancy (exceptions listed) | leginfo — Civ. Code §1954.53 | Match |
+| 55 | No rent increase within 180 days of a tenantability complaint; organising protection | leginfo — Civ. Code §1942.5 | Match |
+| 56 | +5 calendar days in-California mail; +10 out of state; +2 court days overnight | leginfo — CCP §1013 | Match |
+| 57 | FEHA housing-discrimination grounds incl. source of income; harassment; retaliation | leginfo — Gov. Code §12955 | Match |
+| 58 | 8.8% SF Area maximum for 8/1/26–7/31/27; local lower cap governs | oag.ca.gov — rentcaps | Match |
+| 59 | CRD enforcement; protected characteristics; complaint route | calcivilrights.ca.gov — housing | Match |
+| 60 | 42 U.S.C. §3604(b)/(f)(2): discrimination in rental terms/conditions | govinfo — U.S. Code 2023 | Match |
+| 61 | DOJ 7 Jan 2025 suit vs six large landlords over RealPage algorithmic pricing | justice.gov (archives) | Match |
+| 62 | Portal is the reporting / licence look-up channel | portal.sfrb.org (interactive app; corroborated via the Housing Inventory page's Portal links, fetched 2026-11-11) | Corroborated |
+
+Planner recompute for today = 11 Nov 2026 (90-day rule, §827 + CCP §1013): first
+in-person-reachable >10% effective date is 9 Feb 2027 (serve by 11 Nov 2026, last day;
+mail route passed 6 Nov 2026); 14 Feb 2027 by mail must go out 11 Nov 2026 (last day).
+8 Feb 2027 is no longer reachable. Verified: 11 Nov + 90 days = 9 Feb 2027
+(19+31+31+9); 14 Feb − 95 days = 11 Nov 2026.
+
+Gates re-run 2026-11-11 after the edits: `tools/privacy_scan.py`,
+`tools/build_dashboard.py` + freshness check, `tools/verify_core_site.py`,
+`tools/audit_site.py`, `verify_site.py`, `tools/check_site.py`,
+`tools/verify_edition.py`, `tools/check_v2.py` — all PASS (see COORDINATION.md entry).
+
+Irregularities found in this pass: none. All open flags (FR-01..FR-17) remain published
+on `pages/flagged.html`; FR-07 and FR-16 carry 11 Nov 2026 re-confirmation notes.
+Preserved editions (`docs/`, `dashboard/`, `review/`, `audit/`, `verified/`,
+`verification/`) were not edited.

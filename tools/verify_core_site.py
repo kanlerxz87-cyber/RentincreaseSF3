@@ -120,9 +120,11 @@ def check_scripts(path):
 
 def check_footer(path):
     text = path.read_text(encoding="utf-8")
-    for needle in ("Not legal advice", "Privacy:", "10 November 2026"):
+    # verification/ is a frozen dated edition; canonical pages carry the current pass date
+    date_needle = "10 November 2026" if "verification" in path.parts else "11 November 2026"
+    for needle in ("Not legal advice", "Privacy:", date_needle):
         if needle not in text:
-            ERRORS.append("%s: missing required disclosure %r" % (path.name, needle))
+            ERRORS.append("%s: missing required disclosure %r" % (path, needle))
 
 
 def money(x):
@@ -180,7 +182,7 @@ def check_math():
     example_service = dt.date(2026, 11, 10)
     if example_service + dt.timedelta(days=90) != dt.date(2027, 2, 8):
         ERRORS.append("dates: historical service example is not 2027-02-08")
-
+ 
 
 def main():
     pages = [ROOT / p for p, _ in ALL_PAGES]

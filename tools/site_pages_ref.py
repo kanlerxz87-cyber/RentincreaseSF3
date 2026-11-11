@@ -1,7 +1,7 @@
 """Reference pages: sources register, requirements checklist, flagged for review."""
 from site_layout import SRC, src, srcs, cell, page
 
-RETRIEVED = "10 Nov 2026"
+RETRIEVED = "11 Nov 2026"
 
 # key, what it supports
 USED_FOR = {
@@ -46,7 +46,7 @@ def sources():
     body = f"""
 <div class="card">
   <h1>Sources &amp; verification register</h1>
-  <p class="lede">Every official source used on this site, the claim it supports, and the date it was retrieved. All were fetched and read on 10 November 2026.</p>
+  <p class="lede">Every official source used on this site, the claim it supports, and the date it was retrieved. All were fetched and read on 11 November 2026.</p>
 </div>
 
 <div class="card">
@@ -200,7 +200,7 @@ FLAGS = [
      "Introduced 15 September 2026; status <b>Pending Committee Action</b>. The Rent Board's 9 November 2026 notice states it would apply to banked increases noticed on or after 15 September 2026 if enacted, and that it “has not been enacted and is subject to change”. The illustrative 13.1% total includes 11.5% banked, exceeding the proposed 10% combined banked-and-capital limit; the 1.6% annual component is distinct. The effect of any final law and other passthroughs is unverified.",
      "Re-check Legistar immediately before serving any increase above 10%.", "LEGISTAR_261020"),
     ("FR-07", "Ordinance text verified by subsection", "Corrected",
-     "Administrative Code § 37.3 was re-read subsection by subsection on 10 Nov 2026: § 37.3(a)(1) (60% of CPI, 7% cap, § 37.15 licence), § 37.3(a)(2) (banking since 1 Apr 1982), § 37.3(a)(8) (arbitration petition), § 37.3(a)(10) (voucher payment-standard rules), § 37.3(a)(11)(A) (additional-occupant increase ban), § 37.3(b)(1)&amp;(5) (written breakdown &amp; null-and-void rule), and § 37.3(d)(2)(B) (partial occupancy changes).",
+     "Administrative Code § 37.3 was re-read subsection by subsection on 10 Nov 2026: § 37.3(a)(1) (60% of CPI, 7% cap, § 37.15 licence), § 37.3(a)(2) (banking since 1 Apr 1982), § 37.3(a)(8) (arbitration petition), § 37.3(a)(10) (voucher payment-standard rules), § 37.3(a)(11)(A) (additional-occupant increase ban), § 37.3(b)(1)&amp;(5) (written breakdown &amp; null-and-void rule), and § 37.3(d)(2)(B) (partial occupancy changes). Re-confirmed by a second subsection re-read on 11 Nov 2026.",
      "Closed on the Rules, Units and Notice pages; check separate Rent Board Rules &amp; Regulations if an ALJ dispute arises.", "ADMIN_373"),
     ("FR-08", "No official “normal” or average increase figure", "No official source",
      "The Rent Board publishes a maximum, not an average or typical amount. No number is given for “normal”.",
@@ -227,7 +227,7 @@ FLAGS = [
      "Corrections applied: the Unit A anniversary was once shown as 1 April; banking was once described as “capped at three years”; a Unit B figure of 11.5% was once presented without the annual component that makes the total 13.1%; the pre-9-November-2026 status of File #261020 was stated without the Rent Board's new notice. Prior editions remain online for audit but are no longer the canonical pages.",
      "This page and the corrected pages are the canonical record.", "SF_LI"),
     ("FR-16", "Non-compliance consequence wording", "Verified — closed 10 Nov 2026",
-     "The Notice of Owner Noncompliance page was re-retrieved on 10 November 2026 and is now quoted directly: a notice that goes into effect while the unit is unlicensed “may be null and void (this may apply for multiple years)”, and the tenant “may be entitled to a rent refund”. It also confirms the 1 July 2022 / 1 March 2023 start dates, paper filing fallback, and the Tenant Summary Petition (Form 518) route while an increase has not yet taken effect, alongside Admin. Code § 37.3(b)(5).",
+     "The Notice of Owner Noncompliance page was re-retrieved on 10 November 2026 and is now quoted directly: a notice that goes into effect while the unit is unlicensed “may be null and void (this may apply for multiple years)”, and the tenant “may be entitled to a rent refund”. It also confirms the 1 July 2022 / 1 March 2023 start dates, paper filing fallback, and the Tenant Summary Petition (Form 518) route while an increase has not yet taken effect, alongside Admin. Code § 37.3(b)(5). Re-confirmed on 11 November 2026.",
      "Closed — cited across the Dashboard, Summary, Process, Rules and Review pages.", "SF_NONCOMP"),
     ("FR-21", "Rule § 6.14 and Costa-Hawkins co-tenant distinction", "Corrected 11 Nov 2026",
      "The earlier source-register description wrongly said neither rule ever allows an increase against a co-tenant. The Rent Board says a timely § 6.14 notice can be served on a subsequent co-tenant or subtenant; its Costa-Hawkins discussion distinguishes co-tenants. Applicability depends on the actual facts and legal advice is needed.",

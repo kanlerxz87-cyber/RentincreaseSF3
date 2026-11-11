@@ -1,6 +1,6 @@
 # Executive summary — San Francisco rent increases, two rent-controlled units
 
-**Prepared 10 November 2026 · research pass re-verified against official sources on that date · not legal advice**
+**Prepared 10 November 2026 · research pass re-verified against official sources on 10 November 2026 and again on 11 November 2026 · not legal advice**
 Live dashboard: <https://kanlerxz87-cyber.github.io/RentincreaseSF3/>
 
 **Privacy.** Tenants and owners are shown as **Tenant A–F**. Dates and dollar amounts are unchanged, as requested. The ZIP code, neighbourhood and street address are **not published**: unit-level facts (two specific rents and two lease dates) combined with a location would identify the tenants, and the rules cited apply citywide with no ZIP-level variant. The location is recorded in this file only as "San Francisco".

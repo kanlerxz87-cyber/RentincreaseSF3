@@ -6,8 +6,7 @@ def index():
     body = f"""
 <div class="card hero">
   <h1>San Francisco rent increase — verified answers</h1>
-  <p class="lede">Two owner-reported rent-controlled units in San Francisco (owner-reported construction year 1940). Total building unit count and coverage are unverified. This dashboard answers the owner's questions in the order asked, with an official source link on every row. Research pass: 10 November 2026.</p>
-  <div class="quote"><b>Privacy:</b> tenants are shown as <b>Tenant A–F</b>; the ZIP code, neighbourhood and street address are withheld (unit-level facts plus a location could identify the tenants). <b>Dates and dollar amounts are unchanged.</b> Not legal advice.</div>
+  <p class="lede">Two owner-reported rent-controlled units in San Francisco (owner-reported construction year 1940). Total building unit count and coverage are unverified. This dashboard answers the owner's questions in the order asked, with an official source link on every row. Research pass: 11 November 2026.</p>   <div class="quote"><b>Privacy:</b> tenants are shown as <b>Tenant A–F</b>; the ZIP code, neighbourhood and street address are withheld (unit-level facts plus a location could identify the tenants). <b>Dates and dollar amounts are unchanged.</b> Not legal advice.</div>
 </div>
 
 <div class="card alert">
@@ -45,7 +44,7 @@ def index():
   <h2>3. What changed on 9 November 2026 — read before serving any notice</h2>
   <p>The Rent Board added a notice to its rent-increase and banking pages on <b>9 November 2026</b>: the Board of Supervisors is considering legislation (<b>File No. 261020</b>) that would <b>temporarily limit the combined amount of banked rent increases and capital improvement rent increases to 10% per year</b>, for the next three years. The Rent Board states that, if enacted as currently proposed, it would apply to <b>banked rent increases noticed on or after 15 September 2026</b> — and that “<b>this legislation has not been enacted and is subject to change</b>”.</p>
   <table>
-    <thead><tr><th>Fact</th><th>Status on 10 Nov 2026</th><th>Official source</th></tr></thead>
+    <thead><tr><th>Fact</th><th>Status on 11 Nov 2026</th><th>Official source</th></tr></thead>
     <tbody>
       <tr><td>Ordinance title and effect</td><td>Would cap banked + capital-improvement increases at a total of <b>10% per year</b> for rent-controlled units, for three years.</td>{cell("LEGISTAR_261020")}</tr>
       <tr><td>Legislative status</td><td><b>Pending Committee Action</b> — introduced 15 Sep 2026, referred to the Land Use and Transportation Committee; no final action recorded. Not law.</td>{cell("LEGISTAR_261020")}</tr>
@@ -251,7 +250,7 @@ def process():
 </div>
 
 <div class="card">
-  <h2>Notice-date planner (calculated for this file, 10 November 2026)</h2>
+  <h2>Notice-date planner (calculated for this file, 11 November 2026)</h2>
   <p class="small">Arithmetic from the statutory lead times: 30 or 90 days before the effective date; +5 calendar days when served by mail within California. Verify against the statutes before serving.</p>
   <table>
     <thead><tr><th>Target effective date</th><th>Increase size</th><th>Serve in person by</th><th>Mail by</th><th style="width:20%">Rule</th></tr></thead>
@@ -265,7 +264,7 @@ def process():
     </tbody>
   </table>
   <p class="small">These are fixed-date examples, not a live calculator. Count forward from actual service and allow 30 or 90 days, plus any applicable mailing extension; confirm deadlines and current rules before serving.</p>
-</div>
+ </div>
 
 <div class="card">
   <h2>Who to call, officially</h2>
