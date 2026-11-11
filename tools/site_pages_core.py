@@ -259,8 +259,8 @@ def process():
       <tr><td>1 Feb 2027 — Unit A (3.0% or 1.6%)</td><td>≤10%</td><td><b>2 Jan 2027</b></td><td>28 Dec 2026</td>{cell("LEG_827", "LEG_1013")}</tr>
       <tr><td>1 Feb 2027 — Unit B at 10.0%</td><td>10% (not more than 10%)</td><td><b>2 Jan 2027</b></td><td>28 Dec 2026</td>{cell("LEG_827", "LEG_1013")}</tr>
       <tr><td>1 Feb 2027 — Unit B at 13.1%</td><td>&gt;10%</td><td><span class="badge danger">3 Nov 2026 — passed</span></td><td>29 Oct 2026 — passed</td>{cell("LEG_827")}</tr>
-      <tr><td>8 Feb 2027 — Unit B at 13.1% (historical example)</td><td>&gt;10%</td><td><b>10 Nov 2026</b></td><td><span class="badge danger">5 Nov 2026 — passed</span></td>{cell("LEG_827", "LEG_1013")}</tr>
-      <tr><td>14 Feb 2027 — Unit B at 13.1%</td><td>&gt;10%</td><td>16 Nov 2026</td><td>11 Nov 2026</td>{cell("LEG_827", "LEG_1013")}</tr>
+      <tr><td>8 Feb 2027 — Unit B at 13.1% (historical example)</td><td>&gt;10%</td><td><span class="badge danger">10 Nov 2026 — passed</span></td><td><span class="badge danger">5 Nov 2026 — passed</span></td>{cell("LEG_827", "LEG_1013")}</tr>
+      <tr><td>14 Feb 2027 — Unit B at 13.1%</td><td>&gt;10%</td><td>16 Nov 2026</td><td>11 Nov 2026 — federal holiday (Veterans Day); postal service that day unverified (FR-27)</td>{cell("LEG_827", "LEG_1013", "OPM_HOLIDAYS")}</tr>
       <tr><td>Any date from 1 March 2027 onward</td><td>Any</td><td colspan="2"><b>Blank — the allowable percentage for 1 Mar 2027 – 29 Feb 2028 has not been announced.</b> Use the percentage in effect on the effective date.</td>{cell("SF_LI")}</tr>
     </tbody>
   </table>
@@ -341,7 +341,7 @@ def units():
       <tr><td>1 June 2022</td><td>3/1/22 – 2/28/23</td><td>2.3%</td><td>Skipped — banked</td>{cell("SF_571")}</tr>
       <tr><td>1 June 2023</td><td>3/1/23 – 2/29/24</td><td>3.6%</td><td>Skipped — banked</td>{cell("SF_571")}</tr>
       <tr><td>1 June 2024</td><td>3/1/24 – 2/28/25</td><td>1.7%</td><td>Skipped — banked</td>{cell("SF_571")}</tr>
-      <tr><td>1 June 2025</td><td>3/1/25 – 2/28/26</td><td>1.4%</td><td>Skipped — banked (12 months elapsed by Feb 2027)</td>{cell("SF_571", "SF_BANK")}</tr>
+      <tr><td>1 June 2025</td><td>3/1/25 – 2/28/26</td><td>1.4%</td><td>Skipped — banked: it became available 1 June 2025, so a full 12 months elapsed on 1 June 2026 — 20 months before a 1 Feb 2027 effective date</td>{cell("SF_571", "SF_BANK", "SF_LI")}</tr>
       <tr><td>Total banked to 1 June 2025 (six anniversaries)</td><td>—</td><td><b>11.5%</b></td><td>Added, not compounded; bankable for a Feb 2027 increase</td>{cell("SF_BANK")}</tr>
       <tr><td>Annual on the effective date (Feb 2027) — or 7th banked year by 1 June 2027</td><td>3/1/26 – 2/28/27</td><td>1.6%</td><td>Current annual through 28 Feb 2027; becomes a 7th banked year (13.1% banked balance) once 12 months elapse on 1 June 2027</td>{cell("SF_571", "SF_BANK")}</tr>
       <tr><td><b>Combined for an effective date on or before 28 Feb 2027</b></td><td>—</td><td><b>13.1%</b></td><td>Requires 90 days' notice; also equals the 7-year banked balance on 1 June 2027, assuming no prior increase</td>{cell("SF_BANK", "SF_571")}</tr>

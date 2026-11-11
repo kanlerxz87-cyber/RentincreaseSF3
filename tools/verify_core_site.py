@@ -236,6 +236,42 @@ def check_rate_table():
     for i, (want, got) in enumerate(zip(OFFICIAL_RATES, found), start=1):
         if want != got:
             ERRORS.append("rate table row %d: published %r, document 571 %r" % (i, got, want))
+RESEARCH_DATE = dt.date(2026, 11, 11)
+MONTHS = {m: i + 1 for i, m in enumerate(
+    ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"])}
+PLANNER_DATE = re.compile(r"(\d{1,2}) (Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) (\d{4})")
+
+
+def check_planner_freshness(path):
+    """Every notice-date planner deadline that has already gone by on the research-pass
+    date must be marked "passed" in the published cell, so a stale deadline can never be
+    read as still open."""
+    if path.name != "process.html":
+        return
+    text = path.read_text(encoding="utf-8")
+    start = text.find("Notice-date planner")
+    if start < 0:
+        ERRORS.append("process.html: notice-date planner not found")
+        return
+    end = text.find("</table>", start)
+    block = text[start:end if end > 0 else len(text)]
+    checked = 0
+    for row in TR.findall(block):
+        cells = re.findall(r"<td\b[^>]*>(.*?)</td>", row, re.S)
+        for cell in cells[1:]:
+            for day, mon, year in PLANNER_DATE.findall(cell):
+                when = dt.date(int(year), MONTHS[mon], int(day))
+                checked += 1
+                if when < RESEARCH_DATE and "passed" not in cell:
+                    ERRORS.append("process.html: planner deadline %s is before the "
+                                  "research-pass date %s but is not marked passed: %s"
+                                  % (when, RESEARCH_DATE, re.sub(r"<[^>]+>", "", cell).strip()))
+                elif when == RESEARCH_DATE and ("passed" not in cell and "holiday" not in cell):
+                    ERRORS.append("process.html: planner deadline %s falls on the research-pass "
+                                  "date itself and must be annotated (passed / holiday): %s"
+                                  % (when, re.sub(r"<[^>]+>", "", cell).strip()))
+    if checked < 5:
+        ERRORS.append("process.html: expected at least 5 planner deadlines, found %d" % checked)
 
 
 def check_rate_calendar():
@@ -301,6 +337,7 @@ def main():
         check_privacy(p)
         check_scripts(p)
         check_footer(p)
+        check_planner_freshness(p)
     # every source in the registry is official and https
     for key, (title, url) in SRC.items():
         if not official(url):
@@ -311,6 +348,20 @@ def main():
     check_rate_table()
     check_rate_calendar()
     check_flag_order()
+    # the flag count is dynamic on the pages; every place it is written as a literal must agree
+    from site_pages_ref import FLAGS as FLAG_LIST
+    n_flags = len(FLAG_LIST)
+    for path, needle in (
+            (ROOT / "pages" / "requirements.html", '<div class="num">%d</div>' % n_flags),
+            (ROOT / "pages" / "flagged.html", "The %d flags" % n_flags),
+            (ROOT / "pages" / "flagged.html", "%d items that are unverified" % n_flags),
+            (ROOT / "pages" / "requirements.html", "%d flags published" % n_flags),
+            (ROOT / "README.md", "%d flagged items" % n_flags)):
+        if not path.exists():
+            continue
+        if needle not in path.read_text(encoding="utf-8"):
+            ERRORS.append("%s: hardcoded flag count does not match FLAGS (%d) — expected %r"
+                          % (path.name, n_flags, needle))
     # Guard against previously published unsafe legal assurances.
     canonical = "\n".join(p.read_text(encoding="utf-8") for p in pages if p.exists())
     for unsafe in ("first date reachable from today", "served now cannot take effect before",

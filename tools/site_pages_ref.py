@@ -34,6 +34,7 @@ USED_FOR = {
     "CRD": "Civil Rights Department enforcement, protected characteristics, complaint route",
     "USC_3604": "Federal Fair Housing Act — discrimination in rental terms and conditions",
     "DOJ_ALGO": "Federal antitrust suit against six large landlords over algorithmic rent pricing",
+    "OPM_HOLIDAYS": "11 November 2026 is a federal holiday (Veterans Day, 5 U.S.C. 6103) — relevant to any mail-by deadline that falls on that day",
 }
 
 
@@ -190,7 +191,7 @@ FLAGS = [
      "The tenancy began 1 February 2025 and continued when a new co-tenant joined on 1 April 2026 at the same rent. The Rent Board's rule starts the clock 12 months after the lease began, but its pages do not address a mid-tenancy lease renewal with a new occupant. Both outcomes are computed: 1 Feb 2027 (3.0%) and 1 Apr 2027 (percentage not yet announced).",
      "Written confirmation from a Rent Board counsellor; keep the original lease and the 2026 renewal together.", "SF_LI"),
     ("FR-03", "Two official pages describe banking differently", "Irregularity",
-     "The banked-increases page says a skipped increase “is only banked if at least 24 full months pass without any rent increase”; the worked example on the rent-increases page applies a 12-month test to each skipped increase. Both are official Rent Board text and are quoted on the executive summary page. Neither wording changes Unit B's total; for Unit A the 1.6%-only option is lawful under either reading.",
+     "The banked-increases page says a skipped increase “is only banked if at least 24 full months pass without any rent increase”; the worked example on the rent-increases page applies a 12-month test to each skipped increase (“a full 12 months has not elapsed between the date it first became available … and the date of the rent increase” ⇒ lost). Both are official Rent Board texts, re-read on 11 November 2026, and both are quoted on the executive summary page. Neither published wording changes Unit B's 13.1% total for an effective date on or before 28 February 2027: no increase has been imposed since 1 June 2019, so 24 full months without any increase elapsed on 1 June 2021, and each skipped year was already more than 12 months old by 1 February 2027 (the last of them, 1 June 2025, turned 12 months old on 1 June 2026 — 20 months earlier). A third reading that ran 24 months from each skipped anniversary appears in neither text; on that reading only 10.1% would be bankable by 1 February 2027 and the 1.4% would wait until 1 June 2027, so confirm the reading with a counsellor before serving. For Unit A the 1.6%-only option is lawful under either reading.",
      "Rent Board counsellor confirmation, or a written determination; publish both texts until then.", "SF_BANK"),
     ("FR-04", "Rent-increase licence status unknown", "Unverified",
      "No Housing Inventory filing history was provided. Without a licence in effect on the effective date the notice is not enforceable, whatever the percentage.",
@@ -246,6 +247,9 @@ FLAGS = [
     ("FR-25", "Fixed-term lease provisions and actual notice", "Unverified",
      "Lease end dates and any mid-term rent adjustment clauses were not supplied. Civil Code § 827 describes specified periodic tenancies; these scenarios do not establish that an increase can be imposed during an unexpired fixed term.",
      "Review both signed leases and obtain legal advice before choosing a date or serving notice.", "LEG_827"),
+    ("FR-27", "Postal service on the research-pass date (11 November 2026)", "Unverified",
+     "The planner's last mailing day for a 14 February 2027 effective date is 11 November 2026, which OPM lists as a federal holiday (Veterans Day). The sf.gov pages read on that date also carry a City closure banner. Whether a rent-increase notice can be validly deposited in the mail on a federal holiday — and how that interacts with the 5-day extension in Code of Civil Procedure § 1013 — is not established by any source this site cites, and the USPS holiday schedule could not be fetched in this session. No conclusion is asserted.",
+     "Serve in person instead, or mail on the previous business day (10 November 2026); confirm with the USPS holiday schedule and counsel.", "OPM_HOLIDAYS"),
     ("FR-17", "“13.1%” was labelled a maximum catch-up / June 2027 ceiling", "Corrected 10 Nov 2026",
      "13.1% is 11.5% banked (2020–2025) plus the 1.6% annual allowance in force through 28 February 2027. It is therefore the conditional maximum only for an effective date <b>on or before 28 February 2027</b>. For 1 Mar – 31 May 2027 (off-anniversary before 1 June 2027) only 11.5% is banked plus the unannounced 2027–28 rate; on <b>1 June 2027</b> (once 12 full months have elapsed since 1 June 2026) all seven skipped years 2020–2026 (<b>13.1%</b>) are banked plus whatever 2027–28 rate the Rent Board publishes.",
      "Re-check the Rent Board's published percentage before any effective date on or after 1 March 2027.", "SF_571"),

@@ -1171,3 +1171,102 @@ Two corrections were applied to the combined result, both verified against Form 
 - **What changed on the live site:** the rate table (FR-26), a new build gate that prevents the same drift, a dynamic flag count, and research log rows 62–77. No percentage, dollar amount, notice date or legal quotation on any canonical page was changed — all were re-confirmed against the official source.
 - **Still open (non-blocking, published on Flagged for review):** FR-01 … FR-25 as listed above. FR-26 is closed.
 - Nothing remains in progress for `arena/beba4d31-rentincreasesf3`. Open PRs belonging to other sessions (#1, #8, #20, #33, #35, #45) were **not** touched.
+## Task board — session `arena/96aa0f4f-rentincreasesf3` (direct-source re-verification pass, 2026-11-11)
+
+Claimed **2026-11-11**. Branch `arena/96aa0f4f-rentincreasesf3` from `main` at `a12419d` (PR #47 merged;
+Pages build for that commit reported `built` 2026-11-11T02:23:50Z — confirmed via the Pages API at claim time).
+
+This session is distinct from the other 2026-11-11 passes in one respect: **its sandbox can fetch
+sf.gov, leginfo.legislature.ca.gov, oag.ca.gov and sfgov.legistar.com directly**, so every headline
+figure below is re-read from the official page itself in this session, not corroborated by web search
+or inherited from an earlier session's log. Prior sessions (`arena/8f87abd1`, `arena/e00aaa27`) logged
+an egress allowlist that prevented direct fetches; that limitation does not apply here.
+
+No other session has a live claim on the canonical site. Scope is deliberately narrow and additive:
+`COORDINATION.md`, `research/verification-log.md`, `data/sources.json`, and — only if a direct read of
+an official page contradicts a published figure — the canonical generators (`tools/*.py`) plus the
+regenerated `index.html` / `pages/*.html`. Preserved editions (`docs/`, `dashboard/`, `review/`,
+`audit/`, `verified/`, `verification/`) are not edited.
+
+| # | Task | Status | Owner | File scope |
+|---|---|---|---|---|
+| W1 | Claim tasks, record scope, push claim | done | `arena/96aa0f4f-rentincreasesf3` | `COORDINATION.md` |
+| W2 | Run all 9 repo gates on the merged tree; confirm build idempotence | done | `arena/96aa0f4f-rentincreasesf3` | read-only |
+| W3 | Direct-fetch every official source cited by the canonical site and re-check each published figure | in progress | `arena/96aa0f4f-rentincreasesf3` | `research/verification-log.md` (rows 59+), `data/sources.json` |
+| W4 | Repo review line by line: flag irregularities, correct only what an official source contradicts | unclaimed | `arena/96aa0f4f-rentincreasesf3` | `tools/*.py`, regenerated `index.html`, `pages/*.html` (only if required) |
+| W5 | Final integration: PR → `main` → merge → confirm GitHub Pages deploy → record | unclaimed | `arena/96aa0f4f-rentincreasesf3` | `COORDINATION.md` |
+
+**W2 result (2026-11-11, merged tree `a12419d`):** `tools/privacy_scan.py` PASS (108 tracked text files);
+`tools/build_dashboard.py` produced no diff (idempotent); `tools/verify_core_site.py` PASS
+(14 pages / 41 tables / **350 rows** / 988 links); `tools/verify_review_regressions.py` PASS;
+`tools/audit_site.py` PASS (70 HTML files); `verify_site.py` PASS (10); `tools/check_site.py` PASS (11 pages);
+`tools/verify_edition.py` PASS; `tools/check_v2.py` PASS (212 data rows, 210 sourced, 2 blank+flagged).
+
+### W3 / W4 results — `arena/96aa0f4f` (2026-11-11)
+
+**W3 — direct fetches.** Ten official pages were opened and read in this session (not corroborated by
+search): `sf.gov/learn-about-rent-increases-san-francisco` (both chunks), the Form 571 PDF,
+`sf.gov/information--banked-rent-increases`, `sf.gov/rent-board-housing-inventory`, `sf.gov/rent-board-fee`,
+`sf.gov/information--annual-rent-increase-multiple-years`, `oag.ca.gov/rentcaps`,
+`leginfo … CIV §827`, `sfgov.legistar.com` File #261020, and `opm.gov` Federal Holidays. Every headline
+figure matched what is published: 1.6% through 28 Feb 2027; the 1982–2027 rate table; the licence rule for
+an individual owner (report into the Housing Inventory → licence auto-generated → must be in force on the
+effective date; 1 Mar 2023 start for 1–9 unit buildings; no petition; no monetary penalty for late filing);
+$59.00 Rent Board Fee, 50% = $29.50 recoverable, 14 Dec 2026 exemption deadline; 8.8% state cap (not
+governing); §827's 30/90-day split at 10% with §1013's mail extension; File #261020 still
+**Pending Committee Action** with no final action. Rows 59–70: `research/verification-log.md`.
+
+**W4 — irregularities found and fixed** (full list with evidence: `research/verification-log.md`):
+
+| # | Irregularity | Disposition |
+|---|---|---|
+| 1 | `pages/units.html` said the 1 June 2025 skipped increase had "12 months elapsed by Feb 2027" — it is **20 months** | Corrected; official 12-month test stated; row now also cites the rent-increases page |
+| 2 | Planner row for 8 Feb 2027 showed "Serve in person by 10 Nov 2026" as if still open, though it precedes the site's own research-pass date | Badged **passed**; new gate rule fails the build on any such stale deadline |
+| 3 | The 14 Feb 2027 row's last mailing day (11 Nov 2026) is Veterans Day, a federal holiday per OPM | Published as **FR-26** (unverified — no official USPS source reachable here); planner cell annotated with the OPM link |
+| 4 | `EXECUTIVE_SUMMARY.md` still framed notice arithmetic "from 10 November 2026" | Rolled to 11 Nov 2026; earliest date a >10% increase served today reaches is 9 Feb 2027 |
+| 5 | FR-03 asserted "neither wording changes Unit B's total" without showing why | Rewritten with the arithmetic under both published readings, and naming the third (unpublished) reading that would give 10.1% banked by 1 Feb 2027 |
+| 6 | Literal flag counts ("25") in `pages/requirements.html` and `README.md` | Updated to 26; new gate rule fails the build if any literal disagrees with `len(FLAGS)` |
+| 7 | `tools/audit_site.py` keeps a second domain allowlist that silently rejects new official domains | `opm.gov` added to both lists; unifying them is logged as a request for a future pass |
+| 8 | Open PRs #45 / #35 / #33 touch these files; #45's session recorded no claim here | Left untouched; must be rebased onto current `main` or they will revert these corrections |
+
+**New gate rules proved to execute** (each was run against the state it is meant to catch):
+the planner-staleness rule reported 2 failures on the pre-fix `pages/process.html`, and the flag-count rule
+reported 1 failure when `README.md` was temporarily set back to "25 flagged items".
+
+| # | Task | Status |
+|---|---|---|
+| W3 | Direct-fetch every official source; re-check each published figure | done |
+| W4 | Repo review, irregularities flagged/corrected, gates extended | done |
+| W5 | PR → merge → confirm Pages deploy → record | in progress |
+
+### Conflict log and one further irregularity — `arena/96aa0f4f` (2026-11-11)
+
+While this branch was open, `main` advanced to `00eedf7` (PRs #49 / #51, session
+`arena/beba4d31-rentincreasesf3`) and to rows 59–61 of `research/verification-log.md` (session
+`arena/0dea38fc`). `git pull --rebase` produced conflicts in `COORDINATION.md`,
+`tools/verify_core_site.py`, `tools/site_pages_ref.py`, `research/verification-log.md` and
+`pages/flagged.html`. **Resolution discarded nothing:**
+
+| Conflict | Resolution |
+|---|---|
+| `COORDINATION.md` | Both sessions' sections kept |
+| `tools/verify_core_site.py` | Both sides of both hunks kept — `beba4d31`'s `OFFICIAL_RATES` + `check_rate_table()` and this session's planner-staleness and flag-count rules |
+| `tools/site_pages_ref.py` | Kept `beba4d31`'s dynamic `{nflags}` R-21 row (better than this session's literal); this session's new flag renumbered **FR-26 → FR-27** because `beba4d31`'s FR-26 (rate table) landed first |
+| `research/verification-log.md` | All three sessions' rows kept; this session's rows renumbered **78–91** (59–61 = `arena/0dea38fc`, 62–77 = `arena/beba4d31`) so the log has no duplicate numbers |
+| `pages/flagged.html` | Regenerated from the generators rather than hand-merged |
+
+**Irregularity 9 (found by reading the official PDF against the site's table).** The 1982–2027 rate table
+carried **"3/1/84 – 2/29/85"**. Document 571, fetched directly on 2026-11-11, reads
+**"3/1/84 – 2/28/85"** — 1985 was not a leap year, so 29 February 1985 does not exist. This survived
+PR #49's rate-table cleanup (which corrected five other end-dates) because the new
+`OFFICIAL_RATES` constant was transcribed from the same table it was meant to check. Corrected in both
+`tools/site_pages_rules.py` and `tools/verify_core_site.py`; `check_rate_table()` now passes against the
+PDF's 46 rows. **Note for future passes: a transcription constant copied from the site cannot verify the
+site — it must be re-typed from the PDF.**
+
+**Second rebase round (same pass).** Before this branch could be pushed, `main` advanced again to
+`69d2bde` (PR #50, session `arena/488b115e-rentincreasesf3`, whose log rows run 78–95). Conflicts in
+`tools/verify_core_site.py`, `research/verification-log.md` and `pages/flagged.html` were resolved the
+same way: both sides kept, `pages/flagged.html` regenerated, and this session's log rows renumbered again
+to **96–109**. `arena/488b115e` added no flag beyond FR-26, so this session's flag stays **FR-27**.
+All 8 gates were re-run on the final tree and pass; the build is idempotent.

@@ -19,6 +19,7 @@ OFFICIAL_DOMAINS = (
     "justice.gov",
     "hud.gov",
     "ecfr.gov",
+    "opm.gov",
 )
 
 SRC = {
@@ -72,6 +73,8 @@ SRC = {
                  "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=1942.5"),
     "LEG_1013": ("Cal. Code Civ. Proc. § 1013 — service by mail extension",
                  "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CCP&sectionNum=1013"),
+    "OPM_HOLIDAYS": ("U.S. Office of Personnel Management — Federal Holidays (5 U.S.C. 6103)",
+                     "https://www.opm.gov/policy-data-oversight/pay-leave/federal-holidays/"),
     "LEG_12955": ("Cal. Gov. Code § 12955 — FEHA housing discrimination",
                   "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=GOV&sectionNum=12955"),
     "OAG": ("California Attorney General — Limits on rent increases",

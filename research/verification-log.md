@@ -298,3 +298,56 @@ found and corrected; everything else matched.
    descending, and requires flag IDs on the Flagged page to be unique and ascending.
 5. Nothing else failed. No percentage, dollar amount, notice period, source URL or privacy control
    changed; the total flag count remains 25, and FR-15 now records the rate-table correction.
+---
+
+## Pass 2026-11-11 — session `arena/96aa0f4f-rentincreasesf3` (direct fetches, not web search)
+
+Unlike the other 11 November passes, this session's sandbox could open the official pages directly,
+so each row below records what was read on the page itself on 2026-11-11.
+
+| # | Assertion | Check performed 2026-11-11 | Result |
+|---|---|---|---|
+| 96 | Allowable increase 1.6% for 3/1/2026–2/28/2027, "60% of the increase in the Consumer Price Index for All Urban Consumers in the Bay Area"; once every 12 months; licence required before annual/banked increases; 30-day notice, 90-day if >10%, +5 days if mailed; notice states amount, percentage, effective date | Fetched `sf.gov/learn-about-rent-increases-san-francisco` directly (both chunks) | Confirmed verbatim |
+| 97 | Rate table: 1.6% (3/1/26–2/28/27), 1.4% (25–26), 1.7% (24–25), 3.6% (23–24), 2.3% (22–23), 0.7% (21–22), 1.8% (20–21), back to 7.0% (4/1/82–2/28/83); "may increase the tenant's base rent once every 12 months … without filing a petition at the Rent Board" | Fetched the Form 571 PDF directly | Confirmed — every percentage used on this site matches the published table |
+| 98 | Banking: no cap, additive not compounded, back to 1 Apr 1982, does not expire during a tenancy, survives a sale, does not carry to a new tenant; licence required "Effective July 1, 2022 (or March 1, 2023 for condominiums and buildings with 1-9 residential units)"; notice must also state "which part of the increase is banked" | Fetched `sf.gov/information--banked-rent-increases` directly | Confirmed verbatim |
+| 99 | Licence: "All owners of residential property are required to report"; "Property owners who have tenants will receive a rent increase license after the submission"; licence "automatically generated for non-owner occupied units"; must be on file "before any annual or banked rent increase can go into effect"; "will not be enforceable without having a rent increase license on the effective date of the notice"; 1 July 2022 for 10+ unit non-condo buildings, 1 March 2023 for condominiums and buildings with fewer than 10 units; 1 March annual deadline; "does not assess monetary penalties for filing after the deadline"; licence need not accompany the notice | Fetched `sf.gov/rent-board-housing-inventory` directly | Confirmed verbatim — the answer to the brief's foremost question |
+| 100 | Rent Board Fee is separate: $59.00 per dwelling unit / $29.50 per guest unit for 2026-27; 50% recoverable ($29.50 / $14.75); due 1 March; 5% monthly penalty capped at 15%; 2027 exemption deadline 14 December 2026; a fee exemption request does not satisfy Housing Inventory reporting | Fetched `sf.gov/rent-board-fee` directly | Confirmed verbatim |
+| 101 | AB 1482 cap for the San Francisco Area is 8.8% for increases starting 1 Aug 2026 – 31 Jul 2027 (6.3% for the prior year); "If the rent increase cap set by your city or county results in a lower increase … then the local rule will apply" | Fetched `oag.ca.gov/rentcaps` directly | Confirmed — the state figure does not govern here |
+| 102 | Notice periods: § 827(b)(2) — increase "10 percent or less" ⇒ at least 30 days; § 827(b)(3)(A) — "greater than 10 percent" ⇒ at least 90 days; measured against rent charged at any time in the 12 months before the effective date, alone or combined; service personally or by mail under CCP § 1013 | Fetched `leginfo … lawCode=CIV&sectionNum=827` directly | Confirmed verbatim |
+| 103 | File #261020 (Administrative Code – Cap On Rent Increases for Rent-Controlled Units): Type Ordinance, Status **Pending Committee Action**, introduced 9/15/2026, in control of the Land Use and Transportation Committee, no final action, no enactment date; sponsors Sauter, Chan, Mahmood; 4 history rows, latest 10/7/2026 Youth Commission response | Fetched the Legistar file page directly | Confirmed — still not law on 11 Nov 2026 |
+| 104 | Multiple-year increases: add the allowable percentages, "Increases cannot be compounded", "Landlords are not required to file a petition with the City", no rounding up, at least 30 days' notice (35 if mailed), base rent only | Fetched `sf.gov/information--annual-rent-increase-multiple-years` directly | Confirmed; its worked example adds the current anniversary year's percentage into the total, which is how 13.1% is composed |
+| 105 | The 12-month banking wording quoted on the executive summary is genuine official text | Fetched chunk 2 of the rent-increases page: "a full 12 months has not elapsed between the date it first became available on June 1, 2025, and the date of the rent increase on May 1, 2026 … permanently lost" | Confirmed verbatim |
+| 106 | 11 November 2026 is a federal holiday (Veterans Day) | Fetched `opm.gov` Federal Holidays: 2026 table lists "Wednesday, November 11 — Veterans Day" (5 U.S.C. 6103) | Confirmed; USPS service that day not verified (FR-26) |
+| 107 | Every published figure and notice date recomputed | Python: 3,995×1.6% = 63.92 → 4,058.92; ×3.0% = 119.85 → 4,114.85; 3,150×1.6% = 50.40 → 3,200.40; ×10% = 315.00 → 3,465.00; ×11.5% = 362.25 → 3,512.25; ×13.1% = 412.65 → 3,562.65; 1.8+0.7+2.3+3.6+1.7+1.4 = 11.5; +1.6 = 13.1. Planner: 1 Feb 2027 −30 = 2 Jan 2027, −35 = 28 Dec 2026, −90 = 3 Nov 2026, −95 = 29 Oct 2026; 8 Feb 2027 −90 = 10 Nov 2026, −95 = 5 Nov 2026; 14 Feb 2027 −90 = 16 Nov 2026, −95 = 11 Nov 2026 | All published values correct |
+| 108 | Elapsed time from the 1 June 2025 skipped increase to a 1 February 2027 effective date | Python month arithmetic | **20 months, not 12** — the published cell was wrong and has been corrected |
+| 109 | Gates on the merged tree `a12419d` before any edit | All 9 scripts run | All PASS; `verify_core_site.py` reported 14 pages / 41 tables / 350 rows / 988 links; after this pass's corrections: 351 rows / 990 links |
+
+### Irregularities found by `arena/96aa0f4f` (all corrected or flagged in this pass)
+
+1. **Wrong elapsed time in a data row.** `pages/units.html` described the 1 June 2025 skipped increase as
+   "Skipped — banked (12 months elapsed by Feb 2027)". 1 June 2025 → 1 February 2027 is **20 months**.
+   Corrected to state the official test (a full 12 months elapsed on 1 June 2026) with the rent-increases
+   page added as the row's third source.
+2. **Stale planner deadline presented as open.** The 8 February 2027 row showed "Serve in person by
+   10 November 2026" with no "passed" badge, although that date is before the site's own research-pass
+   date. Badged as passed. `tools/verify_core_site.py` now fails the build if any planner deadline on or
+   before the research-pass date is unmarked (proved by running it against the pre-fix page: 2 failures).
+3. **Mail-by deadline falling on a federal holiday.** The 14 February 2027 row's last mailing day is
+   11 November 2026 — Veterans Day, a federal holiday per OPM. Published as **FR-26** (unverified: no
+   official USPS source was reachable in this session) and annotated in the planner with the OPM link.
+4. **Stale date in the markdown summary.** `EXECUTIVE_SUMMARY.md` still said "Notice-date arithmetic
+   (from 10 November 2026)" and offered 10 November service as a live example. Rolled to 11 November 2026;
+   the earliest date a >10% increase served on 11 November 2026 can reach is 9 February 2027.
+5. **FR-03 reasoning was asserted, not shown.** It claimed "neither wording changes Unit B's total"
+   without saying why. Rewritten to show the arithmetic under both published readings (24 months without
+   any increase elapsed on 1 June 2021; every skipped year was >12 months old by 1 February 2027) and to
+   name the third reading that is *not* in either text (which would give 10.1% banked by 1 February 2027).
+6. **Hardcoded flag counts.** Adding FR-26 made the literals "25 flags published" (`pages/requirements.html`)
+   and "25 flagged items" (`README.md`) stale. Updated to 26, and `tools/verify_core_site.py` now fails the
+   build if any literal count disagrees with `len(FLAGS)` (proved by temporarily setting README back to 25).
+7. **Two domain allowlists, not one.** `tools/audit_site.py` keeps its own `DOMAINS` set separate from
+   `site_layout.OFFICIAL_DOMAINS`; adding a new official domain to one silently breaks the other. Both were
+   updated for `opm.gov`. Worth unifying in a future pass.
+8. **Unmerged PRs overlapping this pass's files:** #45 (`arena/3cb4d5e1`, no claim recorded in this file),
+   #35 and #33 (both noted as superseded / needing rebase by earlier sessions). Left untouched; whoever
+   resumes them must rebase onto current `main` or they will revert these corrections.

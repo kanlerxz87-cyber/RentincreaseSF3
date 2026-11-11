@@ -62,7 +62,7 @@ Percentages are official; dollar amounts are the official percentage multiplied 
 
 Under the unverified assumption of no intervening increase, Unit B's banked total: 1.8% (2020) + 0.7% (2021) + 2.3% (2022) + 3.6% (2023) + 1.7% (2024) + 1.4% (2025) = **11.5%**, plus the 1.6% annual in force on the effective date = **13.1%**, which is therefore the maximum only for an effective date on or before 28 February 2027: for a later date (for example 1 June 2027) the 11.5% still carries forward but the annual component is whatever the Rent Board then publishes — not yet announced, so it is left blank (FR-05, FR-17). The percentages come from [Form 571](https://www.sf.gov/documents/34344/571_Allowable_Annual_Increases_26-27_1.pdf).
 
-**Notice-date arithmetic (from 10 November 2026).** A 13.1% Unit B increase designed to take effect 1 February 2027 needed service by 3 November 2026 — that window has closed. For example, notice personally served on 10 November 2026 would require at least 90 days, reaching 8 February 2027; recalculate from the actual service date. A 10.0% increase can still take effect 1 February 2027 if served by 2 January 2027 (28 December 2026 if mailed).
+**Notice-date arithmetic (from 11 November 2026).** A 13.1% Unit B increase designed to take effect 1 February 2027 needed service by 3 November 2026 — that window has closed. Service on 10 November 2026 would have reached 8 February 2027, and that date has also now passed; a notice personally served on 11 November 2026 reaches **9 February 2027** (90 days) at the earliest, and later service moves the date out again — recalculate from the actual service date. A 10.0% increase can still take effect 1 February 2027 if served by 2 January 2027 (28 December 2026 if mailed). Note that 11 November 2026 is a federal holiday (Veterans Day, per [OPM](https://www.opm.gov/policy-data-oversight/pay-leave/federal-holidays/)); whether a notice can validly be deposited in the mail that day is not established by any source cited here, so mail on the previous business day or serve in person (FR-27).
 
 ---
 
@@ -164,6 +164,7 @@ Sources: [Gov. Code § 12955](https://leginfo.legislature.ca.gov/faces/codes_dis
 | FR-23 | Actual notices, service, motive and compliance | **Unverified** |
 | FR-24 | Archived editions: row-source exceptions | **Unverified** |
 | FR-25 | Fixed-term lease provisions and actual notice | **Unverified** |
+| FR-27 | Postal service on the research-pass date (11 Nov 2026, a federal holiday) | **Unverified** — no official USPS source reached in this pass; serve in person or mail the previous business day |
 
 Full detail with source links: `pages/flagged.html` on the live site.
 
