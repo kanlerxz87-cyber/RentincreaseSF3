@@ -1171,3 +1171,33 @@ Two corrections were applied to the combined result, both verified against Form 
 - **What changed on the live site:** the rate table (FR-26), a new build gate that prevents the same drift, a dynamic flag count, and research log rows 62–77. No percentage, dollar amount, notice date or legal quotation on any canonical page was changed — all were re-confirmed against the official source.
 - **Still open (non-blocking, published on Flagged for review):** FR-01 … FR-25 as listed above. FR-26 is closed.
 - Nothing remains in progress for `arena/beba4d31-rentincreasesf3`. Open PRs belonging to other sessions (#1, #8, #20, #33, #35, #45) were **not** touched.
+## Task board — session `arena/96aa0f4f-rentincreasesf3` (direct-source re-verification pass, 2026-11-11)
+
+Claimed **2026-11-11**. Branch `arena/96aa0f4f-rentincreasesf3` from `main` at `a12419d` (PR #47 merged;
+Pages build for that commit reported `built` 2026-11-11T02:23:50Z — confirmed via the Pages API at claim time).
+
+This session is distinct from the other 2026-11-11 passes in one respect: **its sandbox can fetch
+sf.gov, leginfo.legislature.ca.gov, oag.ca.gov and sfgov.legistar.com directly**, so every headline
+figure below is re-read from the official page itself in this session, not corroborated by web search
+or inherited from an earlier session's log. Prior sessions (`arena/8f87abd1`, `arena/e00aaa27`) logged
+an egress allowlist that prevented direct fetches; that limitation does not apply here.
+
+No other session has a live claim on the canonical site. Scope is deliberately narrow and additive:
+`COORDINATION.md`, `research/verification-log.md`, `data/sources.json`, and — only if a direct read of
+an official page contradicts a published figure — the canonical generators (`tools/*.py`) plus the
+regenerated `index.html` / `pages/*.html`. Preserved editions (`docs/`, `dashboard/`, `review/`,
+`audit/`, `verified/`, `verification/`) are not edited.
+
+| # | Task | Status | Owner | File scope |
+|---|---|---|---|---|
+| W1 | Claim tasks, record scope, push claim | done | `arena/96aa0f4f-rentincreasesf3` | `COORDINATION.md` |
+| W2 | Run all 9 repo gates on the merged tree; confirm build idempotence | done | `arena/96aa0f4f-rentincreasesf3` | read-only |
+| W3 | Direct-fetch every official source cited by the canonical site and re-check each published figure | in progress | `arena/96aa0f4f-rentincreasesf3` | `research/verification-log.md` (rows 59+), `data/sources.json` |
+| W4 | Repo review line by line: flag irregularities, correct only what an official source contradicts | unclaimed | `arena/96aa0f4f-rentincreasesf3` | `tools/*.py`, regenerated `index.html`, `pages/*.html` (only if required) |
+| W5 | Final integration: PR → `main` → merge → confirm GitHub Pages deploy → record | unclaimed | `arena/96aa0f4f-rentincreasesf3` | `COORDINATION.md` |
+
+**W2 result (2026-11-11, merged tree `a12419d`):** `tools/privacy_scan.py` PASS (108 tracked text files);
+`tools/build_dashboard.py` produced no diff (idempotent); `tools/verify_core_site.py` PASS
+(14 pages / 41 tables / **350 rows** / 988 links); `tools/verify_review_regressions.py` PASS;
+`tools/audit_site.py` PASS (70 HTML files); `verify_site.py` PASS (10); `tools/check_site.py` PASS (11 pages);
+`tools/verify_edition.py` PASS; `tools/check_v2.py` PASS (212 data rows, 210 sourced, 2 blank+flagged).
