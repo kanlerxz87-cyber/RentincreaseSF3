@@ -1201,3 +1201,40 @@ regenerated `index.html` / `pages/*.html`. Preserved editions (`docs/`, `dashboa
 (14 pages / 41 tables / **350 rows** / 988 links); `tools/verify_review_regressions.py` PASS;
 `tools/audit_site.py` PASS (70 HTML files); `verify_site.py` PASS (10); `tools/check_site.py` PASS (11 pages);
 `tools/verify_edition.py` PASS; `tools/check_v2.py` PASS (212 data rows, 210 sourced, 2 blank+flagged).
+
+### W3 / W4 results — `arena/96aa0f4f` (2026-11-11)
+
+**W3 — direct fetches.** Ten official pages were opened and read in this session (not corroborated by
+search): `sf.gov/learn-about-rent-increases-san-francisco` (both chunks), the Form 571 PDF,
+`sf.gov/information--banked-rent-increases`, `sf.gov/rent-board-housing-inventory`, `sf.gov/rent-board-fee`,
+`sf.gov/information--annual-rent-increase-multiple-years`, `oag.ca.gov/rentcaps`,
+`leginfo … CIV §827`, `sfgov.legistar.com` File #261020, and `opm.gov` Federal Holidays. Every headline
+figure matched what is published: 1.6% through 28 Feb 2027; the 1982–2027 rate table; the licence rule for
+an individual owner (report into the Housing Inventory → licence auto-generated → must be in force on the
+effective date; 1 Mar 2023 start for 1–9 unit buildings; no petition; no monetary penalty for late filing);
+$59.00 Rent Board Fee, 50% = $29.50 recoverable, 14 Dec 2026 exemption deadline; 8.8% state cap (not
+governing); §827's 30/90-day split at 10% with §1013's mail extension; File #261020 still
+**Pending Committee Action** with no final action. Rows 59–70: `research/verification-log.md`.
+
+**W4 — irregularities found and fixed** (full list with evidence: `research/verification-log.md`):
+
+| # | Irregularity | Disposition |
+|---|---|---|
+| 1 | `pages/units.html` said the 1 June 2025 skipped increase had "12 months elapsed by Feb 2027" — it is **20 months** | Corrected; official 12-month test stated; row now also cites the rent-increases page |
+| 2 | Planner row for 8 Feb 2027 showed "Serve in person by 10 Nov 2026" as if still open, though it precedes the site's own research-pass date | Badged **passed**; new gate rule fails the build on any such stale deadline |
+| 3 | The 14 Feb 2027 row's last mailing day (11 Nov 2026) is Veterans Day, a federal holiday per OPM | Published as **FR-26** (unverified — no official USPS source reachable here); planner cell annotated with the OPM link |
+| 4 | `EXECUTIVE_SUMMARY.md` still framed notice arithmetic "from 10 November 2026" | Rolled to 11 Nov 2026; earliest date a >10% increase served today reaches is 9 Feb 2027 |
+| 5 | FR-03 asserted "neither wording changes Unit B's total" without showing why | Rewritten with the arithmetic under both published readings, and naming the third (unpublished) reading that would give 10.1% banked by 1 Feb 2027 |
+| 6 | Literal flag counts ("25") in `pages/requirements.html` and `README.md` | Updated to 26; new gate rule fails the build if any literal disagrees with `len(FLAGS)` |
+| 7 | `tools/audit_site.py` keeps a second domain allowlist that silently rejects new official domains | `opm.gov` added to both lists; unifying them is logged as a request for a future pass |
+| 8 | Open PRs #45 / #35 / #33 touch these files; #45's session recorded no claim here | Left untouched; must be rebased onto current `main` or they will revert these corrections |
+
+**New gate rules proved to execute** (each was run against the state it is meant to catch):
+the planner-staleness rule reported 2 failures on the pre-fix `pages/process.html`, and the flag-count rule
+reported 1 failure when `README.md` was temporarily set back to "25 flagged items".
+
+| # | Task | Status |
+|---|---|---|
+| W3 | Direct-fetch every official source; re-check each published figure | done |
+| W4 | Repo review, irregularities flagged/corrected, gates extended | done |
+| W5 | PR → merge → confirm Pages deploy → record | in progress |
