@@ -989,3 +989,7 @@ Claimed **2026-11-11**. This session re-verifies the canonical site (`index.html
 | J2 | Re-fetch & verify sources 2026-11-11 | done |
 | J3 | Roll date/planner to 11 Nov 2026, rebuild, all gates | done |
 | J4 | PR → merge → Pages deploy → record | in progress |
+
+### Conflict-resolution log — `arena/e00aaa27` (2026-11-11)
+
+While this session's PR #39 was open, `main` advanced twice via parallel sessions (PR #37/#42 from `arena/c541e9f4`, then PR #38 from `arena/1a404b71`). Rebases resolved without discarding any session's work: kept PR #37's FR-18…FR-20 + `tools/verify_review_regressions.py`, PR #38's FR-21…FR-25 (25 flags total) and its fixed-date planner framing ("fixed-date examples, not a live calculator", HEAD side of the planner conflict); kept this session's 11 Nov 2026 verification date, source-register retrieval date, and notice-date assertions for the published fixed dates. Flag counts corrected to 25 (`README.md`, R-21).

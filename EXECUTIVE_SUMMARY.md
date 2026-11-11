@@ -159,6 +159,11 @@ Sources: [Gov. Code § 12955](https://leginfo.legislature.ca.gov/faces/codes_dis
 | FR-18 | Total building unit count and historical reporting start date | **Unverified** — do not infer a two-unit building total; the licensing duty applies regardless |
 | FR-19 | Older editions may contain superseded claims | **Irregularity** — preserved for history; use the canonical dashboard |
 | FR-20 | Whether a copy of an ordinary increase notice must be filed separately | **Unverified** — no-approval-petition does not itself answer separate filing; confirm with the Rent Board |
+| FR-21 | Rule § 6.14 / Costa-Hawkins co-tenant distinction | **Corrected 11 Nov 2026** (see flagged page) |
+| FR-22 | No independent tenant-lawyer approval or normal-rate evidence | **Unverified** |
+| FR-23 | Actual notices, service, motive and compliance | **Unverified** |
+| FR-24 | Archived editions: row-source exceptions | **Unverified** |
+| FR-25 | Fixed-term lease provisions and actual notice | **Unverified** |
 
 Full detail with source links: `pages/flagged.html` on the live site.
 
