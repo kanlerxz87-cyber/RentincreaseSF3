@@ -993,3 +993,43 @@ Claimed **2026-11-11**. This session re-verifies the canonical site (`index.html
 ### Conflict-resolution log — `arena/e00aaa27` (2026-11-11)
 
 While this session's PR #39 was open, `main` advanced twice via parallel sessions (PR #37/#42 from `arena/c541e9f4`, then PR #38 from `arena/1a404b71`). Rebases resolved without discarding any session's work: kept PR #37's FR-18…FR-20 + `tools/verify_review_regressions.py`, PR #38's FR-21…FR-25 (25 flags total) and its fixed-date planner framing ("fixed-date examples, not a live calculator", HEAD side of the planner conflict); kept this session's 11 Nov 2026 verification date, source-register retrieval date, and notice-date assertions for the published fixed dates. Flag counts corrected to 25 (`README.md`, R-21).
+
+---
+
+---
+
+## Task board — session `arena/8f87abd1-rentincreasesf3` (independent confirmation pass, 2026-11-11)
+
+Claimed **2026-11-11**. Branch `arena/8f87abd1-rentincreasesf3` branched from `main` at `5c976c4` (PR #36 merged); rebased onto `origin/main` at `8556e5d` (PRs #37/#42, session `arena/c541e9f4`, merged 2026-11-11) during this pass — that session's content corrections are preserved untouched. The canonical site, executive summary and all five editions are complete and merged; this session performs an **independent confirmation pass only** — no canonical content, percentage, dollar amount, date or notice text is changed.
+
+Scope: `COORDINATION.md`, `research/verification-log.md` (append), `data/sources.json` (one metadata field). No other files are edited.
+
+| # | Task | Status | File scope | Notes |
+|---|---|---|---|---|
+| V1 | Claim tasks, record scope | done | `COORDINATION.md` | this section |
+| V2 | Confirm clean tree, build idempotence, run all 7 gates on merged tree | done | read-only | `privacy_scan.py` PASS (107 files) · rebuild produced no diff · `verify_core_site.py` PASS (14 pages / 41 tables / 341 rows / 976 links) · `audit_site.py` PASS (70 files) · `verify_site.py`, `check_site.py`, `verify_edition.py`, `check_v2.py` PASS |
+| V3 | Independent corroboration of headline facts (egress-limited sandbox: web search used; official pages were re-fetched directly by sessions on 2026-11-10 and 2026-11-09) | done | `research/verification-log.md` | rows 36–41 added: 1.6% (2026-27), 1.4% prior year, AB 1482 8.8% SF-area cap, Housing Inventory licence requirement (1–9 unit since 1 Mar 2023; effective-date rule), File #261020 notice of 2026-11-09 — all consistent with the published site |
+| V4 | Fix stale `data/sources.json` `branch` metadata (named merged branch `arena/487d8c3e-rentincreasesf3`) | done | `data/sources.json` | set to `main`; JSON validated; no source, figure or date touched |
+| V5 | PR → `main`, confirm CI green, merge, confirm GitHub Pages build, record result | in progress | `COORDINATION.md` | recorded in a follow-up records PR |
+
+**Rebase log (2026-11-11):** before this PR merged, `main` advanced three times — to `8556e5d` (PRs #37/#42, session `arena/c541e9f4-rentincreasesf3`, independent review and FR-18…FR-20), to `4081147` (PR #38, session `arena/1a404b71-rentincreasesf3`, integration audit and FR-21…FR-25) to `f15baf8` (PR #41, session `arena/db0bd0a6-rentincreasesf3`, petition/passthrough correction) and to `f8c0318` (PRs #43/#44, sessions `arena/1a404b71-rentincreasesf3` and `arena/db0bd0a6-rentincreasesf3`, records). This branch was rebased each time; `COORDINATION.md` add/add conflicts were resolved by keeping **all** sessions' sections with nothing discarded. `research/verification-log.md` and `data/sources.json` did not conflict. Gates were re-run after each rebase and pass on the final tree (privacy sweep PASS; build idempotent; `verify_core_site.py`, `audit_site.py`, `verify_site.py`, `check_site.py`, `verify_edition.py`, `check_v2.py`, `verify_review_regressions.py` all PASS — counts as printed by the third run).
+
+### Open pull requests reviewed 2026-11-11 (none merged; all belong to other sessions)
+
+| PR | Session | Disposition |
+|---|---|---|
+| #1 `arena/a07a8788-rentincreasesf3` | first dashboard edition | Superseded by later rebuilds; leave open/untouched |
+| #8 `arena/8f9507cf-rentincreasesf3` | parallel full edition | Superseded; leave open/untouched |
+| #20 `arena/4a563c4c-rentincreasesf3` | Nov-9 notice register entry | Substantive content already published on `main` (see note in `d2dc8ac5`/`0e839002` sections); only a `data/sources.json` addition outstanding — owner should rebase and re-open; not merged unrebased (would risk reverting verified pages) |
+| #33 `arena/0e22df8f-rentincreasesf3` | FR-17 banking-reading correction + edition links | Overlaps FR-17 corrections merged as PR #27 (`14f919c`) and refined in PR #34 (`a99fe1f`); merging as-is would conflict with the adopted wording — owner should rebase onto current `main` |
+| #35 `arena/45eea2b7-rentincreasesf3` | Remove stray commit-message text from `pages/units.html` / `tools/site_pages_core.py` | **Superseded**: the stray text is absent from `main` (removed in PR #34's conflict resolution, verified by 2026-11-11 grep); merging would conflict or be empty — owner may close |
+
+### Irregularities found in this pass
+
+1. `data/sources.json` `branch` named a deleted/merged branch — corrected to `main` (V4). No factual content affected.
+2. The sandbox used for this session cannot fetch sf.gov / leginfo / github.io directly (egress allowlist: github.com, api.github.com, codeload.github.com, registry.npmjs.org, pypi.org, files.pythonhosted.org). Live-site verification for this pass is therefore via the GitHub Pages build API (result recorded in the follow-up records PR) plus the direct fetches logged by prior sessions; all headline facts were independently corroborated by web search (V3).
+3. No other irregularity: all arithmetic, notice-date assertions, internal links and privacy checks pass on the merged tree (V2).
+
+### Standing note for owners of the canonical site
+
+Nothing in this pass changes the published content. The flagged items FR-01 … FR-17 and the blank cells they back remain as published on `pages/flagged.html`; they are owner-record facts (Unit B rent history, licence status, FR-02 anniversary, FR-13 voucher, FR-14 building record) and official-source gaps (FR-05 2027–28 rate) that only the property owner or a future sf.gov publication can resolve.

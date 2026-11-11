@@ -136,3 +136,35 @@ Session `arena/e00aaa27-rentincreasesf3`. Every source in the canonical 28-sourc
 | 52 | Notice-date planner from 11 Nov 2026: earliest >10% effective date 9 Feb 2027 (serve by 11 Nov, mail by 6 Nov — passed); 15 Feb 2027 serve by 17 Nov / mail by 12 Nov; 1 Feb 2027 ≤10% serve by 2 Jan 2027 / mail by 28 Dec 2026 | Date arithmetic recomputed in Python from Civ. Code §827 + CCP §1013 lead times | Updated — canonical planner, EXECUTIVE_SUMMARY.md and verify_core_site.py assertions rolled forward one day |
 
 Irregularities found in this pass: (1) the 10 Nov planner's "first date reachable" row expired at end of 10 Nov — fixed by the roll-forward above; (2) open PRs #35 (stray-text fix already landed on main via PR #34 — redundant), #33 (strict-reading banking rows — substantive alternative published as FR-03 context, not merged here), #20 (superseded by PR #21 rebuild) remain open and untouched, belonging to other sessions; (3) no new substantive irregularity — all rates, the licence rule and the pending-ordinance status are unchanged.
+
+---
+
+# Independent confirmation pass — 2026-11-11
+
+Session `arena/8f87abd1-rentincreasesf3`. Branch == `main` at `5c976c4` (PR #36 merged 2026-11-10T06:10:15Z).
+This pass changed **no canonical content and no published figure**. It re-ran every automated gate on the
+merged tree, corroborated the headline facts against public web results (this sandbox's egress is limited
+to github.com / api.github.com / codeload.github.com / npm and PyPI hosts, so sf.gov and leginfo cannot be
+fetched from here — the 2026-11-10 direct fetches recorded above remain the official-source record), and
+reviewed the open pull requests.
+
+| # | Assertion | Check performed 2026-11-11 | Result |
+|---|---|---|---|
+| 53 | Allowable increase 1.6% for 3/1/2026–2/28/2027 (prior year 1.4%) | Web search corroboration (multiple independent secondary outlets + the Rent Board announcement referenced in them); matches Form 571 figures published on the site | Consistent |
+| 54 | AB 1482 San Francisco area cap 8.8% for increases starting 1 Aug 2026 – 31 Jul 2027; local cap governs where lower | Web search corroboration | Consistent |
+| 55 | Rent Board licence: all owners must report into the Housing Inventory; licence auto-generated for tenant-occupied units; must be in effect on the effective date or the increase is not enforceable; 1–9 unit buildings since 1 Mar 2023 | Web search corroboration; matches sf.gov pages re-fetched directly 2026-11-10 (Verification log, rows 28–35) | Consistent |
+| 56 | sf.gov notice posted 2026-11-09 — File #261020, ≤10%/yr combined banked + capital-improvement increases, not enacted, would apply to banked increases noticed on/after 2026-09-15, status Pending Committee Action | Web search corroboration (notice reproduced by multiple outlets; Legistar unchanged per 2026-11-10 direct read); matches site treatment | Consistent |
+| 57 | Canonical site build is idempotent; all 7 gates pass on the merged tree | `privacy_scan.py` PASS (107 files); `build_dashboard.py` fresh (no diff); `verify_core_site.py` PASS (14 pages / 41 tables / 341 rows / 976 links); `audit_site.py` PASS (70 files); `verify_site.py`, `tools/check_site.py`, `tools/verify_edition.py`, `tools/check_v2.py` PASS | PASS |
+| 58 | Live deployment of `5c976c4` | GitHub Pages build status checked via API (see PR record in COORDINATION.md); sandbox cannot fetch github.io directly (egress allowlist) | See deploy record |
+
+Arithmetic independently recomputed from the published percentages (unchanged): 3,995.00 × 1.6% = 63.92 →
+4,058.92; 3,995.00 × 3.0% = 119.85 → 4,114.85; 3,150.00 × 1.6% = 50.40 → 3,200.40; 3,150.00 × 11.5% =
+362.25 → 3,512.25; 3,150.00 × 13.1% = 412.65 → 3,562.65; 3,150.00 × 10.0% = 315.00 → 3,465.00. Banked sums:
+1.8 + 0.7 + 2.3 + 3.6 + 1.7 + 1.4 = 11.5; 11.5 + 1.6 = 13.1. All match the published pages.
+
+Irregularities found in this pass: one stale metadata field — `data/sources.json` `branch` named a merged
+branch (`arena/487d8c3e-rentincreasesf3`); corrected to `main`. No content, percentage, dollar amount, date
+or source URL was changed. Open pull requests reviewed and **not merged** (see COORDINATION.md session
+section): #1 and #8 (superseded first editions), #20 (substance already on `main`; only a `data/sources.json`
+addition outstanding, owner to rebase), #33 (overlaps FR-17 corrections merged in PRs #27/#34 — needs owner
+rebase onto `main`), #35 (stray-text fix; stray text is absent from `main` — superseded by PR #34).

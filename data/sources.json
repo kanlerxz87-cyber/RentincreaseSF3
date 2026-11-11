@@ -1,6 +1,6 @@
 {
   "project": "Rental Increase SF - San Francisco (anonymized)",
-  "branch": "arena/487d8c3e-rentincreasesf3",
+  "branch": "main",
   "verified_sources": [
     {"topic": "SF allowable annual increase 1.4% (3/1/2025-2/28/2026), 60% of Bay Area CPI, once per 12 months, base rent only, 30/90-day notice", "url": "https://www.sf.gov/learn-about-rent-increases-san-francisco", "official": true},
     {"topic": "SF allowable increase 1.6% for 3/1/2026-2/28/2027", "url": "https://www.sf.gov/news--annual-rent-increase-3126-22827-announced", "official": true},
