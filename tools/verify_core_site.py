@@ -185,6 +185,52 @@ def check_math():
         ERRORS.append("dates: historical service example is not 2027-02-08")
 
 
+def check_rate_table():
+    """The 1982-2027 rate table must be a real, contiguous calendar sequence.
+
+    A wrong end date is otherwise invisible: 29 February was published for five non-leap
+    years before this check was added, and it contradicts the official Form 571.
+    """
+    from site_pages_rules import RATES  # noqa: E402
+
+    def parse(token):
+        month, day, year = token.split("/")
+        year = int(year)
+        year += 2000 if year <= 30 else 1900
+        return dt.date(year, int(month), int(day))
+
+    parsed = []
+    for period, pct, _now in RATES:
+        try:
+            start_s, end_s = [t.strip() for t in period.split("\u2013")]
+            start, end = parse(start_s), parse(end_s)
+        except Exception:
+            ERRORS.append("rate table: cannot parse period %r" % period)
+            continue
+        if end <= start:
+            ERRORS.append("rate table: period %r ends before it starts" % period)
+        parsed.append((period, start, end))
+    for (p_hi, s_hi, e_hi), (p_lo, s_lo, e_lo) in zip(parsed, parsed[1:]):
+        if not s_lo < s_hi:
+            ERRORS.append("rate table: %r is not ordered after %r" % (p_hi, p_lo))
+        if e_lo + dt.timedelta(days=1) != s_hi:
+            ERRORS.append("rate table: gap or overlap between %r and %r" % (p_lo, p_hi))
+
+
+def check_flag_order():
+    """Flag IDs are reviewed top to bottom; they must be in ascending numeric order."""
+    text = (ROOT / "pages" / "flagged.html").read_text(encoding="utf-8")
+    ids = re.findall(r"<b>(FR-\d{2})</b>", text)
+    if not ids:
+        ERRORS.append("flagged page: no flag IDs found")
+        return
+    numbers = [int(i.split("-")[1]) for i in ids]
+    if numbers != sorted(numbers):
+        ERRORS.append("flagged page: flag IDs are not in ascending order")
+    if len(set(numbers)) != len(numbers):
+        ERRORS.append("flagged page: duplicate flag ID")
+
+
 def main():
     pages = [ROOT / p for p, _ in ALL_PAGES]
     for p in pages:
@@ -205,6 +251,8 @@ def main():
         if not url.startswith("https://"):
             ERRORS.append("source %s is not https" % key)
     check_math()
+    check_rate_table()
+    check_flag_order()
     # Guard against previously published unsafe legal assurances.
     canonical = "\n".join(p.read_text(encoding="utf-8") for p in pages if p.exists())
     for unsafe in ("first date reachable from today", "served now cannot take effect before",

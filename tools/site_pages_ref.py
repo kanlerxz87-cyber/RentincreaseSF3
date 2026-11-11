@@ -225,7 +225,7 @@ FLAGS = [
      "The 1940 year is owner-reported; two units were described, but the total number of units in the building and their legal status were not established. Coverage turns on a certificate of occupancy before 14 June 1979 and on the unit not being a single-family dwelling or condominium; an unpermitted conversion can change the analysis.",
      "City property record / certificate of occupancy.", "SF_LAWS"),
     ("FR-15", "Earlier editions of this site contained claims now corrected", "Corrected",
-     "Corrections applied: the Unit A anniversary was once shown as 1 April; banking was once described as “capped at three years”; a Unit B figure of 11.5% was once presented without the annual component that makes the total 13.1%; the pre-9-November-2026 status of File #261020 was stated without the Rent Board's new notice. Prior editions remain online for audit but are no longer the canonical pages.",
+     "Corrections applied: the Unit A anniversary was once shown as 1 April; banking was once described as “capped at three years”; a Unit B figure of 11.5% was once presented without the annual component that makes the total 13.1%; the pre-9-November-2026 status of File #261020 was stated without the Rent Board's new notice; and five end-dates in the 1982–2027 rate table were written as 29 February in years that are not leap years (1985, 1997, 2001, 2005, 2013) and have been corrected to 28 February to match Form 571. Prior editions remain online for audit but are no longer the canonical pages.",
      "This page and the corrected pages are the canonical record.", "SF_LI"),
     ("FR-16", "Non-compliance consequence wording", "Verified — closed 10 Nov 2026",
      "The Notice of Owner Noncompliance page was re-retrieved on 10 November 2026 and is now quoted directly: a notice that goes into effect while the unit is unlicensed “may be null and void (this may apply for multiple years)”, and the tenant “may be entitled to a rent refund”. It also confirms the 1 July 2022 / 1 March 2023 start dates, paper filing fallback, and the Tenant Summary Petition (Form 518) route while an increase has not yet taken effect, alongside Admin. Code § 37.3(b)(5).",
@@ -262,7 +262,9 @@ FLAGS = [
 
 def flagged():
     rows = ""
-    for fid, item, status, detail, closes, key in FLAGS:
+    # Render in numeric flag order so a reviewer can work down the list without hunting.
+    ordered = sorted(FLAGS, key=lambda f: int(f[0].split("-")[1]))
+    for fid, item, status, detail, closes, key in ordered:
         badge = {"Unverified": "warn", "Open": "warn", "Irregularity": "danger",
                  "Blank": "warn", "Pending — not law": "danger", "No official source": "warn",
                  "Corrected": "ok", "Scope limit": "warn",
