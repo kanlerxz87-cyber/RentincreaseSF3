@@ -141,7 +141,7 @@ Sources: [Gov. Code § 12955](https://leginfo.legislature.ca.gov/faces/codes_dis
 |---|---|---|
 | FR-01 | Unit B rent history 2019–2026 | **Unverified** — 11.5% / 13.1% are conditional |
 | FR-02 | Unit A anniversary: 1 Feb or 1 Apr | **Open** — both computed |
-| FR-03 | Banking: 24-month wording (banking page) vs 12-month test (worked example) | **Irregularity** — both texts published; 1.6% is safe under either |
+| FR-03 | Banking: 24-month wording (banking page) vs 12-month test (worked example and Rule § 4.12(a)) | **Irregularity** — three official texts, both readings published; 1.6% is safe under either. Under a strict per-anniversary 24-month reading Unit B's banked balance for a Feb-2027 date would be 10.1% (11.7% with the annual) instead of 11.5% (13.1%) |
 | FR-04 | Rent-increase licence status | **Unverified** — check the Portal |
 | FR-05 | 2027–28 allowable percentage | **Blank** — not announced |
 | FR-06 | File #261020 (proposed 10%/yr cap) | **Pending — not law** |
@@ -165,9 +165,7 @@ Sources: [Gov. Code § 12955](https://leginfo.legislature.ca.gov/faces/codes_dis
 | FR-24 | Archived editions: row-source exceptions | **Unverified** |
 | FR-25 | Fixed-term lease provisions and actual notice | **Unverified** |
 | FR-27 | Postal service on the research-pass date (11 Nov 2026, a federal holiday) | **Unverified** — no official USPS source reached in this pass; serve in person or mail the previous business day |
-
-Full detail with source links: `pages/flagged.html` on the live site.
-
----
-
-**Not legal advice.** Confirm anything relied on with the SF Rent Board counselling line (**415-252-4600**, weekdays 9–12 and 1–4) and a California lawyer before serving a notice. Every figure above is quoted from the linked official page or calculated from an official percentage applied to an owner-reported base rent; nothing is inferred.
+| FR-28 | Federal voucher "rent reasonableness" source link was a 404 | **Corrected 11 Nov 2026** — the register cited an eCFR path (`chapter-II/subchapter-B/part-982/subpart-M`) that does not exist; the provision is **24 CFR § 982.507**, Part 982 **Subpart K**, **Chapter IX** ([eCFR](https://www.ecfr.gov/current/title-24/subtitle-B/chapter-IX/part-982/subpart-K/section-982.507)). No figure on this site depended on it. |
+| FR-29 | Whether a banked increase may be served on its own | **Irregularity** — Rule § 4.12(a): "This banked amount may only be given at the time of an annual increase"; the banking page says it may be imposed "at another time when they are allowed to raise the rent". Unit B's banked-only row assumes the second wording; the 13.1% combined row is unaffected ([Rules Pt IV](https://www.sf.gov/reports--december-2022--rent-board-rules-and-regulations-part-iv-rent-increases-not-requiring) · [banking](https://www.sf.gov/information--banked-rent-increases)). |
+| FR-30 | Notice-content safe harbour not previously published | **Verified — added 11 Nov 2026** — Rule § 4.12(b) requires the banked portion and its dates to be stated, but failure to do so "shall not render the increase null and void"; Rule § 4.10(b) voids a non-conforming increase unless it is within the allowable annual and banked amounts ([Rules Pt IV](https://www.sf.gov/reports--december-2022--rent-board-rules-and-regulations-part-iv-rent-increases-not-requiring)). |
+| FR-31 | Two licence details not previously published | **Verified — added 11 Nov 2026** — (a) the licence is **suspended for the period of non-compliance** ([Ordinance 265-20](https://www.sf.gov/news--new-legislation-creates-housing-inventory-and-requires-owners-obtain-license-imposing)); (b) the licence "is not required in some situations where the original occupant(s) no longer live in the unit" — which does **not** apply to Unit A, because an original occupant remains ([Notice of Owner Noncompliance](https://www.sf.gov/notice-of-owner-noncompliance-with-housing-inventory)). |

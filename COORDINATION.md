@@ -1270,3 +1270,68 @@ site — it must be re-typed from the PDF.**
 same way: both sides kept, `pages/flagged.html` regenerated, and this session's log rows renumbered again
 to **96–109**. `arena/488b115e` added no flag beyond FR-26, so this session's flag stays **FR-27**.
 All 8 gates were re-run on the final tree and pass; the build is idempotent.
+## Task board — session `arena/6d04c026-rentincreasesf3` (final verification + integration pass, 2026-11-11)
+
+**Claimed 2026-11-11 at session start.** Branch `arena/6d04c026-rentincreasesf3`, branched from `main` at
+`a12419d` (PR #47 merged). This session acts as the **final integration session**: all other tasks on the
+board are marked done by their owning sessions, so this pass verifies the combined tree line by line,
+re-checks the site builds with no broken links, publishes to GitHub Pages and records the result.
+
+Scope of files this session may edit (everything else is only read, or changed via a logged request):
+
+| File | Why |
+|---|---|
+| `COORDINATION.md` | append this section + PR/deploy record |
+| `research/verification-log.md` | append this session's verification rows |
+| `README.md` | only if a headline figure/date is corrected by this pass |
+| `EXECUTIVE_SUMMARY.md`, `tools/site_pages_core.py`, `tools/sitedata.py`, regenerated `index.html` / `pages/*.html` / `assets/style.css` | only to correct a verified factual error found in this pass (each such change is logged with its source) |
+
+| # | Task | Status | File scope |
+|---|------|--------|------------|
+| K1 | Claim tasks + scope, commit and push the claim immediately | **done** (pushed `491d5e7`) | `COORDINATION.md` |
+| K2 | Read the repo line by line: canonical pages, generator modules, data, all preserved editions | **done** | read-only |
+| K3 | Re-verify every headline figure, percentage, date and notice rule against official sources — **all 36 external URLs fetched directly on 2026-11-11** (this session's fetch tool reaches sf.gov / leginfo / oag / govinfo / justice / hud / ecfr / legistar / amlegal) | **done** — rows 59–82; 35 confirmed, 1 x HTTP 404 corrected | `research/verification-log.md` |
+| K4 | Re-run all gates; confirm build idempotence and no broken links across every edition | **done** — 8/8 PASS, build byte-identical on re-run | read-only |
+| K5 | Confirm the Rent Board licence / Housing Inventory answer is at the forefront and answers the individual-owner question | **done** — index card 1 and exec summary §1 both lead with it; "individual, not corporation" is answered by building size, not owner form (row 60) | read-only |
+| K6 | Confirm anonymisation (placeholders, no ZIP/neighbourhood/address, dates and amounts unchanged) | **done** — privacy sweep PASS on 108 files; Tenant A–F; amounts $3,995 / $3,150 and dates unchanged | read-only |
+| K7 | Log irregularities / open items; PR → `main`, merge, confirm Pages deploy, record | in progress | `COORDINATION.md` |
+
+### Conflict-resolution log — `arena/6d04c026` (2026-11-11)
+
+Before this session's PR opened, `main` advanced four times via parallel sessions — to `69d2bde`
+(PRs #48, #49, #50, #51; sessions `arena/488b115e-rentincreasesf3`, `arena/0dea38fc-rentincreasesf3`
+and others). This branch was rebased onto `origin/main`; four conflicts arose and **nothing from any
+session was discarded**:
+
+| File | Conflict | Resolution |
+|---|---|---|
+| `COORDINATION.md` | add/add — `arena/0dea38fc`'s task board vs this session's K1–K7 board, both appended at the end | Both sections retained verbatim, `0dea38fc`'s first, this session's after it |
+| `research/verification-log.md` | add/add — `arena/0dea38fc` had already used row numbers **59–95**; this pass had independently used **59–82** | Both sections retained; this pass's rows **renumbered 96–119**, the inline "(row 64)" cross-references updated to "(row 101)". No duplicate row numbers ≥ 59 |
+| `tools/site_pages_ref.py` | `arena/0dea38fc` had already added **FR-26** (rate-table row end-dates); this pass had independently added **FR-26…FR-29** | Flag-ID collision resolved by **renumbering this session's four flags to FR-27…FR-30**. `0dea38fc`'s FR-26 is intact. Cross-references updated in `tools/site_pages_core.py` (units page: FR-27 for the eCFR fix, FR-28 for the banked-only caveat), `README.md` (FR-30) and `EXECUTIVE_SUMMARY.md`. Also kept `0dea38fc`'s dynamic `{nflags}` wording for requirement R-21 in preference to this pass's static text, so the published count can never go stale |
+| `pages/flagged.html`, `pages/requirements.html` | both are build artefacts | Resolved by deleting the conflicted artefacts and re-running `tools/build_dashboard.py`, so the output is generated from the merged source modules and carries both sessions' content. Build verified idempotent afterwards |
+
+While resolving, an early regex over-matched and truncated `tools/site_pages_ref.py`; it was
+reconstructed from `origin/main` plus this session's committed version (`35399f9`) and re-validated
+(`ast.parse`, then all 8 gates). Verified present afterwards: FR-01…FR-30 unique, `0dea38fc`'s FR-26
+and rate-table validation intact, this pass's FR-27…FR-30 intact.
+
+Total flags are now **30** (dynamic counter), and the notice planner, arithmetic, privacy sweep and all
+8 gates pass on the merged tree.
+
+#### Second rebase (2026-11-11) — `main` advanced again via PR #52 (session `arena/96aa0f4f-rentincreasesf3`)
+
+That session added **FR-27** (*"Postal service on the research-pass date (11 November 2026)"* — the
+planner's last mailing day falling on Veterans Day, with sf.gov carrying a City closure banner), a new
+`OPM_HOLIDAYS` source, and verification-log rows 96–109. This pass had independently used **FR-27…FR-30**
+and log rows 96–119. Nothing was discarded:
+
+| File | Resolution |
+|---|---|
+| `tools/site_pages_ref.py` | Reconstructed from `origin/main` + this session's commit `6ed1b61`, keeping `96aa0f4f`'s FR-27 intact and **renumbering this session's four flags to FR-28…FR-31**. Flag IDs are now FR-01…FR-31 with no duplicates |
+| `research/verification-log.md` | Both sections kept; their rows 96–109 left untouched, **this pass's rows renumbered 110–133** (single-pass remap — an earlier cascading replace was caught and redone; verified zero duplicate row numbers ≥ 59). Inline "(row 101)" references updated to "(row 115)" |
+| `EXECUTIVE_SUMMARY.md` | Their FR-27 row kept first, this pass's four rows renumbered FR-28…FR-31 beneath it |
+| `README.md` | Their longer block kept; flag count corrected to **31** |
+| `pages/sources.html`, `pages/flagged.html`, `pages/requirements.html` | Build artefacts — deleted and regenerated from the merged modules. Register now **32 sources** (their `OPM_HOLIDAYS` + this pass's `SF_ORD265` and `CFR_982`) |
+
+Verified present after the merge: `96aa0f4f`'s FR-27 and OPM source, this pass's FR-28…FR-31, both
+sessions' verification-log sections, 31 flags, 32 sources. Build idempotent; 8/8 gates pass.
