@@ -1120,7 +1120,8 @@ Civ. Code §§ 827, 1947.12, 1954.53; justice.gov press release 25-21.
 2. `3/1/95 – 2/28/96` should be `3/1/95 – 2/29/96` (1996 is a leap year; Form 571 publishes 29 February),
    which had left a one-day gap in the official sequence. All 46 rows now match Form 571 exactly.
 3. `pages/flagged.html` listed flags out of numeric order (FR-16, FR-21…FR-25, FR-17…FR-20); the page now
-   sorts numerically. No flag text, status or the count of 25 changed; FR-15 records the rate-table fix.
+   sorts numerically. No flag text or status changed, and the count was 25 when this was done (26 after the
+   parallel session's FR-26 merged); FR-15 records the rate-table fix.
 4. `tools/verify_core_site.py` gained two regression guards: rate-period parsing (impossible dates,
    ordering and contiguity) and flag-ID uniqueness/ascending order.
 
@@ -1133,15 +1134,16 @@ fixes: `privacy_scan.py` PASS (108 files) · `verify_core_site.py` PASS (14 page
 **Brief coverage re-checked (S4):** licence/Housing-Inventory question leads the dashboard and executive
 summary with a plain-language step-by-step and the individual-vs-corporate answer; reasonable/normal,
 corporate-vs-individual practice, notice-and-reasons, tenant-lawyer stress test (16 checks), one-unit-vs-
-both discrimination analysis, requirements checklist, source register and the 25-item Flagged page are all
+both discrimination analysis, requirements checklist, source register and the Flagged page (25 items then,
+26 after FR-26) are all
 present, table-formatted and source-linked. Every data row carries an official link or is blank + flagged.
 
 ### Merge / conflict resolution — `arena/488b115e` (2026-11-11)
 
-While PR #50 was open, `main` advanced twice: PR #48 (session `arena/0dea38fc`, log rows 59–61) and
-PR #49 (session `arena/beba4d31`, log rows 62–77, plus **FR-26** and a `check_rate_table()` gate). Both
-sessions independently found the rate-table date defects. This branch was rebased/merged onto
-`origin/main` at `b645d82` **keeping all of their work**: their FR-26, their requirements/README count
+While PR #50 was open, `main` advanced three times: PR #48 (session `arena/0dea38fc`, log rows 59–61),
+PR #49 (session `arena/beba4d31`, log rows 62–77, plus **FR-26** and a `check_rate_table()` gate) and PR #51
+(that session's merge/deploy record). Both sessions independently found the rate-table date defects. This
+branch was merged onto `origin/main` at `00eedf7` **keeping all of their work**: their FR-26, their requirements/README count
 (now generated, 26 flags), their row-by-row `OFFICIAL_RATES` transcription gate and their log rows.
 
 Two corrections were applied to the combined result, both verified against Form 571:
@@ -1156,3 +1158,16 @@ Two corrections were applied to the combined result, both verified against Form 
 3. Added `check_rate_calendar()` — each period must parse as a real, contiguous, descending calendar
    range — because a row-by-row gate cannot catch an error copied into both the table and the
    transcription, which is exactly what happened. Also added `check_flag_order()`.
+
+---
+
+### PR / deploy record — session `arena/beba4d31-rentincreasesf3` (2026-11-11)
+
+- **Branch:** `arena/beba4d31-rentincreasesf3` → `main`. **PR:** [#49](https://github.com/kanlerxz87-cyber/RentincreaseSF3/pull/49) — "Re-verification 2026-11-11: rate table corrected against Form 571 (FR-26) + new build gate".
+- **Merge:** **MERGED** 2026-11-11T04:26:07Z, merge commit `b645d824b2471a3091023d64787330347b0cbc95` (`gh pr merge 49 --merge`, no approval wait). Main had advanced once during this session (PR #48, session `arena/0dea38fc-rentincreasesf3`); this branch was rebased onto it and both `COORDINATION.md` and `research/verification-log.md` add/add conflicts were resolved by keeping **all** sessions' entries — that session's task board kept verbatim, and its log rows 59–61 kept while this pass's rows were renumbered 62–77, so nothing was discarded and no row number is duplicated.
+- **CI:** `Site checks` run `42959117054` on the PR head **success** (all gates incl. the new rate-table gate); `Site checks` on the `main` push (`b645d82`) **success**.
+- **GitHub Pages:** `pages-build-deployment` run `42959215449` **success**; Pages API latest build → status **`built`** for `b645d82`, error null.
+- **Live verification (fetched post-deploy 2026-11-11):** <https://kanlerxz87-cyber.github.io/RentincreaseSF3/pages/laws.html> serves the corrected 1982–2027 table — 46 rows including `12/8/92 – 2/28/93 1.6%`, and the corrected end dates (`3/1/12 – 2/28/13`, `3/1/04 – 2/28/05`, `3/1/00 – 2/28/01`, `3/1/96 – 2/28/97`, `3/1/95 – 2/29/96`). Flagged page serves 26 flags.
+- **What changed on the live site:** the rate table (FR-26), a new build gate that prevents the same drift, a dynamic flag count, and research log rows 62–77. No percentage, dollar amount, notice date or legal quotation on any canonical page was changed — all were re-confirmed against the official source.
+- **Still open (non-blocking, published on Flagged for review):** FR-01 … FR-25 as listed above. FR-26 is closed.
+- Nothing remains in progress for `arena/beba4d31-rentincreasesf3`. Open PRs belonging to other sessions (#1, #8, #20, #33, #35, #45) were **not** touched.
