@@ -14,6 +14,7 @@ Exit code 1 on any failure.
 """
 import datetime as dt
 import pathlib
+import html
 import re
 import sys
 
@@ -185,6 +186,58 @@ def check_math():
         ERRORS.append("dates: historical service example is not 2027-02-08")
 
 
+
+# ---------------------------------------------------------------------------
+# Official transcriptions that must be reproduced exactly on the site.
+# Each list is copied from the linked Rent Board document and re-typed by hand
+# only from that PDF; if the generator drifts the build fails (FR-26).
+# ---------------------------------------------------------------------------
+OFFICIAL_RATES = [  # document 571, "Allowable Annual Rent Increases", in published order
+    ("3/1/26 – 2/28/27", "1.6%"), ("3/1/25 – 2/28/26", "1.4%"),
+    ("3/1/24 – 2/28/25", "1.7%"), ("3/1/23 – 2/29/24", "3.6%"),
+    ("3/1/22 – 2/28/23", "2.3%"), ("3/1/21 – 2/28/22", "0.7%"),
+    ("3/1/20 – 2/28/21", "1.8%"), ("3/1/19 – 2/29/20", "2.6%"),
+    ("3/1/18 – 2/28/19", "1.6%"), ("3/1/17 – 2/28/18", "2.2%"),
+    ("3/1/16 – 2/28/17", "1.6%"), ("3/1/15 – 2/29/16", "1.9%"),
+    ("3/1/14 – 2/28/15", "1.0%"), ("3/1/13 – 2/28/14", "1.9%"),
+    ("3/1/12 – 2/28/13", "1.9%"), ("3/1/11 – 2/29/12", "0.5%"),
+    ("3/1/10 – 2/28/11", "0.1%"), ("3/1/09 – 2/28/10", "2.2%"),
+    ("3/1/08 – 2/28/09", "2.0%"), ("3/1/07 – 2/29/08", "1.5%"),
+    ("3/1/06 – 2/28/07", "1.7%"), ("3/1/05 – 2/28/06", "1.2%"),
+    ("3/1/04 – 2/28/05", "0.6%"), ("3/1/03 – 2/29/04", "0.8%"),
+    ("3/1/02 – 2/28/03", "2.7%"), ("3/1/01 – 2/28/02", "2.8%"),
+    ("3/1/00 – 2/28/01", "2.9%"), ("3/1/99 – 2/29/00", "1.7%"),
+    ("3/1/98 – 2/28/99", "2.2%"), ("3/1/97 – 2/28/98", "1.8%"),
+    ("3/1/96 – 2/28/97", "1.0%"), ("3/1/95 – 2/29/96", "1.1%"),
+    ("3/1/94 – 2/28/95", "1.3%"), ("3/1/93 – 2/28/94", "1.9%"),
+    ("12/8/92 – 2/28/93", "1.6%"), ("3/1/92 – 12/7/92", "4.0%"),
+    ("3/1/91 – 2/29/92", "4.0%"), ("3/1/90 – 2/28/91", "4.0%"),
+    ("3/1/89 – 2/28/90", "4.0%"), ("3/1/88 – 2/28/89", "4.0%"),
+    ("3/1/87 – 2/29/88", "4.0%"), ("3/1/86 – 2/28/87", "4.0%"),
+    ("3/1/85 – 2/28/86", "4.0%"), ("3/1/84 – 2/29/85", "4.0%"),
+    ("3/1/83 – 2/29/84", "7.0%"), ("4/1/82 – 2/28/83", "7.0%"),
+]
+
+
+def check_rate_table():
+    path = ROOT / "pages" / "laws.html"
+    if not path.exists():
+        return
+    text = path.read_text(encoding="utf-8")
+    found = []
+    for tr in re.findall(r"<tr>(.*?)</tr>", text, re.S):
+        cells = [html.unescape(re.sub(r"<[^>]+>", "", c)).strip()
+                 for c in re.findall(r"<t[dh][^>]*>(.*?)</t[dh]>", tr, re.S)]
+        if cells and re.match(r"^\d+/\d+/\d\d", cells[0]):
+            found.append((cells[0], cells[1].replace(" in force now", "").strip()))
+    if len(found) != len(OFFICIAL_RATES):
+        ERRORS.append("rate table: %d rows published, document 571 has %d"
+                      % (len(found), len(OFFICIAL_RATES)))
+    for i, (want, got) in enumerate(zip(OFFICIAL_RATES, found), start=1):
+        if want != got:
+            ERRORS.append("rate table row %d: published %r, document 571 %r" % (i, got, want))
+
+
 def main():
     pages = [ROOT / p for p, _ in ALL_PAGES]
     for p in pages:
@@ -205,6 +258,7 @@ def main():
         if not url.startswith("https://"):
             ERRORS.append("source %s is not https" % key)
     check_math()
+    check_rate_table()
     # Guard against previously published unsafe legal assurances.
     canonical = "\n".join(p.read_text(encoding="utf-8") for p in pages if p.exists())
     for unsafe in ("first date reachable from today", "served now cannot take effect before",
