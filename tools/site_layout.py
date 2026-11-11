@@ -58,6 +58,8 @@ SRC = {
                "https://www.sf.gov/information--rent-increases-under-section-614-and-costa-hawkins"),
     "SF_PORTAL": ("Rent Board Portal (Housing Inventory / licence look-up)",
                   "https://portal.sfrb.org/"),
+    "SF_ORD265": ("sf.gov — Ordinance 265-20: Housing Inventory and rent-increase licence",
+                  "https://www.sf.gov/news--new-legislation-creates-housing-inventory-and-requires-owners-obtain-license-imposing"),
     "ADMIN_373": ("SF Administrative Code § 37.3 — Rent Limitations (American Legal)",
                   "https://codelibrary.amlegal.com/codes/san_francisco/latest/sf_admin/0-0-0-70881"),
     "LEGISTAR_261020": ("sfgov.legistar.com — File #261020, cap on rent increases for rent-controlled units",
@@ -86,6 +88,8 @@ SRC = {
                  "https://www.govinfo.gov/content/pkg/USCODE-2023-title42/html/USCODE-2023-title42-chap45-subchapI-sec3604.htm"),
     "DOJ_ALGO": ("U.S. DOJ — suit against six large landlords over algorithmic pricing (7 Jan 2025)",
                  "https://www.justice.gov/archives/opa/pr/justice-department-sues-six-large-landlords-algorithmic-pricing-scheme-harms-millions"),
+    "CFR_982": ("24 CFR § 982.507 — Rent to owner: reasonable rent (Housing Choice Voucher)",
+                "https://www.ecfr.gov/current/title-24/subtitle-B/chapter-IX/part-982/subpart-K/section-982.507"),
 }
 
 OFFICIAL_URLS = {v[1] for v in SRC.values()}

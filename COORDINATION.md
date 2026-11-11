@@ -1288,10 +1288,10 @@ Scope of files this session may edit (everything else is only read, or changed v
 
 | # | Task | Status | File scope |
 |---|------|--------|------------|
-| K1 | Claim tasks + scope, commit and push the claim immediately | in progress | `COORDINATION.md` |
-| K2 | Read the repo line by line: canonical pages, generator modules, data, all preserved editions | pending | read-only |
-| K3 | Re-verify every headline figure, percentage, date and notice rule against official sources (web corroboration; sandbox egress limited) | pending | `research/verification-log.md` |
-| K4 | Re-run all 7 gates; confirm build idempotence and no broken links across every edition | pending | read-only |
-| K5 | Confirm the Rent Board licence / Housing Inventory answer is at the forefront of the executive summary and answers the individual-owner question explicitly | pending | read-only |
-| K6 | Confirm anonymisation (placeholders, no ZIP/neighbourhood/address, dates and amounts unchanged) | pending | read-only |
-| K7 | Log irregularities / open items; PR → `main`, merge, confirm Pages deploy, record | pending | `COORDINATION.md` |
+| K1 | Claim tasks + scope, commit and push the claim immediately | **done** (pushed `491d5e7`) | `COORDINATION.md` |
+| K2 | Read the repo line by line: canonical pages, generator modules, data, all preserved editions | **done** | read-only |
+| K3 | Re-verify every headline figure, percentage, date and notice rule against official sources — **all 36 external URLs fetched directly on 2026-11-11** (this session's fetch tool reaches sf.gov / leginfo / oag / govinfo / justice / hud / ecfr / legistar / amlegal) | **done** — rows 59–82; 35 confirmed, 1 x HTTP 404 corrected | `research/verification-log.md` |
+| K4 | Re-run all gates; confirm build idempotence and no broken links across every edition | **done** — 8/8 PASS, build byte-identical on re-run | read-only |
+| K5 | Confirm the Rent Board licence / Housing Inventory answer is at the forefront and answers the individual-owner question | **done** — index card 1 and exec summary §1 both lead with it; "individual, not corporation" is answered by building size, not owner form (row 60) | read-only |
+| K6 | Confirm anonymisation (placeholders, no ZIP/neighbourhood/address, dates and amounts unchanged) | **done** — privacy sweep PASS on 108 files; Tenant A–F; amounts $3,995 / $3,150 and dates unchanged | read-only |
+| K7 | Log irregularities / open items; PR → `main`, merge, confirm Pages deploy, record | in progress | `COORDINATION.md` |
