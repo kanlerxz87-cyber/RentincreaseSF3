@@ -11,7 +11,7 @@ ROOT=Path(__file__).resolve().parent.parent
 sys.path.insert(0,str(ROOT/'tools'))
 from privacy_scan import scan_text
 CANON=[ROOT/'index.html', *sorted((ROOT/'pages').glob('*.html'))]
-DOMAINS={'www.sf.gov','sf.gov','portal.sfrb.org','leginfo.legislature.ca.gov','calcivilrights.ca.gov','www.hud.gov','sfgov.legistar.com','codelibrary.amlegal.com','oag.ca.gov','www.govinfo.gov','justice.gov','www.justice.gov','www.ecfr.gov'}
+DOMAINS={'www.sf.gov','sf.gov','portal.sfrb.org','leginfo.legislature.ca.gov','calcivilrights.ca.gov','www.hud.gov','sfgov.legistar.com','codelibrary.amlegal.com','oag.ca.gov','www.govinfo.gov','justice.gov','www.justice.gov','www.ecfr.gov','opm.gov','www.opm.gov'}
 errors=[]
 class Scan(HTMLParser):
  def __init__(self):

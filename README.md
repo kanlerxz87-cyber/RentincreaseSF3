@@ -24,7 +24,7 @@ Canonical dashboard table rows link official sources for the governing rule; own
 | [`pages/discrimination.html`](pages/discrimination.html) | One unit or both units? Fair-housing analysis |
 | [`pages/requirements.html`](pages/requirements.html) | Every requirement in the brief, its status and its evidence |
 | [`pages/sources.html`](pages/sources.html) | source register with what each supports |
-| [`pages/flagged.html`](pages/flagged.html) | 26 flagged items: unverified, blank, inconsistent or corrected |
+| [`pages/flagged.html`](pages/flagged.html) | 27 flagged items: unverified, blank, inconsistent or corrected |
 
 Markdown summary: [`EXECUTIVE_SUMMARY.md`](EXECUTIVE_SUMMARY.md).
 
