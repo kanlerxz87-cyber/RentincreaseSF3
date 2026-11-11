@@ -120,7 +120,10 @@ def check_scripts(path):
 
 def check_footer(path):
     text = path.read_text(encoding="utf-8")
-    for needle in ("Not legal advice", "Privacy:", "10 November 2026"):
+    # The preserved verification edition keeps its own 10 Nov 2026 research-pass date;
+    # the canonical pages were re-verified on 11 Nov 2026.
+    date_needle = "10 November 2026" if "verification" in path.parts else "11 November 2026"
+    for needle in ("Not legal advice", "Privacy:", date_needle):
         if needle not in text:
             ERRORS.append("%s: missing required disclosure %r" % (path.name, needle))
 
@@ -176,10 +179,10 @@ def check_math():
         if got != expected:
             ERRORS.append("dates: %s minus %d days = %s, published %s"
                           % (effective, days, got, expected))
-    # planner forward dates from today
-    today = dt.date(2026, 11, 10)
-    if today + dt.timedelta(days=90) != dt.date(2027, 2, 8):
-        ERRORS.append("dates: today + 90 days is not 2027-02-08")
+    # Historical example, not a rolling current-date calculation.
+    example_service = dt.date(2026, 11, 10)
+    if example_service + dt.timedelta(days=90) != dt.date(2027, 2, 8):
+        ERRORS.append("dates: historical service example is not 2027-02-08")
 
 
 def main():
@@ -202,6 +205,13 @@ def main():
         if not url.startswith("https://"):
             ERRORS.append("source %s is not https" % key)
     check_math()
+    # Guard against previously published unsafe legal assurances.
+    canonical = "\n".join(p.read_text(encoding="utf-8") for p in pages if p.exists())
+    for unsafe in ("first date reachable from today", "served now cannot take effect before",
+                   "never against a co-tenant", "Checks that pass on documents",
+                   "the only standard an official reviewer can test", "Smallest lawful step"):
+        if unsafe in canonical:
+            ERRORS.append("unsafe or stale assurance found: " + unsafe)
     # old pages must still exist (nothing deleted)
     for legacy in ("docs/index.html", "dashboard/index.html", "review/index.html",
                    "audit/process.html", "verified/index.html", "EXECUTIVE_SUMMARY.md"):

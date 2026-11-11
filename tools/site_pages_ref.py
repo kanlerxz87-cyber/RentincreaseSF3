@@ -1,11 +1,12 @@
 """Reference pages: sources register, requirements checklist, flagged for review."""
 from site_layout import SRC, src, srcs, cell, page
 
-RETRIEVED = "10 Nov 2026"
+RETRIEVED = "11 Nov 2026"
 
 # key, what it supports
 USED_FOR = {
     "SF_LI": "Current allowable percentage (1.6%), base-rent rule, no-rounding rule, anniversary rules, 30/90-day notice elements, additional-occupant prohibition, vacancy pricing, the 9 Nov 2026 notice on File #261020",
+    "SF_RULE4": "Written annual/banked breakdown and dates underlying banked amounts, §§ 4.10 and 4.12",
     "SF_BANK": "24-month banking condition, additive-not-compounded rule, no cap back to 1 Apr 1982, no expiry, prior-owner transfer, banked notice elements, licence precondition",
     "SF_HI": "All-owner reporting duty, automatic licence, 1 Mar deadline, 1–9 unit start date of 1 Mar 2023, licence on effective date, no monetary penalty, what is reported",
     "SF_NONCOMP": "Consequence of an unlicensed increase: the notice “may be null and void (this may apply for multiple years)” and the tenant “may be entitled to a rent refund”; Tenant Summary Petition route while a notice has not yet taken effect; how to check licence status in the Portal",
@@ -19,7 +20,7 @@ USED_FOR = {
     "SF_ALGO": "Rent Ordinance § 37.10C — algorithmic pricing devices banned, effective 14 Oct 2024",
     "SF_COUNSEL": "Rent Board counselling hours and telephone number",
     "SF_FEE": "Separate annual Rent Board Fee ($59.00 per dwelling unit for 2026–27, due 1 Mar, 5%/mo penalty up to 15%, 50% tenant recovery, 14 Dec 2026 exemption deadline)",
-    "SF_614": "Rent Board Rule § 6.14 and Costa-Hawkins roommate/subtenant rules: unlimited increase only after last original occupant vacates and never against a co-tenant",
+    "SF_614": "Rule § 6.14 may apply to subsequent occupants including co-tenants with timely notice; Costa-Hawkins distinguishes co-tenants from subtenants. Obtain legal advice.",
     "SF_PORTAL": "Rent Board Portal — reporting and licence look-up",
     "ADMIN_373": "Administrative Code § 37.3 — Rent Limitations: § 37.3(a)(1)–(2) annual/banking & § 37.15 licence, (a)(8) petitions, (a)(10) vouchers, (a)(11) additional occupants, (b)(1)&(5) notice breakdown & null-and-void rule, (d)(2)(B) partial occupancy changes",
     "LEGISTAR_261020": "File #261020 status (Pending Committee Action) and its 10%/yr proposed cap",
@@ -46,7 +47,7 @@ def sources():
     body = f"""
 <div class="card">
   <h1>Sources &amp; verification register</h1>
-  <p class="lede">Every official source used on this site, the claim it supports, and the date it was retrieved. All were fetched and read on 10 November 2026.</p>
+  <p class="lede">Every official source used on this site, the claim it supports, and the date it was retrieved. The register was reviewed on 10 November 2026 and all registered sources were re-fetched and read on 11 November 2026; Part IV was added and read on 11 November 2026. Availability can change.</p>
 </div>
 
 <div class="card">
@@ -98,7 +99,7 @@ REQS = [
     ("R-06", "Executive summary outlining the important details", "Answered", "pages/executive-summary.html", "SF_LI"),
     ("R-07", "Reasonable and normal increase for Unit A under local, state and federal law", "Answered", "pages/units.html", "SF_571"),
     ("R-08", "Reasonable and normal increase for Unit B under local, state and federal law", "Answered — conditional on rent history", "pages/units.html", "SF_BANK"),
-    ("R-09", "Confirm rent-control status of a 1940 two-unit building", "Owner-reported; government record not obtained", "pages/laws.html", "SF_LAWS"),
+    ("R-09", "Confirm rent-control status of the two reported units in a 1940 building", "Owner-reported; government record not obtained", "pages/laws.html", "SF_LAWS"),
     ("R-10", "State the local cap, the state cap and the federal position", "Answered", "pages/laws.html", "LEG_1947"),
     ("R-11", "Explain whether the ZIP code changes the answer", "Answered — no ZIP-level rate exists", "pages/reasonable.html", "SF_LI"),
     ("R-12", "How large real-estate corporations handle increases", "Answered within official evidence; statistics unavailable", "pages/practice.html", "DOJ_ALGO"),
@@ -108,9 +109,9 @@ REQS = [
     ("R-16", "Test the increases against what a tenant lawyer would review", "Answered — 16-point test", "pages/review.html", "SF_UNLAWFUL"),
     ("R-17", "Decide whether to raise one unit or both to avoid discrimination exposure", "Answered", "pages/discrimination.html", "LEG_12955"),
     ("R-18", "Anonymise all personal information, keep dates and amounts", "Answered — placeholders, no ZIP or neighbourhood published", "pages/flagged.html", "SF_HI"),
-    ("R-19", "Every table row must link an official source; unverifiable values blank and flagged", "Answered — enforced by the build check", "pages/sources.html", "SF_571"),
+    ("R-19", "Every table row must link an official source; unverifiable values blank and flagged", "Canonical rows checked; archived editions have exceptions (FR-24)", "pages/sources.html", "SF_571"),
     ("R-20", "Clean GitHub Pages site, dashboard landing, subpages by category", "Answered", "index.html", "SF_LI"),
-    ("R-21", "Flag irregularities for manual review", "Answered — 16 flags published", "pages/flagged.html", "SF_BANK"),
+    ("R-21", "Flag irregularities for manual review", "Answered — 25 flags published", "pages/flagged.html", "SF_BANK"),
     ("R-22", "Coordinate with parallel sessions via COORDINATION.md", "Answered — claim, scope and record logged", "index.html", "SF_HI"),
     ("R-23", "Open a pull request, merge it and confirm the Pages deployment", "Answered — recorded in COORDINATION.md", "index.html", "SF_HI"),
 ]
@@ -182,7 +183,7 @@ def requirements():
 # ------------------------------------------------------------------ flagged
 FLAGS = [
     ("FR-01", "Unit B rent history 2019–2026", "Unverified",
-     "The owner supplied a 1 June 2019 lease start and $3,150 rent but no complete increase ledger. The 11.5% banked / 13.1% total figures are therefore <b>conditional</b> on no increase ever having been imposed: any increase in any year removes that year's percentage from the banked total and changes the anniversary date.",
+     "The owner supplied a 1 June 2019 lease start and $3,150 rent but no complete increase ledger. The 11.5% banked / 13.1% total figures are therefore <b>conditional</b> on no increase ever having been imposed: a prior increase requires recalculating the balance, base rent and timing; an unused portion of a partial increase may be bankable.",
      "Leases, notices, proofs of service and a rent ledger 2019–2026.", "SF_BANK"),
     ("FR-02", "Unit A anniversary date: 1 February or 1 April?", "Open",
      "The tenancy began 1 February 2025 and continued when a new co-tenant joined on 1 April 2026 at the same rent. The Rent Board's rule starts the clock 12 months after the lease began, but its pages do not address a mid-tenancy lease renewal with a new occupant. Both outcomes are computed: 1 Feb 2027 (3.0%) and 1 Apr 2027 (percentage not yet announced).",
@@ -197,7 +198,7 @@ FLAGS = [
      "Not yet announced, so no figure is given for any effective date on or after 1 March 2027. The table cells are left blank rather than estimated.",
      "The Rent Board's announcement and document 571 for 2027–28.", "SF_LI"),
     ("FR-06", "File #261020 — proposed 10% annual cap", "Pending — not law",
-     "Introduced 15 September 2026; status <b>Pending Committee Action</b>. The Rent Board's 9 November 2026 notice states it would apply to banked increases noticed on or after 15 September 2026 if enacted, and that it “has not been enacted and is subject to change”. A 13.1% Unit B notice is exposed to this; a 10.0% notice is not.",
+     "Introduced 15 September 2026; status <b>Pending Committee Action</b>. The Rent Board's 9 November 2026 notice states it would apply to banked increases noticed on or after 15 September 2026 if enacted, and that it “has not been enacted and is subject to change”. The illustrative 13.1% total includes 11.5% banked, exceeding the proposed 10% combined banked-and-capital limit; the 1.6% annual component is distinct. The effect of any final law and other passthroughs is unverified.",
      "Re-check Legistar immediately before serving any increase above 10%.", "LEGISTAR_261020"),
     ("FR-07", "Ordinance text verified by subsection", "Corrected",
      "Administrative Code § 37.3 was re-read subsection by subsection on 10 Nov 2026: § 37.3(a)(1) (60% of CPI, 7% cap, § 37.15 licence), § 37.3(a)(2) (banking since 1 Apr 1982), § 37.3(a)(8) (arbitration petition), § 37.3(a)(10) (voucher payment-standard rules), § 37.3(a)(11)(A) (additional-occupant increase ban), § 37.3(b)(1)&amp;(5) (written breakdown &amp; null-and-void rule), and § 37.3(d)(2)(B) (partial occupancy changes).",
@@ -220,8 +221,8 @@ FLAGS = [
     ("FR-13", "Subsidy / voucher status of either unit", "Unverified",
      "If either unit is subsidised, it may be partially exempt from the Rent Ordinance and a housing authority may review the reasonableness of the rent.",
      "Confirm whether a housing assistance payment contract exists for either unit.", "SF_LAWS"),
-    ("FR-14", "Building record: 1940, two legal units", "Unverified",
-     "The year and unit count are owner statements. Coverage turns on a certificate of occupancy before 14 June 1979 and on the unit not being a single-family dwelling or condominium; an unpermitted conversion can change the analysis.",
+    ("FR-14", "Building record: year, unit count and legal status", "Unverified",
+     "The 1940 year is owner-reported; two units were described, but the total number of units in the building and their legal status were not established. Coverage turns on a certificate of occupancy before 14 June 1979 and on the unit not being a single-family dwelling or condominium; an unpermitted conversion can change the analysis.",
      "City property record / certificate of occupancy.", "SF_LAWS"),
     ("FR-15", "Earlier editions of this site contained claims now corrected", "Corrected",
      "Corrections applied: the Unit A anniversary was once shown as 1 April; banking was once described as “capped at three years”; a Unit B figure of 11.5% was once presented without the annual component that makes the total 13.1%; the pre-9-November-2026 status of File #261020 was stated without the Rent Board's new notice. Prior editions remain online for audit but are no longer the canonical pages.",
@@ -229,9 +230,33 @@ FLAGS = [
     ("FR-16", "Non-compliance consequence wording", "Verified — closed 10 Nov 2026",
      "The Notice of Owner Noncompliance page was re-retrieved on 10 November 2026 and is now quoted directly: a notice that goes into effect while the unit is unlicensed “may be null and void (this may apply for multiple years)”, and the tenant “may be entitled to a rent refund”. It also confirms the 1 July 2022 / 1 March 2023 start dates, paper filing fallback, and the Tenant Summary Petition (Form 518) route while an increase has not yet taken effect, alongside Admin. Code § 37.3(b)(5).",
      "Closed — cited across the Dashboard, Summary, Process, Rules and Review pages.", "SF_NONCOMP"),
+    ("FR-21", "Rule § 6.14 and Costa-Hawkins co-tenant distinction", "Corrected 11 Nov 2026",
+     "The earlier source-register description wrongly said neither rule ever allows an increase against a co-tenant. The Rent Board says a timely § 6.14 notice can be served on a subsequent co-tenant or subtenant; its Costa-Hawkins discussion distinguishes co-tenants. Applicability depends on the actual facts and legal advice is needed.",
+     "Confirm the occupancy history and any § 6.14 notices with qualified counsel before relying on either rule.", "SF_614"),
+    ("FR-22", "No independent tenant-lawyer approval or normal-rate evidence", "Unverified",
+     "The illustrative 10% and other scenarios are not independently reviewed by a tenant lawyer and no official typical increase was established. Past language implying approval or a guaranteed outcome has been corrected. Confirm records and law before service.",
+     "Obtain independent legal review; select any amount only after checking tenant impact and eligibility.", "SF_UNLAWFUL"),
+    ("FR-23", "Actual notices, service, motive and compliance not verified", "Unverified",
+     "No owner records, served notice or tenant-lawyer assessment were available. The earlier review table incorrectly marked numerous factual and legal checks as passing, and described every increase within 180 days of a complaint as retaliation. Those statements have been corrected; arithmetic is not legal clearance.",
+     "Independently review the complete facts and applicable law before serving any notice.", "LEG_1942"),
+    ("FR-24", "Archived editions: row-source exceptions", "Unverified",
+     "Automated checks require official links for canonical data rows; preserved historical editions have 25 row-source warnings and may contain stale or corrected claims. They are not a fully verified current source; use the canonical pages and linked official sources.",
+     "Review archived row warnings and prior-edition corrections before relying on any historical page.", "SF_LI"),
+    ("FR-25", "Fixed-term lease provisions and actual notice", "Unverified",
+     "Lease end dates and any mid-term rent adjustment clauses were not supplied. Civil Code § 827 describes specified periodic tenancies; these scenarios do not establish that an increase can be imposed during an unexpired fixed term.",
+     "Review both signed leases and obtain legal advice before choosing a date or serving notice.", "LEG_827"),
     ("FR-17", "“13.1%” was labelled a maximum catch-up / June 2027 ceiling", "Corrected 10 Nov 2026",
      "13.1% is 11.5% banked (2020–2025) plus the 1.6% annual allowance in force through 28 February 2027. It is therefore the conditional maximum only for an effective date <b>on or before 28 February 2027</b>. For 1 Mar – 31 May 2027 (off-anniversary before 1 June 2027) only 11.5% is banked plus the unannounced 2027–28 rate; on <b>1 June 2027</b> (once 12 full months have elapsed since 1 June 2026) all seven skipped years 2020–2026 (<b>13.1%</b>) are banked plus whatever 2027–28 rate the Rent Board publishes.",
      "Re-check the Rent Board's published percentage before any effective date on or after 1 March 2027.", "SF_571"),
+    ("FR-18", "Total building unit count and historical reporting start date", "Unverified",
+     "The brief describes two rental units, but does not state the total number of units in the building. Unit B $3,150 is its 2019 starting rent; current rent and both units' complete histories are unverified. Do not infer a two-unit building or choose a historical reporting start date. The individual-owner licensing obligation applies regardless of this uncertainty.",
+     "Confirm total building unit count and property record. Reporting began 1 March 2023 for condominiums and buildings under 10 units, and 1 July 2022 for other buildings of 10 or more units.", "SF_HI"),
+    ("FR-19", "Older editions and legal-review limits", "Irregularity",
+     "Archived editions and previous versions may include unsupported claims about building size, the proposed cap, passthrough procedures, retaliation or guaranteed legal review. The preserved verified edition check reports 25 rows without official links or with only internal links; automated checks do not certify all external links or claims. They are preserved for history, not current advice. The canonical pages have been corrected; no lawyer reviewed these facts and no checklist guarantees an outcome.",
+     "Use the canonical dashboard and obtain legal advice before serving; check current law and individual records.", "SF_LANDPET"),
+    ("FR-20", "Filing a copy of an ordinary increase notice", "Unverified",
+     "The cited official pages establish that ordinary annual and banked increases need no approval petition, and that the licence need not accompany the tenant notice. Those propositions do not themselves establish whether a copy of the notice must be filed separately.",
+     "Confirm any separate filing obligation with the Rent Board; other types of increases have distinct procedures.", "SF_HI"),
 ]
 
 
