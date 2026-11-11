@@ -1270,3 +1270,28 @@ site — it must be re-typed from the PDF.**
 same way: both sides kept, `pages/flagged.html` regenerated, and this session's log rows renumbered again
 to **96–109**. `arena/488b115e` added no flag beyond FR-26, so this session's flag stays **FR-27**.
 All 8 gates were re-run on the final tree and pass; the build is idempotent.
+## Task board — session `arena/6d04c026-rentincreasesf3` (final verification + integration pass, 2026-11-11)
+
+**Claimed 2026-11-11 at session start.** Branch `arena/6d04c026-rentincreasesf3`, branched from `main` at
+`a12419d` (PR #47 merged). This session acts as the **final integration session**: all other tasks on the
+board are marked done by their owning sessions, so this pass verifies the combined tree line by line,
+re-checks the site builds with no broken links, publishes to GitHub Pages and records the result.
+
+Scope of files this session may edit (everything else is only read, or changed via a logged request):
+
+| File | Why |
+|---|---|
+| `COORDINATION.md` | append this section + PR/deploy record |
+| `research/verification-log.md` | append this session's verification rows |
+| `README.md` | only if a headline figure/date is corrected by this pass |
+| `EXECUTIVE_SUMMARY.md`, `tools/site_pages_core.py`, `tools/sitedata.py`, regenerated `index.html` / `pages/*.html` / `assets/style.css` | only to correct a verified factual error found in this pass (each such change is logged with its source) |
+
+| # | Task | Status | File scope |
+|---|------|--------|------------|
+| K1 | Claim tasks + scope, commit and push the claim immediately | in progress | `COORDINATION.md` |
+| K2 | Read the repo line by line: canonical pages, generator modules, data, all preserved editions | pending | read-only |
+| K3 | Re-verify every headline figure, percentage, date and notice rule against official sources (web corroboration; sandbox egress limited) | pending | `research/verification-log.md` |
+| K4 | Re-run all 7 gates; confirm build idempotence and no broken links across every edition | pending | read-only |
+| K5 | Confirm the Rent Board licence / Housing Inventory answer is at the forefront of the executive summary and answers the individual-owner question explicitly | pending | read-only |
+| K6 | Confirm anonymisation (placeholders, no ZIP/neighbourhood/address, dates and amounts unchanged) | pending | read-only |
+| K7 | Log irregularities / open items; PR → `main`, merge, confirm Pages deploy, record | pending | `COORDINATION.md` |
