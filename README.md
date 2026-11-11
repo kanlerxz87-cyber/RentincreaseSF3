@@ -2,7 +2,7 @@
 
 **Live site:** <https://kanlerxz87-cyber.github.io/RentincreaseSF3/>
 
-A static GitHub Pages dashboard answering one owner's questions about raising rent on two rent-controlled units in a two-unit San Francisco building (built 1940). The Rent Board notification/licence question comes first, because it decides whether any increase is enforceable at all.
+A static GitHub Pages dashboard answering one owner's questions about raising rent on two owner-reported rent-controlled units in San Francisco (owner-reported construction year 1940; total building unit count unverified). The Rent Board notification/licence question comes first, because it decides whether any increase is enforceable at all.
 
 Every table row links an official source. Where an official value does not exist, the cell is left blank and the item is published on the **Flagged for review** page rather than guessed.
 

@@ -25,6 +25,8 @@ jobs:
           fi
       - name: Canonical site gate
         run: python tools/verify_core_site.py
+      - name: Current-review regression checks
+        run: python tools/verify_review_regressions.py
       - name: Whole-repo audit
         run: python tools/audit_site.py
       - name: Preserved editions
