@@ -877,3 +877,12 @@ Claimed **2026-11-10** after rebasing onto `origin/main` at `32bcabd` (commit `9
   - <https://kanlerxz87-cyber.github.io/RentincreaseSF3/pages/units.html> — full 6-person `Tenant A–F` chain, `§ 37.3(d)(2)(B)` & `Rule § 6.14` note, clean Unit B table (stray PR #31 rebase text removed), 7-year `13.1%` banked balance on `1 June 2027` + blank 2027–28 rate
   - <https://kanlerxz87-cyber.github.io/RentincreaseSF3/pages/flagged.html> — all 17 flags live (`FR-07`, `FR-15`, `FR-16`, `FR-17` closed/corrected; all open owner-record and official-gap flags published with source links)
 - Nothing remains in progress for `arena/3a2e288e-rentincreasesf3`. Open PRs belonging to other sessions remain untouched.
+
+## Session `arena/c541e9f4-rentincreasesf3` — independent current review and integration (2026-11-11)
+
+Prior integration records indicate the previously active scopes have completed or their claims are stale by over 60 minutes; no prior work will be discarded. Arena fixes this session to its existing `arena/` branch, so a `session-...` branch cannot be created. This session claims final-integration scope below; if another current session owns any file, coordinate before touching it.
+
+| Task | Status | Owner | File scope |
+|---|---|---|---|
+| Independently review current official sources, dashboard and automated gates; correct material findings and publish flags | in progress | `arena/c541e9f4-rentincreasesf3` | `COORDINATION.md`, `tools/site_*.py`, `tools/sitedata.py`, `tools/*verify*.py`, `tools/audit_site.py`, `index.html`, `pages/`, `assets/`, `research/verification-log.md`, `EXECUTIVE_SUMMARY.md`, `README.md` as needed |
+| Integrate, test, PR, merge and confirm deployment | in progress | `arena/c541e9f4-rentincreasesf3` | `COORDINATION.md`, site and CI as needed |
