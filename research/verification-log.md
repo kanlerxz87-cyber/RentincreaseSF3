@@ -166,3 +166,13 @@ Irregularities found in this pass: none. All open flags (FR-01..FR-17) remain pu
 on `pages/flagged.html`; FR-07 and FR-16 carry 11 Nov 2026 re-confirmation notes.
 Preserved editions (`docs/`, `dashboard/`, `review/`, `audit/`, `verified/`,
 `verification/`) were not edited.
+
+## Addendum — planner framing (PR #38, 2026-11-11)
+
+After rows 36–62 were written, session `1a404b71` (PR #38) converted the process-page
+notice planner from rolling "today"-relative rows to fixed historical examples
+(10 Nov 2026 service → 8 Feb 2027 effective), because rolling dates go stale daily.
+This session adopted that framing during rebase: the 9 Feb 2027 rolling rows described
+above were **not** shipped. The underlying 90-day arithmetic was still validated
+(11 Nov + 90 days = 9 Feb 2027; 8 Feb − 90 days = 10 Nov 2026 — the shipped example),
+and the planner heading now reads "(calculated for this file, 11 November 2026)".

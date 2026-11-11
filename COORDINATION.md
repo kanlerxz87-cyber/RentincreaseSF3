@@ -969,3 +969,26 @@ While this session's 11 Nov 2026 re-verification was in progress, `c541e9f4` mer
 | I3 | Re-fetch official sources 2026-11-11, re-verify line by line | done (rows 36–62) |
 | I4 | Date bump + planner recompute | done |
 | I5 | PR → main → merge → Pages deploy → record | in progress | (coord: record PR #37 rebase resolution and 11 Nov verification) (coord: record PR #37 rebase resolution and 11 Nov verification)
+
+### Conflict log — rebase onto `4081147` (PR #38, session `1a404b71`), 2026-11-11
+
+`1a404b71` merged PR #38 (FR-21..FR-25, §6.14/Costa-Hawkins correction, fixed-date
+historical-example planner replacing rolling "today" language) while this session's PR was
+being prepared. Rebase stopped three times, all in `COORDINATION.md` plus the planner block:
+
+1. Claim commit: kept the `1a404b71` section verbatim, then this session's claim.
+2. Integration commit: conflicts in `tools/site_pages_core.py` (planner rows),
+   `tools/verify_core_site.py` (date assertions), and generated `pages/flagged.html`,
+   `pages/process.html`, `pages/sources.html`. Resolution: **adopted PR #38's
+   historical-example framing** (fixed 10 Nov 2026 → 8 Feb 2027 example, no rolling
+   "last day" text) and dropped this session's rolling 9 Feb 2027 rows, since the two
+   designs are mutually exclusive and theirs removes daily staleness. Kept this session's
+   11 Nov 2026 research-pass date (planner heading, footer, sources lede, RETRIEVED).
+   Took `--theirs` for the three generated pages and rebuilt. Two rebase-marker suffix
+   fragments (`>>>>>>> e7c1b39` commit-title remainders) leaked into `site_pages_core.py:9`,
+   `:268` and `verify_core_site.py:185` during programmatic resolution; all were found by
+   grep, removed, and the site rebuilt — verified zero occurrences remain.
+3. Record commit: clean re-application of this session's PR #37 log.
+
+Nothing from PR #37 or PR #38 was discarded. Post-merge: all 8 gates PASS
+(14 pages / 41 tables / 349 rows / 984 links). FR-01..FR-25 published.
