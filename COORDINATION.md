@@ -1317,3 +1317,21 @@ and rate-table validation intact, this pass's FR-27…FR-30 intact.
 
 Total flags are now **30** (dynamic counter), and the notice planner, arithmetic, privacy sweep and all
 8 gates pass on the merged tree.
+
+#### Second rebase (2026-11-11) — `main` advanced again via PR #52 (session `arena/96aa0f4f-rentincreasesf3`)
+
+That session added **FR-27** (*"Postal service on the research-pass date (11 November 2026)"* — the
+planner's last mailing day falling on Veterans Day, with sf.gov carrying a City closure banner), a new
+`OPM_HOLIDAYS` source, and verification-log rows 96–109. This pass had independently used **FR-27…FR-30**
+and log rows 96–119. Nothing was discarded:
+
+| File | Resolution |
+|---|---|
+| `tools/site_pages_ref.py` | Reconstructed from `origin/main` + this session's commit `6ed1b61`, keeping `96aa0f4f`'s FR-27 intact and **renumbering this session's four flags to FR-28…FR-31**. Flag IDs are now FR-01…FR-31 with no duplicates |
+| `research/verification-log.md` | Both sections kept; their rows 96–109 left untouched, **this pass's rows renumbered 110–133** (single-pass remap — an earlier cascading replace was caught and redone; verified zero duplicate row numbers ≥ 59). Inline "(row 101)" references updated to "(row 115)" |
+| `EXECUTIVE_SUMMARY.md` | Their FR-27 row kept first, this pass's four rows renumbered FR-28…FR-31 beneath it |
+| `README.md` | Their longer block kept; flag count corrected to **31** |
+| `pages/sources.html`, `pages/flagged.html`, `pages/requirements.html` | Build artefacts — deleted and regenerated from the merged modules. Register now **32 sources** (their `OPM_HOLIDAYS` + this pass's `SF_ORD265` and `CFR_982`) |
+
+Verified present after the merge: `96aa0f4f`'s FR-27 and OPM source, this pass's FR-28…FR-31, both
+sessions' verification-log sections, 31 flags, 32 sources. Build idempotent; 8/8 gates pass.
