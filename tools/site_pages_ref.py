@@ -111,7 +111,7 @@ REQS = [
     ("R-18", "Anonymise all personal information, keep dates and amounts", "Answered — placeholders, no ZIP or neighbourhood published", "pages/flagged.html", "SF_HI"),
     ("R-19", "Every table row must link an official source; unverifiable values blank and flagged", "Canonical rows checked; archived editions have exceptions (FR-24)", "pages/sources.html", "SF_571"),
     ("R-20", "Clean GitHub Pages site, dashboard landing, subpages by category", "Answered", "index.html", "SF_LI"),
-    ("R-21", "Flag irregularities for manual review", "Answered — 25 flags published", "pages/flagged.html", "SF_BANK"),
+    ("R-21", "Flag irregularities for manual review", "Answered — {nflags} flags published", "pages/flagged.html", "SF_BANK"),
     ("R-22", "Coordinate with parallel sessions via COORDINATION.md", "Answered — claim, scope and record logged", "index.html", "SF_HI"),
     ("R-23", "Open a pull request, merge it and confirm the Pages deployment", "Answered — recorded in COORDINATION.md", "index.html", "SF_HI"),
 ]
@@ -136,7 +136,8 @@ def requirements():
     rows = "".join(
         '<tr><td class="nowrap"><b>%s</b></td><td>%s</td><td>%s</td>'
         '<td><a href="../%s">%s</a></td>%s</tr>'
-        % (rid, text, status, dest, labels.get(dest, dest), cell(k))
+        % (rid, text, status.replace("{nflags}", str(len(FLAGS))), dest,
+           labels.get(dest, dest), cell(k))
         for rid, text, status, dest, k in REQS
     )
     body = f"""
@@ -257,6 +258,9 @@ FLAGS = [
     ("FR-20", "Filing a copy of an ordinary increase notice", "Unverified",
      "The cited official pages establish that ordinary annual and banked increases need no approval petition, and that the licence need not accompany the tenant notice. Those propositions do not themselves establish whether a copy of the notice must be filed separately.",
      "Confirm any separate filing obligation with the Rent Board; other types of increases have distinct procedures.", "SF_HI"),
+    ("FR-26", "Rate table row dates and one missing 1992–93 row", "Corrected 11 Nov 2026",
+     "The 1982–2027 table on <b>Rules &amp; caps</b> had five row end-dates that did not match document 571 (2/29/13, 2/29/05, 2/29/01, 2/29/97 for a non-leap year, and 2/28/96 for a leap year) and was missing the Board's separate <b>12/8/92 – 2/28/93 (1.6%)</b> row, so it showed 45 rows where document 571 shows 46. Every percentage was already correct. The table is now generated from a transcription that matches the PDF row for row, in the PDF's order, and re-checked programmatically on 11 Nov 2026.",
+     "None — corrected against the Rent Board's document 571 and re-checked row by row.", "SF_571"),
 ]
 
 
