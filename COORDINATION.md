@@ -1080,6 +1080,87 @@ Claimed **2026-11-11T04:20Z**. Branch `arena/beba4d31-rentincreasesf3`, branched
 | B5 | Fix only verified errors; flag everything unverifiable on `pages/flagged.html` | done — rate table corrected (FR-26), new gate added | `tools/`, `pages/`, `COORDINATION.md` | no inference, blanks where unconfirmed |
 | B6 | PR → `main`, merge, confirm GitHub Pages deploy, record PR + deploy here | unclaimed | `COORDINATION.md` | no approval wait |
 
+---
+
+## Task board — session `arena/488b115e-rentincreasesf3` (independent verification + final integration, 2026-11-11)
+
+Claimed **2026-11-11**. Branch `arena/488b115e-rentincreasesf3` branched from `main` at `a12419d` (PR #47 merged). The canonical site, executive summary and the five preserved editions are already complete and merged; this session performs an **independent line-by-line verification pass** and, if it finds no material error, final integration. No other session's committed content is discarded.
+
+Scope (non-overlapping): `COORDINATION.md`, `research/verification-log.md` (append-only), `data/sources.json` (metadata only), plus the canonical generators `tools/site_*.py`, `tools/sitedata.py` and the files they generate (`index.html`, `pages/`, `assets/`) **only if** this pass finds a verified factual, arithmetic, link or privacy defect. Preserved editions (`docs/`, `dashboard/`, `review/`, `audit/`, `verified/`, `verification/`) are read-only for this session.
+
+| # | Task | Status | File scope | Notes |
+|---|---|---|---|---|
+| S1 | Claim tasks, record scope, push claim | done | `COORDINATION.md` | claim commit `d8f864a` |
+| S2 | Baseline: run all gates on the merged tree, confirm build idempotence | done | read-only | see log below |
+| S3 | Independent verification of every published figure/date/requirement against official sources | done | `research/verification-log.md` | rows 78–95: direct re-reads of 13 official pages/documents; 2 defects found |
+| S4 | Review site usability/completeness against the brief (licence question at the forefront, tables, Flags page) | done | `tools/site_pages_ref.py` | one usability defect fixed (flag order); brief fully covered |
+| S5 | Rebuild, run every gate, PR → `main`, merge, confirm Pages deploy, record result | done | `COORDINATION.md` | see PR/deploy record below |
+
+### Claim / baseline log — `arena/488b115e`
+
+- **S2 baseline on `a12419d`:** working tree clean; `tools/build_dashboard.py` re-run produced **no diff** (build idempotent); `tools/privacy_scan.py` PASS (108 files); `tools/verify_core_site.py` PASS — **14 pages / 41 tables / 350 rows / 988 links**. Remaining gates recorded in S5.
+- Open PR **#45** (`arena/3cb4d5e1-rentincreasesf3`, "Final integration … pass date bumped") predates `a12419d` and overlaps the shared outputs; left untouched by this session (rebase owner's call). PRs #33/#35 also left untouched.
+
+### Verification performed — `arena/488b115e` (2026-11-11)
+
+This sandbox **could reach the official sites directly** on 2026-11-11 (unlike the pass recorded above), so
+each row of the site was checked against the government page or document itself rather than a secondary
+source. Pages re-read in full and matched: sf.gov — Learn about rent increases; Banked rent increases;
+Annual rent increase for multiple years; The Rent Board Housing Inventory; Notice of Owner Noncompliance;
+The Rent Board Fee; Learn about San Francisco rental laws; Special Circumstances Petitions; Rent Board
+Rules Part IV §§ 4.10–4.12; Form 571 PDF (parsed); oag.ca.gov/rentcaps (statewide table + San Francisco
+County row); sfgov.legistar.com File #261020; codelibrary.amlegal.com § 37.3(a)(1)–(2); leginfo
+Civ. Code §§ 827, 1947.12, 1954.53; justice.gov press release 25-21.
+
+**Irregularities found and fixed (all verified against the official source):**
+
+1. Five end-dates in the published 1982–2027 rate table fell on 29 February in non-leap years and
+   disagreed with Form 571 (`2/29/85`, `2/29/97`, `2/29/01`, `2/29/05`, `2/29/13` → 28 February).
+   Percentages were correct throughout.
+2. `3/1/95 – 2/28/96` should be `3/1/95 – 2/29/96` (1996 is a leap year; Form 571 publishes 29 February),
+   which had left a one-day gap in the official sequence. All 46 rows now match Form 571 exactly.
+3. `pages/flagged.html` listed flags out of numeric order (FR-16, FR-21…FR-25, FR-17…FR-20); the page now
+   sorts numerically. No flag text or status changed, and the count was 25 when this was done (26 after the
+   parallel session's FR-26 merged); FR-15 records the rate-table fix.
+4. `tools/verify_core_site.py` gained two regression guards: rate-period parsing (impossible dates,
+   ordering and contiguity) and flag-ID uniqueness/ascending order.
+
+**Nothing else failed.** No percentage, dollar amount, notice period, source URL or privacy control was
+changed; anonymisation (Tenant A–F, no ZIP/neighbourhood/address) still passes. All gates re-run after the
+fixes: `privacy_scan.py` PASS (108 files) · `verify_core_site.py` PASS (14 pages / 41 tables / 350 rows /
+988 links) · `audit_site.py` · `verify_site.py` · `check_site.py` · `verify_edition.py` · `check_v2.py` ·
+`verify_review_regressions.py` all PASS · `build_dashboard.py` idempotent.
+
+**Brief coverage re-checked (S4):** licence/Housing-Inventory question leads the dashboard and executive
+summary with a plain-language step-by-step and the individual-vs-corporate answer; reasonable/normal,
+corporate-vs-individual practice, notice-and-reasons, tenant-lawyer stress test (16 checks), one-unit-vs-
+both discrimination analysis, requirements checklist, source register and the Flagged page (25 items then,
+26 after FR-26) are all
+present, table-formatted and source-linked. Every data row carries an official link or is blank + flagged.
+
+### Merge / conflict resolution — `arena/488b115e` (2026-11-11)
+
+While PR #50 was open, `main` advanced three times: PR #48 (session `arena/0dea38fc`, log rows 59–61),
+PR #49 (session `arena/beba4d31`, log rows 62–77, plus **FR-26** and a `check_rate_table()` gate) and PR #51
+(that session's merge/deploy record). Both sessions independently found the rate-table date defects. This
+branch was merged onto `origin/main` at `00eedf7` **keeping all of their work**: their FR-26, their requirements/README count
+(now generated, 26 flags), their row-by-row `OFFICIAL_RATES` transcription gate and their log rows.
+
+Two corrections were applied to the combined result, both verified against Form 571:
+
+1. Their `OFFICIAL_RATES` transcription (and the table it gated) still contained
+   `3/1/84 – 2/29/85`. 29 February 1985 does not exist and Form 571 publishes `3/1/84 – 2/28/85`.
+   Both copies now read 28 February, so the row-by-row gate agrees with the PDF.
+2. FR-26 and their log said the table "showed 45 rows" and was missing the separate
+   `12/8/92 – 2/28/93 (1.6%)` row. Recounting the pre-correction HTML at `a12419d` shows **46 rows,
+   including that row**; the end-dates were wrong, the row count was right. FR-26 now says this, and the
+   log keeps their section intact with this note as the correction (nothing was deleted).
+3. Added `check_rate_calendar()` — each period must parse as a real, contiguous, descending calendar
+   range — because a row-by-row gate cannot catch an error copied into both the table and the
+   transcription, which is exactly what happened. Also added `check_flag_order()`.
+
+---
+
 ### PR / deploy record — session `arena/beba4d31-rentincreasesf3` (2026-11-11)
 
 - **Branch:** `arena/beba4d31-rentincreasesf3` → `main`. **PR:** [#49](https://github.com/kanlerxz87-cyber/RentincreaseSF3/pull/49) — "Re-verification 2026-11-11: rate table corrected against Form 571 (FR-26) + new build gate".

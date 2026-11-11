@@ -214,7 +214,7 @@ OFFICIAL_RATES = [  # document 571, "Allowable Annual Rent Increases", in publis
     ("3/1/91 – 2/29/92", "4.0%"), ("3/1/90 – 2/28/91", "4.0%"),
     ("3/1/89 – 2/28/90", "4.0%"), ("3/1/88 – 2/28/89", "4.0%"),
     ("3/1/87 – 2/29/88", "4.0%"), ("3/1/86 – 2/28/87", "4.0%"),
-    ("3/1/85 – 2/28/86", "4.0%"), ("3/1/84 – 2/29/85", "4.0%"),
+    ("3/1/85 – 2/28/86", "4.0%"), ("3/1/84 – 2/28/85", "4.0%"),
     ("3/1/83 – 2/29/84", "7.0%"), ("4/1/82 – 2/28/83", "7.0%"),
 ]
 
@@ -238,6 +238,56 @@ def check_rate_table():
             ERRORS.append("rate table row %d: published %r, document 571 %r" % (i, got, want))
 
 
+def check_rate_calendar():
+    """The published periods must be real, contiguous, descending calendar ranges.
+
+    Row-by-row comparison against a transcription cannot catch a transcription error:
+    `3/1/84 – 2/29/85` was once written into both the table and OFFICIAL_RATES, and the
+    gate passed because both copies were wrong. 29 February 1985 does not exist, so
+    parsing the dates rejects that class of mistake outright.
+    """
+    from site_pages_rules import RATES  # noqa: E402
+
+    def parse(token):
+        month, day, year = token.split("/")
+        year = int(year)
+        year += 2000 if year <= 30 else 1900
+        return dt.date(year, int(month), int(day))
+
+    parsed = []
+    complete = True
+    for period, _pct, _now in RATES:
+        try:
+            start_s, end_s = [t.strip() for t in period.split("\u2013")]
+            start, end = parse(start_s), parse(end_s)
+        except Exception:
+            ERRORS.append("rate table: %r is not a real calendar period" % period)
+            complete = False
+            continue
+        if end <= start:
+            ERRORS.append("rate table: period %r ends before it starts" % period)
+        parsed.append((period, start, end))
+    if not complete:
+        return  # pairing a skipped period would report a false gap
+    for (p_hi, s_hi, _e_hi), (p_lo, s_lo, e_lo) in zip(parsed, parsed[1:]):
+        if not s_hi > s_lo or e_lo + dt.timedelta(days=1) != s_hi:
+            ERRORS.append("rate table: gap or overlap between %r and %r" % (p_hi, p_lo))
+
+
+def check_flag_order():
+    """Flag IDs are reviewed top to bottom; they must be unique and in ascending order."""
+    text = (ROOT / "pages" / "flagged.html").read_text(encoding="utf-8")
+    ids = re.findall(r"<b>(FR-\d{2})</b>", text)
+    if not ids:
+        ERRORS.append("flagged page: no flag IDs found")
+        return
+    numbers = [int(i.split("-")[1]) for i in ids]
+    if numbers != sorted(numbers):
+        ERRORS.append("flagged page: flag IDs are not in ascending order")
+    if len(set(numbers)) != len(numbers):
+        ERRORS.append("flagged page: duplicate flag ID")
+
+
 def main():
     pages = [ROOT / p for p, _ in ALL_PAGES]
     for p in pages:
@@ -259,6 +309,8 @@ def main():
             ERRORS.append("source %s is not https" % key)
     check_math()
     check_rate_table()
+    check_rate_calendar()
+    check_flag_order()
     # Guard against previously published unsafe legal assurances.
     canonical = "\n".join(p.read_text(encoding="utf-8") for p in pages if p.exists())
     for unsafe in ("first date reachable from today", "served now cannot take effect before",
