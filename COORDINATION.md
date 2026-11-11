@@ -899,3 +899,16 @@ Prior integration records indicate the previously active scopes have completed o
 - PR [#37](https://github.com/kanlerxz87-cyber/RentincreaseSF3/pull/37) merged to `main` at 2026-11-11T02:11:28Z (merge commit `829f17ed4df0b92e6eef19a499a33843ad2b10a5`). Pre-merge Site checks run `42944243222` and main run `42944283481` succeeded.
 - GitHub Pages deployment run `42944283043` succeeded; Pages API reports `built` for `829f17ed4df0b92e6eef19a499a33843ad2b10a5`. The deployed dashboard was fetched with a cache-busting query and contained the corrections, and the flagged page showed FR-18 through FR-20. A cached unqualified dashboard fetch initially returned an older version.
 - This session's integration/review and PR/deploy tasks are done subject to the explicit limits above. Historical archive warnings, unknown building/tenancy details, notice-copy question, and proposed legislation remain published as needs review; they do not block deployment.
+
+## Task board — session `arena/1a404b71-rentincreasesf3` (2026-11-11)
+
+Integration audit on the fixed Arena session branch; earlier completed editions are preserved. Open PRs from other sessions are not claimed or modified. Historical integration task I6 by `45eea2b7` predates the subsequent completed #34/#36 integrations.
+
+| Task | Status | Owner | File scope |
+|---|---|---|---|
+| Current official-source and privacy audit; fix any material canonical-site inaccuracies; run integration checks | in progress | `arena/1a404b71-rentincreasesf3` | `COORDINATION.md`, `tools/site_layout.py`, `tools/site_pages_core.py`, `tools/site_pages_rules.py`, `tools/site_pages_ref.py`, `tools/verify_core_site.py`, `index.html`, `pages/*.html`, `assets/style.css`, `README.md`, `EXECUTIVE_SUMMARY.md` |
+| PR, merge, Pages deploy confirmation and record | in progress | `arena/1a404b71-rentincreasesf3` | `COORDINATION.md` |
+
+**Rebase conflict log (11 November 2026):** PR #37 merged after this claim was pushed. The COORDINATION.md add/add conflict was resolved by preserving both session records; overlapping completed changes will be reconciled without discarding #37.
+
+**Second rebase conflict:** PR #42 added a deployment record to main while PR #38 CI ran. Preserved both session records.
