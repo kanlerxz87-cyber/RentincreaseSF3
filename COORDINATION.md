@@ -955,3 +955,11 @@ Corrections: owner described two units, not total building unit count; unknown c
 - The 25 archived row-source warnings, owner-record uncertainties, lack of tenant-lawyer review, fixed-term lease issue and unknown notice-copy filing rule remain published as flagged limitations. External links and every archived row were not independently verified by the automated checks.
 
 **Third rebase conflict:** PR #41 merged while PR #43 checks ran. Both session log entries were retained.
+### PR and deployment record — session `arena/db0bd0a6-rentincreasesf3`
+
+- PR [#41](https://github.com/kanlerxz87-cyber/RentincreaseSF3/pull/41) merged 2026-11-11T02:15:04Z, merge commit `f15baf8a592bf32601aa544f3fa13db8cdd8269f`.
+- Pre-merge CI `42944675761` and post-merge CI `42944711595` succeeded. The locally run checks verified 70 HTML files' internal links and anchors and 350 canonical data rows' official-link presence; external availability and legal eligibility remain outside the automated gates.
+- Pages run `42944710791` succeeded, and Pages build `1358913846` reported `built` for the merge commit. The live dashboard and notice page were fetched with cache-busting URLs and showed the new content, including the banked-date notice requirements.
+- Integration is complete with needs-review flags preserved. Historical archive source-link warnings, unverified owner facts, notice-copy filing, lease restrictions and pending legislation remain explicitly flagged; no legal review or full new line-by-line audit of every preserved edition was performed.
+
+**Fourth conflict log:** PR #43 landed while recording PR #41; preserved both PR and deployment records.
