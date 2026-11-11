@@ -120,7 +120,10 @@ def check_scripts(path):
 
 def check_footer(path):
     text = path.read_text(encoding="utf-8")
-    for needle in ("Not legal advice", "Privacy:", "10 November 2026"):
+    # The preserved verification edition keeps its own 10 Nov 2026 research-pass date;
+    # the canonical pages were re-verified on 11 Nov 2026.
+    date_needle = "10 November 2026" if "verification" in path.parts else "11 November 2026"
+    for needle in ("Not legal advice", "Privacy:", date_needle):
         if needle not in text:
             ERRORS.append("%s: missing required disclosure %r" % (path.name, needle))
 

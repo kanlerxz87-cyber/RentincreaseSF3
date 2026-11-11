@@ -1,7 +1,7 @@
 """Reference pages: sources register, requirements checklist, flagged for review."""
 from site_layout import SRC, src, srcs, cell, page
 
-RETRIEVED = "10 Nov 2026"
+RETRIEVED = "11 Nov 2026"
 
 # key, what it supports
 USED_FOR = {
@@ -47,7 +47,7 @@ def sources():
     body = f"""
 <div class="card">
   <h1>Sources &amp; verification register</h1>
-  <p class="lede">Every official source used on this site, the claim it supports, and the date it was retrieved. The existing register was reviewed on 10 November 2026; Part IV was added and read on 11 November 2026. Availability can change.</p>
+  <p class="lede">Every official source used on this site, the claim it supports, and the date it was retrieved. The register was reviewed on 10 November 2026 and all registered sources were re-fetched and read on 11 November 2026; Part IV was added and read on 11 November 2026. Availability can change.</p>
 </div>
 
 <div class="card">
@@ -111,7 +111,7 @@ REQS = [
     ("R-18", "Anonymise all personal information, keep dates and amounts", "Answered — placeholders, no ZIP or neighbourhood published", "pages/flagged.html", "SF_HI"),
     ("R-19", "Every table row must link an official source; unverifiable values blank and flagged", "Canonical rows checked; archived editions have exceptions (FR-24)", "pages/sources.html", "SF_571"),
     ("R-20", "Clean GitHub Pages site, dashboard landing, subpages by category", "Answered", "index.html", "SF_LI"),
-    ("R-21", "Flag irregularities for manual review", "Answered — flags published", "pages/flagged.html", "SF_BANK"),
+    ("R-21", "Flag irregularities for manual review", "Answered — 25 flags published", "pages/flagged.html", "SF_BANK"),
     ("R-22", "Coordinate with parallel sessions via COORDINATION.md", "Answered — claim, scope and record logged", "index.html", "SF_HI"),
     ("R-23", "Open a pull request, merge it and confirm the Pages deployment", "Answered — recorded in COORDINATION.md", "index.html", "SF_HI"),
 ]

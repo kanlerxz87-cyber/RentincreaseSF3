@@ -963,3 +963,33 @@ Corrections: owner described two units, not total building unit count; unknown c
 - Integration is complete with needs-review flags preserved. Historical archive source-link warnings, unverified owner facts, notice-copy filing, lease restrictions and pending legislation remain explicitly flagged; no legal review or full new line-by-line audit of every preserved edition was performed.
 
 **Fourth conflict log:** PR #43 landed while recording PR #41; preserved both PR and deployment records.
+
+## Task board — session `arena/e00aaa27-rentincreasesf3` (fresh line-by-line re-verification, 2026-11-11)
+
+Claimed **2026-11-11**. This session re-verifies the canonical site (`index.html` + `pages/*.html`) line by line against official sources fetched on 2026-11-11, recomputes every published figure and notice date, rolls the notice-date planner forward from 10 Nov to 11 Nov 2026 (the "first date reachable" for a >10% increase moves from 8 Feb to 9 Feb 2027), checks the live GitHub Pages deployment, and performs final integration (PR → merge → Pages deploy → record). No other session is mid-work on these files; earlier editions (`docs/`, `dashboard/`, `review/`, `audit/`, `verified/`, `verification/`) are preserved untouched.
+
+| # | Task | Status | Owner | File scope |
+|---|---|---|---|---|
+| J1 | Claim tasks + record scope | done | `arena/e00aaa27-rentincreasesf3` | `COORDINATION.md` |
+| J2 | Re-fetch & verify primary official sources on 2026-11-11 (sf.gov, leginfo, amlegal §37.3, oag.ca.gov, sfgov.legistar.com, portal) | in progress | `arena/e00aaa27-rentincreasesf3` | `research/verification-log.md` (new rows) |
+| J3 | Roll canonical verification date + notice-date planner to 11 Nov 2026; rebuild; run all gates | unclaimed | `arena/e00aaa27-rentincreasesf3` | `tools/site_layout.py`, `tools/site_pages_core.py`, `tools/site_pages_ref.py`, `tools/verify_core_site.py`, regenerated `index.html`, `pages/*.html`, `EXECUTIVE_SUMMARY.md`, `README.md` |
+| J4 | Final integration: PR → main → merge → confirm GitHub Pages deploy → record here | unclaimed | `arena/e00aaa27-rentincreasesf3` | `COORDINATION.md` |
+
+
+### Verification log — `arena/e00aaa27` (2026-11-11)
+
+- **All 28 registered official sources re-fetched on 2026-11-11** (sf.gov Housing Inventory, rent increases, banked increases, multiple-years, rental laws, Form 571 PDF, noncompliance, Rent Board Fee, tenant/landlord petitions, unlawful-rent-increase, special circumstances, algorithmic-device ban, §6.14/Costa-Hawkins; leginfo Civ. Code §§827, 1947.12, 1954.53, 1942.5, Gov. Code §12955, CCP §1013; amlegal Admin. Code §37.3 (2026 S-96); oag.ca.gov rent caps; sfgov.legistar.com File #261020; portal.sfrb.org; calcivilrights.ca.gov; govinfo 42 U.S.C. §3604; justice.gov 7 Jan 2025 release). Every headline figure matched the published site: licence required for individual owners (1–9 units since 1 Mar 2023, effective-date test, no per-increase filing), 1.6% through 28 Feb 2027, banking additive/no-cap since 1 Apr 1982, $59.00 Rent Board Fee, 8.8% state figure (not governing), File #261020 still **Pending Committee Action** with no final action. Full rows 36–52: `research/verification-log.md`.
+- **Arithmetic recomputed in Python:** Unit A $3,995×1.6%=$63.92→$4,058.92; ×3.0%=$119.85→$4,114.85. Unit B $3,150×1.6%=$50.40→$3,200.40; ×10%=$315.00→$3,465.00; ×11.5%=$362.25→$3,512.25 (1.8+0.7+2.3+3.6+1.7+1.4 from Form 571); ×13.1%=$412.65→$3,562.65.
+- **Only change required:** the notice-date planner expired overnight — rolled from 10 Nov to 11 Nov 2026 (first reachable >10% date 8 Feb → **9 Feb 2027**, serve by 11 Nov / mail by 6 Nov passed; next example 15 Feb 2027, serve 17 Nov / mail 12 Nov). `tools/verify_core_site.py` footer check now expects 11 Nov on canonical pages and keeps 10 Nov for the preserved `verification/` edition. Note: 11 Nov 2026 is Veterans Day (sf.gov closure banner) — no same-day Rent Board counselling.
+- **All 7 gates PASS:** `privacy_scan.py`, `verify_core_site.py` (14 pages, 41 tables, 341 rows, 976 links), `audit_site.py`, `verify_site.py`, `check_site.py`, `verify_edition.py`, `check_v2.py`. Builder idempotent (rebuild produces no further changes). Privacy: no tenant initials, ZIP, neighbourhood or street address in any published file; placeholders Tenant A–F; dates/amounts unchanged.
+- **Open PRs of other sessions left untouched:** #35 (fix already on main via PR #34 — redundant), #33 (strict-reading alternative; context already published as FR-03), #20 (superseded by PR #21). Flagged items FR-01…FR-17 remain published on `pages/flagged.html` and do not block merge.
+
+| # | Task | Status |
+|---|---|---|
+| J2 | Re-fetch & verify sources 2026-11-11 | done |
+| J3 | Roll date/planner to 11 Nov 2026, rebuild, all gates | done |
+| J4 | PR → merge → Pages deploy → record | in progress |
+
+### Conflict-resolution log — `arena/e00aaa27` (2026-11-11)
+
+While this session's PR #39 was open, `main` advanced twice via parallel sessions (PR #37/#42 from `arena/c541e9f4`, then PR #38 from `arena/1a404b71`). Rebases resolved without discarding any session's work: kept PR #37's FR-18…FR-20 + `tools/verify_review_regressions.py`, PR #38's FR-21…FR-25 (25 flags total) and its fixed-date planner framing ("fixed-date examples, not a live calculator", HEAD side of the planner conflict); kept this session's 11 Nov 2026 verification date, source-register retrieval date, and notice-date assertions for the published fixed dates. Flag counts corrected to 25 (`README.md`, R-21).

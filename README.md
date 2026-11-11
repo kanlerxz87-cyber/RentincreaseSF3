@@ -28,7 +28,7 @@ Canonical dashboard table rows link official sources for the governing rule; own
 
 Markdown summary: [`EXECUTIVE_SUMMARY.md`](EXECUTIVE_SUMMARY.md).
 
-## Headline results (verified 10 November 2026)
+## Headline results (verified 11 November 2026)
 
 | Item | Result | Official source |
 |---|---|---|

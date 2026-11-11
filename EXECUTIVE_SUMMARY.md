@@ -1,6 +1,6 @@
 # Executive summary — San Francisco rent increases, two rent-controlled units
 
-**Prepared 10 November 2026 · research pass re-verified against official sources on that date · not legal advice**
+**Prepared 11 November 2026 · research pass re-verified against official sources on that date · not legal advice**
 Live dashboard: <https://kanlerxz87-cyber.github.io/RentincreaseSF3/>
 
 **Privacy.** Tenants and owners are shown as **Tenant A–F**. Dates and dollar amounts are unchanged, as requested. The ZIP code, neighbourhood and street address are **not published**: unit-level facts (two specific rents and two lease dates) combined with a location would identify the tenants, and the rules cited apply citywide with no ZIP-level variant. The location is recorded in this file only as "San Francisco".
@@ -156,6 +156,14 @@ Sources: [Gov. Code § 12955](https://leginfo.legislature.ca.gov/faces/codes_dis
 | FR-15 | Corrections applied to earlier statements on this site | **Corrected** |
 | FR-16 | Noncompliance consequence wording | **Verified and closed 10 Nov 2026** — the page states an unlicensed notice "may be null and void (this may apply for multiple years)" and the tenant "may be entitled to a rent refund" (Form 516C / Form 518) |
 | FR-17 | "13.1%" labelled a June 2027 ceiling | **Corrected 10 Nov 2026** — it is the conditional maximum for dates on or before 28 Feb 2027 (and the 7-year banked floor by 1 June 2027 before the unannounced 2027–28 rate) |
+| FR-18 | Total building unit count and historical reporting start date | **Unverified** — do not infer a two-unit building total; the licensing duty applies regardless |
+| FR-19 | Older editions may contain superseded claims | **Irregularity** — preserved for history; use the canonical dashboard |
+| FR-20 | Whether a copy of an ordinary increase notice must be filed separately | **Unverified** — no-approval-petition does not itself answer separate filing; confirm with the Rent Board |
+| FR-21 | Rule § 6.14 / Costa-Hawkins co-tenant distinction | **Corrected 11 Nov 2026** (see flagged page) |
+| FR-22 | No independent tenant-lawyer approval or normal-rate evidence | **Unverified** |
+| FR-23 | Actual notices, service, motive and compliance | **Unverified** |
+| FR-24 | Archived editions: row-source exceptions | **Unverified** |
+| FR-25 | Fixed-term lease provisions and actual notice | **Unverified** |
 
 Full detail with source links: `pages/flagged.html` on the live site.
 
