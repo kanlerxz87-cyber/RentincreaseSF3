@@ -1263,3 +1263,10 @@ PR #49's rate-table cleanup (which corrected five other end-dates) because the n
 `tools/site_pages_rules.py` and `tools/verify_core_site.py`; `check_rate_table()` now passes against the
 PDF's 46 rows. **Note for future passes: a transcription constant copied from the site cannot verify the
 site — it must be re-typed from the PDF.**
+
+**Second rebase round (same pass).** Before this branch could be pushed, `main` advanced again to
+`69d2bde` (PR #50, session `arena/488b115e-rentincreasesf3`, whose log rows run 78–95). Conflicts in
+`tools/verify_core_site.py`, `research/verification-log.md` and `pages/flagged.html` were resolved the
+same way: both sides kept, `pages/flagged.html` regenerated, and this session's log rows renumbered again
+to **96–109**. `arena/488b115e` added no flag beyond FR-26, so this session's flag stays **FR-27**.
+All 8 gates were re-run on the final tree and pass; the build is idempotent.
