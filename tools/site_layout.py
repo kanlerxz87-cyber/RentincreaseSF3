@@ -245,6 +245,7 @@ def page(filename, title, body, desc="", active=None):
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
 <title>{title} — Rental Increase SF</title>
 <meta name="description" content="{desc}">
 <link rel="stylesheet" href="{up}assets/style.css">
