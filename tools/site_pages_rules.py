@@ -56,7 +56,7 @@ def laws():
       <tr><td>Notice</td><td>30 days' written notice; 90 days if the increase is more than 10%; +5 days if mailed; the notice must state the dollar amount, the percentage, the effective date and which portion reflects the annual increase and/or any banked amount (§ 37.3(b)(1)); nonconforming increases are <b>null and void</b> (§ 37.3(b)(5)).</td>{cell("SF_LI", "SF_BANK", "ADMIN_373")}</tr>
       <tr><td>Additional occupants &amp; partial turnover</td><td>Under § 37.3(a)(11)(A), a landlord cannot charge more rent solely because an additional occupant joined an existing tenancy, notwithstanding any lease clause. Under § 37.3(d)(2)(B) and Rule § 6.14, unlimited market resets do <i>not</i> apply to partial occupancy changes while any original occupant remains in lawful possession (and Costa-Hawkins never applies to a co-tenant with a landlord agreement).</td>{cell("ADMIN_373", "SF_614", "SF_LI")}</tr>
       <tr><td>Ordinance subsections (§ 37.3)</td><td>Codified at Administrative Code § 37.3: <b>§ 37.3(a)(1)</b> annual CPI formula (60% of CPI, 7% formula ceiling, § 37.15 licence); <b>§ 37.3(a)(2)</b> banking since 1 Apr 1982; <b>§ 37.3(a)(8)</b> arbitration petition above annual/banked; <b>§ 37.3(a)(10)</b> voucher payment-standard rules; <b>§ 37.3(a)(11)</b> additional occupants; <b>§ 37.3(b)(1)&amp;(5)</b> written breakdown &amp; null-and-void rule; <b>§ 37.3(d)</b> Costa-Hawkins &amp; partial occupancy changes.</td>{cell("ADMIN_373")}</tr>
-      <tr><td>Beyond the annual amount</td><td>Certain capital improvement, operating and maintenance, and comparable-rent increases require petitions. Utility and bond passthroughs have different petition and worksheet rules; consult the specific procedure before notice.</td>{cell("SF_LANDPET")}</tr>
+      <tr><td>Beyond the annual amount</td><td>There are different petition and worksheet rules: capital improvement, operating and maintenance, and special-circumstances increases require petitions before notice. Bond passthroughs require a worksheet but no petition; certain utility worksheets must be filed before notice.</td>{cell("SF_LANDPET")}</tr>
       <tr><td>Pending (not law)</td><td>File #261020 would cap combined banked + capital-improvement increases at 10% per year for three years; status <b>Pending Committee Action</b>. The Rent Board's 9 Nov 2026 notice says it would apply to banked increases noticed on or after 15 Sep 2026 <i>if enacted</i>.</td>{cell("LEGISTAR_261020", "SF_LI")}</tr>
     </tbody>
   </table>
@@ -83,7 +83,7 @@ def laws():
   <table>
     <thead><tr><th style="width:23%">Rule</th><th>What it provides</th><th style="width:20%">Official source</th></tr></thead>
     <tbody>
-      <tr><td>No federal rent ceiling</td><td>No federal statute caps residential rent; federal law regulates <i>discriminatory</i> terms and conditions, not the amount.</td>{cell("USC_3604")}</tr>
+      <tr><td>Federal fair housing</td><td>The Fair Housing Act prohibits discriminatory rental terms. Federal subsidy or program rules may impose additional restrictions; subsidy status is unverified.</td>{cell("USC_3604")}</tr>
       <tr><td>Fair Housing Act</td><td>Unlawful to discriminate in the terms, conditions or privileges of a rental because of race, colour, religion, sex, familial status, national origin or disability — which covers how a rent increase is applied.</td>{cell("USC_3604")}</tr>
       <tr><td>State fair housing overlay</td><td>FEHA is broader: it adds ancestry, marital status, source of income (including a Section 8 voucher), gender identity and expression, military status, genetic information and age, and prohibits harassment.</td>{cell("LEG_12955", "CRD")}</tr>
       <tr><td>Where complaints go</td><td>The Rent Board does <b>not</b> adjudicate harassment, discrimination or retaliation; those go to the Civil Rights Department or HUD / the courts.</td>{cell("SF_TENPET", "CRD")}</tr>
@@ -132,11 +132,11 @@ def reasonable():
   <table>
     <thead><tr><th style="width:24%">Route</th><th>What the Rent Board requires</th><th>Fit for these units</th><th style="width:19%">Source</th></tr></thead>
     <tbody>
-      <tr><td>Banked annual increases</td><td>Skipped annual percentages added together; no Rent Board approval; must be calculated correctly.</td><td><b>Yes</b> — Unit B's 11.5% and Unit A's 1.4% both come from this route.</td>{cell("SF_BANK")}</tr>
+      <tr><td>Banked annual increases</td><td>Skipped annual percentages added together; no Rent Board approval; must be calculated correctly.</td><td><b>Conditional</b> — Unit B's 11.5% and Unit A's 1.4% are illustrations that require verified history and eligibility.</td>{cell("SF_BANK")}</tr>
       <tr><td>Capital improvement passthrough</td><td>Petition filed before the notice; documented improvement costs; tenant hardship rules apply.</td><td>Only if qualifying work was done — no such work is reported here.</td>{cell("SF_LANDPET")}</tr>
       <tr><td>Operating and maintenance increase</td><td>Petition; documented cost increases.</td><td>No cost data reported; not established here.</td>{cell("SF_LANDPET")}</tr>
       <tr><td>Comparable rents (special circumstances)</td><td>Petition showing the rent is significantly below comparable units <i>because of extraordinary circumstances</i>. “The mere fact that a long-standing tenant is paying significantly less than market rent is not considered an extraordinary circumstance.”</td><td><b>Unlikely on the reported facts</b> — Unit B's gap is described as long-standing occupancy, not an extraordinary circumstance.</td>{cell("SF_SPECIAL")}</tr>
-      <tr><td>Utility, bond and similar passthroughs</td><td>Rules vary: bond passthroughs and some utilities do not require approval petitions; utility calculation worksheets must be filed before notice.</td><td>Not applicable on the facts reported.</td>{cell("SF_LANDPET")}</tr>
+      <tr><td>Utility, bond and similar passthroughs</td><td>Rules differ: bond passthroughs require worksheets but no petition; certain utility worksheets must be filed before notice.</td><td>Not applicable on the facts reported.</td>{cell("SF_LANDPET")}</tr>
     </tbody>
   </table>
 </div>
@@ -160,10 +160,10 @@ def reasonable():
 <div class="card">
   <h2>What this means for the two units</h2>
   <table>
-    <thead><tr><th>Unit</th><th>Illustrative amount, not a typical rate</th><th>Conditions and limitations</th><th style="width:18%">Source</th></tr></thead>
+    <thead><tr><th>Unit</th><th>Illustrative options — not an official normal</th><th>Conditions and limitations</th><th style="width:18%">Source</th></tr></thead>
     <tbody>
-      <tr><td>Unit A</td><td><b>3.0% ($119.85)</b>, or 1.6% ($63.92) if you prefer the strict reading</td><td>The annual allowance in effect on the effective date plus one properly banked year; 30 days' notice; well below the 10% state-notice threshold.</td>{cell("SF_571", "SF_BANK")}</tr>
-      <tr><td>Unit B</td><td><b>10.0% ($315.00)</b> as a first step; 13.1% ($412.65) is the conditional maximum for an effective date on or before 28 Feb 2027 on the reported facts</td><td>If the complete ledger confirms six skipped years, they add to 11.5%, plus the 1.6% annual in force to 28 Feb 2027; 10% is an illustrative total, not an officially established normal rate. Confirm all past increases, capital-improvement amounts and the final legislation; properly banked unused amounts may remain available.</td>{cell("SF_BANK", "LEGISTAR_261020")}</tr>
+      <tr><td>Unit A</td><td><b>1.6% ($63.92)</b> is the smaller annual-only option; 3.0% ($119.85) includes a disputed banked component</td><td>For a 1 February 2027 effective date only, subject to coverage, rent history, timing, licence and notice; confirm the banked component with the Rent Board.</td>{cell("SF_571", "SF_BANK")}</tr>
+      <tr><td>Unit B</td><td><b>1.6% ($50.40)</b> is the smaller annual-only option; 10.0% ($315.00) and 13.1% ($412.65) are conditional catch-up illustrations</td><td>If the complete ledger confirms six skipped years, they add to 11.5%, plus the 1.6% annual in force to 28 Feb 2027; 10% is an illustrative choice, not an official typical increase. Verify prior increases, other charges and the final proposed law; a partial unused allowance may be bankable.</td>{cell("SF_BANK", "LEGISTAR_261020")}</tr>
       <tr><td>Unit B at market rent</td><td><b>Blank</b></td><td>Market rent cannot be reached by an annual increase; the Rent Board states that a long-standing below-market rent is not itself an extraordinary circumstance, and vacancy resetting is only available in a genuinely new tenancy.</td>{cell("SF_SPECIAL", "SF_LI")}</tr>
     </tbody>
   </table>
@@ -237,7 +237,7 @@ def notice():
       <tr><td>Dollar amount of the increase</td><td>State the amount in dollars.</td>{cell("SF_LI", "SF_BANK")}</tr>
       <tr><td>Percentage</td><td>State the percentage; for banked amounts the percentages are added, not compounded.</td>{cell("SF_LI", "SF_BANK")}</tr>
       <tr><td>Effective date</td><td>State the date the increase takes effect; it becomes the new anniversary date.</td>{cell("SF_LI")}</tr>
-      <tr><td>Banked breakdown</td><td>If any part is banked, state in writing which portion reflects the annual increase and which portion is banked (Admin. Code § 37.3(b)(1); nonconforming increases are null and void under § 37.3(b)(5)).</td>{cell("SF_BANK", "ADMIN_373")}</tr>
+      <tr><td>Banked breakdown</td><td>If any part is banked, state in writing the annual and banked portions and the dates underlying the banked amount. Rule § 4.12(b) specifies that omission of the banked dates does not itself make the increase null and void.</td>{cell("SF_BANK", "ADMIN_373", "SF_RULE4")}</tr>
       <tr><td>Correct rate version</td><td>Use the percentage in effect on the effective date, not the date the notice is served.</td>{cell("SF_LI")}</tr>
       <tr><td>Licence</td><td>The licence must exist, but it does not have to be attached to the notice.</td>{cell("SF_HI")}</tr>
       <tr><td>Signature / identification</td><td><b>Blank — not specified</b> in the Rent Board's published notice guidance. Flagged (FR-11).</td>{cell("SF_LI")}</tr>
@@ -270,13 +270,13 @@ def notice():
     Under San Francisco Administrative Code § 37.3 and California Civil Code § 827, your monthly base rent will increase as follows.<br><br>
     • Current base rent: $[amount]<br>
     • Amount of increase: $[amount]<br>
-    • Percentage of increase: [x]% consisting of [y]% annual allowable increase (allowable rate for the period covering the effective date) and [z]% banked increase from the [year] increase<br>
+    • Percentage of increase: [x]% consisting of [y]% annual allowable increase (allowable rate for the period covering the effective date) and [z]% banked increase based on [list each applicable anniversary date and rate]<br>
     • New base rent: $[amount]<br>
     • Effective date: [date]<br><br>
     The increase is 10% or less / more than 10% of the rent charged during the 12 months before the effective date, so [30 / 90] days' written notice is given. [If served by mail: an additional 5 days is provided under Code of Civil Procedure § 1013.]<br><br>
     The unit's rent is controlled by the San Francisco Rent Ordinance. Signed: [Owner]
   </div>
-  <p class="small">This wording follows the elements the Rent Board lists for an annual or banked increase. It is a drafting aid, not legal advice: {srcs("SF_LI", "SF_BANK", "LEG_827", "ADMIN_373")}</p>
+  <p class="small">This wording follows the elements the Rent Board lists for an annual or banked increase. It is a drafting aid, not legal advice: {srcs("SF_LI", "SF_BANK", "LEG_827", "ADMIN_373", "SF_RULE4")}</p>
 </div>
 
 <div class="card">
@@ -312,8 +312,8 @@ CHECKS = [
     ("10", "Was the Housing Inventory report filed for the correct year?", "Deadline 1 March each year; late filing is allowed but must precede the effective date.", "SF_HI"),
     ("11", "Is the notice period correct (30 or 90 days)?", "10% or less ⇒ 30 days; more than 10% ⇒ 90 days; +5 if mailed within California.", "LEG_827"),
     ("12", "Was service documented?", "Personal delivery receipt, or a mailed copy with the date and place of mailing / certificate of mailing.", "LEG_1013"),
-    ("13", "Does the notice state amount, percentage, date and banked part?", "All four elements present.", "SF_BANK"),
-    ("14", "Is there any retaliation issue?", "Review all complaints, organising and other protected activity and the owner’s motives; protection is not limited to 180 days.", "LEG_1942"),
+    ("13", "Does the notice state amount, percentage, date and banked part?", "Unverified: no actual notice was provided. Check the annual and banked portions and dates underlying any banked amounts.", "SF_BANK"),
+    ("14", "Is there any retaliation issue?", "Unknown. Review complaint and organising history, motive, timing, and statutory conditions; retaliation protections also extend beyond the 180-day provision.", "LEG_1942"),
     ("15", "Is there any protected-characteristic issue?", "The amount must not vary because of race, colour, religion, sex, familial status, national origin, disability, source of income or the other FEHA grounds.", "LEG_12955"),
     ("16", "Is the differential between the two units explainable from the file?", "Different base rents and different lease dates explain the different dollar amounts; the method is identical.", "USC_3604"),
 ]
@@ -387,7 +387,7 @@ def discrimination():
 
 <div class="card hero">
   <h2>Answer</h2>
-  <p><b>There is no legal requirement to raise rent on both units, and no official guidance says a selective increase is unlawful in itself.</b> What the law prohibits is treating a tenant differently <i>because of</i> a protected characteristic, or increasing rent as retaliation. Because the two units have different base rents, different lease dates and different rent histories, their lawful maximums differ anyway — so the same percentage or the same dollar increase is not automatically required. The control that matters is a written, dated, objective rationale per unit, applied consistently.</p>
+  <p><b>There is no legal requirement to raise rent on both units, and no official guidance says a selective increase is unlawful in itself.</b> What the law prohibits is treating a tenant differently <i>because of</i> a protected characteristic, or increasing rent as retaliation. The two units have different reported starting rents and lease dates; their complete histories and lawful maxima are unverified — so neither identical percentages nor identical dollar amounts are automatically required; no official data establishes what is normal. The control that matters is a written, dated, objective rationale per unit, applied consistently.</p>
 </div>
 
 <div class="card">

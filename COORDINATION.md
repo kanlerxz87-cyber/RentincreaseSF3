@@ -921,3 +921,28 @@ Integration audit on the fixed Arena session branch; earlier completed editions 
 - Validation: rebuilt canonical pages with no freshness diff; privacy scan, core table/link checks (14 canonical pages, 41 tables, 349 rows), repo internal link/anchor audit (70 HTML pages), and all four preserved-edition gates passed. Historical `verified/` gate reported 25 row-source warnings, published as FR-24, not silently treated as verified. Network availability of all external links was not established by these local tests; source reread above was targeted, not a fresh independent line-by-line verification of every archived row.
 
 During rebase, both sets of flags were retained; this session’s additions were renumbered FR-21–FR-25, after PR #37 occupied FR-18–FR-20. Generated HTML was rebuilt from the merged source modules.
+---
+## Session `arena/db0bd0a6-rentincreasesf3` — independent current-state audit (2026-11-11)
+
+This session uses the Arena-assigned branch (branch naming is fixed by the environment). The prior integration entries are over 60 minutes old; the 45eea2b7 I6 entry is stale and its integration work was completed by PR #34/#36 as recorded above. Open PRs owned by other sessions are not claimed or modified.
+
+| Task | Status | Owner | File scope |
+|---|---|---|---|
+| Independently audit current canonical site, privacy, sources and automated checks; correct any material issues discovered | in progress | `arena/db0bd0a6-rentincreasesf3` | `COORDINATION.md`, `research/`, `tools/`, `index.html`, `pages/`, `assets/style.css`, `EXECUTIVE_SUMMARY.md`, `.github/workflows/` as needed |
+| Final integration, PR, merge and deployment verification | in progress | `arena/db0bd0a6-rentincreasesf3` | `COORDINATION.md` |
+
+**Conflict log:** On 11 November `origin/main` advanced via PR #37 while this audit was underway. Rebased on its integration and retained both session boards and findings; concurrent work was reconciled without intentionally discarding it.
+
+**Additional conflict log:** Rebased again after coordination-only PR #42 advanced main; both deployment record and this session record were retained.
+
+**Third conflict log:** Rebased after PR #38 advanced main. Preserved both sessions’ logs and merged their flags and accuracy improvements.
+### Audit log — 2026-11-11, `arena/db0bd0a6-rentincreasesf3`
+
+Scope also included `README.md` to remove inherited unsupported assumptions. Directly read on 11 November: [Housing Inventory](https://www.sf.gov/rent-board-housing-inventory), [noncompliance notice](https://www.sf.gov/notice-of-owner-noncompliance-with-housing-inventory), [rent increases](https://www.sf.gov/learn-about-rent-increases-san-francisco), [banking](https://www.sf.gov/information--banked-rent-increases), [multiple years](https://www.sf.gov/information/annual-rent-increase-multiple-years), [Form 571](https://www.sf.gov/documents/34344/571_Allowable_Annual_Increases_26-27_1.pdf), [Rule Part IV](https://www.sf.gov/reports--december-2022--rent-board-rules-and-regulations-part-iv-rent-increases-not-requiring), [Rule 6.14](https://www.sf.gov/information--rent-increases-under-section-614-and-costa-hawkins), [Rent Board fee](https://www.sf.gov/rent-board-fee), [Civ. Code § 827](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=827), [Civ. Code § 1942.5](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=1942.5), [Civ. Code § 1947.12](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=1947.12), [CA AG rent caps](https://oag.ca.gov/rentcaps), [File 261020](https://sfgov.legistar.com/LegislationDetail.aspx?ID=8217304&GUID=7EDA4662-EBFB-4AF5-962F-C669B64AA770). Recomputed annual and banked examples via repository checks.
+
+Corrections: owner described two units, not total building unit count; unknown current rents and history now flagged FR-18; notices in the review page were not documented and cannot be marked as passes; the retaliation rule has conditions; federal subsidy rules may apply; historical notice-planner dates no longer purport to be live; Rule 4.12 banked dates added to notice; the source register distinguishes Rule 6.14 from Costa-Hawkins; no-petition does not independently establish no separate notice-copy filing (FR-20); avoid presenting 10% as an official normal; independent audit found legacy row-source warnings and external availability is not tested (FR-19). The 2027 rate, current licence and rent histories remain unknown, and legislation remains pending. No legal review was obtained. All existing automated checks passed locally; `tools/verify_edition.py` reports 25 non-blocking warnings in a preserved edition and `audit_site.py` explicitly does not certify external availability. Only the listed sources were newly re-read in this pass; this is not a claim that all repository claims and external destinations were independently checked.
+
+| Task | Status | Owner | File scope |
+|---|---|---|---|
+| Independent audit and targeted corrections | needs review | `arena/db0bd0a6-rentincreasesf3` | scope above; flags FR-18–20 published |
+| Final integration | in progress | `arena/db0bd0a6-rentincreasesf3` | `COORDINATION.md` |
