@@ -932,4 +932,40 @@ work, and layered its 11 Nov 2026 re-verification on top (see conflict log below
 | I2 | Run all 7 automated gates + privacy sweep on `5c976c4` baseline | in progress | `arena/3cb4d5e1-rentincreasesf3` | (read-only) |
 | I3 | Re-fetch primary official sources on 2026-11-11 and re-verify headline figures line by line | unclaimed | `arena/3cb4d5e1-rentincreasesf3` | `research/verification-log.md`, `research/source-register.md` (append-only) |
 | I4 | Fix any irregularity found; bump verification date to 11 Nov 2026 only if warranted | unclaimed | `arena/3cb4d5e1-rentincreasesf3` | `tools/site_*.py`, `tools/sitedata.py`, regenerated `index.html`, `pages/*.html`, `EXECUTIVE_SUMMARY.md`, `README.md` |
-| I5 | PR → `main`, CI green, merge, confirm Pages `built` + live HTTP 200, record here | unclaimed | `arena/3cb4d5e1-rentincreasesf3` | `COORDINATION.md` | (coord: session 3cb4d5e1 claims final integration & 11 Nov 2026 re-verification)
+| I5 | PR → `main`, CI green, merge, confirm Pages `built` + live HTTP 200, record here | unclaimed | `arena/3cb4d5e1-rentincreasesf3` | `COORDINATION.md` |
+
+While this session's 11 Nov 2026 re-verification was in progress, `c541e9f4` merged PR #37
+(`829f17e`: FR-18..FR-20 corrections, "owner-reported" qualification of building facts,
+`tools/verify_review_regressions.py` + CI gate). `git pull --rebase` stopped twice:
+
+1. `COORDINATION.md` (add/add-style tail conflict): kept the `c541e9f4` section verbatim
+   first, then this session's claim (wording updated to acknowledge PR #37). Nothing discarded.
+2. Commit `5291cf9` (my date-bump + planner recompute): 3 files conflicted, all on one line
+   each — the dashboard lede in `tools/site_pages_core.py`, `index.html`, and the flags
+   table in `pages/flagged.html`. Resolution: kept PR #37's corrected wording everywhere and
+   applied only the date value change (10 → 11 November 2026); took `--theirs` for the two
+   generated HTML files and regenerated them from the merged generators. All other files
+   (`site_pages_ref.py` with FR-18..20 + my RETRIEVED/FR-07/FR-16 notes, `site_pages_rules.py`,
+   `EXECUTIVE_SUMMARY.md`, `README.md`, `verification-log.md`) auto-merged with both
+   sessions' work intact. Rebuilt + all 8 gates PASS (344 rows / 979 links).
+
+### Verification record — `arena/3cb4d5e1` (2026-11-11)
+
+- Re-fetched and read all 28 canonical-register sources on 2026-11-11 (see
+  `research/verification-log.md` rows 36–62): every headline figure matched the live official
+  text; §37.3 subsections re-read a second time (FR-07 re-confirmed); noncompliance quotes
+  re-confirmed (FR-16); all dollar arithmetic recomputed cents-exact.
+- Today-relative planner recomputed for 11 Nov 2026: first reachable >10% date is now
+  9 Feb 2027 (serve in person by 11 Nov, last day); 14 Feb 2027 by mail must go out 11 Nov
+  (last day). `tools/verify_core_site.py` date assertions + footer needle updated; the
+  `verification/` frozen edition keeps its own 10 Nov 2026 date assertion.
+- Irregularities found: none new. Open flags FR-01..FR-20 remain published on
+  `pages/flagged.html`. Preserved editions untouched.
+
+| # | Task | Status |
+|---|---|---|
+| I1 | Claim tasks + record scope | done |
+| I2 | Run all gates + privacy sweep on baseline | done (all passed pre- and post-merge) |
+| I3 | Re-fetch official sources 2026-11-11, re-verify line by line | done (rows 36–62) |
+| I4 | Date bump + planner recompute | done |
+| I5 | PR → main → merge → Pages deploy → record | in progress | (coord: record PR #37 rebase resolution and 11 Nov verification) (coord: record PR #37 rebase resolution and 11 Nov verification)
