@@ -877,3 +877,19 @@ Claimed **2026-11-10** after rebasing onto `origin/main` at `32bcabd` (commit `9
   - <https://kanlerxz87-cyber.github.io/RentincreaseSF3/pages/units.html> — full 6-person `Tenant A–F` chain, `§ 37.3(d)(2)(B)` & `Rule § 6.14` note, clean Unit B table (stray PR #31 rebase text removed), 7-year `13.1%` banked balance on `1 June 2027` + blank 2027–28 rate
   - <https://kanlerxz87-cyber.github.io/RentincreaseSF3/pages/flagged.html> — all 17 flags live (`FR-07`, `FR-15`, `FR-16`, `FR-17` closed/corrected; all open owner-record and official-gap flags published with source links)
 - Nothing remains in progress for `arena/3a2e288e-rentincreasesf3`. Open PRs belonging to other sessions remain untouched.
+
+---
+
+## Session `arena/884be5f9-rentincreasesf3` — privacy disclosure review and current-source refresh (claimed 2026-11-11)
+
+This pass is on the Arena-tracked branch `arena/884be5f9-rentincreasesf3` (fixed for this session).
+The canonical site already existed; this task does not duplicate or replace another session's work.
+
+| # | Task | Status | Owner | File scope |
+|---|---|---|---|---|
+| N1 | Claim this pass and verify current authoritative licensing/rent pages | in progress | `arena/884be5f9` | `COORDINATION.md`, `research/verification-log.md` |
+| N2 | Add verified public-record disclosure warning for Housing Inventory and protect personal details on site | in progress | `arena/884be5f9` | `tools/site_pages_core.py`, `tools/site_pages_ref.py`, generated canonical `index.html`, `pages/*.html` |
+| N3 | Refresh stale notice-date planner for 11 Nov 2026 and run all verification/privacy/build gates | in progress | `arena/884be5f9` | `tools/site_pages_core.py`, generated `pages/process.html`, verification logs |
+| N4 | Final integration and live status check | in progress | `arena/884be5f9` | `COORDINATION.md` |
+
+Claim-date source check: 11 November 2026. Re-fetched [sf.gov rent increase guidance](https://www.sf.gov/learn-about-rent-increases-san-francisco), [sf.gov Housing Inventory](https://www.sf.gov/rent-board-housing-inventory), [sf.gov banked rent increases](https://www.sf.gov/information--banked-rent-increases), and [Legistar File #261020](https://sfgov.legistar.com/LegislationDetail.aspx?ID=8217304&GUID=7EDA4662-EBFB-4AF5-962F-C669B64AA770). These confirm 1.6% for 1 Mar 2026–28 Feb 2027; the Housing Inventory requirement and automatic licence for tenant-occupied property; the 24-full-month condition on banked increases; and File #261020 remains Pending Committee Action. The Housing Inventory page explicitly states submitted information is public and may include owner name/business contact and unit details. Do not publish owner or tenant identifiers on this project site; use a designated business contact where appropriate and review the City's disclosure details before filing.
