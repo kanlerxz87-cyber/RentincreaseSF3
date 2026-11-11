@@ -1295,3 +1295,25 @@ Scope of files this session may edit (everything else is only read, or changed v
 | K5 | Confirm the Rent Board licence / Housing Inventory answer is at the forefront and answers the individual-owner question | **done** — index card 1 and exec summary §1 both lead with it; "individual, not corporation" is answered by building size, not owner form (row 60) | read-only |
 | K6 | Confirm anonymisation (placeholders, no ZIP/neighbourhood/address, dates and amounts unchanged) | **done** — privacy sweep PASS on 108 files; Tenant A–F; amounts $3,995 / $3,150 and dates unchanged | read-only |
 | K7 | Log irregularities / open items; PR → `main`, merge, confirm Pages deploy, record | in progress | `COORDINATION.md` |
+
+### Conflict-resolution log — `arena/6d04c026` (2026-11-11)
+
+Before this session's PR opened, `main` advanced four times via parallel sessions — to `69d2bde`
+(PRs #48, #49, #50, #51; sessions `arena/488b115e-rentincreasesf3`, `arena/0dea38fc-rentincreasesf3`
+and others). This branch was rebased onto `origin/main`; four conflicts arose and **nothing from any
+session was discarded**:
+
+| File | Conflict | Resolution |
+|---|---|---|
+| `COORDINATION.md` | add/add — `arena/0dea38fc`'s task board vs this session's K1–K7 board, both appended at the end | Both sections retained verbatim, `0dea38fc`'s first, this session's after it |
+| `research/verification-log.md` | add/add — `arena/0dea38fc` had already used row numbers **59–95**; this pass had independently used **59–82** | Both sections retained; this pass's rows **renumbered 96–119**, the inline "(row 64)" cross-references updated to "(row 101)". No duplicate row numbers ≥ 59 |
+| `tools/site_pages_ref.py` | `arena/0dea38fc` had already added **FR-26** (rate-table row end-dates); this pass had independently added **FR-26…FR-29** | Flag-ID collision resolved by **renumbering this session's four flags to FR-27…FR-30**. `0dea38fc`'s FR-26 is intact. Cross-references updated in `tools/site_pages_core.py` (units page: FR-27 for the eCFR fix, FR-28 for the banked-only caveat), `README.md` (FR-30) and `EXECUTIVE_SUMMARY.md`. Also kept `0dea38fc`'s dynamic `{nflags}` wording for requirement R-21 in preference to this pass's static text, so the published count can never go stale |
+| `pages/flagged.html`, `pages/requirements.html` | both are build artefacts | Resolved by deleting the conflicted artefacts and re-running `tools/build_dashboard.py`, so the output is generated from the merged source modules and carries both sessions' content. Build verified idempotent afterwards |
+
+While resolving, an early regex over-matched and truncated `tools/site_pages_ref.py`; it was
+reconstructed from `origin/main` plus this session's committed version (`35399f9`) and re-validated
+(`ast.parse`, then all 8 gates). Verified present afterwards: FR-01…FR-30 unique, `0dea38fc`'s FR-26
+and rate-table validation intact, this pass's FR-27…FR-30 intact.
+
+Total flags are now **30** (dynamic counter), and the notice planner, arithmetic, privacy sweep and all
+8 gates pass on the merged tree.
