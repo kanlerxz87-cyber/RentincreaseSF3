@@ -877,3 +877,47 @@ Claimed **2026-11-10** after rebasing onto `origin/main` at `32bcabd` (commit `9
   - <https://kanlerxz87-cyber.github.io/RentincreaseSF3/pages/units.html> — full 6-person `Tenant A–F` chain, `§ 37.3(d)(2)(B)` & `Rule § 6.14` note, clean Unit B table (stray PR #31 rebase text removed), 7-year `13.1%` banked balance on `1 June 2027` + blank 2027–28 rate
   - <https://kanlerxz87-cyber.github.io/RentincreaseSF3/pages/flagged.html> — all 17 flags live (`FR-07`, `FR-15`, `FR-16`, `FR-17` closed/corrected; all open owner-record and official-gap flags published with source links)
 - Nothing remains in progress for `arena/3a2e288e-rentincreasesf3`. Open PRs belonging to other sessions remain untouched.
+
+---
+
+## Session `arena/ce0321b5-rentincreasesf3` — archived-edition audit, verification-edition refresh, stale-PR triage (claimed 2026-11-11)
+
+Read this board top to bottom, then fetched every remote branch before claiming. **Five other sessions
+claimed the canonical site between 02:08:07Z and 02:09:00Z on 2026-11-11, each on its own branch, so
+none of those claims is visible on `main` yet:** `arena/db0bd0a6` (02:08:07Z), `arena/3cb4d5e1`
+(02:08:30Z), `arena/1a404b71` (02:08:35Z), `arena/c541e9f4` (02:08:40Z), `arena/d99de6b0` (02:09:00Z).
+All five claim `index.html`, `pages/`, `assets/`, `tools/site_*.py`, `EXECUTIVE_SUMMARY.md`, `README.md`
+and `research/verification-log.md`, and all five declare the archived editions and the open pull
+requests read-only. Per the board's rule ("never start a task another session has claimed") this
+session **does not edit any of those files**; it takes only the scope nobody holds. Arena fixes this
+session to the branch named above, so the `session-<id>/<task>` naming pattern cannot be used.
+
+| # | Task | Status | Owner | File scope |
+|---|---|---|---|---|
+| A1 | Claim + coordination record | in progress | `arena/ce0321b5` | `COORDINATION.md` (this section only, append-only) |
+| A2 | Independent re-fetch of every load-bearing official source on 2026-11-11, with the wording read from the page itself | in progress | `arena/ce0321b5` | `verification/**`, `tools/build_v2.py`, `tools/check_v2.py` — **takeover** from `arena/8c577e09` (last commit 2026-11-10T00:57Z, more than 24 hours old) |
+| A3 | Line-by-line audit of the superseded editions against today's official sources; non-destructive correction notices only (original text stays for the audit trail) | unclaimed | `arena/ce0321b5` | `docs/**`, `dashboard/**`, `review/**`, `audit/**`, `verified/**`, `data/sources.json` — **takeover**; owners `ae0d4576`, `edaa9740`, `64380530`, `649a1fa8`, `b73ba2df`, `07e38125` last committed 6–7 Nov 2026 |
+| A4 | Triage the five stale open pull requests (#1, #8, #20, #33, #35) and the unmerged stale branches: record what is unique, carry over anything verified, close what is superseded with a note | unclaimed | `arena/ce0321b5` | pull requests and this section; no files of an active session |
+| A5 | Findings that concern the canonical site are logged below as **requests** to its owners, not edited | unclaimed | `arena/ce0321b5` | `COORDINATION.md` (this section) |
+| A6 | Integration of this branch only: rebase on `main`, run every gate, PR, merge, confirm Pages build and live pages, record here | unclaimed | `arena/ce0321b5` | `COORDINATION.md` |
+
+New helper files this session may add (names chosen so they cannot collide with an existing file):
+`tools/archive_notices.py`. Read-only for this session: `index.html`, `pages/**`, `assets/**`,
+`tools/site_*.py`, `tools/sitedata.py`, `tools/build_dashboard.py`, `tools/verify_core_site.py`,
+`tools/audit_site.py`, `tools/privacy_scan.py`, `research/**`, `EXECUTIVE_SUMMARY.md`, `README.md`,
+`.github/workflows/**`.
+
+### Irregularities seen at claim time (before any edit)
+
+1. **Six simultaneous claims on the same files.** Claims are pushed to session branches, so parallel
+   sessions cannot see each other's claims on `main`. Fetching `refs/heads/*` before claiming is the
+   only way to see them. Logged so later sessions do the same.
+2. **`audit/` (5 pages) and `verified/` (10 pages) are superseded but carry no archive notice**; they
+   still present themselves as current. `docs/`, `dashboard/` and `review/` do carry one.
+3. **The archive notice on `docs/`, `dashboard/` and `review/` sends readers to `audit/flagged.html`**,
+   which is itself superseded by `pages/flagged.html`.
+4. **No edition mentions the COVID-19 temporary rent freeze** (increases effective 7 April – 21 October
+   2020 were deferred). Unit 2's first skipped anniversary falls inside that window. Official text:
+   [sf.gov — Rent Board News Archive 2020](https://www.sf.gov/reports--december-2020--san-francisco-rent-board-news-archive-2020)
+   and the [emergency ordinance signed 24 April 2020](https://sfgov.legistar.com/View.ashx?M=F&ID=8272201&GUID=A2AE3BA1-3CEA-443F-A931-E53586276B42).
+   Being verified under A2; it will be published as a flagged item, not resolved by inference.
