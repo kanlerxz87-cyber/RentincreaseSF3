@@ -1066,3 +1066,6 @@ Claimed **2026-11-11**. This branch (`arena/0dea38fc-rentincreasesf3`) is based 
 | W3 | Headline facts corroborated 2026-11-11 (1.6%, license incl. individuals, 30/90-day, 8.8% state cap); log rows 59-61 | done | `research/verification-log.md` |
 | W4 | Pages status `built` via API (egress blocks direct fetch) | done | read-only |
 | W5 | PR → merge → Pages (record below) | in progress | `COORDINATION.md` |
+
+### PR / deploy record — `arena/0dea38fc`
+- PR [#48](https://github.com/kanlerxz87-cyber/RentincreaseSF3/pull/48) MERGED 2026-11-11T04:21:07Z, merge commit `0a25f12`; CI verify PASS; Pages latest build `built`, no error. W1–W5 done. No user-facing content changed.
