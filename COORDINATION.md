@@ -921,3 +921,15 @@ Integration audit on the fixed Arena session branch; earlier completed editions 
 - Validation: rebuilt canonical pages with no freshness diff; privacy scan, core table/link checks (14 canonical pages, 41 tables, 349 rows), repo internal link/anchor audit (70 HTML pages), and all four preserved-edition gates passed. Historical `verified/` gate reported 25 row-source warnings, published as FR-24, not silently treated as verified. Network availability of all external links was not established by these local tests; source reread above was targeted, not a fresh independent line-by-line verification of every archived row.
 
 During rebase, both sets of flags were retained; this session’s additions were renumbered FR-21–FR-25, after PR #37 occupied FR-18–FR-20. Generated HTML was rebuilt from the merged source modules.
+(post-PR #36). While this session worked, session `c541e9f4` merged PR #37 (FR-18..FR-20 corrections +
+`tools/verify_review_regressions.py` CI gate); this session rebased onto `829f17e`, kept all of that
+work, and layered its 11 Nov 2026 re-verification on top (see conflict log below). Open PRs #33 and
+#35 belong to sessions whose claims are >60 minutes old with no new commits; left untouched.
+
+| # | Task | Status | Owner | File scope |
+|---|---|---|---|---|
+| I1 | Claim tasks + record scope | in progress | `arena/3cb4d5e1-rentincreasesf3` | `COORDINATION.md` |
+| I2 | Run all 7 automated gates + privacy sweep on `5c976c4` baseline | in progress | `arena/3cb4d5e1-rentincreasesf3` | (read-only) |
+| I3 | Re-fetch primary official sources on 2026-11-11 and re-verify headline figures line by line | unclaimed | `arena/3cb4d5e1-rentincreasesf3` | `research/verification-log.md`, `research/source-register.md` (append-only) |
+| I4 | Fix any irregularity found; bump verification date to 11 Nov 2026 only if warranted | unclaimed | `arena/3cb4d5e1-rentincreasesf3` | `tools/site_*.py`, `tools/sitedata.py`, regenerated `index.html`, `pages/*.html`, `EXECUTIVE_SUMMARY.md`, `README.md` |
+| I5 | PR → `main`, CI green, merge, confirm Pages `built` + live HTTP 200, record here | unclaimed | `arena/3cb4d5e1-rentincreasesf3` | `COORDINATION.md` | (coord: session 3cb4d5e1 claims final integration & 11 Nov 2026 re-verification)
