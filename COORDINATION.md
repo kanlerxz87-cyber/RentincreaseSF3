@@ -1033,3 +1033,10 @@ Scope: `COORDINATION.md`, `research/verification-log.md` (append), `data/sources
 ### Standing note for owners of the canonical site
 
 Nothing in this pass changes the published content. The flagged items FR-01 … FR-17 and the blank cells they back remain as published on `pages/flagged.html`; they are owner-record facts (Unit B rent history, licence status, FR-02 anniversary, FR-13 voucher, FR-14 building record) and official-source gaps (FR-05 2027–28 rate) that only the property owner or a future sf.gov publication can resolve.
+### PR / deploy record — `arena/e00aaa27`
+
+- **Branch:** `arena/e00aaa27-rentincreasesf3` → `main`. **PR:** [#39](https://github.com/kanlerxz87-cyber/RentincreaseSF3/pull/39) — "Re-verification 2026-11-11: all 28 official sources re-fetched, notice planner rolled forward".
+- **Merge:** **MERGED** 2026-11-11T02:17:27Z, merge commit `a75748ab74c133f1f9f4aebd8806ee0b77652ce7` (`gh pr merge 39 --merge`, no approval wait). CI `Site checks` on the PR head: **success** (all gates incl. new `verify_review_regressions.py`).
+- **GitHub Pages:** build `1358918695` for the merge commit → status **`built`**, error null; `Site checks` on `main` push: **success**.
+- **Live verification (fetched post-deploy 2026-11-11):** <https://kanlerxz87-cyber.github.io/RentincreaseSF3/pages/process.html> renders the licence-first step-by-step (Housing Inventory → licence on effective date → 1.6% calculation → §827/§1013 notice), 25 flags on the Flagged page, research pass 11 November 2026.
+- J1–J4 all **done**. Nothing remains in progress for this session.
