@@ -1067,6 +1067,19 @@ Claimed **2026-11-11**. This branch (`arena/0dea38fc-rentincreasesf3`) is based 
 | W4 | Pages status `built` via API (egress blocks direct fetch) | done | read-only |
 | W5 | PR → merge → Pages (record below) | in progress | `COORDINATION.md` |
 
+## Task board — session `arena/beba4d31-rentincreasesf3` (independent re-verification + integration, 2026-11-11)
+
+Claimed **2026-11-11T04:20Z**. Branch `arena/beba4d31-rentincreasesf3`, branched from `main` at `a12419d` (PR #47 merged). The canonical site (`index.html`, `pages/`), `EXECUTIVE_SUMMARY.md`, the five archived editions and the seven gate scripts already exist and are merged. This session is a **verification + integration pass**: it re-fetches official sources directly (this sandbox has live egress to sf.gov, leginfo.legislature.ca.gov, oag.ca.gov, govinfo.gov, leginfo and api.github.com), checks each published figure and citation line by line, fixes only what is demonstrably wrong against an official source, logs everything it finds in `research/verification-log.md`, and then runs the full gate suite, opens a PR and records the merge + Pages deploy.
+
+| # | Task | Status | File scope | Notes |
+|---|---|---|---|---|
+| B1 | Claim tasks, record scope, push claim | done | `COORDINATION.md` | this section |
+| B2 | Re-fetch and re-verify every official source cited on the canonical pages | done — 16 source groups read in full; log rows 59–74 | read-only for pages; findings → `research/verification-log.md` | direct fetch, not web-search paraphrase |
+| B3 | Line-by-line arithmetic + notice-date re-check of Unit A / Unit B figures | done — all amounts and notice dates recomputed, unchanged | `research/verification-log.md` | recompute from published percentages |
+| B4 | Run all gates (`verify_core_site.py`, `audit_site.py`, `verify_site.py`, `check_site.py`, `verify_edition.py`, `check_v2.py`, `verify_review_regressions.py`, `privacy_scan.py`) | done — 8 gates PASS, build idempotent | read-only | must be green before PR |
+| B5 | Fix only verified errors; flag everything unverifiable on `pages/flagged.html` | done — rate table corrected (FR-26), new gate added | `tools/`, `pages/`, `COORDINATION.md` | no inference, blanks where unconfirmed |
+| B6 | PR → `main`, merge, confirm GitHub Pages deploy, record PR + deploy here | unclaimed | `COORDINATION.md` | no approval wait |
+
 ---
 
 ## Task board — session `arena/488b115e-rentincreasesf3` (independent verification + final integration, 2026-11-11)
@@ -1079,7 +1092,7 @@ Scope (non-overlapping): `COORDINATION.md`, `research/verification-log.md` (appe
 |---|---|---|---|---|
 | S1 | Claim tasks, record scope, push claim | done | `COORDINATION.md` | claim commit `d8f864a` |
 | S2 | Baseline: run all gates on the merged tree, confirm build idempotence | done | read-only | see log below |
-| S3 | Independent verification of every published figure/date/requirement against official sources | done | `research/verification-log.md` | rows 62–79: direct re-reads of 13 official pages/documents; 2 defects found |
+| S3 | Independent verification of every published figure/date/requirement against official sources | done | `research/verification-log.md` | rows 78–95: direct re-reads of 13 official pages/documents; 2 defects found |
 | S4 | Review site usability/completeness against the brief (licence question at the forefront, tables, Flags page) | done | `tools/site_pages_ref.py` | one usability defect fixed (flag order); brief fully covered |
 | S5 | Rebuild, run every gate, PR → `main`, merge, confirm Pages deploy, record result | done | `COORDINATION.md` | see PR/deploy record below |
 
@@ -1122,3 +1135,24 @@ summary with a plain-language step-by-step and the individual-vs-corporate answe
 corporate-vs-individual practice, notice-and-reasons, tenant-lawyer stress test (16 checks), one-unit-vs-
 both discrimination analysis, requirements checklist, source register and the 25-item Flagged page are all
 present, table-formatted and source-linked. Every data row carries an official link or is blank + flagged.
+
+### Merge / conflict resolution — `arena/488b115e` (2026-11-11)
+
+While PR #50 was open, `main` advanced twice: PR #48 (session `arena/0dea38fc`, log rows 59–61) and
+PR #49 (session `arena/beba4d31`, log rows 62–77, plus **FR-26** and a `check_rate_table()` gate). Both
+sessions independently found the rate-table date defects. This branch was rebased/merged onto
+`origin/main` at `b645d82` **keeping all of their work**: their FR-26, their requirements/README count
+(now generated, 26 flags), their row-by-row `OFFICIAL_RATES` transcription gate and their log rows.
+
+Two corrections were applied to the combined result, both verified against Form 571:
+
+1. Their `OFFICIAL_RATES` transcription (and the table it gated) still contained
+   `3/1/84 – 2/29/85`. 29 February 1985 does not exist and Form 571 publishes `3/1/84 – 2/28/85`.
+   Both copies now read 28 February, so the row-by-row gate agrees with the PDF.
+2. FR-26 and their log said the table "showed 45 rows" and was missing the separate
+   `12/8/92 – 2/28/93 (1.6%)` row. Recounting the pre-correction HTML at `a12419d` shows **46 rows,
+   including that row**; the end-dates were wrong, the row count was right. FR-26 now says this, and the
+   log keeps their section intact with this note as the correction (nothing was deleted).
+3. Added `check_rate_calendar()` — each period must parse as a real, contiguous, descending calendar
+   range — because a row-by-row gate cannot catch an error copied into both the table and the
+   transcription, which is exactly what happened. Also added `check_flag_order()`.

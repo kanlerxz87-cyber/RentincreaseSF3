@@ -111,7 +111,7 @@ REQS = [
     ("R-18", "Anonymise all personal information, keep dates and amounts", "Answered — placeholders, no ZIP or neighbourhood published", "pages/flagged.html", "SF_HI"),
     ("R-19", "Every table row must link an official source; unverifiable values blank and flagged", "Canonical rows checked; archived editions have exceptions (FR-24)", "pages/sources.html", "SF_571"),
     ("R-20", "Clean GitHub Pages site, dashboard landing, subpages by category", "Answered", "index.html", "SF_LI"),
-    ("R-21", "Flag irregularities for manual review", "Answered — 25 flags published", "pages/flagged.html", "SF_BANK"),
+    ("R-21", "Flag irregularities for manual review", "Answered — {nflags} flags published", "pages/flagged.html", "SF_BANK"),
     ("R-22", "Coordinate with parallel sessions via COORDINATION.md", "Answered — claim, scope and record logged", "index.html", "SF_HI"),
     ("R-23", "Open a pull request, merge it and confirm the Pages deployment", "Answered — recorded in COORDINATION.md", "index.html", "SF_HI"),
 ]
@@ -136,7 +136,8 @@ def requirements():
     rows = "".join(
         '<tr><td class="nowrap"><b>%s</b></td><td>%s</td><td>%s</td>'
         '<td><a href="../%s">%s</a></td>%s</tr>'
-        % (rid, text, status, dest, labels.get(dest, dest), cell(k))
+        % (rid, text, status.replace("{nflags}", str(len(FLAGS))), dest,
+           labels.get(dest, dest), cell(k))
         for rid, text, status, dest, k in REQS
     )
     body = f"""
@@ -225,7 +226,7 @@ FLAGS = [
      "The 1940 year is owner-reported; two units were described, but the total number of units in the building and their legal status were not established. Coverage turns on a certificate of occupancy before 14 June 1979 and on the unit not being a single-family dwelling or condominium; an unpermitted conversion can change the analysis.",
      "City property record / certificate of occupancy.", "SF_LAWS"),
     ("FR-15", "Earlier editions of this site contained claims now corrected", "Corrected",
-     "Corrections applied: the Unit A anniversary was once shown as 1 April; banking was once described as “capped at three years”; a Unit B figure of 11.5% was once presented without the annual component that makes the total 13.1%; the pre-9-November-2026 status of File #261020 was stated without the Rent Board's new notice; and five end-dates in the 1982–2027 rate table were written as 29 February in years that are not leap years (1985, 1997, 2001, 2005, 2013) and have been corrected to 28 February to match Form 571. Prior editions remain online for audit but are no longer the canonical pages.",
+     "Corrections applied: the Unit A anniversary was once shown as 1 April; banking was once described as “capped at three years”; a Unit B figure of 11.5% was once presented without the annual component that makes the total 13.1%; the pre-9-November-2026 status of File #261020 was stated without the Rent Board's new notice; and six end-dates in the 1982–2027 rate table did not match Form 571 — five written as 29 February in years that are not leap years (1985, 1997, 2001, 2005, 2013), corrected to 28 February, and the 1995–96 period written as ending 28 February 1996, corrected to 29 February 1996 — see FR-26. Prior editions remain online for audit but are no longer the canonical pages.",
      "This page and the corrected pages are the canonical record.", "SF_LI"),
     ("FR-16", "Non-compliance consequence wording", "Verified — closed 10 Nov 2026",
      "The Notice of Owner Noncompliance page was re-retrieved on 10 November 2026 and is now quoted directly: a notice that goes into effect while the unit is unlicensed “may be null and void (this may apply for multiple years)”, and the tenant “may be entitled to a rent refund”. It also confirms the 1 July 2022 / 1 March 2023 start dates, paper filing fallback, and the Tenant Summary Petition (Form 518) route while an increase has not yet taken effect, alongside Admin. Code § 37.3(b)(5).",
@@ -257,6 +258,9 @@ FLAGS = [
     ("FR-20", "Filing a copy of an ordinary increase notice", "Unverified",
      "The cited official pages establish that ordinary annual and banked increases need no approval petition, and that the licence need not accompany the tenant notice. Those propositions do not themselves establish whether a copy of the notice must be filed separately.",
      "Confirm any separate filing obligation with the Rent Board; other types of increases have distinct procedures.", "SF_HI"),
+    ("FR-26", "Rate table row end-dates", "Corrected 11 Nov 2026",
+     "The 1982–2027 table on <b>Rules &amp; caps</b> had six row end-dates that did not match document 571: five fell on 29 February in a year that is not a leap year (3/1/84 – <b>2/29/85</b>, 3/1/96 – <b>2/29/97</b>, 3/1/00 – <b>2/29/01</b>, 3/1/04 – <b>2/29/05</b>, 3/1/12 – <b>2/29/13</b>), which are not real dates, and the 1995–96 period ended <b>2/28/96</b> in a leap year that document 571 runs to <b>2/29/96</b>. All 46 rows were published throughout — re-counted from the pre-correction HTML — and every percentage was already correct; an earlier draft of this flag also said the Board's separate <b>12/8/92 – 2/28/93 (1.6%)</b> row was missing, which the same recount disproved. The table is now compared row by row against a transcription of the PDF, and each period must parse as a real, contiguous, descending calendar range, so an impossible date fails the build.",
+     "None — corrected against the Rent Board's document 571 and re-checked row by row.", "SF_571"),
 ]
 
 

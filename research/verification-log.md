@@ -179,6 +179,79 @@ rebase onto `main`), #35 (stray-text fix; stray text is absent from `main` — s
 
 No content changes; flagged items FR-01…FR-25 remain published and non-blocking.
 
+---
+
+## Direct re-fetch pass — 2026-11-11, session `arena/beba4d31-rentincreasesf3`
+
+Method: this sandbox has live egress to sf.gov, leginfo.legislature.ca.gov, oag.ca.gov, govinfo.gov,
+justice.gov, codelibrary.amlegal.com and sfgov.legistar.com, so every headline source was fetched and read
+in full again (not paraphrased from a search result). Rows 62–77.
+
+| # | Assertion on the site | Source fetched and read in this pass | Result |
+|---|---|---|---|
+| 62 | Allowable increase **1.6%** for 3/1/2026–2/28/2027; prior year **1.4%**; formula 60% of Bay Area CPI | `sf.gov/learn-about-rent-increases-san-francisco` ("The allowed rent increase percentage in San Francisco is 1.6%. The percentage is effective March 1, 2026 through February 28, 2027.") | Confirmed verbatim |
+| 63 | Complete rate table 1982–2027, 46 rows | Document **571** PDF (`sf.gov/documents/34344/571_Allowable_Annual_Increases_26-27_1.pdf`), full table parsed | **5 row end-dates were wrong and the 12/8/92 row was missing** → corrected, FR-26. All percentages were already correct |
+| 64 | Notice 30 days ≤10%, 90 days >10%, combined with other increases in the prior 12 months | Civ. Code § 827(b)(2)–(3) full text | Confirmed verbatim |
+| 65 | +5 calendar days for mail within California; 10 outside; 2 court days overnight; mailed copy needs a date/place notation | CCP § 1013(a)–(d) full text | Confirmed verbatim |
+| 66 | Banking: 24-full-month condition on the banked-increases page; no limit; no expiry; not compounded; not prorated; partial increases bankable; no carry-over to a new tenant | `sf.gov/information--banked-rent-increases` | Confirmed verbatim; the 12-month wording of Rule 4.12(a) also still stands → FR-03 remains an open irregularity |
+| 67 | Rule 4.12(b): the banked portion and its dates must be given, and failure "shall not render the increase null and void" | Rent Board Rules Part IV (Rule 4.10 and Rule 4.12) on sf.gov | Confirmed verbatim |
+| 68 | Licence: all owners must report; licence auto-generated for tenant-occupied units; must be in effect **on the effective date**; 1 March annual deadline; no monetary penalty; reporting is free; licence need not accompany the notice | `sf.gov/rent-board-housing-inventory` | Confirmed verbatim |
+| 69 | Unlicensed notice "may be null and void (this may apply for multiple years)"; tenant "may be entitled to a rent refund"; Forms 516C / 518 | `sf.gov/notice-of-owner-noncompliance-with-housing-inventory` | Confirmed verbatim |
+| 70 | Rent Board Fee is separate: **$59.00** per dwelling unit 2026-27, due 1 March, 5% monthly penalty capped at 15%, 50% = **$29.50** recoverable, 2027 exemption window closes **14 December 2026** | `sf.gov/rent-board-fee` | Confirmed verbatim |
+| 71 | No petition for ordinary annual/banked increases; six petition types listed | Form 571 ("without filing a petition at the Rent Board") and `sf.gov/landlord-petitions-and-passthroughs` | Confirmed |
+| 72 | § 37.3(a)(1) 60%-of-CPI formula with a 7% ceiling and the § 37.15 licence condition; (a)(2) banking since 1 April 1982; (a)(8) petition above the allowance; (a)(10) voucher rules; (a)(11)(A)–(C) additional occupants; (b)(1)–(5) notice breakdown and null-and-void rule; (d)(2)(B) partial-occupancy carve-out | San Francisco Administrative Code § 37.3, full section text (American Legal) | Confirmed; subsection numbering matches the site |
+| 73 | § 6.14 / Costa-Hawkins: unlimited increase only when the **last** original occupant vacates; a co-tenant is never subject to it; 6.14 notice "generally sixty days is considered reasonable" | `sf.gov/information--rent-increases-under-section-614-and-costa-hawkins` | Confirmed; the site's partial-occupancy conclusion is consistent |
+| 74 | Special-circumstances petition: "The mere fact that a long-standing tenant is paying significantly less than market rent is not considered an extraordinary circumstance" | `sf.gov/information/topic-no-323-...` (served this pass from `.../information--special-circumstances-petitions-based-rents-comparable-units`) | Confirmed verbatim |
+| 75 | AB 1482 cap **8.8%** for the San Francisco area from 1 Aug 2026; local cap controls where lower (§ 1947.12(d)(3)); new-tenancy initial rate allowed (§ 1947.12(b)) | `oag.ca.gov/rentcaps` table and Civ. Code § 1947.12 full text | Confirmed verbatim |
+| 76 | FEHA protected characteristics (incl. source of income, gender identity/expression, military status, genetic information) and FHA § 3604(b) terms-and-conditions language | Gov. Code § 12955 full text; 42 U.S.C. § 3604 (govinfo, U.S. Code 2023) | Confirmed verbatim |
+| 77 | File #261020: introduced 9/15/2026, "Pending Committee Action", 10%/yr combined banked + capital-improvement cap for three years; Rent Board posted a 9 Nov 2026 notice that it "has not been enacted and is subject to change" | `sfgov.legistar.com` File #261020 detail page; both Rent Board pages | Confirmed verbatim |
+
+Also re-read and confirmed in this pass: `sf.gov/learn-about-san-francisco-rental-laws` (13 June 1979
+coverage threshold and the exemption list), `sf.gov/tenant-petitions` ("we do not adjudicate ... harassment,
+discrimination and retaliation"), the Rent Board's 16 Oct 2024 algorithmic-device release (§ 37.10C,
+effective 14 October 2024), and the DOJ release of 7 January 2025 (six landlords, more than 1.3 million
+units, 43 states and DC).
+
+Arithmetic re-computed in this pass and unchanged: 3,995.00 × 1.6% = 63.92 → 4,058.92; × 3.0% = 119.85 →
+4,114.85; × 1.4% = 55.93 → 4,050.93; 3,150.00 × 1.6% = 50.40 → 3,200.40; × 10.0% = 315.00 → 3,465.00;
+× 11.5% = 362.25 → 3,512.25; × 13.1% = 412.65 → 3,562.65. Banked sum 1.8 + 0.7 + 2.3 + 3.6 + 1.7 + 1.4 =
+11.5; + 1.6 = 13.1. Notice dates re-checked: 1 Feb 2027 − 30 = 2 Jan 2027; − 35 = 28 Dec 2026; 1 Feb 2027 −
+90 = 3 Nov 2026.
+
+### Irregularities found in this pass
+
+1. **Rate table (corrected, FR-26).** On `pages/laws.html` five rows carried an end date that does not
+   match document 571 — 3/1/12–**2/29/13**, 3/1/04–**2/29/05** and 3/1/00–**2/29/01** (29 February in
+   non-leap years), 3/1/96–**2/29/97** (same), and 3/1/95–**2/28/96** (28 February in a leap year) — and
+   the Board's separate **12/8/92 – 2/28/93 (1.6%)** row was missing, so 45 rows were shown where the PDF
+   has 46. Percentages were all correct. Fixed in `tools/site_pages_rules.py`; a new build gate,
+   `check_rate_table()` in `tools/verify_core_site.py`, compares all 46 published rows against the PDF
+   transcription in order and fails the build on any drift (proved by reverting one date and watching it fail).
+2. **Hard-coded flag count.** The requirements table said "25 flags published" as fixed text while the
+   flagged page counted dynamically, so the two would disagree as soon as a flag was added. Both now read
+   the list length (26 after FR-26).
+3. No figure, percentage, dollar amount, statutory quotation or notice date on the canonical pages was
+   found to be wrong. FR-01 … FR-25 remain as published; FR-03 (12-month vs 24-month banking wording),
+   FR-05 (2027–28 rate unpublished), FR-06 (File #261020 not law), FR-11 (signature not specified), FR-13
+   (voucher status), FR-14/FR-18 (building record), FR-20 (separate notice-copy filing) and FR-22/FR-23
+   (no tenant-lawyer approval; no actual records) stay open and cannot be closed from official sources.
+
+### Sources that could not be re-fetched in this pass
+
+`calcivilrights.ca.gov` and `hud.gov` were not reachable from this sandbox on 2026-11-11 (connection
+refused, not a 404). Both were fetched directly by earlier sessions and their content is quoted on the
+site; the rule they support (FEHA administrative complaints; HUD complaints) is also established by
+Gov. Code § 12955 and 42 U.S.C. § 3604, which were re-read this pass. No published claim depends on the
+unreachable pages alone.
+
+> **Correction to the two records above (session `arena/488b115e`, 2026-11-11).** The `arena/beba4d31`
+> gate and FR-26 still transcribed the 1984–85 period as ending 29 February 1985; Form 571 publishes
+> `3/1/84 – 2/28/85`, and both the table and the transcription are now corrected. Its statement that the
+> table "showed 45 rows" and lacked the separate `12/8/92 – 2/28/93` row was also re-checked against the
+> pre-correction HTML at `a12419d`: the page published **46** rows including that row. The defects were
+> the six end-dates, not the row count. Nothing from either record was deleted; a calendar-parsing gate was
+> added so an impossible date cannot pass even if it is copied into both the table and its transcription.
+
 # Independent line-by-line verification pass — 2026-11-11 (session `arena/488b115e-rentincreasesf3`)
 
 Branch == `main` at `a12419d` (PR #47 merged). Unlike the pass above, **this sandbox could fetch the
@@ -189,24 +262,24 @@ found and corrected; everything else matched.
 
 | # | Assertion published on the site | Direct check performed 2026-11-11 | Result |
 |---|---|---|---|
-| 62 | Allowable annual increase 1.6% for 3/1/2026–2/28/2027; 1.4% for 3/1/2025–2/28/2026 | [sf.gov — Learn about rent increases](https://www.sf.gov/learn-about-rent-increases-san-francisco) ("The allowed rent increase percentage in San Francisco is 1.6% … effective March 1, 2026 through February 28, 2027"; worked examples use 1.4% for 1 June 2025); [Form 571 PDF](https://www.sf.gov/documents/34344/571_Allowable_Annual_Increases_26-27_1.pdf) parsed from the PDF text | Consistent |
-| 63 | Complete 1982–2027 rate table: 46 rows, each with its official period and percentage | Form 571 PDF text compared **row by row, programmatically**, against `RATES` in `tools/site_pages_rules.py` | **6 defects found and fixed** — see irregularities 1 and 2 |
-| 64 | Licence: all owners report into the Housing Inventory; licence auto-generated for tenant-occupied units; must be in effect on the **effective date**; 1 March annual deadline; 1–9 units and condominiums from 1 March 2023 (10+ units from 1 July 2022); no monetary penalty for late filing; licence need not accompany the notice; reporting does not obtain a Rent Board Fee exemption | [sf.gov — The Rent Board Housing Inventory](https://www.sf.gov/rent-board-housing-inventory) read in full | Consistent (each quoted phrase appears on the page) |
-| 65 | Banking: 24-month condition; no cap; no expiry during the tenancy; prior-owner transfer; no carry-over to a new tenant; additive, never compounded or prorated; may be combined with the annual increase; notice must state the banked part | [sf.gov — Banked rent increases](https://www.sf.gov/information--banked-rent-increases) read in full | Consistent |
-| 66 | Rule § 4.12(b): omitting the banked dates "shall not render the increase null and void" (so the notice defect is not automatically fatal) | [Part IV Rules §§ 4.10–4.12](https://www.sf.gov/reports--december-2022--rent-board-rules-and-regulations-part-iv-rent-increases-not-requiring) § 4.12(b) read verbatim; § 4.10(b) also read (nonconforming notice void "unless the amount requested equals no more than the allowable annual and banked rent increase(s)") | Consistent |
-| 67 | Rent Board Fee is separate from the licence: $59.00 per dwelling unit for 2026–27, due 1 March, 5% monthly penalty capped at 15%, 50% ($29.50) recoverable, 2027 exemption window closes 14 December 2026 | [sf.gov — The Rent Board Fee](https://www.sf.gov/rent-board-fee) read in full | Consistent |
-| 68 | Unlicensed increase may be "null and void (this may apply for multiple years)", tenant "may be entitled to a rent refund", Form 516C after the effective date and Form 518 before it | [sf.gov — Notice of Owner Noncompliance with Housing Inventory](https://www.sf.gov/notice-of-owner-noncompliance-with-housing-inventory) read in full | Consistent |
-| 69 | AB 1482 statewide cap 8.8% for the San Francisco area 1 Aug 2026 – 31 Jul 2027 (6.3% the year before); local caps displace it where lower; San Francisco row: one increase of up to 60% of CPI, 1.6% for 3/1/26–2/28/27, banking allowed | [oag.ca.gov — Limits on Rent Increases](https://oag.ca.gov/rentcaps), both the statewide table and the San Francisco County row | Consistent |
-| 70 | File #261020 status "Pending Committee Action", introduced 15 September 2026, Land Use and Transportation Committee, 10%/yr proposed cap on combined banked + capital-improvement increases | [Legistar File #261020](https://sfgov.legistar.com/LegislationDetail.aspx?ID=8217304&GUID=7EDA4662-EBFB-4AF5-962F-C669B64AA770) read directly (status, title, history "ASSIGNED UNDER 30 DAY RULE") | Consistent |
-| 71 | § 37.3(a)(1): 60% of the published CPI change, 7% ceiling, and the licence under § 37.15; § 37.3(a)(2) banking since 1 April 1982 | [SF Admin. Code § 37.3](https://codelibrary.amlegal.com/codes/san_francisco/latest/sf_admin/0-0-0-70881) § 37.3(a)(1)–(2) read verbatim | Consistent |
-| 72 | AB 1482 does not govern where a local ordinance restricts increases to a lower amount; Costa-Hawkins does not reach a partial change of occupancy while an original occupant remains | [Civ. Code § 1947.12](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=1947.12) (d)(3) and [§ 1954.53](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=1954.53) (d)(2)–(3) read verbatim | Consistent |
-| 73 | Notice: 30 days if ≤10%, 90 days if >10%, measured against the rent charged at any time in the prior 12 months, in person or by mail under CCP § 1013 | [Civ. Code § 827](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=827) (b)(1)–(3) read verbatim | Consistent |
-| 74 | Coverage: units built on or before 13 June 1979 generally have rent control and eviction protection; single-family dwellings and most condominiums excluded; full list of wholly exempt units | [sf.gov — Learn about San Francisco rental laws](https://www.sf.gov/learn-about-san-francisco-rental-laws) read in full | Consistent |
-| 75 | Special-circumstances (comparable-rent) petition: "The mere fact that a long-standing tenant is paying significantly less than market rent is not considered an extraordinary circumstance"; petition must be filed before the notice | [sf.gov — Special Circumstances Petitions](https://www.sf.gov/information--special-circumstances-petitions-based-rents-comparable-units) read in full | Consistent |
-| 76 | DOJ suit against six large landlords over algorithmic pricing, filed/announced 7 January 2025 | [justice.gov press release 25-21](https://www.justice.gov/archives/opa/pr/justice-department-sues-six-large-landlords-algorithmic-pricing-scheme-harms-millions) read directly | Consistent |
-| 77 | Notice-date planner arithmetic: 1 Feb 2027 −30 d = 2 Jan 2027 (−35 d = 28 Dec 2026); −90 d = 3 Nov 2026 (−95 d = 29 Oct 2026); 8 Feb 2027 −90 d = 10 Nov 2026; 14 Feb 2027 −90 d = 16 Nov 2026 (−95 d = 11 Nov 2026) | Recomputed in `verify_core_site.py` and re-checked by hand | Consistent |
-| 78 | Every published dollar figure: 3,995 × 1.6% = 63.92 → 4,058.92; 3,995 × 3.0% = 119.85 → 4,114.85; 3,150 × 1.6% = 50.40 → 3,200.40; 11.5% = 362.25 → 3,512.25; 13.1% = 412.65 → 3,562.65; 10.0% = 315.00 → 3,465.00; banked sum 1.8+0.7+2.3+3.6+1.7+1.4 = 11.5 and +1.6 = 13.1 | Recomputed from the published percentages (no rounding up) | Consistent |
-| 79 | Build idempotent; all gates pass after the corrections | `build_dashboard.py` re-run twice (no diff), then `privacy_scan.py` (108 files), `verify_core_site.py` (14 pages / 41 tables / 350 rows / 988 links), `audit_site.py`, `verify_site.py`, `check_site.py`, `verify_edition.py`, `check_v2.py`, `verify_review_regressions.py` | PASS |
+| 78 | Allowable annual increase 1.6% for 3/1/2026–2/28/2027; 1.4% for 3/1/2025–2/28/2026 | [sf.gov — Learn about rent increases](https://www.sf.gov/learn-about-rent-increases-san-francisco) ("The allowed rent increase percentage in San Francisco is 1.6% … effective March 1, 2026 through February 28, 2027"; worked examples use 1.4% for 1 June 2025); [Form 571 PDF](https://www.sf.gov/documents/34344/571_Allowable_Annual_Increases_26-27_1.pdf) parsed from the PDF text | Consistent |
+| 79 | Complete 1982–2027 rate table: 46 rows, each with its official period and percentage | Form 571 PDF text compared **row by row, programmatically**, against `RATES` in `tools/site_pages_rules.py` | **6 defects found and fixed** — see irregularities 1 and 2 |
+| 80 | Licence: all owners report into the Housing Inventory; licence auto-generated for tenant-occupied units; must be in effect on the **effective date**; 1 March annual deadline; 1–9 units and condominiums from 1 March 2023 (10+ units from 1 July 2022); no monetary penalty for late filing; licence need not accompany the notice; reporting does not obtain a Rent Board Fee exemption | [sf.gov — The Rent Board Housing Inventory](https://www.sf.gov/rent-board-housing-inventory) read in full | Consistent (each quoted phrase appears on the page) |
+| 81 | Banking: 24-month condition; no cap; no expiry during the tenancy; prior-owner transfer; no carry-over to a new tenant; additive, never compounded or prorated; may be combined with the annual increase; notice must state the banked part | [sf.gov — Banked rent increases](https://www.sf.gov/information--banked-rent-increases) read in full | Consistent |
+| 82 | Rule § 4.12(b): omitting the banked dates "shall not render the increase null and void" (so the notice defect is not automatically fatal) | [Part IV Rules §§ 4.10–4.12](https://www.sf.gov/reports--december-2022--rent-board-rules-and-regulations-part-iv-rent-increases-not-requiring) § 4.12(b) read verbatim; § 4.10(b) also read (nonconforming notice void "unless the amount requested equals no more than the allowable annual and banked rent increase(s)") | Consistent |
+| 83 | Rent Board Fee is separate from the licence: $59.00 per dwelling unit for 2026–27, due 1 March, 5% monthly penalty capped at 15%, 50% ($29.50) recoverable, 2027 exemption window closes 14 December 2026 | [sf.gov — The Rent Board Fee](https://www.sf.gov/rent-board-fee) read in full | Consistent |
+| 84 | Unlicensed increase may be "null and void (this may apply for multiple years)", tenant "may be entitled to a rent refund", Form 516C after the effective date and Form 518 before it | [sf.gov — Notice of Owner Noncompliance with Housing Inventory](https://www.sf.gov/notice-of-owner-noncompliance-with-housing-inventory) read in full | Consistent |
+| 85 | AB 1482 statewide cap 8.8% for the San Francisco area 1 Aug 2026 – 31 Jul 2027 (6.3% the year before); local caps displace it where lower; San Francisco row: one increase of up to 60% of CPI, 1.6% for 3/1/26–2/28/27, banking allowed | [oag.ca.gov — Limits on Rent Increases](https://oag.ca.gov/rentcaps), both the statewide table and the San Francisco County row | Consistent |
+| 86 | File #261020 status "Pending Committee Action", introduced 15 September 2026, Land Use and Transportation Committee, 10%/yr proposed cap on combined banked + capital-improvement increases | [Legistar File #261020](https://sfgov.legistar.com/LegislationDetail.aspx?ID=8217304&GUID=7EDA4662-EBFB-4AF5-962F-C669B64AA770) read directly (status, title, history "ASSIGNED UNDER 30 DAY RULE") | Consistent |
+| 87 | § 37.3(a)(1): 60% of the published CPI change, 7% ceiling, and the licence under § 37.15; § 37.3(a)(2) banking since 1 April 1982 | [SF Admin. Code § 37.3](https://codelibrary.amlegal.com/codes/san_francisco/latest/sf_admin/0-0-0-70881) § 37.3(a)(1)–(2) read verbatim | Consistent |
+| 88 | AB 1482 does not govern where a local ordinance restricts increases to a lower amount; Costa-Hawkins does not reach a partial change of occupancy while an original occupant remains | [Civ. Code § 1947.12](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=1947.12) (d)(3) and [§ 1954.53](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=1954.53) (d)(2)–(3) read verbatim | Consistent |
+| 89 | Notice: 30 days if ≤10%, 90 days if >10%, measured against the rent charged at any time in the prior 12 months, in person or by mail under CCP § 1013 | [Civ. Code § 827](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=827) (b)(1)–(3) read verbatim | Consistent |
+| 90 | Coverage: units built on or before 13 June 1979 generally have rent control and eviction protection; single-family dwellings and most condominiums excluded; full list of wholly exempt units | [sf.gov — Learn about San Francisco rental laws](https://www.sf.gov/learn-about-san-francisco-rental-laws) read in full | Consistent |
+| 91 | Special-circumstances (comparable-rent) petition: "The mere fact that a long-standing tenant is paying significantly less than market rent is not considered an extraordinary circumstance"; petition must be filed before the notice | [sf.gov — Special Circumstances Petitions](https://www.sf.gov/information--special-circumstances-petitions-based-rents-comparable-units) read in full | Consistent |
+| 92 | DOJ suit against six large landlords over algorithmic pricing, filed/announced 7 January 2025 | [justice.gov press release 25-21](https://www.justice.gov/archives/opa/pr/justice-department-sues-six-large-landlords-algorithmic-pricing-scheme-harms-millions) read directly | Consistent |
+| 93 | Notice-date planner arithmetic: 1 Feb 2027 −30 d = 2 Jan 2027 (−35 d = 28 Dec 2026); −90 d = 3 Nov 2026 (−95 d = 29 Oct 2026); 8 Feb 2027 −90 d = 10 Nov 2026; 14 Feb 2027 −90 d = 16 Nov 2026 (−95 d = 11 Nov 2026) | Recomputed in `verify_core_site.py` and re-checked by hand | Consistent |
+| 94 | Every published dollar figure: 3,995 × 1.6% = 63.92 → 4,058.92; 3,995 × 3.0% = 119.85 → 4,114.85; 3,150 × 1.6% = 50.40 → 3,200.40; 11.5% = 362.25 → 3,512.25; 13.1% = 412.65 → 3,562.65; 10.0% = 315.00 → 3,465.00; banked sum 1.8+0.7+2.3+3.6+1.7+1.4 = 11.5 and +1.6 = 13.1 | Recomputed from the published percentages (no rounding up) | Consistent |
+| 95 | Build idempotent; all gates pass after the corrections | `build_dashboard.py` re-run twice (no diff), then `privacy_scan.py` (108 files), `verify_core_site.py` (14 pages / 41 tables / 350 rows / 988 links), `audit_site.py`, `verify_site.py`, `check_site.py`, `verify_edition.py`, `check_v2.py`, `verify_review_regressions.py` | PASS |
 
 ## Irregularities found in this pass
 
