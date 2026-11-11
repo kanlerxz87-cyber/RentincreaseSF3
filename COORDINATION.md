@@ -1052,3 +1052,17 @@ Nothing in this pass changes the published content. The flagged items FR-01 … 
 - **GitHub Pages:** `pages-build-deployment` run `42945212572` **success**; Pages API latest build for `dda605e` → status **`built`**, duration 27,042 ms, started 2026-11-11T02:19:21Z. Live site: <https://kanlerxz87-cyber.github.io/RentincreaseSF3/> (HTTP verification of github.io is not possible from this sandbox; deploy status confirmed via the GitHub Pages API and the successful Actions run).
 - **What this pass changed on the live site:** nothing user-facing. `data/sources.json` `branch` metadata corrected to `main`; records added to `COORDINATION.md` and `research/verification-log.md`. The canonical pages, executive summary, flags (FR-01…FR-25) and all preserved editions are exactly as merged by the other sessions.
 - Nothing remains in progress for `arena/8f87abd1-rentincreasesf3`. Open PRs belonging to other sessions remain untouched.
+
+---
+
+## Task board — session `arena/0dea38fc-rentincreasesf3` (independent confirmation pass, 2026-11-11)
+
+Claimed **2026-11-11**. This branch (`arena/0dea38fc-rentincreasesf3`) is based on `main` at `a12419d` (PR #47 merged). The canonical site, executive summary and all preserved editions are complete and merged by prior sessions; this session performs an **independent confirmation pass only** — it does not rewrite canonical content unless a verified defect is found. Scope: `COORDINATION.md` (this section + records), `research/verification-log.md` (append). Any canonical-content fix, if needed, will be logged here first.
+
+| # | Task | Status | File scope |
+|---|---|---|---|
+| W1 | Claim tasks, record scope, push claim | in progress | `COORDINATION.md` |
+| W2 | Run all 7 gates on merged tree (privacy, core, audit, editions) | unclaimed | read-only |
+| W3 | Independently corroborate headline facts against official sources (sf.gov, leginfo, Legistar) | unclaimed | `research/verification-log.md` |
+| W4 | Verify live site + Pages status via GitHub API | unclaimed | read-only |
+| W5 | PR → `main`, CI green, merge, confirm Pages build, record result | unclaimed | `COORDINATION.md` |
