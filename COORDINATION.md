@@ -963,3 +963,15 @@ Corrections: owner described two units, not total building unit count; unknown c
 - Integration is complete with needs-review flags preserved. Historical archive source-link warnings, unverified owner facts, notice-copy filing, lease restrictions and pending legislation remain explicitly flagged; no legal review or full new line-by-line audit of every preserved edition was performed.
 
 **Fourth conflict log:** PR #43 landed while recording PR #41; preserved both PR and deployment records.
+
+## Task board — session `arena/e00aaa27-rentincreasesf3` (fresh line-by-line re-verification, 2026-11-11)
+
+Claimed **2026-11-11**. This session re-verifies the canonical site (`index.html` + `pages/*.html`) line by line against official sources fetched on 2026-11-11, recomputes every published figure and notice date, rolls the notice-date planner forward from 10 Nov to 11 Nov 2026 (the "first date reachable" for a >10% increase moves from 8 Feb to 9 Feb 2027), checks the live GitHub Pages deployment, and performs final integration (PR → merge → Pages deploy → record). No other session is mid-work on these files; earlier editions (`docs/`, `dashboard/`, `review/`, `audit/`, `verified/`, `verification/`) are preserved untouched.
+
+| # | Task | Status | Owner | File scope |
+|---|---|---|---|---|
+| J1 | Claim tasks + record scope | done | `arena/e00aaa27-rentincreasesf3` | `COORDINATION.md` |
+| J2 | Re-fetch & verify primary official sources on 2026-11-11 (sf.gov, leginfo, amlegal §37.3, oag.ca.gov, sfgov.legistar.com, portal) | in progress | `arena/e00aaa27-rentincreasesf3` | `research/verification-log.md` (new rows) |
+| J3 | Roll canonical verification date + notice-date planner to 11 Nov 2026; rebuild; run all gates | unclaimed | `arena/e00aaa27-rentincreasesf3` | `tools/site_layout.py`, `tools/site_pages_core.py`, `tools/site_pages_ref.py`, `tools/verify_core_site.py`, regenerated `index.html`, `pages/*.html`, `EXECUTIVE_SUMMARY.md`, `README.md` |
+| J4 | Final integration: PR → main → merge → confirm GitHub Pages deploy → record here | unclaimed | `arena/e00aaa27-rentincreasesf3` | `COORDINATION.md` |
+
