@@ -30,8 +30,8 @@ PAGES = {
     "pages/review.html": rules.review,
     "pages/discrimination.html": rules.discrimination,
     "pages/open-questions.html": decide.open_questions,
-    "pages/suggestions.html": decide.suggestions,
     "pages/requirements.html": ref.requirements,
+    "pages/suggestions.html": ref.suggestions,
     "pages/sources.html": ref.sources,
     "pages/flagged.html": ref.flagged,
 }

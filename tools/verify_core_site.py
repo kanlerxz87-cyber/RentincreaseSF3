@@ -332,7 +332,7 @@ def check_decision_pages():
             ERRORS.append("open questions: an unanswerable row must read as blank, not: %s" % row[1])
     for page_name, needles in (
             ("open-questions.html", ("Decision readiness", "blocking questions", "Blank", "Suggested order of work")),
-            ("suggestions.html", ("Nothing on this page has been implemented", "Register of proposals",
+            ("suggestions.html", ("Nothing here has been implemented", "Register of proposals",
                                    "Bundle paths", "Unanswered"))):
         text = (ROOT / "pages" / page_name).read_text(encoding="utf-8")
         for needle in needles:

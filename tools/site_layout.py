@@ -215,7 +215,7 @@ NAV = [
     ("pages/practice.html", "Market practice"),
     ("pages/notice.html", "Notice &amp; reasons"),
     ("pages/review.html", "Tenant-lawyer test"),
-    ("pages/suggestions.html", "Site suggestions"),
+    ("pages/suggestions.html", "Suggestions &amp; decision path"),
     ("pages/flagged.html", "Flagged"),
 ]
 
@@ -231,7 +231,7 @@ ALL_PAGES = [
     ("pages/review.html", "Tenant-lawyer stress test"),
     ("pages/discrimination.html", "One unit or both units?"),
     ("pages/open-questions.html", "Decision readiness — questions to answer first"),
-    ("pages/suggestions.html", "Site improvement suggestions (for review)"),
+    ("pages/suggestions.html", "Suggestions &amp; decision path (review before implementing)"),
     ("pages/requirements.html", "Requirements checklist"),
     ("pages/sources.html", "Sources &amp; verification register"),
     ("pages/flagged.html", "Flagged for review"),
@@ -255,6 +255,7 @@ def page(filename, title, body, desc="", active=None):
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
 <title>{title} — Rental Increase SF</title>
 <meta name="description" content="{desc}">
 <link rel="stylesheet" href="{up}assets/style.css">

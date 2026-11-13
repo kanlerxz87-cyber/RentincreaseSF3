@@ -213,7 +213,7 @@ UNANSWERABLE = [
      "The official pages establish that no approval petition is needed and that the licence need not accompany the notice; neither statement settles a separate filing duty. Published as FR-20 rather than inferred.",
      ("SF_HI", "SF_BANK")),
     ("Whether the City expects a business registration number for a two-unit rental",
-     "<b>Blank — flagged FR-33</b>",
+     "<b>Blank — flagged FR-36</b>",
      "The Housing Inventory asks for “the business registration number for the unit, <i>if any</i>”, which neither requires nor excuses one for this case. Ask the Rent Board rather than assume.",
      ("SF_HI",)),
     ("Whether any specific increase would be “approved” in advance",
@@ -485,11 +485,12 @@ def suggestions():
     n = len(SUGGESTIONS)
     body = f"""
 <div class="card">
-  <h1>Site improvement suggestions — for owner review</h1>
-  <p class="lede">A dedicated register of proposals for making this site more useful to the decision it exists to
-   support. <b>Nothing on this page has been implemented.</b> Each item states the problem in the current site that
-   prompted it, the effort, the risk of doing it, and an empty decision column for the owner to mark
-   <i>adopt</i>, <i>adopt with change</i> or <i>decline</i>. Implementation waits for that mark.</p>
+  <h2>F. Numbered proposal register — for owner review</h2>
+  <p class="lede">Sections A–E above give the decision path; this register is the site-improvement half of the
+   brief. Each proposal states the problem in the current site that prompted it, the effort, the risk of doing it,
+   and an empty decision column for the owner to mark <i>adopt</i>, <i>adopt with change</i> or <i>decline</i>.
+   <b>Nothing here has been implemented.</b> Implementation waits for that mark; the blocking-question detail is
+   on the <a href="open-questions.html">decision-readiness page</a>.</p>
   <div class="grid">
     <div class="stat"><div class="num">{n}</div><div class="lbl">proposals, all awaiting a decision</div></div>
     <div class="stat"><div class="num">0</div><div class="lbl">proposals implemented on this page</div></div>
@@ -555,6 +556,4 @@ def suggestions():
   <p class="small">Sources for the constraints themselves: {srcs("SF_LI", "LEGISTAR_261020", "SF_HI")} · register and status pages: <a href="sources.html">sources</a>, <a href="flagged.html">flags</a>, <a href="requirements.html">requirements</a>.</p>
 </div>
 """
-    return page("pages/suggestions.html", "Site improvement suggestions", body,
-                "Numbered proposals for improving this site, with effort, risk and an empty decision column; none implemented until the owner chooses a path.",
-                active="pages/suggestions.html")
+    return body

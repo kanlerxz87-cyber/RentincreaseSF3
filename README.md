@@ -4,7 +4,7 @@
 
 A static GitHub Pages dashboard answering one owner's questions about raising rent on two units reported as rent-controlled in a San Francisco building reported as built in 1940 (total building size and coverage unverified). The Rent Board notification/licence question comes first, because it decides whether any increase is enforceable at all.
 
-Canonical dashboard table rows link official sources for the governing rule; owner-supplied facts are not thereby verified. Unconfirmed values and limitations are listed on **Flagged for review**. Archived editions have row-source exceptions (FR-24) and should not be relied on as current advice.
+Canonical dashboard table rows link official sources for the governing rule; owner-supplied facts are not thereby verified. Unconfirmed values and limitations are listed on **Flagged for review**. Archived editions still hold 114 table rows without an official source link (measured by `tools/row_source_audit.py`, FR-24) and repeat statements since corrected; they should not be relied on as current advice.
 
 ---
 
@@ -26,7 +26,7 @@ Canonical dashboard table rows link official sources for the governing rule; own
 | [`pages/discrimination.html`](pages/discrimination.html) | One unit or both units? Fair-housing analysis |
 | [`pages/requirements.html`](pages/requirements.html) | Every requirement in the brief, its status and its evidence |
 | [`pages/sources.html`](pages/sources.html) | source register with what each supports |
-| [`pages/flagged.html`](pages/flagged.html) | 35 flagged items: unverified, blank, inconsistent or corrected |
+| [`pages/flagged.html`](pages/flagged.html) | 38 flagged items: unverified, blank, inconsistent or corrected |
 
 Markdown summary: [`EXECUTIVE_SUMMARY.md`](EXECUTIVE_SUMMARY.md).
 
@@ -61,6 +61,7 @@ python3 tools/build_dashboard.py     # writes assets/style.css, index.html, page
                                      #  site_pages_ref.py and site_pages_decide.py; sources in site_layout.py)
 python3 tools/verify_core_site.py    # gate for the canonical site
 python3 tools/audit_site.py          # whole-repo link/anchor + canonical row-source audit
+python3 tools/row_source_audit.py    # every table row on every page: official link or counted exception
 python3 verify_site.py               # dashboard edition (preserved)
 python3 tools/check_site.py          # review edition (preserved)
 python3 tools/verify_edition.py      # audit/ + verified/ editions (preserved)
