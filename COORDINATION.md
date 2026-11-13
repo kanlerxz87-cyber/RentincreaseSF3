@@ -1960,3 +1960,43 @@ Scope of files this session may edit (everything else is read-only, or changed v
 | E6 | Put the state-vs-local answer at the forefront of the executive summary and index | pending | `tools/site_pages_core.py` |
 | E7 | Re-run all gates; idempotent build; no broken links | pending | `tools/` |
 | E8 | PR → `main`, merge, confirm Pages deploy, record here | pending | `COORDINATION.md` |
+
+### Merge with PR #56 (session `arena/fd7ed99e-rentincreasesf3`) — resolved 2026-11-13
+
+While this session was working, `main` advanced to `5a73214` (**PR #56**, session
+`arena/fd7ed99e-rentincreasesf3`), which had independently built a **`pages/suggestions.html`**
+("Suggestions & decision path", sections A–E), added `tools/row_source_audit.py`, a
+`<meta name="robots" content="noindex, nofollow">` tag, a requirement **R-24** and flags
+**FR-32…FR-34**.
+
+This session rebased onto `origin/main`. **Nothing from either session was discarded.** Three ID
+collisions and one duplicate function had to be resolved:
+
+| Collision | Resolution |
+|---|---|
+| `def suggestions()` defined twice in `tools/site_pages_ref.py` | **Merged into one page.** `arena/fd7ed99e`'s structure (A options · B preconditions · C questions · D bullet suggestions · E review protocol) is kept as the base; this session's costed decision paths were added as **A2**, its tabulated improvements as **D2**, and its "deliberately not suggested" list as **F**. Section C now links to this session's separate open-questions page. A bare rebase would have silently let the second definition win and dropped one session's page entirely. |
+| Requirement ID **R-24** used by both | `fd7ed99e`'s R-24 kept; this session's three rows renumbered **R-25, R-26, R-27** (27 requirements tracked, 24 answered) |
+| Flag ID **FR-32** used by both | `fd7ed99e`'s FR-32…FR-34 kept; this session's date-nuance flag renumbered **FR-35** (35 flags in total) |
+| `pages/suggestions.html` duplicated in `NAV`, `ALL_PAGES` and `build_dashboard.py` | Deduplicated to a single entry; this session's `pages/open-questions.html` entries added alongside |
+| Verification-log row numbers **134–150** used by both | Both sections kept; this session's rows renumbered **149–165** (verified zero duplicate row numbers) |
+
+Build artefacts (`index.html`, `pages/*.html`, `assets/style.css`) were resolved by deleting the
+conflicted copies and re-running `tools/build_dashboard.py`, so the published HTML is generated from
+the merged modules rather than hand-merged.
+
+**Cross-session note for future passes:** `tools/audit_site.py` carries its own hard-coded
+`DOMAINS` list separate from `OFFICIAL_DOMAINS` in `tools/site_layout.py`; a newly registered
+government domain must be added to **both** or the canonical gate passes while the repo audit fails.
+
+### Task completion — `arena/edd1ff9e` (as final integration session)
+
+| # | Task | Status | Result |
+|---|------|--------|--------|
+| E1 | Claim tasks + scope | **done** | pushed `7dbea12` before any other work |
+| E2 | Verify the "2023 law" question | **done** | **Local law**: Ordinance No. 265-20 (File 201262), passed 8 Dec 2020, approved 18 Dec 2020, effective 18 Jan 2021, operative 1 Jul 2022, reporting commencement **1 Mar 2023** for condominiums and buildings with fewer than 10 units. Sources: [sf.gov § 37.15](https://www.sf.gov/information/sec-3715-reporting-obligations-licensing) · [Legistar Ord. 265-20](https://sfgov.legistar.com/View.ashx?M=F&ID=9024120&GUID=79C40690-896E-43CD-9855-77B3AC909AEF) · [sf.gov news](https://www.sf.gov/news--new-legislation-creates-housing-inventory-and-requires-owners-obtain-license-imposing) |
+| E3 | Re-verify headline figures | **done** | 17 assertions, verification-log rows 149–165; 1.6%, $59.00 fee, 30/90-day rule, banking wording, File #261020 status (still *Pending Committee Action*) and the 9 Nov 2026 Rent Board notice all re-fetched on 13 Nov 2026 and confirmed |
+| E4 | `pages/open-questions.html` | **done** | 11 known / 11 missing / 12 decision gates; every row sourced; blocking unknowns named |
+| E5 | `pages/suggestions.html` | **done** (merged with PR #56) | 5 + 7 decision options, 7 preconditions, 10 questions, 6 + 12 improvements, review protocol, "not suggested" list; every path marked *Not chosen — open* |
+| E6 | State-vs-local at the forefront | **done** | Executive summary "Forefront, part 1"; dashboard section 1; markdown summary § 1 |
+| E7 | Gates + idempotence | **done** | 9/9 gates PASS (privacy sweep 111 files, canonical gate 456 rows, row-source audit 0 canonical exceptions, preserved-edition baseline unchanged at 114); build byte-identical on re-run |
+| E8 | PR → `main`, merge, Pages deploy | in progress | recorded below |
