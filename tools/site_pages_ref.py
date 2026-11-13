@@ -35,6 +35,11 @@ USED_FOR = {
     "USC_3604": "Federal Fair Housing Act — discrimination in rental terms and conditions",
     "DOJ_ALGO": "Federal antitrust suit against six large landlords over algorithmic rent pricing",
     "OPM_HOLIDAYS": "11 November 2026 is a federal holiday (Veterans Day, 5 U.S.C. 6103) — relevant to any mail-by deadline that falls on that day",
+    "SF_ORD265": "Ordinance No. 265-20 (effective 18 Jan 2021): the Housing Inventory, the licence it produces, the licence suspension for non-compliance, the 1 Jul 2022 and 1 Mar 2023 start dates, and the Civil Code §§ 1947.7–1947.8 rental-registry limit",
+    "SF_RATES": "Current-rate page used to cross-check 1.6% for 1 Mar 2026 – 28 Feb 2027 and 1.4% / 1.7% for the two prior years, plus security-deposit interest (4.2%) and the bankable Rent Board Fee amounts",
+    "LEG_19424": "Bars a rent-increase notice while substandard conditions flagged in writing by a housing official stand unabated more than 35 days without good cause; actual damages, $100–$5,000 and fee-shifting",
+    "LEG_BPC10131": "Definition of a real estate broker — acts done “for another or others” for compensation — which is what an owner renting their own property is not",
+    "CFR_982": "24 CFR § 982.507 — public housing agency rent reasonableness determination for voucher-assisted tenancies"
 }
 
 
@@ -117,6 +122,9 @@ REQS = [
     ("R-23", "Open a pull request, merge it and confirm the Pages deployment", "Answered — recorded in COORDINATION.md", "index.html", "SF_HI"),
     ("R-24", "Create a dedicated Suggestions &amp; decision-path section to review before implementing", "Answered — two registers consolidated on one page on 13 Nov 2026", "pages/suggestions.html", "SF_LI"),
     ("R-25", "A clear list of the questions, the information they need and the answers available before any decision", "Answered — 14 blocking questions, 12 settled, 10 documents, 8 discovery actions, 4 with no official answer", "pages/questions.html", "SF_BANK"),
+    ("R-26", "Confirm the state-law bar on serving a notice while habitability notices stand unabated", "Answered — Civ. Code § 1942.4 added to the notice, process and summary pages on 13 Nov 2026", "pages/notice.html", "LEG_19424"),
+    ("R-27", "Separate the Rent Board licence from any professional or occupational licence", "Answered — the Rent Board licence is unit-level and automatic; the broker-licence definition covers acts for another for compensation. Business-registration question left open (FR-37)", "pages/executive-summary.html", "LEG_BPC10131"),
+    ("R-28", "Publish the questions that no official source can answer as blanks rather than estimates", "Answered — blank rows on the questions page and the flagged register (FR-38)", "pages/questions.html", "SF_PORTAL"),
 ]
 
 
@@ -478,6 +486,15 @@ FLAGS = [
     ("FR-36", "Where the licence carve-out for passthroughs ends", "Scope limit",
      "The Housing Inventory page says a current licence is needed “before any annual or banked rent increase can go into effect”, while the noncompliance page says a licence is not required “in some situations where the original occupant(s) no longer live in the unit … or for passthroughs allowed under the Rent Ordinance”. The boundary between the two statements is not defined on either page. This site therefore treats every annual and banked increase — including a banked catch-up above 10% — as requiring the licence, which is the conservative reading, and publishes the carve-out question rather than relying on it.",
      "Rent Board counsellor confirmation before relying on the carve-out for any increase other than a Section 6.14 or Costa-Hawkins market-rate increase.", "SF_NONCOMP"),
+    ("FR-37", "Whether a San Francisco business registration number is expected for this rental", "Blank — unresolved",
+     "The Housing Inventory asks for “the business registration number for the unit, <i>if any</i>”, and no official source read on 13 Nov 2026 settles whether an individual owner of a small residential rental is expected to hold or report one. The question is left open rather than answered by inference.",
+     "Ask the Rent Board (415-252-4600) and, separately, the Treasurer &amp; Tax Collector's business-registration line; record the written answer in the file.", "SF_HI"),
+    ("FR-38", "The decision-readiness pages publish deliberately blank answer cells", "By design",
+     "The open questions page (<a href=\"questions.html\">questions</a>) and the proposal register contain rows whose answer or decision column is intentionally blank — owner records and owner decisions, not research gaps. That is the site's rule for unverifiable values: blank plus a flag, never an estimate.",
+     "Supply the records; the blank cells are the checklist.", "SF_PORTAL"),
+    ("FR-39", "Two link defects on the Attorney General's rent-cap page", "Irregularity in an official source",
+     "The state's own chart of rent-increase maxima introduces its citation twice as “Civil Code section <b>1974.12</b>” where the section is <b>§ 1947.12</b>, and both of its links carry a trailing period inside <code>sectionNum</code>, which returns nothing. The percentages on that page are correct.",
+     "None — noted so a reader who follows the AG link and sees an error knows the section number to search for. This site cites § 1947.12 at a working URL.", "OAG"),
 ]
 
 

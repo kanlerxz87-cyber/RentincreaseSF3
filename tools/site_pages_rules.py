@@ -280,6 +280,21 @@ def notice():
 </div>
 
 <div class="card">
+  <h2>Before the notice — five things that can make a lawful percentage unenforceable</h2>
+  <table>
+    <thead><tr><th style="width:26%">Pre-condition</th><th>What to check</th><th style="width:20%">Official source</th></tr></thead>
+    <tbody>
+      <tr><td>Rent-increase licence</td><td>A current licence must be on file for the unit on the <b>effective date</b>; without it the notice “will not be enforceable”, and the tenant may get a refund.</td>{cell("SF_HI", "SF_NONCOMP")}</tr>
+      <tr><td>Unabated habitability violations</td><td>California bars a rent-increase notice where the dwelling lacks the standards of Civil Code § 1941.1 or has been declared substandard, <b>and</b> a public officer has notified the owner in writing, <b>and</b> the condition has stood unabated for more than 35 days without good cause, and the tenant did not cause it. Remedy: actual damages plus $100–$5,000, and attorney's fees to the prevailing party.</td>{cell("LEG_19424")}</tr>
+      <tr><td>Retaliation</td><td>An increase motivated by a tenant's complaint, repair request or organising is prohibited, with statutory conditions and timing rules; the protection is not limited to a 180-day window.</td>{cell("LEG_1942")}</tr>
+      <tr><td>Protected characteristics</td><td>The amount must not vary because of a protected characteristic; different treatment of the two units is defensible only on documented, unit-specific facts.</td>{cell("LEG_12955", "USC_3604")}</tr>
+      <tr><td>Extra rent for an added occupant</td><td>Charging more simply because a roommate moved in is an unlawful rent increase even if the lease allows it. Unit A added an occupant on 1 April 2026 — do not price that in.</td>{cell("SF_LI")}</tr>
+    </tbody>
+  </table>
+  <p class="small">This is a checklist of official rules, not a clearance: nothing on this site can certify that a particular notice is unchallengeable.</p>
+</div>
+
+<div class="card">
   <h2>Reasons — what is required, permitted and prohibited</h2>
   <table>
     <thead><tr><th style="width:26%">Situation</th><th>Position</th><th style="width:22%">Official source</th></tr></thead>

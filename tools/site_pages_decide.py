@@ -141,6 +141,12 @@ ANSWERED = [
     ("What counts as a reasonable or normal increase under local, state or federal law?",
      "None of the three publishes a 'normal' figure. The local rule is a ceiling, not a benchmark; no official body publishes an average or typical increase, and none publishes a ZIP-level rate.",
      "No official source", ("SF_LI",)),
+    ("Can a state law stop me serving the notice at all, even at a lawful percentage?",
+     "<b>Yes \u2014 Civil Code \u00a7 1942.4.</b> A landlord may not issue a notice of a rent increase while all four conditions hold: the dwelling falls below the standards of \u00a7 1941.1 or Health &amp; Safety Code \u00a7\u00a7 17920.10/17920.3, an appropriate public officer has notified the owner in writing after inspection, the condition has stood unabated more than 35 days without good cause, and the tenant did not cause it. Remedy: actual damages, $100\u2013$5,000, and attorney's fees. Check the building's inspection record before drafting; published as FR-37's companion correction.",
+     "Verified 13 Nov 2026", ("LEG_19424",)),
+    ("Does the City expect a business registration number for a two-unit rental?",
+     "<b>Blank \u2014 unresolved.</b> The Housing Inventory asks for \u201cthe business registration number for the unit, <i>if any</i>\u201d; no official source read on 13 Nov 2026 settles the question for an individual owner of a small residential rental, so the field is left blank rather than answered by inference (FR-37). Ask the Rent Board and the Treasurer &amp; Tax Collector and keep the answer.",
+     "Open", ("SF_HI",)),
 ]
 
 # (document, what it proves, why it matters here)
@@ -346,6 +352,52 @@ SUGGESTIONS_REJECT = [
 ]
 
 
+
+# ---------------------------------------------------------------- 13 Nov 2026 pass
+# Bundles of the register above, so the owner can accept a coherent set rather than
+# picking twelve rows. Each path lists SG- IDs and presentation ideas from the lists above.
+BUNDLE_PATHS = [
+    ("Path 1 — evidence hygiene only",
+     "SG-01, SG-02, SG-11. No new legal content; the numbers and wording stay exactly as they are.",
+     "Low each — one page, two tables and one sentence on the dashboard.",
+     "Makes the existing claims checkable: the licence record, the rent ledger and the public-record warning are what a reviewer or a lawyer looks at first.",
+     "Low. Presentation and provenance only; the build gates already cover the arithmetic.",
+     ("SF_HI", "SF_BANK")),
+    ("Path 2 — decision support first",
+     "SG-03, SG-04, SG-05, plus the printable brief and the decision log from the list below.",
+     "Low–medium — generated sections, one model text, one template.",
+     "Shortens the distance between reading the rules and doing the task correctly: what to re-check, what the notice must say, why the two units differ.",
+     "Medium — summaries must be generated from the same data as the detail pages or they will drift.",
+     ("LEG_827", "SF_RULE4", "LEG_12955")),
+    ("Path 3 — freshness and maintenance",
+     "SG-07, SG-08, SG-09, SG-10, plus the row-level review dates from the list below.",
+     "Medium–high — the re-fetch job needs a rule for what a failure means.",
+     "The pending ordinance and the 1 March cycle make staleness predictable; this path automates noticing it instead of relying on a manual pass.",
+     "Higher — a weekly fetch that fails becomes noise unless the build treats it as “unverified”, not “wrong”.",
+     ("LEGISTAR_261020", "SF_FEE", "SF_LI")),
+    ("Path 4 — privacy hardening",
+     "SG-11 alone, plus a written decision either way on the re-identification question.",
+     "Low.",
+     "Puts the re-identification question in front of the owner with the City's own convention (base rent in $250 bands, square footage in 250 sq ft bands) as the comparator.",
+     "Any rounding of published amounts would conflict with the standing instruction, so this path ends in a decision, not a change.",
+     ("SF_HI",)),
+]
+
+# (date, change, why, keys) — changes of substance already made to the canonical pages,
+# recorded here so the boundary between “proposal” and “correction” is explicit.
+DONE_THIS_PASS = [
+    ("13 Nov 2026", "Named the level of government behind every requirement in the executive summary and on the dashboard, with the ordinance number and its two phase-in dates.",
+     "The brief's question — state or local — was answered only implicitly.", ("SF_ORD265", "SF_HI")),
+    ("13 Nov 2026", "Added the Civil Code § 1942.4 pre-condition to the notice page, the process steps and the summary findings.",
+     "A statutory bar on serving an increase notice while an official's written habitability notice stands unabated had not been listed anywhere on the canonical pages.",
+     ("LEG_19424",)),
+    ("13 Nov 2026", "Added the distinction between the Rent Board's unit-level licence and an occupational licence, citing the definition of a real estate broker.",
+     "The word “licence” in the owner's question covers two different things, and only one of them applies.", ("LEG_BPC10131", "SF_HI")),
+    ("13 Nov 2026", "Re-fetched every official source behind the forefront answer and rolled the research-pass date; the Legistar status for File No. 261020 is unchanged as at 13 November 2026.",
+     "The pending file could have advanced in the two days since the previous pass.", ("LEGISTAR_261020", "SF_LI")),
+]
+
+
 def questions():
     blockers_rows = "".join(
         '<tr><td class="nowrap"><b>%s</b></td><td>%s</td><td>%s</td>'
@@ -495,6 +547,15 @@ def suggestions_block():
         for what, why, key in SUGGESTIONS_REJECT
     )
     ui_list = "".join("<li>%s</li>" % s for s in SUGGESTIONS_UI)
+    path_rows = "".join(
+        '<tr><td><b>%s</b></td><td>%s</td><td>%s</td><td>%s</td><td>%s</td>%s</tr>'
+        % (p_, contains, effort, benefit, risk, cell(*keys))
+        for p_, contains, effort, benefit, risk, keys in BUNDLE_PATHS
+    )
+    done_rows = "".join(
+        '<tr><td class="nowrap">%s</td><td>%s</td><td>%s</td>%s</tr>'
+        % (d, ch, why, cell(*keys)) for d, ch, why, keys in DONE_THIS_PASS
+    )
     return f"""
 <div class="card hero">
   <h2>F. Improvement proposals — awaiting your decision</h2>
@@ -551,5 +612,28 @@ def suggestions_block():
   </ul>
   <p class="small">Sources on this page are the official rules each proposal has to stay consistent
   with: {srcs("SF_HI", "SF_BANK", "SF_LI", "LEG_827", "SF_ALGO")}.</p>
+</div>
+
+<div class="card">
+  <h2>K. Bundle paths — accept a set, or mix by ID</h2>
+  <p class="small">A second pass on 13 November 2026 proposed the same kind of register independently; the
+  overlapping proposals were merged into the rows above rather than duplicated, and these four paths are
+  how the merged list groups. Choosing a path is still a choice about the <i>site</i>, not about the increase.</p>
+  <table>
+    <thead><tr><th style="width:20%">Path</th><th>Contains</th><th>Effort in total</th><th>What it buys</th>
+    <th>Risk</th><th style="width:14%">Rule to check against</th></tr></thead>
+    <tbody>{path_rows}</tbody>
+  </table>
+</div>
+
+<div class="card ok">
+  <h2>L. Already changed this pass — corrections, not proposals</h2>
+  <p class="small">Recorded so the boundary is clear: every row in sections F–K is a proposal and stays
+  <i>Proposed</i>; the rows below were changes of substance to existing pages, made because an official source
+  contradicted or completed what was there.</p>
+  <table>
+    <thead><tr><th style="width:9%">Date</th><th style="width:36%">Change</th><th>Why</th><th style="width:18%">Source</th></tr></thead>
+    <tbody>{done_rows}</tbody>
+  </table>
 </div>
 """
