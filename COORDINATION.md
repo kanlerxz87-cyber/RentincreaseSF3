@@ -1881,4 +1881,14 @@ which returns nothing — its percentages are correct); the Rent Board's own wor
 
 | PR | Merge | Pages build | Live check |
 |---|---|---|---|
-| PENDING | PENDING | PENDING | PENDING |
+| [#62](https://github.com/kanlerxz87-cyber/RentincreaseSF3/pull/62) | merged 2026-11-13T07:17:43Z, merge commit `ec756ac` | `status=built`, `commit=ec756acdc4a7209ff2749bda795e24ca7e44aea2`, 07:17:44Z | fetched live with a cache-buster: `pages/questions.html` renders the merged register (14 blocking / **14 answered** — the two rows this session added, § 1942.4 and the blank business-registration item); `pages/suggestions.html` renders SG-01…SG-12 plus this session's **section L** (all four "already changed this pass" rows, each with its official link) |
+
+**CI on the PR:** `site-checks / verify` — pass (15 s) on the head commit, before the merge.
+**Gates re-run locally after the final `origin/main` merge (PR #61 in between):** build 16 files ·
+`verify_core_site.py` 16 pages / 55 tables / 492 rows / 1,349 links — ALL CHECKS PASSED ·
+`audit_site.py` PASS · `privacy_scan.py` PASS · `verify_review_regressions.py` pass · all four
+preserved-edition gates pass · rebuild idempotent.
+
+**Note for later sessions:** `pages/open-questions.html` no longer exists — its content lives in
+`pages/questions.html`, and `pages/suggestions.html` is now sections A–L. Any session that rebuilds
+from an older branch will resurrect the deleted page; re-merge `main` before generating.
