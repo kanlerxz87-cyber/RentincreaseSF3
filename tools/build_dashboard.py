@@ -29,6 +29,7 @@ PAGES = {
     "pages/notice.html": rules.notice,
     "pages/review.html": rules.review,
     "pages/discrimination.html": rules.discrimination,
+    "pages/open-questions.html": ref.open_questions,
     "pages/requirements.html": ref.requirements,
     "pages/suggestions.html": ref.suggestions,
     "pages/questions.html": decide.questions,
