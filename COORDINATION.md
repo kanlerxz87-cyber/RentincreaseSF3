@@ -2126,6 +2126,28 @@ Inventory FAQ URL), `leginfo.legislature.ca.gov` (Civ. Code § 1947.12).
 
 ---
 
+
+### Merge and deployment — PR #67
+
+| Item | Result |
+|---|---|
+| Pull request | [#67 — "Prove from the primary text that an individual owner is covered; FR-41"](https://github.com/kanlerxz87-cyber/RentincreaseSF3/pull/67) |
+| Base ← head | `main` ← `arena/69a2798e-rentincreasesf3` |
+| Merge | **Merged 2026-11-13 07:36 UTC**, merge commit [`5a2f8a7`](https://github.com/kanlerxz87-cyber/RentincreaseSF3/commit/5a2f8a762c65d017ca2389215c4c2bce49e0091d), without approval, as instructed |
+| CI | `Site checks` on the PR branch: **success** (run 43386946264, 17s). `Site checks` on `main` after the merge: **success** (run 43386957006, 14s) |
+| Pages build | `pages build and deployment` run 43386956853 on `5a2f8a7`: **success** (27s); Pages status **built** |
+| Live verification | `https://kanlerxz87-cyber.github.io/RentincreaseSF3/index.html` — the new row "**What the ordinance text itself says about the owner's legal form**" renders with the verbatim § 37.15(a) quote and its Legistar source link. `pages/flagged.html` — **FR-41** renders with its source link |
+| Gates on merged `main` | All 9 PASS: `verify_core_site`, `audit_site`, `row_source_audit`, `privacy_scan`, `check_v2`, `verify_edition`, `verify_site`, `check_site`, `verify_review_regressions` |
+
+**Note on the earlier PR.** PR **#65** was opened first from the same branch. It could not be merged — its
+base had drifted behind `main` and GitHub reported it as not cleanly mergeable. It was **closed unmerged** and
+replaced by **#67**, created from the rebased branch. Nothing in #65 is lost: the work it carried that was still
+missing from `main` is in #67, and the rest had been published by other sessions in the meantime. This is worth
+knowing for anyone whose PR goes stale: opening a fresh PR from a rebased branch is faster than fighting a
+stale merge base.
+
+**Tasks M1–M9 are complete.** Session `arena/69a2798e-rentincreasesf3` is finished.
+
 ## Claim record as originally pushed (commit `b17f7c0`, 2026-11-13)
 
 Kept verbatim for the record; the final board above supersedes it.
