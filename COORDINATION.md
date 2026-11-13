@@ -1635,7 +1635,7 @@ files no other session has claimed.
 | A3 | Add dedicated suggestions page (site-improvement proposals, each with impact/effort/status for owner review, nothing implemented without sign-off) | done | arena/a53557bb-rentincreasesf3 | `pages/suggestions.html`, same generator modules |
 | A4 | Independent re-verification of all canonical rates, notice rules and maths against official pages fetched 13 Nov 2026 | done | arena/a53557bb-rentincreasesf3 | `research/verification-log.md`, `data/sources.json` |
 | A5 | Anonymisation re-sweep (occupant initials, withheld postal code, neighbourhood, street) over every published file | done | arena/a53557bb-rentincreasesf3 | read-only sweep via `tools/privacy_scan.py` |
-| A6 | Final integration: rebuild, all gates pass, PR to main, merge, confirm Pages deploy, record here | in progress (integration) | arena/a53557bb-rentincreasesf3 | `index.html`, `pages/*`, `README.md` |
+| A6 | Final integration: rebuild, all gates pass, PR to main, merge, confirm Pages deploy, record here | done | arena/a53557bb-rentincreasesf3 | `index.html`, `pages/*`, `README.md` |
 
 No other session's files are edited. If a fix is needed in another edition (`docs/`, `dashboard/`,
 `review/`, `audit/`, `verified/`, `verification/`) it is logged here as a request instead.
@@ -1707,3 +1707,28 @@ modules. Resolution, with neither side's work discarded:
 | Log rows | 134–148 (their 13 Nov pass) | 134–148 (this session's pass) | theirs kept; this session's pass appended after theirs with non-colliding numbering |
 | Research date | footer still 11 Nov 2026 | bumped to 13 Nov 2026 | **13 November 2026** in the shared footer, `RESEARCH_DATE`, the planner heading and the sources lede; planner cells for dates that have passed marked accordingly |
 | `noindex` meta, units header fix, their index tile | added on main | — | kept untouched |
+
+### Integration record — PR #59 (this session)
+
+| Item | Result |
+|---|---|
+| Pull request | <https://github.com/kanlerxz87-cyber/RentincreaseSF3/pull/59> — `arena/a53557bb-rentincreasesf3` → `main` |
+| CI | `site-checks` `verify` job **SUCCESS** (privacy sweep, rebuild, stale-HTML check, `verify_core_site`, review regressions, whole-repo audit, all preserved-edition gates) |
+| Merge | **merged**, `--merge`, merge commit `07c13e97f000708efd17bbfd28d2f90fbbb8a985` at 2026-11-13T07:08:37Z; PR state `MERGED`, `mergeable` was `CLEAN` before merge |
+| GitHub Pages | build created 2026-11-13T07:08:38Z, status **`built`**; `gh api /pages` reports `status=built` for `main` `/` |
+| Live spot-check after deploy | `/pages/questions.html` serves the open-questions register with official links per row; `/pages/suggestions.html` serves the consolidated page — their sections A–E plus this session's F–J (12 `SG-` proposals marked *Proposed*, 6 rejected ideas, the maintenance rule) |
+| Site state | 16 pages, 52 tables, **467 data rows**, 1308 links; 36 flags published on `pages/flagged.html`; requirements register 25 rows (22 answered, 3 conditional) |
+
+### Handover notes for the next session
+
+- A transient Pages build failure was observed at 07:05:28Z (before this merge) and the next push
+  rebuilt successfully — consistent with the incident logged by `arena/ae0d4576`. If a build errors
+  with only “Page build failed.”, retry by pushing; do not assume content breakage.
+- Two sessions collided on `FR-`/log row numbers today. Convention going forward: read `origin/main`
+  *immediately before* allocating new IDs, and prefer a follow-up merge commit over `pull --rebase`
+  when `COORDINATION.md` is involved (the rebase auto-merge silently preferred one side for
+  generated files).
+- All 12 `SG-` proposals are still **Proposed**. If the owner accepts any, implement only the accepted
+  IDs and change those rows to **Accepted** with the date; never delete a row.
+- Open, non-blocking, owner-side: FR-01 (Unit B rent history), FR-04 (licence status), FR-02 (Unit A
+  anniversary), FR-05 (2027–28 percentage), FR-06 (File #261020), FR-35, FR-36.
