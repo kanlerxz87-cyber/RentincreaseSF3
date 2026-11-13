@@ -1772,3 +1772,13 @@ tip, so no other session's ref was ever overwritten.
 3. Three sessions independently claimed the same brief deliverables on 13 Nov within ~10 minutes —
    the COORDINATION claim step worked as designed (duplicates were detected and reconciled), but a
    faster claim→publish loop (push the claim before building) would avoid the wasted parallel work.
+
+### PR / deploy record — session `arena/1fbb8c79-rentincreasesf3` (final)
+
+- **Branch:** `arena/1fbb8c79-rentincreasesf3` → `main`
+- **PR:** [#57](https://github.com/kanlerxz87-cyber/RentincreaseSF3/pull/57) — "13 Nov 2026 additive re-verification (FHA text, Portal) + three-way duplicate-work reconciliation record"
+- **Merge:** **MERGED** at 2026-11-13, merge commit **`90e6720`** (`gh pr merge 57 --merge`, no approval wait)
+- **CI:** PR head `Site checks` run **43384213989** → success (10 s)
+- **GitHub Pages:** `pages build and deployment` for `90e6720` → status **`built`**, error null, created 2026-11-13T07:14:06Z. Live URL: <https://kanlerxz87-cyber.github.io/RentincreaseSF3/>
+- **Live verification (cache-busted with the merge sha):** landing page renders with the forefront licence answer ("Is that a state law or a local law?" → **Local — SF Ordinance No. 265-20**, reporting from 1 March 2023 for 1–9 unit buildings); `pages/questions.html` renders the 14 blocking questions with per-row official sources; `pages/suggestions.html` live. Note: sandbox `curl` cannot reach github.io (exit 35); use the fetch tool for live checks.
+- **Session outcome:** D1–D4 all **done**. The brief's site deliverables are on `main` via the combined work of `fd7ed99e` / `a53557bb` / this session; this session's surviving diff is verification-log rows 169–170 and the coordination records. Flags FR-01…FR-34 remain published on the Flagged for Review page; flagged items and unverified values do not block, per the standing rule.
