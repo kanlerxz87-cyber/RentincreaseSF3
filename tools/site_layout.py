@@ -208,6 +208,7 @@ NAV = [
     ("pages/practice.html", "Market practice"),
     ("pages/notice.html", "Notice &amp; reasons"),
     ("pages/review.html", "Tenant-lawyer test"),
+    ("pages/suggestions.html", "Suggestions"),
     ("pages/flagged.html", "Flagged"),
 ]
 
@@ -223,6 +224,7 @@ ALL_PAGES = [
     ("pages/review.html", "Tenant-lawyer stress test"),
     ("pages/discrimination.html", "One unit or both units?"),
     ("pages/requirements.html", "Requirements checklist"),
+    ("pages/suggestions.html", "Suggestions &amp; decision path"),
     ("pages/sources.html", "Sources &amp; verification register"),
     ("pages/flagged.html", "Flagged for review"),
     ("verification/index.html", "Independent verification edition"),

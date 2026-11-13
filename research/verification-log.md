@@ -444,3 +444,25 @@ Not fetched in this session, so not re-verified by it: Administrative Code § 37
 the algorithmic-devices pages, the Department of Justice release, HUD and eCFR pages, the Civil
 Rights Department subpages beyond the housing landing page, and the non-official research cited only
 in `docs/` and `dashboard/`.
+
+## Re-verification pass — 2026-11-13 (session `arena/fd7ed99e`)
+
+A fresh line-by-line re-check of the time-sensitive official facts the canonical site depends on, run on
+13 November 2026 (two days after the 11 Nov 2026 pass). Every source below was fetched and read directly
+on that date. **Result: every load-bearing fact is unchanged; no figure on the canonical site required
+correction.** The 11 November 2026 research-pass date is retained because it remains the date of the
+comprehensive line-by-line pass; this entry records the additional confirmation.
+
+| # | Claim on the canonical site | Official source re-fetched 2026-11-13 | Result |
+|---|---|---|---|
+| 1 | Allowable annual increase is **1.6%**, effective 1 Mar 2026 – 28 Feb 2027 (60% of Bay Area CPI) | [sf.gov — Learn about rent increases](https://www.sf.gov/learn-about-rent-increases-san-francisco) | **Confirmed.** "The allowed rent increase percentage in San Francisco is 1.6%. The percentage is effective March 1, 2026 through February 28, 2027." |
+| 2 | A **rent-increase licence** is required before imposing annual/banked increases; obtained automatically by reporting into the Housing Inventory; effective 1 Jul 2022 (1 Mar 2023 for condos and 1–9 unit buildings) | [sf.gov — Housing Inventory](https://www.sf.gov/rent-board-housing-inventory) · [sf.gov — Learn about rent increases](https://www.sf.gov/learn-about-rent-increases-san-francisco) | **Confirmed.** "A landlord must get a rent increase license before imposing annual allowable and/or banked rent increases." Licence "automatically generated for non-owner occupied units"; must be current "before any annual or banked rent increase can go into effect". |
+| 3 | The licence must be in effect on the **effective date**; reporting is free; annual deadline 1 March; no monetary penalty for late filing | [sf.gov — Housing Inventory](https://www.sf.gov/rent-board-housing-inventory) | **Confirmed.** "your rent increase notice will not be enforceable without having a rent increase license on the effective date of the notice"; "The Rent Board does not assess monetary penalties for filing after the deadline." |
+| 4 | Banking: a skipped increase is banked only if **at least 24 full months** pass without any rent increase; no cap back to 1 Apr 1982; additive, not compounded | [sf.gov — Banked rent increases](https://www.sf.gov/information--banked-rent-increases) | **Confirmed.** "A skipped increase is only banked if at least 24 full months pass without any rent increase." "There is no limit on how much can be banked." (The three-texts discrepancy is already published as FR-03; the binding Rule § 4.12(a) uses a 12-month test.) |
+| 5 | Notice: **30 days** if the increase is ≤10%, **90 days** if >10%; **+5 days** if mailed | [sf.gov — Learn about rent increases](https://www.sf.gov/learn-about-rent-increases-san-francisco) · [Cal. Civ. Code § 827](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=827) | **Confirmed.** § 827(b)(2)–(3) states the 30/90-day thresholds; the sf.gov page adds the 5-day mail extension. |
+| 6 | State cap: **8.8%** for the San Francisco area for increases starting 8/1/26–7/31/27; the local cap governs because it is lower | [oag.ca.gov — Limits on rent increases](https://oag.ca.gov/rentcaps) | **Confirmed.** San Francisco Area row: 8.8% for "Increase starts between 8/1/26 and 7/31/27". |
+| 7 | File #261020 would cap banked + capital-improvement increases at **10%/yr for three years**; status **Pending Committee Action**; not law | [sfgov.legistar.com — File #261020](https://sfgov.legistar.com/LegislationDetail.aspx?ID=8217304&GUID=7EDA4662-EBFB-4AF5-962F-C669B64AA770) · [sf.gov — 9 Nov 2026 notice](https://www.sf.gov/learn-about-rent-increases-san-francisco) | **Confirmed.** Legistar: Status "Pending Committee Action"; Introduced 9/15/2026; in control Land Use and Transportation Committee. sf.gov: "This legislation has not been enacted and is subject to change." |
+
+**Conclusion:** the canonical site is current and accurate as of 13 November 2026. This session therefore
+adds no factual correction; its deliverable is the user-requested dedicated **Suggestions & decision-path**
+page (S1) plus final integration (I1).

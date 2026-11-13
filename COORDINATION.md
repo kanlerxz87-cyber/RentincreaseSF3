@@ -1574,7 +1574,7 @@ Scope (non-overlapping):
 
 | # | Task | Status | Notes |
 |---|------|--------|-------|
-| V1 | Re-verify time-sensitive official facts on 2026-11-13 | in progress | `research/verification-log.md` |
-| S1 | Build the dedicated Suggestions & decision-path page | not started | generator modules + nav + regenerated HTML |
-| S2 | Rebuild + all gates | not started | canonical site |
-| I1 | PR → main → merge → confirm Pages → record | not started | do not merge a broken site |
+| V1 | Re-verify time-sensitive official facts on 2026-11-13 | done | 7/7 claims confirmed unchanged; no figure corrected; logged in `research/verification-log.md` |
+| S1 | Build the dedicated Suggestions & decision-path page | done | `tools/site_layout.py` (nav/ALL_PAGES), `tools/site_pages_ref.py` (`suggestions()`, R-24), `tools/site_pages_core.py` (index tile), `tools/build_dashboard.py`; regenerated `index.html` + `pages/suggestions.html` |
+| S2 | Rebuild + all gates | done | 8/8 gates PASS (15 canonical pages, 44 tables, 382 rows, 1099 links); privacy sweep clean |
+| I1 | PR → main → merge → confirm Pages → record | in progress | do not merge a broken site |
