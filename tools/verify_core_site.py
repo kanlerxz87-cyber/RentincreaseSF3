@@ -123,7 +123,7 @@ def check_footer(path):
     text = path.read_text(encoding="utf-8")
     # The preserved verification edition keeps its own 10 Nov 2026 research-pass date;
     # the canonical pages were re-verified on 11 Nov 2026.
-    date_needle = "10 November 2026" if "verification" in path.parts else "11 November 2026"
+    date_needle = "10 November 2026" if "verification" in path.parts else "13 November 2026"
     for needle in ("Not legal advice", "Privacy:", date_needle):
         if needle not in text:
             ERRORS.append("%s: missing required disclosure %r" % (path.name, needle))
@@ -236,7 +236,7 @@ def check_rate_table():
     for i, (want, got) in enumerate(zip(OFFICIAL_RATES, found), start=1):
         if want != got:
             ERRORS.append("rate table row %d: published %r, document 571 %r" % (i, got, want))
-RESEARCH_DATE = dt.date(2026, 11, 11)
+RESEARCH_DATE = dt.date(2026, 11, 13)
 MONTHS = {m: i + 1 for i, m in enumerate(
     ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"])}
 PLANNER_DATE = re.compile(r"(\d{1,2}) (Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) (\d{4})")

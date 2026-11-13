@@ -1,7 +1,7 @@
 """Reference pages: sources register, requirements checklist, flagged for review."""
 from site_layout import SRC, src, srcs, cell, page
 
-RETRIEVED = "11 Nov 2026"
+RETRIEVED = "13 Nov 2026"
 
 # key, what it supports
 USED_FOR = {
@@ -48,7 +48,7 @@ def sources():
     body = f"""
 <div class="card">
   <h1>Sources &amp; verification register</h1>
-  <p class="lede">Every official source used on this site, the claim it supports, and the date it was retrieved. The register was reviewed on 10 November 2026 and all registered sources were re-fetched and read on 11 November 2026; Part IV was added and read on 11 November 2026. Availability can change.</p>
+  <p class="lede">Every official source used on this site, the claim it supports, and the date it was retrieved. The register was reviewed on 10 and 11 November 2026; the sources behind the licence answer, the annual allowance, banking, the notice rule, the fee, the petitions and the pending Bill file were re-fetched and read again on <b>13 November 2026</b>. Availability can change.</p>
 </div>
 
 <div class="card">
@@ -115,7 +115,8 @@ REQS = [
     ("R-21", "Flag irregularities for manual review", "Answered — {nflags} flags published", "pages/flagged.html", "SF_BANK"),
     ("R-22", "Coordinate with parallel sessions via COORDINATION.md", "Answered — claim, scope and record logged", "index.html", "SF_HI"),
     ("R-23", "Open a pull request, merge it and confirm the Pages deployment", "Answered — recorded in COORDINATION.md", "index.html", "SF_HI"),
-    ("R-24", "Create a dedicated Suggestions &amp; decision-path section to review before implementing", "Answered", "pages/suggestions.html", "SF_LI"),
+    ("R-24", "Create a dedicated Suggestions &amp; decision-path section to review before implementing", "Answered — two registers consolidated on one page on 13 Nov 2026", "pages/suggestions.html", "SF_LI"),
+    ("R-25", "A clear list of the questions, the information they need and the answers available before any decision", "Answered — 14 blocking questions, 12 settled, 10 documents, 8 discovery actions, 4 with no official answer", "pages/questions.html", "SF_BANK"),
 ]
 
 
@@ -133,6 +134,7 @@ def requirements():
         "pages/discrimination.html": "One unit or both?",
         "pages/requirements.html": "Requirements checklist",
         "pages/suggestions.html": "Suggestions &amp; decision path",
+        "pages/questions.html": "Open questions",
         "pages/sources.html": "Sources register",
         "pages/flagged.html": "Flagged for review",
     }
@@ -152,8 +154,8 @@ def requirements():
 <div class="card">
   <h2>Status summary</h2>
   <div class="grid">
-    <div class="stat"><div class="num">24</div><div class="lbl">requirements tracked</div></div>
-    <div class="stat"><div class="num">21</div><div class="lbl">answered from official sources</div></div>
+    <div class="stat"><div class="num">25</div><div class="lbl">requirements tracked</div></div>
+    <div class="stat"><div class="num">22</div><div class="lbl">answered from official sources</div></div>
     <div class="stat"><div class="num">3</div><div class="lbl">answered only conditionally (rent history, government building record, official statistics)</div></div>
     <div class="stat"><div class="num">{len(FLAGS)}</div><div class="lbl">items flagged for review, all published</div></div>
   </div>
@@ -357,6 +359,11 @@ def suggestions():
   </ol>
 </div>
 """
+    # Sections F-I: the improvement-proposal register from the parallel 13 Nov 2026 pass
+    # (session arena/a53557bb).  Rendered on this page so the site keeps one suggestions
+    # register rather than two competing ones; nothing in sections A-E is altered.
+    from site_pages_decide import suggestions_block  # noqa: E402  (no import cycle)
+    body = body + suggestions_block()
     return page("pages/suggestions.html", "Suggestions & decision path", body,
                 "Decision options, preconditions, open questions and site-improvement suggestions, with the official rule behind each row.")
 
@@ -465,6 +472,12 @@ FLAGS = [
     ("FR-34", "Housing Inventory filings are public", "Verified — added 11 Nov 2026",
      "The Housing Inventory page states: “<b>The information entered in the housing inventory submission is public.</b>” It lists name and business contact information, approximate square footage, number of bedrooms, number of bathrooms, and the history of vacancy or occupancy during the past 12 months. Owners must provide “the name and business contact information of the owner(s), or of the property manager, if any, designated by the owner(s) to address habitability issues”, and tenants can look up a unit's licence status in the Portal. The placeholder names used on this site therefore cannot carry over to the official filing, which is made under penalty of perjury. The page also says the Portal needs “the PIN number on your Annual Notice” to add a property to an account, with 311 for a PIN reset. Neither point was published on this site before.",
      "Decide which business contact details to report before filing; ask 311 or the Rent Board exactly which fields are displayed publicly.", "SF_HI"),
+    ("FR-35", "Housing Inventory entry for the 2026 change of occupancy in Unit A", "Open",
+     "The report asks for the date current occupancy began and the base rent in $250 increments. The City states that an approximate answer given to the best of the owner's knowledge is not penalised, and that only a change in the owner's or manager's business contact information must be updated within 30 days; occupancy changes otherwise ride the annual 1 March update. No official page says what effect an out-of-date occupancy entry has on a licence already issued for that year.",
+     "Re-read the Unit A entry in the Rent Board Portal before service and correct it at the next 1 March report; ask the counsellor whether a mid-cycle correction is required.", "SF_HI"),
+    ("FR-36", "Where the licence carve-out for passthroughs ends", "Scope limit",
+     "The Housing Inventory page says a current licence is needed “before any annual or banked rent increase can go into effect”, while the noncompliance page says a licence is not required “in some situations where the original occupant(s) no longer live in the unit … or for passthroughs allowed under the Rent Ordinance”. The boundary between the two statements is not defined on either page. This site therefore treats every annual and banked increase — including a banked catch-up above 10% — as requiring the licence, which is the conservative reading, and publishes the carve-out question rather than relying on it.",
+     "Rent Board counsellor confirmation before relying on the carve-out for any increase other than a Section 6.14 or Costa-Hawkins market-rate increase.", "SF_NONCOMP"),
 ]
 
 
