@@ -395,6 +395,10 @@ DONE_THIS_PASS = [
      "The word “licence” in the owner's question covers two different things, and only one of them applies.", ("LEG_BPC10131", "SF_HI")),
     ("13 Nov 2026", "Re-fetched every official source behind the forefront answer and rolled the research-pass date; the Legistar status for File No. 261020 is unchanged as at 13 November 2026.",
      "The pending file could have advanced in the two days since the previous pass.", ("LEGISTAR_261020", "SF_LI")),
+    ("13 Nov 2026", "Corrected the units page's cross-reference for the broken eCFR voucher-rent link from (FR-27) to (FR-28).",
+     "FR-27 is the postal-holiday flag; the citation fix is FR-28 — the published pointer sent readers to the wrong item.", ("CFR_982",)),
+    ("13 Nov 2026", "Added the decision-record table between sections E and F of this page (step 4 of E now points at it), and a new open notice-planner example effective 18 February 2027 (serve by 20 Nov, mail by 15 Nov 2026).",
+     "The review protocol told the reader to record a decision before implementing, but no record existed on the page; every open planner example's service deadline was inside 16 November 2026.", ("LEG_827", "SF_LI")),
 ]
 
 
