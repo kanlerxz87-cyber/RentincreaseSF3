@@ -2033,3 +2033,34 @@ numbers (both sessions had used 149+; this session's rows shifted to 169–185, 
 
 All nine gates pass on the merged tree: 17 canonical pages, 524 table rows, **0 rows without an
 official source**, privacy sweep clean on 113 tracked files, build byte-identical on re-run.
+
+### PR / deploy record — session `arena/edd1ff9e-rentincreasesf3`
+
+- **Branch:** `arena/edd1ff9e-rentincreasesf3` → `main`
+- **PR:** [#64](https://github.com/kanlerxz87-cyber/RentincreaseSF3/pull/64) — "Rent Board duty is LOCAL law (Ord. 265-20 / Admin. Code § 37.15) + consolidated decision-support pages"
+- **Merge:** **MERGED** at **2026-11-13T07:27:57Z**, merge commit **`bd2e054734a443a92973d98c503e7786ae647651`** (`gh pr merge 64 --merge`, no approval wait)
+- **CI:** PR head `Site checks` run **43385823996** → success; main `Site checks` run **43385947697** → success
+- **GitHub Pages:** `pages build and deployment` run **43385948428** → success; Pages API latest build → status **`built`**, duration 29,420 ms, updated **2026-11-13T07:28:28Z**, error null. Live URL: <https://kanlerxz87-cyber.github.io/RentincreaseSF3/>
+- **Live verification (cache-busting queries):**
+  - `pages/executive-summary.html` → "Forefront, part 1 — is the duty to inform the Rent Board a state law or a local law?" renders with all six rows and the § 37.15 / Legistar links; part 2 follows with the pointer line.
+  - `pages/open-questions.html` → "Known vs unknown — the information register", 11 + 11 rows, source links intact.
+  - `pages/flagged.html` → **FR-40** present as the last flag, "Clarified 13 Nov 2026".
+  - `pages/suggestions.html` → sections A, A2, B, C, D, D2, E, F, G, H, I, J.
+- **Rebases:** five in total. `main` advanced four times while this branch was open (PRs #56, #60, #63 and one coordination-only commit). Every conflict was resolved with both sessions' content retained — see the two merge-resolution sections above. Two further sessions (`arena/d0b1f850`, `arena/3c130689`) added R-26…R-28 / FR-37…FR-39 and their own verification-log rows, so this session's requirement rows moved to **R-29…R-31** and its flag to **FR-40**; the verification log was renumbered after every rebase and re-checked for duplicate row numbers (none).
+
+### Final state after this session's integration
+
+| Metric | Value |
+|---|---|
+| Canonical pages | 17 |
+| Table rows published | 551 |
+| Rows without an official source | **0** (canonical); preserved-edition baseline unchanged at 114 |
+| Requirements tracked / answered | R-01…R-31 / 28 answered, 3 conditional |
+| Flags published | FR-01…FR-40 |
+| Sources registered | 38 official URLs |
+| Gates | 9/9 pass (privacy sweep 113 files, canonical gate, review regressions, repo audit, row-source audit, 4 preserved-edition gates) |
+| Build | byte-identical on re-run |
+
+### Nothing remains in progress for `arena/edd1ff9e-rentincreasesf3`
+
+E1–E8 all **done**. Open pull requests belonging to other sessions were left untouched.
