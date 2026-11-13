@@ -1371,3 +1371,40 @@ This session's `fetch_page` tool reaches the official domains directly, so **all
 ### Nothing remains in progress for `arena/6d04c026-rentincreasesf3`
 
 K1–K7 all **done**. Open pull requests belonging to other sessions were left untouched.
+
+---
+
+## Task board — session `arena/d0b1f850-rentincreasesf3` (claimed 2026-11-13T06:55Z)
+
+Session id `d0b1f850`. Branch `arena/d0b1f850-rentincreasesf3`, branched from `main` at `5fbd65e`
+(PR #54 merged). All prior sessions' tasks are marked done by their owners; the newest entry in this file
+is `arena/6d04c026` (2026-11-11). Open PRs belonging to other sessions (#55 `arena/10fc30b0`, #45, #35,
+#33, #20, #8, #1) are **not** claimed, edited or merged by this session; this session will `git pull
+--rebase` before every push and resolve any conflict keeping both sides.
+
+New work this session is driven by three gaps found by reading the brief against the canonical site:
+
+1. The owner's literal question — "is that a **state or local** law?" — is answered only implicitly. The
+   licence/reporting duty is **local** (SF Ordinance No. 265-20, effective 18 Jan 2021, amending Admin.
+   Code ch. 37; reporting phase-in for condominiums and 1–9-unit buildings began **1 March 2023**, which
+   is the "law passed in 2023" the owner read about). No California statute creates it.
+2. The brief asks for a **dedicated suggestions section** for improving the site, reviewable before any
+   change is implemented. No such page exists in the canonical edition.
+3. The brief asks for a **clear list of questions/information/answers that must be addressed before any
+   decision can reasonably be made**, with suggestions for discovering missing information. Today that
+   content is split across `pages/requirements.html` and `pages/flagged.html`; there is no decision-
+   readiness page that groups it by what it unlocks.
+
+| # | Task | Status | Owner | File scope |
+|---|------|--------|-------|------------|
+| D1 | Claim + sync, push claim | in progress | d0b1f850 | `COORDINATION.md` |
+| D2 | Add explicit local/state/federal attribution of every requirement (exec summary + dashboard + process) | unclaimed | d0b1f850 | `tools/site_pages_core.py`, regenerated `index.html`, `pages/executive-summary.html`, `pages/process.html` |
+| D3 | New page `pages/suggestions.html` — site improvement suggestions, proposed-not-implemented, with a review rubric | unclaimed | d0b1f850 | `tools/site_layout.py`, `tools/site_pages_core.py`, `tools/build_dashboard.py`, new `pages/suggestions.html` |
+| D4 | New page `pages/open-questions.html` — decision-readiness questions: known / unknown / how to find out / who answers / what it unlocks | unclaimed | d0b1f850 | `tools/site_layout.py`, `tools/site_pages_ref.py`, `tools/build_dashboard.py`, new `pages/open-questions.html` |
+| D5 | Re-verify every cited official source on 2026-11-13; roll research-pass date and notice planner; add verification rows | unclaimed | d0b1f850 | `tools/verify_core_site.py`, `tools/site_pages_core.py`, `research/verification-log.md`, `README.md`, `EXECUTIVE_SUMMARY.md` |
+| D6 | Repo review line by line; log irregularities, publish any new flag | unclaimed | d0b1f850 | read-only + `tools/site_pages_ref.py` |
+| D7 | Final integration: all gates green, build idempotent, PR → `main`, merge, confirm Pages deploy, record here | unclaimed | d0b1f850 | `COORDINATION.md` |
+
+**Handoff note for other sessions:** this session will regenerate `index.html`, `pages/*.html` and
+`assets/style.css` from the merged modules. Any session holding unstaged edits to those artefacts must
+rebase and re-run `python3 tools/build_dashboard.py` after merging this session's changes.
