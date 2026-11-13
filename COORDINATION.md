@@ -2000,3 +2000,36 @@ government domain must be added to **both** or the canonical gate passes while t
 | E6 | State-vs-local at the forefront | **done** | Executive summary "Forefront, part 1"; dashboard section 1; markdown summary § 1 |
 | E7 | Gates + idempotence | **done** | 9/9 gates PASS (privacy sweep 111 files, canonical gate 456 rows, row-source audit 0 canonical exceptions, preserved-edition baseline unchanged at 114); build byte-identical on re-run |
 | E8 | PR → `main`, merge, Pages deploy | in progress | recorded below |
+
+### Merge with PR #60 (session `arena/a53557bb-rentincreasesf3`) — resolved 2026-11-13
+
+`main` advanced again to `49c6c25` (**PR #60**, session `arena/a53557bb-rentincreasesf3`) while this
+branch was being rebased. That session had independently answered **the same three brief items**: the
+state-vs-local question (a row in the dashboard's licence card and a line in the executive summary),
+an open-questions page (`pages/questions.html`, sections A–G, from a new `tools/site_pages_decide.py`),
+and a further suggestions register (sections F–J, appended to `pages/suggestions.html`). It also moved
+the site-wide research-pass date from 11 to **13 November 2026**.
+
+This branch was rebased onto `origin/main`. **Nothing from either session was discarded.** Four
+collisions had to be resolved:
+
+| Collision | Resolution |
+|---|---|
+| Two pages both titled "Open questions" (`pages/questions.html` and this session's `pages/open-questions.html`) | **Made complementary rather than duplicated.** `questions.html` keeps the decision gate (blocking questions, what settles them, documents, discovery, sensitivity, no-official-answer gaps, do-not-serve gate). This session's page was re-scoped to **"Known vs unknown — the information register"** (11 established facts, 11 missing pieces, resolution order); its duplicate 12-question table was removed and replaced with a pointer, since `questions.html` owns that list. |
+| Two "F" sections on `pages/suggestions.html` | This session's "Improvements deliberately not suggested" list was **removed**: `a53557bb`'s section H ("Ideas that look tempting and should not be adopted") covers the same ground as a sourced table, which is the better form for the row-source gate. Every fact in the removed list also appears in section H or elsewhere on the page. |
+| The state-vs-local answer printed twice on the dashboard (their row in the licence card + this session's card 1) | The duplicate row was removed from the licence card; the one sentence in it that was not already in this session's table ("California's rent cap imposes no filing or licence duty at all") was folded into the AB 1482 row of card 1. The licence card now opens with a one-line pointer to part 1. |
+| Requirement **R-25** and flag **FR-35** used by both | Their R-25 kept; this session's rows renumbered **R-26, R-27, R-28** (28 tracked, 25 answered). Their FR-35/FR-36 kept; this session's date-nuance flag renumbered **FR-37** (37 flags). |
+
+Also deduplicated: the `Suggestions` tile and nav/ALL_PAGES entries, and the verification-log row
+numbers (both sessions had used 149+; this session's rows shifted to 169–185, verified zero duplicates).
+
+**Resulting site structure for the two brief items that all three sessions reached for:**
+
+| Page | Role |
+|---|---|
+| `pages/questions.html` | The decision gate — every question that blocks a notice and what settles it |
+| `pages/open-questions.html` | The information register — what we have, what we do not, how to close each gap |
+| `pages/suggestions.html` | One consolidated register of decision options (A, A2), preconditions (B), questions (C), improvement proposals (D, D2, F–I), review protocol (E) and maintenance (J) |
+
+All nine gates pass on the merged tree: 17 canonical pages, 524 table rows, **0 rows without an
+official source**, privacy sweep clean on 113 tracked files, build byte-identical on re-run.
