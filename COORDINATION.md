@@ -1635,7 +1635,7 @@ files no other session has claimed.
 | A3 | Add dedicated suggestions page (site-improvement proposals, each with impact/effort/status for owner review, nothing implemented without sign-off) | done | arena/a53557bb-rentincreasesf3 | `pages/suggestions.html`, same generator modules |
 | A4 | Independent re-verification of all canonical rates, notice rules and maths against official pages fetched 13 Nov 2026 | done | arena/a53557bb-rentincreasesf3 | `research/verification-log.md`, `data/sources.json` |
 | A5 | Anonymisation re-sweep (occupant initials, withheld postal code, neighbourhood, street) over every published file | done | arena/a53557bb-rentincreasesf3 | read-only sweep via `tools/privacy_scan.py` |
-| A6 | Final integration: rebuild, all gates pass, PR to main, merge, confirm Pages deploy, record here | in progress (integration) | arena/a53557bb-rentincreasesf3 | `index.html`, `pages/*`, `README.md` |
+| A6 | Final integration: rebuild, all gates pass, PR to main, merge, confirm Pages deploy, record here | done | arena/a53557bb-rentincreasesf3 | `index.html`, `pages/*`, `README.md` |
 
 No other session's files are edited. If a fix is needed in another edition (`docs/`, `dashboard/`,
 `review/`, `audit/`, `verified/`, `verification/`) it is logged here as a request instead.
@@ -1707,6 +1707,81 @@ modules. Resolution, with neither side's work discarded:
 | Log rows | 134–148 (their 13 Nov pass) | 134–148 (this session's pass) | theirs kept; this session's pass appended after theirs with non-colliding numbering |
 | Research date | footer still 11 Nov 2026 | bumped to 13 Nov 2026 | **13 November 2026** in the shared footer, `RESEARCH_DATE`, the planner heading and the sources lede; planner cells for dates that have passed marked accordingly |
 | `noindex` meta, units header fix, their index tile | added on main | — | kept untouched |
+
+### Integration record — PR #59 (this session)
+
+| Item | Result |
+|---|---|
+| Pull request | <https://github.com/kanlerxz87-cyber/RentincreaseSF3/pull/59> — `arena/a53557bb-rentincreasesf3` → `main` |
+| CI | `site-checks` `verify` job **SUCCESS** (privacy sweep, rebuild, stale-HTML check, `verify_core_site`, review regressions, whole-repo audit, all preserved-edition gates) |
+| Merge | **merged**, `--merge`, merge commit `07c13e97f000708efd17bbfd28d2f90fbbb8a985` at 2026-11-13T07:08:37Z; PR state `MERGED`, `mergeable` was `CLEAN` before merge |
+| GitHub Pages | build created 2026-11-13T07:08:38Z, status **`built`**; `gh api /pages` reports `status=built` for `main` `/` |
+| Live spot-check after deploy | `/pages/questions.html` serves the open-questions register with official links per row; `/pages/suggestions.html` serves the consolidated page — their sections A–E plus this session's F–J (12 `SG-` proposals marked *Proposed*, 6 rejected ideas, the maintenance rule) |
+| Site state | 16 pages, 52 tables, **467 data rows**, 1308 links; 36 flags published on `pages/flagged.html`; requirements register 25 rows (22 answered, 3 conditional) |
+
+### Handover notes for the next session
+
+- A transient Pages build failure was observed at 07:05:28Z (before this merge) and the next push
+  rebuilt successfully — consistent with the incident logged by `arena/ae0d4576`. If a build errors
+  with only “Page build failed.”, retry by pushing; do not assume content breakage.
+- Two sessions collided on `FR-`/log row numbers today. Convention going forward: read `origin/main`
+  *immediately before* allocating new IDs, and prefer a follow-up merge commit over `pull --rebase`
+  when `COORDINATION.md` is involved (the rebase auto-merge silently preferred one side for
+  generated files).
+- All 12 `SG-` proposals are still **Proposed**. If the owner accepts any, implement only the accepted
+  IDs and change those rows to **Accepted** with the date; never delete a row.
+- Open, non-blocking, owner-side: FR-01 (Unit B rent history), FR-04 (licence status), FR-02 (Unit A
+  anniversary), FR-05 (2027–28 percentage), FR-06 (File #261020), FR-35, FR-36.
+
+---
+
+# Final record — session `arena/1fbb8c79-rentincreasesf3` (2026-11-13)
+
+**Claimed 2026-11-13T06:50Z** (branch `arena/1fbb8c79-rentincreasesf3`, from `main` at `5fbd65e`, PR #54).
+Claim text and in-flight task board (D1–D4) are preserved in this session's earlier branch commits and
+summarised here. Arena pins the session branch name, so the `session-<id>/<task>` pattern was replaced
+by non-overlapping file scopes.
+
+## What this session delivered
+
+| Task | Status | Evidence |
+|---|---|---|
+| D1 claim + sync | done | Claim pushed 2026-11-13T06:50Z before any work |
+| D2 independent re-verification (13 Nov 2026) | done | Ten load-bearing sources fetched directly and read: sf.gov Housing Inventory / Learn-about-rent-increases / Form 571 PDF (all 46 rows) / Banked / rent-history page; oag.ca.gov/rentcaps; leginfo Civ. Code § 827; Legistar File #261020 (Pending Committee Action); govinfo 42 U.S.C. § 3604; portal.sfrb.org. **All confirmed the published claims verbatim.** Baseline gates on `5fbd65e`: 8/8 PASS, build idempotent. Overlap with sessions `fd7ed99e` (rows 134–148) and `a53557bb` (rows 149–168) resolved by retaining only the additive rows **169–170** (federal FHA text; Portal functions); the AG-page "1974.12" typo this session found was independently recorded as row 167. |
+| D3 suggestions + open-questions pages | **yielded after three-way duplicate-work collision** | This session built and verified `pages/suggestions.html` (SG-01…08, P1–P6) and `pages/open-questions.html` (OQ-01…10) with all gates passing (16 pages / 46 tables / 404 rows). PRs #56 and #59 then landed parallel implementations from `fd7ed99e` (suggestions) and `a53557bb` (consolidation + `pages/questions.html`, R-24/R-25, SG-11). Per the no-discard rule the **canonical pages are theirs, untouched**; this session's duplicate generator, page and nav/tile/registration entries were withdrawn, and this session's R-25 wording was superseded by `a53557bb`'s. The owner-brief deliverables (dedicated suggestions section; questions/answers before any decision) are live on `main`. |
+| D4 PR → merge → deploy → record | done | PR [#57](https://github.com/kanlerxz87-cyber/RentincreaseSF3/pull/57) (CI pass run 43382851460 on the first head; branch re-based and re-pushed three times as `main` advanced via PRs #55, #56, #58, #59); merge, Pages deploy and live check recorded below. |
+
+## Conflict log (three rebases; nothing from any session discarded)
+
+| Round | `main` advanced via | Conflicts | Resolution |
+|---|---|---|---|
+| 1 | PR #55 (`10fc30b0`: FR-32…34, row-source audit gate) | `COORDINATION.md`; `research/verification-log.md` (row collision 134–144 vs 134–148) | Both sections kept; rows renumbered 149–159; cross-refs updated |
+| 2 | PR #56 (`fd7ed99e`: suggestions page) + PR #58 (records) | `COORDINATION.md`, verification-log (149–159 vs 149–148+), artefacts, generators | Their suggestions page canonical; duplicate entries removed; open-questions kept at that point; log collision noted |
+| 3 | PR #59 (`a53557bb`: consolidated questions + suggestions, rows 149–168, SG-11) | `COORDINATION.md`, verification-log (dup 149–159), artefacts, generators incl. `site_pages_decide.py` add/add | **Duplicate deliverables yielded**; branch reset to `main` + additive rows 169–170 + this record; all 9 gates verified green on `main` before and after |
+
+A mishandled interrupted command chain briefly committed a conflicted file during round 1
+(`44652c8`); it was aborted via `git rebase --abort` and redone; it never reached `origin`. Branch
+history was rewritten by the rebase/reset; every push was lease-pinned to this session's own prior
+tip, so no other session's ref was ever overwritten.
+
+## Observed, for a future pass
+
+1. Verification-log rows 1–12 appear twice on `main` (pre-existing from the 2026-11-06/07 passes).
+2. Seven open PRs from other sessions (#1, #8, #20, #33, #35, #45) are stale (newest update
+   2026-11-11T04:48Z, > 48 h) and must be rebased onto current `main` before anyone acts on them.
+3. Three sessions independently claimed the same brief deliverables on 13 Nov within ~10 minutes —
+   the COORDINATION claim step worked as designed (duplicates were detected and reconciled), but a
+   faster claim→publish loop (push the claim before building) would avoid the wasted parallel work.
+
+### PR / deploy record — session `arena/1fbb8c79-rentincreasesf3` (final)
+
+- **Branch:** `arena/1fbb8c79-rentincreasesf3` → `main`
+- **PR:** [#57](https://github.com/kanlerxz87-cyber/RentincreaseSF3/pull/57) — "13 Nov 2026 additive re-verification (FHA text, Portal) + three-way duplicate-work reconciliation record"
+- **Merge:** **MERGED** at 2026-11-13, merge commit **`90e6720`** (`gh pr merge 57 --merge`, no approval wait)
+- **CI:** PR head `Site checks` run **43384213989** → success (10 s)
+- **GitHub Pages:** `pages build and deployment` for `90e6720` → status **`built`**, error null, created 2026-11-13T07:14:06Z. Live URL: <https://kanlerxz87-cyber.github.io/RentincreaseSF3/>
+- **Live verification (cache-busted with the merge sha):** landing page renders with the forefront licence answer ("Is that a state law or a local law?" → **Local — SF Ordinance No. 265-20**, reporting from 1 March 2023 for 1–9 unit buildings); `pages/questions.html` renders the 14 blocking questions with per-row official sources; `pages/suggestions.html` live. Note: sandbox `curl` cannot reach github.io (exit 35); use the fetch tool for live checks.
+- **Session outcome:** D1–D4 all **done**. The brief's site deliverables are on `main` via the combined work of `fd7ed99e` / `a53557bb` / this session; this session's surviving diff is verification-log rows 169–170 and the coordination records. Flags FR-01…FR-34 remain published on the Flagged for Review page; flagged items and unverified values do not block, per the standing rule.
 
 ---
 
