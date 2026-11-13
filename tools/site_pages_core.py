@@ -64,7 +64,7 @@ def index():
   <h2>4. What changed on 9 November 2026 — read before serving any notice</h2>
   <p>The Rent Board added a notice to its rent-increase and banking pages on <b>9 November 2026</b>: the Board of Supervisors is considering legislation (<b>File No. 261020</b>) that would <b>temporarily limit the combined amount of banked rent increases and capital improvement rent increases to 10% per year</b>, for the next three years. The Rent Board states that, if enacted as currently proposed, it would apply to <b>banked rent increases noticed on or after 15 September 2026</b> — and that “<b>this legislation has not been enacted and is subject to change</b>”.</p>
   <table>
-    <thead><tr><th>Fact</th><th>Status on 11 Nov 2026</th><th>Official source</th></tr></thead>
+    <thead><tr><th>Fact</th><th>Status on 13 Nov 2026</th><th>Official source</th></tr></thead>
     <tbody>
       <tr><td>Ordinance title and effect</td><td>Would cap banked + capital-improvement increases at a total of <b>10% per year</b> for rent-controlled units, for three years.</td>{cell("LEGISTAR_261020")}</tr>
       <tr><td>Legislative status</td><td><b>Pending Committee Action</b> — introduced 15 Sep 2026, referred to the Land Use and Transportation Committee; no final action recorded. Not law.</td>{cell("LEGISTAR_261020")}</tr>
@@ -306,8 +306,7 @@ def process():
       <tr><td>8 Feb 2027 — Unit B at 13.1% (historical example)</td><td>&gt;10%</td><td><span class="badge danger">10 Nov 2026 — passed</span></td><td><span class="badge danger">5 Nov 2026 — passed</span></td>{cell("LEG_827", "LEG_1013")}</tr>
       <tr><td>11 Feb 2027 — Unit B at 13.1% (earliest date reachable from the 13 Nov 2026 pass)</td><td>&gt;10%</td><td><b>13 Nov 2026 — research-pass date (personal service only)</b></td><td><span class="badge danger">8 Nov 2026 — passed</span></td>{cell("LEG_827", "LEG_1013")}</tr>
       <tr><td>14 Feb 2027 — Unit B at 13.1%</td><td>&gt;10%</td><td>16 Nov 2026</td><td><span class="badge danger">11 Nov 2026 — passed</span> federal holiday (Veterans Day); postal service that day unverified (FR-27)</td>{cell("LEG_827", "LEG_1013", "OPM_HOLIDAYS")}</tr>
-      <tr><td>16 Feb 2027 — Unit B at 13.1% (first date reachable by mail on the 13 Nov 2026 pass)</td><td>&gt;10%</td><td>18 Nov 2026</td><td><b>13 Nov 2026 — research-pass date (mail today)</b></td>{cell("LEG_827", "LEG_1013")}</tr>
-      <tr><td>Any date from 1 March 2027 onward</td><td>Any</td><td colspan="2"><b>Blank — the allowable percentage for 1 Mar 2027 – 29 Feb 2028 has not been announced.</b> Use the percentage in effect on the effective date.</td>{cell("SF_LI")}</tr>
+      <tr><td>18 Feb 2027 — Unit B at 13.1% (example still open on 13 Nov 2026)</td><td>&gt;10%</td><td>20 Nov 2026</td><td>15 Nov 2026</td>{cell("LEG_827", "LEG_1013")}</tr>      <tr><td>16 Feb 2027 — Unit B at 13.1% (first date reachable by mail on the 13 Nov 2026 pass)</td><td>&gt;10%</td><td>18 Nov 2026</td><td><b>13 Nov 2026 — research-pass date (mail today)</b></td>{cell("LEG_827", "LEG_1013")}</tr>      <tr><td>Any date from 1 March 2027 onward</td><td>Any</td><td colspan="2"><b>Blank — the allowable percentage for 1 Mar 2027 – 29 Feb 2028 has not been announced.</b> Use the percentage in effect on the effective date.</td>{cell("SF_LI")}</tr>
     </tbody>
   </table>
   <p class="small">These are fixed-date examples, not a live calculator. Count forward from actual service and allow 30 or 90 days, plus any applicable mailing extension; confirm deadlines and current rules before serving.</p>
@@ -434,7 +433,7 @@ def units():
       <tr><td>Licence in force on the effective date</td><td>Without it the notice is not enforceable, whatever the percentage; the Board's noncompliance page says such a notice may be “null and void” and the tenant may be owed a refund.</td>{cell("SF_HI", "SF_NONCOMP")}</tr>
       <tr><td>Unit A anniversary: 1 Feb or 1 Apr</td><td>Moves the earliest lawful date and the banked amount.</td>{cell("SF_LI")}</tr>
       <tr><td>2027–28 percentage</td><td>Not announced; cannot be used for an effective date on or after 1 March 2027.</td>{cell("SF_LI", "SF_571")}</tr>
-      <tr><td>Voucher / subsidy status of either unit</td><td>Subsidised units are partially exempt from the Rent Ordinance; a housing authority may also review reasonableness (24 CFR § 982.507 — rent to owner: reasonable rent). Whether either unit has a housing assistance payment contract is <b>unknown</b> (FR-13); that federal citation was corrected on 11 Nov 2026 (FR-27).</td>{cell("SF_LAWS", "CFR_982")}</tr>
+      <tr><td>Voucher / subsidy status of either unit</td><td>Subsidised units are partially exempt from the Rent Ordinance; a housing authority may also review reasonableness (24 CFR § 982.507 — rent to owner: reasonable rent). Whether either unit has a housing assistance payment contract is <b>unknown</b> (FR-13); that federal citation was corrected on 11 Nov 2026 (FR-28).</td>{cell("SF_LAWS", "CFR_982")}</tr>
     </tbody>
   </table>
 </div>
