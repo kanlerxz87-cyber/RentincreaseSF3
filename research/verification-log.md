@@ -414,3 +414,35 @@ Unit B: 3,150.00 × 1.6% = 50.40 → 3,200.40 · × 10.0% = 315.00 → 3,465.00 
 - The Rent Board's own banking worked example (tenant 8/1/2022, first increase 8/1/2025, banking **both**
   8/1/2023 and 8/1/2024) cannot be reconciled with a strict per-anniversary reading of the 24-month
   sentence. This is why FR-03 keeps both readings published rather than picking one.
+
+---
+
+## Session `arena/3c130689-rentincreasesf3` — direct re-fetch pass (13 November 2026)
+
+Every source below was **fetched and read directly** in this session on 13 November 2026 (not
+inherited from an earlier pass). Row numbering continues from 133.
+
+| # | Assertion checked | Official source (fetched 13 Nov 2026) | Result |
+|---|---|---|---|
+| 134 | "All owners of residential property are required to report"; licence auto-generated for non-owner-occupied units; must be in effect on the effective date; 1 Mar annual deadline; no monetary penalty for late filing; 1–9 unit buildings + condominiums from 1 Mar 2023 (10+ units from 1 Jul 2022); reporting is public information | [sf.gov — The Rent Board Housing Inventory](https://www.sf.gov/rent-board-housing-inventory) | Confirmed |
+| 135 | The 2023 Rent-Board duty is **local** law: Ordinance No. 265-20, effective 18 January 2021; reporting for condominiums and buildings with fewer than 10 units begins 1 March 2023; licence required before annual/banked increases; licence **suspended** for the period of noncompliance | [sf.gov — Ordinance 265-20 summary](https://www.sf.gov/news--new-legislation-creates-housing-inventory-and-requires-owners-obtain-license-imposing) | Confirmed |
+| 136 | 1.6% for 1 Mar 2026 – 28 Feb 2027 (60% of Bay Area CPI); base rent only; no rounding up; anniversary rules; 30/90-day notice +5 if mailed; additional-occupant charge unlawful; licence section ("July 1, 2022 (or March 1, 2023 for … buildings with 1-9 residential units)"); 9 Nov 2026 File #261020 notice still posted | [sf.gov — Learn about rent increases](https://www.sf.gov/learn-about-rent-increases-san-francisco) | Confirmed |
+| 137 | Unlicensed increase: notice "may be null and void (this may apply for multiple years)"; tenant "may be entitled to a rent refund"; Form 516C / Form 518 routes; Portal licence-status lookup; 10+ units since 1 Jul 2022, under 10 units since 1 Mar 2023 | [sf.gov — Notice of Owner Noncompliance](https://www.sf.gov/notice-of-owner-noncompliance-with-housing-inventory) | Confirmed |
+| 138 | Rent Board Fee 2026–27: **$59.00 per dwelling unit**, $29.50 guest unit; due 1 March; 5%/month late penalty up to 15%; 50% ($29.50) recoverable from qualifying tenants; 2027 exemption request deadline 14 December 2026; fee exemption does not satisfy Housing Inventory reporting | [sf.gov — The Rent Board Fee](https://www.sf.gov/rent-board-fee) | Confirmed |
+| 139 | Banking: 24-full-month wording; additive, not compounded; no limit; no expiry during tenancy; new owners may use prior owners' banked amounts; no carry-over to a new tenant; licence precondition; notice must state the banked part; 9 Nov 2026 File #261020 notice still posted | [sf.gov — Banked rent increases](https://www.sf.gov/information--banked-rent-increases) | Confirmed |
+| 140 | Civ. Code § 827(b)(2)–(3): 30 days at ≤10% of the rent charged at any time in the prior 12 months (alone or combined); 90 days if greater; personal delivery or mail under CCP § 1013 | [leginfo — Civ. Code § 827](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=827) | Confirmed |
+| 141 | Civ. Code § 1947.12(a): 5% + CPI, max 10%; (d)(3): does not apply to housing under a local ordinance that restricts increases to a lower amount — state law does not require any Rent Board filing | [leginfo — Civ. Code § 1947.12](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=1947.12) | Confirmed |
+| 142 | Form 571 rate table re-read row by row (46 rows): 1.6% for 3/1/26–2/28/27, 1.4%, 1.7%, 3.6% … back to 4/1/82; matches the site's transcription and `OFFICIAL_RATES` exactly, including 3/1/84 – 2/28/85 and the 12/8/92 – 2/28/93 row | [sf.gov — Form 571 (PDF)](https://www.sf.gov/documents/34344/571_Allowable_Annual_Increases_26-27_1.pdf) | Confirmed |
+| 143 | File #261020 status re-checked: **Pending Committee Action**, Ordinance, introduced 15 Sep 2026, in control of Land Use and Transportation Committee, no final action, no enactment date — **not law** | [sfgov.legistar.com — File #261020](https://sfgov.legistar.com/LegislationDetail.aspx?ID=8217304&GUID=7EDA4662-EBFB-4AF5-962F-C669B64AA770) | Confirmed |
+| 144 | AB 1482 San Francisco Area: **8.8%** for increases starting 8/1/26–7/31/27; where the local cap is lower the local rule applies | [oag.ca.gov — Limits on rent increases](https://oag.ca.gov/rentcaps) | Confirmed |
+| 145 | Coverage: units built on or before 13 June 1979 generally have rent control and eviction protection (with stated exceptions); counsellor line 415-252-4600 | [sf.gov — Learn about San Francisco rental laws](https://www.sf.gov/learn-about-san-francisco-rental-laws) | Confirmed |
+| 146 | Multi-year increases: additive, not compounded; **no petition required**; no rounding up; base rent only; 30/35-day notice | [sf.gov — Annual rent increase for multiple years](https://www.sf.gov/information/annual-rent-increase-multiple-years) | Confirmed |
+| 147 | Tenant petitions: free filing; Rent Board does not adjudicate discrimination, harassment or retaliation; unlawful-rent-increase petition has **no filing fee and no time limit**, decided by an ALJ, designed so no attorney is required | [sf.gov — Tenant petitions](https://www.sf.gov/tenant-petitions) · [sf.gov — Report an unlawful rent increase](https://www.sf.gov/report-unlawful-rent-increase-or-request-review-your-rent-history) | Confirmed |
+
+**No contradiction found between any published figure and its official source in this pass.**
+Arithmetic re-checked unchanged: 3,995.00 × 1.6% = 63.92 → 4,058.92 · × 3.0% = 119.85 → 4,114.85 ·
+3,150.00 × 1.6% = 50.40 → 3,200.40 · × 10.0% = 315.00 → 3,465.00 · × 11.5% = 362.25 → 3,512.25 ·
+× 13.1% = 412.65 → 3,562.65; banked 1.8+0.7+2.3+3.6+1.7+1.4 = 11.5, +1.6 = 13.1. Notice dates
+recomputed for the 13 Nov 2026 pass: 13 Feb… 11 Feb 2027 − 90 = 13 Nov 2026; 11 Feb 2027 − 95 =
+8 Nov 2026; 16 Feb 2027 − 90 = 18 Nov 2026; 16 Feb 2027 − 95 = 13 Nov 2026; 14 Feb 2027 − 90 =
+16 Nov 2026; 14 Feb 2027 − 95 = 11 Nov 2026 (now marked passed).
