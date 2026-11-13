@@ -414,3 +414,33 @@ Unit B: 3,150.00 × 1.6% = 50.40 → 3,200.40 · × 10.0% = 315.00 → 3,465.00 
 - The Rent Board's own banking worked example (tenant 8/1/2022, first increase 8/1/2025, banking **both**
   8/1/2023 and 8/1/2024) cannot be reconciled with a strict per-anniversary reading of the 24-month
   sentence. This is why FR-03 keeps both readings published rather than picking one.
+
+---
+
+## Session `arena/10fc30b0-rentincreasesf3` — direct reads and whole-site row audit (2026-11-11)
+
+Every page below was fetched directly in this session on 11 Nov 2026 and read against the statement
+in the second column. Row numbers continue from 133.
+
+| # | Statement checked | Result | Official source |
+|---|---|---|---|
+| 134 | "All owners of residential property are required to report"; licence generated automatically for non-owner-occupied units; must be current "on the effective date of the notice"; deadline 1 March; no monetary penalty for late filing; contact changes within 30 days | Confirmed verbatim | <https://www.sf.gov/rent-board-housing-inventory> |
+| 135 | Housing Inventory submissions are public (name and business contact information, square footage, bedrooms, bathrooms, 12-month vacancy/occupancy history); Portal account needs "the PIN number on your Annual Notice" | Confirmed verbatim — **not previously on the canonical site**; added (FR-34) | <https://www.sf.gov/rent-board-housing-inventory> |
+| 136 | 1.6% for 1 Mar 2026 – 28 Feb 2027; notice of 9 Nov 2026 on File No. 261020; 30/90-day notice plus 5 days if mailed; first increase 12 months after the lease began | Confirmed verbatim | <https://www.sf.gov/learn-about-rent-increases-san-francisco> |
+| 137 | Worked examples on the same page: example 1 says 1.6% was "in effect on June 1, 2025"; example 4 quotes June 1, 2026 for a May 1, 2026 increase | **Date slips in the official text** (Form 571: 1.4% on June 1, 2025). Arithmetic of each example is right. Published as FR-32 | <https://www.sf.gov/learn-about-rent-increases-san-francisco> |
+| 138 | Banking: 24-full-months sentence; no limit; no expiry during the tenancy; not compounded or prorated; notice must say which part is banked | Confirmed verbatim. One sentence of the worked example says 1.4% was "in effect on August 1, 2024" (Form 571: 1.7%) — FR-32 | <https://www.sf.gov/information--banked-rent-increases> |
+| 139 | All 46 periods and percentages, 4/1/82 – 2/28/27 | Compared by script with every period/percentage pair on all 71 published pages (122 pairs). One mismatch, in `docs/legal-framework.html` (3/1/88 – 2/29/88), corrected to 2/28/89 | <https://www.sf.gov/documents/34344/571_Allowable_Annual_Increases_26-27_1.pdf> |
+| 140 | Unlicensed notice "may be null and void (this may apply for multiple years)"; tenant "may be entitled to a rent refund"; start dates 1 July 2022 / 1 March 2023; Forms 516C and 518 | Confirmed verbatim | <https://www.sf.gov/notice-of-owner-noncompliance-with-housing-inventory> |
+| 141 | Fee $59.00 per dwelling unit for 2026–27; 50% ($29.50) recoverable from tenants in occupancy on 1 November; 5% monthly penalty to 15%; exemption deadline 14 December 2026 | Confirmed verbatim. The page does not say whether an unpaid fee affects the licence — FR-33 | <https://www.sf.gov/rent-board-fee> |
+| 142 | Rule § 4.12(a) "A full 12 months must have elapsed…"; § 4.12(b) banked portion and dates; § 4.10(a)–(b) | Confirmed verbatim | <https://www.sf.gov/reports--december-2022--rent-board-rules-and-regulations-part-iv-rent-increases-not-requiring> |
+| 143 | File #261020: Ordinance, introduced 9/15/2026, status Pending Committee Action, Land Use and Transportation Committee, no enactment date; latest history entry 10/7/2026 | Confirmed | <https://sfgov.legistar.com/LegislationDetail.aspx?ID=8217304&GUID=7EDA4662-EBFB-4AF5-962F-C669B64AA770> |
+| 144 | Civ. Code § 827(b)(2)–(3): 30 days at 10% or less, 90 days above, measured over the prior 12 months; CCP § 1013(a): five calendar days for mail within California | Confirmed verbatim | <https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=827> · <https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CCP&sectionNum=1013> |
+| 145 | Civ. Code § 1942.5(a) 180-day provision and (d); § 1947.12(a) and (d)(3); Gov. Code § 12955(a) list of protected characteristics; 42 U.S.C. § 3604(a)–(b), (f) | Confirmed verbatim | <https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=1942.5> · <https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=1947.12> · <https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=GOV&sectionNum=12955> · <https://www.govinfo.gov/content/pkg/USCODE-2023-title42/html/USCODE-2023-title42-chap45-subchapI-sec3604.htm> |
+| 146 | State cap for the San Francisco area: 6.3% (8/1/25 – 7/31/26), 8.8% (8/1/26 – 7/31/27); the lower local cap applies | Confirmed | <https://oag.ca.gov/rentcaps> |
+| 147 | Tenant petitions are free with no time limit; the Rent Board does not adjudicate harassment, discrimination or retaliation; six landlord petition types; § 6.14 / Costa-Hawkins co-tenant wording | Confirmed verbatim | <https://www.sf.gov/tenant-petitions> · <https://www.sf.gov/report-unlawful-rent-increase-or-request-review-your-rent-history> · <https://www.sf.gov/landlord-petitions-and-passthroughs> · <https://www.sf.gov/information--rent-increases-under-section-614-and-costa-hawkins> |
+| 148 | Every table row on every published page carries an official link | **Not true of the preserved editions.** 276 of 1,386 rows lacked one before this pass; 114 of 1,050 preserved rows after it; canonical pages 348 of 348. Published as FR-24; enforced by `tools/row_source_audit.py` | (repository check) |
+
+Not fetched in this session, so not re-verified by it: Administrative Code § 37.3 on American Legal,
+the algorithmic-devices pages, the Department of Justice release, HUD and eCFR pages, the Civil
+Rights Department subpages beyond the housing landing page, and the non-official research cited only
+in `docs/` and `dashboard/`.

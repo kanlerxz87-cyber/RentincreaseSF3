@@ -1371,3 +1371,182 @@ This session's `fetch_page` tool reaches the official domains directly, so **all
 ### Nothing remains in progress for `arena/6d04c026-rentincreasesf3`
 
 K1–K7 all **done**. Open pull requests belonging to other sessions were left untouched.
+
+---
+
+## Task board — session `arena/10fc30b0-rentincreasesf3` (preserved-edition audit, privacy-surface audit, deferred integration — 2026-11-11)
+
+Claimed **2026-11-11T04:24Z**, after reading this board top to bottom and inspecting every remote
+branch. Branch `arena/10fc30b0-rentincreasesf3` (Arena fixes the branch name, so the
+`session-<id>/<task>` pattern cannot be used), first based on `main` at `0a25f12` (PR #48). Rebased three times as `main` moved (`69d2bde` PR #50, `8298832` PR #52);
+then merged with `5fbd65e` (PR #54). Each add/add conflict in this file was resolved by taking `main`'s copy
+whole and re-appending this section — every session's section kept, nothing discarded.
+
+**Live claims found at claim time (pushed to their own branches at about 04:19Z, not yet on `main`):**
+
+| Session | Claimed scope (as written on its branch) | Consequence for this session |
+|---|---|---|
+| `arena/96aa0f4f-rentincreasesf3` | `COORDINATION.md`, `research/verification-log.md`, `data/sources.json`; canonical generators `tools/*.py` + `index.html` / `pages/*.html` only if a direct read contradicts a figure; preserved editions **not edited** | canonical site and `research/verification-log.md` are **not** touched here |
+| `arena/488b115e-rentincreasesf3` | same shared records; `tools/site_*.py`, `tools/sitedata.py`, `index.html`, `pages/`, `assets/` only on a verified defect; preserved editions **read-only** | same |
+| `arena/beba4d31-rentincreasesf3` | verification log; `tools/`, `pages/` for verified errors | same |
+| `arena/0dea38fc-rentincreasesf3` | confirmation pass — merged as PR #48 at 04:21Z | finished |
+
+All four passes cover the **canonical** site (root `index.html` + `pages/`, 14 pages). None covers the
+six preserved editions, which are still published and make up 57 of the 71 live HTML pages, and none
+covers the repository's privacy surface outside the working tree. This session therefore claims only
+what is unclaimed:
+
+| # | Task | Status | Owner | File scope |
+|---|---|---|---|---|
+| P1 | Claim, record scope, push | done | `arena/10fc30b0` | `COORDINATION.md` (this section only) |
+| P2 | Privacy-surface audit beyond the working tree: git history on every ref, commit messages, branch names, PR titles and bodies, repository metadata | **done** (04:33Z) — see log | `arena/10fc30b0` | read-only; findings recorded here |
+| P3 | Line-by-line audit of the six preserved editions against official pages fetched directly in this session: every table row has an official source link, or is blank and flagged; every figure, date and legal statement matches the official text | **audit done** (04:40Z); remedy in progress — see log | `arena/10fc30b0` | `docs/**`, `dashboard/**`, `review/**`, `audit/**`, `verified/**`, `verification/**`, their generators and checkers (`tools/build_site.py`, `tools/sitedata.py`, `tools/build_v2.py`, `tools/check_site.py`, `tools/check_v2.py`, `tools/verify_edition.py`, `verify_site.py`), plus a new audit record under `research/` in a new file |
+| P4 | Read-only line-by-line review of the canonical site (owned by the live sessions above): findings are logged below as **requests**, not edited | **done** for `index.html`, `pages/process.html`, `pages/units.html`, `pages/flagged.html` (read in full); other canonical pages checked by script only — see log | `arena/10fc30b0` | none (requests only) |
+| P5 | Integration: rebase on `main`, apply the P4 findings through the canonical generator, publish this session's flags on the Flagged for Review page, run every gate, PR to `main`, merge, confirm Pages, record here | **done** except the PR/deploy record — claimed 04:41Z (see below) | `arena/10fc30b0` | shared outputs, only at that point |
+
+Takeover note for P3: the preserved editions were built by sessions `ae0d4576` (`docs/`), `edaa9740`
+(`dashboard/`), `64380530` (`review/`), `649a1fa8` (`audit/`), `b73ba2df` (`verified/`) and `8c577e09`
+(`verification/`). Their last commits are between one and five days old, far beyond the 60-minute
+rule, and open flags FR-19 and FR-24 record that nobody has verified those pages row by row. Nothing
+in them will be deleted; corrections are made in place and listed in this section.
+
+### Log — `arena/10fc30b0` (2026-11-11)
+
+**Official pages fetched directly in this session (04:20–04:30Z)** and used as the reference text for
+everything below: sf.gov Housing Inventory, rent increases, banked increases, multiple-year increases,
+noncompliance notice, rental laws, Rent Board Fee, tenant petitions, unlawful-increase petition,
+landlord petitions, § 6.14 / Costa-Hawkins, Rules and Regulations Part IV (§§ 4.10, 4.12), Form 571
+(PDF); Legistar File #261020; Civ. Code §§ 827, 1942.5, 1947.12, 1954.52, 1954.53; CCP § 1013;
+Gov. Code § 12955; 42 U.S.C. § 3604 (govinfo); oag.ca.gov/rentcaps; calcivilrights.ca.gov/housing.
+
+**P2 — privacy surface (done).** The working tree of `main`, the live site, every PR title and body,
+every issue and every comment were checked: none carries a withheld value. Places that a working-tree
+scan cannot reach (repository history, unmerged session branches, CI run logs) were also audited; the
+result and the closing actions, which need repository-owner rights this session does not use, were
+reported to the owner directly and are deliberately not itemised in this public file. One attempted
+remediation (removing two CI run logs) was refused by the API with HTTP 403. No tree content changed.
+
+**P3 — row-source audit of every published page (done).** A script classified every table body row on
+all 71 published pages by the links it carries (official host / non-official host / internal only / none):
+
+| Edition | Pages | Rows | Direct official link | Non-official only | Internal only | No link |
+|---|---|---|---|---|---|---|
+| canonical (`index.html` + `pages/`) | 13 | 336 | 336 | 0 | 0 | 0 |
+| `audit/` | 5 | 55 | 55 | 0 | 0 | 0 |
+| `verification/` | 10 | 212 | 210 | 0 | 0 | 2 |
+| `dashboard/` | 10 | 145 | 143 | 2 | 0 | 0 |
+| `verified/` | 10 | 267 | 242 | 0 | 17 | 8 |
+| `review/` | 11 | 154 | 27 | 0 | 122 | 5 |
+| `docs/` | 11 | 217 | 97 | 7 | 1 | 112 |
+| **All** | **70 + landing** | **1,386** | **1,110** | **9** | **140** | **127** |
+
+- **Irregularity:** flags FR-19 / FR-24 report "25 row-source warnings". The real figure is **276 rows**
+  (20% of all published rows), all in preserved editions. The gap exists because no gate checks row
+  sources in `docs/` or `review/`: `tools/check_site.py` tests links and anchors only, and `docs/` has no
+  checker at all.
+- **Irregularity:** `docs/` cites non-official bodies (two university research centres, one out-of-county
+  housing authority) in seven data rows, against the official-source rule.
+- **Irregularity:** the preserved editions repeat statements the canonical site has since corrected (for
+  example a two-unit building treated as established, 13.1% presented as a June 2027 ceiling, File #261020
+  with its earlier status).
+- **Cross-check of every edition's flag list against the canonical flags:** two still-valid findings
+  exist only in preserved editions and are missing from the canonical Flagged page — (a) typographical
+  errors in the Rent Board's own worked examples (`review/` F2), re-confirmed today on the live sf.gov
+  pages; (b) no official page states whether an unpaid Rent Board Fee affects the licence
+  (`verification/` F-15). Both are carried into the canonical flags by P5.
+
+**P4 — canonical pages read against the fetched official text.** No wrong figure, date or citation was
+found on the four pages read in full. Findings (all additive or cosmetic):
+
+1. Nowhere does the canonical site say that Housing Inventory submissions are **public** (the official
+   page: "The information entered in the housing inventory submission is public"), which matters to an
+   individual owner; nor that the Portal needs the **PIN printed on the Annual Notice** to add a property.
+2. `pages/units.html`, table "Unit B — six annual percentages": the header reads "Allowable percentage |
+   Percentage in effect" over a rate-period column and a percentage column — the first label is wrong.
+3. The notice-date planner lists mid-month and already-passed dates and has to be rolled forward by each
+   session; a first-of-month table computed by the generator does not go stale.
+4. Pages carry no `noindex` directive, so search engines may index a site about one owner's two units.
+5. Statutory links are written with a bare `&sectionNum`; browsers handle it, Python's `html.parser`
+   decodes `&sect` — cosmetic, noted for whoever next touches the link helper.
+
+**P5 — integration claim (04:41Z).** Live claims at this moment: PR #53 (`arena/6d04c026`, opened 04:37Z)
+touches `tools/site_layout.py`, `tools/site_pages_core.py`, `tools/site_pages_ref.py` and regenerated
+pages. This session will not edit those three generator modules until #53 has merged (or gone 60 minutes
+without commits). Until then it works only on files no live session claims:
+
+| # | Task | Status | File scope |
+|---|---|---|---|
+| P5a | ~~Retire the six preserved editions from the published tree~~ — **withdrawn at 04:44Z, nothing was deleted.** On reading `tools/verify_core_site.py` this session found the gate "prior edition missing (nothing may be deleted)". Removing 57 pages built by other sessions would override a rule every earlier integration session has kept and enforced in CI, so it is left as a recommendation to the owner (see FR-24). | withdrawn | — |
+| P5a′ | Bring the preserved editions as close to the row-source rule as can be done mechanically, without rewriting them (details below) | **done** | `docs/**`, `dashboard/**`, `review/**`, `audit/**`, `verified/**`, `verification/**` |
+| P5b | Canonical additions from P3/P4 through the generator: public-record row and Portal PIN, flags FR-32 – FR-34, FR-24 rewritten with measured numbers, FR-19 wording, units-table header, `noindex` | **done** (after PR #53 merged at 04:42Z) | `tools/site_layout.py`, `tools/site_pages_core.py`, `tools/site_pages_ref.py`, regenerated `index.html` / `pages/*.html`, `README.md`, `EXECUTIVE_SUMMARY.md` |
+| P5b′ | New gate `tools/row_source_audit.py`, added to CI | **done** | `tools/row_source_audit.py`, `.github/workflows/site-checks.yml` |
+| P5c | Board housekeeping (observations only — other sessions' sections are not edited) and superseded open PRs | **done** — see below | `COORDINATION.md` (this section) |
+| P5d | PR → `main`, CI green, merge, confirm Pages build, fetch the live site, record here | in progress | `COORDINATION.md` |
+
+Handoff note (60-minute rule): the editions' owning sessions (`ae0d4576`, `edaa9740`, `64380530`,
+`649a1fa8`, `b73ba2df`, `8c577e09`) last committed between one and five days ago.
+
+### What this session changed — `arena/10fc30b0`
+
+**Preserved editions (P5a′).** No page was deleted and no analysis was rewritten.
+
+| Change | Where | Count | Checked against |
+|---|---|---|---|
+| Source chips that pointed at the edition's own register (`sources.html#sN`) now link straight to the official URL recorded for that register entry | `review/*.html` | 384 chips; 116 table rows gained a direct official link | `review/data/sources.json` (27 entries, all on official hosts) |
+| Every row of the 1982–2027 rate table given a link to document 571 | `docs/legal-framework.html` | 46 rows | [Form 571](https://www.sf.gov/documents/34344/571_Allowable_Annual_Increases_26-27_1.pdf), fetched 11 Nov 2026 |
+| Rate period typo: `3/1/88 – 2/29/88` → `3/1/88 – 2/28/89` | `docs/legal-framework.html` | 1 | Form 571. All 122 period/percentage pairs on all published pages were compared with the PDF by script; this was the only mismatch |
+| Cell that answered "normal business practice?" with "Yes" and gave $119.85 as a yearly figure → "Not established", $119.85 per month | `docs/tenant-review.html` | 1 | arithmetic ($3,995 × 3.0%); canonical FR-22 / FR-23 |
+| A statement about what the repository had ever contained, true only on the day it was written, reworded as a dated statement about the pages published then | `docs/repo-review.html` | 1 | — |
+| `<meta name="robots" content="noindex, nofollow">` | all 57 preserved pages | 57 | — |
+
+Result, measured by the new gate: rows without a direct official link fell from **276 to 114** (of 1,050
+preserved rows): `docs/` 74, `verified/` 25, `review/` 11, `dashboard/` 2, `verification/` 2, `audit/` 0.
+The canonical pages are at 348 of 348. Note for later sessions: `tools/build_site.py` no longer reproduces
+the committed `review/` pages (running it rewrites all eleven), so `review/` was edited in place — do
+not re-run that generator without reconciling it first.
+
+**Canonical site (P5b), all through the generator modules:**
+
+| Change | Page | Official source (fetched 11 Nov 2026) |
+|---|---|---|
+| New row "Is what I report kept private? — No" in the forefront licence table; same point and the Portal PIN added to step 2 of the process | `index.html`, `pages/process.html`, `EXECUTIVE_SUMMARY.md` | [Housing Inventory](https://www.sf.gov/rent-board-housing-inventory): "The information entered in the housing inventory submission is public"; "use the PIN number on your Annual Notice to add property to your account" |
+| FR-32 — date slips in three of the Rent Board's worked examples (the arithmetic in each agrees with document 571; no figure here depends on them) | `pages/flagged.html` | [rent increases](https://www.sf.gov/learn-about-rent-increases-san-francisco), [banked increases](https://www.sf.gov/information--banked-rent-increases), Form 571 |
+| FR-33 — no official page says whether an unpaid Rent Board Fee affects the licence | `pages/flagged.html` | [Rent Board Fee](https://www.sf.gov/rent-board-fee), Housing Inventory page |
+| FR-34 — Housing Inventory filings are public | `pages/flagged.html` | Housing Inventory page |
+| FR-24 rewritten with the measured figures (it said 25); FR-19 no longer repeats "25" | `pages/flagged.html` | `tools/row_source_audit.py` |
+| Table header "Allowable percentage / Percentage in effect" → "Rate period (Form 571) / Allowable percentage" | `pages/units.html` | Form 571 |
+| `noindex, nofollow` on every canonical page | all 13 | — |
+| Flag count 31 → 34 | `README.md`, requirement R-21 (dynamic) | — |
+
+**Verification performed.** Every figure and quotation added was read on the official page in this
+session. Every period/percentage pair on all 71 pages was compared with Form 571 (122 pairs, one
+mismatch, fixed). Every percentage and dollar amount on the canonical pages was classified by script
+against values derivable from Form 571 and the two owner-reported base rents; none was left
+unexplained. All ten gates pass on the final tree and the build is idempotent.
+
+**Irregularities found and where they are published.**
+
+| # | Irregularity | Status |
+|---|---|---|
+| 1 | FR-24 / FR-19 said 25 archived rows lacked official links; measured 276 | corrected; now 114, published in FR-24; gate added |
+| 2 | `docs/legal-framework.html` rate table: impossible period `3/1/88 – 2/29/88` | corrected against Form 571 |
+| 3 | `docs/` cites two university research centres and one non-profit in seven data rows | counted in FR-24; not removed |
+| 4 | Preserved editions repeat statements the canonical pages have corrected | published in FR-24 / FR-19; two cells corrected in place |
+| 5 | Two still-valid findings existed only in preserved editions (`review/` F2, `verification/` F-15) | now canonical FR-32 and FR-33 |
+| 6 | The canonical site never said Housing Inventory filings are public, nor mentioned the Portal PIN | added; FR-34 |
+| 7 | Three date slips in the Rent Board's own worked examples | FR-32 |
+| 8 | `pages/units.html` column header named the wrong column | corrected |
+| 9 | `tools/build_site.py` no longer reproduces `review/` | recorded here |
+| 10 | Privacy surface beyond the working tree | reported to the owner directly (see P2) |
+| 11 | Canonical pages not read in full by this session: `executive-summary`, `laws`, `reasonable`, `practice`, `notice`, `review`, `discrimination`, `requirements`, `sources` — checked by script only (figures, rate pairs, row sources). Three other sessions read them on the same day (PRs #49 – #53) | disclosed |
+
+**Board housekeeping (P5c) — observations, other sections left untouched.**
+
+- Rows still marked "in progress" or "unclaimed" although the owning session's PR merged: `07e38125`
+  task 5, `487d8c3e` final task, `0e839002` C7, `c541e9f4`, `db0bd0a6`, `e00aaa27` J4, `0dea38fc` W5,
+  `488b115e` S1/S3 – S5. They can be read as done; the merged PRs are the evidence.
+- The session registry table near the top of this file stops at `arena/3a2e288e`; sessions after it
+  are recorded only by their own sections.
+- Open PRs #1, #8, #20, #33, #35 and #45 are superseded (one to five days idle, except #45 at two and a
+  half hours) and would revert verified pages if merged as they stand. This session closes them with a
+  comment under the 60-minute handoff rule; the branches are left in place and each PR can be reopened.

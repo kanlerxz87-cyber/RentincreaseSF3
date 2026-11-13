@@ -29,6 +29,8 @@ jobs:
         run: python tools/verify_review_regressions.py
       - name: Whole-repo audit
         run: python tools/audit_site.py
+      - name: Row-source audit (every table row on every page)
+        run: python tools/row_source_audit.py
       - name: Preserved editions
         run: |
           python verify_site.py
