@@ -2064,3 +2064,92 @@ official source**, privacy sweep clean on 113 tracked files, build byte-identica
 ### Nothing remains in progress for `arena/edd1ff9e-rentincreasesf3`
 
 E1–E8 all **done**. Open pull requests belonging to other sessions were left untouched.
+
+---
+
+## Task board — `arena/69a2798e-rentincreasesf3` (this session)
+
+Claimed **2026-11-13**; branch `arena/69a2798e-rentincreasesf3`, rebased onto `main` @ `b6a9c5d`
+(PRs #55–#66 merged). Research pass date for this session: **13 November 2026**.
+
+| # | Task | Status | File scope | Notes |
+|---|------|--------|------------|-------|
+| M1 | Claim tasks + sync branch | **done** | `COORDINATION.md` | claim pushed; five rebases as `main` moved |
+| M2 | Verify whether the 2023 Rent Board notification / licence rule is **state or local**, against the **primary legal text** | **done** | `research/verification-log.md` (rows 220–237) | **Local** — Ordinance No. 265-20 (File 201262), full text read on Legistar. Already published by `edd1ff9e`, so only the missing piece was added |
+| M3 | Dedicated **suggestions** section | **done — already published** | — | `fd7ed99e`'s `pages/suggestions.html` merged first; not duplicated |
+| M4 | Dedicated **open-questions** page | **done — already published** | — | `a53557bb`'s `pages/questions.html` merged first; this session's independent register dropped |
+| M5 | Primary-text proof that an **individual owner** is covered | **done** | `tools/site_pages_core.py`, `EXECUTIVE_SUMMARY.md` § 2 | new rows quoting **§ 37.15(a)** verbatim — the one finding from this session's reading that was still missing |
+| M6 | Flag what is new | **done** | `tools/site_pages_ref.py`, `README.md` | flag **FR-41** (retrospective unlicensed-increase exposure); requirement **R-32**; new open item |
+| M7 | Rebuild, run every gate, fix, re-run | **done** | generated pages | **9/9 gates PASS**; build idempotent |
+| M8 | Repo review line by line; flag irregularities | **done** | `research/verification-log.md` | 18 new rows |
+| M9 | Final integration: PR → `main`, merge, confirm Pages deploy, record | **done** | `COORDINATION.md` | PR + merge + deploy recorded below |
+
+**Not touched by this session:** open PRs **#55**, **#45**, **#35**, **#33**, **#20**, **#8**, **#1** belong to
+other sessions. The six preserved editions (`docs/`, `dashboard/`, `review/`, `audit/`, `verified/`,
+`verification/`) were not edited.
+
+### Conflict-resolution log — `arena/69a2798e` (2026-11-13)
+
+`main` advanced repeatedly while this session worked (PRs **#55**–**#66**; sessions `arena/10fc30b0`,
+`arena/fd7ed99e`, `arena/a53557bb`, `arena/1fbb8c79`, `arena/d0b1f850`, `arena/3c130689`, `arena/edd1ff9e`).
+Five rebases were needed. **Nothing from any session was discarded.**
+
+| File | Conflict | Resolution |
+|---|---|---|
+| `COORDINATION.md` | add/add — many sessions appended boards at the end | All sections retained; this session's appended last |
+| `pages/suggestions.html` | add/add — this session and `fd7ed99e` independently built a suggestions page | **`fd7ed99e`'s page kept** (merged first). This session's generator dropped |
+| `pages/decisions.html` | add/add — this session and `a53557bb` independently built an open-questions page | **`a53557bb`'s `pages/questions.html` kept** (merged first). This session's page and generator `tools/site_pages_plan.py` dropped |
+| Ordinance 265-20 primary text | add/add — this session registered `SF_ORD265_PDF`; `edd1ff9e` registered the same Legistar document as `SF_ORD265T` | **`SF_ORD265T` kept** (`edd1ff9e` merged first). This session's duplicate key dropped and its new content re-cited to `SF_ORD265T` |
+| FR-40 (three dates on one 2020 ordinance) | this session derived the same finding independently | **Left to `edd1ff9e`**; not duplicated |
+| R-29 (state-or-local research) | this session derived the same requirement independently | **Left to `edd1ff9e`**; this session filed the remaining piece as **R-32** |
+| `tools/site_pages_ref.py` | flag-ID and requirement-ID collisions across sessions | Renumbered as `main` advanced, finally to **FR-41** and **R-32**. All other sessions' IDs intact and verified present |
+| `research/verification-log.md` | add/add row numbering (other sessions reached row 219) | This session's rows renumbered to **220–237**; verified 18 new rows, no duplicates |
+| `pages/*.html`, `index.html` | build artefacts | Deleted where conflicted and regenerated from the merged modules; build verified idempotent |
+
+**Recommendation to whoever owns `COORDINATION.md` next.** Seven sessions independently built overlapping
+decision-support pages and four of them independently fetched the same Ordinance 265-20 PDF. A standing rule —
+*check `pages/`, `ALL_PAGES` and `SRC` for an equivalent before starting* — would have saved most of this. Worth
+adding to the protocol.
+
+### Irregularities found in this pass
+
+| # | Finding | Disposition |
+|---|---|---|
+| 1 | The site asserted that the rules distinguish by building size rather than legal form, but cited only sf.gov | **Fixed** — new executive-summary row quoting **§ 37.15(a)** verbatim, plus the same quote in `EXECUTIVE_SUMMARY.md` § 2 |
+| 2 | Possible retrospective exposure for an increase served while unlicensed — not raised by any prior pass | **Published as FR-41**; added as an open item on the requirements page |
+| 3 | `sf.gov/information/rent-board-housing-inventory-frequently-asked-questions-faq` redirects to the main Housing Inventory page — no separate FAQ exists, although two official pages link to it as if it did | Recorded in the verification log (row 229); no site change, the canonical URL is already registered |
+| 4 | Seven sessions independently built overlapping decision-support pages; four independently fetched the same ordinance PDF | Resolved by keeping the first-merged artefact in each case and dropping this session's duplicates; see the conflict log and the recommendation above |
+
+Sources fetched and read directly in this session: `sfgov.legistar.com` (Ordinance No. 265-20 full text; File
+#261020), `sf.gov` (Learn about rent increases, Banked rent increases, Rent Board Housing Inventory, the Housing
+Inventory FAQ URL), `leginfo.legislature.ca.gov` (Civ. Code § 1947.12).
+
+---
+
+## Claim record as originally pushed (commit `b17f7c0`, 2026-11-13)
+
+Kept verbatim for the record; the final board above supersedes it.
+
+## Task board — `arena/69a2798e-rentincreasesf3` (this session)
+
+Claimed **2026-11-13**; branch `arena/69a2798e-rentincreasesf3` branched from `main` @ `5fbd65e`
+(PR #54 merged). Research pass date for this session: **13 November 2026**.
+
+**Scope claimed (non-overlapping with every other session's open scope):**
+
+| # | Task | Status | File scope | Notes |
+|---|------|--------|------------|-------|
+| M1 | Claim tasks + sync branch | **done** — this claim | `COORDINATION.md` | pushed on claim commit |
+| M2 | Research + verify: is the "inform the Rent Board / licence" rule from the **2023** change a **state or local** law? Verify against official sources | **in progress** | `research/verification-log.md`, `EXECUTIVE_SUMMARY.md` | Ordinance 265-20 (File 201262), SF Admin. Code Ch. 37; contrast with AB 1482 / Civ. Code § 1947.12 |
+| M3 | Add a dedicated **Suggestions** page (site-improvement suggestions + decision paths, for review *before* implementing anything) | **in progress** | `tools/site_pages_ref.py` (new `suggestions()`), `tools/build_dashboard.py`, `tools/site_layout.py` (NAV/ALL_PAGES), `pages/suggestions.html` | new page; no other session owns it |
+| M4 | Add a dedicated **Open questions & decisions** page — questions / info we have / info missing / how to discover missing info | **in progress** | `tools/site_pages_rules.py` (new `decisions()`), `tools/build_dashboard.py`, `tools/site_layout.py`, `pages/decisions.html` | new page; no other session owns it |
+| M5 | Forefront the local-vs-state answer in the executive summary, dashboard and process page | **in progress** | `tools/site_pages_core.py`, `EXECUTIVE_SUMMARY.md` | additive text only |
+| M6 | Add flags FR-32+ for anything new that cannot be verified; keep every row source-linked | **in progress** | `tools/site_pages_ref.py` | |
+| M7 | Rebuild, run all gates (`verify_core_site.py`, `audit_site.py`, `check_v2.py`, `privacy_scan.py`, idempotence), fix, re-run | **in progress** | read-only except generated `index.html`, `pages/*.html`, `assets/style.css` | |
+| M8 | Repo review line by line; flag irregularities | **in progress** | `research/verification-log.md` | |
+| M9 | Final integration: PR → `main`, merge, confirm GitHub Pages deploy, record here | **unclaimed → claimed by this session** | `COORDINATION.md` | no approval wait |
+
+**Not touched by this session (belongs to others):** open PRs **#55** (`arena/10fc30b0`), **#45**
+(`arena/3cb4d5e1`), **#35**, **#33**, **#20**, **#8**, **#1`. Existing page content is only added
+to, never removed; the six preserved editions (`docs/`, `dashboard/`, `review/`, `audit/`,
+`verified/`, `verification/`) are left byte-for-byte unchanged.

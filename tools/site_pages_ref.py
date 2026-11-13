@@ -133,6 +133,7 @@ REQS = [
     ("R-29", "Research whether the duty to inform the Rent Board is a state law or a local law, and add the finding to the executive summary with official verified links", "Answered — local law (Ordinance 265-20 / Admin. Code § 37.15); verified 13 Nov 2026", "pages/executive-summary.html", "SF_3715"),
     ("R-30", "A dedicated suggestions section: how to improve the site and decision-making, with paths to review and choose before any change is implemented", "Answered — nothing implemented yet; every path is published as “not chosen”", "pages/suggestions.html", "SF_BANK"),
     ("R-31", "A clear list of what information we already have and what is missing, with suggestions to discover the missing information", "Answered", "pages/open-questions.html", "SF_HI"),
+    ("R-32", "Verify against the primary legal text that the reporting / licence duty covers an individual owner as much as a corporation", "Answered — Ordinance 265-20 § 37.15(a) says “Owners” with no reference to legal form", "pages/executive-summary.html", "SF_ORD265T"),
 ]
 
 
@@ -171,8 +172,8 @@ def requirements():
 <div class="card">
   <h2>Status summary</h2>
   <div class="grid">
-    <div class="stat"><div class="num">31</div><div class="lbl">requirements tracked</div></div>
-    <div class="stat"><div class="num">28</div><div class="lbl">answered from official sources</div></div>
+    <div class="stat"><div class="num">32</div><div class="lbl">requirements tracked</div></div>
+    <div class="stat"><div class="num">29</div><div class="lbl">answered from official sources</div></div>
     <div class="stat"><div class="num">3</div><div class="lbl">answered only conditionally (rent history, government building record, official statistics)</div></div>
     <div class="stat"><div class="num">{len(FLAGS)}</div><div class="lbl">items flagged for review, all published</div></div>
   </div>
@@ -195,6 +196,7 @@ def requirements():
       <tr><td>Rent-increase licence status</td><td>Portal screenshot showing the licence current on the planned effective date.</td>{cell("SF_HI")}</tr>
       <tr><td>Unit A anniversary</td><td>A Rent Board counsellor's confirmation of the 1 Feb vs 1 Apr question.</td>{cell("SF_LI")}</tr>
       <tr><td>Building record</td><td>Certificate-of-occupancy date and legal unit count from the City's records.</td>{cell("SF_LAWS")}</tr>
+      <tr><td>Any increase noticed since the licence start date</td><td>Whether rent was ever raised after <b>1 Mar 2023</b> (1–9 unit buildings and condominiums) or <b>1 Jul 2022</b> (10+ unit buildings) while unlicensed — see FR-41.</td>{cell("SF_NONCOMP", "SF_ORD265T")}</tr>
     </tbody>
   </table>
 </div>
@@ -541,6 +543,9 @@ FLAGS = [
     ("FR-40", "The “2023 law” is a 2020 ordinance with three different dates attached", "Clarified 13 Nov 2026",
      "The reader's question — “is the duty to inform the Rent Board a state or a local law, since it passed in 2023?” — mixes up three separate dates in one instrument. <b>Ordinance No. 265-20</b> (Board File 201262) was <b>finally passed 8 December 2020</b> and approved by the Mayor <b>18 December 2020</b>; § 4 of the ordinance makes it <b>effective 30 days after enactment</b> and <b>operative 1 July 2022</b>, and both the Rent Board news release and the published code section give the effective date as <b>18 January 2021</b>. The <b>1 March 2023</b> date is only the <i>commencement of reporting</i> for condominium units and units in buildings with fewer than 10 units (§ 37.15(c)). Nothing about the duty turns on a state statute: state law appears in § 37.15(d) solely to say what the inventory is <b>not</b> — a “rental registry within the meaning of California Civil Code Sections 1947.7 – 1947.8”.",
      "None for the reader — the answer is published in full on the executive summary and this flag records the date nuance so it is not re-litigated. Anyone relying on “the 2023 law” should cite Ordinance 265-20 and § 37.15 instead.", "SF_3715"),
+    ("FR-41", "Retrospective exposure for any increase served while unlicensed", "Unverified",
+     "The Rent Board’s noncompliance page states that a rent increase notice which went into effect while the unit was unlicensed “may be null and void (this may apply for multiple years)” and that the tenant “may be entitled to a rent refund”, challenged by Tenant Petition (Form 516C). Whether that exposure exists for these two units is <b>unknown</b>: no licence history was supplied (FR-04) and Unit B’s increase history is unverified (FR-01), so it cannot be established whether any notice was served after <b>1 March 2023</b> (condominiums and buildings with fewer than 10 units) or <b>1 July 2022</b> (buildings of 10 or more units) while unlicensed. Ordinance § 37.15(e) adds that during suspension “a tenant shall not be obligated to pay the increased rent for months during the period of suspension”.",
+     "Licence history from the Portal plus every notice served since 1 June 2019; raise with a Rent Board counsellor or a lawyer before serving anything further.", "SF_NONCOMP"),
 ]
 
 

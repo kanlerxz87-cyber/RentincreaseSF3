@@ -31,8 +31,8 @@ Canonical dashboard table rows link official sources for the governing rule; own
 | [`pages/questions.html`](pages/questions.html) | **Open questions**: 14 blocking questions, 12 already settled, the documents to collect, 8 ways to find what is missing, and how each answer changes the number |
 | [`pages/suggestions.html`](pages/suggestions.html) | **Suggestions for review**: 12 improvement proposals with impact and effort, all marked *Proposed* — nothing is implemented until an ID is accepted — plus 6 rejected ideas and why |
 | [`pages/sources.html`](pages/sources.html) | source register with what each supports |
-| [`pages/flagged.html`](pages/flagged.html) | 40 flagged items: unverified, blank, inconsistent or corrected |
-| [`pages/flagged.html`](pages/flagged.html) | 40 flagged items: unverified, blank, inconsistent or corrected |
+| [`pages/flagged.html`](pages/flagged.html) | 41 flagged items: unverified, blank, inconsistent or corrected |
+| [`pages/flagged.html`](pages/flagged.html) | 41 flagged items: unverified, blank, inconsistent or corrected |
 
 Markdown summary: [`EXECUTIVE_SUMMARY.md`](EXECUTIVE_SUMMARY.md).
 
@@ -44,7 +44,7 @@ Markdown summary: [`EXECUTIVE_SUMMARY.md`](EXECUTIVE_SUMMARY.md).
 | A pre-condition the site had not listed | **Civ. Code § 1942.4** bars a landlord from issuing “a notice of a rent increase” while substandard conditions that a housing official has flagged in writing stand unabated for more than 35 days without good cause; damages $100–$5,000 plus fees. Added 13 Nov 2026 to the notice, process and summary pages. | [Civ. Code § 1942.4](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=1942.4) |
 | Pending legislation, re-checked 13 Nov 2026 | File #261020 status is still **Pending Committee Action** (last recorded action 7 Oct 2026) — not law. | [Legistar](https://sfgov.legistar.com/LegislationDetail.aspx?ID=8217304&GUID=7EDA4662-EBFB-4AF5-962F-C669B64AA770) |
 | **State law or local law?** | **Local.** The duty to inform the Rent Board and hold a rent-increase licence is San Francisco **Ordinance No. 265-20**, effective 18 January 2021, amending the City's Rent Ordinance. No California statute requires notifying a rent board or holding a licence. The state cap (Civ. Code § 1947.12, 8.8% for this region from 1 Aug 2026) does not govern because the City cap is lower. | [Ordinance 265-20](https://www.sf.gov/news--new-legislation-creates-housing-inventory-and-requires-owners-obtain-license-imposing) · [§ 1947.12](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=1947.12) |
-| [`pages/flagged.html`](pages/flagged.html) | 40 flagged items: unverified, blank, inconsistent or corrected |
+| [`pages/flagged.html`](pages/flagged.html) | 41 flagged items: unverified, blank, inconsistent or corrected |
 
 Markdown summary: [`EXECUTIVE_SUMMARY.md`](EXECUTIVE_SUMMARY.md).
 
