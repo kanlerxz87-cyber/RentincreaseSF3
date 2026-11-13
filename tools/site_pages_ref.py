@@ -1,7 +1,7 @@
 """Reference pages: sources register, requirements checklist, flagged for review."""
 from site_layout import SRC, src, srcs, cell, page
 
-RETRIEVED = "11 Nov 2026"
+RETRIEVED = "13 Nov 2026"
 
 # key, what it supports
 USED_FOR = {
@@ -25,7 +25,7 @@ USED_FOR = {
     "ADMIN_373": "Administrative Code § 37.3 — Rent Limitations: § 37.3(a)(1)–(2) annual/banking & § 37.15 licence, (a)(8) petitions, (a)(10) vouchers, (a)(11) additional occupants, (b)(1)&(5) notice breakdown & null-and-void rule, (d)(2)(B) partial occupancy changes",
     "LEGISTAR_261020": "File #261020 status (Pending Committee Action) and its 10%/yr proposed cap",
     "LEG_827": "30-day / 90-day notice rule, delivery methods, 10%-threshold calculation",
-    "LEG_1947": "AB 1482 cap and the local-ordinance exemption; new-tenancy initial rent",
+    "LEG_1947": "AB 1482 cap and the local-ordinance exemption; new-tenancy initial rent; the written exemption notice a non-corporate owner of a separately alienable unit must give (d)(5)(B); the owner-occupied two-unit structure exemption (d)(6)",
     "LEG_1954": "Costa-Hawkins: initial rent for a new tenancy, with exceptions",
     "LEG_1942": "180-day retaliation bar; tenant-organising protection",
     "LEG_1013": "5-day mail extension (in California), 10 days out of state, 2 court days for overnight",
@@ -48,7 +48,7 @@ def sources():
     body = f"""
 <div class="card">
   <h1>Sources &amp; verification register</h1>
-  <p class="lede">Every official source used on this site, the claim it supports, and the date it was retrieved. The register was reviewed on 10 November 2026 and all registered sources were re-fetched and read on 11 November 2026; Part IV was added and read on 11 November 2026. Availability can change.</p>
+  <p class="lede">Every official source used on this site, the claim it supports, and the date it was retrieved. The register was reviewed on 10 and 11 November 2026; the sources behind the licence answer, the annual allowance, banking, the notice rule, the fee, the petitions and the pending Bill file were re-fetched and read again on <b>13 November 2026</b>. Availability can change.</p>
 </div>
 
 <div class="card">
@@ -115,6 +115,8 @@ REQS = [
     ("R-21", "Flag irregularities for manual review", "Answered — {nflags} flags published", "pages/flagged.html", "SF_BANK"),
     ("R-22", "Coordinate with parallel sessions via COORDINATION.md", "Answered — claim, scope and record logged", "index.html", "SF_HI"),
     ("R-23", "Open a pull request, merge it and confirm the Pages deployment", "Answered — recorded in COORDINATION.md", "index.html", "SF_HI"),
+    ("R-24", "A clear list of the questions, the information they need and the answers available before any decision", "Answered — 14 blocking questions, 12 settled, 10 documents, 8 discovery actions, 4 unanswerable", "pages/questions.html", "SF_BANK"),
+    ("R-25", "A section dedicated to suggestions, for review before any change is implemented", "Answered — 12 proposals with impact and effort, all marked Proposed; 6 rejected with reasons", "pages/suggestions.html", "SF_HI"),
 ]
 
 
@@ -131,6 +133,8 @@ def requirements():
         "pages/review.html": "Tenant-lawyer test",
         "pages/discrimination.html": "One unit or both?",
         "pages/requirements.html": "Requirements checklist",
+        "pages/questions.html": "Open questions",
+        "pages/suggestions.html": "Suggestions for review",
         "pages/sources.html": "Sources register",
         "pages/flagged.html": "Flagged for review",
     }
@@ -150,8 +154,8 @@ def requirements():
 <div class="card">
   <h2>Status summary</h2>
   <div class="grid">
-    <div class="stat"><div class="num">23</div><div class="lbl">requirements tracked</div></div>
-    <div class="stat"><div class="num">20</div><div class="lbl">answered from official sources</div></div>
+    <div class="stat"><div class="num">25</div><div class="lbl">requirements tracked</div></div>
+    <div class="stat"><div class="num">22</div><div class="lbl">answered from official sources</div></div>
     <div class="stat"><div class="num">3</div><div class="lbl">answered only conditionally (rent history, government building record, official statistics)</div></div>
     <div class="stat"><div class="num">{len(FLAGS)}</div><div class="lbl">items flagged for review, all published</div></div>
   </div>
@@ -286,7 +290,14 @@ FLAGS = [
     ("FR-34", "Housing Inventory filings are public", "Verified — added 11 Nov 2026",
      "The Housing Inventory page states: “<b>The information entered in the housing inventory submission is public.</b>” It lists name and business contact information, approximate square footage, number of bedrooms, number of bathrooms, and the history of vacancy or occupancy during the past 12 months. Owners must provide “the name and business contact information of the owner(s), or of the property manager, if any, designated by the owner(s) to address habitability issues”, and tenants can look up a unit's licence status in the Portal. The placeholder names used on this site therefore cannot carry over to the official filing, which is made under penalty of perjury. The page also says the Portal needs “the PIN number on your Annual Notice” to add a property to an account, with 311 for a PIN reset. Neither point was published on this site before.",
      "Decide which business contact details to report before filing; ask 311 or the Rent Board exactly which fields are displayed publicly.", "SF_HI"),
-]
+    ("FR-35", "Housing Inventory entry for the 2026 change of occupancy in Unit A", "Open",
+     "The report asks for the date current occupancy began and the base rent in $250 increments. The City states that an approximate answer given to the best of the owner's knowledge is not penalised, and that only a change in the owner's or manager's business contact information must be updated within 30 days; occupancy changes otherwise ride the annual 1 March update. No official page says what effect an out-of-date occupancy entry has on a licence already issued for that year.",
+     "Re-read the Unit A entry in the Rent Board Portal before service and correct it at the next 1 March report; ask the counsellor whether a mid-cycle correction is required.", "SF_HI"),
+    ("FR-36", "Where the licence carve-out for passthroughs ends", "Scope limit",
+     "The Housing Inventory page says a current licence is needed “before any annual or banked rent increase can go into effect”, while the noncompliance page says a licence is not required “in some situations where the original occupant(s) no longer live in the unit … or for passthroughs allowed under the Rent Ordinance”. The boundary between the two statements is not defined on either page. This site therefore treats every annual and banked increase — including a banked catch-up above 10% — as requiring the licence, which is the conservative reading, and publishes the carve-out question rather than relying on it.",
+     "Rent Board counsellor confirmation before relying on the carve-out for any increase other than a Section 6.14 or Costa-Hawkins market-rate increase.", "SF_NONCOMP"),]
+
+
 
 
 def flagged():

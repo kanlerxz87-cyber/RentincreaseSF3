@@ -1,6 +1,6 @@
 # Executive summary — San Francisco rent increases, two rent-controlled units
 
-**Prepared 11 November 2026 · research pass re-verified against official sources on that date · not legal advice**
+**Prepared 11 November 2026 · re-verified line by line against official sources on 13 November 2026 · not legal advice**
 Live dashboard: <https://kanlerxz87-cyber.github.io/RentincreaseSF3/>
 
 **Privacy.** Tenants and owners are shown as **Tenant A–F**. Dates and dollar amounts are unchanged, as requested. The ZIP code, neighbourhood and street address are **not published**: unit-level facts (two specific rents and two lease dates) combined with a location would identify the tenants, and the rules cited apply citywide with no ZIP-level variant. The location is recorded in this file only as "San Francisco".
@@ -18,10 +18,23 @@ Live dashboard: <https://kanlerxz87-cyber.github.io/RentincreaseSF3/>
 
 **Yes to reporting and the licence; no to any per-increase application.**
 
+**And it is a *local* law, not a state one.** The duty to inform the Rent Board and to hold a
+rent-increase licence comes from **San Francisco Ordinance No. 265-20**, effective
+**18 January 2021**, which amended the City's Rent Ordinance in the Administrative Code. California
+requires no licence and no filing with any agency to raise rent. The year **2023** — the one in the
+brief — is when the City rule reached small owners: reporting began **1 March 2023** for
+condominiums and buildings with fewer than 10 units (1 July 2022 for larger buildings), with
+updates due every 1 March. →
+[Ordinance 265-20 explained by the Rent Board](https://www.sf.gov/news--new-legislation-creates-housing-inventory-and-requires-owners-obtain-license-imposing) ·
+[Housing Inventory](https://www.sf.gov/rent-board-housing-inventory) ·
+[the state cap, Civ. Code § 1947.12](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=1947.12)
+
 San Francisco requires **all owners of residential property** — individuals exactly as much as corporations — to report their units into the **Rent Board Housing Inventory**. For a tenant-occupied unit, the report **automatically generates a rent-increase licence**, and that licence must be **in effect on the effective date** of the increase. Without it the notice is **not enforceable**. Annual and banked increases need no approval petition. A separate notice-copy filing requirement was not independently established (FR-20); confirm it with the Rent Board.
 
 | Question | Verified answer | Official source |
 |---|---|---|
+| State law or local law? | **Local.** Ordinance No. 265-20 (City and County of San Francisco), effective 18 January 2021; operative for condominiums and 1–9 unit buildings from 1 March 2023. State law has no rent-board filing and no licence. | [sf.gov — Ordinance 265-20](https://www.sf.gov/news--new-legislation-creates-housing-inventory-and-requires-owners-obtain-license-imposing) · [Civ. Code § 1947.12](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=1947.12) |
+| Are there increases that need no licence? | The Rent Board's noncompliance page limits the licence rules to rent-controlled units and states a licence "is not required in some situations where the original occupant(s) no longer live in the unit" (Section 6.14 / Costa-Hawkins) "or for passthroughs allowed under the Rent Ordinance". Every annual or banked increase is treated on this site as needing the licence — the conservative reading (FR-33). | [sf.gov — Notice of Owner Noncompliance](https://www.sf.gov/notice-of-owner-noncompliance-with-housing-inventory) · [sf.gov — Section 6.14 and Costa-Hawkins](https://www.sf.gov/information--rent-increases-under-section-614-and-costa-hawkins) |
 | Must I inform / report to the Rent Board? | **Yes.** "All owners of residential property are required to report" into the Housing Inventory through the Rent Board Portal; reporting is free. | [sf.gov — Housing Inventory](https://www.sf.gov/rent-board-housing-inventory) |
 | Do I need a licence as an individual, not a corporation? | **Yes.** The rules distinguish by *building size* (10+ units vs. condominiums and 1–9 unit buildings), not by the owner's legal form. The building unit count is unknown: the requirement began **1 March 2023** for condominiums and buildings with fewer than 10 units, or **1 July 2022** for other buildings of 10 or more units. | [sf.gov — Housing Inventory](https://www.sf.gov/rent-board-housing-inventory) · [sf.gov — Learn about rent increases](https://www.sf.gov/learn-about-rent-increases-san-francisco) |
 | Is there a separate application or fee? | **No.** "Once you have reported into the Housing Inventory, a rent increase license will be automatically generated for non-owner occupied units." The licence "does not need to be included with your rent increase notice". | [sf.gov — Housing Inventory](https://www.sf.gov/rent-board-housing-inventory) |
@@ -30,6 +43,20 @@ San Francisco requires **all owners of residential property** — individuals ex
 | Notice date or effective date? | **Effective date.** Late filing is allowed, but the licence must exist when the increase takes effect. | [sf.gov — Housing Inventory](https://www.sf.gov/rent-board-housing-inventory) |
 | Is what I report kept private? | **No.** "The information entered in the housing inventory submission is public": name and business contact information, approximate square footage, bedrooms, bathrooms and the history of vacancy or occupancy during the past 12 months. The owner reports "the name and business contact information of the owner(s), or of the property manager, if any, designated by the owner(s) to address habitability issues". The placeholder names used on this site cannot be used in the official filing (FR-34). | [sf.gov — Housing Inventory](https://www.sf.gov/rent-board-housing-inventory) |
 | Is the Housing Inventory report the same as the Rent Board Fee? | **No — separate obligations.** Reporting into the Housing Inventory is free; the **Rent Board Fee** is **$59.00 per dwelling unit** for 2026–27 (due 1 March; 50% = $29.50 recoverable from qualifying tenants; 2027 exemption window closes 14 December 2026). | [sf.gov — Rent Board Fee](https://www.sf.gov/rent-board-fee) · [sf.gov — Housing Inventory](https://www.sf.gov/rent-board-housing-inventory) |
+
+### What still has to be answered before you decide
+
+Two pages of the dashboard exist for exactly this:
+
+* **Open questions** — <https://kanlerxz87-cyber.github.io/RentincreaseSF3/pages/questions.html> —
+  14 blocking questions with where each answer comes from, 12 questions research has already
+  settled, the 10 documents to collect, 8 actions for finding what is missing, and a sensitivity
+  table showing how each answer changes the lawful number. Four questions have no official answer
+  at all and stay blank.
+* **Suggestions for review** — <https://kanlerxz87-cyber.github.io/RentincreaseSF3/pages/suggestions.html> —
+  12 improvement proposals (each with impact, effort and the official rule it must stay consistent
+  with) marked *Proposed*, 6 rejected ideas with reasons, and the procedure for accepting an ID.
+  Nothing on that list has been implemented.
 
 ### Step by step (full version with dates on the site: `pages/process.html`)
 

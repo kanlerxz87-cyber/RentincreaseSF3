@@ -6,7 +6,7 @@ def index():
     body = f"""
 <div class="card hero">
   <h1>San Francisco rent increase — verified answers</h1>
-  <p class="lede">Two owner-reported rent-controlled units in San Francisco (owner-reported construction year 1940). Total building unit count and coverage are unverified. This dashboard answers the owner's questions in the order asked, with an official source link on every row. Research pass: 11 November 2026.</p>
+  <p class="lede">Two owner-reported rent-controlled units in San Francisco (owner-reported construction year 1940). Total building unit count and coverage are unverified. This dashboard answers the owner's questions in the order asked, with an official source link on every row. Research pass: 13 November 2026.</p>
   <div class="quote"><b>Privacy:</b> tenants are shown as <b>Tenant A–F</b>; the ZIP code, neighbourhood and street address are withheld (unit-level facts plus a location could identify the tenants). <b>Dates and dollar amounts are unchanged.</b> Not legal advice.</div>
 </div>
 
@@ -16,6 +16,7 @@ def index():
   <table>
     <thead><tr><th style="width:27%">Your question</th><th>Verified answer</th><th style="width:22%">Official source</th></tr></thead>
     <tbody>
+      <tr><td>Is that a state law or a local law?</td><td><b>Local — a City ordinance, not a California statute.</b> The Housing Inventory and the rent-increase licence were created by <b>San Francisco Ordinance No. 265-20</b>, effective <b>18 January 2021</b>, which amends the City's Rent Ordinance in the Administrative Code. Nothing in California law requires a landlord to notify a rent board or hold a licence to raise rent; the state's own cap (Civ. Code § 1947.12) has no filing requirement at all. The <b>2023</b> date you remember is when the City rule reached small owners — reporting began 1 March 2023 for condominiums and buildings with fewer than 10 units.</td>{cell("SF_ORD265", "SF_HI", "LEG_1947")}</tr>
       <tr><td>Do I need to tell / report to the Rent Board?</td><td><b>Yes.</b> “All owners of residential property are required to report” into the Housing Inventory, online through the Rent Board Portal. Reporting is free.</td>{cell("SF_HI")}</tr>
       <tr><td>Do I need a licence even though I am a person, not a corporation?</td><td><b>Yes.</b> The rules distinguish by <i>building size</i> (10+ units vs. condominiums and 1–9 unit buildings), not by the owner's legal form. “Property owners who have tenants will receive a rent increase license after the submission.” The total number of units in the building is unverified. For buildings with fewer than 10 units and condominiums reporting began <b>1 March 2023</b>; for other buildings with 10 or more units it began <b>1 July 2022</b>.</td>{cell("SF_HI", "SF_LI")}</tr>
       <tr><td>Is there a separate application or fee for the licence?</td><td><b>No separate application.</b> “Once you have reported into the Housing Inventory, a rent increase license will be automatically generated for non-owner occupied units.” Reporting is free and the licence “does not need to be included with your rent increase notice”.</td>{cell("SF_HI")}</tr>
@@ -24,7 +25,7 @@ def index():
       <tr><td>Is the licence checked on the notice date or the effective date?</td><td><b>The effective date.</b> Reporting after the deadline is allowed, but the licence must exist <i>on the effective date of the notice</i>.</td>{cell("SF_HI", "SF_NONCOMP")}</tr>
       <tr><td>Does a correct 1.6% calculation cure a missing licence?</td><td><b>No.</b> The licence is a separate pre-condition; the licensing page states the licence must be on file “before any annual or banked rent increase can go into effect”.</td>{cell("SF_HI", "SF_BANK")}</tr>
       <tr><td>Is what I report kept private?</td><td><b>No.</b> “The information entered in the housing inventory submission is public.” The Rent Board lists name and business contact information, approximate square footage, bedrooms, bathrooms and the history of vacancy or occupancy during the past 12 months. The owner reports “the name and business contact information of the owner(s), or of the property manager, if any, designated by the owner(s) to address habitability issues”. The placeholder names on this site therefore cannot be used in the official filing (FR-34).</td>{cell("SF_HI")}</tr>
-      <tr><td>Is the Housing Inventory report the same as the annual Rent Board Fee?</td><td><b>No — separate obligations.</b> Reporting into the Housing Inventory is free and generates the licence; the <b>Rent Board Fee</b> is a separate annual bill (<b>$59.00 per dwelling unit</b> for 2026–27, due 1 March; 50% = $29.50 recoverable from qualifying tenants; 2027 exemption window closes 14 December 2026). Neither satisfies the other.</td>{cell("SF_HI", "SF_FEE")}</tr>
+      <tr><td>Are there increases that need <i>no</i> licence?</td><td>The Rent Board's noncompliance page states the licence rules “apply ONLY to units under San Francisco Rent Control” and that a licence “is not required in some situations where the original occupant(s) no longer live in the unit” (a Section 6.14 or Costa-Hawkins market-rate increase), or for passthroughs allowed under the Rent Ordinance. Petition-based increases have their own filing rules instead.</td>{cell("SF_NONCOMP", "SF_614", "SF_LANDPET")}</tr>      <tr><td>Is the Housing Inventory report the same as the annual Rent Board Fee?</td><td><b>No — separate obligations.</b> Reporting into the Housing Inventory is free and generates the licence; the <b>Rent Board Fee</b> is a separate annual bill (<b>$59.00 per dwelling unit</b> for 2026–27, due 1 March; 50% = $29.50 recoverable from qualifying tenants; 2027 exemption window closes 14 December 2026). Neither satisfies the other.</td>{cell("SF_HI", "SF_FEE")}</tr>
     </tbody>
   </table>
   <p style="margin-top:10px"><b>Bottom line:</b> file the Housing Inventory → confirm the licence is current on the effective date → then calculate, then serve notice. Full sequence: <a href="pages/process.html"><b>Licence &amp; process →</b></a></p>
@@ -77,6 +78,8 @@ def index():
     <a class="tile" href="pages/process.html"><b>Licence &amp; process</b><span>Step-by-step, notice-date planner, what the Rent Board does and does not need.</span></a>
     <a class="tile" href="pages/units.html"><b>Units &amp; maths</b><span>Unit A and Unit B: dates, percentages, dollars, notice periods, unknowns.</span></a>
     <a class="tile" href="pages/laws.html"><b>Rules &amp; caps</b><span>Local ordinance, state statutes, federal fair housing, 1982–2027 rate table.</span></a>
+    <a class="tile" href="pages/questions.html"><b>Open questions</b><span>Every question that blocks a decision, what answers it, and how each answer changes the number.</span></a>
+    <a class="tile" href="pages/suggestions.html"><b>Suggestions for review</b><span>Improvement proposals with impact and effort — nothing implemented until you accept an ID.</span></a>
     <a class="tile" href="pages/reasonable.html"><b>Reasonable &amp; normal</b><span>What the law does and does not call reasonable; what can be benchmarked.</span></a>
     <a class="tile" href="pages/practice.html"><b>Market practice</b><span>Corporate vs individual landlord practice, with official evidence only.</span></a>
     <a class="tile" href="pages/notice.html"><b>Notice &amp; reasons</b><span>Required contents, service, timing, model wording, prohibited reasons.</span></a>
@@ -107,10 +110,12 @@ def executive_summary():
 
 <div class="card alert">
   <h2>Forefront finding — the Rent Board notification and licence question</h2>
+  <p><b>Which law?</b> The duty to report to the Rent Board and hold a licence is <b>local San Francisco law</b> — Ordinance No. 265-20, effective 18 January 2021, amending the City's Rent Ordinance. It is not a state law; the date that reaches most small owners is <b>1 March 2023</b>, when the reporting duty began for condominiums and buildings with fewer than 10 units. California's rent cap (Civ. Code § 1947.12) imposes no filing or licence duty, and its cap does not govern here because the City's is lower.</p>
   <p><b>Annual and banked increases do not require a Rent Board approval petition. Any separate notice-copy filing requirement remains unverified (FR-20). You do have to report the units into the Housing Inventory and hold a current rent-increase licence on the effective date — and that obligation applies to you as an individual owner exactly as it would to a corporation.</b></p>
   <table>
     <thead><tr><th style="width:30%">Point</th><th>Verified position</th><th style="width:22%">Official source</th></tr></thead>
     <tbody>
+      <tr><td>Which level of government imposes it</td><td><b>City and County of San Francisco.</b> Ordinance No. 265-20 became effective 18 January 2021 and created the Housing Inventory plus the licence requirement. State law requires no notice to any board and no licence.</td>{cell("SF_ORD265", "LEG_1947")}</tr>
       <tr><td>Who must report</td><td>All owners of residential property. “Most owners are required to do this even if you are not a landlord.”</td>{cell("SF_HI")}</tr>
       <tr><td>What the report produces</td><td>A rent-increase licence, generated automatically for non-owner-occupied units.</td>{cell("SF_HI")}</tr>
       <tr><td>When the licence must exist</td><td>On the <b>effective date</b> of the increase — not merely by the notice date.</td>{cell("SF_HI")}</tr>
@@ -118,10 +123,11 @@ def executive_summary():
       <tr><td>Annual deadline</td><td><b>1 March every year</b>. There is no monetary penalty for filing late, but a late licence does not save an increase that took effect earlier.</td>{cell("SF_HI")}</tr>
       <tr><td>Per-increase approval</td><td><b>None needed</b> for annual or banked increases; no petition is filed for them.</td>{cell("SF_571", "SF_BANK")}</tr>
       <tr><td>Consequence of no licence</td><td>The notice “will not be enforceable without having a rent increase license on the effective date”. The Rent Board's noncompliance page is stronger still: a notice that takes effect while the unit is unlicensed “may be null and void (this may apply for multiple years)”, and the tenant “may be entitled to a rent refund” (Form 516C, or Form 518 before the effective date).</td>{cell("SF_HI", "SF_NONCOMP", "ADMIN_373")}</tr>
+      <tr><td>Increases that do <b>not</b> need the licence</td><td>The noncompliance page: the licence rules apply only to rent-controlled units, and “the Rent Increase License is not required in some situations where the original occupant(s) no longer live in the unit” (Section 6.14 / Costa-Hawkins) “or for passthroughs allowed under the Rent Ordinance”. A market-rate increase under those provisions is a different, evidence-heavy track — see FR-21 and FR-33.</td>{cell("SF_NONCOMP", "SF_614")}</tr>
       <tr><td>Separate Rent Board Fee</td><td>Distinct from the free Housing Inventory report: <b>$59.00 per dwelling unit</b> for 2026–27 (due 1 March; 50% recoverable from qualifying tenants; 2027 exemption deadline 14 December 2026).</td>{cell("SF_FEE", "SF_HI")}</tr>
     </tbody>
   </table>
-  <p class="small" style="margin-top:8px">Practical sequence: report → confirm licence → calculate → serve notice. Full walk-through with dates: <a href="process.html">Licence &amp; process</a>.</p>
+  <p class="small" style="margin-top:8px">Practical sequence: report → confirm licence → calculate → serve notice. Full walk-through with dates: <a href="process.html">Licence &amp; process</a>. Before serving, work down <a href="questions.html">Open questions</a> — 14 blocking items, each naming where its answer comes from.</p>
 </div>
 
 <div class="card">
@@ -247,12 +253,14 @@ def process():
       <tr><td>Send a copy of the notice to the Rent Board</td><td><b>Unverified</b> — no petition or approval is required, but this alone does not settle whether any separate copy-filing requirement applies. Confirm with the Rent Board (FR-20); the licence does not have to accompany the tenant notice.</td>{cell("SF_HI", "SF_LI")}</tr>
       <tr><td>Other increases and passthroughs</td><td>Rules vary: capital improvement, operating and maintenance, and special-circumstances increases require petitions filed before notice. Bond passthroughs do not require petitions; use the applicable worksheet. Some utility passthrough worksheets must be filed before notice.</td>{cell("SF_LANDPET")}</tr>
       <tr><td>Ask the Rent Board to decide the lawful rent</td><td>Optional — either side may petition for a determination of lawful rent.</td>{cell("SF_LANDPET", "SF_UNLAWFUL")}</tr>
+      <tr><td>Licence for a market-rate or passthrough increase</td><td>Not the same track: the licence rules apply to annual and banked increases on rent-controlled units; the noncompliance page states a licence is not required where the original occupants no longer live in the unit (Section 6.14 / Costa-Hawkins) or for passthroughs, which have their own petition rules.</td>{cell("SF_NONCOMP", "SF_614", "SF_LANDPET")}</tr>
+      <tr><td>Answer the blocking questions first</td><td>Fourteen questions must be settled from your own records before a notice is defensible — the register, the document list and the sensitivity table are on <a href="questions.html">Open questions</a>.</td>{cell("SF_HI", "SF_BANK")}</tr>
     </tbody>
   </table>
 </div>
 
 <div class="card">
-  <h2>Notice-date planner (calculated for this file, 11 November 2026)</h2>
+  <h2 id="planner">Notice-date planner (calculated for this file, 13 November 2026)</h2>
   <p class="small">Arithmetic from the statutory lead times: 30 or 90 days before the effective date; +5 calendar days when served by mail within California. Verify against the statutes before serving.</p>
   <table>
     <thead><tr><th>Target effective date</th><th>Increase size</th><th>Serve in person by</th><th>Mail by</th><th style="width:20%">Rule</th></tr></thead>
@@ -261,7 +269,7 @@ def process():
       <tr><td>1 Feb 2027 — Unit B at 10.0%</td><td>10% (not more than 10%)</td><td><b>2 Jan 2027</b></td><td>28 Dec 2026</td>{cell("LEG_827", "LEG_1013")}</tr>
       <tr><td>1 Feb 2027 — Unit B at 13.1%</td><td>&gt;10%</td><td><span class="badge danger">3 Nov 2026 — passed</span></td><td>29 Oct 2026 — passed</td>{cell("LEG_827")}</tr>
       <tr><td>8 Feb 2027 — Unit B at 13.1% (historical example)</td><td>&gt;10%</td><td><span class="badge danger">10 Nov 2026 — passed</span></td><td><span class="badge danger">5 Nov 2026 — passed</span></td>{cell("LEG_827", "LEG_1013")}</tr>
-      <tr><td>14 Feb 2027 — Unit B at 13.1%</td><td>&gt;10%</td><td>16 Nov 2026</td><td>11 Nov 2026 — federal holiday (Veterans Day); postal service that day unverified (FR-27)</td>{cell("LEG_827", "LEG_1013", "OPM_HOLIDAYS")}</tr>
+      <tr><td>14 Feb 2027 — Unit B at 13.1%</td><td>&gt;10%</td><td>16 Nov 2026</td><td><span class="badge danger">11 Nov 2026 — passed</span> federal holiday (Veterans Day); postal service that day unverified (FR-27)</td>{cell("LEG_827", "LEG_1013", "OPM_HOLIDAYS")}</tr>
       <tr><td>Any date from 1 March 2027 onward</td><td>Any</td><td colspan="2"><b>Blank — the allowable percentage for 1 Mar 2027 – 29 Feb 2028 has not been announced.</b> Use the percentage in effect on the effective date.</td>{cell("SF_LI")}</tr>
     </tbody>
   </table>

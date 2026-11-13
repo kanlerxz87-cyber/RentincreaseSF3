@@ -23,15 +23,18 @@ Canonical dashboard table rows link official sources for the governing rule; own
 | [`pages/review.html`](pages/review.html) | 16-point tenant-lawyer stress test |
 | [`pages/discrimination.html`](pages/discrimination.html) | One unit or both units? Fair-housing analysis |
 | [`pages/requirements.html`](pages/requirements.html) | Every requirement in the brief, its status and its evidence |
+| [`pages/questions.html`](pages/questions.html) | **Open questions**: 14 blocking questions, 12 already settled, the documents to collect, 8 ways to find what is missing, and how each answer changes the number |
+| [`pages/suggestions.html`](pages/suggestions.html) | **Suggestions for review**: 12 improvement proposals with impact and effort, all marked *Proposed* — nothing is implemented until an ID is accepted — plus 6 rejected ideas and why |
 | [`pages/sources.html`](pages/sources.html) | source register with what each supports |
-| [`pages/flagged.html`](pages/flagged.html) | 34 flagged items: unverified, blank, inconsistent or corrected |
+| [`pages/flagged.html`](pages/flagged.html) | 36 flagged items: unverified, blank, inconsistent or corrected |
 
 Markdown summary: [`EXECUTIVE_SUMMARY.md`](EXECUTIVE_SUMMARY.md).
 
-## Headline results (verified 11 November 2026)
+## Headline results (verified 13 November 2026)
 
 | Item | Result | Official source |
 |---|---|---|
+| **State law or local law?** | **Local.** The duty to inform the Rent Board and hold a rent-increase licence is San Francisco **Ordinance No. 265-20**, effective 18 January 2021, amending the City's Rent Ordinance. No California statute requires notifying a rent board or holding a licence. The state cap (Civ. Code § 1947.12, 8.8% for this region from 1 Aug 2026) does not govern because the City cap is lower. | [Ordinance 265-20](https://www.sf.gov/news--new-legislation-creates-housing-inventory-and-requires-owners-obtain-license-imposing) · [§ 1947.12](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=1947.12) |
 | Rent-increase licence for an individual owner of a 1–9 unit building | **Required** — automatic once the Housing Inventory report is filed; must be in effect on the **effective date**; requirement applies from 1 March 2023; 1 March annual deadline; no monetary penalty for late filing | [sf.gov — Housing Inventory](https://www.sf.gov/rent-board-housing-inventory) |
 | Per-increase approval petition | **Not required** for ordinary annual or banked increases; separate notice-copy filing not established (FR-20) | [Form 571](https://www.sf.gov/documents/34344/571_Allowable_Annual_Increases_26-27_1.pdf) · [sf.gov — banking](https://www.sf.gov/information--banked-rent-increases) |
 | Annual allowance 1 Mar 2026 – 28 Feb 2027 | **1.6%** (1.4% prior year) | [sf.gov](https://www.sf.gov/learn-about-rent-increases-san-francisco) · [Form 571](https://www.sf.gov/documents/34344/571_Allowable_Annual_Increases_26-27_1.pdf) |
@@ -48,7 +51,7 @@ Tenant and owner names are replaced with **Tenant A–F**. Dates and dollar amou
 
 ## Build and verification
 
-The site is generated from Python modules so that content and checks share one source of truth:
+The site is generated from Python modules so that content and checks share one source of truth. `pages/questions.html` and `pages/suggestions.html` come from `tools/site_pages_decide.py`:
 
 ```bash
 python3 tools/build_dashboard.py     # writes assets/style.css, index.html, pages/*.html
