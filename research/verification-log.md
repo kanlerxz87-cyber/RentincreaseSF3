@@ -499,3 +499,15 @@ plus the new open-questions page and the second proposals register merged into t
 | 166 | The City publishes its Housing Inventory submission as **public information** | Not previously stated on the site; added as suggestion **SG-11** (privacy policy should be explicit, not implicit) |
 | 167 | The state cap page cites “Civil Code section 1974.12” in two link labels — a typographical error on the Attorney General's own page; the target section number is 1947.12 | Noted; the site links the correct section. No change to any figure |
 | 168 | Six superseded editions remain published side by side (`docs/`, `dashboard/`, `review/`, `audit/`, `verified/`, `verification/`) with corrections visible only on the canonical flagged page | Kept as required by the build gate; consolidated behind one editions index as **SG-08** for the owner's decision |
+## Re-verification pass — 2026-11-13 (session `arena/1fbb8c79`) — additive rows
+
+This session independently fetched ten load-bearing official sources on 13 Nov 2026. Sessions
+`arena/fd7ed99e` and `arena/a53557bb` published overlapping re-verification rows the same day
+(134–148, then 149–168); this session's numbering collided twice during rebase (originally 134–144,
+then 149–159). To keep the log collision-free, only the rows covering sources **not** verified in
+rows 134–168 are retained here; the duplicate confirmations are recorded in `COORDINATION.md` instead.
+
+| # | Assertion on the site | How it was verified | Result |
+|---|---|---|---|
+| 169 | Federal Fair Housing Act prohibits discrimination in the terms, conditions or privileges of rental (42 U.S.C. § 3604(a)–(b)); protected classes listed | `https://www.govinfo.gov/content/pkg/USCODE-2023-title42/html/USCODE-2023-title42-chap45-subchapI-sec3604.htm` fetched 13 Nov 2026, § 3604(a)–(b) read | Confirmed verbatim |
+| 170 | Rent Board Portal functions: owners report into the Housing Inventory, "Obtain a License to increase rents", pay the annual fee; tenants can "View status of landlord's current License" | `https://portal.sfrb.org/` fetched 13 Nov 2026 and read | Confirmed verbatim |
