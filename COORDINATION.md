@@ -1892,3 +1892,31 @@ preserved-edition gates pass · rebuild idempotent.
 **Note for later sessions:** `pages/open-questions.html` no longer exists — its content lives in
 `pages/questions.html`, and `pages/suggestions.html` is now sections A–L. Any session that rebuilds
 from an older branch will resurrect the deleted page; re-merge `main` before generating.
+
+---
+
+## Task board — session `arena/3c130689-rentincreasesf3` (state-vs-local answer, Q&A & suggestions sections, 2026-11-13)
+
+Claimed **2026-11-13** after reading this board top to bottom. Branch `arena/3c130689-rentincreasesf3`
+branched from `main` at `5fbd65e` (PR #54 merged). All prior task-board items are marked done by their
+owning sessions; open PRs **#1, #8, #20, #33, #35, #45, #55** belong to other sessions and are **not**
+touched here (note: #45 and #55 edit the same canonical generators and must be rebased onto this
+session's `main` before merging — see handoff at the end of this section).
+
+This session adds three things the brief asks for that the canonical site does not yet carry, and
+re-verifies the load-bearing official sources by direct fetch on 2026-11-13 (this sandbox reaches
+sf.gov / leginfo / oag / legistar directly):
+
+| # | Task | Status | Owner | File scope |
+|---|------|--------|-------|------------|
+| N1 | Claim tasks + record scope, commit and push immediately | done | `arena/3c130689` | `COORDINATION.md` |
+| N2 | Direct re-fetch of every official source the new sections rely on (2026-11-13); log rows | in progress | `arena/3c130689` | `research/verification-log.md` (append) |
+| N3 | Answer the brief's explicit question — is the 2023 Rent-Board-inform/license duty a **state or local** law — at the forefront of the dashboard + executive summary (answer: **local**, SF Ordinance 265-20; reporting for 1–9 unit buildings began 1 Mar 2023) with official links | in progress | `arena/3c130689` | `tools/site_pages_core.py`, regenerated `index.html`, `pages/executive-summary.html`, `EXECUTIVE_SUMMARY.md` |
+| N4 | New canonical page `pages/questions.html` — clear list of questions, information and answers: what is answered (with sources), what is unknown, and what must be discovered before any decision, each with a suggestion for how to discover the missing information | in progress | `arena/3c130689` | `tools/site_pages_ref.py`, `tools/site_layout.py`, `tools/build_dashboard.py`, `pages/questions.html` |
+| N5 | New canonical page `pages/suggestions.html` — dedicated Suggestions section: site/decision-improvement suggestions with status (proposed → review → chosen → implemented) and decision paths, so a reviewer can choose a path before anything is implemented | in progress | `arena/3c130689` | `tools/site_pages_ref.py`, `tools/site_layout.py`, `tools/build_dashboard.py`, `pages/suggestions.html` |
+| N6 | Roll the research pass to 13 November 2026 (footer, notice planner, source register, gates); rebuild; run every gate | in progress | `arena/3c130689` | `tools/site_layout.py`, `tools/site_pages_core.py`, `tools/site_pages_ref.py`, `tools/verify_core_site.py`, regenerated pages, `README.md`, `EXECUTIVE_SUMMARY.md` |
+| N7 | Final integration: re-verify combined tree line by line, confirm no broken links, PR → `main`, merge, confirm GitHub Pages deploy, record here | unclaimed | `arena/3c130689` | `COORDINATION.md` |
+
+**Scope note:** preserved editions (`docs/`, `dashboard/`, `review/`, `audit/`, `verified/`,
+`verification/`) are read-only here. No personal information is added anywhere; placeholder labels
+(Tenant A–F) only; dates and dollar amounts unchanged.

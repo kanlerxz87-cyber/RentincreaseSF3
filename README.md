@@ -24,6 +24,8 @@ Canonical dashboard table rows link official sources for the governing rule; own
 | [`pages/questions.html`](pages/questions.html) | Open questions: what must be answered before an amount is chosen, and how to find each answer |
 | [`pages/suggestions.html`](pages/suggestions.html) | Site-improvement proposals for owner review — **none implemented**, each with effort, risk and an empty decision field |
 | [`pages/discrimination.html`](pages/discrimination.html) | One unit or both units? Fair-housing analysis |
+| [`pages/questions.html`](pages/questions.html) | Questions, answers & missing information: what is answered, what is open, how to discover each missing fact |
+| [`pages/suggestions.html`](pages/suggestions.html) | Suggestions & decision paths: status-labelled suggestions to review and a path to choose before anything is implemented |
 | [`pages/requirements.html`](pages/requirements.html) | Every requirement in the brief, its status and its evidence |
 | [`pages/questions.html`](pages/questions.html) | **Open questions**: 14 blocking questions, 12 already settled, the documents to collect, 8 ways to find what is missing, and how each answer changes the number |
 | [`pages/suggestions.html`](pages/suggestions.html) | **Suggestions for review**: 12 improvement proposals with impact and effort, all marked *Proposed* — nothing is implemented until an ID is accepted — plus 6 rejected ideas and why |
