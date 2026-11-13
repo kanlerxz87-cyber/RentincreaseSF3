@@ -6,7 +6,7 @@ def index():
     body = f"""
 <div class="card hero">
   <h1>San Francisco rent increase — verified answers</h1>
-  <p class="lede">Two owner-reported rent-controlled units in San Francisco (owner-reported construction year 1940). Total building unit count and coverage are unverified. This dashboard answers the owner's questions in the order asked, with an official source link on every row. Research pass: 11 November 2026.</p>
+  <p class="lede">Two owner-reported rent-controlled units in San Francisco (owner-reported construction year 1940). Total building unit count and coverage are unverified. This dashboard answers the owner's questions in the order asked, with an official source link on every row. Research pass: 13 November 2026.</p>
   <div class="quote"><b>Privacy:</b> tenants are shown as <b>Tenant A–F</b>; the ZIP code, neighbourhood and street address are withheld (unit-level facts plus a location could identify the tenants). <b>Dates and dollar amounts are unchanged.</b> Not legal advice.</div>
 </div>
 
@@ -17,6 +17,7 @@ def index():
     <thead><tr><th style="width:27%">Your question</th><th>Verified answer</th><th style="width:22%">Official source</th></tr></thead>
     <tbody>
       <tr><td>Do I need to tell / report to the Rent Board?</td><td><b>Yes.</b> “All owners of residential property are required to report” into the Housing Inventory, online through the Rent Board Portal. Reporting is free.</td>{cell("SF_HI")}</tr>
+      <tr><td>Is that duty a <b>state</b> law or a <b>local</b> law? (the “since 2023” requirement)</td><td><b>Local law.</b> It comes from San Francisco's own <b>Ordinance No. 265-20</b> (effective 18 January 2021): owners must report into the Rent Board Housing Inventory and obtain a licence before annual or banked increases. Reporting for condominiums and buildings with <b>fewer than 10 units began 1 March 2023</b> — that is the “2023” date in circulation. California <i>state</i> law (AB 1482, Civ. Code § 1947.12) caps increases and Civ. Code § 827 sets notice periods, but neither requires informing the Rent Board. No federal law requires a Rent Board filing either.</td>{cell("SF_ORD265", "SF_HI", "LEG_1947", "LEG_827")}</tr>
       <tr><td>Do I need a licence even though I am a person, not a corporation?</td><td><b>Yes.</b> The rules distinguish by <i>building size</i> (10+ units vs. condominiums and 1–9 unit buildings), not by the owner's legal form. “Property owners who have tenants will receive a rent increase license after the submission.” The total number of units in the building is unverified. For buildings with fewer than 10 units and condominiums reporting began <b>1 March 2023</b>; for other buildings with 10 or more units it began <b>1 July 2022</b>.</td>{cell("SF_HI", "SF_LI")}</tr>
       <tr><td>Is there a separate application or fee for the licence?</td><td><b>No separate application.</b> “Once you have reported into the Housing Inventory, a rent increase license will be automatically generated for non-owner occupied units.” Reporting is free and the licence “does not need to be included with your rent increase notice”.</td>{cell("SF_HI")}</tr>
       <tr><td>Do I have to file the rent-increase notice with the Rent Board?</td><td>For ordinary annual and banked increases the cited guidance requires no approval petition. It does not explicitly address filing a copy of the tenant notice; confirm any separate filing requirement with the Rent Board. Other increases can have different rules.</td>{cell("SF_571", "SF_BANK")}</tr>
@@ -45,7 +46,7 @@ def index():
   <h2>3. What changed on 9 November 2026 — read before serving any notice</h2>
   <p>The Rent Board added a notice to its rent-increase and banking pages on <b>9 November 2026</b>: the Board of Supervisors is considering legislation (<b>File No. 261020</b>) that would <b>temporarily limit the combined amount of banked rent increases and capital improvement rent increases to 10% per year</b>, for the next three years. The Rent Board states that, if enacted as currently proposed, it would apply to <b>banked rent increases noticed on or after 15 September 2026</b> — and that “<b>this legislation has not been enacted and is subject to change</b>”.</p>
   <table>
-    <thead><tr><th>Fact</th><th>Status on 11 Nov 2026</th><th>Official source</th></tr></thead>
+    <thead><tr><th>Fact</th><th>Status on 13 Nov 2026</th><th>Official source</th></tr></thead>
     <tbody>
       <tr><td>Ordinance title and effect</td><td>Would cap banked + capital-improvement increases at a total of <b>10% per year</b> for rent-controlled units, for three years.</td>{cell("LEGISTAR_261020")}</tr>
       <tr><td>Legislative status</td><td><b>Pending Committee Action</b> — introduced 15 Sep 2026, referred to the Land Use and Transportation Committee; no final action recorded. Not law.</td>{cell("LEGISTAR_261020")}</tr>
@@ -81,6 +82,8 @@ def index():
     <a class="tile" href="pages/notice.html"><b>Notice &amp; reasons</b><span>Required contents, service, timing, model wording, prohibited reasons.</span></a>
     <a class="tile" href="pages/review.html"><b>Tenant-lawyer test</b><span>16 checks a tenant-side reviewer would run, and how to pass each.</span></a>
     <a class="tile" href="pages/discrimination.html"><b>One unit or both?</b><span>Fair-housing analysis of selective increases, plus a documentation protocol.</span></a>
+    <a class="tile" href="pages/questions.html"><b>Questions &amp; answers</b><span>What is answered, what is still open, and how to discover every missing fact.</span></a>
+    <a class="tile" href="pages/suggestions.html"><b>Suggestions &amp; decision paths</b><span>Review improvement suggestions and choose a path before anything is implemented.</span></a>
     <a class="tile" href="pages/requirements.html"><b>Requirements checklist</b><span>Every item in the brief, where it is answered, and its verification status.</span></a>
     <a class="tile" href="pages/sources.html"><b>Sources register</b><span>Every official source, the claim it supports, and the date retrieved.</span></a>
     <a class="tile" href="pages/flagged.html"><b>Flagged for review</b><span>Unverified, blank or internally inconsistent items — published, not hidden.</span></a>
@@ -89,7 +92,7 @@ def index():
 </div>
 
 <div class="card tight">
-  <p class="small" style="margin:0"><b>Reading order for a first-timer:</b> this page → <a href="pages/process.html">Licence &amp; process</a> → <a href="pages/units.html">Units &amp; maths</a> → <a href="pages/review.html">Tenant-lawyer test</a>. If you are about to serve a notice, also read <a href="pages/notice.html">Notice &amp; reasons</a> and the <a href="pages/flagged.html">open flags</a> (especially the licence status and Unit B rent history).</p>
+  <p class="small" style="margin:0"><b>Reading order for a first-timer:</b> this page → <a href="pages/process.html">Licence &amp; process</a> → <a href="pages/questions.html">Questions &amp; answers</a> → <a href="pages/units.html">Units &amp; maths</a> → <a href="pages/review.html">Tenant-lawyer test</a>. Before deciding anything, review <a href="pages/suggestions.html">Suggestions &amp; decision paths</a>. If you are about to serve a notice, also read <a href="pages/notice.html">Notice &amp; reasons</a> and the <a href="pages/flagged.html">open flags</a> (especially the licence status and Unit B rent history).</p>
 </div>
 """
     return page("index.html", "Dashboard", body,
@@ -111,6 +114,7 @@ def executive_summary():
     <thead><tr><th style="width:30%">Point</th><th>Verified position</th><th style="width:22%">Official source</th></tr></thead>
     <tbody>
       <tr><td>Who must report</td><td>All owners of residential property. “Most owners are required to do this even if you are not a landlord.”</td>{cell("SF_HI")}</tr>
+      <tr><td>State law or local law?</td><td><b>Local.</b> The duty to inform the Rent Board and hold a licence is San Francisco <b>Ordinance No. 265-20</b> (effective 18 January 2021); reporting for condominiums and buildings with fewer than 10 units began <b>1 March 2023</b> — the “2023” law people refer to. State law (AB 1482, Civ. Code § 1947.12) caps increases and Civ. Code § 827 requires notice periods, but neither obliges an owner to file anything with the Rent Board; there is no federal Rent Board duty.</td>{cell("SF_ORD265", "SF_HI", "LEG_1947", "LEG_827")}</tr>
       <tr><td>What the report produces</td><td>A rent-increase licence, generated automatically for non-owner-occupied units.</td>{cell("SF_HI")}</tr>
       <tr><td>When the licence must exist</td><td>On the <b>effective date</b> of the increase — not merely by the notice date.</td>{cell("SF_HI")}</tr>
       <tr><td>Reporting start dates by building size</td><td>Reporting began <b>1 March 2023</b> for condominiums and buildings with fewer than 10 units, and <b>1 July 2022</b> for other buildings with 10 or more units. The total building size is unverified.</td>{cell("SF_HI", "SF_LI")}</tr>
@@ -251,7 +255,7 @@ def process():
 </div>
 
 <div class="card">
-  <h2>Notice-date planner (calculated for this file, 11 November 2026)</h2>
+  <h2>Notice-date planner (calculated for this file, 13 November 2026)</h2>
   <p class="small">Arithmetic from the statutory lead times: 30 or 90 days before the effective date; +5 calendar days when served by mail within California. Verify against the statutes before serving.</p>
   <table>
     <thead><tr><th>Target effective date</th><th>Increase size</th><th>Serve in person by</th><th>Mail by</th><th style="width:20%">Rule</th></tr></thead>
@@ -260,7 +264,9 @@ def process():
       <tr><td>1 Feb 2027 — Unit B at 10.0%</td><td>10% (not more than 10%)</td><td><b>2 Jan 2027</b></td><td>28 Dec 2026</td>{cell("LEG_827", "LEG_1013")}</tr>
       <tr><td>1 Feb 2027 — Unit B at 13.1%</td><td>&gt;10%</td><td><span class="badge danger">3 Nov 2026 — passed</span></td><td>29 Oct 2026 — passed</td>{cell("LEG_827")}</tr>
       <tr><td>8 Feb 2027 — Unit B at 13.1% (historical example)</td><td>&gt;10%</td><td><span class="badge danger">10 Nov 2026 — passed</span></td><td><span class="badge danger">5 Nov 2026 — passed</span></td>{cell("LEG_827", "LEG_1013")}</tr>
-      <tr><td>14 Feb 2027 — Unit B at 13.1%</td><td>&gt;10%</td><td>16 Nov 2026</td><td>11 Nov 2026 — federal holiday (Veterans Day); postal service that day unverified (FR-27)</td>{cell("LEG_827", "LEG_1013", "OPM_HOLIDAYS")}</tr>
+      <tr><td>11 Feb 2027 — Unit B at 13.1% (earliest date reachable from the pass date)</td><td>&gt;10%</td><td><b>13 Nov 2026 — research-pass date (personal service only)</b></td><td><span class="badge danger">8 Nov 2026 — passed</span></td>{cell("LEG_827", "LEG_1013")}</tr>
+      <tr><td>14 Feb 2027 — Unit B at 13.1%</td><td>&gt;10%</td><td>16 Nov 2026</td><td>11 Nov 2026 — passed (federal holiday, Veterans Day; postal service that day unverified — FR-27)</td>{cell("LEG_827", "LEG_1013", "OPM_HOLIDAYS")}</tr>
+      <tr><td>16 Feb 2027 — Unit B at 13.1% (first date reachable by mail on the pass date)</td><td>&gt;10%</td><td>18 Nov 2026</td><td><b>13 Nov 2026 — research-pass date (mail today)</b></td>{cell("LEG_827", "LEG_1013")}</tr>
       <tr><td>Any date from 1 March 2027 onward</td><td>Any</td><td colspan="2"><b>Blank — the allowable percentage for 1 Mar 2027 – 29 Feb 2028 has not been announced.</b> Use the percentage in effect on the effective date.</td>{cell("SF_LI")}</tr>
     </tbody>
   </table>

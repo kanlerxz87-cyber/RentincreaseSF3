@@ -22,16 +22,19 @@ Canonical dashboard table rows link official sources for the governing rule; own
 | [`pages/notice.html`](pages/notice.html) | Required contents, service deadlines, model notice, lawful and unlawful reasons |
 | [`pages/review.html`](pages/review.html) | 16-point tenant-lawyer stress test |
 | [`pages/discrimination.html`](pages/discrimination.html) | One unit or both units? Fair-housing analysis |
+| [`pages/questions.html`](pages/questions.html) | Questions, answers & missing information: what is answered, what is open, how to discover each missing fact |
+| [`pages/suggestions.html`](pages/suggestions.html) | Suggestions & decision paths: status-labelled suggestions to review and a path to choose before anything is implemented |
 | [`pages/requirements.html`](pages/requirements.html) | Every requirement in the brief, its status and its evidence |
 | [`pages/sources.html`](pages/sources.html) | source register with what each supports |
 | [`pages/flagged.html`](pages/flagged.html) | 31 flagged items: unverified, blank, inconsistent or corrected |
 
 Markdown summary: [`EXECUTIVE_SUMMARY.md`](EXECUTIVE_SUMMARY.md).
 
-## Headline results (verified 11 November 2026)
+## Headline results (verified 13 November 2026)
 
 | Item | Result | Official source |
 |---|---|---|
+| State or local law? (the duty to inform the Rent Board "since 2023") | **Local law** — San Francisco Ordinance No. 265-20 (effective 18 January 2021); reporting for condominiums and buildings with fewer than 10 units began 1 March 2023. State AB 1482 and Civ. Code § 827 do not require informing the Rent Board; no federal law does either | [sf.gov — Ordinance 265-20](https://www.sf.gov/news--new-legislation-creates-housing-inventory-and-requires-owners-obtain-license-imposing) · [sf.gov — Housing Inventory](https://www.sf.gov/rent-board-housing-inventory) · [Civ. Code § 1947.12](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=1947.12) |
 | Rent-increase licence for an individual owner of a 1–9 unit building | **Required** — automatic once the Housing Inventory report is filed; must be in effect on the **effective date**; requirement applies from 1 March 2023; 1 March annual deadline; no monetary penalty for late filing | [sf.gov — Housing Inventory](https://www.sf.gov/rent-board-housing-inventory) |
 | Per-increase approval petition | **Not required** for ordinary annual or banked increases; separate notice-copy filing not established (FR-20) | [Form 571](https://www.sf.gov/documents/34344/571_Allowable_Annual_Increases_26-27_1.pdf) · [sf.gov — banking](https://www.sf.gov/information--banked-rent-increases) |
 | Annual allowance 1 Mar 2026 – 28 Feb 2027 | **1.6%** (1.4% prior year) | [sf.gov](https://www.sf.gov/learn-about-rent-increases-san-francisco) · [Form 571](https://www.sf.gov/documents/34344/571_Allowable_Annual_Increases_26-27_1.pdf) |

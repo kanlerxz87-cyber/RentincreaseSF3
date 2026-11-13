@@ -208,6 +208,8 @@ NAV = [
     ("pages/practice.html", "Market practice"),
     ("pages/notice.html", "Notice &amp; reasons"),
     ("pages/review.html", "Tenant-lawyer test"),
+    ("pages/questions.html", "Questions"),
+    ("pages/suggestions.html", "Suggestions"),
     ("pages/flagged.html", "Flagged"),
 ]
 
@@ -222,6 +224,8 @@ ALL_PAGES = [
     ("pages/notice.html", "Notice, service &amp; reasons"),
     ("pages/review.html", "Tenant-lawyer stress test"),
     ("pages/discrimination.html", "One unit or both units?"),
+    ("pages/questions.html", "Questions, answers &amp; missing information"),
+    ("pages/suggestions.html", "Suggestions &amp; decision paths"),
     ("pages/requirements.html", "Requirements checklist"),
     ("pages/sources.html", "Sources &amp; verification register"),
     ("pages/flagged.html", "Flagged for review"),
@@ -264,7 +268,7 @@ def page(filename, title, body, desc="", active=None):
   <p><b>Independent verification edition:</b> a second pass that re-fetched every official source and re-ran the arithmetic, published separately so this page set was not rewritten — <a href="{up}verification/index.html">open the verification edition (10 November 2026)</a>. Earlier editions are preserved for audit in <code>docs/</code>, <code>dashboard/</code>, <code>review/</code>, <code>audit/</code> and <code>verified/</code>.</p>
   <p><b>Privacy:</b> all tenant and owner identifying details are replaced with placeholder labels (Tenant A–F). Dates and dollar amounts are unchanged. The specific ZIP code, neighbourhood and street address are withheld, because unit-level facts plus a location would identify the tenants; the rules cited apply citywide and do not vary by ZIP. Source registers are internal only.</p>
   <p><b>Not legal advice.</b> Every figure here is either quoted from an official source (linked in the row) or calculated from an official percentage and an owner-reported base rent; where a value could not be confirmed it is left blank and listed on the <a href="{up}pages/flagged.html">Flagged for review</a> page. Confirm anything you intend to rely on with the SF Rent Board counselling line (415-252-4600) and a California lawyer.</p>
-  <p>Research pass and source retrieval: <b>11 November 2026</b>. Content verified line by line against the linked official pages on that date.</p>
+  <p>Research pass and source retrieval: <b>13 November 2026</b>. Content verified line by line against the linked official pages on that date (the prior pass was 11 November 2026).</p>
 </footer>
 </body>
 </html>
