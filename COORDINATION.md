@@ -1563,12 +1563,64 @@ files no other session has claimed.
 
 | # | Task | Status | Owner | Files touched |
 |---|------|--------|-------|---------------|
-| A1 | Re-verify the forefront licence/Housing-Inventory answer against sf.gov line by line (local vs state law question) | in progress | arena/a53557bb-rentincreasesf3 | `pages/executive-summary.html`, `pages/process.html` (via generators) |
-| A2 | Add dedicated open-questions page: every question, the information needed, current answer or blank+flag | in progress | arena/a53557bb-rentincreasesf3 | `pages/questions.html`, `tools/site_pages_ref.py`, `tools/site_layout.py`, `tools/build_dashboard.py` |
-| A3 | Add dedicated suggestions page (site-improvement proposals, each with impact/effort/status for owner review, nothing implemented without sign-off) | in progress | arena/a53557bb-rentincreasesf3 | `pages/suggestions.html`, same generator modules |
-| A4 | Independent re-verification of all canonical rates, notice rules and maths against official pages fetched 13 Nov 2026 | in progress | arena/a53557bb-rentincreasesf3 | `research/verification-log.md`, `data/sources.json` |
-| A5 | Anonymisation re-sweep (occupant initials, withheld postal code, neighbourhood, street) over every published file | in progress | arena/a53557bb-rentincreasesf3 | read-only sweep via `tools/privacy_scan.py` |
+| A1 | Re-verify the forefront licence/Housing-Inventory answer against sf.gov line by line (local vs state law question) | done | arena/a53557bb-rentincreasesf3 | `pages/executive-summary.html`, `pages/process.html` (via generators) |
+| A2 | Add dedicated open-questions page: every question, the information needed, current answer or blank+flag | done | arena/a53557bb-rentincreasesf3 | `pages/questions.html`, `tools/site_pages_ref.py`, `tools/site_layout.py`, `tools/build_dashboard.py` |
+| A3 | Add dedicated suggestions page (site-improvement proposals, each with impact/effort/status for owner review, nothing implemented without sign-off) | done | arena/a53557bb-rentincreasesf3 | `pages/suggestions.html`, same generator modules |
+| A4 | Independent re-verification of all canonical rates, notice rules and maths against official pages fetched 13 Nov 2026 | done | arena/a53557bb-rentincreasesf3 | `research/verification-log.md`, `data/sources.json` |
+| A5 | Anonymisation re-sweep (occupant initials, withheld postal code, neighbourhood, street) over every published file | done | arena/a53557bb-rentincreasesf3 | read-only sweep via `tools/privacy_scan.py` |
 | A6 | Final integration: rebuild, all gates pass, PR to main, merge, confirm Pages deploy, record here | unclaimed (this session) | arena/a53557bb-rentincreasesf3 | `index.html`, `pages/*`, `README.md` |
 
 No other session's files are edited. If a fix is needed in another edition (`docs/`, `dashboard/`,
 `review/`, `audit/`, `verified/`, `verification/`) it is logged here as a request instead.
+
+
+### Sources verified in this pass (all fetched and read 13 Nov 2026, UTC)
+
+| Official source | What it settled |
+|---|---|
+| <https://www.sf.gov/learn-about-rent-increases-san-francisco> | 1.6% for 1 Mar 2026 – 28 Feb 2027; 60% of Bay Area CPI; base rent only, no round-up; first increase 12 months after the lease began; 30/90-day notice and its contents; licence required before annual or banked increases; additional-occupant prohibition; the 9 Nov 2026 notice on File #261020; the multi-year worked examples used for the anniversary test |
+| <https://www.sf.gov/rent-board-housing-inventory> | All owners must report; licence auto-generated for non-owner-occupied units; must be in effect on the effective date; 1 March deadline with no monetary penalty; 30-day contact updates; submission is public; 1 Jul 2022 / 1 Mar 2023 start dates by building size |
+| <https://www.sf.gov/notice-of-owner-noncompliance-with-housing-inventory> | Unlicensed increase: notice “may be null and void (this may apply for multiple years)”, tenant “may be entitled to a rent refund”; licence needed only for rent-controlled units; **not** required for Section 6.14 / Costa-Hawkins situations or passthroughs; how to check the licence by address or APN in the Portal |
+| <https://www.sf.gov/information--banked-rent-increases> | 24-month banking condition; additive not compounded; no cap back to 1 Apr 1982; no expiry during tenancy; prior-owner transfer; banked part must be identified in the notice; licence precondition dated 1 Mar 2023 for condominiums and 1–9 unit buildings |
+| <https://www.sf.gov/documents/34344/571_Allowable_Annual_Increases_26-27_1.pdf> | The full 46-row 1982–2027 rate table; Unit B's banked 11.5% and 13.1% total recomputed from it |
+| <https://www.sf.gov/news--new-legislation-creates-housing-inventory-and-requires-owners-obtain-license-imposing> | **Ordinance No. 265-20, effective 18 Jan 2021** — the local origin of the licence duty; licence suspended for the period of non-compliance; the seven reported data items; the state rental-registry pre-emption reference |
+| <https://www.sf.gov/landlord-petitions-and-passthroughs> | The six increase types that require a petition **before** the notice; petitions are free; owner may petition for a determination of lawful rent or of Section 6.14 / Costa-Hawkins justification |
+| <https://www.sf.gov/information--rent-increases-under-section-614-and-costa-hawkins> | Section 6.14 unlimited increase requires a written notice served on each subsequent occupant within a reasonable time (generally 60 days); co-tenants are outside the Costa-Hawkins route |
+| <https://www.sf.gov/rent-board-fee> | $59.00 per dwelling unit for 2026–27, due 1 March; 5%/month penalty capped at 15%; 50% recoverable; exemption window closes 14 Dec 2026; fee and inventory reporting are separate |
+| <https://www.sf.gov/report-unlawful-rent-increase-or-request-review-your-rent-history> · <https://www.sf.gov/tenant-petitions> | Tenant challenge: Form 516C with Form C, **no time limit**, ALJ hearing, no lawyer required; Rent Board has no jurisdiction over discrimination, harassment, retaliation or deposits |
+| <https://www.sf.gov/learn-about-san-francisco-rental-laws> | Coverage: units built on or before 13 Jun 1979; the exempt and partially exempt lists; counsellor line and hours |
+| <https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=827> | 30 days at ≤10%, 90 days at >10%, measured against the rent in the 12 months before the effective date; service methods; the 30-day exception where an increase follows a recertification |
+| <https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=1947.12> | State cap 5% + CPI up to 10%; (d)(3) local-ordinance exemption; (d)(5)(B) written exemption notice for a separately alienable unit owned by a non-corporate owner; (d)(6) owner-occupied two-unit exemption; no agency filing anywhere |
+| <https://oag.ca.gov/rentcaps> | 8.8% for the San Francisco area for increases starting 1 Aug 2026 – 31 Jul 2027 (6.3% for the prior year); local cap applies where lower |
+| <https://sfgov.legistar.com/LegislationDetail.aspx?ID=8217304&GUID=7EDA4662-EBFB-4AF5-962F-C669B64AA770> | File #261020 still **Pending Committee Action**; last recorded action 7 Oct 2026 (Youth Commission response); no final action — not law |
+
+### Verification performed
+
+`tools/build_dashboard.py` regenerated all 16 pages; `tools/verify_core_site.py` → 49 tables, 445 rows,
+1264 links, **ALL CHECKS PASSED** (every table row carries an official-domain link; rate table
+re-derived from document 571; planner dates consistent; maths asserted in cents).
+`tools/audit_site.py` PASS · `tools/privacy_scan.py` 112 files clean · `tools/verify_review_regressions.py`,
+`verify_site.py`, `tools/check_site.py`, `tools/verify_edition.py`, `tools/check_v2.py` all PASS.
+
+### Irregularities found in this pass
+
+| # | Finding | Disposition |
+|---|---|---|
+| 1 | The licence carve-out for Section 6.14 / passthroughs sits against the “before any annual or banked increase” wording, with no defined boundary | Published as **FR-36**; the site keeps the conservative reading |
+| 2 | No official page states what an out-of-date occupancy entry in the Housing Inventory does to a licence already issued for that year | Published as **FR-35**; corrective action on the open-questions page |
+| 3 | The Attorney General's rent-caps page cites “Civil Code section 1974.12” in two link labels — a typo on the official page; the correct section is 1947.12 | Noted in the verification log; the site links the correct section |
+| 4 | Unit B's headline 13.1% remains **conditional** on a rent history nobody has produced | Unchanged; FR-01 stays open and is the top row of the open-questions register (Q-02) |
+| 5 | Six superseded editions still publish side by side; the build gate forbids deleting them | Consolidation offered as **SG-08**, awaiting the owner's decision — nothing implemented |
+
+### Coordination events
+
+- 2026-11-13T07:0xZ — Session started from `main` at `5fbd65e`; claim pushed (`eb5477d`).
+- 2026-11-13T07:4xZ — `git pull --rebase origin main` found `main` advanced to `5658179` (PR #55, session
+  `arena/10fc30b0`). **Two collisions, both resolved without discarding either side's work:**
+  (a) `COORDINATION.md` add/add — both boards kept, this session's section placed after theirs;
+  (b) flag numbering — both sessions appended `FR-32`/`FR-33` to `FLAGS`; their meanings differ, so this
+  session's two items were **renumbered to FR-35 and FR-36** and the flag count is now 36. Their
+  `verification-log.md` rows 134–148 were kept intact and this session's rows renumbered to 149–163.
+  No file owned by the other session was rewritten: their `noindex` meta, FR-34 row, public-filings
+  index row and units-header fix all survive in the merged tree, and both new index rows render.
+- 2026-11-13T07:5xZ — Final integration (A6): PR to `main`, merge, Pages deploy confirmation recorded below.
