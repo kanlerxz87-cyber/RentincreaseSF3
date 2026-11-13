@@ -1550,3 +1550,25 @@ unexplained. All ten gates pass on the final tree and the build is idempotent.
 - Open PRs #1, #8, #20, #33, #35 and #45 are superseded (one to five days idle, except #45 at two and a
   half hours) and would revert verified pages if merged as they stand. This session closes them with a
   comment under the 60-minute handoff rule; the branches are left in place and each PR can be reopened.
+
+---
+
+## Task board — `arena/a53557bb-rentincreasesf3` (claimed 2026-11-13T06:55Z)
+
+Session branch: `arena/a53557bb-rentincreasesf3` (branched from `main` at `5fbd65e`). Arena sessions
+work on the single session branch assigned by the platform, so this session does not create a
+`session-<id>/<task>` branch; the branch name carries the session id instead. Scope below is
+disjoint from other sessions' scopes; `pages/questions.html` and `pages/suggestions.html` are new
+files no other session has claimed.
+
+| # | Task | Status | Owner | Files touched |
+|---|------|--------|-------|---------------|
+| A1 | Re-verify the forefront licence/Housing-Inventory answer against sf.gov line by line (local vs state law question) | in progress | arena/a53557bb-rentincreasesf3 | `pages/executive-summary.html`, `pages/process.html` (via generators) |
+| A2 | Add dedicated open-questions page: every question, the information needed, current answer or blank+flag | in progress | arena/a53557bb-rentincreasesf3 | `pages/questions.html`, `tools/site_pages_ref.py`, `tools/site_layout.py`, `tools/build_dashboard.py` |
+| A3 | Add dedicated suggestions page (site-improvement proposals, each with impact/effort/status for owner review, nothing implemented without sign-off) | in progress | arena/a53557bb-rentincreasesf3 | `pages/suggestions.html`, same generator modules |
+| A4 | Independent re-verification of all canonical rates, notice rules and maths against official pages fetched 13 Nov 2026 | in progress | arena/a53557bb-rentincreasesf3 | `research/verification-log.md`, `data/sources.json` |
+| A5 | Anonymisation re-sweep (occupant initials, withheld postal code, neighbourhood, street) over every published file | in progress | arena/a53557bb-rentincreasesf3 | read-only sweep via `tools/privacy_scan.py` |
+| A6 | Final integration: rebuild, all gates pass, PR to main, merge, confirm Pages deploy, record here | unclaimed (this session) | arena/a53557bb-rentincreasesf3 | `index.html`, `pages/*`, `README.md` |
+
+No other session's files are edited. If a fix is needed in another edition (`docs/`, `dashboard/`,
+`review/`, `audit/`, `verified/`, `verification/`) it is logged here as a request instead.
