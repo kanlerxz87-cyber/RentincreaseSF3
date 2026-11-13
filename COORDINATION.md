@@ -1577,7 +1577,46 @@ Scope (non-overlapping):
 | V1 | Re-verify time-sensitive official facts on 2026-11-13 | done | 7/7 claims confirmed unchanged; no figure corrected; logged in `research/verification-log.md` |
 | S1 | Build the dedicated Suggestions & decision-path page | done | `tools/site_layout.py` (nav/ALL_PAGES), `tools/site_pages_ref.py` (`suggestions()`, R-24), `tools/site_pages_core.py` (index tile), `tools/build_dashboard.py`; regenerated `index.html` + `pages/suggestions.html` |
 | S2 | Rebuild + all gates | done | 8/8 gates PASS (15 canonical pages, 44 tables, 382 rows, 1099 links); privacy sweep clean |
-| I1 | PR → main → merge → confirm Pages → record | in progress | do not merge a broken site |
+| I1 | PR → main → merge → confirm Pages → record | done | PR #56 merged, Pages `built`, live site verified (see record below) |
+
+### PR / deploy record — session `arena/fd7ed99e-rentincreasesf3`
+
+- **Branch:** `arena/fd7ed99e-rentincreasesf3` → `main`
+- **PR:** [#56](https://github.com/kanlerxz87-cyber/RentincreaseSF3/pull/56) — "Add dedicated Suggestions & decision-path page + 13 Nov 2026 re-verification"
+- **Merge:** **MERGED** at **2026-11-13T07:02:37Z**, merge commit **`5a7321437f6194ee3d29fd8fe7b61a4918becfe5`** (`gh pr merge 56 --merge`, no approval wait)
+- **CI:** PR head `Site checks` run **43382810590** → **success** (9 gates, incl. `row_source_audit.py`)
+- **GitHub Pages:** build **1365487637** → status **`built`**, updated 2026-11-13T07:02:58Z, error null
+- **Live verification:** fetched post-deploy with a cache-busting query.
+  <https://kanlerxz87-cyber.github.io/RentincreaseSF3/pages/suggestions.html> renders the new page
+  (sections A–E, every table row with an official source link). The landing dashboard still leads with the
+  individual-owner licence question and now also carries PR #55's "Is what I report kept private?" row
+  (FR-34), confirming both sessions' content is on `main`.
+
+### Rebase / conflict resolution — 2026-11-13 (nothing discarded)
+
+Before this session's PR could merge, `main` advanced via PR #55 (session `arena/10fc30b0-rentincreasesf3`),
+which edited the same generator modules (`tools/site_layout.py`, `tools/site_pages_core.py`,
+`tools/site_pages_ref.py`) and added `tools/row_source_audit.py`. This branch was rebased onto `origin/main`.
+Both sessions' work is preserved:
+
+| File | Conflict | Resolution |
+|---|---|---|
+| `COORDINATION.md` | add/add — PR #55's task board vs this session's claim board | Both boards kept verbatim; PR #55's first, this session's after it |
+| `research/verification-log.md` | add/add — PR #55's rows 134–145 vs this session's 13 Nov re-verification | Both sections kept; PR #55's rows first, this session's pass after |
+| `pages/requirements.html` | build artefact (PR #55 regenerated + this session regenerated) | Deleted and regenerated from the merged generator modules |
+| all other `pages/*.html`, `index.html`, `assets/style.css` | auto-merged, but regenerated artifacts can drift from the generator | Deleted and rebuilt via `tools/build_dashboard.py` so committed HTML matches the merged modules (satisfies the CI stale-HTML gate) |
+| `tools/*.py` | no conflict — this session's edits (nav/ALL_PAGES, `suggestions()`, R-24, index tile, counts) and PR #55's edits (`noindex`, FR-32–34, units header) sit in different regions | Auto-merged; verified by `ast.parse` and by grep that both `def suggestions()`, `FR-32/33/34`, `R-24` and `noindex` are present |
+
+Verified after the merge: 15 canonical pages, 44 tables, 386 rows, 1103 links; **all 9 gates PASS**
+(`verify_core_site`, `verify_review_regressions`, `audit_site`, `row_source_audit`, `privacy_scan`,
+`verify_site`, `check_site`, `verify_edition`, `check_v2`); flag count now **34** (PR #55 added FR-32/33/34);
+privacy sweep clean on 114 files. No new irregularities found in this pass; no figure corrected (the 13 Nov
+re-verification confirmed all seven time-sensitive facts unchanged).
+
+### Nothing remains in progress for `arena/fd7ed99e-rentincreasesf3`
+
+V1, S1, S2, I1 all **done**. The canonical site is live at
+<https://kanlerxz87-cyber.github.io/RentincreaseSF3/> with the dedicated Suggestions & decision-path page.
 
 ---
 
