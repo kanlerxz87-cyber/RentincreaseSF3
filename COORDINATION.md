@@ -1735,14 +1735,75 @@ New work this session is driven by three gaps found by reading the brief against
 
 | # | Task | Status | Owner | File scope |
 |---|------|--------|-------|------------|
-| D1 | Claim + sync, push claim | in progress | d0b1f850 | `COORDINATION.md` |
-| D2 | Add explicit local/state/federal attribution of every requirement (exec summary + dashboard + process) | unclaimed | d0b1f850 | `tools/site_pages_core.py`, regenerated `index.html`, `pages/executive-summary.html`, `pages/process.html` |
-| D3 | New page `pages/suggestions.html` — site improvement suggestions, proposed-not-implemented, with a review rubric | unclaimed | d0b1f850 | `tools/site_layout.py`, `tools/site_pages_core.py`, `tools/build_dashboard.py`, new `pages/suggestions.html` |
-| D4 | New page `pages/open-questions.html` — decision-readiness questions: known / unknown / how to find out / who answers / what it unlocks | unclaimed | d0b1f850 | `tools/site_layout.py`, `tools/site_pages_ref.py`, `tools/build_dashboard.py`, new `pages/open-questions.html` |
-| D5 | Re-verify every cited official source on 2026-11-13; roll research-pass date and notice planner; add verification rows | unclaimed | d0b1f850 | `tools/verify_core_site.py`, `tools/site_pages_core.py`, `research/verification-log.md`, `README.md`, `EXECUTIVE_SUMMARY.md` |
-| D6 | Repo review line by line; log irregularities, publish any new flag | unclaimed | d0b1f850 | read-only + `tools/site_pages_ref.py` |
-| D7 | Final integration: all gates green, build idempotent, PR → `main`, merge, confirm Pages deploy, record here | unclaimed | d0b1f850 | `COORDINATION.md` |
+| D1 | Claim + sync, push claim | done | d0b1f850 | `COORDINATION.md` |
+| D2 | Add explicit local/state/federal attribution of every requirement (exec summary + dashboard + process) | done | d0b1f850 | `tools/site_pages_core.py`, regenerated `index.html`, `pages/executive-summary.html`, `pages/process.html` |
+| D3 | New page `pages/suggestions.html` — site improvement suggestions, proposed-not-implemented, with a review rubric | done — consolidated onto `main`'s page as sections K–L; the duplicate register was dropped | d0b1f850 | `tools/site_layout.py`, `tools/site_pages_core.py`, `tools/build_dashboard.py`, new `pages/suggestions.html` |
+| D4 | Decision-readiness questions: known / unknown / how to find out / who answers / what it unlocks | done — folded into `main`'s `pages/questions.html` (this session's parallel page deleted) |nclaimed | d0b1f850 | `tools/site_layout.py`, `tools/site_pages_ref.py`, `tools/build_dashboard.py`, new `pages/open-questions.html` |
+| D5 | Re-verify every cited official source on 2026-11-13; roll research-pass date and notice planner; add verification rows | done | d0b1f850 | `tools/verify_core_site.py`, `tools/site_pages_core.py`, `research/verification-log.md`, `README.md`, `EXECUTIVE_SUMMARY.md` |
+| D6 | Repo review line by line; log irregularities, publish any new flag | done — FR-37, FR-38, FR-39 published | d0b1f850 | read-only + `tools/site_pages_ref.py` |
+| D7 | Final integration: all gates green, build idempotent, PR → `main`, merge, confirm Pages deploy, record here | done — see the integration record below | d0b1f850 | `COORDINATION.md` |
 
 **Handoff note for other sessions:** this session will regenerate `index.html`, `pages/*.html` and
 `assets/style.css` from the merged modules. Any session holding unstaged edits to those artefacts must
 rebase and re-run `python3 tools/build_dashboard.py` after merging this session's changes.
+
+---
+
+## Integration record — session `arena/d0b1f850-rentincreasesf3` (13 Nov 2026)
+
+**What this session added to `main`, and how the two 13-Nov passes were consolidated.**
+
+Two sessions worked the same brief on the same base (`5fbd65e`) in parallel: this one (`d0b1f850`)
+and `a53557bb` (merged as PR #59, with `fd7ed99e`'s suggestions page merged as PR #56). Both built a
+site-improvement register and a decision-readiness page. This branch therefore merges `main` and
+**adopts `main`'s architecture**, contributing only what was genuinely additive:
+
+| Colliding artefact | Resolution |
+|---|---|
+| `pages/suggestions.html` (two independent registers) | One page. `main`'s sections A–J stay untouched; this session's **bundle paths** and **already-changed-this-pass** tables appended as sections K and L; its S-01…S-14 register was **dropped** as a duplicate of `main`'s SG-01…SG-12 (source-drift job, JSON data, annual calendar, edition consolidation, machine-readable data, refusal of market-rent figures were all already there). |
+| `pages/open-questions.html` (this session) vs `pages/questions.html` (`main`) | `main`'s page wins; this session's file is deleted and its two additive settled rows moved into it — **Civ. Code § 1942.4** (no notice may be *served* while an official written habitability notice stands unabated 35+ days) and the **business-registration number question left blank**. |
+| Flag IDs `FR-32…FR-35` (this session) vs `FR-32…FR-36` (`main`) | Renumbered: **FR-37** business registration (blank), **FR-38** blank answer cells by design, **FR-39** the Attorney General page's own defects. Register now 39 flags. |
+| Requirements `R-24…R-29` (both) | Merged: `main` keeps R-24/R-25; this session's items became **R-26…R-28** (28 tracked). |
+| Verification-log rows 149–166 (this session) vs 149–168 (`main`) | This session's pass renumbered to **rows 169–186**; no duplicate row IDs remain. |
+| `index.html` tiles / nav / `ALL_PAGES` | `main`'s nav; this session's tile for its deleted page removed; shared outputs regenerated from the merged modules, never hand-edited. |
+
+**Unique content this session contributed** (not present in `main` before this merge): the
+level-of-government attribution rows naming Ordinance No. 265-20 (effective 18 Jan 2021; phase-in
+1 Jul 2022 / 1 Mar 2023) as the *local* source of the "inform the rent board since 2023" rule, with
+the state side (Civ. Code §§ 827, 1947.12(d)(3), 1942.4, 1942.5) and the federal side (FHA,
+24 CFR § 982.507) kept separate; the § 1942.4 pre-condition card on the notice page and its
+insertion into the process and executive-summary step lists; the Rent-Board-licence-versus-
+occupational-licence distinction citing Bus. & Prof. Code § 10131; `SF_RATES`, `LEG_19424` and
+`LEG_BPC10131` in the source registry with source-register descriptions; and flags FR-37…FR-39.
+
+**Verification (all sources re-fetched and read directly on 13 Nov 2026):** the 1.6% allowance for
+1 Mar 2026 – 28 Feb 2027, the prior 1.4% and the 1.7% before that; the licence rule, its
+phase-in dates and the "notice not enforceable without a licence on the effective date" wording;
+the 24-month banking sentence and the three-way conflict around it (FR-03, unchanged); § 827's
+30/90-day rule and § 1013's mail extension; § 1947.12's (d)(3) local-ordinance exclusion and its
+SB 567 enactment history; the AG's 8.8% for the San Francisco area; the Rent Board Fee ($59.00,
+due 1 Mar, exemption window closing 14 Dec 2026); and **Legistar File No. 261020 — still
+"Pending Committee Action"** with the last recorded action on 7 Oct 2026, so it is not law.
+No figure or date on the site was adjusted by this pass; the arithmetic gates re-ran green.
+
+| Gate | Result |
+|---|---|
+| `python3 tools/build_dashboard.py` | built 16 files; rebuild idempotent (no diff) |
+| `tools/verify_core_site.py` | pages: 16 · tables: 55 · rows: 492 · links: 1349 — ALL CHECKS PASSED (incl. the new decision-page and source-register checks) |
+| `tools/audit_site.py` | PASS (72 HTML files) |
+| `tools/privacy_scan.py` | PASS — no address, ZIP, neighbourhood, initials or private contact detail |
+| `tools/verify_review_regressions.py` | pass |
+| `verify_site.py`, `tools/check_site.py`, `tools/verify_edition.py`, `tools/check_v2.py` | ALL CHECKS PASSED (preserved editions intact) |
+
+**Irregularities flagged for the owner (published, not hidden):** FR-37 (no official source settles
+whether a business registration number is expected — field left blank); FR-38 (blank answer cells on
+the decision pages are deliberate, not research gaps); FR-39 (the AG's rent-cap page mis-cites
+"Civil Code section 1974.12" for § 1947.12 and its two links carry a trailing period in `sectionNum`,
+which returns nothing — its percentages are correct); the Rent Board's own worked-example date slips
+(FR-32) and the three conflicting banking texts (FR-03) remain open.
+
+**PR / merge / deploy:** recorded below as soon as the merge and the Pages build complete.
+
+| PR | Merge | Pages build | Live check |
+|---|---|---|---|
+| PENDING | PENDING | PENDING | PENDING |
