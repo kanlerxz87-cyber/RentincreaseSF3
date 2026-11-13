@@ -2153,3 +2153,25 @@ Claimed **2026-11-13**; branch `arena/69a2798e-rentincreasesf3` branched from `m
 (`arena/3cb4d5e1`), **#35**, **#33**, **#20**, **#8**, **#1`. Existing page content is only added
 to, never removed; the six preserved editions (`docs/`, `dashboard/`, `review/`, `audit/`,
 `verified/`, `verification/`) are left byte-for-byte unchanged.
+## Task board — session `arena/da66ab72-rentincreasesf3` (fresh verification pass, Suggestions section, final integration — 2026-11-13)
+
+Claimed **2026-11-13** after reading this board top to bottom. Branch `arena/da66ab72-rentincreasesf3`,
+branched from `main` at `5fbd65e` (PR #54). All other sessions' claims visible on `main` are more than
+60 minutes old with no commits (latest activity 2026-11-11); under the board's takeover rule this
+session takes over the stale final-integration tasks and logs the handoff here. Open PRs belonging to
+other sessions: #55 is taken over (see D2, its own board says "done except the PR/deploy record" and is
+2 days stale); #45, #35, #33, #20, #8, #1 were already judged superseded / rebase-owner's-call by prior
+sessions and are left untouched.
+
+| # | Task | Status | File scope | Notes |
+|---|------|--------|------------|-------|
+| D1 | Claim tasks, record scope, push immediately | done (this section) | `COORDINATION.md` (this section only) | pushed before any other work |
+| D2 | Take over PR #55 (`arena/10fc30b0-rentincreasesf3`, row-source audit + FR-32…FR-34 + `noindex` meta): run every gate on its branch locally, merge to `main`, record handoff | unclaimed → in progress | `main` via `gh pr merge 55 --merge` | claim 2 days stale; its own board P1–P5 "done except the PR/deploy record" |
+| D3 | Fresh official-source re-verification pass dated **13 Nov 2026**: fetch every official URL cited by the canonical site with the session's fetch tool, confirm each published claim line by line, append verification-log rows | unclaimed | `research/verification-log.md` (append), `data/sources.json` (metadata only if needed) | no figure may be rolled to 13 Nov without a 13 Nov fetch |
+| D4 | Roll the canonical research-pass date and notice-date planner from 11 Nov → **13 Nov 2026** (footer, lede, planner cells marked passed, `RESEARCH_DATE`, README/exec-summary dates, planner arithmetic), rebuild, keep all gates green | unclaimed | `tools/site_layout.py`, `tools/site_pages_core.py`, `tools/site_pages_ref.py`, `tools/verify_core_site.py`, regenerated `index.html`/`pages/*.html`, `README.md`, `EXECUTIVE_SUMMARY.md` | same pattern as J3/W-rolls above |
+| D5 | Build the **Suggestions** section the brief requires and the site still lacks: a dedicated page where suggestions to improve decision-making and to discover missing information can be reviewed and a path chosen before implementation; wire nav, requirements rows, index tile; every data row carries an official source link | unclaimed | new `pages/suggestions.html`, `tools/site_pages_ref.py` (or new module), `tools/build_dashboard.py`, `tools/site_layout.py`, `tools/verify_core_site.py` (page list if hardcoded), `README.md`, regenerated `index.html`/`pages/*.html` | user requirement missing from every edition as of 2026-11-13 |
+| D6 | Final integration: rebase on `origin/main`, re-verify combined data line by line, run every gate, confirm no broken links, PR → `main`, merge, confirm CI + GitHub Pages deploy, live-site check, record PR link + merge result here | unclaimed | `COORDINATION.md` | do not merge a broken site |
+
+### Log — `arena/da66ab72` (UTC)
+
+- 2026-11-13 — Session started. Read `COORDINATION.md` in full (1373 lines). Baseline gates on `5fbd65e`: privacy sweep PASS (108 files); `verify_core_site.py` PASS (14 pages / 41 tables / 359 rows / 1000 links); `audit_site.py` PASS (70 files); `verify_site.py`, `check_site.py`, `verify_edition.py`, `check_v2.py`, `verify_review_regressions.py` all PASS. Open PRs reviewed: #55 MERGEABLE + CI green (session stale 2 days → D2 takeover); #45/#35/#33/#20/#8/#1 left untouched per prior dispositions. First fresh fetch of sf.gov rent-increases page on 2026-11-13 confirms 1.6% (1 Mar 2026 – 28 Feb 2027), licence requirement, 9 Nov 2026 File #261020 notice, 30/90-day rules, and the three worked-example date slips already recorded as FR-32 in PR #55.
