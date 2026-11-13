@@ -1920,3 +1920,43 @@ sf.gov / leginfo / oag / legistar directly):
 **Scope note:** preserved editions (`docs/`, `dashboard/`, `review/`, `audit/`, `verified/`,
 `verification/`) are read-only here. No personal information is added anywhere; placeholder labels
 (Tenant A–F) only; dates and dollar amounts unchanged.
+| I1 | PR → main → merge → confirm Pages → record | in progress | do not merge a broken site |
+## Task board — session `arena/edd1ff9e-rentincreasesf3` (2026-11-13)
+
+**Claimed 2026-11-13 at session start.** Branch `arena/edd1ff9e-rentincreasesf3`, branched from `main` at
+`5fbd65e7c7a770443d32a7adc0127acb6f45dce5` (PR #54 merged). All earlier tasks on this board are marked
+done by their owning sessions, so this session acts as the **final integration session** for the new
+requirements added in the current brief and re-verifies the combined tree line by line.
+
+**New requirements in the current brief that no earlier session has answered:**
+
+| ID | Requirement |
+|---|---|
+| N1 | Answer whether the duty to inform the Rent Board (the "law passed in 2023") is **state or local** law; name the instrument and cite official sources |
+| N2 | A dedicated **Suggestions** section: how to improve the site/decision-making, with paths to choose between **before** any change is implemented |
+| N3 | A dedicated **Open questions / decision gates** section: what is known, what is not known, and how to discover the missing information |
+
+Scope of files this session may edit (everything else is read-only, or changed via a logged request):
+
+| File | Why |
+|---|---|
+| `COORDINATION.md` | this claim + PR/deploy record |
+| `research/verification-log.md` | append this session's verification rows |
+| `tools/site_layout.py` | new source-registry entries + nav/ALL_PAGES entries for two new pages |
+| `tools/site_pages_ref.py` | new `suggestions()` and `open_questions()` page builders, new requirement rows R-24…R-26, any new flags |
+| `tools/site_pages_core.py` | state-vs-local answer at the forefront of the executive summary + index |
+| `tools/build_dashboard.py` | register the two new pages |
+| `tools/verify_core_site.py` | gate extensions for the new pages |
+| `README.md`, `EXECUTIVE_SUMMARY.md` | reflect the new findings |
+| regenerated `index.html`, `pages/*.html`, `assets/style.css` | build artefacts |
+
+| # | Task | Status | File scope |
+|---|------|--------|------------|
+| E1 | Claim tasks + scope, commit and push the claim immediately | **done** | `COORDINATION.md` |
+| E2 | Verify the "2023 law" question against official sources (sf.gov §37.15 info page, Ord. 265-20, sf.gov Housing Inventory news page) | in progress | research only |
+| E3 | Re-verify the headline figures (1.6%, banking, notice rule, licence, File #261020) by direct fetch | in progress | `research/verification-log.md` |
+| E4 | Build `pages/open-questions.html` — known / unknown / discovery actions | pending | `tools/site_pages_ref.py` |
+| E5 | Build `pages/suggestions.html` — improvement suggestions + decision paths to choose before implementing | pending | `tools/site_pages_ref.py` |
+| E6 | Put the state-vs-local answer at the forefront of the executive summary and index | pending | `tools/site_pages_core.py` |
+| E7 | Re-run all gates; idempotent build; no broken links | pending | `tools/` |
+| E8 | PR → `main`, merge, confirm Pages deploy, record here | pending | `COORDINATION.md` |
