@@ -1550,3 +1550,31 @@ unexplained. All ten gates pass on the final tree and the build is idempotent.
 - Open PRs #1, #8, #20, #33, #35 and #45 are superseded (one to five days idle, except #45 at two and a
   half hours) and would revert verified pages if merged as they stand. This session closes them with a
   comment under the 60-minute handoff rule; the branches are left in place and each PR can be reopened.
+
+## Task board — session `arena/fd7ed99e-rentincreasesf3` (fresh verification + Suggestions page + integration, 2026-11-13)
+
+Claimed 2026-11-13. Baseline: branch `arena/fd7ed99e-rentincreasesf3` == `origin/main` == `5fbd65e`
+(PR #54 merged). All seven existing automated gates PASS on the checked-out tree. Open PRs from other
+sessions (#55, #45, #35, #33, #20, #8, #1) are left untouched; this session works only on its own branch.
+
+Scope (non-overlapping):
+- **V1** Fresh line-by-line re-verification (2026-11-13) of the time-sensitive official facts the site
+  depends on: current allowable annual increase, the rent-increase licence / Housing Inventory rule for an
+  individual owner, banking, the notice periods, the state cap, and the status of File #261020.
+  Files: `research/verification-log.md`.
+- **S1** Add the user-requested dedicated **"Suggestions & decision path"** canonical page: site-improvement
+  suggestions, the decision options with the information each needs, and the list of questions to answer to
+  discover missing information. Every row carries an official source link where a rule is stated, or is
+  marked as an owner/analysis item (not a verified fact). Files: `tools/site_layout.py` (nav/ALL_PAGES),
+  `tools/site_pages_ref.py` (`suggestions()`), `tools/build_dashboard.py` (registry), regenerated
+  `index.html` + `pages/suggestions.html`.
+- **S2** Rebuild the canonical site and re-run every gate; fix anything that fails.
+- **I1** Final integration: PR from this branch to `main`, merge without waiting, confirm the GitHub Pages
+  deployment, record PR link + merge result + verification + irregularities here.
+
+| # | Task | Status | Notes |
+|---|------|--------|-------|
+| V1 | Re-verify time-sensitive official facts on 2026-11-13 | done | 7/7 claims confirmed unchanged; no figure corrected; logged in `research/verification-log.md` |
+| S1 | Build the dedicated Suggestions & decision-path page | done | `tools/site_layout.py` (nav/ALL_PAGES), `tools/site_pages_ref.py` (`suggestions()`, R-24), `tools/site_pages_core.py` (index tile), `tools/build_dashboard.py`; regenerated `index.html` + `pages/suggestions.html` |
+| S2 | Rebuild + all gates | done | 8/8 gates PASS (15 canonical pages, 44 tables, 382 rows, 1099 links); privacy sweep clean |
+| I1 | PR → main → merge → confirm Pages → record | in progress | do not merge a broken site |

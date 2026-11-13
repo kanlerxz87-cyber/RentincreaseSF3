@@ -29,6 +29,7 @@ PAGES = {
     "pages/review.html": rules.review,
     "pages/discrimination.html": rules.discrimination,
     "pages/requirements.html": ref.requirements,
+    "pages/suggestions.html": ref.suggestions,
     "pages/sources.html": ref.sources,
     "pages/flagged.html": ref.flagged,
 }

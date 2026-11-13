@@ -83,6 +83,7 @@ def index():
     <a class="tile" href="pages/review.html"><b>Tenant-lawyer test</b><span>16 checks a tenant-side reviewer would run, and how to pass each.</span></a>
     <a class="tile" href="pages/discrimination.html"><b>One unit or both?</b><span>Fair-housing analysis of selective increases, plus a documentation protocol.</span></a>
     <a class="tile" href="pages/requirements.html"><b>Requirements checklist</b><span>Every item in the brief, where it is answered, and its verification status.</span></a>
+    <a class="tile" href="pages/suggestions.html"><b>Suggestions &amp; decision path</b><span>Review options, preconditions and open questions, and choose a path before implementing.</span></a>
     <a class="tile" href="pages/sources.html"><b>Sources register</b><span>Every official source, the claim it supports, and the date retrieved.</span></a>
     <a class="tile" href="pages/flagged.html"><b>Flagged for review</b><span>Unverified, blank or internally inconsistent items — published, not hidden.</span></a>
     <a class="tile" href="verification/index.html"><b>Independent verification edition</b><span>Second self-contained pass: every official source re-fetched, arithmetic recomputed, flags F-11…F-23.</span></a>
