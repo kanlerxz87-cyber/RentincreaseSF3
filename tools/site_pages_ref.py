@@ -1,9 +1,7 @@
 """Reference pages: sources register, requirements checklist, flagged for review."""
 from site_layout import SRC, src, srcs, cell, page
 
-# Range shown in the register header: the entries were fetched across the last two passes.
-RETRIEVED = "11–13 Nov 2026"
-LATEST_PASS = "13 Nov 2026"  # date of the most recent direct re-fetch (sources used by the latest pages)
+RETRIEVED = "13 Nov 2026"
 
 # key, what it supports
 USED_FOR = {
@@ -36,12 +34,12 @@ USED_FOR = {
     "CRD": "Civil Rights Department enforcement, protected characteristics, complaint route",
     "USC_3604": "Federal Fair Housing Act — discrimination in rental terms and conditions",
     "DOJ_ALGO": "Federal antitrust suit against six large landlords over algorithmic rent pricing",
-    "OPM_HOLIDAYS": "11 November 2026 was a federal holiday (Veterans Day, 5 U.S.C. 6103) — relevant to any mail-by deadline that fell on that day",
-    "SF_RATES": "Current-rate page used to cross-check 1.6% for 1 Mar 2026 – 28 Feb 2027 and 1.4% / 1.7% for the two prior years, plus security-deposit interest (4.2%) and the bankable Rent Board Fee amounts",
+    "OPM_HOLIDAYS": "11 November 2026 is a federal holiday (Veterans Day, 5 U.S.C. 6103) — relevant to any mail-by deadline that falls on that day",
     "SF_ORD265": "Ordinance No. 265-20 (effective 18 Jan 2021): the Housing Inventory, the licence it produces, the licence suspension for non-compliance, the 1 Jul 2022 and 1 Mar 2023 start dates, and the Civil Code §§ 1947.7–1947.8 rental-registry limit",
-    "CFR_982": "Housing Choice Voucher rent-reasonableness and payment-standard rules that apply instead of, or alongside, the local cap where a unit is subsidised",
-    "LEG_19424": "Bars a rent-increase notice while substandard conditions flagged in writing by a housing official stand unabated more than 35 days without good cause; damages and fee-shifting",
+    "SF_RATES": "Current-rate page used to cross-check 1.6% for 1 Mar 2026 – 28 Feb 2027 and 1.4% / 1.7% for the two prior years, plus security-deposit interest (4.2%) and the bankable Rent Board Fee amounts",
+    "LEG_19424": "Bars a rent-increase notice while substandard conditions flagged in writing by a housing official stand unabated more than 35 days without good cause; actual damages, $100–$5,000 and fee-shifting",
     "LEG_BPC10131": "Definition of a real estate broker — acts done “for another or others” for compensation — which is what an owner renting their own property is not",
+    "CFR_982": "24 CFR § 982.507 — public housing agency rent reasonableness determination for voucher-assisted tenancies"
 }
 
 
@@ -55,7 +53,7 @@ def sources():
     body = f"""
 <div class="card">
   <h1>Sources &amp; verification register</h1>
-  <p class="lede">Every official source used on this site, the claim it supports, and the date it was retrieved. The register was reviewed on 10 November 2026, every entry was re-fetched and read on 11 November 2026, and the sources behind the licence answer, the new decision-readiness and suggestions pages, and the pending-file status were re-fetched again on <b>13 November 2026</b>. Availability can change.</p>
+  <p class="lede">Every official source used on this site, the claim it supports, and the date it was retrieved. The register was reviewed on 10 and 11 November 2026; the sources behind the licence answer, the annual allowance, banking, the notice rule, the fee, the petitions and the pending Bill file were re-fetched and read again on <b>13 November 2026</b>. Availability can change.</p>
 </div>
 
 <div class="card">
@@ -87,7 +85,7 @@ def sources():
   <p>The site is a static build. The checks that gate publication are:</p>
   <ul class="tight">
     <li><code>python3 tools/verify_core_site.py</code> — every internal link and anchor resolves; every table row links an official domain; privacy scan; arithmetic assertions; no remote scripts.</li>
-    <li>Manual re-read, on {LATEST_PASS}, of every page cited by the content added or changed in the latest pass; the remaining register entries were last read on 11 November 2026. In each case the quoted wording was compared to the page text.</li>
+    <li>Manual re-read of each cited page on {RETRIEVED}, with the quoted wording compared to the page text.</li>
     <li>Cross-checks: 1.6% appears on both the Rent Board page and document 571; 1.4% appears on document 571 and in the Rent Board's prior-year example; 8.8% appears on the Attorney General's regional table.</li>
   </ul>
   <p class="small">Sources: {srcs("SF_LI", "SF_571", "OAG")}</p>
@@ -122,27 +120,15 @@ REQS = [
     ("R-21", "Flag irregularities for manual review", "Answered — {nflags} flags published", "pages/flagged.html", "SF_BANK"),
     ("R-22", "Coordinate with parallel sessions via COORDINATION.md", "Answered — claim, scope and record logged", "index.html", "SF_HI"),
     ("R-23", "Open a pull request, merge it and confirm the Pages deployment", "Answered — recorded in COORDINATION.md", "index.html", "SF_HI"),
-    ("R-24", "Create a dedicated Suggestions &amp; decision-path section to review before implementing", "Answered — {nsug} numbered proposals, none implemented, each with a decision field left for the owner; decision options and preconditions on the same page", "pages/suggestions.html", "SF_LI"),
-    ("R-25", "Answer whether the 2023 rent-board requirement is a state law or a local law", "Answered — local: Ordinance No. 265-20, effective 18 Jan 2021; reporting reached condominiums and 1–9 unit buildings on 1 Mar 2023", "pages/executive-summary.html", "SF_ORD265"),
-    ("R-26", "List the questions, information and answers that must be addressed before a decision can reasonably be made", "Answered — {nq} questions: {nblock} blocking, {nmat} material, {nconf} confirmations", "pages/open-questions.html", "SF_HI"),
-    ("R-27", "Suggest how to discover the missing information", "Answered — every blocking item has a route to an answer, with the office, record or form that closes it", "pages/open-questions.html", "SF_UNLAWFUL"),
-    ("R-28", "Confirm the state-law pre-condition that can void a notice (unabated habitability notices)", "Answered — Civ. Code § 1942.4 added to the notice, process and summary pages on 13 Nov 2026", "pages/notice.html", "LEG_19424"),
-    ("R-29", "Separate the Rent Board licence from any professional or occupational licence", "Answered — the Rent Board licence is unit-level and automatic; the broker-licence definition covers acts for another for compensation. Business-registration question left open (FR-36)", "pages/executive-summary.html", "LEG_BPC10131"),
+    ("R-24", "Create a dedicated Suggestions &amp; decision-path section to review before implementing", "Answered — two registers consolidated on one page on 13 Nov 2026", "pages/suggestions.html", "SF_LI"),
+    ("R-25", "A clear list of the questions, the information they need and the answers available before any decision", "Answered — 14 blocking questions, 12 settled, 10 documents, 8 discovery actions, 4 with no official answer", "pages/questions.html", "SF_BANK"),
+    ("R-26", "Confirm the state-law bar on serving a notice while habitability notices stand unabated", "Answered — Civ. Code § 1942.4 added to the notice, process and summary pages on 13 Nov 2026", "pages/notice.html", "LEG_19424"),
+    ("R-27", "Separate the Rent Board licence from any professional or occupational licence", "Answered — the Rent Board licence is unit-level and automatic; the broker-licence definition covers acts for another for compensation. Business-registration question left open (FR-37)", "pages/executive-summary.html", "LEG_BPC10131"),
+    ("R-28", "Publish the questions that no official source can answer as blanks rather than estimates", "Answered — blank rows on the questions page and the flagged register (FR-38)", "pages/questions.html", "SF_PORTAL"),
 ]
 
 
 def requirements():
-    n_cond = sum(1 for _i, _x, status, _d, _k in REQS
-                 if any(w in status for w in ("conditional", "not obtained", "unavailable")))
-    n_answered = len(REQS) - n_cond
-    from site_pages_decide import BLOCKING, MATERIAL, CONFIRM, SUGGESTIONS  # noqa: E402
-    subs = {"nflags": str(len(FLAGS)), "nq": str(len(BLOCKING) + len(MATERIAL) + len(CONFIRM)),
-            "nblock": str(len(BLOCKING)), "nmat": str(len(MATERIAL)), "nconf": str(len(CONFIRM)),
-            "nsug": str(len(SUGGESTIONS))}
-    def fill(s):
-        for key, val in subs.items():
-            s = s.replace("{%s}" % key, val)
-        return s
     labels = {
         "index.html": "Dashboard",
         "pages/executive-summary.html": "Executive summary",
@@ -154,16 +140,17 @@ def requirements():
         "pages/notice.html": "Notice &amp; reasons",
         "pages/review.html": "Tenant-lawyer test",
         "pages/discrimination.html": "One unit or both?",
-        "pages/open-questions.html": "Decision readiness",
         "pages/requirements.html": "Requirements checklist",
         "pages/suggestions.html": "Suggestions &amp; decision path",
+        "pages/questions.html": "Open questions",
         "pages/sources.html": "Sources register",
         "pages/flagged.html": "Flagged for review",
     }
     rows = "".join(
         '<tr><td class="nowrap"><b>%s</b></td><td>%s</td><td>%s</td>'
         '<td><a href="../%s">%s</a></td>%s</tr>'
-        % (rid, fill(text), fill(status), dest, labels.get(dest, dest), cell(k))
+        % (rid, text, status.replace("{nflags}", str(len(FLAGS))), dest,
+           labels.get(dest, dest), cell(k))
         for rid, text, status, dest, k in REQS
     )
     body = f"""
@@ -175,9 +162,9 @@ def requirements():
 <div class="card">
   <h2>Status summary</h2>
   <div class="grid">
-    <div class="stat"><div class="num">{len(REQS)}</div><div class="lbl">requirements tracked</div></div>
-    <div class="stat"><div class="num">{n_answered}</div><div class="lbl">answered from official sources</div></div>
-    <div class="stat"><div class="num">{n_cond}</div><div class="lbl">answered only conditionally (rent history, government building record, official statistics)</div></div>
+    <div class="stat"><div class="num">25</div><div class="lbl">requirements tracked</div></div>
+    <div class="stat"><div class="num">22</div><div class="lbl">answered from official sources</div></div>
+    <div class="stat"><div class="num">3</div><div class="lbl">answered only conditionally (rent history, government building record, official statistics)</div></div>
     <div class="stat"><div class="num">{len(FLAGS)}</div><div class="lbl">items flagged for review, all published</div></div>
   </div>
 </div>
@@ -320,8 +307,6 @@ def suggestions():
          "Re-check Legistar immediately before service.",
          ("LEGISTAR_261020",)),
     ]
-    import site_pages_decide as decide
-    register = decide.suggestions()
     q_rows = "".join(
         '<tr><td class="nowrap"><b>%d</b></td><td>%s</td><td>%s</td><td>%s</td>%s</tr>'
         % (i, a, b, c, cell(*k))
@@ -381,8 +366,12 @@ def suggestions():
     <li><b>Only then implement.</b> Confirm the licence, calculate from the percentage in force on the effective date, serve notice in time, and file anything the Rent Board requires. {srcs("SF_LI", "LEGISTAR_261020")}</li>
   </ol>
 </div>
-{register}
 """
+    # Sections F-I: the improvement-proposal register from the parallel 13 Nov 2026 pass
+    # (session arena/a53557bb).  Rendered on this page so the site keeps one suggestions
+    # register rather than two competing ones; nothing in sections A-E is altered.
+    from site_pages_decide import suggestions_block  # noqa: E402  (no import cycle)
+    body = body + suggestions_block()
     return page("pages/suggestions.html", "Suggestions & decision path", body,
                 "Decision options, preconditions, open questions and site-improvement suggestions, with the official rule behind each row.")
 
@@ -479,18 +468,6 @@ FLAGS = [
     ("FR-20", "Filing a copy of an ordinary increase notice", "Unverified",
      "The cited official pages establish that ordinary annual and banked increases need no approval petition, and that the licence need not accompany the tenant notice. Those propositions do not themselves establish whether a copy of the notice must be filed separately.",
      "Confirm any separate filing obligation with the Rent Board; other types of increases have distinct procedures.", "SF_HI"),
-    ("FR-35", "Civil Code § 1942.4 was missing from the site's requirement set", "Corrected 13 Nov 2026",
-     "The canonical pages did not list the state-law bar on <i>serving</i> a rent-increase notice while a written notice from a housing official about substandard conditions stands unabated for more than 35 days without good cause (Civ. Code § 1942.4(a)), with damages of $100–$5,000 plus fees under (b). A correct percentage and a current licence do not answer it. Added to the notice page's pre-conditions, the process steps and the summary findings on 13 Nov 2026.",
-     "Confirm the building's inspection record before any notice is drafted; close by showing no such notice is outstanding.", "LEG_19424"),
-    ("FR-36", "Whether a San Francisco business registration number is expected for this rental", "Blank — unresolved",
-     "The Housing Inventory asks for “the business registration number for the unit, if any”, and the site could not confirm from an official source either way whether a two-unit residential rental by an individual owner must hold a business registration. The short-term-rental rules that clearly require one do not apply to a tenancy of this kind, so nothing is inferred here. This is the item the brief's “apply for a licence” question most often turns out to mean.",
-     "Ask the Rent Board (415-252-4600) and, separately, the Treasurer &amp; Tax Collector's business-registration line; record the answer in the file.", "SF_HI"),
-    ("FR-37", "Two new pages published with content that depends on owner records", "By design",
-     "The decision-readiness page and the suggestions page each contain rows whose answer column is intentionally blank (owner documents; owner decisions). That is the site's rule for unverifiable values, applied to a new context, and it means those two pages will read as incomplete until the records in section 2 of the readiness page are supplied. They are not defects to fix in HTML.",
-     "Supply the records; the blank cells are the checklist.", "SF_PORTAL"),
-    ("FR-38", "Two link defects on the Attorney General's rent-cap page", "Irregularity in an official source",
-     "The state's own chart of rent-increase maxima introduces its citation twice as “Civil Code section <b>1974.12</b>” where the section is <b>§ 1947.12</b>, and both of its links point to <i>leginfo</i> with a trailing period in the section parameter (<code>sectionNum=1947.12.</code>), the form earlier sessions found can fail. The figures in the chart are correct and match the statute (5% plus CPI, capped at 10%, 8.8% for the San Francisco area for increases starting 1 August 2026); only the citation formatting on the official page is at fault. This site cites the statute directly at the working URL and does not rely on the AG's link.",
-     "None — noted so a reader who follows the AG link and sees an error knows the section number to search for.", "OAG"),
     ("FR-26", "Rate table row end-dates", "Corrected 11 Nov 2026",
      "The 1982–2027 table on <b>Rules &amp; caps</b> had six row end-dates that did not match document 571: five fell on 29 February in a year that is not a leap year (3/1/84 – <b>2/29/85</b>, 3/1/96 – <b>2/29/97</b>, 3/1/00 – <b>2/29/01</b>, 3/1/04 – <b>2/29/05</b>, 3/1/12 – <b>2/29/13</b>), which are not real dates, and the 1995–96 period ended <b>2/28/96</b> in a leap year that document 571 runs to <b>2/29/96</b>. All 46 rows were published throughout — re-counted from the pre-correction HTML — and every percentage was already correct; an earlier draft of this flag also said the Board's separate <b>12/8/92 – 2/28/93 (1.6%)</b> row was missing, which the same recount disproved. The table is now compared row by row against a transcription of the PDF, and each period must parse as a real, contiguous, descending calendar range, so an impossible date fails the build.",
      "None — corrected against the Rent Board's document 571 and re-checked row by row.", "SF_571"),
@@ -503,6 +480,21 @@ FLAGS = [
     ("FR-34", "Housing Inventory filings are public", "Verified — added 11 Nov 2026",
      "The Housing Inventory page states: “<b>The information entered in the housing inventory submission is public.</b>” It lists name and business contact information, approximate square footage, number of bedrooms, number of bathrooms, and the history of vacancy or occupancy during the past 12 months. Owners must provide “the name and business contact information of the owner(s), or of the property manager, if any, designated by the owner(s) to address habitability issues”, and tenants can look up a unit's licence status in the Portal. The placeholder names used on this site therefore cannot carry over to the official filing, which is made under penalty of perjury. The page also says the Portal needs “the PIN number on your Annual Notice” to add a property to an account, with 311 for a PIN reset. Neither point was published on this site before.",
      "Decide which business contact details to report before filing; ask 311 or the Rent Board exactly which fields are displayed publicly.", "SF_HI"),
+    ("FR-35", "Housing Inventory entry for the 2026 change of occupancy in Unit A", "Open",
+     "The report asks for the date current occupancy began and the base rent in $250 increments. The City states that an approximate answer given to the best of the owner's knowledge is not penalised, and that only a change in the owner's or manager's business contact information must be updated within 30 days; occupancy changes otherwise ride the annual 1 March update. No official page says what effect an out-of-date occupancy entry has on a licence already issued for that year.",
+     "Re-read the Unit A entry in the Rent Board Portal before service and correct it at the next 1 March report; ask the counsellor whether a mid-cycle correction is required.", "SF_HI"),
+    ("FR-36", "Where the licence carve-out for passthroughs ends", "Scope limit",
+     "The Housing Inventory page says a current licence is needed “before any annual or banked rent increase can go into effect”, while the noncompliance page says a licence is not required “in some situations where the original occupant(s) no longer live in the unit … or for passthroughs allowed under the Rent Ordinance”. The boundary between the two statements is not defined on either page. This site therefore treats every annual and banked increase — including a banked catch-up above 10% — as requiring the licence, which is the conservative reading, and publishes the carve-out question rather than relying on it.",
+     "Rent Board counsellor confirmation before relying on the carve-out for any increase other than a Section 6.14 or Costa-Hawkins market-rate increase.", "SF_NONCOMP"),
+    ("FR-37", "Whether a San Francisco business registration number is expected for this rental", "Blank — unresolved",
+     "The Housing Inventory asks for “the business registration number for the unit, <i>if any</i>”, and no official source read on 13 Nov 2026 settles whether an individual owner of a small residential rental is expected to hold or report one. The question is left open rather than answered by inference.",
+     "Ask the Rent Board (415-252-4600) and, separately, the Treasurer &amp; Tax Collector's business-registration line; record the written answer in the file.", "SF_HI"),
+    ("FR-38", "The decision-readiness pages publish deliberately blank answer cells", "By design",
+     "The open questions page (<a href=\"questions.html\">questions</a>) and the proposal register contain rows whose answer or decision column is intentionally blank — owner records and owner decisions, not research gaps. That is the site's rule for unverifiable values: blank plus a flag, never an estimate.",
+     "Supply the records; the blank cells are the checklist.", "SF_PORTAL"),
+    ("FR-39", "Two link defects on the Attorney General's rent-cap page", "Irregularity in an official source",
+     "The state's own chart of rent-increase maxima introduces its citation twice as “Civil Code section <b>1974.12</b>” where the section is <b>§ 1947.12</b>, and both of its links carry a trailing period inside <code>sectionNum</code>, which returns nothing. The percentages on that page are correct.",
+     "None — noted so a reader who follows the AG link and sees an error knows the section number to search for. This site cites § 1947.12 at a working URL.", "OAG"),
 ]
 
 

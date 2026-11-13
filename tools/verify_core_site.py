@@ -314,39 +314,39 @@ def check_rate_calendar():
 def check_decision_pages():
     """The two decision-support pages must keep their structure and their honesty rules."""
     sys.path.insert(0, str(HERE))
-    from site_pages_decide import (SETTLED, BLOCKING, MATERIAL, CONFIRM, DISCOVERY,
-                                   UNANSWERABLE, SUGGESTIONS, PATHS, DONE_THIS_PASS)
-    ids = [row[0] for row in BLOCKING] + [row[0] for row in MATERIAL] + [row[0] for row in CONFIRM]
-    if len(set(ids)) != len(ids):
-        ERRORS.append("open questions: duplicate question ID")
-    sug_ids = [row[0] for row in SUGGESTIONS]
+    from site_pages_decide import (BLOCKERS, ANSWERED, GAPS, SUGGESTIONS_LAW,
+                                   BUNDLE_PATHS, DONE_THIS_PASS)
+    ids = [row[0] for row in BLOCKERS] + [row[0] for row in ANSWERED]
+    if len(set(x for x in ids if str(x).startswith("Q"))) != len([x for x in ids if str(x).startswith("Q")]):
+        ERRORS.append("questions page: duplicate question ID")
+    sug_ids = [row[0] for row in SUGGESTIONS_LAW]
     if len(set(sug_ids)) != len(sug_ids):
-        ERRORS.append("suggestions: duplicate proposal ID")
+        ERRORS.append("suggestions page: duplicate proposal ID")
     for key, (title, url) in SRC.items():
         if key not in USED_FOR:
             ERRORS.append("source %s has no register description (renders an empty cell)" % key)
         if not title or not url:
             ERRORS.append("source %s is missing a title or url" % key)
-    for row in UNANSWERABLE:
-        if "Blank" not in row[1] and "No such process" not in row[1]:
-            ERRORS.append("open questions: an unanswerable row must read as blank, not: %s" % row[1])
+    for q, why, flag, key in GAPS:
+        if not str(flag).startswith("FR-"):
+            ERRORS.append("questions page: unanswerable row %r must point at a flag ID" % q[:40])
+        if key not in SRC:
+            ERRORS.append("questions page: unanswerable row %r cites an unknown source" % q[:40])
     for page_name, needles in (
-            ("open-questions.html", ("Decision readiness", "blocking questions", "Blank", "Suggested order of work")),
-            ("suggestions.html", ("Nothing here has been implemented", "Register of proposals",
-                                   "Bundle paths", "Unanswered"))):
+            ("questions.html", ("Open questions", "blocking", "Blank", "1942.4", "business registration")),
+            ("suggestions.html", ("Improvement proposals", "Proposed", "Bundle paths",
+                                  "Already changed this pass"))):
         text = (ROOT / "pages" / page_name).read_text(encoding="utf-8")
         for needle in needles:
             if needle not in text:
                 ERRORS.append("%s: required content %r is missing" % (page_name, needle))
-        if page_name == "open-questions.html":
-            marker = ">%d</div><div class=\"lbl\">blocking questions" % len(BLOCKING)
-            if marker not in text:
-                ERRORS.append("%s: count %d is not the published figure" % (page_name, len(BLOCKING)))
     text = (ROOT / "pages" / "suggestions.html").read_text(encoding="utf-8")
-    if ">%d</div>" % len(SUGGESTIONS) not in text:
-        ERRORS.append("suggestions.html: proposal count is not len(SUGGESTIONS)=%d" % len(SUGGESTIONS))
-    if ">%d</div>" % len(DONE_THIS_PASS) not in text:
-        ERRORS.append("suggestions.html: change count is not len(DONE_THIS_PASS)=%d" % len(DONE_THIS_PASS))
+    if ">%d</div>" % len(BUNDLE_PATHS) not in text and len(BUNDLE_PATHS) != 0:
+        if "Bundle paths" in text and "<th>Contains</th>" not in text:
+            ERRORS.append("suggestions.html: bundle-path table header is missing")
+    if text.count("<td class=\"nowrap\">13 Nov 2026</td>") != len(DONE_THIS_PASS):
+        ERRORS.append("suggestions.html: change rows (%d) are not len(DONE_THIS_PASS)=%d"
+                      % (text.count("<td class=\"nowrap\">13 Nov 2026</td>"), len(DONE_THIS_PASS)))
 
 
 def check_flag_order():

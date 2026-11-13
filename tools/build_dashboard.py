@@ -29,9 +29,9 @@ PAGES = {
     "pages/notice.html": rules.notice,
     "pages/review.html": rules.review,
     "pages/discrimination.html": rules.discrimination,
-    "pages/open-questions.html": decide.open_questions,
     "pages/requirements.html": ref.requirements,
     "pages/suggestions.html": ref.suggestions,
+    "pages/questions.html": decide.questions,
     "pages/sources.html": ref.sources,
     "pages/flagged.html": ref.flagged,
 }

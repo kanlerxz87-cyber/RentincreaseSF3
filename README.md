@@ -21,12 +21,14 @@ Canonical dashboard table rows link official sources for the governing rule; own
 | [`pages/practice.html`](pages/practice.html) | Corporate vs individual practice, official evidence only |
 | [`pages/notice.html`](pages/notice.html) | Required contents, service deadlines, model notice, lawful and unlawful reasons |
 | [`pages/review.html`](pages/review.html) | 16-point tenant-lawyer stress test |
-| [`pages/open-questions.html`](pages/open-questions.html) | Decision readiness: the questions that must be answered before an amount is chosen, and how to find each answer |
+| [`pages/questions.html`](pages/questions.html) | Open questions: what must be answered before an amount is chosen, and how to find each answer |
 | [`pages/suggestions.html`](pages/suggestions.html) | Site-improvement proposals for owner review — **none implemented**, each with effort, risk and an empty decision field |
 | [`pages/discrimination.html`](pages/discrimination.html) | One unit or both units? Fair-housing analysis |
 | [`pages/requirements.html`](pages/requirements.html) | Every requirement in the brief, its status and its evidence |
+| [`pages/questions.html`](pages/questions.html) | **Open questions**: 14 blocking questions, 12 already settled, the documents to collect, 8 ways to find what is missing, and how each answer changes the number |
+| [`pages/suggestions.html`](pages/suggestions.html) | **Suggestions for review**: 12 improvement proposals with impact and effort, all marked *Proposed* — nothing is implemented until an ID is accepted — plus 6 rejected ideas and why |
 | [`pages/sources.html`](pages/sources.html) | source register with what each supports |
-| [`pages/flagged.html`](pages/flagged.html) | 38 flagged items: unverified, blank, inconsistent or corrected |
+| [`pages/flagged.html`](pages/flagged.html) | 39 flagged items: unverified, blank, inconsistent or corrected |
 
 Markdown summary: [`EXECUTIVE_SUMMARY.md`](EXECUTIVE_SUMMARY.md).
 
@@ -53,7 +55,7 @@ Tenant and owner names are replaced with **Tenant A–F**. Dates and dollar amou
 
 ## Build and verification
 
-The site is generated from Python modules so that content and checks share one source of truth:
+The site is generated from Python modules so that content and checks share one source of truth. `pages/questions.html` and `pages/suggestions.html` come from `tools/site_pages_decide.py`:
 
 ```bash
 python3 tools/build_dashboard.py     # writes assets/style.css, index.html, pages/*.html

@@ -18,10 +18,23 @@ Live dashboard: <https://kanlerxz87-cyber.github.io/RentincreaseSF3/>
 
 **Yes to reporting and the licence; no to any per-increase application. And the requirement is a City law, not a state law — see “State or local?” below.**
 
+**And it is a *local* law, not a state one.** The duty to inform the Rent Board and to hold a
+rent-increase licence comes from **San Francisco Ordinance No. 265-20**, effective
+**18 January 2021**, which amended the City's Rent Ordinance in the Administrative Code. California
+requires no licence and no filing with any agency to raise rent. The year **2023** — the one in the
+brief — is when the City rule reached small owners: reporting began **1 March 2023** for
+condominiums and buildings with fewer than 10 units (1 July 2022 for larger buildings), with
+updates due every 1 March. →
+[Ordinance 265-20 explained by the Rent Board](https://www.sf.gov/news--new-legislation-creates-housing-inventory-and-requires-owners-obtain-license-imposing) ·
+[Housing Inventory](https://www.sf.gov/rent-board-housing-inventory) ·
+[the state cap, Civ. Code § 1947.12](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=1947.12)
+
 San Francisco requires **all owners of residential property** — individuals exactly as much as corporations — to report their units into the **Rent Board Housing Inventory**. For a tenant-occupied unit, the report **automatically generates a rent-increase licence**, and that licence must be **in effect on the effective date** of the increase. Without it the notice is **not enforceable**. Annual and banked increases need no approval petition. A separate notice-copy filing requirement was not independently established (FR-20); confirm it with the Rent Board.
 
 | Question | Verified answer | Official source |
 |---|---|---|
+| State law or local law? | **Local.** Ordinance No. 265-20 (City and County of San Francisco), effective 18 January 2021; operative for condominiums and 1–9 unit buildings from 1 March 2023. State law has no rent-board filing and no licence. | [sf.gov — Ordinance 265-20](https://www.sf.gov/news--new-legislation-creates-housing-inventory-and-requires-owners-obtain-license-imposing) · [Civ. Code § 1947.12](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=1947.12) |
+| Are there increases that need no licence? | The Rent Board's noncompliance page limits the licence rules to rent-controlled units and states a licence "is not required in some situations where the original occupant(s) no longer live in the unit" (Section 6.14 / Costa-Hawkins) "or for passthroughs allowed under the Rent Ordinance". Every annual or banked increase is treated on this site as needing the licence — the conservative reading (FR-33). | [sf.gov — Notice of Owner Noncompliance](https://www.sf.gov/notice-of-owner-noncompliance-with-housing-inventory) · [sf.gov — Section 6.14 and Costa-Hawkins](https://www.sf.gov/information--rent-increases-under-section-614-and-costa-hawkins) |
 | Must I inform / report to the Rent Board? | **Yes.** "All owners of residential property are required to report" into the Housing Inventory through the Rent Board Portal; reporting is free. | [sf.gov — Housing Inventory](https://www.sf.gov/rent-board-housing-inventory) |
 | Do I need a licence as an individual, not a corporation? | **Yes.** The rules distinguish by *building size* (10+ units vs. condominiums and 1–9 unit buildings), not by the owner's legal form. The building unit count is unknown: the requirement began **1 March 2023** for condominiums and buildings with fewer than 10 units, or **1 July 2022** for other buildings of 10 or more units. | [sf.gov — Housing Inventory](https://www.sf.gov/rent-board-housing-inventory) · [sf.gov — Learn about rent increases](https://www.sf.gov/learn-about-rent-increases-san-francisco) |
 | Is there a separate application or fee? | **No.** "Once you have reported into the Housing Inventory, a rent increase license will be automatically generated for non-owner occupied units." The licence "does not need to be included with your rent increase notice". | [sf.gov — Housing Inventory](https://www.sf.gov/rent-board-housing-inventory) |
@@ -45,6 +58,20 @@ San Francisco requires **all owners of residential property** — individuals ex
 | A bar on serving at all | **State** | Civ. Code § 1942.4(a): a landlord "may not … issue a notice of a rent increase" where the dwelling lacks § 1941.1 standards or is declared substandard, an official has notified the landlord in writing, and the condition has stood unabated 35 days without good cause; § 1942.4(b) gives actual damages plus $100–$5,000 and fee-shifting | [Civ. Code § 1942.4](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=1942.4) |
 | A professional landlord/broker "licence" | **Not this rule** | The Rent Board licence is unit-level and automatic. California's licensing law defines a broker as a person who, "for a compensation … does or negotiates to do" the listed acts "for another or others" — which is not an owner letting their own building. (Whether an SF business registration number is expected is left open — FR-33) | [Bus. & Prof. Code § 10131](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=BPC&sectionNum=10131) |
 | What California did in 2023 | **State, different subject** | The current text of § 1947.12 was "Repealed (in Sec. 3) and added by Stats. 2023, Ch. 290, Sec. 4. (SB 567)", effective 1 Jan 2024, operative 1 Apr 2024, and remains in effect until 1 Jan 2030. It changed the state cap and just-cause rules, not any rent-board filing duty | [Civ. Code § 1947.12](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=1947.12) |
+
+### What still has to be answered before you decide
+
+Two pages of the dashboard exist for exactly this:
+
+* **Open questions** — <https://kanlerxz87-cyber.github.io/RentincreaseSF3/pages/questions.html> —
+  14 blocking questions with where each answer comes from, 12 questions research has already
+  settled, the 10 documents to collect, 8 actions for finding what is missing, and a sensitivity
+  table showing how each answer changes the lawful number. Four questions have no official answer
+  at all and stay blank.
+* **Suggestions for review** — <https://kanlerxz87-cyber.github.io/RentincreaseSF3/pages/suggestions.html> —
+  12 improvement proposals (each with impact, effort and the official rule it must stay consistent
+  with) marked *Proposed*, 6 rejected ideas with reasons, and the procedure for accepting an ID.
+  Nothing on that list has been implemented.
 
 ### Step by step (full version with dates on the site: `pages/process.html`)
 
@@ -191,7 +218,7 @@ Sources: [Gov. Code § 12955](https://leginfo.legislature.ca.gov/faces/codes_dis
 | FR-34 | Housing Inventory filings are public | **Verified — added 11 Nov 2026** — "The information entered in the housing inventory submission is public"; the Portal needs the PIN printed on the Annual Notice |
 | FR-35 | Civ. Code § 1942.4 absent from the site's requirement set | **Corrected 13 Nov 2026** — added to the notice, process and summary pages ([Civ. Code § 1942.4](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=1942.4)) |
 | FR-36 | Whether an SF business registration number is expected for this rental | **Blank — unresolved** — the Housing Inventory asks for it "if any"; no official source settles it for an individual owner of a small residential rental. Ask the Rent Board and the Treasurer & Tax Collector, and record the answer |
-| FR-37 | The two decision-support pages contain deliberately blank answer cells | **By design** — owner records and owner decisions, not research gaps; see `pages/open-questions.html` and `pages/suggestions.html` |
+| FR-37 | The two decision-support pages contain deliberately blank answer cells | **By design** — owner records and owner decisions, not research gaps; see `pages/questions.html` and `pages/suggestions.html` |
 | FR-38 | Two link defects on the Attorney General's rent-cap page | **Irregularity in an official source** — the state's chart twice labels its citation "Civil Code section 1974.12" (the section is § 1947.12) and both links carry a trailing period in `sectionNum`, which 404s; the 8.8% figure itself is correct and matches § 1947.12 as computed here |
 ---
 
@@ -199,5 +226,5 @@ Sources: [Gov. Code § 12955](https://leginfo.legislature.ca.gov/faces/codes_dis
 
 Two pages now sit between the research and the decision, and the brief asked for both:
 
-- **Decision readiness — `pages/open-questions.html`.** Twelve questions answered from official sources (including "is this state or local?", "must an individual owner do it?", "may I raise one unit and not the other?"), then **eight blocking questions** whose answers sit outside this project (coverage record, licence status, Unit B's rent history, Unit A's anniversary, open habitability notices, subsidy status, fee status, complaint and contact timeline), seven material questions, seven service-time confirmations, a route for discovering each missing item, and five questions **no official source can answer** — left blank rather than estimated. The site's current verdict is **not ready to decide**: none of the eight blocking items has been closed with a document.
+- **Decision readiness — `pages/questions.html`.** Twelve questions answered from official sources (including "is this state or local?", "must an individual owner do it?", "may I raise one unit and not the other?"), then **eight blocking questions** whose answers sit outside this project (coverage record, licence status, Unit B's rent history, Unit A's anniversary, open habitability notices, subsidy status, fee status, complaint and contact timeline), seven material questions, seven service-time confirmations, a route for discovering each missing item, and five questions **no official source can answer** — left blank rather than estimated. The site's current verdict is **not ready to decide**: none of the eight blocking items has been closed with a document.
 - **Suggestions & decision path — `pages/suggestions.html`.** Sections A–E (decision options for this property, the preconditions behind each, the questions still open, site suggestions and a review protocol) plus **F**, the numbered register: fourteen proposals (evidence freshness, a printable decision sheet, machine-readable data, a fuller date planner, a compliance calendar, a "tenant objects" flow, a re-identification review, deep links and captions, flag triage, an "ask the Rent Board" card, a retention note, edition consolidation, a changelog, a source-drift gate) with effort, risk and an empty decision column, grouped into four bundle paths. **Nothing in the register has been implemented**; the four changes that *were* made this pass are listed on it as corrections, each with the official source that required them.
