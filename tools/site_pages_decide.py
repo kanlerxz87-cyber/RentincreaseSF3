@@ -474,7 +474,16 @@ def questions():
                 active="pages/questions.html")
 
 
-def suggestions():
+def suggestions_block():
+    """Sections F-I of ``pages/suggestions.html`` (rendered by ``site_pages_ref.suggestions``).
+
+    A parallel session on 13 November 2026 published sections A-E of that page — decision
+    options, preconditions, open questions, presentation ideas and a review protocol.  This
+    block contributes the second register the brief asked for: improvement proposals that stay
+    marked *Proposed* until the owner accepts an ID, the ideas that should not be adopted, and
+    the maintenance procedure.  Nothing in sections A-E is changed, and neither register is
+    dropped: the site keeps one suggestions page rather than two competing ones.
+    """
     rows = "".join(
         '<tr><td class="nowrap"><b>%s</b></td><td>%s</td><td>%s</td>'
         '<td><span class="badge warn">%s</span></td><td>%s</td><td>%s</td>%s</tr>'
@@ -486,23 +495,22 @@ def suggestions():
         for what, why, key in SUGGESTIONS_REJECT
     )
     ui_list = "".join("<li>%s</li>" % s for s in SUGGESTIONS_UI)
-    body = f"""
+    return f"""
 <div class="card hero">
-  <h1>Suggestions — for review, nothing implemented</h1>
-  <p class="lede">Proposals for improving this site so it supports the decision rather than
-  just recording the research. Every item below is <b><span class="badge warn">Proposed</span></b>:
-  none has been implemented, and none will be until the owner marks it accepted.
-  That is deliberate — the site is evidence for a legal decision, so a change to how a figure
-  is presented is itself a change worth reviewing.</p>
-  <p class="small"><b>How to choose.</b> Reply with the IDs you want (for example
-  “implement SG-01, SG-02, SG-07; decline SG-08”), or copy this page into your notes and mark
-  Accept / Decline / Defer per row. Items in a table carry the official rule they are anchored
-  to; the presentation ideas in section C have no legal anchor and are deliberately listed
-  instead of tabled.</p>
+  <h2>F. Improvement proposals — awaiting your decision</h2>
+  <p>Sections A to E above set out the decision options and the review protocol. This register is
+  the other half of the request: proposals for improving <i>the site</i>, each with the problem it
+  solves, its impact and its effort. <b>Every row reads <span class="badge warn">Proposed</span>
+  and nothing here has been implemented</b> — the site records what was considered so the choice
+  stays yours. To decide, reply with the IDs (for example “implement SG-01, SG-02, SG-07; decline
+  SG-08”), or mark Accept / Decline / Defer against each row in your own notes.</p>
+  <p class="small">Rows in a table carry the official rule the proposal has to stay consistent with;
+  the presentation ideas in section I have no legal anchor and are deliberately listed rather than
+  tabled. Questions that block the decision itself are on <a href="questions.html">Open questions</a>.</p>
 </div>
 
 <div class="card">
-  <h2>A. Before you serve any notice — highest value first</h2>
+  <h2>G. The proposals, row by row</h2>
   <table>
     <thead><tr><th style="width:6%">ID</th><th style="width:24%">Suggestion</th>
     <th style="width:22%">Problem it solves</th><th style="width:10%">Status</th>
@@ -513,7 +521,7 @@ def suggestions():
 </div>
 
 <div class="card">
-  <h2>B. Ideas that are tempting and should not be adopted</h2>
+  <h2>H. Ideas that look tempting and should <i>not</i> be adopted</h2>
   <p>Recorded so that a later session does not “improve” the site into a compliance problem.</p>
   <table>
     <thead><tr><th style="width:34%">Not recommended</th><th>Reason</th>
@@ -523,25 +531,25 @@ def suggestions():
 </div>
 
 <div class="card">
-  <h2>C. Presentation and tooling (no legal anchor, owner's taste)</h2>
+  <h2>I. Presentation and tooling (no legal anchor, owner's taste)</h2>
   <ul class="tight">{ui_list}</ul>
 </div>
 
 <div class="card">
-  <h2>D. How this list is maintained</h2>
+  <h2>J. How this register is maintained</h2>
   <ul class="tight">
-    <li>New suggestions get the next free ID and are added by a session that owns the generator
-    module; nobody edits a published page by hand, because the build regenerates it.</li>
-    <li>An accepted suggestion becomes a task on <code>COORDINATION.md</code> with its ID, and the
-    row here is updated to <b>Accepted</b> or <b>Declined</b> with the date — the entry is never
-    deleted, so the record shows what was considered and rejected as well as what was built.</li>
-    <li>Anything that touches shared outputs (the dashboard, navigation, the table data) is
-    applied by the integration session only, after the other tasks are done.</li>
+    <li>New proposals take the next free <code>SG-</code> ID and are added to
+    <code>tools/site_pages_decide.py</code>; nobody edits a published page by hand, because the
+    build regenerates every page from its module.</li>
+    <li>An accepted proposal becomes a task on <code>COORDINATION.md</code> carrying its ID, and the
+    row above changes to <b>Accepted</b> or <b>Declined</b> with the date. Entries are never deleted,
+    so the record shows what was considered and rejected as well as what was built.</li>
+    <li>Anything touching shared outputs — the dashboard, the navigation, the table data — is applied
+    by the integration session only, after the other tasks are done.</li>
+    <li>Before an increase is served, the open items on <a href="questions.html">Open questions</a>
+    outrank every proposal here.</li>
   </ul>
-  <p class="small">Sources on this page are the official rules each suggestion has to stay
-  consistent with: {srcs("SF_HI", "SF_BANK", "SF_LI", "LEG_827", "SF_ALGO")}.</p>
+  <p class="small">Sources on this page are the official rules each proposal has to stay consistent
+  with: {srcs("SF_HI", "SF_BANK", "SF_LI", "LEG_827", "SF_ALGO")}.</p>
 </div>
 """
-    return page("pages/suggestions.html", "Suggestions", body,
-                "Improvement proposals for this site, each with its problem, impact, effort and status, held for the owner's decision before implementation.",
-                active="pages/suggestions.html")

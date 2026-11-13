@@ -445,10 +445,32 @@ the algorithmic-devices pages, the Department of Justice release, HUD and eCFR p
 Rights Department subpages beyond the housing landing page, and the non-official research cited only
 in `docs/` and `dashboard/`.
 
+## Re-verification pass — 2026-11-13 (session `arena/fd7ed99e`)
+
+A fresh line-by-line re-check of the time-sensitive official facts the canonical site depends on, run on
+13 November 2026 (two days after the 11 Nov 2026 pass). Every source below was fetched and read directly
+on that date. **Result: every load-bearing fact is unchanged; no figure on the canonical site required
+correction.** The 11 November 2026 research-pass date is retained because it remains the date of the
+comprehensive line-by-line pass; this entry records the additional confirmation.
+
+| # | Claim on the canonical site | Official source re-fetched 2026-11-13 | Result |
+|---|---|---|---|
+| 1 | Allowable annual increase is **1.6%**, effective 1 Mar 2026 – 28 Feb 2027 (60% of Bay Area CPI) | [sf.gov — Learn about rent increases](https://www.sf.gov/learn-about-rent-increases-san-francisco) | **Confirmed.** "The allowed rent increase percentage in San Francisco is 1.6%. The percentage is effective March 1, 2026 through February 28, 2027." |
+| 2 | A **rent-increase licence** is required before imposing annual/banked increases; obtained automatically by reporting into the Housing Inventory; effective 1 Jul 2022 (1 Mar 2023 for condos and 1–9 unit buildings) | [sf.gov — Housing Inventory](https://www.sf.gov/rent-board-housing-inventory) · [sf.gov — Learn about rent increases](https://www.sf.gov/learn-about-rent-increases-san-francisco) | **Confirmed.** "A landlord must get a rent increase license before imposing annual allowable and/or banked rent increases." Licence "automatically generated for non-owner occupied units"; must be current "before any annual or banked rent increase can go into effect". |
+| 3 | The licence must be in effect on the **effective date**; reporting is free; annual deadline 1 March; no monetary penalty for late filing | [sf.gov — Housing Inventory](https://www.sf.gov/rent-board-housing-inventory) | **Confirmed.** "your rent increase notice will not be enforceable without having a rent increase license on the effective date of the notice"; "The Rent Board does not assess monetary penalties for filing after the deadline." |
+| 4 | Banking: a skipped increase is banked only if **at least 24 full months** pass without any rent increase; no cap back to 1 Apr 1982; additive, not compounded | [sf.gov — Banked rent increases](https://www.sf.gov/information--banked-rent-increases) | **Confirmed.** "A skipped increase is only banked if at least 24 full months pass without any rent increase." "There is no limit on how much can be banked." (The three-texts discrepancy is already published as FR-03; the binding Rule § 4.12(a) uses a 12-month test.) |
+| 5 | Notice: **30 days** if the increase is ≤10%, **90 days** if >10%; **+5 days** if mailed | [sf.gov — Learn about rent increases](https://www.sf.gov/learn-about-rent-increases-san-francisco) · [Cal. Civ. Code § 827](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=827) | **Confirmed.** § 827(b)(2)–(3) states the 30/90-day thresholds; the sf.gov page adds the 5-day mail extension. |
+| 6 | State cap: **8.8%** for the San Francisco area for increases starting 8/1/26–7/31/27; the local cap governs because it is lower | [oag.ca.gov — Limits on rent increases](https://oag.ca.gov/rentcaps) | **Confirmed.** San Francisco Area row: 8.8% for "Increase starts between 8/1/26 and 7/31/27". |
+| 7 | File #261020 would cap banked + capital-improvement increases at **10%/yr for three years**; status **Pending Committee Action**; not law | [sfgov.legistar.com — File #261020](https://sfgov.legistar.com/LegislationDetail.aspx?ID=8217304&GUID=7EDA4662-EBFB-4AF5-962F-C669B64AA770) · [sf.gov — 9 Nov 2026 notice](https://www.sf.gov/learn-about-rent-increases-san-francisco) | **Confirmed.** Legistar: Status "Pending Committee Action"; Introduced 9/15/2026; in control Land Use and Transportation Committee. sf.gov: "This legislation has not been enacted and is subject to change." |
+
+**Conclusion:** the canonical site is current and accurate as of 13 November 2026. This session therefore
+adds no factual correction; its deliverable is the user-requested dedicated **Suggestions & decision-path**
+page (S1) plus final integration (I1).
+
 ## Pass of 13 November 2026 — session `arena/a53557bb-rentincreasesf3`
 
 Independent re-fetch of the sources that carry the forefront answer and every computed figure,
-plus the new decision-support pages (`pages/questions.html`, `pages/suggestions.html`).
+plus the new open-questions page and the second proposals register merged into the suggestions page.
 
 | # | Assertion | Official page read on 13 Nov 2026 | Result |
 |---|---|---|---|
@@ -457,7 +479,7 @@ plus the new decision-support pages (`pages/questions.html`, `pages/suggestions.
 | 151 | Banking requires **24 full months** without an increase (page text) and the worked example applies a **12-month** test | [sf.gov — Banked rent increases](https://www.sf.gov/information--banked-rent-increases) · [sf.gov — Learn about rent increases](https://www.sf.gov/learn-about-rent-increases-san-francisco) | Both texts re-read; divergence remains published as FR-03; Unit A's 1.4% banks under either reading |
 | 152 | Licence is **local** law: Ordinance No. 265-20, effective 18 Jan 2021; reporting from 1 Mar 2023 for condominiums and buildings with fewer than 10 units; licence suspended for noncompliance | [sf.gov — new legislation creates a housing inventory](https://www.sf.gov/news--new-legislation-creates-housing-inventory-and-requires-owners-obtain-license-imposing) | Confirmed verbatim — no state agency filing anywhere in the text |
 | 153 | All owners must report; licence auto-generated for non-owner-occupied units; annual update due 1 March; late filing has no monetary penalty; submitted information is public | [sf.gov — Housing Inventory](https://www.sf.gov/rent-board-housing-inventory) | Confirmed; “The information entered in the housing inventory submission is public” newly noted → SG-11 |
-| 154 | Unlicensed increase: notice “may be null and void (this may apply for multiple years)”, tenant “may be entitled to a rent refund”; licence **not** required for § 6.14 / Costa-Hawkins situations or passthroughs; how to check licence by address/APN | [sf.gov — Notice of Owner Noncompliance](https://www.sf.gov/notice-of-owner-noncompliance-with-housing-inventory) | Confirmed; the carve-out boundary published as **FR-33** |
+| 154 | Unlicensed increase: notice “may be null and void (this may apply for multiple years)”, tenant “may be entitled to a rent refund”; licence **not** required for § 6.14 / Costa-Hawkins situations or passthroughs; how to check licence by address/APN | [sf.gov — Notice of Owner Noncompliance](https://www.sf.gov/notice-of-owner-noncompliance-with-housing-inventory) | Confirmed; the carve-out boundary published as **FR-36** |
 | 155 | Six increase types need a Rent Board petition **before** the notice; petitions are free; owner may petition for a determination of lawful rent with complete rent history | [sf.gov — Landlord petitions and passthroughs](https://www.sf.gov/landlord-petitions-and-passthroughs) | Confirmed — this is the only “apply to the Rent Board” route for an increase |
 | 156 | § 6.14 permits an unlimited increase on remaining occupants only with a timely written notice (about 60 days) to each subsequent occupant; co-tenants are outside the Costa-Hawkins route | [sf.gov — Rent increases under Section 6.14 and Costa-Hawkins](https://www.sf.gov/information--rent-increases-under-section-614-and-costa-hawkins) | Confirmed — governs whether Unit A's 2026 occupant change ever opens that door (FR-21) |
 | 157 | Rent Board Fee **$59.00** per dwelling unit 2026–27, due 1 March, 5%/month penalty capped at 15%, 50% ($29.50) recoverable, exemption window closes 14 Dec 2026 | [sf.gov — The Rent Board Fee](https://www.sf.gov/rent-board-fee) | Confirmed verbatim |
@@ -472,7 +494,7 @@ plus the new decision-support pages (`pages/questions.html`, `pages/suggestions.
 
 | # | Finding | Disposition |
 |---|---|---|
-| 164 | Whether an out-of-date occupancy entry in the Housing Inventory affects a licence already issued for the year is nowhere stated | Published as **FR-32**; the corrective action is on the open-questions page (Q-01, Q-11) |
+| 164 | Whether an out-of-date occupancy entry in the Housing Inventory affects a licence already issued for the year is nowhere stated | Published as **FR-35**; the corrective action is on the open-questions page (Q-01, Q-11) |
 | 165 | The licence duty (“before any annual or banked rent increase”) and the carve-out (“not required … for passthroughs”) are two official statements whose boundary is undefined | Published as **FR-33**; this site keeps the conservative reading |
 | 166 | The City publishes its Housing Inventory submission as **public information** | Not previously stated on the site; added as suggestion **SG-11** (privacy policy should be explicit, not implicit) |
 | 167 | The state cap page cites “Civil Code section 1974.12” in two link labels — a typographical error on the Attorney General's own page; the target section number is 1947.12 | Noted; the site links the correct section. No change to any figure |

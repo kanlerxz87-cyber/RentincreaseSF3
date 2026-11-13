@@ -79,7 +79,7 @@ def index():
     <a class="tile" href="pages/units.html"><b>Units &amp; maths</b><span>Unit A and Unit B: dates, percentages, dollars, notice periods, unknowns.</span></a>
     <a class="tile" href="pages/laws.html"><b>Rules &amp; caps</b><span>Local ordinance, state statutes, federal fair housing, 1982–2027 rate table.</span></a>
     <a class="tile" href="pages/questions.html"><b>Open questions</b><span>Every question that blocks a decision, what answers it, and how each answer changes the number.</span></a>
-    <a class="tile" href="pages/suggestions.html"><b>Suggestions for review</b><span>Improvement proposals with impact and effort — nothing implemented until you accept an ID.</span></a>
+    <a class="tile" href="pages/suggestions.html"><b>Suggestions &amp; decision path</b><span>Decision options, review protocol and 12 improvement proposals — every one still marked <i>Proposed</i>.</span></a>
     <a class="tile" href="pages/reasonable.html"><b>Reasonable &amp; normal</b><span>What the law does and does not call reasonable; what can be benchmarked.</span></a>
     <a class="tile" href="pages/practice.html"><b>Market practice</b><span>Corporate vs individual landlord practice, with official evidence only.</span></a>
     <a class="tile" href="pages/notice.html"><b>Notice &amp; reasons</b><span>Required contents, service, timing, model wording, prohibited reasons.</span></a>

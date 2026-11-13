@@ -1551,6 +1551,34 @@ unexplained. All ten gates pass on the final tree and the build is idempotent.
   half hours) and would revert verified pages if merged as they stand. This session closes them with a
   comment under the 60-minute handoff rule; the branches are left in place and each PR can be reopened.
 
+## Task board — session `arena/fd7ed99e-rentincreasesf3` (fresh verification + Suggestions page + integration, 2026-11-13)
+
+Claimed 2026-11-13. Baseline: branch `arena/fd7ed99e-rentincreasesf3` == `origin/main` == `5fbd65e`
+(PR #54 merged). All seven existing automated gates PASS on the checked-out tree. Open PRs from other
+sessions (#55, #45, #35, #33, #20, #8, #1) are left untouched; this session works only on its own branch.
+
+Scope (non-overlapping):
+- **V1** Fresh line-by-line re-verification (2026-11-13) of the time-sensitive official facts the site
+  depends on: current allowable annual increase, the rent-increase licence / Housing Inventory rule for an
+  individual owner, banking, the notice periods, the state cap, and the status of File #261020.
+  Files: `research/verification-log.md`.
+- **S1** Add the user-requested dedicated **"Suggestions & decision path"** canonical page: site-improvement
+  suggestions, the decision options with the information each needs, and the list of questions to answer to
+  discover missing information. Every row carries an official source link where a rule is stated, or is
+  marked as an owner/analysis item (not a verified fact). Files: `tools/site_layout.py` (nav/ALL_PAGES),
+  `tools/site_pages_ref.py` (`suggestions()`), `tools/build_dashboard.py` (registry), regenerated
+  `index.html` + `pages/suggestions.html`.
+- **S2** Rebuild the canonical site and re-run every gate; fix anything that fails.
+- **I1** Final integration: PR from this branch to `main`, merge without waiting, confirm the GitHub Pages
+  deployment, record PR link + merge result + verification + irregularities here.
+
+| # | Task | Status | Notes |
+|---|------|--------|-------|
+| V1 | Re-verify time-sensitive official facts on 2026-11-13 | done | 7/7 claims confirmed unchanged; no figure corrected; logged in `research/verification-log.md` |
+| S1 | Build the dedicated Suggestions & decision-path page | done | `tools/site_layout.py` (nav/ALL_PAGES), `tools/site_pages_ref.py` (`suggestions()`, R-24), `tools/site_pages_core.py` (index tile), `tools/build_dashboard.py`; regenerated `index.html` + `pages/suggestions.html` |
+| S2 | Rebuild + all gates | done | 8/8 gates PASS (15 canonical pages, 44 tables, 382 rows, 1099 links); privacy sweep clean |
+| I1 | PR → main → merge → confirm Pages → record | in progress | do not merge a broken site |
+
 ---
 
 ## Task board — `arena/a53557bb-rentincreasesf3` (claimed 2026-11-13T06:55Z)
@@ -1568,7 +1596,7 @@ files no other session has claimed.
 | A3 | Add dedicated suggestions page (site-improvement proposals, each with impact/effort/status for owner review, nothing implemented without sign-off) | done | arena/a53557bb-rentincreasesf3 | `pages/suggestions.html`, same generator modules |
 | A4 | Independent re-verification of all canonical rates, notice rules and maths against official pages fetched 13 Nov 2026 | done | arena/a53557bb-rentincreasesf3 | `research/verification-log.md`, `data/sources.json` |
 | A5 | Anonymisation re-sweep (occupant initials, withheld postal code, neighbourhood, street) over every published file | done | arena/a53557bb-rentincreasesf3 | read-only sweep via `tools/privacy_scan.py` |
-| A6 | Final integration: rebuild, all gates pass, PR to main, merge, confirm Pages deploy, record here | unclaimed (this session) | arena/a53557bb-rentincreasesf3 | `index.html`, `pages/*`, `README.md` |
+| A6 | Final integration: rebuild, all gates pass, PR to main, merge, confirm Pages deploy, record here | in progress (integration) | arena/a53557bb-rentincreasesf3 | `index.html`, `pages/*`, `README.md` |
 
 No other session's files are edited. If a fix is needed in another edition (`docs/`, `dashboard/`,
 `review/`, `audit/`, `verified/`, `verification/`) it is logged here as a request instead.
@@ -1624,3 +1652,19 @@ re-derived from document 571; planner dates consistent; maths asserted in cents)
   No file owned by the other session was rewritten: their `noindex` meta, FR-34 row, public-filings
   index row and units-header fix all survive in the merged tree, and both new index rows render.
 - 2026-11-13T07:5xZ — Final integration (A6): PR to `main`, merge, Pages deploy confirmation recorded below.
+
+
+### Merge record — `arena/a53557bb-rentincreasesf3` × `arena/fd7ed99e-rentincreasesf3` (PR #56)
+
+Both sessions worked on 13 November 2026 from the same base and both touched the generator
+modules. Resolution, with neither side's work discarded:
+
+| Item | `arena/fd7ed99e` (main) | This session | Merged result |
+|---|---|---|---|
+| Suggestions page | added `suggestions()` in `site_pages_ref.py` → `pages/suggestions.html` (sections A–E: decision options, preconditions, open questions, presentation ideas, review protocol) | added `site_pages_decide.py` with a proposals register and a rejected-ideas list | **one page**: their sections A–E, plus this session's register as sections F–I, appended by `ref.suggestions()` importing `suggestions_block()`. Nothing deleted from either register; all rows still read *Proposed* |
+| Open-questions register | folded into their section C | dedicated `pages/questions.html` (14 blocking / 12 settled / 10 documents / 8 discovery actions / sensitivity table / do-not-serve gate) | both survive; their section C links to the dedicated page |
+| Requirement rows | R-24 (suggestions section) | R-24 (questions), R-25 (suggestions) | R-24 kept as theirs with the consolidation noted; this session's questions row renumbered **R-25**; register totals 25 rows |
+| Flags | FR-32 (worked-example date slips), FR-33 (fee versus licence), FR-34 (filings are public) | FR-32/FR-33 first, renumbered | their three kept unchanged; this session's two published as **FR-35** and **FR-36**; 34 → 36 flags |
+| Log rows | 134–148 (their 13 Nov pass) | 134–148 (this session's pass) | theirs kept; this session's pass appended after theirs with non-colliding numbering |
+| Research date | footer still 11 Nov 2026 | bumped to 13 Nov 2026 | **13 November 2026** in the shared footer, `RESEARCH_DATE`, the planner heading and the sources lede; planner cells for dates that have passed marked accordingly |
+| `noindex` meta, units header fix, their index tile | added on main | — | kept untouched |
