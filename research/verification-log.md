@@ -582,3 +582,49 @@ Arithmetic re-checked unchanged: 3,995.00 × 1.6% = 63.92 → 4,058.92 · × 3.0
 recomputed for the 13 Nov 2026 pass: 13 Feb… 11 Feb 2027 − 90 = 13 Nov 2026; 11 Feb 2027 − 95 =
 8 Nov 2026; 16 Feb 2027 − 90 = 18 Nov 2026; 16 Feb 2027 − 95 = 13 Nov 2026; 14 Feb 2027 − 90 =
 16 Nov 2026; 14 Feb 2027 − 95 = 11 Nov 2026 (now marked passed).
+## Session `arena/edd1ff9e-rentincreasesf3` — 2026-11-13 pass (state vs local instrument; new pages)
+
+Every URL below was fetched directly on **13 November 2026** and read against the claim it supports.
+
+| # | Assertion | Source fetched 13 Nov 2026 | Result |
+|---|---|---|---|
+| 203 | The duty to report to the Rent Board and hold a rent-increase licence comes from a **local** ordinance, not a state statute | [Legistar — Ord. 265-20 full text](https://sfgov.legistar.com/View.ashx?M=F&ID=9024120&GUID=79C40690-896E-43CD-9855-77B3AC909AEF) (title: "Ordinance amending the Administrative Code to require owners of residential dwelling units to report certain information to the Rent Board; to authorize the Rent Board to issue a license …") | Confirmed — enacted by the City and County of San Francisco |
+| 204 | Ord. 265-20: File 201262, **FINALLY PASSED 12/8/2020**, approved by the Mayor **12/18/2020**; § 4 "effective 30 days after enactment" and "operative on July 1, 2022" | Same Legistar document (Tails Ordinance page + § 4) | Confirmed |
+| 205 | § 37.15(c): reporting by **1 Jul 2022** for units (other than condominiums) in buildings of 10+ units; **commencing 1 Mar 2023** for condominium units and units in buildings with fewer than 10 units | [sf.gov — § 37.15](https://www.sf.gov/information/sec-3715-reporting-obligations-licensing) · Ord. 265-20 § 2 | Confirmed — this is the origin of the "since 2023" impression |
+| 206 | § 37.15(d): the Rent Board "shall not use the information to operate a rental registry within the meaning of **California Civil Code Sections 1947.7 – 1947.8**" | Same (both sources) | Confirmed — state law is referenced only as a limit on the City |
+| 207 | § 37.15(e): substantial compliance earns the licence under §§ 37.3(a)(1)–(2); non-compliance **temporarily suspends** it; restoration is **prospective** and "a tenant shall not be obligated to pay the increased rent for months during the period of suspension" | Same | Confirmed |
+| 208 | Ord. 265-20 § 2 revises § 37.3(a)(1) to "A landlord who has reported the required information … as set forth in Section 37.15 shall have a license to impose annually a rent increase …" and § 37.3(a)(2) banking is "subject to Section 37.15" | Ord. 265-20 full text | Confirmed |
+| 209 | Ord. 265-20 § 3 adds **§ 37A.4.5**, a separate surcharge for the housing inventory, recoverable 50% from tenants | Same | Confirmed |
+| 210 | Published code page carries the credit line "[Added by Ord. No. 265-20, **effective January 18, 2021**]" | [sf.gov — § 37.15](https://www.sf.gov/information/sec-3715-reporting-obligations-licensing) | Confirmed |
+| 211 | Rent Board news release (22 Jan 2021) states the ordinance "became effective on January 18, 2021", describes the automatic licence, the suspension for non-compliance, and the 1 Jul 2022 / 1 Mar 2023 start dates | [sf.gov — Ordinance 265-20](https://www.sf.gov/news--new-legislation-creates-housing-inventory-and-requires-owners-obtain-license-imposing) | Confirmed |
+| 212 | Housing Inventory page: "All owners of residential property are required to report"; licence generated after submission; "will not be enforceable without having a rent increase license on the effective date of the notice"; deadline 1 March; no monetary penalty for late filing | [sf.gov — Housing Inventory](https://www.sf.gov/rent-board-housing-inventory) | Confirmed |
+| 213 | Allowable increase still **1.6%** for 1 Mar 2026 – 28 Feb 2027; 60% of Bay Area CPI; cannot be rounded up | [sf.gov — Learn about rent increases](https://www.sf.gov/learn-about-rent-increases-san-francisco) | Confirmed (unchanged since 11 Nov 2026) |
+| 214 | The 9 Nov 2026 Rent Board notice is still on the rent-increase and banking pages; File #261020 status **Pending Committee Action**, introduced 9/15/2026, Land Use and Transportation Committee, 4 history records, latest 10/7/2026 (Youth Commission response), no final action | [Legistar File #261020](https://sfgov.legistar.com/LegislationDetail.aspx?ID=8217304&GUID=7EDA4662-EBFB-4AF5-962F-C669B64AA770) · [sf.gov — banking](https://www.sf.gov/information--banked-rent-increases) | Confirmed — still not law |
+| 215 | Rent Board Fee 2026-27: **$59.00** per dwelling unit, $29.50 per guest unit, 50% ($29.50) recoverable from qualifying tenants, due 1 March, 5%/month penalty capped at 15%, 2027 exemption window closes **14 December 2026** | [sf.gov — Rent Board Fee](https://www.sf.gov/rent-board-fee) | Confirmed |
+| 216 | Banking page: 24-month wording, "no limit on how much can be banked", not compounded or prorated, licence precondition with the 1 Jul 2022 / 1 Mar 2023 dates | [sf.gov — banking](https://www.sf.gov/information--banked-rent-increases) | Confirmed (the § 4.12(a) 12-month conflict stands, FR-03) |
+| 217 | Noncompliance page: notice taking effect while unlicensed "may be null and void (this may apply for multiple years)"; tenant "may be entitled to a rent refund"; Form 516C / Form 518 routes; licence carve-out for some original-occupant situations and passthroughs | [sf.gov — Notice of Owner Noncompliance](https://www.sf.gov/notice-of-owner-noncompliance-with-housing-inventory) | Confirmed |
+| 218 | The property-record link the Housing Inventory page itself gives for square footage resolves to the City's Property Information Map | [SF Property Information Map](https://www.sfassessor.org/property-information/homeowners/property-search-tool) | Confirmed — resolves (redirects to `sfplanninggis.org/pim`); added to the register as `SF_PIM` |
+| 219 | No state statute imposes the reporting duty: AB 1482 sets an amount ceiling only and does not apply where a local ordinance allows a lower increase | [Civ. Code § 1947.12](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=1947.12) · [oag.ca.gov/rentcaps](https://oag.ca.gov/rentcaps) (8.8% SF area, 1 Aug 2026 – 31 Jul 2027, vs local 1.6%) | Confirmed |
+
+### Added in this pass
+
+- **Sources registered:** `SF_ORD265T` (Ord. 265-20 full text), `SF_3715` (Admin. Code § 37.15), `SF_PIM`
+  (Property Information Map). `sfassessor.org` added to the accepted official domains in
+  `tools/site_layout.py` and `tools/audit_site.py`; `USED_FOR` entries added for `SF_ORD265` and
+  `CFR_982`, which were previously blank in the published register.
+- **New pages:** `pages/open-questions.html` (known / missing / decision gates, 11 + 11 + 12 rows,
+  each row sourced) and `pages/suggestions.html` (7 rent-decision paths and 12 improvement
+  suggestions, every row sourced and every row marked "Not chosen — open" so nothing is treated as
+  implemented before it is chosen).
+- **Executive summary** now leads with a "Forefront, part 1" card answering state-vs-local, and the
+  existing licence answer became "part 2". The dashboard's section 1 is the same question in short form.
+- **New flag FR-32** records that "the 2023 law" is one 2020 ordinance with three dates attached.
+- **New requirements R-24 … R-26** for the three items in this brief that no earlier session had answered.
+
+### Irregularities found in this pass
+
+| # | Finding | Disposition |
+|---|---|---|
+| 1 | The reader's "law passed in 2023" is Ord. 265-20 (2020) with three distinct dates — effective 18 Jan 2021, operative 1 Jul 2022, reporting commencement 1 Mar 2023 for 1–9 unit buildings. Citing "the 2023 law" obscures that it is a local ordinance | Published as FR-32 and answered in full at the forefront of the executive summary and the dashboard |
+| 2 | `SF_ORD265` and `CFR_982` had no entry in `USED_FOR`, so two rows of the published source register showed an empty "claim it supports" cell | Filled in from the fetched pages |
+| 3 | `tools/audit_site.py` carries its own hard-coded official-domain list, so a newly registered government domain passes the canonical gate and fails the repo audit until both lists are updated | Added `www.sfassessor.org` to both. **Note for future passes: two lists must be kept in step — `OFFICIAL_DOMAINS` in `tools/site_layout.py` and `DOMAINS` in `tools/audit_site.py`.** |

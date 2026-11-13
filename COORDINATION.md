@@ -1920,3 +1920,116 @@ sf.gov / leginfo / oag / legistar directly):
 **Scope note:** preserved editions (`docs/`, `dashboard/`, `review/`, `audit/`, `verified/`,
 `verification/`) are read-only here. No personal information is added anywhere; placeholder labels
 (Tenant A–F) only; dates and dollar amounts unchanged.
+| I1 | PR → main → merge → confirm Pages → record | in progress | do not merge a broken site |
+## Task board — session `arena/edd1ff9e-rentincreasesf3` (2026-11-13)
+
+**Claimed 2026-11-13 at session start.** Branch `arena/edd1ff9e-rentincreasesf3`, branched from `main` at
+`5fbd65e7c7a770443d32a7adc0127acb6f45dce5` (PR #54 merged). All earlier tasks on this board are marked
+done by their owning sessions, so this session acts as the **final integration session** for the new
+requirements added in the current brief and re-verifies the combined tree line by line.
+
+**New requirements in the current brief that no earlier session has answered:**
+
+| ID | Requirement |
+|---|---|
+| N1 | Answer whether the duty to inform the Rent Board (the "law passed in 2023") is **state or local** law; name the instrument and cite official sources |
+| N2 | A dedicated **Suggestions** section: how to improve the site/decision-making, with paths to choose between **before** any change is implemented |
+| N3 | A dedicated **Open questions / decision gates** section: what is known, what is not known, and how to discover the missing information |
+
+Scope of files this session may edit (everything else is read-only, or changed via a logged request):
+
+| File | Why |
+|---|---|
+| `COORDINATION.md` | this claim + PR/deploy record |
+| `research/verification-log.md` | append this session's verification rows |
+| `tools/site_layout.py` | new source-registry entries + nav/ALL_PAGES entries for two new pages |
+| `tools/site_pages_ref.py` | new `suggestions()` and `open_questions()` page builders, new requirement rows R-24…R-26, any new flags |
+| `tools/site_pages_core.py` | state-vs-local answer at the forefront of the executive summary + index |
+| `tools/build_dashboard.py` | register the two new pages |
+| `tools/verify_core_site.py` | gate extensions for the new pages |
+| `README.md`, `EXECUTIVE_SUMMARY.md` | reflect the new findings |
+| regenerated `index.html`, `pages/*.html`, `assets/style.css` | build artefacts |
+
+| # | Task | Status | File scope |
+|---|------|--------|------------|
+| E1 | Claim tasks + scope, commit and push the claim immediately | **done** | `COORDINATION.md` |
+| E2 | Verify the "2023 law" question against official sources (sf.gov §37.15 info page, Ord. 265-20, sf.gov Housing Inventory news page) | in progress | research only |
+| E3 | Re-verify the headline figures (1.6%, banking, notice rule, licence, File #261020) by direct fetch | in progress | `research/verification-log.md` |
+| E4 | Build `pages/open-questions.html` — known / unknown / discovery actions | pending | `tools/site_pages_ref.py` |
+| E5 | Build `pages/suggestions.html` — improvement suggestions + decision paths to choose before implementing | pending | `tools/site_pages_ref.py` |
+| E6 | Put the state-vs-local answer at the forefront of the executive summary and index | pending | `tools/site_pages_core.py` |
+| E7 | Re-run all gates; idempotent build; no broken links | pending | `tools/` |
+| E8 | PR → `main`, merge, confirm Pages deploy, record here | pending | `COORDINATION.md` |
+
+### Merge with PR #56 (session `arena/fd7ed99e-rentincreasesf3`) — resolved 2026-11-13
+
+While this session was working, `main` advanced to `5a73214` (**PR #56**, session
+`arena/fd7ed99e-rentincreasesf3`), which had independently built a **`pages/suggestions.html`**
+("Suggestions & decision path", sections A–E), added `tools/row_source_audit.py`, a
+`<meta name="robots" content="noindex, nofollow">` tag, a requirement **R-24** and flags
+**FR-32…FR-34**.
+
+This session rebased onto `origin/main`. **Nothing from either session was discarded.** Three ID
+collisions and one duplicate function had to be resolved:
+
+| Collision | Resolution |
+|---|---|
+| `def suggestions()` defined twice in `tools/site_pages_ref.py` | **Merged into one page.** `arena/fd7ed99e`'s structure (A options · B preconditions · C questions · D bullet suggestions · E review protocol) is kept as the base; this session's costed decision paths were added as **A2**, its tabulated improvements as **D2**, and its "deliberately not suggested" list as **F**. Section C now links to this session's separate open-questions page. A bare rebase would have silently let the second definition win and dropped one session's page entirely. |
+| Requirement ID **R-24** used by both | `fd7ed99e`'s R-24 kept; this session's three rows renumbered **R-25, R-26, R-27** (27 requirements tracked, 24 answered) |
+| Flag ID **FR-32** used by both | `fd7ed99e`'s FR-32…FR-34 kept; this session's date-nuance flag renumbered **FR-35** (35 flags in total) |
+| `pages/suggestions.html` duplicated in `NAV`, `ALL_PAGES` and `build_dashboard.py` | Deduplicated to a single entry; this session's `pages/open-questions.html` entries added alongside |
+| Verification-log row numbers **134–150** used by both | Both sections kept; this session's rows renumbered **149–165** (verified zero duplicate row numbers) |
+
+Build artefacts (`index.html`, `pages/*.html`, `assets/style.css`) were resolved by deleting the
+conflicted copies and re-running `tools/build_dashboard.py`, so the published HTML is generated from
+the merged modules rather than hand-merged.
+
+**Cross-session note for future passes:** `tools/audit_site.py` carries its own hard-coded
+`DOMAINS` list separate from `OFFICIAL_DOMAINS` in `tools/site_layout.py`; a newly registered
+government domain must be added to **both** or the canonical gate passes while the repo audit fails.
+
+### Task completion — `arena/edd1ff9e` (as final integration session)
+
+| # | Task | Status | Result |
+|---|------|--------|--------|
+| E1 | Claim tasks + scope | **done** | pushed `7dbea12` before any other work |
+| E2 | Verify the "2023 law" question | **done** | **Local law**: Ordinance No. 265-20 (File 201262), passed 8 Dec 2020, approved 18 Dec 2020, effective 18 Jan 2021, operative 1 Jul 2022, reporting commencement **1 Mar 2023** for condominiums and buildings with fewer than 10 units. Sources: [sf.gov § 37.15](https://www.sf.gov/information/sec-3715-reporting-obligations-licensing) · [Legistar Ord. 265-20](https://sfgov.legistar.com/View.ashx?M=F&ID=9024120&GUID=79C40690-896E-43CD-9855-77B3AC909AEF) · [sf.gov news](https://www.sf.gov/news--new-legislation-creates-housing-inventory-and-requires-owners-obtain-license-imposing) |
+| E3 | Re-verify headline figures | **done** | 17 assertions, verification-log rows 149–165; 1.6%, $59.00 fee, 30/90-day rule, banking wording, File #261020 status (still *Pending Committee Action*) and the 9 Nov 2026 Rent Board notice all re-fetched on 13 Nov 2026 and confirmed |
+| E4 | `pages/open-questions.html` | **done** | 11 known / 11 missing / 12 decision gates; every row sourced; blocking unknowns named |
+| E5 | `pages/suggestions.html` | **done** (merged with PR #56) | 5 + 7 decision options, 7 preconditions, 10 questions, 6 + 12 improvements, review protocol, "not suggested" list; every path marked *Not chosen — open* |
+| E6 | State-vs-local at the forefront | **done** | Executive summary "Forefront, part 1"; dashboard section 1; markdown summary § 1 |
+| E7 | Gates + idempotence | **done** | 9/9 gates PASS (privacy sweep 111 files, canonical gate 456 rows, row-source audit 0 canonical exceptions, preserved-edition baseline unchanged at 114); build byte-identical on re-run |
+| E8 | PR → `main`, merge, Pages deploy | in progress | recorded below |
+
+### Merge with PR #60 (session `arena/a53557bb-rentincreasesf3`) — resolved 2026-11-13
+
+`main` advanced again to `49c6c25` (**PR #60**, session `arena/a53557bb-rentincreasesf3`) while this
+branch was being rebased. That session had independently answered **the same three brief items**: the
+state-vs-local question (a row in the dashboard's licence card and a line in the executive summary),
+an open-questions page (`pages/questions.html`, sections A–G, from a new `tools/site_pages_decide.py`),
+and a further suggestions register (sections F–J, appended to `pages/suggestions.html`). It also moved
+the site-wide research-pass date from 11 to **13 November 2026**.
+
+This branch was rebased onto `origin/main`. **Nothing from either session was discarded.** Four
+collisions had to be resolved:
+
+| Collision | Resolution |
+|---|---|
+| Two pages both titled "Open questions" (`pages/questions.html` and this session's `pages/open-questions.html`) | **Made complementary rather than duplicated.** `questions.html` keeps the decision gate (blocking questions, what settles them, documents, discovery, sensitivity, no-official-answer gaps, do-not-serve gate). This session's page was re-scoped to **"Known vs unknown — the information register"** (11 established facts, 11 missing pieces, resolution order); its duplicate 12-question table was removed and replaced with a pointer, since `questions.html` owns that list. |
+| Two "F" sections on `pages/suggestions.html` | This session's "Improvements deliberately not suggested" list was **removed**: `a53557bb`'s section H ("Ideas that look tempting and should not be adopted") covers the same ground as a sourced table, which is the better form for the row-source gate. Every fact in the removed list also appears in section H or elsewhere on the page. |
+| The state-vs-local answer printed twice on the dashboard (their row in the licence card + this session's card 1) | The duplicate row was removed from the licence card; the one sentence in it that was not already in this session's table ("California's rent cap imposes no filing or licence duty at all") was folded into the AB 1482 row of card 1. The licence card now opens with a one-line pointer to part 1. |
+| Requirement **R-25** and flag **FR-35** used by both | Their R-25 kept; this session's rows renumbered **R-26, R-27, R-28** (28 tracked, 25 answered). Their FR-35/FR-36 kept; this session's date-nuance flag renumbered **FR-37** (37 flags). |
+
+Also deduplicated: the `Suggestions` tile and nav/ALL_PAGES entries, and the verification-log row
+numbers (both sessions had used 149+; this session's rows shifted to 169–185, verified zero duplicates).
+
+**Resulting site structure for the two brief items that all three sessions reached for:**
+
+| Page | Role |
+|---|---|
+| `pages/questions.html` | The decision gate — every question that blocks a notice and what settles it |
+| `pages/open-questions.html` | The information register — what we have, what we do not, how to close each gap |
+| `pages/suggestions.html` | One consolidated register of decision options (A, A2), preconditions (B), questions (C), improvement proposals (D, D2, F–I), review protocol (E) and maintenance (J) |
+
+All nine gates pass on the merged tree: 17 canonical pages, 524 table rows, **0 rows without an
+official source**, privacy sweep clean on 113 tracked files, build byte-identical on re-run.

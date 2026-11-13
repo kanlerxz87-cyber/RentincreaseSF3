@@ -20,6 +20,9 @@ OFFICIAL_DOMAINS = (
     "hud.gov",
     "ecfr.gov",
     "opm.gov",
+    # Added 13 Nov 2026: the Housing Inventory page itself sends owners here to look up
+    # square footage, so the property record is discoverable from an official City source.
+    "sfassessor.org",
 )
 
 SRC = {
@@ -62,6 +65,12 @@ SRC = {
                   "https://portal.sfrb.org/"),
     "SF_ORD265": ("sf.gov — Ordinance 265-20: Housing Inventory and rent-increase licence",
                   "https://www.sf.gov/news--new-legislation-creates-housing-inventory-and-requires-owners-obtain-license-imposing"),
+    "SF_ORD265T": ("Legistar — Ordinance No. 265-20, full text (File 201262, passed 8 Dec 2020)",
+                   "https://sfgov.legistar.com/View.ashx?M=F&ID=9024120&GUID=79C40690-896E-43CD-9855-77B3AC909AEF"),
+    "SF_3715": ("sf.gov — Administrative Code § 37.15, Reporting Obligations; Licensing",
+                "https://www.sf.gov/information/sec-3715-reporting-obligations-licensing"),
+    "SF_PIM": ("San Francisco Property Information Map (Assessor property search)",
+               "https://www.sfassessor.org/property-information/homeowners/property-search-tool"),
     "ADMIN_373": ("SF Administrative Code § 37.3 — Rent Limitations (American Legal)",
                   "https://codelibrary.amlegal.com/codes/san_francisco/latest/sf_admin/0-0-0-70881"),
     "LEGISTAR_261020": ("sfgov.legistar.com — File #261020, cap on rent increases for rent-controlled units",
@@ -215,6 +224,7 @@ NAV = [
     ("pages/notice.html", "Notice &amp; reasons"),
     ("pages/review.html", "Tenant-lawyer test"),
     ("pages/questions.html", "Open questions"),
+    ("pages/open-questions.html", "Known vs unknown"),
     ("pages/suggestions.html", "Suggestions"),
     ("pages/flagged.html", "Flagged"),
 ]
@@ -230,6 +240,7 @@ ALL_PAGES = [
     ("pages/notice.html", "Notice, service &amp; reasons"),
     ("pages/review.html", "Tenant-lawyer stress test"),
     ("pages/discrimination.html", "One unit or both units?"),
+    ("pages/open-questions.html", "Known vs unknown — what we have and what we do not have"),
     ("pages/requirements.html", "Requirements checklist"),
     ("pages/questions.html", "Open questions — what must be answered first"),
     ("pages/suggestions.html", "Suggestions &amp; decision path"),

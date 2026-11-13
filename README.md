@@ -26,11 +26,13 @@ Canonical dashboard table rows link official sources for the governing rule; own
 | [`pages/discrimination.html`](pages/discrimination.html) | One unit or both units? Fair-housing analysis |
 | [`pages/questions.html`](pages/questions.html) | Questions, answers & missing information: what is answered, what is open, how to discover each missing fact |
 | [`pages/suggestions.html`](pages/suggestions.html) | Suggestions & decision paths: status-labelled suggestions to review and a path to choose before anything is implemented |
+| [`pages/open-questions.html`](pages/open-questions.html) | Known vs unknown: what we already have, what is missing, and how to close each gap |
 | [`pages/requirements.html`](pages/requirements.html) | Every requirement in the brief, its status and its evidence |
 | [`pages/questions.html`](pages/questions.html) | **Open questions**: 14 blocking questions, 12 already settled, the documents to collect, 8 ways to find what is missing, and how each answer changes the number |
 | [`pages/suggestions.html`](pages/suggestions.html) | **Suggestions for review**: 12 improvement proposals with impact and effort, all marked *Proposed* — nothing is implemented until an ID is accepted — plus 6 rejected ideas and why |
 | [`pages/sources.html`](pages/sources.html) | source register with what each supports |
-| [`pages/flagged.html`](pages/flagged.html) | 39 flagged items: unverified, blank, inconsistent or corrected |
+| [`pages/flagged.html`](pages/flagged.html) | 40 flagged items: unverified, blank, inconsistent or corrected |
+| [`pages/flagged.html`](pages/flagged.html) | 40 flagged items: unverified, blank, inconsistent or corrected |
 
 Markdown summary: [`EXECUTIVE_SUMMARY.md`](EXECUTIVE_SUMMARY.md).
 
@@ -41,6 +43,30 @@ Markdown summary: [`EXECUTIVE_SUMMARY.md`](EXECUTIVE_SUMMARY.md).
 | **State or local law?** | **Local.** The duty to report into the Housing Inventory and hold a rent-increase licence comes from **San Francisco Ordinance No. 265-20** (adopted 2020, effective 18 January 2021), which amended the City's Rent Ordinance. The 2023 date owners cite is the **phase-in**: reporting “will begin on March 1, 2023” for condominiums and buildings with fewer than 10 units. No California statute imposes a rent-board filing or licence; § 1947.12(m)(2) says the state cap is “not intended to expand or limit the authority of local governments”. | [sf.gov — Ordinance 265-20](https://www.sf.gov/news--new-legislation-creates-housing-inventory-and-requires-owners-obtain-license-imposing) · [sf.gov — Housing Inventory](https://www.sf.gov/rent-board-housing-inventory) · [Civ. Code § 1947.12](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=1947.12) |
 | A pre-condition the site had not listed | **Civ. Code § 1942.4** bars a landlord from issuing “a notice of a rent increase” while substandard conditions that a housing official has flagged in writing stand unabated for more than 35 days without good cause; damages $100–$5,000 plus fees. Added 13 Nov 2026 to the notice, process and summary pages. | [Civ. Code § 1942.4](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=1942.4) |
 | Pending legislation, re-checked 13 Nov 2026 | File #261020 status is still **Pending Committee Action** (last recorded action 7 Oct 2026) — not law. | [Legistar](https://sfgov.legistar.com/LegislationDetail.aspx?ID=8217304&GUID=7EDA4662-EBFB-4AF5-962F-C669B64AA770) |
+| **State law or local law?** | **Local.** The duty to inform the Rent Board and hold a rent-increase licence is San Francisco **Ordinance No. 265-20**, effective 18 January 2021, amending the City's Rent Ordinance. No California statute requires notifying a rent board or holding a licence. The state cap (Civ. Code § 1947.12, 8.8% for this region from 1 Aug 2026) does not govern because the City cap is lower. | [Ordinance 265-20](https://www.sf.gov/news--new-legislation-creates-housing-inventory-and-requires-owners-obtain-license-imposing) · [§ 1947.12](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=1947.12) |
+| [`pages/flagged.html`](pages/flagged.html) | 40 flagged items: unverified, blank, inconsistent or corrected |
+
+Markdown summary: [`EXECUTIVE_SUMMARY.md`](EXECUTIVE_SUMMARY.md).
+
+## Two pages for making the decision, not just reading about it
+
+Both were added on 13 November 2026 and every row on both cites the official source it rests on.
+
+- **[Open questions](pages/questions.html)** — the decision gate question by question: what blocks a
+  notice, what settles it, the documents to collect, and how each answer moves the number.
+- **[Known vs unknown](pages/open-questions.html)** — the information register: the 11 facts already
+  established and the 11 pieces of information still missing, each with the official route that closes it.
+  Two of the gaps are blocking: the current licence status and Unit B's rent history.
+- **[Suggestions & decision path](pages/suggestions.html)** — decision options with their arithmetic,
+  preconditions, improvement proposals and a review protocol. **Nothing on that page has been
+  implemented**: every option and proposal is marked as not yet chosen, so a reviewer can pick a path
+  before anything changes.
+
+## Headline results (verified 11 November 2026; licence-instrument finding added 13 November 2026)
+
+| Item | Result | Official source |
+|---|---|---|
+| Is the duty to inform the Rent Board a state or a local law? | **Local.** Ordinance No. 265-20 (File 201262, passed 8 Dec 2020) added San Francisco Administrative Code § 37.15; 1 March 2023 is only the reporting start date for condominiums and buildings of fewer than 10 units | [sf.gov — § 37.15](https://www.sf.gov/information/sec-3715-reporting-obligations-licensing) · [Legistar — Ord. 265-20](https://sfgov.legistar.com/View.ashx?M=F&ID=9024120&GUID=79C40690-896E-43CD-9855-77B3AC909AEF) |
 | Rent-increase licence for an individual owner of a 1–9 unit building | **Required** — automatic once the Housing Inventory report is filed; must be in effect on the **effective date**; requirement applies from 1 March 2023; 1 March annual deadline; no monetary penalty for late filing | [sf.gov — Housing Inventory](https://www.sf.gov/rent-board-housing-inventory) |
 | Per-increase approval petition | **Not required** for ordinary annual or banked increases; separate notice-copy filing not established (FR-20) | [Form 571](https://www.sf.gov/documents/34344/571_Allowable_Annual_Increases_26-27_1.pdf) · [sf.gov — banking](https://www.sf.gov/information--banked-rent-increases) |
 | Annual allowance 1 Mar 2026 – 28 Feb 2027 | **1.6%** (1.4% prior year) | [sf.gov](https://www.sf.gov/learn-about-rent-increases-san-francisco) · [Form 571](https://www.sf.gov/documents/34344/571_Allowable_Annual_Increases_26-27_1.pdf) |

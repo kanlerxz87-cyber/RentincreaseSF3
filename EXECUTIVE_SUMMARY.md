@@ -14,7 +14,28 @@ Live dashboard: <https://kanlerxz87-cyber.github.io/RentincreaseSF3/>
 
 ---
 
-## 1. Forefront: must an individual owner inform the Rent Board and obtain a licence before notifying tenants?
+## 1. Forefront: is the Rent Board duty a state law or a local law? (verified 13 November 2026)
+
+**It is a local law — a San Francisco ordinance — not a state law.**
+
+The duty to report to the Rent Board and to hold a rent-increase licence comes from **Ordinance No. 265-20**
+(Board of Supervisors File No. 201262), which amended the **San Francisco Administrative Code**: it added
+**§ 37.15 "Reporting Obligations; Licensing"**, revised **§ 37.3** so that both the annual increase and
+banking are "subject to Section 37.15", and added a separate surcharge section, **§ 37A.4.5**. No California
+statute requires an owner to report to the Rent Board.
+
+| Question | Verified answer | Official source |
+|---|---|---|
+| State or local? | **Local.** A City and County of San Francisco ordinance, codified in the San Francisco Administrative Code. The published code section carries the credit line "[Added by Ord. No. 265-20, effective January 18, 2021]". | [sf.gov — § 37.15](https://www.sf.gov/information/sec-3715-reporting-obligations-licensing) · [Legistar — Ord. 265-20](https://sfgov.legistar.com/View.ashx?M=F&ID=9024120&GUID=79C40690-896E-43CD-9855-77B3AC909AEF) |
+| Why it feels like "since 2023" | One 2020 ordinance carries three dates: **finally passed 8 December 2020**, approved by the Mayor **18 December 2020**; § 4 makes it effective 30 days after enactment and **operative 1 July 2022**; and § 37.15(c) sets the **commencement of reporting at 1 March 2023** for condominium units and units in buildings with fewer than 10 units. A 1–9 unit building's first obligation therefore fell on 1 March 2023. | [Legistar — Ord. 265-20](https://sfgov.legistar.com/View.ashx?M=F&ID=9024120&GUID=79C40690-896E-43CD-9855-77B3AC909AEF) · [sf.gov — § 37.15](https://www.sf.gov/information/sec-3715-reporting-obligations-licensing) |
+| Does state law appear in it? | Only as a limit on the City. § 37.15(d): "The Rent Board shall not use the information to operate a rental registry within the meaning of **California Civil Code Sections 1947.7 – 1947.8**." State law does not impose the duty. | [sf.gov — § 37.15](https://www.sf.gov/information/sec-3715-reporting-obligations-licensing) |
+| Does AB 1482 require this? | **No.** AB 1482 caps the *amount* of an increase and creates no reporting duty; it also does not govern here, because it does not apply where a local ordinance allows a lower increase, and San Francisco's is lower (8.8% state figure vs 1.6% local). | [Civ. Code § 1947.12](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=1947.12) · [oag.ca.gov/rentcaps](https://oag.ca.gov/rentcaps) |
+| What § 37.15(e) actually does | Substantial compliance earns the licence to impose increases under §§ 37.3(a)(1)–(2). Without it the licence is **temporarily suspended** for the period of non-compliance and restored only **prospectively** — "a tenant shall not be obligated to pay the increased rent for months during the period of suspension". | [sf.gov — § 37.15](https://www.sf.gov/information/sec-3715-reporting-obligations-licensing) |
+| How to cite it | Cite **Ordinance No. 265-20 (File 201262)** and **S.F. Admin. Code § 37.15**. The date nuance is published as FR-32. | [Legistar](https://sfgov.legistar.com/View.ashx?M=F&ID=9024120&GUID=79C40690-896E-43CD-9855-77B3AC909AEF) · [sf.gov](https://www.sf.gov/information/sec-3715-reporting-obligations-licensing) |
+
+---
+
+## 2. Must an individual owner inform the Rent Board and obtain a licence before notifying tenants?
 
 **Yes to reporting and the licence; no to any per-increase application. And the requirement is a City law, not a state law — see “State or local?” below.**
 
@@ -88,7 +109,7 @@ Two pages of the dashboard exist for exactly this:
 
 ---
 
-## 2. What is lawful for each unit
+## 3. What is lawful for each unit
 
 Percentages are official; dollar amounts are the official percentage multiplied by the owner-reported base rent, to the cent.
 
@@ -110,7 +131,7 @@ Under the unverified assumption of no intervening increase, Unit B's banked tota
 
 ---
 
-## 3. What changed on 9 November 2026
+## 4. What changed on 9 November 2026
 
 The Rent Board added a notice to its rent-increase and banking pages on **9 November 2026**: the Board of Supervisors is considering **File No. 261020**, which would temporarily limit the combined amount of **banked rent increases and capital improvement rent increases** to **10% per year** for rent-controlled units, for three years. The Rent Board states that, if enacted as currently proposed, it would apply to banked increases **noticed on or after 15 September 2026**, and that the legislation "has not been enacted and is subject to change". Legistar shows the file as **Pending Committee Action** (introduced 15 September 2026, referred to the Land Use and Transportation Committee).
 
@@ -120,7 +141,7 @@ Sources: [sf.gov — rent increases](https://www.sf.gov/learn-about-rent-increas
 
 ---
 
-## 4. Reasonable and normal increases
+## 5. Reasonable and normal increases
 
 There is **no official definition** of a "reasonable" or "normal" rent increase in San Francisco, and **no official statistic** for what owners typically charge. What exists is a **lawful maximum**, which is the Rent Board percentage plus properly banked amounts.
 
@@ -134,7 +155,7 @@ Other routes include banked increases, qualifying capital improvements, operatin
 
 ---
 
-## 5. How corporations and individual owners handle increases
+## 6. How corporations and individual owners handle increases
 
 | Owner type | What official sources actually show | Source |
 |---|---|---|
@@ -146,7 +167,7 @@ No official dataset compares how often or by how much corporations versus indivi
 
 ---
 
-## 6. Telling tenants, and which reasons are allowed
+## 7. Telling tenants, and which reasons are allowed
 
 | Item | Position | Source |
 |---|---|---|
@@ -159,7 +180,7 @@ No official dataset compares how often or by how much corporations versus indivi
 
 ---
 
-## 7. Would it survive a tenant lawyer?
+## 8. Would it survive a tenant lawyer?
 
 A San Francisco tenant can file a free Tenant Petition (Form 516C, box C) for an unlawful rent increase or a determination of the lawful rent, with **no filing deadline**, heard by a Rent Board Administrative Law Judge; the process is designed so nobody needs a lawyer. The site sets out a **16-point test** covering coverage, percentage version, base-rent basis, rounding, banking, the 12-month interval, anniversary effects, licence on the effective date, Housing Inventory currency, 30/90-day period, proof of service, notice contents, retaliation, protected characteristics and the explainability of any difference between units.
 
@@ -169,7 +190,7 @@ Sources: [sf.gov — unlawful rent increase](https://www.sf.gov/report-unlawful-
 
 ---
 
-## 8. One unit or both?
+## 9. One unit or both?
 
 **No official source requires raising both units, and none says a selective increase is unlawful in itself.** FEHA prohibits discrimination *because of* a protected characteristic (race, colour, religion, sex, gender identity or expression, sexual orientation, marital status, national origin, ancestry, familial status, source of income, disability, veteran or military status, genetic information); the federal Fair Housing Act covers race, colour, religion, sex, familial status, national origin and disability; the Civil Code separately prohibits retaliatory increases, with specific conditions and protections that can extend beyond 180 days. The Rent Board does **not** hear discrimination or retaliation claims — those go to the Civil Rights Department, HUD or court.
 
@@ -179,7 +200,7 @@ Sources: [Gov. Code § 12955](https://leginfo.legislature.ca.gov/faces/codes_dis
 
 ---
 
-## 9. Two official sources that disagree, and the other open items
+## 10. Two official sources that disagree, and the other open items
 
 | # | Item | Status |
 |---|---|---|
@@ -222,9 +243,52 @@ Sources: [Gov. Code § 12955](https://leginfo.legislature.ca.gov/faces/codes_dis
 | FR-38 | Two link defects on the Attorney General's rent-cap page | **Irregularity in an official source** — the state's chart twice labels its citation "Civil Code section 1974.12" (the section is § 1947.12) and both links carry a trailing period in `sectionNum`, which 404s; the 8.8% figure itself is correct and matches § 1947.12 as computed here |
 ---
 
-## 10. Decision readiness and site suggestions (added 13 November 2026)
+## 11. Decision readiness and site suggestions (added 13 November 2026)
 
 Two pages now sit between the research and the decision, and the brief asked for both:
 
 - **Decision readiness — `pages/questions.html`.** Twelve questions answered from official sources (including "is this state or local?", "must an individual owner do it?", "may I raise one unit and not the other?"), then **eight blocking questions** whose answers sit outside this project (coverage record, licence status, Unit B's rent history, Unit A's anniversary, open habitability notices, subsidy status, fee status, complaint and contact timeline), seven material questions, seven service-time confirmations, a route for discovering each missing item, and five questions **no official source can answer** — left blank rather than estimated. The site's current verdict is **not ready to decide**: none of the eight blocking items has been closed with a document.
 - **Suggestions & decision path — `pages/suggestions.html`.** Sections A–E (decision options for this property, the preconditions behind each, the questions still open, site suggestions and a review protocol) plus **F**, the numbered register: fourteen proposals (evidence freshness, a printable decision sheet, machine-readable data, a fuller date planner, a compliance calendar, a "tenant objects" flow, a re-identification review, deep links and captions, flag triage, an "ask the Rent Board" card, a retention note, edition consolidation, a changelog, a source-drift gate) with effort, risk and an empty decision column, grouped into four bundle paths. **Nothing in the register has been implemented**; the four changes that *were* made this pass are listed on it as corrections, each with the official source that required them.
+
+| FR-40 | The “2023 law” is a 2020 ordinance with three different dates attached | **Clarified 13 Nov 2026** — Ordinance No. 265-20 (File 201262) was finally passed 8 December 2020 and approved 18 December 2020; § 4 makes it effective 30 days after enactment and operative 1 July 2022; 1 March 2023 is only the commencement of reporting for condominiums and buildings with fewer than 10 units (§ 37.15(c)). State law appears in § 37.15(d) only to say the inventory is not a “rental registry within the meaning of California Civil Code Sections 1947.7 – 1947.8” ([sf.gov — § 37.15](https://www.sf.gov/information/sec-3715-reporting-obligations-licensing) · [Legistar](https://sfgov.legistar.com/View.ashx?M=F&ID=9024120&GUID=79C40690-896E-43CD-9855-77B3AC909AEF)) |
+---
+
+## 12. Known vs unknown — the information register (new page, 13 November 2026)
+
+[`pages/open-questions.html`](pages/open-questions.html) is the **information register**: it separates what
+is established from what is missing, and gives an official route to close each gap. The question-by-question
+decision gate itself lives on [`pages/questions.html`](pages/questions.html), so the two pages do not repeat
+each other. In summary:
+
+- **What we have (11 rows).** The official percentages and rules are established; the tenancy facts (dates,
+  amounts, occupancy) are owner-reported and are never presented as government records.
+- **What we do not have (11 rows).** The two blocking unknowns are the **current licence status** (check the
+  Rent Board Portal) and **Unit B's rent ledger since 1 June 2019**. Also open: the building's legal unit
+  count and year built from the City record, whether the 1 April 2026 renewal moved Unit A's anniversary,
+  subsidy status, whether a notice copy must be filed, the 2027–28 percentage, the outcome of File #261020,
+  and whether any petition-based increase is in play.
+- **Suggested order.** Close the two blocking unknowns → fix the date → choose the amount → check the
+  reason and the record → serve and keep the file → re-check the pending legislation on the service date.
+
+## 13. Suggestions & decision path — nothing implemented yet (new page, 13 November 2026)
+
+[`pages/suggestions.html`](pages/suggestions.html) exists so a reviewer can compare options and choose a
+path **before** anything changes. Every row is marked **"Not chosen — open"**.
+
+**Seven rent-decision paths** are set out with their arithmetic, notice period and trade-off: Unit A annual
+only (1.6% = $63.92 → $4,058.92); Unit A annual plus banked (3.0% = $119.85 → $4,114.85); Unit B annual
+only (1.6% = $50.40 → $3,200.40); Unit B full conditional catch-up (13.1% = $412.65 → $3,562.65, 90 days);
+Unit B at 10.0% ($315.00 → $3,465.00); one unit or both; and serving nothing for now (banked amounts do not
+expire during a tenancy).
+
+**Improvement suggestions** from three independent passes are consolidated on the one page, each tied to the official rule that makes it worth doing —
+a licence-status field, a Unit B rent-history intake checklist, a File #261020 status watch, an owner's
+annual calendar (1 March reporting + fee, December exemption window), a mailed-service and holiday-aware
+notice planner, a printable notice pack, a plain-English § 37.15 suspension explainer, a side-by-side
+comparison of the three official banking texts, a coverage decision tree, a building-record verification
+step, a tenant-petition response page, and a subsidy-status field.
+
+**Deliberately not suggested** (section H of the same page, as a sourced table): estimating a ZIP-level
+market rent (no official source — FR-10), guessing Unit B's rent history (FR-01), averaging what other
+owners charge (FR-09), or any calculator that rounds up (the Rent Board states increases cannot be rounded
+up).

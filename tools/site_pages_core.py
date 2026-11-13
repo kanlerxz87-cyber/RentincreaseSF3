@@ -8,15 +8,30 @@ def index():
   <h1>San Francisco rent increase — verified answers</h1>
   <p class="lede">Two owner-reported rent-controlled units in San Francisco (owner-reported construction year 1940). Total building unit count and coverage are unverified. This dashboard answers the owner's questions in the order asked, with an official source link on every row. Research pass: 13 November 2026.</p>
   <div class="quote"><b>Privacy:</b> tenants are shown as <b>Tenant A–F</b>; the ZIP code, neighbourhood and street address are withheld (unit-level facts plus a location could identify the tenants). <b>Dates and dollar amounts are unchanged.</b> Not legal advice.</div>
+  <div class="quote" style="border-left-color:var(--warnbd);background:#fffaf0"><b>Updated 13 November 2026.</b> Added the finding that the Rent Board reporting and licence duty is a <b>local</b> law (Ordinance 265-20 / Administrative Code § 37.15), plus two new pages: <a href="pages/questions.html">Open questions</a> (the decision gate, question by question) and <a href="pages/open-questions.html">Known vs unknown</a> (what we have and what is missing). The <a href="pages/suggestions.html">Suggestions &amp; decision path</a> page consolidates every proposal into one register.. Every row on those pages cites the official source it rests on.</div>
 </div>
 
 <div class="card alert">
-  <h2>1. First question: do I have to inform the Rent Board and get a licence — as an individual owner, not a corporation?</h2>
+  <h2>1. First question: is the Rent Board duty a state law or a local law?</h2>
+  <p><b>It is a local law.</b> The duty to report to the Rent Board and hold a rent-increase licence comes from <b>San Francisco Ordinance No. 265-20</b> (File 201262, passed 8 December 2020), which added <b>Administrative Code § 37.15</b> to the San Francisco Administrative Code. The “2023” date is only the commencement of reporting for condominiums and buildings with fewer than 10 units. No state statute imposes this. Verified 13 November 2026.</p>
+  <table>
+    <thead><tr><th style="width:28%">Point</th><th>Verified answer</th><th style="width:22%">Official source</th></tr></thead>
+    <tbody>
+      <tr><td>State or local?</td><td><b>Local</b> — a San Francisco ordinance codified in the San Francisco Administrative Code, credited on the published code page as “Added by Ord. No. 265-20, effective January 18, 2021”.</td>{cell("SF_3715", "SF_ORD265T")}</tr>
+      <tr><td>Why it is remembered as “since 2023”</td><td>Reporting commenced <b>1 March 2023</b> for condominium units and units in buildings with fewer than 10 units, and <b>1 July 2022</b> for units in buildings of 10 or more. One ordinance, three dates — see FR-40.</td>{cell("SF_3715", "SF_HI")}</tr>
+      <tr><td>Does state law play any part?</td><td>Only as a limit on the City: § 37.15(d) says the Rent Board shall not use the data to operate a “rental registry within the meaning of California Civil Code Sections 1947.7 – 1947.8”.</td>{cell("SF_3715")}</tr>
+      <tr><td>What it requires of you</td><td>Report each unit by <b>1 March each year</b>; substantial compliance earns the licence; non-compliance <b>suspends</b> it and restoration is <b>prospective only</b>.</td>{cell("SF_3715", "SF_HI")}</tr>
+    </tbody>
+  </table>
+  <p class="small" style="margin-top:10px">Full step-by-step for an individual owner: <a href="pages/process.html"><b>Licence &amp; process →</b></a> · What is still missing: <a href="pages/open-questions.html"><b>Open questions →</b></a></p>
+</div>
+
+<div class="card alert">
+  <h2>2. Do I have to inform the Rent Board and get a licence — as an individual owner, not a corporation?</h2>
   <p><b>Yes — the same rule applies to an individual owner.</b> San Francisco requires <b>all owners of residential property</b> to report their units into the <b>Rent Board Housing Inventory</b>; for a tenant-occupied unit the report generates a <b>rent-increase licence</b>, and the licence must be in effect on the <b>effective date</b> of the increase. Annual and banked increases do not require a petition for approval; whether any separate notice-copy filing applies is not established by those sources (FR-20).</p>
   <table>
     <thead><tr><th style="width:27%">Your question</th><th>Verified answer</th><th style="width:22%">Official source</th></tr></thead>
     <tbody>
-      <tr><td>Is that a state law or a local law?</td><td><b>Local — a City ordinance, not a California statute.</b> The Housing Inventory and the rent-increase licence were created by <b>San Francisco Ordinance No. 265-20</b>, effective <b>18 January 2021</b>, which amends the City's Rent Ordinance in the Administrative Code. Nothing in California law requires a landlord to notify a rent board or hold a licence to raise rent; the state's own cap (Civ. Code § 1947.12) has no filing requirement at all. The <b>2023</b> date you remember is when the City rule reached small owners — reporting began 1 March 2023 for condominiums and buildings with fewer than 10 units.</td>{cell("SF_ORD265", "SF_HI", "LEG_1947")}</tr>
       <tr><td>Do I need to tell / report to the Rent Board?</td><td><b>Yes.</b> “All owners of residential property are required to report” into the Housing Inventory, online through the Rent Board Portal. Reporting is free.</td>{cell("SF_HI")}</tr>
       <tr><td>Do I need a licence even though I am a person, not a corporation?</td><td><b>Yes.</b> The rules distinguish by <i>building size</i> (10+ units vs. condominiums and 1–9 unit buildings), not by the owner's legal form. “Property owners who have tenants will receive a rent increase license after the submission.” The total number of units in the building is unverified. For buildings with fewer than 10 units and condominiums reporting began <b>1 March 2023</b>; for other buildings with 10 or more units it began <b>1 July 2022</b>.</td>{cell("SF_HI", "SF_LI")}</tr>
       <tr><td>Is there a separate application or fee for the licence?</td><td><b>No separate application.</b> “Once you have reported into the Housing Inventory, a rent increase license will be automatically generated for non-owner occupied units.” Reporting is free and the licence “does not need to be included with your rent increase notice”.</td>{cell("SF_HI")}</tr>
@@ -33,7 +48,7 @@ def index():
 </div>
 
 <div class="card">
-  <h2>2. Key figures</h2>
+  <h2>3. Key figures</h2>
   <div class="grid">
     <div class="stat"><div class="num">1.6%</div><div class="lbl">Allowable annual increase 1 Mar 2026 – 28 Feb 2027 (60% of Bay Area CPI). Source: {src("SF_LI", "sf.gov")}</div></div>
     <div class="stat"><div class="num">1.4%</div><div class="lbl">Prior year, 1 Mar 2025 – 28 Feb 2026 — the amount at stake for Unit A as a banked increase. Source: {src("SF_571", "Form 571")}</div></div>
@@ -45,7 +60,7 @@ def index():
 </div>
 
 <div class="card warn">
-  <h2>3. What changed on 9 November 2026 — read before serving any notice</h2>
+  <h2>4. What changed on 9 November 2026 — read before serving any notice</h2>
   <p>The Rent Board added a notice to its rent-increase and banking pages on <b>9 November 2026</b>: the Board of Supervisors is considering legislation (<b>File No. 261020</b>) that would <b>temporarily limit the combined amount of banked rent increases and capital improvement rent increases to 10% per year</b>, for the next three years. The Rent Board states that, if enacted as currently proposed, it would apply to <b>banked rent increases noticed on or after 15 September 2026</b> — and that “<b>this legislation has not been enacted and is subject to change</b>”.</p>
   <table>
     <thead><tr><th>Fact</th><th>Status on 11 Nov 2026</th><th>Official source</th></tr></thead>
@@ -59,7 +74,7 @@ def index():
 </div>
 
 <div class="card">
-  <h2>4. Short answers to the rest of the brief</h2>
+  <h2>5. Short answers to the rest of the brief</h2>
   <table>
     <thead><tr><th style="width:31%">Question</th><th>Answer in one line</th><th style="width:22%">Detail + source</th></tr></thead>
     <tbody>
@@ -73,7 +88,7 @@ def index():
 </div>
 
 <div class="card">
-  <h2>5. Browse by category</h2>
+  <h2>6. Browse by category</h2>
   <div class="cards">
     <a class="tile" href="pages/executive-summary.html"><b>Executive summary</b><span>Every finding in order, licence question first, with the numbers.</span></a>
     <a class="tile" href="pages/process.html"><b>Licence &amp; process</b><span>Step-by-step, notice-date planner, what the Rent Board does and does not need.</span></a>
@@ -86,6 +101,7 @@ def index():
     <a class="tile" href="pages/notice.html"><b>Notice &amp; reasons</b><span>Required contents, service, timing, model wording, prohibited reasons.</span></a>
     <a class="tile" href="pages/review.html"><b>Tenant-lawyer test</b><span>16 checks a tenant-side reviewer would run, and how to pass each.</span></a>
     <a class="tile" href="pages/discrimination.html"><b>One unit or both?</b><span>Fair-housing analysis of selective increases, plus a documentation protocol.</span></a>
+    <a class="tile" href="pages/open-questions.html"><b>Known vs unknown</b><span>What we already have, what is missing, and the official route that closes each gap.</span></a>
     <a class="tile" href="pages/requirements.html"><b>Requirements checklist</b><span>Every item in the brief, where it is answered, and its verification status.</span></a>
     <a class="tile" href="pages/sources.html"><b>Sources register</b><span>Every official source, the claim it supports, and the date retrieved.</span></a>
     <a class="tile" href="pages/flagged.html"><b>Flagged for review</b><span>Unverified, blank or internally inconsistent items — published, not hidden.</span></a>
@@ -110,8 +126,25 @@ def executive_summary():
 </div>
 
 <div class="card alert">
-  <h2>Forefront finding — the Rent Board notification and licence question</h2>
-  <p><b>Which law?</b> The duty to report to the Rent Board and hold a licence is <b>local San Francisco law</b> — Ordinance No. 265-20, effective 18 January 2021, amending the City's Rent Ordinance. It is not a state law; the date that reaches most small owners is <b>1 March 2023</b>, when the reporting duty began for condominiums and buildings with fewer than 10 units. California's rent cap (Civ. Code § 1947.12) imposes no filing or licence duty, and its cap does not govern here because the City's is lower.</p>
+  <h2>Forefront, part 1 — is the duty to inform the Rent Board a state law or a local law?</h2>
+  <p><b>It is a local law — a San Francisco ordinance — not a state law.</b> The duty comes from <b>Ordinance No. 265-20</b> (Board of Supervisors File No. 201262), which amended the <b>San Francisco Administrative Code</b>: it added <b>§ 37.15 “Reporting Obligations; Licensing”</b>, revised <b>§ 37.3</b> so that the annual increase and banking are both “subject to Section 37.15”, and added a separate surcharge section, <b>§ 37A.4.5</b>. No California statute requires an owner to report to the Rent Board. Verified 13 November 2026.</p>
+  <table>
+    <thead><tr><th style="width:26%">The question behind the question</th><th>Verified answer</th><th style="width:22%">Official source</th></tr></thead>
+    <tbody>
+      <tr><td>State or local?</td><td><b>Local.</b> Enacted by the City and County of San Francisco and codified in the San Francisco Administrative Code. The published code section carries the credit line “<b>[Added by Ord. No. 265-20, effective January 18, 2021]</b>”.</td>{cell("SF_3715", "SF_ORD265T")}</tr>
+      <tr><td>Then why does it feel like “the 2023 law”?</td><td><b>Three different dates attach to one 2020 ordinance.</b> It was finally passed <b>8 December 2020</b> and approved by the Mayor <b>18 December 2020</b>; § 4 makes it effective 30 days after enactment and <b>operative 1 July 2022</b>; and § 37.15(c) sets the <b>commencement of reporting</b> at <b>1 March 2023</b> for condominium units and units in buildings with fewer than 10 units. A 1–9 unit building's first obligation therefore fell on 1 March 2023 — which is why the requirement is remembered as “since 2023”.</td>{cell("SF_ORD265T", "SF_3715", "SF_HI")}</tr>
+      <tr><td>Does state law appear anywhere in it?</td><td><b>Only to say what the inventory is not.</b> § 37.15(d): “The Rent Board shall not use the information to operate a rental registry within the meaning of <b>California Civil Code Sections 1947.7 – 1947.8</b>.” State law is referenced; it does not impose the duty.</td>{cell("SF_3715", "SF_ORD265T")}</tr>
+      <tr><td>Does the state rent-cap law (AB 1482) require this?</td><td><b>No.</b> AB 1482 sets a ceiling on the <i>amount</i> of an increase and imposes no filing or licence duty at all; it creates no reporting duty, and it does not govern here because it does not apply where a local ordinance allows a lower increase, and San Francisco's is lower.</td>{cell("LEG_1947", "OAG", "SF_LI")}</tr>
+      <tr><td>What the ordinance actually requires of you</td><td>Report each residential unit into the <b>Rent Board Housing Inventory</b> by <b>1 March each year</b>; substantial compliance earns the <b>licence to impose rent increases</b> under §§ 37.3(a)(1)–(2). Without substantial compliance the licence is <b>temporarily suspended</b> for the period of non-compliance and is restored only <b>prospectively</b> — “a tenant shall not be obligated to pay the increased rent for months during the period of suspension”.</td>{cell("SF_3715", "SF_HI")}</tr>
+      <tr><td>How to cite it correctly</td><td>Cite <b>Ordinance No. 265-20 (File 201262)</b> and <b>S.F. Admin. Code § 37.15</b>. Citing “the 2023 law” is what produced the state/local confusion in the first place; the date nuance is recorded as FR-40.</td>{cell("SF_ORD265T", "SF_3715")}</tr>
+    </tbody>
+  </table>
+  <p style="margin-top:10px"><b>Bottom line:</b> local ordinance, City obligation, 1 March annual deadline, licence on the effective date. Part 2 below answers what an individual owner must actually do, step by step. The full information register is on <a href="open-questions.html"><b>Known vs unknown →</b></a> and the decision gate is on <a href="questions.html"><b>Open questions →</b></a></p>
+</div>
+
+<div class="card alert">
+  <h2>Forefront, part 2 — the Rent Board notification and licence question (individual owner)</h2>
+  <p><b>Which law?</b> Part 1 above established that this duty is <b>local San Francisco law</b> — Ordinance No. 265-20 (File 201262), codified at Administrative Code § 37.15 — and not a state law. The table below answers what an individual owner must actually do.</p>
   <p><b>Annual and banked increases do not require a Rent Board approval petition. Any separate notice-copy filing requirement remains unverified (FR-20). You do have to report the units into the Housing Inventory and hold a current rent-increase licence on the effective date — and that obligation applies to you as an individual owner exactly as it would to a corporation.</b></p>
   <table>
     <thead><tr><th style="width:30%">Point</th><th>Verified position</th><th style="width:22%">Official source</th></tr></thead>
