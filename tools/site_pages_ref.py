@@ -403,14 +403,21 @@ def suggestions():
     <li><b>Resolve the preconditions (B) for each unit.</b> A missing licence, wrong anniversary, wrong base rent or wrong notice period defeats the increase regardless of the percentage chosen. {srcs("SF_HI", "LEG_827")}</li>
     <li><b>Answer the open questions (C) and attach the evidence.</b> The Unit B ledger, building record, coverage, licence status and subsidy status are the facts that change the outcome. {srcs("SF_BANK", "SF_LAWS")}</li>
     <li><b>Compare the options (A) against the tenant-lawyer test.</b> Run the chosen option through the 16-point review on the <a href="../pages/review.html">tenant-lawyer test</a> page before committing.</li>
-    <li><b>Record the decision.</b> Use the decision-record template (D) to note the option, the evidence and the date, so the choice can be reviewed later.</li>
+    <li><b>Record the decision.</b> Use the decision record below to note the option, the evidence and the date, so the choice can be reviewed later.</li>
     <li><b>Only then implement.</b> Confirm the licence, calculate from the percentage in force on the effective date, serve notice in time, and file anything the Rent Board requires. {srcs("SF_LI", "LEGISTAR_261020")}</li>
   </ol>
 </div>
 
-<div class="card tight">
-  <p class="small" style="margin:0"><b>Related pages:</b> <a href="../pages/open-questions.html">Open questions &amp; decision gates</a> · <a href="../pages/flagged.html">Flagged for review</a> ({len(FLAGS)} items) · <a href="../pages/review.html">Tenant-lawyer stress test</a> · <a href="../pages/units.html">Units &amp; maths</a>.</p>
-</div>
+<div class="card">
+  <h2>Decision record — fill this in before anything is implemented</h2>
+  <p class="small">Nothing has been decided yet. When a path is chosen, copy a row per decision: the option number from section A, the SG- IDs accepted from section G, the date, the reason and the documents relied on. While every row reads <i>not chosen yet</i>, sections F–J stay <i>Proposed</i> and no change is made to the site or to any notice.</p>
+  <table>
+    <thead><tr><th style="width:20%">What is being decided (option 1–5 / SG- ID)</th><th style="width:14%">Chosen path</th><th style="width:10%">Date</th><th>Reason and evidence kept</th><th style="width:16%">Official source</th></tr></thead>
+    <tbody>
+      <tr><td class="nowrap"><b>not chosen yet</b></td><td><span class="badge warn">no decision recorded</span></td><td>—</td><td>No option has been chosen and no proposal has been accepted. Record the choice here first — with the reason and the documents relied on — before implementing anything above.</td>{cell("SF_LI")}</tr>
+    </tbody>
+  </table><div class="card tight">
+  <p class="small" style="margin:0"><b>Related pages:</b> <a href="../pages/open-questions.html">Open questions &amp; decision gates</a> · <a href="../pages/flagged.html">Flagged for review</a> ({len(FLAGS)} items) · <a href="../pages/review.html">Tenant-lawyer stress test</a> · <a href="../pages/units.html">Units &amp; maths</a>.</p></div>
 """
     # Sections F-I: the improvement-proposal register from the parallel 13 Nov 2026 pass
     # (session arena/a53557bb).  Rendered on this page so the site keeps one suggestions
