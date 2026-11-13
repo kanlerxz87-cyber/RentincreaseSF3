@@ -628,3 +628,39 @@ Every URL below was fetched directly on **13 November 2026** and read against th
 | 1 | The reader's "law passed in 2023" is Ord. 265-20 (2020) with three distinct dates — effective 18 Jan 2021, operative 1 Jul 2022, reporting commencement 1 Mar 2023 for 1–9 unit buildings. Citing "the 2023 law" obscures that it is a local ordinance | Published as FR-32 and answered in full at the forefront of the executive summary and the dashboard |
 | 2 | `SF_ORD265` and `CFR_982` had no entry in `USED_FOR`, so two rows of the published source register showed an empty "claim it supports" cell | Filled in from the fetched pages |
 | 3 | `tools/audit_site.py` carries its own hard-coded official-domain list, so a newly registered government domain passes the canonical gate and fails the repo audit until both lists are updated | Added `www.sfassessor.org` to both. **Note for future passes: two lists must be kept in step — `OFFICIAL_DOMAINS` in `tools/site_layout.py` and `DOMAINS` in `tools/audit_site.py`.** |
+
+---
+
+## Session `arena/69a2798e-rentincreasesf3` — verification pass of 13 November 2026
+
+This session read the **primary legal text** of Ordinance No. 265-20 ([Legistar](https://sfgov.legistar.com/View.ashx?M=F&ID=9024120&GUID=79C40690-896E-43CD-9855-77B3AC909AEF)) independently. By
+the time it merged, session `edd1ff9e` had registered the same text as source `SF_ORD265T` and covered the
+state-or-local question and the three-dates irregularity (FR-40). This session therefore contributed only what
+was still missing, and did not duplicate the rest. Rows are numbered on from the previous session's last row
+(219).
+
+| # | Assertion | How it was verified | Result |
+|---|---|---|---|
+| 220 | **Ordinance § 37.15(a) says "Owners" and draws no distinction between a person and a corporation** | Read the full text: "**Owners** of residential dwelling units subject to this Chapter 37 shall be required to report certain information about their units to the Rent Board"; "In the case of a unit owned by multiple owners, reporting by a single owner shall suffice." Searched the whole of § 37.15 for "corporation", "person", "entity", "legal form" — no such distinction appears | **Confirmed** — the individual-owner question is settled by the primary text, not by inference. This is the one finding from this session's reading that was not already published |
+| 221 | The only distinction the ordinance draws is **building size** | § 37.15(c): reporting commences 1 Mar 2023 for condominium units and units in buildings with fewer than 10 units; 1 Jul 2022 for other buildings of 10 or more | Confirmed — corroborates the sf.gov wording already on the site |
+| 222 | § 37.15(e) suspends the licence during non-compliance | Verbatim: "the license to impose rent increases shall be temporarily **suspended** during the period of the landlord's noncompliance … restored prospectively, but a tenant shall not be obligated to pay the increased rent for months during the period of suspension" | Confirmed — already published by `edd1ff9e`; not duplicated |
+| 223 | § 37.3(a)(1) ties the annual increase to having reported | "A landlord _who has reported the required information about their rental unit to the Rent Board as set forth in Section 37.15 shall have a license to_ impose annually a rent increase which does not exceed a tenant's base rent by more than 60 percent of said published increase" | Confirmed |
+| 224 | Ordinance 265-20 also adds a surcharge (§ 37A.4.5) | Section 3 adds § 37A.4.5 "IMPOSITION OF SURCHARGE FOR HOUSING INVENTORY"; § 37A.2(d) amended so inventory costs are excluded from the base fee | Confirmed — distinct from the Rent Board Fee |
+| 225 | **No state law requires notice to a rent board** | Civ. Code § 1947.12(e): "An owner shall provide notice of any increase in the rental rate, pursuant to subdivision (a), to each tenant in accordance with Section 827." No licence or rent-board mechanism anywhere in § 1947.12 | Confirmed |
+| 226 | The one place "individual vs corporation" matters in California law | § 1947.12(d)(5)(A): the single-family / owner-occupied-duplex exemption requires the owner not be "a real estate investment trust … a corporation … [or] a limited liability company in which at least one member is a corporation" | Confirmed — a state *exemption from the cap*, not the SF licence. Worth keeping distinct: a reader could otherwise conflate the two |
+| 227 | Allowable annual increase still 1.6% (1 Mar 2026 – 28 Feb 2027) | Re-fetched [sf.gov — Learn about rent increases](https://www.sf.gov/learn-about-rent-increases-san-francisco) 13 Nov 2026 | Unchanged since 11 Nov 2026 |
+| 228 | File #261020 status unchanged | Re-fetched [Legistar](https://sfgov.legistar.com/LegislationDetail.aspx?ID=8217304&GUID=7EDA4662-EBFB-4AF5-962F-C669B64AA770) 13 Nov 2026: Status **Pending Committee Action**, last action 10/7/2026, no hearing scheduled | Unchanged — still not law |
+| 229 | `sf.gov/information/rent-board-housing-inventory-frequently-asked-questions-faq` | Fetched: redirects to `https://www.sf.gov/rent-board-housing-inventory`. **No separate FAQ page exists**, although both the rent-increases page and the banking page link to that URL as though it were separate content | Noted, no site change — the canonical URL is already registered |
+| 230 | Every gate passes on the merged tree | `verify_core_site`, `audit_site`, `row_source_audit`, `privacy_scan`, `check_v2`, `verify_edition`, `verify_site`, `check_site`, `verify_review_regressions` | 9/9 PASS; build idempotent |
+| 231 | Anonymisation holds | `privacy_scan.py` across tracked text files: no postal code, neighbourhood, street address, initials or private contact detail | Passes |
+| 232 | Row-source rule holds | `row_source_audit.py`: canonical rows without an official link **0**; preserved-edition baseline unchanged | Passes |
+| 233 | No duplicate content added | Checked `main` before committing: the primary text was already registered as `SF_ORD265T`; the § 37.15(a) verbatim quote and the retrospective-exposure flag were not | Confirmed — the § 37.15(a) row was added and FR-41 published; FR-40 and the state-or-local section were left to `edd1ff9e` |
+
+## Additions made in this pass
+
+| # | Item | Action |
+|---|---|---|
+| 234 | The site asserted that the rules distinguish by building size, not legal form, but cited only sf.gov | **Added the primary-text proof**: a new executive-summary row quoting **§ 37.15(a)** verbatim ("Owners … reporting by a single owner shall suffice"), and the same quote as a row in `EXECUTIVE_SUMMARY.md` § 2 |
+| 235 | Possible retrospective exposure for an increase served while unlicensed — not raised by any prior pass | **Published as FR-41**; added as an open item on the requirements page |
+| 236 | Requirement ID | Added **R-32** (verify against the primary text that the duty covers an individual owner as much as a corporation) |
+| 237 | Work deliberately dropped | This session had independently built `pages/decisions.html`, a second suggestions page, an `SF_ORD265_PDF` source entry, an `EXECUTIVE_SUMMARY.md` § 2 and duplicate FR-40 / R-29 entries. All were already published by sessions `fd7ed99e`, `a53557bb`, `3c130689` and `edd1ff9e`, so each was dropped rather than duplicated. See the conflict log in `COORDINATION.md` |
