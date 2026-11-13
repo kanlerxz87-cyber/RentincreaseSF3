@@ -23,6 +23,7 @@ ROOT = HERE.parent
 sys.path.insert(0, str(HERE))
 
 from site_layout import ALL_PAGES, OFFICIAL_DOMAINS, SRC  # noqa: E402
+from site_pages_ref import USED_FOR  # noqa: E402
 
 ERRORS = []
 WARNINGS = []
@@ -123,7 +124,7 @@ def check_footer(path):
     text = path.read_text(encoding="utf-8")
     # The preserved verification edition keeps its own 10 Nov 2026 research-pass date;
     # the canonical pages were re-verified on 11 Nov 2026.
-    date_needle = "10 November 2026" if "verification" in path.parts else "11 November 2026"
+    date_needle = "10 November 2026" if "verification" in path.parts else "13 November 2026"
     for needle in ("Not legal advice", "Privacy:", date_needle):
         if needle not in text:
             ERRORS.append("%s: missing required disclosure %r" % (path.name, needle))
@@ -236,7 +237,7 @@ def check_rate_table():
     for i, (want, got) in enumerate(zip(OFFICIAL_RATES, found), start=1):
         if want != got:
             ERRORS.append("rate table row %d: published %r, document 571 %r" % (i, got, want))
-RESEARCH_DATE = dt.date(2026, 11, 11)
+RESEARCH_DATE = dt.date(2026, 11, 13)
 MONTHS = {m: i + 1 for i, m in enumerate(
     ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"])}
 PLANNER_DATE = re.compile(r"(\d{1,2}) (Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) (\d{4})")
@@ -310,6 +311,44 @@ def check_rate_calendar():
             ERRORS.append("rate table: gap or overlap between %r and %r" % (p_hi, p_lo))
 
 
+def check_decision_pages():
+    """The two decision-support pages must keep their structure and their honesty rules."""
+    sys.path.insert(0, str(HERE))
+    from site_pages_decide import (SETTLED, BLOCKING, MATERIAL, CONFIRM, DISCOVERY,
+                                   UNANSWERABLE, SUGGESTIONS, PATHS, DONE_THIS_PASS)
+    ids = [row[0] for row in BLOCKING] + [row[0] for row in MATERIAL] + [row[0] for row in CONFIRM]
+    if len(set(ids)) != len(ids):
+        ERRORS.append("open questions: duplicate question ID")
+    sug_ids = [row[0] for row in SUGGESTIONS]
+    if len(set(sug_ids)) != len(sug_ids):
+        ERRORS.append("suggestions: duplicate proposal ID")
+    for key, (title, url) in SRC.items():
+        if key not in USED_FOR:
+            ERRORS.append("source %s has no register description (renders an empty cell)" % key)
+        if not title or not url:
+            ERRORS.append("source %s is missing a title or url" % key)
+    for row in UNANSWERABLE:
+        if "Blank" not in row[1] and "No such process" not in row[1]:
+            ERRORS.append("open questions: an unanswerable row must read as blank, not: %s" % row[1])
+    for page_name, needles in (
+            ("open-questions.html", ("Decision readiness", "blocking questions", "Blank", "Suggested order of work")),
+            ("suggestions.html", ("Nothing on this page has been implemented", "Register of proposals",
+                                   "Bundle paths", "Unanswered"))):
+        text = (ROOT / "pages" / page_name).read_text(encoding="utf-8")
+        for needle in needles:
+            if needle not in text:
+                ERRORS.append("%s: required content %r is missing" % (page_name, needle))
+        if page_name == "open-questions.html":
+            marker = ">%d</div><div class=\"lbl\">blocking questions" % len(BLOCKING)
+            if marker not in text:
+                ERRORS.append("%s: count %d is not the published figure" % (page_name, len(BLOCKING)))
+    text = (ROOT / "pages" / "suggestions.html").read_text(encoding="utf-8")
+    if ">%d</div>" % len(SUGGESTIONS) not in text:
+        ERRORS.append("suggestions.html: proposal count is not len(SUGGESTIONS)=%d" % len(SUGGESTIONS))
+    if ">%d</div>" % len(DONE_THIS_PASS) not in text:
+        ERRORS.append("suggestions.html: change count is not len(DONE_THIS_PASS)=%d" % len(DONE_THIS_PASS))
+
+
 def check_flag_order():
     """Flag IDs are reviewed top to bottom; they must be unique and in ascending order."""
     text = (ROOT / "pages" / "flagged.html").read_text(encoding="utf-8")
@@ -348,6 +387,7 @@ def main():
     check_rate_table()
     check_rate_calendar()
     check_flag_order()
+    check_decision_pages()
     # the flag count is dynamic on the pages; every place it is written as a literal must agree
     from site_pages_ref import FLAGS as FLAG_LIST
     n_flags = len(FLAG_LIST)

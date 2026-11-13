@@ -40,6 +40,8 @@ SRC = {
                "https://www.sf.gov/documents/34344/571_Allowable_Annual_Increases_26-27_1.pdf"),
     "SF_MULTI": ("sf.gov — Annual rent increase for multiple years",
                  "https://www.sf.gov/information/annual-rent-increase-multiple-years"),
+    "SF_RATES": ("sf.gov — Current Rates, including Rent Increase, Relocation, Sec. Deposit",
+                 "https://www.sf.gov/reports--current-rates-including-rent-increase-relocation-sec-deposit"),
     "SF_TENPET": ("sf.gov — Tenant petitions",
                   "https://www.sf.gov/tenant-petitions"),
     "SF_UNLAWFUL": ("sf.gov — Report an unlawful rent increase / review your rent history",
@@ -73,6 +75,10 @@ SRC = {
                  "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=1954.53"),
     "LEG_1942": ("Cal. Civ. Code § 1942.5 — retaliation prohibited",
                  "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=1942.5"),
+    "LEG_19424": ("Cal. Civ. Code § 1942.4 — no rent-increase notice while substandard conditions are unabated",
+                  "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=1942.4"),
+    "LEG_BPC10131": ("Cal. Bus. & Prof. Code § 10131 — who is a real estate broker (licence definition)",
+                     "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=BPC&sectionNum=10131"),
     "LEG_1013": ("Cal. Code Civ. Proc. § 1013 — service by mail extension",
                  "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CCP&sectionNum=1013"),
     "OPM_HOLIDAYS": ("U.S. Office of Personnel Management — Federal Holidays (5 U.S.C. 6103)",
@@ -205,9 +211,11 @@ NAV = [
     ("pages/process.html", "Licence &amp; process"),
     ("pages/units.html", "Units &amp; maths"),
     ("pages/laws.html", "Rules &amp; caps"),
+    ("pages/open-questions.html", "Decide &mdash; open questions"),
     ("pages/practice.html", "Market practice"),
     ("pages/notice.html", "Notice &amp; reasons"),
     ("pages/review.html", "Tenant-lawyer test"),
+    ("pages/suggestions.html", "Site suggestions"),
     ("pages/flagged.html", "Flagged"),
 ]
 
@@ -222,6 +230,8 @@ ALL_PAGES = [
     ("pages/notice.html", "Notice, service &amp; reasons"),
     ("pages/review.html", "Tenant-lawyer stress test"),
     ("pages/discrimination.html", "One unit or both units?"),
+    ("pages/open-questions.html", "Decision readiness — questions to answer first"),
+    ("pages/suggestions.html", "Site improvement suggestions (for review)"),
     ("pages/requirements.html", "Requirements checklist"),
     ("pages/sources.html", "Sources &amp; verification register"),
     ("pages/flagged.html", "Flagged for review"),
@@ -264,7 +274,7 @@ def page(filename, title, body, desc="", active=None):
   <p><b>Independent verification edition:</b> a second pass that re-fetched every official source and re-ran the arithmetic, published separately so this page set was not rewritten — <a href="{up}verification/index.html">open the verification edition (10 November 2026)</a>. Earlier editions are preserved for audit in <code>docs/</code>, <code>dashboard/</code>, <code>review/</code>, <code>audit/</code> and <code>verified/</code>.</p>
   <p><b>Privacy:</b> all tenant and owner identifying details are replaced with placeholder labels (Tenant A–F). Dates and dollar amounts are unchanged. The specific ZIP code, neighbourhood and street address are withheld, because unit-level facts plus a location would identify the tenants; the rules cited apply citywide and do not vary by ZIP. Source registers are internal only.</p>
   <p><b>Not legal advice.</b> Every figure here is either quoted from an official source (linked in the row) or calculated from an official percentage and an owner-reported base rent; where a value could not be confirmed it is left blank and listed on the <a href="{up}pages/flagged.html">Flagged for review</a> page. Confirm anything you intend to rely on with the SF Rent Board counselling line (415-252-4600) and a California lawyer.</p>
-  <p>Research pass and source retrieval: <b>11 November 2026</b>. Content verified line by line against the linked official pages on that date.</p>
+  <p>Research pass and source retrieval: <b>13 November 2026</b>. Content verified line by line against the linked official pages on that date.</p>
 </footer>
 </body>
 </html>
