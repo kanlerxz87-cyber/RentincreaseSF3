@@ -48,7 +48,7 @@ def sources():
     body = f"""
 <div class="card">
   <h1>Sources &amp; verification register</h1>
-  <p class="lede">Every official source used on this site, the claim it supports, and the date it was retrieved. The register was reviewed on 10 November 2026, every registered source was re-fetched and read on 11 November 2026, and the sources this site leans on were fetched again and re-read on 13 November 2026. Availability can change.</p>
+  <p class="lede">Every official source used on this site, the claim it supports, and the date it was retrieved. The register was reviewed on 10 and 11 November 2026; the sources behind the licence answer, the annual allowance, banking, the notice rule, the fee, the petitions and the pending Bill file were re-fetched and read again on <b>13 November 2026</b>. Availability can change.</p>
 </div>
 
 <div class="card">
@@ -115,9 +115,8 @@ REQS = [
     ("R-21", "Flag irregularities for manual review", "Answered — {nflags} flags published", "pages/flagged.html", "SF_BANK"),
     ("R-22", "Coordinate with parallel sessions via COORDINATION.md", "Answered — claim, scope and record logged", "index.html", "SF_HI"),
     ("R-23", "Open a pull request, merge it and confirm the Pages deployment", "Answered — recorded in COORDINATION.md", "index.html", "SF_HI"),
-    ("R-24", "Is the duty to inform the Rent Board (the 2023 licence law) a state or a local law?", "Answered — local law (Ordinance 265-20)", "pages/executive-summary.html", "SF_ORD265"),
-    ("R-25", "A clear list of questions, information and answers to address before any decision, including how to discover missing information", "Answered", "pages/questions.html", "SF_HI"),
-    ("R-26", "A dedicated suggestions section where options can be reviewed and a path chosen before anything is implemented", "Answered", "pages/suggestions.html", "SF_LI"),
+    ("R-24", "Create a dedicated Suggestions &amp; decision-path section to review before implementing", "Answered — two registers consolidated on one page on 13 Nov 2026", "pages/suggestions.html", "SF_LI"),
+    ("R-25", "A clear list of the questions, the information they need and the answers available before any decision", "Answered — 14 blocking questions, 12 settled, 10 documents, 8 discovery actions, 4 with no official answer", "pages/questions.html", "SF_BANK"),
 ]
 
 
@@ -133,9 +132,9 @@ def requirements():
         "pages/notice.html": "Notice &amp; reasons",
         "pages/review.html": "Tenant-lawyer test",
         "pages/discrimination.html": "One unit or both?",
-        "pages/questions.html": "Questions &amp; answers",
-        "pages/suggestions.html": "Suggestions",
         "pages/requirements.html": "Requirements checklist",
+        "pages/suggestions.html": "Suggestions &amp; decision path",
+        "pages/questions.html": "Open questions",
         "pages/sources.html": "Sources register",
         "pages/flagged.html": "Flagged for review",
     }
@@ -155,8 +154,8 @@ def requirements():
 <div class="card">
   <h2>Status summary</h2>
   <div class="grid">
-    <div class="stat"><div class="num">26</div><div class="lbl">requirements tracked</div></div>
-    <div class="stat"><div class="num">23</div><div class="lbl">answered from official sources</div></div>
+    <div class="stat"><div class="num">25</div><div class="lbl">requirements tracked</div></div>
+    <div class="stat"><div class="num">22</div><div class="lbl">answered from official sources</div></div>
     <div class="stat"><div class="num">3</div><div class="lbl">answered only conditionally (rent history, government building record, official statistics)</div></div>
     <div class="stat"><div class="num">{len(FLAGS)}</div><div class="lbl">items flagged for review, all published</div></div>
   </div>
@@ -185,6 +184,188 @@ def requirements():
 """
     return page("pages/requirements.html", "Requirements checklist", body,
                 "Every requirement in the brief mapped to the page that answers it, its status and the official rule.")
+
+
+# ------------------------------------------------------------------ suggestions
+def suggestions():
+    """Dedicated decision-support page the brief asked for: decision options, the
+    preconditions that must be true, the questions whose answers are still missing,
+    site-improvement suggestions, and a review protocol. Table rows carry the official
+    rule behind them; pure recommendations are listed, not tabulated, so no row is
+    presented as an official fact."""
+
+    # --- A. decision options (each row cites the official rule behind it)
+    options = [
+        ("1 · Unit A only — annual allowance only",
+         "Raise Unit A by the allowable annual increase on its anniversary; leave Unit B unchanged.",
+         "Lawful only if a rent-increase licence is in effect on the effective date, at least 12 months have passed since the lease began, and the percentage in force on the effective date is used.",
+         ("SF_LI", "SF_HI")),
+        ("2 · Unit A only — annual + banked",
+         "Raise Unit A by the 1.6% annual allowance plus the 1.4% banked from the prior year (illustrative 3.0%).",
+         "Requires the 1.4% to have been properly banked; the combined total must use the percentage in force on the effective date; 30-day notice applies because the total is 10% or less.",
+         ("SF_BANK", "SF_571")),
+        ("3 · Both units — each at its lawful annual allowance",
+         "Raise Unit A and Unit B each by the annual allowance in force on that unit's effective date.",
+         "The same licence, anniversary and percentage rules apply to each unit; no rule requires the same dollar amount for both, and none forbids different lawful amounts.",
+         ("SF_LI", "LEG_12955")),
+        ("4 · Both units — including banked amounts where lawful",
+         "Raise each unit using any properly banked balance plus the annual allowance.",
+         "Banked amounts must be correctly calculated; a combined total above 10% triggers the 90-day notice; the pending File #261020 could cap banked + capital-improvement increases at 10% per year.",
+         ("SF_BANK", "LEGISTAR_261020")),
+        ("5 · Defer any increase",
+         "Wait for the 2027–28 allowance to be published and/or for File #261020 to be resolved before serving notice.",
+         "No increase is required now; this avoids acting on an unannounced rate or a pending proposal, and a banked balance does not expire during a tenancy.",
+         ("SF_LI", "SF_BANK")),
+    ]
+    opt_rows = "".join(
+        '<tr><td><b>%s</b></td><td>%s</td><td>%s</td>%s</tr>' % (a, b, c, cell(*k))
+        for a, b, c, k in options)
+
+    # --- B. preconditions that must be true before any option is chosen
+    pre = [
+        ("Rent-increase licence in effect on the effective date",
+         "Without it the notice is not enforceable and may be null and void; the tenant may be entitled to a refund.",
+         "Confirm in the Rent Board Portal before serving; file the Housing Inventory if it is not current.",
+         ("SF_HI", "SF_NONCOMP")),
+        ("Correct anniversary date for each unit",
+         "An increase cannot be imposed until at least 12 months after the lease began; the wrong date makes it untimely.",
+         "Confirm with a Rent Board counsellor, especially for a mid-tenancy renewal (Unit A).",
+         ("SF_LI",)),
+        ("Rent-control coverage confirmed",
+         "The ordinance applies to buildings with a certificate of occupancy before 14 June 1979 and excludes some categories; coverage is not an owner-reported fact.",
+         "Obtain the certificate of occupancy and the legal unit count from the City record.",
+         ("SF_LAWS",)),
+        ("Correct base rent",
+         "Increases are calculated on base rent only and cannot be rounded up to the nearest dollar.",
+         "Use the current lawful base rent from the lease and the Rent Board record.",
+         ("SF_LI",)),
+        ("Correct banked balance, if any is used",
+         "Banked amounts must be additive and correctly calculated; the balance depends on the complete increase ledger.",
+         "Reconstruct the ledger from leases, notices and proofs of service.",
+         ("SF_BANK",)),
+        ("Correct notice period and service",
+         "30 days if the increase is 10% or less, 90 days if more; 5 more days if mailed; personal delivery or Code of Civil Procedure § 1013 mail.",
+         "Use the notice-date planner on the process page and serve in time, allowing for the mail extension.",
+         ("LEG_827", "LEG_1013")),
+        ("No retaliation and no discrimination",
+         "An increase must not be retaliatory or based on a protected characteristic.",
+         "Document a lawful, consistent reason for each unit.",
+         ("LEG_1942", "LEG_12955")),
+    ]
+    pre_rows = "".join(
+        '<tr><td><b>%s</b></td><td>%s</td><td>%s</td>%s</tr>' % (a, b, c, cell(*k))
+        for a, b, c, k in pre)
+
+    # --- C. questions still to be answered, and a suggested way to discover each answer
+    qs = [
+        ("Unit B's complete rent history since 1 June 2019",
+         "Determines whether the 11.5% banked balance is correct or less.",
+         "Reconstruct from leases, notices and proofs of service; request a rent-history review from the Rent Board.",
+         ("SF_BANK",)),
+        ("Total number of units in the building and its certificate-of-occupancy date",
+         "Coverage and the historical reporting start date depend on it.",
+         "Check the City property record and the certificate of occupancy.",
+         ("SF_LAWS",)),
+        ("Whether each unit is covered by rent control",
+         "Determines which rules apply to each unit.",
+         "Confirm coverage with the Rent Board.",
+         ("SF_LAWS",)),
+        ("Whether the rent-increase licence is current for both units",
+         "Determines whether any increase is enforceable.",
+         "Log into the Rent Board Portal and record the licence status.",
+         ("SF_PORTAL", "SF_HI")),
+        ("Unit A's anniversary: 1 February or 1 April",
+         "Determines the effective date and the percentage in force.",
+         "Obtain written confirmation from a Rent Board counsellor.",
+         ("SF_LI",)),
+        ("Whether either unit is subsidised (voucher or other assistance)",
+         "May change coverage and add a reasonableness review.",
+         "Confirm whether a housing assistance payment contract exists.",
+         ("SF_LAWS",)),
+        ("Whether the leases are fixed-term or periodic, and any rent-adjustment clauses",
+         "Determines whether an increase can be imposed mid-term.",
+         "Review both signed leases; obtain legal advice.",
+         ("LEG_827",)),
+        ("Whether the banked balance is correctly calculated",
+         "A wrong balance makes the increase unlawful.",
+         "Recompute from the official percentages and the ledger.",
+         ("SF_BANK", "SF_RULE4")),
+        ("Whether a copy of an ordinary increase notice must be filed with the Rent Board",
+         "A filing step, if required, is separate from the licence.",
+         "Confirm with the Rent Board (open item FR-20).",
+         ("SF_HI",)),
+        ("Whether File #261020 has changed before serving any increase above 10%",
+         "The pending proposal would cap banked + capital-improvement increases at 10% per year.",
+         "Re-check Legistar immediately before service.",
+         ("LEGISTAR_261020",)),
+    ]
+    q_rows = "".join(
+        '<tr><td class="nowrap"><b>%d</b></td><td>%s</td><td>%s</td><td>%s</td>%s</tr>'
+        % (i, a, b, c, cell(*k))
+        for i, (a, b, c, k) in enumerate(qs, start=1))
+
+    body = f"""
+<div class="card alert">
+  <h1>Suggestions &amp; decision path</h1>
+  <p class="lede">A dedicated place to review suggestions and choose a path <b>before</b> implementing any change. It lists the decision options, the conditions that must be true before any option is lawful, the questions whose answers are still missing, site-improvement suggestions, and a review protocol. Re-checked against the official sources on <b>13 November 2026</b>; the canonical research pass is 11 November 2026. Decision support, not legal advice.</p>
+  <div class="quote"><b>How to use it:</b> nothing here decides the increase for you. Work top to bottom — confirm the preconditions (B), answer the open questions (C), weigh the options (A) against the tenant-lawyer test (<a href="../pages/review.html">review page</a>), and only then implement.</div>
+</div>
+
+<div class="card">
+  <h2>A. Decision options for this property</h2>
+  <table>
+    <thead><tr><th style="width:26%">Option</th><th style="width:28%">What it means</th><th style="width:30%">What must be true / legal constraint</th><th style="width:16%">Official source</th></tr></thead>
+    <tbody>{opt_rows}</tbody>
+  </table>
+</div>
+
+<div class="card">
+  <h2>B. Conditions that must be true before any option is chosen</h2>
+  <table>
+    <thead><tr><th style="width:28%">Precondition</th><th style="width:32%">Why it is required</th><th style="width:24%">How to confirm</th><th style="width:16%">Official source</th></tr></thead>
+    <tbody>{pre_rows}</tbody>
+  </table>
+</div>
+
+<div class="card">
+  <h2>C. Questions still to be answered, and how to discover each answer</h2>
+  <table>
+    <thead><tr><th style="width:5%">#</th><th style="width:27%">Question / missing information</th><th style="width:24%">Why it matters</th><th style="width:28%">Suggested way to discover it</th><th style="width:16%">Official source for the rule</th></tr></thead>
+    <tbody>{q_rows}</tbody>
+  </table>
+</div>
+
+<div class="card">
+  <h2>D. Suggestions to improve the site and decision-making</h2>
+  <p class="small">Proposals for the site itself, not verified facts. Each one is a suggested improvement for a reviewer to accept, reject or amend before it is implemented.</p>
+  <ul class="tight">
+    <li><b>Add a printable “serve a notice” checklist</b> that walks through preconditions → calculation → notice → service → any filing, linked to the <a href="../pages/process.html">licence &amp; process</a> page.</li>
+    <li><b>Add a per-unit “next action” panel</b> showing the earliest lawful effective date and the latest notice-service date for each unit, recomputed from the official percentages.</li>
+    <li><b>Add a source-freshness indicator</b> on every page showing the last retrieval date and whether any cited official source has since been updated.</li>
+    <li><b>Add a plain-language glossary</b> for “banked increase”, “anniversary date”, “licence”, “coverage” and “base rent”, each defined from the linked official source.</li>
+    <li><b>Add a decision-record template</b> so a reviewer can record which option was chosen, the evidence relied on, and the date — creating an audit trail before implementation.</li>
+    <li><b>Add a cross-unit comparison view</b> so the one-unit-vs-both decision can be reviewed side by side against the fair-housing analysis on the <a href="../pages/discrimination.html">discrimination</a> page.</li>
+  </ul>
+</div>
+
+<div class="card ok">
+  <h2>E. Review protocol — how to choose the best path</h2>
+  <ol class="steps">
+    <li><b>Resolve the preconditions (B) for each unit.</b> A missing licence, wrong anniversary, wrong base rent or wrong notice period defeats the increase regardless of the percentage chosen. {srcs("SF_HI", "LEG_827")}</li>
+    <li><b>Answer the open questions (C) and attach the evidence.</b> The Unit B ledger, building record, coverage, licence status and subsidy status are the facts that change the outcome. {srcs("SF_BANK", "SF_LAWS")}</li>
+    <li><b>Compare the options (A) against the tenant-lawyer test.</b> Run the chosen option through the 16-point review on the <a href="../pages/review.html">tenant-lawyer test</a> page before committing.</li>
+    <li><b>Record the decision.</b> Use the decision-record template (D) to note the option, the evidence and the date, so the choice can be reviewed later.</li>
+    <li><b>Only then implement.</b> Confirm the licence, calculate from the percentage in force on the effective date, serve notice in time, and file anything the Rent Board requires. {srcs("SF_LI", "LEGISTAR_261020")}</li>
+  </ol>
+</div>
+"""
+    # Sections F-I: the improvement-proposal register from the parallel 13 Nov 2026 pass
+    # (session arena/a53557bb).  Rendered on this page so the site keeps one suggestions
+    # register rather than two competing ones; nothing in sections A-E is altered.
+    from site_pages_decide import suggestions_block  # noqa: E402  (no import cycle)
+    body = body + suggestions_block()
+    return page("pages/suggestions.html", "Suggestions & decision path", body,
+                "Decision options, preconditions, open questions and site-improvement suggestions, with the official rule behind each row.")
 
 
 # ------------------------------------------------------------------ flagged
@@ -246,14 +427,14 @@ FLAGS = [
     ("FR-23", "Actual notices, service, motive and compliance not verified", "Unverified",
      "No owner records, served notice or tenant-lawyer assessment were available. The earlier review table incorrectly marked numerous factual and legal checks as passing, and described every increase within 180 days of a complaint as retaliation. Those statements have been corrected; arithmetic is not legal clearance.",
      "Independently review the complete facts and applicable law before serving any notice.", "LEG_1942"),
-    ("FR-24", "Archived editions: row-source exceptions", "Unverified",
-     "Automated checks require official links for canonical data rows; preserved historical editions have 25 row-source warnings and may contain stale or corrected claims. They are not a fully verified current source; use the canonical pages and linked official sources.",
-     "Review archived row warnings and prior-edition corrections before relying on any historical page.", "SF_LI"),
+    ("FR-24", "Archived editions: rows without an official source link", "Irregularity",
+     "Counted row by row on 11 Nov 2026 with <code>tools/row_source_audit.py</code> (every table body row on every published page, classified by the links it carries). Every row of the canonical pages carries a direct official link. The six preserved editions hold <b>1,050</b> rows, of which <b>114</b> do not: <code>docs/</code> 74, <code>verified/</code> 25, <code>review/</code> 11, <code>dashboard/</code> 2, <code>verification/</code> 2, <code>audit/</code> 0. This flag previously said 25, because only one edition's checker counted rows; the figure measured before this pass was <b>276</b>. It fell to 114 because 116 <code>review/</code> rows that cited sources by register number only were given the direct official link, and 46 <code>docs/</code> rate rows were linked to document 571 (one of them, 3/1/88 – <b>2/29/88</b>, was a typo for 2/28/89 and is corrected). The remaining 114 are owner-supplied facts for which no official source can exist, model-notice placeholders, analysis rows, cross-references between editions, 9 rows citing university, non-profit or programme sources, and superseded analysis in <code>docs/</code>. The preserved editions also repeat statements the canonical pages have since corrected.",
+     "Use only the canonical pages. Removing the preserved editions from the published site would close this flag; that is the owner's decision, because the project rule so far has been that no edition is deleted.", "SF_LI"),
     ("FR-25", "Fixed-term lease provisions and actual notice", "Unverified",
      "Lease end dates and any mid-term rent adjustment clauses were not supplied. Civil Code § 827 describes specified periodic tenancies; these scenarios do not establish that an increase can be imposed during an unexpired fixed term.",
      "Review both signed leases and obtain legal advice before choosing a date or serving notice.", "LEG_827"),
     ("FR-27", "Postal service on 11 November 2026 (a federal holiday)", "Unverified",
-     "The planner's mailing day of 11 November 2026 for a 14 February 2027 effective date was a federal holiday (Veterans Day) per OPM, and the sf.gov pages read on that date carried a City closure banner. Whether a rent-increase notice can be validly deposited in the mail on a federal holiday — and how that interacts with the 5-day extension in Code of Civil Procedure § 1013 — is not established by any source this site cites. That mail-by day has since passed: by the 13 November 2026 research pass only personal service by 16 November 2026 remains open for that effective date. No conclusion is asserted.",
+     "The planner's mailing day of 11 November 2026 for a 14 February 2027 effective date was a federal holiday (Veterans Day) per OPM, and the sf.gov pages read on that date carried a City closure banner. Whether a rent-increase notice can be validly deposited in the mail on a federal holiday — and how that interacts with the 5-day extension in Code of Civil Procedure § 1013 — is not established by any source this site cites, and the USPS holiday schedule could not be fetched. That mail-by day has since passed: by the 13 November 2026 research pass only personal service by 16 November 2026 remains open for that effective date (see the planner). No conclusion is asserted.",
      "Serve in person by the date shown on the planner, or mail on a business day; confirm with the USPS holiday schedule and counsel.", "OPM_HOLIDAYS"),
     ("FR-28", "Federal source link for voucher rent reasonableness was broken", "Corrected 11 Nov 2026",
      "The internal source register cited <i>24 CFR 982</i> at an eCFR URL using <b>chapter-II/subchapter-B/part-982/subpart-M</b>. That URL returns <b>HTTP 404</b> (checked 11 Nov 2026): Part 982 sits in <b>Chapter IX</b> (Office of Assistant Secretary for Public and Indian Housing), and the “rent reasonableness” provision the register describes is <b>24 CFR § 982.507 — Rent to owner: Reasonable rent</b>, in <b>Subpart K</b>. The corrected URL is published in the source register and cited here. No figure, percentage or date on this site depended on the broken link.",
@@ -274,7 +455,7 @@ FLAGS = [
      "The brief describes two rental units, but does not state the total number of units in the building. Unit B $3,150 is its 2019 starting rent; current rent and both units' complete histories are unverified. Do not infer a two-unit building or choose a historical reporting start date. The individual-owner licensing obligation applies regardless of this uncertainty.",
      "Confirm total building unit count and property record. Reporting began 1 March 2023 for condominiums and buildings under 10 units, and 1 July 2022 for other buildings of 10 or more units.", "SF_HI"),
     ("FR-19", "Older editions and legal-review limits", "Irregularity",
-     "Archived editions and previous versions may include unsupported claims about building size, the proposed cap, passthrough procedures, retaliation or guaranteed legal review. The preserved verified edition check reports 25 rows without official links or with only internal links; automated checks do not certify all external links or claims. They are preserved for history, not current advice. The canonical pages have been corrected; no lawyer reviewed these facts and no checklist guarantees an outcome.",
+     "Archived editions and previous versions may include unsupported claims about building size, the proposed cap, passthrough procedures, retaliation or guaranteed legal review. The measured number of archived rows without an official link is in FR-24; automated checks do not certify all external links or claims. They are preserved for history, not current advice. The canonical pages have been corrected; no lawyer reviewed these facts and no checklist guarantees an outcome.",
      "Use the canonical dashboard and obtain legal advice before serving; check current law and individual records.", "SF_LANDPET"),
     ("FR-20", "Filing a copy of an ordinary increase notice", "Unverified",
      "The cited official pages establish that ordinary annual and banked increases need no approval petition, and that the licence need not accompany the tenant notice. Those propositions do not themselves establish whether a copy of the notice must be filed separately.",
@@ -282,6 +463,21 @@ FLAGS = [
     ("FR-26", "Rate table row end-dates", "Corrected 11 Nov 2026",
      "The 1982–2027 table on <b>Rules &amp; caps</b> had six row end-dates that did not match document 571: five fell on 29 February in a year that is not a leap year (3/1/84 – <b>2/29/85</b>, 3/1/96 – <b>2/29/97</b>, 3/1/00 – <b>2/29/01</b>, 3/1/04 – <b>2/29/05</b>, 3/1/12 – <b>2/29/13</b>), which are not real dates, and the 1995–96 period ended <b>2/28/96</b> in a leap year that document 571 runs to <b>2/29/96</b>. All 46 rows were published throughout — re-counted from the pre-correction HTML — and every percentage was already correct; an earlier draft of this flag also said the Board's separate <b>12/8/92 – 2/28/93 (1.6%)</b> row was missing, which the same recount disproved. The table is now compared row by row against a transcription of the PDF, and each period must parse as a real, contiguous, descending calendar range, so an impossible date fails the build.",
      "None — corrected against the Rent Board's document 571 and re-checked row by row.", "SF_571"),
+    ("FR-32", "Date slips in the Rent Board's own worked examples", "Irregularity",
+     "Read on the official pages on 11 Nov 2026. <b>(1)</b> Rent-increase page, first example: the tenant moved in on June 1, 2025 and the increase is for June 1, 2026, yet the text says “The annual allowable increase in effect on <b>June 1, 2025</b> is 1.6%”. Document 571 gives 1.4% for 3/1/25 – 2/28/26 and 1.6% from 3/1/26, so the date should read June 1, 2026. <b>(2)</b> Same page, fourth example: the increase takes effect on May 1, 2026, but the text refers to the increase “in effect on <b>June 1, 2026</b> (1.6%)”; 1.6% applies on both dates, so the result is unaffected. <b>(3)</b> Banked-increases page: the example's increase date is August 1, 2025, and one sentence says the 1.4% annual increase was “in effect on <b>August 1, 2024</b>”; document 571 gives 1.7% for that date and 1.4% for August 1, 2025. In all three the example's arithmetic and result agree with document 571 — only the quoted date is off. No figure on this site depends on them; they are listed so that a first-time reader comparing this site with the official page is not misled.",
+     "None needed for the calculations here. Take the percentage for any date from document 571, not from the example sentences.", "SF_LI"),
+    ("FR-33", "Whether an unpaid Rent Board Fee affects the licence", "Unverified",
+     "The Housing Inventory page says that reporting “does not request an exemption of the Rent Board Fee”, and the Fee page says that requesting a fee exemption “does not satisfy Rent Board Housing Inventory reporting requirements”. Neither page, nor the noncompliance page, says whether a late or unpaid fee stops a licence from being issued or suspends one. No conclusion is asserted.",
+     "Pay the fee by 1 March, then confirm the licence status in the Portal; ask the Rent Board if the fee is overdue.", "SF_FEE"),
+    ("FR-34", "Housing Inventory filings are public", "Verified — added 11 Nov 2026",
+     "The Housing Inventory page states: “<b>The information entered in the housing inventory submission is public.</b>” It lists name and business contact information, approximate square footage, number of bedrooms, number of bathrooms, and the history of vacancy or occupancy during the past 12 months. Owners must provide “the name and business contact information of the owner(s), or of the property manager, if any, designated by the owner(s) to address habitability issues”, and tenants can look up a unit's licence status in the Portal. The placeholder names used on this site therefore cannot carry over to the official filing, which is made under penalty of perjury. The page also says the Portal needs “the PIN number on your Annual Notice” to add a property to an account, with 311 for a PIN reset. Neither point was published on this site before.",
+     "Decide which business contact details to report before filing; ask 311 or the Rent Board exactly which fields are displayed publicly.", "SF_HI"),
+    ("FR-35", "Housing Inventory entry for the 2026 change of occupancy in Unit A", "Open",
+     "The report asks for the date current occupancy began and the base rent in $250 increments. The City states that an approximate answer given to the best of the owner's knowledge is not penalised, and that only a change in the owner's or manager's business contact information must be updated within 30 days; occupancy changes otherwise ride the annual 1 March update. No official page says what effect an out-of-date occupancy entry has on a licence already issued for that year.",
+     "Re-read the Unit A entry in the Rent Board Portal before service and correct it at the next 1 March report; ask the counsellor whether a mid-cycle correction is required.", "SF_HI"),
+    ("FR-36", "Where the licence carve-out for passthroughs ends", "Scope limit",
+     "The Housing Inventory page says a current licence is needed “before any annual or banked rent increase can go into effect”, while the noncompliance page says a licence is not required “in some situations where the original occupant(s) no longer live in the unit … or for passthroughs allowed under the Rent Ordinance”. The boundary between the two statements is not defined on either page. This site therefore treats every annual and banked increase — including a banked catch-up above 10% — as requiring the licence, which is the conservative reading, and publishes the carve-out question rather than relying on it.",
+     "Rent Board counsellor confirmation before relying on the carve-out for any increase other than a Section 6.14 or Costa-Hawkins market-rate increase.", "SF_NONCOMP"),
 ]
 
 
@@ -336,265 +532,3 @@ def flagged():
 """
     return page("pages/flagged.html", "Flagged for review", body,
                 "Published list of unverified, blank, inconsistent and corrected items, each with its official source link.")
-
-
-# ------------------------------------------------------------------ questions
-def questions():
-    """The brief's decision list: answered / open / how to discover what is missing."""
-    answered = [
-        ("Q-01", "Must an individual owner (not a corporation) inform the Rent Board and hold a licence before notifying tenants of an increase?",
-         "<b>Yes.</b> All owners of residential property must report into the Rent Board Housing Inventory; a tenant-occupied report generates a rent-increase licence, and the licence must be in effect on the <b>effective date</b> of the increase. The duty turns on building size, not on the owner's legal form.",
-         "SF_HI"),
-        ("Q-02", "Is the “since 2023” duty to inform the Rent Board a state or a local law?",
-         "<b>Local.</b> San Francisco <b>Ordinance No. 265-20</b> (effective 18 January 2021) created the Housing Inventory and licence; reporting for condominiums and buildings with fewer than 10 units began <b>1 March 2023</b>. State law (AB 1482, Civ. Code § 1947.12) caps increases and Civ. Code § 827 sets notice periods — neither requires a Rent Board filing. No federal law imposes one.",
-         "SF_ORD265"),
-        ("Q-03", "What is the current allowable annual increase?",
-         "<b>1.6%</b> for effective dates 1 March 2026 – 28 February 2027 (60% of Bay Area CPI), multiplied against base rent only, no rounding up.",
-         "SF_LI"),
-        ("Q-04", "Do annual or banked increases need a Rent Board approval petition?",
-         "<b>No.</b> “Landlords are not required to file a petition with the City to impose these types of rent increases.” Other increases (capital improvement, operating and maintenance, etc.) have their own petition procedures.",
-         "SF_MULTI"),
-        ("Q-05", "How much notice must a tenant get?",
-         "30 days if the increase is 10% or less (measured against the rent charged at any time in the previous 12 months, alone or combined), <b>90 days</b> if more than 10%; <b>+5 days</b> if mailed within California.",
-         "LEG_827"),
-        ("Q-06", "How do banked increases work?",
-         "Skipped annual increases may be added later: added, not compounded; no cap; allowed only since 1 April 1982; no expiry during a tenancy; the banked part and its dates belong in the notice. Two official texts disagree on the waiting test (12 vs 24 months) — both are published on the <a href=\"flagged.html\">Flagged</a> page (FR-03).",
-         "SF_BANK"),
-        ("Q-07", "What is a “reasonable and normal” increase here?",
-         "The lawful ceiling for a rent-controlled unit is the citywide Rent Board percentage plus properly banked amounts. The Rent Board publishes one citywide figure — <b>no ZIP-level or neighbourhood benchmark exists</b>. State AB 1482 (8.8% in this region for 1 Aug 2026 – 31 Jul 2027) does not govern where the local cap is lower.",
-         "SF_LI"),
-        ("Q-08", "Should both units be increased, or only one, to avoid discrimination exposure?",
-         "No official source requires uniform increases. Fair-housing law prohibits different treatment <i>because of</i> a protected characteristic — the control is a documented, non-protected reason per unit. Raising both on the same lawful formula is the lower-risk pattern; the Rent Board does not hear discrimination claims (Civil Rights Department or HUD do).",
-         "LEG_12955"),
-        ("Q-09", "What does the tenant side cost, and what can they file?",
-         "Tenants file an unlawful-rent-increase petition (Form 516C, Box C) <b>free of charge</b>, with <b>no filing deadline</b>, before an Administrative Law Judge; a Tenant Summary Petition (Form 518) is available while an increase has not yet taken effect. The hearing is designed so no attorney is required — but tenants can and do obtain free legal help, so an increase must survive that scrutiny.",
-         "SF_UNLAWFUL"),
-        ("Q-10", "Is there a separate annual fee besides the free Housing Inventory report?",
-         "<b>Yes.</b> The Rent Board Fee is <b>$59.00 per dwelling unit</b> for 2026–27, due 1 March, with a 5% monthly late penalty up to 15%; 50% ($29.50) is recoverable from qualifying tenants; the 2027 exemption window closes 14 December 2026. Neither obligation satisfies the other.",
-         "SF_FEE"),
-        ("Q-11", "Has anything changed in the law that would block a large banked increase today?",
-         "Not yet. <b>File #261020</b> (10%/yr cap on combined banked + capital-improvement increases, if enacted as proposed applying to banked increases noticed on or after 15 September 2026) was re-checked on 13 November 2026: status <b>Pending Committee Action</b>, no final action — <b>not law</b>.",
-         "LEGISTAR_261020"),
-    ]
-    open_qs = [
-        ("Q-12", "Are both units actually covered by rent control?",
-         "Every calculation on this site assumes coverage. A 1940 construction year is owner-reported; a government building record has not been pulled.",
-         "Unverified — owner statement only", "SF_LAWS"),
-        ("Q-13", "How many units are in the building?",
-         "The brief describes two rental units; the total building count is not stated. It decides which reporting start date applied (10+ units: 1 July 2022; 1–9 units: 1 March 2023) — though the licence duty itself applies either way.",
-         "Unverified — FR-18", "SF_HI"),
-        ("Q-14", "Is the Housing Inventory filed, and is the licence current on the planned effective date?",
-         "Without a licence on the effective date the increase “will not be enforceable” and “may be null and void (this may apply for multiple years)”, with refund exposure. This is the single largest legal risk in the whole process.",
-         "Unverified — FR-04", "SF_NONCOMP"),
-        ("Q-15", "What is Unit B's complete rent history from June 2019 to today?",
-         "The 11.5% banked / 13.1% combined figures assume no increase was ever imposed. One prior increase changes the banked total, the base rent and the timing.",
-         "Unverified — FR-01", "SF_BANK"),
-        ("Q-16", "Which anniversary applies to Unit A — 1 February or 1 April 2026?",
-         "The tenancy began 1 February 2025 and a new co-tenant joined 1 April 2026 at the same rent. The official rule starts the clock 12 months after the lease began, but the Rent Board pages do not address a mid-tenancy renewal with a new occupant. Both dates are computed; the earliest effective date differs.",
-         "Open — FR-02", "SF_LI"),
-        ("Q-17", "Is either unit subsidised (voucher / regulated rent)?",
-         "Federal voucher rules and the Rent Ordinance's partial exemption can change the lawful amount and the notice.",
-         "Unverified — FR-13", "ADMIN_373"),
-        ("Q-18", "Do the leases run to a fixed term that has not expired?",
-         "Civil Code § 827 describes periodic tenancies. Nothing here establishes that an increase may be imposed mid-term under a fixed-term lease; both leases must be read.",
-         "Unverified — FR-25", "LEG_827"),
-        ("Q-19", "Does a copy of the rent-increase notice have to be filed with the Rent Board?",
-         "Ordinary annual/banked increases need no approval petition, and the licence need not accompany the notice — but the cited pages do not answer whether a separate notice-copy filing exists.",
-         "Unverified — FR-20", "SF_HI"),
-        ("Q-20", "Which effective date will actually be chosen (anniversary vs later)?",
-         "The date decides the governing percentage (the 1.6% runs only to 28 February 2027), the banked set, and the 30/90-day clock. The 2027–28 percentage is blank until the Rent Board announces it.",
-         "Decision pending", "SF_571"),
-        ("Q-21", "Will File #261020 be enacted before the notice is served?",
-         "If enacted as proposed it would apply to banked increases noticed on or after 15 September 2026 — which would change what a lawful large banked increase looks like. Status must be re-checked immediately before service.",
-         "Pending — not law", "LEGISTAR_261020"),
-        ("Q-22", "Is the 2026–27 Rent Board Fee paid (or an exemption on file)?",
-         "The fee is separate from the licence; arrears accrue 5%/month up to 15% and are referred to the Bureau of Delinquent Revenue after 1 June.",
-         "Unverified — owner record", "SF_FEE"),
-    ]
-    discovery = [
-        ("Building record (construction date, legal unit count, unit type)",
-         "Search the address on the City's Property Information Map (linked from the Rent Board's rental-laws page) and pull the certificate-of-occupancy / assessor records; confirm any exemption with a Rent Board counsellor.",
-         "SF_LAWS"),
-        ("Licence status for both units",
-         "Open the Rent Board Portal, search the address or APN, and screenshot the Rent Increase License status for every relevant year — including the planned effective date.",
-         "SF_PORTAL"),
-        ("Unit B rent history 2019–2026",
-         "Assemble the owner's own file: every lease, every rent-increase notice with proof of service, and the rent ledger. The unlawful-rent page shows exactly what tenants attach (leases, notices, receipts) — the same documents answer the question.",
-         "SF_UNLAWFUL"),
-        ("Unit A anniversary (1 Feb vs 1 Apr)",
-         "Call the Rent Board counselling line (415-252-4600, weekdays 9am–noon and 1–4pm) with the lease and renewal dates and record the counsellor's answer in the file.",
-         "SF_COUNSEL"),
-        ("Whether a separate notice-copy filing exists",
-         "Ask a Rent Board counsellor directly and record the answer; the published pages this site cites do not address it (FR-20).",
-         "SF_HI"),
-        ("Voucher / subsidy status",
-         "Review each lease and the rent roll; if a voucher is possible, confirm the interaction with the Rent Ordinance's partial exemption and 24 CFR § 982.507 with counsel before serving.",
-         "CFR_982"),
-        ("File #261020 status",
-         "Re-open the Legistar file page immediately before serving any banked increase; the status on 13 November 2026 is Pending Committee Action with no final action.",
-         "LEGISTAR_261020"),
-        ("The 2027–28 allowable percentage (blank)",
-         "Watch the Rent Board's rent-increase page and Form 571; the new percentage is published for effective dates from 1 March 2027 and cannot be inferred before then.",
-         "SF_571"),
-        ("Fixed-term lease question",
-         "Read both signed leases end to end; if either runs to a fixed end date, obtain legal advice before choosing an effective date.",
-         "LEG_827"),
-        ("Rent Board Fee / exemption status",
-         "Check the Rent Board Portal account and the annual Informational Notice; the 2027 exemption request window closes 14 December 2026.",
-         "SF_FEE"),
-    ]
-    a_rows = "".join(
-        '<tr><td class="nowrap"><b>%s</b></td><td>%s</td><td>%s</td>%s</tr>'
-        % (qid, q, ans, cell(key)) for qid, q, ans, key in answered)
-    b_rows = "".join(
-        '<tr><td class="nowrap"><b>%s</b></td><td>%s</td><td>%s</td><td><span class="badge warn">%s</span></td>%s</tr>'
-        % (qid, q, why, status, cell(key)) for qid, q, why, status, key in open_qs)
-    c_rows = "".join(
-        '<tr><td>%s</td><td>%s</td>%s</tr>' % (need, how, cell(key))
-        for need, how, key in discovery)
-    body = f"""
-<div class="card hero">
-  <h1>Questions, answers &amp; missing information</h1>
-  <p class="lede">The decision list this brief asked for: what is already answered from official sources, what is still open, and a concrete suggestion for discovering every missing fact. Nothing here is filled in with a guess — open items stay open until a record or an official answer closes them. Research pass: 13 November 2026.</p>
-</div>
-
-<div class="card ok">
-  <h2>A. Answered — the information we already have ({len(answered)} questions)</h2>
-  <table>
-    <thead><tr><th style="width:6%">ID</th><th style="width:30%">Question</th><th>Answer (verified)</th><th style="width:20%">Official source</th></tr></thead>
-    <tbody>{a_rows}</tbody>
-  </table>
-</div>
-
-<div class="card warn">
-  <h2>B. Open — information still missing before a decision can be made ({len(open_qs)} questions)</h2>
-  <p class="small">Each row states why the answer changes the decision. Full flag detail: <a href="flagged.html">Flagged for review</a>. Owner-record facts need the owner; official gaps need a publication or an office answer — more research alone will not close them.</p>
-  <table>
-    <thead><tr><th style="width:6%">ID</th><th style="width:27%">Question</th><th>Why it must be answered first</th><th style="width:14%">Status</th><th style="width:17%">Official source</th></tr></thead>
-    <tbody>{b_rows}</tbody>
-  </table>
-</div>
-
-<div class="card">
-  <h2>C. Suggestions — how to discover each missing item ({len(discovery)} suggestions)</h2>
-  <table>
-    <thead><tr><th style="width:26%">Missing information</th><th>Suggested way to obtain it</th><th style="width:22%">Official source</th></tr></thead>
-    <tbody>{c_rows}</tbody>
-  </table>
-  <p class="small">Sequencing suggestion: licence status (Q-14) and rent history (Q-15) first — they can change or void every number; then the anniversary question (Q-16) with a counsellor; then choose an effective date; then re-check File #261020 (Q-21) immediately before service. Decision options built on these answers: <a href="suggestions.html">Suggestions &amp; decision paths</a>.</p>
-</div>
-"""
-    return page("pages/questions.html", "Questions, answers &amp; missing information", body,
-                "Decision list: verified answers, open questions with why they matter, and suggestions for discovering missing information.")
-
-
-# ------------------------------------------------------------------ suggestions
-def suggestions():
-    """Site-improvement suggestions (status-labelled) and decision paths for the owner."""
-    site_sugg = [
-        ("S-01", "Keep the licence question at the forefront of the dashboard and executive summary",
-         "A first-time reader meets the highest-consequence obligation (licence before effective date) before any number.",
-         "Implemented", "SF_HI"),
-        ("S-02", "Publish this questions page: answered / open / discovery suggestions",
-         "Separates what is known from what is assumed, so a decision is never built on a blank cell.",
-         "Implemented — 13 Nov 2026", "SF_LI"),
-        ("S-03", "Publish this suggestions page with status labels and decision paths",
-         "Gives a reviewer one place to choose a path before anything is implemented.",
-         "Implemented — 13 Nov 2026", "SF_LI"),
-        ("S-04", "Roll the research pass and the notice-date planner on every verification session",
-         "Deadlines silently going stale is how a compliant notice becomes late; the planner now fails the build if a deadline passes unmarked.",
-         "Implemented — gate in tools/verify_core_site.py", "LEG_827"),
-        ("S-05", "Keep every unverified item on a public Flagged for review page",
-         "Blanks and conflicts stay visible instead of being smoothed over — the reviewer sees exactly what is not established.",
-         "Implemented", "SF_BANK"),
-        ("S-06", "Maintain an independent second-pass edition (verification/) beside the canonical pages",
-         "A separate re-fetch of every source is the check on the main build.",
-         "Implemented", "SF_571"),
-        ("S-07", "Add a gate that every table row cites an official domain",
-         "Makes “source link on every row” a build requirement, not a promise.",
-         "Implemented — gate in tools/verify_core_site.py", "SF_571"),
-        ("S-08", "Re-check Legistar File #261020 immediately before serving any banked increase",
-         "The proposal, if enacted, applies to banked increases noticed on or after 15 September 2026 — status must be fresh at service, not at publication.",
-         "Proposed — owner checklist item", "LEGISTAR_261020"),
-        ("S-09", "Record a Rent Board counsellor's answers (anniversary, notice-copy filing) in the property file",
-         "Two open questions (Q-16, Q-19) can only be closed by an official answer; a dated note makes the file defensible later.",
-         "Proposed — owner action", "SF_COUNSEL"),
-        ("S-10", "Obtain an independent California lawyer's review of the final notice before service",
-         "The tenant-lawyer test page is a checklist, not legal clearance; a review by counsel is the strongest answer to “would a tenant lawyer accept it”.",
-         "Proposed — owner decision", "SF_UNLAWFUL"),
-        ("S-11", "Keep a dated decision log: which path was chosen, why, and the evidence at the time",
-         "Discrimination and retaliation challenges turn on the reason and the record, not on the arithmetic.",
-         "Proposed — owner decision", "LEG_1942"),
-        ("S-12", "Re-verify the headline figures against the official pages before every notice",
-         "Percentages change on 1 March each year and official pages change without notice; this session's re-fetch found no figure drift on 13 November 2026.",
-         "Implemented — done this pass", "SF_571"),
-    ]
-    paths = [
-        ("Path A — Conservative",
-         "Increase <b>both</b> units by the annual allowance only (1.6% through 28 Feb 2027) on their anniversaries; no banked amounts.",
-         "Smallest increase that sits squarely inside the published allowance; works under either banking wording; 30-day notice; no reliance on the rent history.",
-         "If the priority is minimal challenge risk while records are still being assembled.",
-         "Awaiting your choice", "SF_LI"),
-        ("Path B — Full lawful ceiling",
-         "Unit A: 1.6% + 1.4% banked = <b>3.0%</b> ($119.85 → $4,114.85) on 1 Feb 2027. Unit B: up to <b>13.1%</b> ($412.65 → $3,562.65) only if the rent history shows no increase since 2019, for an effective date on or before 28 Feb 2027.",
-         "Highest amount, but conditional: needs the verified ledger, the licence on the effective date, 90-day notice for &gt;10%, and a fresh File #261020 check.",
-         "Only after Q-14, Q-15, Q-16 and Q-21 are closed.",
-         "Awaiting your choice", "SF_BANK"),
-        ("Path C — Defer and close the records first",
-         "Serve nothing yet: file/confirm the Housing Inventory licence, assemble Unit B's ledger, get the counsellor's anniversary answer, then choose an effective date.",
-         "No notice risk now; the trade-off is time (and whatever the 2027–28 percentage turns out to be).",
-         "If the licence status or rent history cannot be confirmed this month.",
-         "Awaiting your choice", "SF_HI"),
-        ("Path D — Petition-based increase (different procedure)",
-         "Capital improvement, operating & maintenance, or other passthrough increases via a landlord petition — a different, evidence-heavy route with its own forms.",
-         "Can exceed the annual ceiling, but requires a petition <i>before</i> notice and Rent Board approval; not needed for annual or banked amounts.",
-         "Only if a qualifying expense actually occurred; not a substitute for Paths A–C.",
-         "Awaiting your choice", "SF_LANDPET"),
-    ]
-    s_rows = "".join(
-        '<tr><td class="nowrap"><b>%s</b></td><td>%s</td><td>%s</td>'
-        '<td><span class="badge %s">%s</span></td>%s</tr>'
-        % (sid, sugg, why,
-           "ok" if st.startswith("Implemented") else "warn", st, cell(key))
-        for sid, sugg, why, st, key in site_sugg)
-    p_rows = "".join(
-        '<tr><td><b>%s</b></td><td>%s</td><td>%s</td><td>%s</td>'
-        '<td><span class="badge warn">%s</span></td>%s</tr>'
-        % (name, involves, tradeoff, when, status, cell(key))
-        for name, involves, tradeoff, when, status, key in paths)
-    body = f"""
-<div class="card hero">
-  <h1>Suggestions &amp; decision paths</h1>
-  <p class="lede">A dedicated place to review suggestions and choose a path <b>before</b> anything is implemented. Status labels are honest: “Implemented” means it already exists on this site; “Proposed” means nothing has been done — a reviewer picks what to adopt. Research pass: 13 November 2026.</p>
-</div>
-
-<div class="card">
-  <h2>How to use this page</h2>
-  <ol class="steps">
-    <li><b>Read the suggestions</b> in Table 1 and mark each one: adopt, adapt or reject. Nothing marked “Proposed” has been implemented anywhere on this site.</li>
-    <li><b>Close the open questions first</b> — the paths below assume the licence, rent history and anniversary questions are answered: <a href="questions.html">Questions, answers &amp; missing information</a>.</li>
-    <li><b>Choose one path</b> in Table 2, record the choice and the reason in a dated note, then execute through <a href="process.html">Licence &amp; process</a> (licence → calculate → notice → serve).</li>
-    <li><b>Re-check the pending ordinance</b> (File #261020) immediately before serving any banked amount.</li>
-  </ol>
-</div>
-
-<div class="card">
-  <h2>Table 1 — Suggestions for improving this site and the decision process ({len(site_sugg)} items)</h2>
-  <table>
-    <thead><tr><th style="width:6%">ID</th><th style="width:33%">Suggestion</th><th>Why it improves decisions</th><th style="width:15%">Status</th><th style="width:17%">Official source</th></tr></thead>
-    <tbody>{s_rows}</tbody>
-  </table>
-  <p class="small">Status meanings: <span class="badge ok">Implemented</span> already live on this site · <span class="badge warn">Proposed</span> awaiting a reviewer's decision — not implemented · every suggestion cites the official rule it serves.</p>
-</div>
-
-<div class="card alert">
-  <h2>Table 2 — Decision paths for the rent increase ({len(paths)} options, none chosen yet)</h2>
-  <table>
-    <thead><tr><th style="width:14%">Path</th><th style="width:30%">What it involves</th><th>Main trade-off</th><th>Choose it when…</th><th style="width:12%">Decision status</th><th style="width:15%">Official source</th></tr></thead>
-    <tbody>{p_rows}</tbody>
-  </table>
-  <p class="small">Amounts shown are the calculated ceilings from <a href="units.html">Units &amp; maths</a>; percentages are official, dollars are arithmetic on the owner-reported base rent. No path is recommended by this site — the choice, and the record of why it was made, belongs to the owner. Not legal advice.</p>
-</div>
-"""
-    return page("pages/suggestions.html", "Suggestions &amp; decision paths", body,
-                "Site-improvement suggestions with status labels, and the decision paths for the rent increase, to be reviewed and chosen before implementation.")

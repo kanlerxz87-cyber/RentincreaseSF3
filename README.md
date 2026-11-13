@@ -4,7 +4,7 @@
 
 A static GitHub Pages dashboard answering one owner's questions about raising rent on two units reported as rent-controlled in a San Francisco building reported as built in 1940 (total building size and coverage unverified). The Rent Board notification/licence question comes first, because it decides whether any increase is enforceable at all.
 
-Canonical dashboard table rows link official sources for the governing rule; owner-supplied facts are not thereby verified. Unconfirmed values and limitations are listed on **Flagged for review**. Archived editions have row-source exceptions (FR-24) and should not be relied on as current advice.
+Canonical dashboard table rows link official sources for the governing rule; owner-supplied facts are not thereby verified. Unconfirmed values and limitations are listed on **Flagged for review**. Archived editions still hold 114 table rows without an official source link (measured by `tools/row_source_audit.py`, FR-24) and repeat statements since corrected; they should not be relied on as current advice.
 
 ---
 
@@ -25,8 +25,10 @@ Canonical dashboard table rows link official sources for the governing rule; own
 | [`pages/questions.html`](pages/questions.html) | Questions, answers & missing information: what is answered, what is open, how to discover each missing fact |
 | [`pages/suggestions.html`](pages/suggestions.html) | Suggestions & decision paths: status-labelled suggestions to review and a path to choose before anything is implemented |
 | [`pages/requirements.html`](pages/requirements.html) | Every requirement in the brief, its status and its evidence |
+| [`pages/questions.html`](pages/questions.html) | **Open questions**: 14 blocking questions, 12 already settled, the documents to collect, 8 ways to find what is missing, and how each answer changes the number |
+| [`pages/suggestions.html`](pages/suggestions.html) | **Suggestions for review**: 12 improvement proposals with impact and effort, all marked *Proposed* — nothing is implemented until an ID is accepted — plus 6 rejected ideas and why |
 | [`pages/sources.html`](pages/sources.html) | source register with what each supports |
-| [`pages/flagged.html`](pages/flagged.html) | 31 flagged items: unverified, blank, inconsistent or corrected |
+| [`pages/flagged.html`](pages/flagged.html) | 36 flagged items: unverified, blank, inconsistent or corrected |
 
 Markdown summary: [`EXECUTIVE_SUMMARY.md`](EXECUTIVE_SUMMARY.md).
 
@@ -34,7 +36,7 @@ Markdown summary: [`EXECUTIVE_SUMMARY.md`](EXECUTIVE_SUMMARY.md).
 
 | Item | Result | Official source |
 |---|---|---|
-| State or local law? (the duty to inform the Rent Board "since 2023") | **Local law** — San Francisco Ordinance No. 265-20 (effective 18 January 2021); reporting for condominiums and buildings with fewer than 10 units began 1 March 2023. State AB 1482 and Civ. Code § 827 do not require informing the Rent Board; no federal law does either | [sf.gov — Ordinance 265-20](https://www.sf.gov/news--new-legislation-creates-housing-inventory-and-requires-owners-obtain-license-imposing) · [sf.gov — Housing Inventory](https://www.sf.gov/rent-board-housing-inventory) · [Civ. Code § 1947.12](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=1947.12) |
+| **State law or local law?** | **Local.** The duty to inform the Rent Board and hold a rent-increase licence is San Francisco **Ordinance No. 265-20**, effective 18 January 2021, amending the City's Rent Ordinance. No California statute requires notifying a rent board or holding a licence. The state cap (Civ. Code § 1947.12, 8.8% for this region from 1 Aug 2026) does not govern because the City cap is lower. | [Ordinance 265-20](https://www.sf.gov/news--new-legislation-creates-housing-inventory-and-requires-owners-obtain-license-imposing) · [§ 1947.12](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=1947.12) |
 | Rent-increase licence for an individual owner of a 1–9 unit building | **Required** — automatic once the Housing Inventory report is filed; must be in effect on the **effective date**; requirement applies from 1 March 2023; 1 March annual deadline; no monetary penalty for late filing | [sf.gov — Housing Inventory](https://www.sf.gov/rent-board-housing-inventory) |
 | Per-increase approval petition | **Not required** for ordinary annual or banked increases; separate notice-copy filing not established (FR-20) | [Form 571](https://www.sf.gov/documents/34344/571_Allowable_Annual_Increases_26-27_1.pdf) · [sf.gov — banking](https://www.sf.gov/information--banked-rent-increases) |
 | Annual allowance 1 Mar 2026 – 28 Feb 2027 | **1.6%** (1.4% prior year) | [sf.gov](https://www.sf.gov/learn-about-rent-increases-san-francisco) · [Form 571](https://www.sf.gov/documents/34344/571_Allowable_Annual_Increases_26-27_1.pdf) |
@@ -51,12 +53,13 @@ Tenant and owner names are replaced with **Tenant A–F**. Dates and dollar amou
 
 ## Build and verification
 
-The site is generated from Python modules so that content and checks share one source of truth:
+The site is generated from Python modules so that content and checks share one source of truth. `pages/questions.html` and `pages/suggestions.html` come from `tools/site_pages_decide.py`:
 
 ```bash
 python3 tools/build_dashboard.py     # writes assets/style.css, index.html, pages/*.html
 python3 tools/verify_core_site.py    # gate for the canonical site
 python3 tools/audit_site.py          # whole-repo link/anchor + canonical row-source audit
+python3 tools/row_source_audit.py    # every table row on every page: official link or counted exception
 python3 verify_site.py               # dashboard edition (preserved)
 python3 tools/check_site.py          # review edition (preserved)
 python3 tools/verify_edition.py      # audit/ + verified/ editions (preserved)

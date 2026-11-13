@@ -16,6 +16,7 @@ from site_layout import CSS, ALL_PAGES  # noqa: E402
 import site_pages_core as core  # noqa: E402
 import site_pages_rules as rules  # noqa: E402
 import site_pages_ref as ref  # noqa: E402
+import site_pages_decide as decide  # noqa: E402
 
 PAGES = {
     "index.html": core.index,
@@ -28,9 +29,9 @@ PAGES = {
     "pages/notice.html": rules.notice,
     "pages/review.html": rules.review,
     "pages/discrimination.html": rules.discrimination,
-    "pages/questions.html": ref.questions,
-    "pages/suggestions.html": ref.suggestions,
     "pages/requirements.html": ref.requirements,
+    "pages/suggestions.html": ref.suggestions,
+    "pages/questions.html": decide.questions,
     "pages/sources.html": ref.sources,
     "pages/flagged.html": ref.flagged,
 }
